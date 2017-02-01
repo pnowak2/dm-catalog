@@ -7,13 +7,13 @@
  */
 
 html {
-    font: #{($font-size-base/16px)*1em}/#{$line-height-ratio} $font-family-base;
-    overflow-y: scroll;
-    min-height: 100%;
+  font-size: $font-size-base;
+  font-family: $font-family-base; 
 }
 
 body {
-
+  background-color: $body-bg;
+  font-family: $font-family-base;   
 }
 
 @if $border-box-global == true {

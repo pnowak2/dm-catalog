@@ -15,10 +15,7 @@ $font-size-base: 16px;
 
 $border-box-global: 		true;
 
-$font-size-base: 			16px; /* 1 */
-$line-height-base: 			24px; /* 2 */
-$line-height-ratio: 		$line-height-base / $font-size-base;
-$font-family-base: 			'Roboto';
+$font-family-base: 			'Roboto', sans-serif;
 
 /**
  * Utility font sizes
