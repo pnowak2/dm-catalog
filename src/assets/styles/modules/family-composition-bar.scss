@@ -1,5 +1,5 @@
 .family-composition-bar { 
-  &__members {
+  &__members-container {
     font-size: 0;
     background-color: #ddd;
     padding: .7rem;
@@ -35,7 +35,7 @@
   }
   
   &__tab-caret {
-    font-size: 1.4em; 
+    font-size: 1.5em; 
     right: .5em; 
     position: absolute; 
     top: 50%; 
@@ -52,13 +52,12 @@
     text-transform: uppercase;
   }
   
-  &--closed .family-composition-bar__members {
+  &--closed &__members-container {
     padding: 0;
-    // max-height: 0;
     height: 0;
   }
   
-  &--closed .family-composition-bar__tab-caret {
+  &--closed &__tab-caret {
     transform: rotate(180deg);
     margin-top: -.35em;
   }

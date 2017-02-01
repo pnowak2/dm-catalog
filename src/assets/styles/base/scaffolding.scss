@@ -1,11 +1,3 @@
-/**
- * $SCAFFOLDING
- * ==========================================================================
- * Here are any base styles added to all elements (*), <html> or <body>.
- * If adding a background image or color to the body, I'd suggest doing
- * that here as well.
- */
-
 html {
   font-size: $font-size-base;
   font-family: $font-family-base; 
@@ -21,7 +13,7 @@ body {
         &,
         &:before,
         &:after {
-            @include vendor(box-sizing, border-box);
+          box-sizing: border-box;
         }
     }
 }

@@ -12,19 +12,9 @@ $link-hover-color: $brand-primary !default;
   
 /* Typography */
 $font-size-base: 16px;
-
-$border-box-global: 		true;
-
 $font-family-base: 			'Roboto', sans-serif;
-
-/**
- * Utility font sizes
- * --------------------------------------------------------------------------
- * 1. Applied to "<small>" in "components/_smallprint.scss".
- * 2. Applied to ".lead" class, for slightly larger paragraphs in
- *    "components/_paragraphs.scss".
- */
 $font-size-small: 			12px; /* 1 */
 $font-size-lead: 			20px; /* 2 */
 
+$border-box-global: 		true;
 
