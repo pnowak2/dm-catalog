@@ -1,0 +1,69 @@
+.family-composition-bar { 
+  &__members {
+    font-size: 0;
+    background-color: #ddd;
+    padding: .7rem;
+    overflow-x:auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition-property: 'max-height';
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  }
+  
+  &__tab-container {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  &__tab-button {
+    background-color: #fff;
+    border: .1em solid #ddd;
+    border-top: 0;
+    border-radius: 0 0 .2em .2em;
+    display: inline-block;
+    font-size: .7em;
+    padding: .3em .7em;
+    color: #999;
+    cursor: pointer;
+    position: relative; 
+    padding-right: 2em
+  }
+  
+  &__tab-title {
+    text-transform: uppercase;
+  }
+  
+  &__tab-caret {
+    font-size: 1.4em; 
+    right: .5em; 
+    position: absolute; 
+    top: 50%; 
+    margin-top: -.5em;
+  }
+  
+  &__tab-person-first-name,
+  &__tab-person-last-name {
+    color: #bbb;
+  }
+  
+  &__tab-person-last-name {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  &--closed .family-composition-bar__members {
+    padding: 0;
+    // max-height: 0;
+    height: 0;
+  }
+  
+  &--closed .family-composition-bar__tab-caret {
+    transform: rotate(180deg);
+    margin-top: -.35em;
+  }
+  
+  &--closed .family-member {
+    display: none;
+  }
+}
