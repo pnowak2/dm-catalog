@@ -10,7 +10,7 @@ export class AppComponent {
   members: Array<string>;
 
   constructor() {
-    this.members = ['a', 'b', 'c']
+    this.members = ['Piotr', 'Andrzej', 'Rafał']
   }
 
   tabClicked(tab: FamilyMemberComponent) {

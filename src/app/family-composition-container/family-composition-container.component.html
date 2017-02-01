@@ -8,8 +8,8 @@
         Family Composition (3/7)
       </div>
       <div class="family-composition-bar__tab-member">
-        <span class="family-composition-bar__tab-person-first-name">Dirk Andrew</span>
-        <span class="family-composition-bar__tab-person-last-name">Van Rooy</span>
+        <span *ngIf="!selectedPerson" class="family-composition-bar__tab-person-first-name">No Selection</span>
+        <span class="family-composition-bar__tab-person-last-name">{{ selectedPerson }}</span>
       </div>
       <span class="fa fa-caret-up family-composition-bar__tab-caret"></span>
     </div>

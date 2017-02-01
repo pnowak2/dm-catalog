@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Component, OnInit, ContentChildren, QueryList, AfterContentInit, Input } from '@angular/core';
 import { FamilyMemberComponent } from '../family-member/family-member.component';
 
 @Component({
@@ -7,9 +7,10 @@ import { FamilyMemberComponent } from '../family-member/family-member.component'
   styleUrls: ['./family-composition-container.component.scss']
 })
 export class FamilyCompositionContainerComponent implements AfterContentInit {
-  opened: boolean;
+  @Input() opened: boolean;
   @ContentChildren(FamilyMemberComponent) members: QueryList<FamilyMemberComponent>;
-
+  selectedPerson: string;
+  
   constructor() { }
 
   ngAfterContentInit() {
@@ -17,6 +18,7 @@ export class FamilyCompositionContainerComponent implements AfterContentInit {
       member.clicked.subscribe((m: FamilyMemberComponent) => {
         this.members.toArray().forEach((member: FamilyMemberComponent) => member.active = false);
         m.active = true;
+        this.selectedPerson = m.name;
       })
     })
   }
