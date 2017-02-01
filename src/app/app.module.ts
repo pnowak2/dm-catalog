@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { FamilyCompositionContainerComponent } from './family-composition-container/family-composition-container.component';
+import { FamilyMemberComponent } from './family-member/family-member.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FamilyCompositionContainerComponent,
+    FamilyMemberComponent
   ],
   imports: [
     BrowserModule,

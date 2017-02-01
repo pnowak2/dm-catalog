@@ -1,0 +1,18 @@
+<div class="family-composition-bar" [class.family-composition-bar--closed]="!opened">
+  <div class="family-composition-bar__members-container">
+    <ng-content></ng-content>
+  </div>
+  <div class="family-composition-bar__tab-container">
+    <div class="family-composition-bar__tab-button" (click)="toggleBar()">
+      <div class="family-composition-bar__tab-title">
+        Family Composition (3/7)
+      </div>
+      <div class="family-composition-bar__tab-member">
+        <span class="family-composition-bar__tab-person-first-name">Dirk Andrew</span>
+        <span class="family-composition-bar__tab-person-last-name">Van Rooy</span>
+      </div>
+      <span class="fa fa-caret-up family-composition-bar__tab-caret"></span>
+    </div>
+  </div>
+</div>
+

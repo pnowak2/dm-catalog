@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FamilyMemberComponent } from './family-member/family-member.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  members: Array<string>;
+
+  constructor() {
+    this.members = ['a', 'b', 'c']
+  }
+
+  tabClicked(tab: FamilyMemberComponent) {
+    console.log(tab.name);
+  }
 }
