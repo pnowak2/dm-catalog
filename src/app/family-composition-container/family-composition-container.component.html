@@ -5,7 +5,7 @@
   <div class="family-composition-bar__tab-container">
     <div class="family-composition-bar__tab-button" (click)="toggleBar()">
       <div class="family-composition-bar__tab-title">
-        Family Composition (3/7)
+        Family Composition ({{ membersCount }})
       </div>
       <div class="family-composition-bar__tab-member">
         <span *ngIf="!selectedPerson" class="family-composition-bar__tab-person-first-name">No Selection</span>
