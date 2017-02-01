@@ -1,3 +1,9 @@
+@mixin family-member-header-text {
+  font-size: .7em;
+  color: #999;
+  text-transform: uppercase;
+}
+
 .family-member {
   font-size: 1rem;
   transition: background-color .5s;
@@ -26,10 +32,8 @@
     opacity: 0.6;
   }
   
-  &__header:after {
-    content: '';
-    clear: both;
-    display: block;
+  &__header {
+    @include clearfix;
   }
   
   &__link,
@@ -40,17 +44,13 @@
   }
    
   &__member-type {
-    font-size: .7em;
-    color: #999;
+    @include family-member-header-text;
     float: left;
-    text-transform: uppercase;
   }
   
   &__more-menu {
-    font-size: .7em;
-    color: #999;
+    @include family-member-header-text;
     float: right;
-    text-transform: uppercase;
   }
   
   &__data-section {
@@ -82,10 +82,8 @@
     position: relative;
   }
   
-  &__footer:after {
-    content: '';
-    clear: both;
-    display: block;
+  &__footer {
+    @include clearfix
   }
   
   &__languages {
