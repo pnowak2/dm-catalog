@@ -65,6 +65,10 @@
   }
   
   &--closed .asm-family-member {
-    display: none;
+    visibility: hidden;
+  }
+
+  &--disabled .asm-family-member {
+    cursor: not-allowed;
   }
 }
