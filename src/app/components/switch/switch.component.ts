@@ -8,7 +8,7 @@ import { Component, HostListener, Input, Output, EventEmitter } from '@angular/c
 export class SwitchComponent {
   @Input() checked: boolean = false;
   @Input() disabled: boolean = false;
-  toggle: EventEmitter<boolean> = new EventEmitter();
+  @Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
   @HostListener('click')
   onClicked() {

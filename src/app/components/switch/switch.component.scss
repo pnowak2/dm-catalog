@@ -15,6 +15,9 @@
   cursor: pointer;
   box-shadow: rgb(223, 223, 223) 0 0 0 0 inset;
   transition: 0.3s ease-out all;
+  vertical-align: middle;
+  user-select: none;
+  background-clip: content-box;
   
   width: 2.0625em;
   height: 1.25em;
