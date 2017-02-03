@@ -17,7 +17,7 @@ describe('SwitchComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SwitchComponent);
+    fixture = TestBed.createComponent<SwitchComponent>(SwitchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     compiled = fixture.debugElement.nativeElement;
@@ -115,8 +115,6 @@ describe('SwitchComponent', () => {
 
       describe('checked/unchecked', () => {
         it('should not render checked switch by default', async(() => {
-          fixture.detectChanges();
-
           expect(compiled.querySelector('.asm-switch').classList).not.toContain('asm-switch--checked');
         }));
 
