@@ -102,7 +102,7 @@ describe('SwitchComponent', () => {
       it('should call appropriate handler when clicked host element', async(() => {
         spyOn(component, 'onClicked');
 
-        compiled.dispatchEvent(new Event('click'));
+        fixture.debugElement.triggerEventHandler('click', {});
 
         expect(component.onClicked).toHaveBeenCalled();
       }));
