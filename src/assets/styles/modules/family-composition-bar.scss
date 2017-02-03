@@ -1,4 +1,4 @@
-.family-composition-bar { 
+.asm-family-bar { 
   font-size: 1rem;
 
   &__members-container {
@@ -44,12 +44,12 @@
     margin-top: -.5em;
   }
   
-  &__tab-person-first-name,
-  &__tab-person-last-name {
+  &__tab-member-first-name,
+  &__tab-member-last-name {
     color: #bbb;
   }
   
-  &__tab-person-last-name {
+  &__tab-member-last-name {
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -64,7 +64,7 @@
     margin-top: -.35em;
   }
   
-  &--closed .family-member {
+  &--closed .asm-family-member {
     display: none;
   }
 }

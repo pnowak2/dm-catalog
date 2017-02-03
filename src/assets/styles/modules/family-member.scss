@@ -1,10 +1,10 @@
-@mixin family-member-header-text {
+@mixin asm-family-member-header-text {
   font-size: .7em;
   color: #999;
   text-transform: uppercase;
 }
 
-.family-member {
+.asm-family-member {
   font-size: 1rem;
   transition: background-color .5s;
   background-color: #fff;
@@ -44,12 +44,12 @@
   }
    
   &__member-type {
-    @include family-member-header-text;
+    @include asm-family-member-header-text;
     float: left;
   }
   
   &__more-menu {
-    @include family-member-header-text;
+    @include asm-family-member-header-text;
     float: right;
   }
   
