@@ -12,6 +12,9 @@ export class SwitchComponent {
 
   @HostListener('click')
   onClicked() {
+    if(this.disabled) {
+      return;
+    }
     this.checked = !this.checked;
     this.toggle.emit(this.checked);
   }

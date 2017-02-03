@@ -85,6 +85,15 @@ describe('SwitchComponent', () => {
 
         expect(component.toggle.emit).toHaveBeenCalledWith(true);
       });
+
+      it(`should not trigger toggle event if disabled'`, () => {
+        spyOn(component.toggle, 'emit');
+
+        component.disabled = true;
+        component.onClicked();
+
+        expect(component.toggle.emit).not.toHaveBeenCalled();
+      });
     });
   });
 
