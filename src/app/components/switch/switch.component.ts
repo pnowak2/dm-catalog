@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'asm-switch',
@@ -6,7 +6,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./switch.component.scss'],
 })
 export class SwitchComponent implements OnInit {
-  checked: boolean = false;
+  @Input() checked: boolean = false;
+  @Input() disabled: boolean = false;
 
   constructor() { }
 
