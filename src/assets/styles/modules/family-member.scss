@@ -36,21 +36,25 @@
   &--disabled {
     opacity: 0.6;
   }
+
+  &--ex-spouse &__member-role {
+    text-decoration: line-through;
+  }
   
   &__header {
     @include clearfix;
   }
-  
-  &__link,
-  &__link:hover,
-  &__link:visited {
-    color: $link-color;
-    text-decoration: underline;
-  }
-   
+    
   &__member-type {
     @include asm-family-member-header-text;
     float: left;
+  }
+
+  &__member-number,
+  &__member-number:hover,
+  &__member-number:visited {
+    color: $link-color;
+    text-decoration: underline;
   }
   
   &__more-menu {
