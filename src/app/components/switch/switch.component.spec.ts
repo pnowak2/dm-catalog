@@ -134,7 +134,7 @@ describe('SwitchComponent', () => {
       });
 
       describe('enabled/disabled', () => {
-        it('should not render disabled switch if property is set to true', async(() => {
+        it('should not render disabled switch if property is set to false', async(() => {
           component.disabled = false;
           fixture.detectChanges();
 
