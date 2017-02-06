@@ -1,11 +1,11 @@
 @mixin asm-family-member-header-text {
   font-size: .7em;
   color: #999;
-  text-transform: uppercase;
 }
 
 .asm-family-member {
   font-size: 1rem;
+  overflow: visible;
   transition: background-color .5s;
   background-color: #fff;
   width: 14em;
@@ -14,7 +14,6 @@
   display: inline-block;
   margin-right: .7em;
   vertical-align: top;
-  overflow: hidden;
   cursor: pointer;
 
   &:hover {
@@ -41,6 +40,11 @@
     text-decoration: line-through;
   }
   
+  &__member-role,
+  &__more-menu-label {
+    text-transform: uppercase;
+  }
+
   &__header {
     @include clearfix;
   }
@@ -53,7 +57,7 @@
   &__member-number,
   &__member-number:hover,
   &__member-number:visited {
-    color: $link-color;
+    color: #FF7043;
     text-decoration: underline;
   }
   
