@@ -65,6 +65,7 @@
     @include asm-family-member-header-text;
     float: right;
     position: relative;
+    user-select: none;
   }
   
   &__data-section {
