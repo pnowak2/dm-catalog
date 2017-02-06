@@ -5,8 +5,8 @@
     font-size: 0;
     background-color: #ddd;
     padding: .7rem;
-    overflow-x: visible;
-    overflow-y: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
     transition-property: 'max-height';
     transition-duration: .5s;
