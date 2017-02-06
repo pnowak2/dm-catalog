@@ -64,6 +64,7 @@
   &__more-menu {
     @include asm-family-member-header-text;
     float: right;
+    position: relative;
   }
   
   &__data-section {
