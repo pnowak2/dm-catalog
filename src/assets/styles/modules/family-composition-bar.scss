@@ -16,6 +16,7 @@
   &__tab-container {
     text-align: center;
     font-size: 1rem;
+    position: relative;
   }
   
   &__tab-button {
@@ -53,7 +54,23 @@
     font-weight: bold;
     text-transform: uppercase;
   }
-  
+
+  &__family-plus-container {
+    display: block;
+    position: absolute;
+    top: .4em;
+    right: .6em;
+  }
+
+  &__family-plus-label {
+    font-size: .7em;
+    color: #bbb;
+    vertical-align: middle;
+    margin: 0;
+    margin-right: .3em;
+    text-transform: uppercase;
+  }
+
   &--closed &__members-container {
     padding: 0;
     height: 0;
@@ -63,7 +80,11 @@
     transform: rotate(180deg);
     margin-top: -.35em;
   }
-  
+
+  &--closed &__family-plus-container {
+    visibility: hidden;
+  }
+
   &--closed .asm-family-member {
     visibility: hidden;
   }
