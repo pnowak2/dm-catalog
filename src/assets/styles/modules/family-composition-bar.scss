@@ -17,6 +17,7 @@
     text-align: center;
     font-size: 1rem;
     position: relative;
+    user-select: none;
   }
   
   &__tab-button {
@@ -76,6 +77,7 @@
     position: absolute;
     top: .4em;
     font-size: 1.6em;
+    transition: all .3s;
   }
 
   &__scroll-left-container {
@@ -84,6 +86,11 @@
 
   &__scroll-right-container {
     right: -2em;
+  }
+
+  &__scroll-left-container:active,
+  &__scroll-right-container:active {
+    transform: scale(1.5)
   }
 
   &--closed &__members-container {
