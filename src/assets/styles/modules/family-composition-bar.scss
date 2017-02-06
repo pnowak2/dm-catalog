@@ -71,6 +71,21 @@
     text-transform: uppercase;
   }
 
+  &__scroll-left-container,
+  &__scroll-right-container {
+    position: absolute;
+    top: .4em;
+    font-size: 1.6em;
+  }
+
+  &__scroll-left-container {
+    left: -2em;
+  }
+
+  &__scroll-right-container {
+    right: -2em;
+  }
+
   &--closed &__members-container {
     padding: 0;
     height: 0;
@@ -82,6 +97,11 @@
   }
 
   &--closed &__family-plus-container {
+    visibility: hidden;
+  }
+
+  &--closed &__scroll-left-container,
+  &--closed &__scroll-right-container {
     visibility: hidden;
   }
 
