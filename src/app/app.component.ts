@@ -18,6 +18,7 @@ export class AppComponent {
     personalNumber: '346001',
     relationName: 'Affiliate',
     selected: true,
+    coveredByOtherAffiliate: true,
     accidentCoverage: Coverage.Full,
     sicknessCoverage: Coverage.Complementary
   }

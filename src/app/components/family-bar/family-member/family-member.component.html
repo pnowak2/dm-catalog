@@ -13,13 +13,17 @@
      {{ familyMember?.language }}
      {{ familyMember?.country }}
 
+     <i class="fa fa-warning asm-family-member__badge asm-family-member__badge--covered-by-other"
+        *ngIf="familyMember.coveredByOtherAffiliate">
+     </i>
+
      <i class="fa fa-heart asm-family-member__badge"
-      [class.asm-family-member__badge--complementary-rights]="hasSicknessComplementaryRights()"
-      [class.asm-family-member__badge--full-rights]="hasSicknessFullRights()">
+        [class.asm-family-member__badge--complementary-rights]="hasSicknessComplementaryRights()"
+        [class.asm-family-member__badge--full-rights]="hasSicknessFullRights()">
      </i>
 
      <i class="fa fa-plus asm-family-member__badge"
-      [class.asm-family-member__badge--complementary-rights]="hasAccidentComplementaryRights()"
-      [class.asm-family-member__badge--full-rights]="hasAccidentFullRights()">
+        [class.asm-family-member__badge--complementary-rights]="hasAccidentComplementaryRights()"
+        [class.asm-family-member__badge--full-rights]="hasAccidentFullRights()">
      </i>
 </div>

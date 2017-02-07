@@ -9,7 +9,6 @@ import { FamilyMemberViewModel, Coverage } from './model/family-member.viewmodel
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;
   let fixture: ComponentFixture<FamilyMemberComponent>;
-  let nativeElement;
   let debugElement: DebugElement;
 
   beforeEach(async(() => {
@@ -23,7 +22,6 @@ describe('FamilyMemberComponent', () => {
     fixture = TestBed.createComponent<FamilyMemberComponent>(FamilyMemberComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    nativeElement = fixture.debugElement.nativeElement;
     debugElement = fixture.debugElement;
   });
 
@@ -234,8 +232,33 @@ describe('FamilyMemberComponent', () => {
         }));
       });
 
+      describe('Covered By Other Affiliate Badge', () => {
+        it('should not render badge if no flag set', async(() => {
+          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-warning.asm-family-member__badge'));
+          expect(badgeEl).toBeFalsy();
+        }));
+
+        it('should render badge if flag is set to true', async(() => {
+          component.familyMember.coveredByOtherAffiliate = true;
+          fixture.detectChanges();
+
+          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-warning.asm-family-member__badge'));
+
+          expect(badgeEl).toBeTruthy();
+        }));
+
+        it('should not render badge if flag is set to false', async(() => {
+          component.familyMember.coveredByOtherAffiliate = false;
+          fixture.detectChanges();
+
+          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-warning.asm-family-member__badge'));
+
+          expect(badgeEl === null).toBeTruthy();
+        }));
+      });
+
       describe('Sickness Coverage Badge', () => {
-        let badgeEl;
+        let badgeEl: DebugElement;
 
         beforeEach(() => {
           badgeEl = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
@@ -276,7 +299,7 @@ describe('FamilyMemberComponent', () => {
       });
 
       describe('Accident Coverage Badge', () => {
-        let badgeEl;
+        let badgeEl: DebugElement;
 
         beforeEach(() => {
           badgeEl = debugElement.query(By.css('.fa.fa-plus.asm-family-member__badge'));

@@ -15,6 +15,7 @@ export interface FamilyMemberViewModel {
   deathDate?: Date;
   language?: string;
   country?: string;
+  coveredByOtherAffiliate?: boolean;
   sicknessCoverage?: Coverage;
   accidentCoverage?: Coverage;
 }
