@@ -129,7 +129,7 @@ describe('FamilyMemberComponent', () => {
 
   describe('Markup', () => {
     it('should render proper root element', async(() => {
-      let root = debugElement.query(By.css('.asm-family-member'));
+      let root = debugElement.query(By.css('.asm-family-member:first-child'));
       expect(root).not.toBeNull();
     }));
 
