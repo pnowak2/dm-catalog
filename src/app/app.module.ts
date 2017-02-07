@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { FamilyMemberComponent } from './components/family-bar/family-member/family-member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SwitchComponent
+    SwitchComponent,
+    FamilyMemberComponent
   ],
   imports: [
     BrowserModule,
