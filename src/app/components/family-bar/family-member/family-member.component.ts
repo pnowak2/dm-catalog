@@ -1,19 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FamilyMemberViewModel } from './model/family-member.viewmodel';
+import { Component, Input } from '@angular/core';
+import { FamilyMemberViewModel, SicknessCoverage } from './model/family-member.viewmodel';
 
 @Component({
   selector: 'asm-family-member',
   templateUrl: './family-member.component.html',
   styleUrls: ['./family-member.component.css']
 })
-export class FamilyMemberComponent implements OnInit {
+export class FamilyMemberComponent  {
   @Input() public familyMember: FamilyMemberViewModel = {};
 
-  constructor() { 
-
+  hasSicknessComplementaryRights(familyMember: FamilyMemberViewModel) {
+    return familyMember.sicknessCoverage === SicknessCoverage.Complementary;
   }
 
-  ngOnInit() {
+  hasSicknessFullRights(familyMember: FamilyMemberViewModel) {
+    return familyMember.sicknessCoverage === SicknessCoverage.Full;
   }
-
 }

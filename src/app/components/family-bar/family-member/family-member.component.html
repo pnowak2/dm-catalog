@@ -12,4 +12,9 @@
 
      {{ familyMember?.language }}
      {{ familyMember?.country }}
+
+     <i class="fa fa-heart asm-family-member__badge"
+      [class.asm-family-member__badge--complementary-rights]="hasSicknessComplementaryRights(familyMember)"
+      [class.asm-family-member__badge--full-rights]="hasSicknessFullRights(familyMember)">
+     </i>
 </div>

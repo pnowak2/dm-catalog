@@ -1,3 +1,9 @@
+export enum SicknessCoverage {
+  None,
+  Complementary,
+  Full
+}
+
 export interface FamilyMemberViewModel {
   personalNumber?: string;
   firstName?: string;
@@ -8,6 +14,7 @@ export interface FamilyMemberViewModel {
   birthDate?: Date;
   deathDate?: Date;
   language?: string;
-  languages?: string[];
   country?: string;
+  sicknessCoverage?: SicknessCoverage;
+  accidentCoverage?: SicknessCoverage;
 }

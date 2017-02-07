@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
-import { FamilyMemberViewModel } from './model/family-member.viewmodel';
+import { FamilyMemberViewModel, SicknessCoverage } from './model/family-member.viewmodel';
 
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;
@@ -134,19 +134,62 @@ describe('FamilyMemberComponent', () => {
     });
 
     describe('Footer Section', () => {
-      it('should render main language', async(() => {
-        component.familyMember.language = 'POL';
-        fixture.detectChanges();
+      describe('Languages', () => {
+        it('should render main language', async(() => {
+          component.familyMember.language = 'POL';
+          fixture.detectChanges();
 
-        expect(debugElement.nativeElement.textContent).toContain('POL');
-      }));
+          expect(debugElement.nativeElement.textContent).toContain('POL');
+        }));
 
-      it('should render country code', async(() => {
-        component.familyMember.country = 'BEL';
-        fixture.detectChanges();
+        it('should render country code', async(() => {
+          component.familyMember.country = 'BEL';
+          fixture.detectChanges();
 
-        expect(debugElement.nativeElement.textContent).toContain('BEL');
-      }));
+          expect(debugElement.nativeElement.textContent).toContain('BEL');
+        }));
+      });
+
+      describe('Coverage Badges', () => {
+        let badgeEl;
+
+        beforeEach(() => {
+          badgeEl = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
+        })
+
+        it('should render sickness badge', async(() => {
+          expect(badgeEl).toBeTruthy();
+        }));
+
+        it('should render proper sickness badge with no rights set', async(() => {
+          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+        }));
+
+        it('should render proper sickness badge with rights set to None', async(() => {
+          component.familyMember.sicknessCoverage = SicknessCoverage.None;
+          fixture.detectChanges();
+
+          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+        }));
+
+        it('should render proper sickness badge with rights set to Complementary', async(() => {
+          component.familyMember.sicknessCoverage = SicknessCoverage.Complementary;
+          fixture.detectChanges();
+
+          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeTruthy();
+          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+        }));
+
+        it('should render proper sickness badge with rights set to Full', async(() => {
+          component.familyMember.sicknessCoverage = SicknessCoverage.Full;
+          fixture.detectChanges();
+
+          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeTruthy();
+        }));
+      });
     });
   });
 
