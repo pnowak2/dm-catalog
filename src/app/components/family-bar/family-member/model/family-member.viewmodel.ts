@@ -1,4 +1,4 @@
-export enum SicknessCoverage {
+export enum Coverage {
   None,
   Complementary,
   Full
@@ -15,6 +15,6 @@ export interface FamilyMemberViewModel {
   deathDate?: Date;
   language?: string;
   country?: string;
-  sicknessCoverage?: SicknessCoverage;
-  accidentCoverage?: SicknessCoverage;
+  sicknessCoverage?: Coverage;
+  accidentCoverage?: Coverage;
 }

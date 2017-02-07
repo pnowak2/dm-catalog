@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FamilyMemberViewModel, SicknessCoverage } from './model/family-member.viewmodel';
+import { FamilyMemberViewModel, Coverage } from './model/family-member.viewmodel';
 
 @Component({
   selector: 'asm-family-member',
@@ -9,11 +9,19 @@ import { FamilyMemberViewModel, SicknessCoverage } from './model/family-member.v
 export class FamilyMemberComponent  {
   @Input() public familyMember: FamilyMemberViewModel = {};
 
-  hasSicknessComplementaryRights(familyMember: FamilyMemberViewModel) {
-    return familyMember.sicknessCoverage === SicknessCoverage.Complementary;
+  hasSicknessComplementaryRights() {
+    return this.familyMember.sicknessCoverage === Coverage.Complementary;
   }
 
-  hasSicknessFullRights(familyMember: FamilyMemberViewModel) {
-    return familyMember.sicknessCoverage === SicknessCoverage.Full;
+  hasSicknessFullRights() {
+    return this.familyMember.sicknessCoverage === Coverage.Full;
+  }
+
+  hasAccidentComplementaryRights() {
+    return this.familyMember.accidentCoverage === Coverage.Complementary;
+  }
+
+  hasAccidentFullRights() {
+    return this.familyMember.accidentCoverage === Coverage.Full;
   }
 }
