@@ -13,7 +13,12 @@
      {{ familyMember?.language }}
      {{ familyMember?.country }}
 
-     <i class="fa fa-mars"></i>
+     <i class="fa"
+        [class.fa-mars]="familyMember.isMale"
+        [class.fa-venus]="familyMember.isFemale"
+        [class.fa-genderless]="familyMember.isSexUnknown">
+
+     </i>
 
      <i class="fa fa-comment asm-family-member__badge asm-family-member__badge--comments"
         *ngIf="familyMember.hasComments">
@@ -24,12 +29,12 @@
      </i>
 
      <i class="fa fa-heart asm-family-member__badge"
-        [class.asm-family-member__badge--complementary-rights]="hasSicknessComplementaryRights()"
-        [class.asm-family-member__badge--full-rights]="hasSicknessFullRights()">
+        [class.asm-family-member__badge--complementary-rights]="familyMember.hasSicknessComplementaryRights"
+        [class.asm-family-member__badge--full-rights]="familyMember.hasSicknessFullRights">
      </i>
 
      <i class="fa fa-plus asm-family-member__badge"
-        [class.asm-family-member__badge--complementary-rights]="hasAccidentComplementaryRights()"
-        [class.asm-family-member__badge--full-rights]="hasAccidentFullRights()">
+        [class.asm-family-member__badge--complementary-rights]="familyMember.hasAccidentComplementaryRights"
+        [class.asm-family-member__badge--full-rights]="familyMember.hasAccidentFullRights">
      </i>
 </div>

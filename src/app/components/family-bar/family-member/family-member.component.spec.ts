@@ -37,93 +37,9 @@ describe('FamilyMemberComponent', () => {
         expect(component.familyMember).toBeDefined();
       });
 
-      it(`should be empty object`, () => {
-        expect(component.familyMember).toEqual({});
+      it(`should be of appropriate type`, () => {
+        expect(component.familyMember).toEqual(jasmine.any(FamilyMemberViewModel));
       });
-    });
-
-    describe('.hasSicknessComplementaryRights()', () => {
-      it('should be defined', () => {
-        expect(FamilyMemberComponent.prototype.hasSicknessComplementaryRights).toEqual(jasmine.any(Function));
-      })
-
-      it('should return false when set to None', () => {
-        component.familyMember.sicknessCoverage = Coverage.None;
-        expect(component.hasSicknessComplementaryRights()).toBe(false);
-      })
-
-      it('should return true when set to Complementary', () => {
-        component.familyMember.sicknessCoverage = Coverage.Complementary;
-        expect(component.hasSicknessComplementaryRights()).toBe(true);
-      })
-
-      it('should return false when set to Full', () => {
-        component.familyMember.sicknessCoverage = Coverage.Full;
-        expect(component.hasSicknessComplementaryRights()).toBe(false);
-      })
-    });
-
-    describe('.hasSicknessFullRights()', () => {
-      it('should be defined', () => {
-        expect(FamilyMemberComponent.prototype.hasSicknessFullRights).toEqual(jasmine.any(Function));
-      })
-
-      it('should return false when set to None', () => {
-        component.familyMember.sicknessCoverage = Coverage.None;
-        expect(component.hasSicknessFullRights()).toBe(false);
-      })
-
-      it('should return false when set to Complementary', () => {
-        component.familyMember.sicknessCoverage = Coverage.Complementary;
-        expect(component.hasSicknessFullRights()).toBe(false);
-      })
-
-      it('should return true when set to Full', () => {
-        component.familyMember.sicknessCoverage = Coverage.Full;
-        expect(component.hasSicknessFullRights()).toBe(true);
-      })
-    });
-
-    describe('.hasAccidentComplementaryRights()', () => {
-      it('should be defined', () => {
-        expect(FamilyMemberComponent.prototype.hasAccidentComplementaryRights).toEqual(jasmine.any(Function));
-      })
-
-      it('should return false when set to None', () => {
-        component.familyMember.accidentCoverage = Coverage.None;
-        expect(component.hasAccidentComplementaryRights()).toBe(false);
-      })
-
-      it('should return true when set to Complementary', () => {
-        component.familyMember.accidentCoverage = Coverage.Complementary;
-        expect(component.hasAccidentComplementaryRights()).toBe(true);
-      })
-
-      it('should return false when set to Full', () => {
-        component.familyMember.accidentCoverage = Coverage.Full;
-        expect(component.hasAccidentComplementaryRights()).toBe(false);
-      })
-    });
-
-    describe('.hasAccidentFullRights()', () => {
-      it('should be defined', () => {
-        expect(FamilyMemberComponent.prototype.hasAccidentFullRights).toEqual(jasmine.any(Function));
-      })
-
-      it('should return false when set to None', () => {
-        component.familyMember.accidentCoverage = Coverage.None;
-        expect(component.hasAccidentFullRights()).toBe(false);
-      })
-
-      it('should return false when set to Complementary', () => {
-        component.familyMember.accidentCoverage = Coverage.Complementary;
-        expect(component.hasAccidentFullRights()).toBe(false);
-      })
-
-      it('should return true when set to Full', () => {
-        component.familyMember.accidentCoverage = Coverage.Full;
-        expect(component.hasAccidentFullRights()).toBe(true);
-      })
     });
   });
 
@@ -227,6 +143,33 @@ describe('FamilyMemberComponent', () => {
 
           expect(sexEl).toBeTruthy();
         }));
+
+        it('should render appropriate icon for female', async(() => {
+          component.familyMember.sex = Sex.Female;
+          fixture.detectChanges();
+
+          let sexEl: DebugElement = debugElement.query(By.css('.fa.fa-venus'));
+
+          expect(sexEl).toBeTruthy();
+        }));
+
+        it('should render appropriate icon for unknown sex', async(() => {
+          component.familyMember.sex = Sex.Unknown;
+          fixture.detectChanges();
+
+          let sexEl: DebugElement = debugElement.query(By.css('.fa.fa-genderless'));
+
+          expect(sexEl).toBeTruthy();
+        }));
+
+        it('should render appropriate icon for sex undefined', async(() => {
+          component.familyMember.sex = undefined;
+          fixture.detectChanges();
+
+          let sexEl: DebugElement = debugElement.query(By.css('.fa.fa-genderless'));
+
+          expect(sexEl).toBeTruthy();
+        }));
       });
     });
 
@@ -253,7 +196,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl).toBeFalsy();
         }));
 
-        it('should render badge if flag is set to true', async(() => {
+        it('should render properly if flag is set to true', async(() => {
           component.familyMember.hasComments = true;
           fixture.detectChanges();
 
@@ -262,7 +205,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl).toBeTruthy();
         }));
 
-        it('should not render badge if flag is set to false', async(() => {
+        it('should not render properly if flag is set to false', async(() => {
           component.familyMember.hasComments = false;
           fixture.detectChanges();
 
@@ -273,12 +216,12 @@ describe('FamilyMemberComponent', () => {
       });
 
       describe('Covered By Other Affiliate Badge', () => {
-        it('should not render badge if no flag set', async(() => {
+        it('should not render properly if no flag set', async(() => {
           let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-warning.asm-family-member__badge'));
           expect(badgeEl).toBeFalsy();
         }));
 
-        it('should render badge if flag is set to true', async(() => {
+        it('should render properly if flag is set to true', async(() => {
           component.familyMember.coveredByOtherAffiliate = true;
           fixture.detectChanges();
 
@@ -287,7 +230,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl).toBeTruthy();
         }));
 
-        it('should not render badge if flag is set to false', async(() => {
+        it('should not render properly if flag is set to false', async(() => {
           component.familyMember.coveredByOtherAffiliate = false;
           fixture.detectChanges();
 
@@ -303,14 +246,14 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl).toBeTruthy();
         }));
 
-        it('should render proper badge with no rights set', async(() => {
+        it('should render properly with no rights set', async(() => {
           let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
         }));
 
-        it('should render proper badge with rights set to None', async(() => {
+        it('should render properly with rights set to None', async(() => {
           component.familyMember.sicknessCoverage = Coverage.None;
           fixture.detectChanges();
 
@@ -320,7 +263,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
         }));
 
-        it('should render proper badge with rights set to Complementary', async(() => {
+        it('should render properly with rights set to Complementary', async(() => {
           component.familyMember.sicknessCoverage = Coverage.Complementary;
           fixture.detectChanges();
 
@@ -330,7 +273,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
         }));
 
-        it('should render proper badge with rights set to Full', async(() => {
+        it('should render properly with rights set to Full', async(() => {
           component.familyMember.sicknessCoverage = Coverage.Full;
           fixture.detectChanges();
 
@@ -347,14 +290,14 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl).toBeTruthy();
         }));
 
-        it('should render proper badge with no rights set', async(() => {
+        it('should render properly with no rights set', async(() => {
           let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-plus.asm-family-member__badge'))
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
         }));
 
-        it('should render proper badge with rights set to None', async(() => {
+        it('should render properly with rights set to None', async(() => {
           component.familyMember.accidentCoverage = Coverage.None;
           fixture.detectChanges();
 
@@ -364,7 +307,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
         }));
 
-        it('should render proper badge with rights set to Complementary', async(() => {
+        it('should render properly with rights set to Complementary', async(() => {
           component.familyMember.accidentCoverage = Coverage.Complementary;
           fixture.detectChanges();
 
@@ -374,7 +317,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
         }));
 
-        it('should render proper badge with rights set to Full', async(() => {
+        it('should render properly with rights set to Full', async(() => {
           component.familyMember.accidentCoverage = Coverage.Full;
           fixture.detectChanges();
 
