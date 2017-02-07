@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
-import { FamilyMemberViewModel, Coverage } from './model/family-member.viewmodel';
+import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.viewmodel';
 
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;
@@ -186,33 +186,48 @@ describe('FamilyMemberComponent', () => {
     });
 
     describe('Main Data Section', () => {
-      it('should render first name', async(() => {
-        component.familyMember.firstName = 'Piotr';
-        fixture.detectChanges();
+      describe('Name', () => {
+        it('should render first name', async(() => {
+          component.familyMember.firstName = 'Piotr';
+          fixture.detectChanges();
 
-        expect(debugElement.nativeElement.textContent).toContain('Piotr');
-      }));
+          expect(debugElement.nativeElement.textContent).toContain('Piotr');
+        }));
 
-      it('should render last name', async(() => {
-        component.familyMember.familyName = 'Nowak';
-        fixture.detectChanges();
+        it('should render last name', async(() => {
+          component.familyMember.familyName = 'Nowak';
+          fixture.detectChanges();
 
-        expect(debugElement.nativeElement.textContent).toContain('Nowak');
-      }));
+          expect(debugElement.nativeElement.textContent).toContain('Nowak');
+        }));
+      });
 
-      it('should render birth date', async(() => {
-        component.familyMember.birthDate = new Date(2017, 1, 16);
-        fixture.detectChanges();
+      describe('Dates', () => {
+        it('should render birth date', async(() => {
+          component.familyMember.birthDate = new Date(2017, 1, 16);
+          fixture.detectChanges();
 
-        expect(debugElement.nativeElement.textContent).toContain('16/02/2017');
-      }));
+          expect(debugElement.nativeElement.textContent).toContain('16/02/2017');
+        }));
 
-      it('should render death date', async(() => {
-        component.familyMember.deathDate = new Date(1986, 3, 24);
-        fixture.detectChanges();
+        it('should render death date', async(() => {
+          component.familyMember.deathDate = new Date(1986, 3, 24);
+          fixture.detectChanges();
 
-        expect(debugElement.nativeElement.textContent).toContain('24/04/1986');
-      }));
+          expect(debugElement.nativeElement.textContent).toContain('24/04/1986');
+        }));
+      });
+
+      describe('Sex', () => {
+        it('should render appropriate icon for male', async(() => {
+          component.familyMember.sex = Sex.Male;
+          fixture.detectChanges();
+
+          let sexEl: DebugElement = debugElement.query(By.css('.fa.fa-mars'));
+
+          expect(sexEl).toBeTruthy();
+        }));
+      });
     });
 
     describe('Footer Section', () => {
@@ -229,6 +244,31 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           expect(debugElement.nativeElement.textContent).toContain('BEL');
+        }));
+      });
+
+      describe('Comments Badge', () => {
+        it('should not render badge if no flag set', async(() => {
+          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-comment.asm-family-member__badge'));
+          expect(badgeEl).toBeFalsy();
+        }));
+
+        it('should render badge if flag is set to true', async(() => {
+          component.familyMember.hasComments = true;
+          fixture.detectChanges();
+
+          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-comment.asm-family-member__badge'));
+
+          expect(badgeEl).toBeTruthy();
+        }));
+
+        it('should not render badge if flag is set to false', async(() => {
+          component.familyMember.hasComments = false;
+          fixture.detectChanges();
+
+          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-comment.asm-family-member__badge'));
+
+          expect(badgeEl === null).toBeTruthy();
         }));
       });
 

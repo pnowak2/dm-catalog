@@ -13,6 +13,12 @@
      {{ familyMember?.language }}
      {{ familyMember?.country }}
 
+     <i class="fa fa-mars"></i>
+
+     <i class="fa fa-comment asm-family-member__badge asm-family-member__badge--comments"
+        *ngIf="familyMember.hasComments">
+     </i>
+
      <i class="fa fa-warning asm-family-member__badge asm-family-member__badge--covered-by-other"
         *ngIf="familyMember.coveredByOtherAffiliate">
      </i>
