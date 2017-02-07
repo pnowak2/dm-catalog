@@ -1,3 +1,15 @@
-<p>
-  family-member works!
-</p>
+<div class="asm-family-member"
+     [class.asm-family-member--selected]="familyMember.selected"
+     [class.asm-family-member--disabled]="familyMember.disabled">
+
+     {{ familyMember?.relationName }}
+     {{ familyMember?.personalNumber }}
+
+     {{ familyMember?.firstName }}
+     {{ familyMember?.familyName }}
+     {{ familyMember?.birthDate | date:'dd/MM/yyyy' }}
+     {{ familyMember?.deathDate | date:'dd/MM/yyyy' }}
+
+     {{ familyMember?.language }}
+     {{ familyMember?.country }}
+</div>

@@ -10,7 +10,7 @@ export class FamilyMemberComponent implements OnInit {
   @Input() public familyMember: FamilyMemberViewModel = {};
 
   constructor() { 
-    
+
   }
 
   ngOnInit() {
