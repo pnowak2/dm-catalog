@@ -5,6 +5,7 @@ import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
 import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.viewmodel';
+import { DatePipe } from '@angular/common';
 
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;
@@ -14,13 +15,15 @@ describe('FamilyMemberComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [FamilyMemberComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [DatePipe]
     }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent<FamilyMemberComponent>(FamilyMemberComponent);
     component = fixture.componentInstance;
+    
     fixture.detectChanges();
     debugElement = fixture.debugElement;
   });
@@ -165,6 +168,32 @@ describe('FamilyMemberComponent', () => {
         expect(component.isSexUnknown).toBe(true);
       })
     });
+
+    describe('.getBirthAndDeathDates()', () => {
+      it('should return only birth date', () => {
+        component.familyMember.birthDate = new Date(1986, 1, 16);
+        component.familyMember.deathDate = undefined;
+        expect(component.getBirthAndDeathDates()).toEqual('16/02/1986');
+      });
+
+      it('should return only death date', () => {
+        component.familyMember.birthDate = undefined;
+        component.familyMember.deathDate = new Date(2000, 4, 19);
+        expect(component.getBirthAndDeathDates()).toEqual('(?) - 19/05/2000');
+      });
+
+      it('should return both birth and death date', () => {
+        component.familyMember.birthDate = new Date(1986, 1, 16);
+        component.familyMember.deathDate = new Date(2000, 4, 19);
+        expect(component.getBirthAndDeathDates()).toEqual('16/02/1986 - 19/05/2000');
+      });
+
+      it('should handle both dates undefined', () => {
+        component.familyMember.birthDate = undefined;
+        component.familyMember.deathDate = undefined;
+        expect(component.getBirthAndDeathDates()).toEqual('(?) - (?)');
+      });
+    });
   });
 
   describe('Markup', () => {
@@ -282,18 +311,11 @@ describe('FamilyMemberComponent', () => {
       });
 
       describe('Dates', () => {
-        it('should render birth date', async(() => {
-          component.familyMember.birthDate = new Date(2017, 1, 16);
+        it('should properly render birth and death dates', async(() => {
+          spyOn(component, 'getBirthAndDeathDates').and.returnValue('fake date');
           fixture.detectChanges();
 
-          expect(debugElement.nativeElement.textContent).toContain('16/02/2017');
-        }));
-
-        it('should render death date', async(() => {
-          component.familyMember.deathDate = new Date(1986, 3, 24);
-          fixture.detectChanges();
-
-          expect(debugElement.nativeElement.textContent).toContain('24/04/1986');
+          expect(debugElement.nativeElement.textContent).toContain('fake date');
         }));
       });
 
