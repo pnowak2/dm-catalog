@@ -12,31 +12,31 @@ export class FamilyMemberComponent {
 
   constructor(private datePipe: DatePipe) { }
 
-  get hasSicknessComplementaryRights(): boolean {
+  hasSicknessComplementaryRights(): boolean {
     return this.familyMember.sicknessCoverage === Coverage.Complementary;
   }
 
-  get hasSicknessFullRights(): boolean {
+  hasSicknessFullRights(): boolean {
     return this.familyMember.sicknessCoverage === Coverage.Full;
   }
 
-  get hasAccidentComplementaryRights(): boolean {
+  hasAccidentComplementaryRights(): boolean {
     return this.familyMember.accidentCoverage === Coverage.Complementary;
   }
 
-  get hasAccidentFullRights(): boolean {
+  hasAccidentFullRights(): boolean {
     return this.familyMember.accidentCoverage === Coverage.Full;
   }
 
-  get isMale(): boolean {
+  isMale(): boolean {
     return this.familyMember.sex === Sex.Male;
   }
 
-  get isFemale(): boolean {
+  isFemale(): boolean {
     return this.familyMember.sex === Sex.Female;
   }
 
-  get isSexUnknown(): boolean {
+  isSexUnknown(): boolean {
     return this.familyMember.sex === Sex.Unknown || this.familyMember.sex === undefined;
   }
 
