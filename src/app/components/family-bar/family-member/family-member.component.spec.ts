@@ -26,7 +26,7 @@ describe('FamilyMemberComponent', () => {
   });
 
   describe('Creation', () => {
-    it('should create', () => {
+    it('should create component', () => {
       expect(component).toBeTruthy();
     });
   });
@@ -192,7 +192,11 @@ describe('FamilyMemberComponent', () => {
 
       describe('Comments Badge', () => {
         it('should not render badge if no flag set', async(() => {
+          component.familyMember.hasComments = undefined;
+          fixture.detectChanges();
+
           let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-comment.asm-family-member__badge'));
+
           expect(badgeEl).toBeFalsy();
         }));
 
@@ -205,7 +209,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl).toBeTruthy();
         }));
 
-        it('should not render properly if flag is set to false', async(() => {
+        it('should render properly if flag is set to false', async(() => {
           component.familyMember.hasComments = false;
           fixture.detectChanges();
 
@@ -216,7 +220,10 @@ describe('FamilyMemberComponent', () => {
       });
 
       describe('Covered By Other Affiliate Badge', () => {
-        it('should not render properly if no flag set', async(() => {
+        it('should render properly if no flag set', async(() => {
+          component.familyMember.coveredByOtherAffiliate = undefined;
+          fixture.detectChanges();
+
           let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-warning.asm-family-member__badge'));
           expect(badgeEl).toBeFalsy();
         }));
@@ -230,7 +237,7 @@ describe('FamilyMemberComponent', () => {
           expect(badgeEl).toBeTruthy();
         }));
 
-        it('should not render properly if flag is set to false', async(() => {
+        it('should render properly if flag is set to false', async(() => {
           component.familyMember.coveredByOtherAffiliate = false;
           fixture.detectChanges();
 
@@ -247,7 +254,10 @@ describe('FamilyMemberComponent', () => {
         }));
 
         it('should render properly with no rights set', async(() => {
+          component.familyMember.sicknessCoverage = undefined;
           let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
+
+          fixture.detectChanges();
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
@@ -291,6 +301,9 @@ describe('FamilyMemberComponent', () => {
         }));
 
         it('should render properly with no rights set', async(() => {
+          component.familyMember.accidentCoverage = undefined;
+          fixture.detectChanges();
+          
           let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-plus.asm-family-member__badge'))
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
