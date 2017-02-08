@@ -20,7 +20,7 @@ export interface FamilyMemberViewModel {
   relationName?: string;
   birthDate?: Date;
   deathDate?: Date;
-  language?: string;
+  mainLanguage?: string;
   country?: string;
   coveredByOtherAffiliate?: boolean;
   hasComments?: boolean;

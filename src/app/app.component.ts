@@ -15,7 +15,7 @@ export class AppComponent {
   constructor() {
     this.familyMember.firstName = 'Piotr';
     this.familyMember.familyName = 'Nowak';
-    this.familyMember.language = 'pol';
+    this.familyMember.mainLanguage = 'pol';
     this.familyMember.sex = Sex.Male;
     this.familyMember.birthDate = new Date();
     this.familyMember.deathDate = new Date();

@@ -43,9 +43,9 @@
 
   <div class="asm-family-member__footer">
     <div class="asm-family-member__languages">
-      <div *ngIf="familyMember.language" 
+      <div *ngIf="familyMember.mainLanguage" 
             class="asm-family-member__language">
-        {{ familyMember.language }}
+        {{ familyMember.mainLanguage }}
       </div>
       <div *ngIf="familyMember.country"
             class="asm-family-member__language">

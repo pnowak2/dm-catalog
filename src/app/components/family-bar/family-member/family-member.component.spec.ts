@@ -394,7 +394,7 @@ describe('FamilyMemberComponent', () => {
     describe('Footer Section', () => {
       describe('Languages', () => {
         it('should render main language section if language provided', async(() => {
-          component.familyMember.language = 'POL';
+          component.familyMember.mainLanguage = 'POL';
 
           fixture.detectChanges();
 
@@ -406,7 +406,7 @@ describe('FamilyMemberComponent', () => {
         }));
 
         it('should not render main language section if language not provided', async(() => {
-          component.familyMember.language = undefined;
+          component.familyMember.mainLanguage = undefined;
 
           fixture.detectChanges();
 
