@@ -251,46 +251,71 @@ describe('FamilyMemberComponent', () => {
     });
 
     describe('Header Section', () => {
-      it('should render relation name', async(() => {
-        component.familyMember.relationName = 'Affiliate';
-        fixture.detectChanges();
+      describe('Relation & Personal number', () => {
+        it('should render relation name', async(() => {
+          component.familyMember.relationName = 'Affiliate';
+          fixture.detectChanges();
 
-        expect(debugElement.nativeElement.textContent).toContain('Affiliate');
-      }));
+          expect(debugElement.nativeElement.textContent).toContain('Affiliate');
+        }));
 
-      it('should render personal number', async(() => {
-        component.familyMember.personalNumber = '234642';
-        component.familyMember.coveredByOtherAffiliate = false;
+        it('should render personal number', async(() => {
+          component.familyMember.personalNumber = '234642';
+          component.familyMember.coveredByOtherAffiliate = false;
 
-        fixture.detectChanges();
+          fixture.detectChanges();
 
-        expect(debugElement.nativeElement.textContent).toContain('234642');
-      }));
+          expect(debugElement.nativeElement.textContent).toContain('234642');
+        }));
 
-      it('should not render personal number as a link if not covered by another affiliate', async(() => {
-        component.familyMember.personalNumber = '123456';
-        component.familyMember.coveredByOtherAffiliate = false;
+        it('should not render personal number as a link if not covered by another affiliate', async(() => {
+          component.familyMember.personalNumber = '123456';
+          component.familyMember.coveredByOtherAffiliate = false;
 
-        fixture.detectChanges();
+          fixture.detectChanges();
 
-        let linkEl: DebugElement = debugElement.query(
-          By.css('.asm-family-member__member-number')
-        );
-        expect(linkEl).toBeFalsy();
-      }));
+          let linkEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__member-number')
+          );
+          expect(linkEl).toBeFalsy();
+        }));
 
-      it('should render personal number as a link if covered by another affiliate', async(() => {
-        component.familyMember.personalNumber = '123456';
-        component.familyMember.coveredByOtherAffiliate = true;
+        it('should render personal number as a link if covered by another affiliate', async(() => {
+          component.familyMember.personalNumber = '123456';
+          component.familyMember.coveredByOtherAffiliate = true;
 
-        fixture.detectChanges();
+          fixture.detectChanges();
 
-        let linkEl: DebugElement = debugElement.query(
-          By.css('.asm-family-member__member-number')
-        );
-        expect(linkEl).toBeTruthy();
-        expect(linkEl.nativeElement.textContent).toContain('123456');
-      }));
+          let linkEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__member-number')
+          );
+          expect(linkEl).toBeTruthy();
+          expect(linkEl.nativeElement.textContent).toContain('123456');
+        }));
+      });
+
+      describe('More menu', () => {
+        it('should render the menu', async(() => {
+          let menuEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__more-menu')
+          );
+          expect(menuEl).toBeTruthy();
+        }));
+
+        it('should render Show Info menu item', async(() => {
+          let menuEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__more-menu')
+          );
+          expect(menuEl.nativeElement.textContent).toContain('Show Info');
+        }));
+
+        it('should render Send Email menu item', async(() => {
+          let menuEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__more-menu')
+          );
+          expect(menuEl.nativeElement.textContent).toContain('Send e-mail');
+        }));
+      });
     });
 
     describe('Main Data Section', () => {
