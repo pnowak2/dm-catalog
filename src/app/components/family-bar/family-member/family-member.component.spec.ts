@@ -45,7 +45,9 @@ describe('FamilyMemberComponent', () => {
 
   describe('Markup', () => {
     it('should render proper root element', async(() => {
-      let root = debugElement.query(By.css('.asm-family-member:first-child'));
+      let root = debugElement.query(
+        By.css('.asm-family-member:first-child')
+      );
       expect(root).not.toBeNull();
     }));
 
@@ -54,7 +56,9 @@ describe('FamilyMemberComponent', () => {
         component.familyMember.selected = true;
         fixture.detectChanges();
 
-        let root = debugElement.query(By.css('.asm-family-member'));
+        let root = debugElement.query(
+          By.css('.asm-family-member')
+        );
         expect(root.classes['asm-family-member--selected']).toBeTruthy();
       }));
 
@@ -62,7 +66,9 @@ describe('FamilyMemberComponent', () => {
         component.familyMember.selected = false;
         fixture.detectChanges();
 
-        let root = debugElement.query(By.css('.asm-family-member'));
+        let root = debugElement.query(
+          By.css('.asm-family-member')
+        );
         expect(root.classes['asm-family-member--selected']).not.toBeTruthy();
       }));
     });
@@ -72,7 +78,9 @@ describe('FamilyMemberComponent', () => {
         component.familyMember.disabled = false;
         fixture.detectChanges();
 
-        let root = debugElement.query(By.css('.asm-family-member'));
+        let root = debugElement.query(
+          By.css('.asm-family-member')
+        );
         expect(root.classes['asm-family-member--disabled']).toBeFalsy();
       }));
 
@@ -80,7 +88,9 @@ describe('FamilyMemberComponent', () => {
         component.familyMember.disabled = true;
         fixture.detectChanges();
 
-        let root = debugElement.query(By.css('.asm-family-member'));
+        let root = debugElement.query(
+          By.css('.asm-family-member')
+        );
         expect(root.classes['asm-family-member--disabled']).toBeTruthy();
       }));
     });
@@ -139,7 +149,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.sex = Sex.Male;
           fixture.detectChanges();
 
-          let sexEl: DebugElement = debugElement.query(By.css('.fa.fa-mars'));
+          let sexEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-mars')
+          );
 
           expect(sexEl).toBeTruthy();
         }));
@@ -148,7 +160,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.sex = Sex.Female;
           fixture.detectChanges();
 
-          let sexEl: DebugElement = debugElement.query(By.css('.fa.fa-venus'));
+          let sexEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-venus')
+          );
 
           expect(sexEl).toBeTruthy();
         }));
@@ -157,7 +171,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.sex = Sex.Unknown;
           fixture.detectChanges();
 
-          let sexEl: DebugElement = debugElement.query(By.css('.fa.fa-genderless'));
+          let sexEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-genderless')
+          );
 
           expect(sexEl).toBeTruthy();
         }));
@@ -166,7 +182,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.sex = undefined;
           fixture.detectChanges();
 
-          let sexEl: DebugElement = debugElement.query(By.css('.fa.fa-genderless'));
+          let sexEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-genderless')
+          );
 
           expect(sexEl).toBeTruthy();
         }));
@@ -195,7 +213,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.hasComments = undefined;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-comment.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-comment.asm-family-member__badge')
+          );
 
           expect(badgeEl).toBeFalsy();
         }));
@@ -204,7 +224,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.hasComments = true;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-comment.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-comment.asm-family-member__badge')
+          );
 
           expect(badgeEl).toBeTruthy();
         }));
@@ -213,7 +235,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.hasComments = false;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-comment.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-comment.asm-family-member__badge')
+          );
 
           expect(badgeEl === null).toBeTruthy();
         }));
@@ -224,7 +248,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.coveredByOtherAffiliate = undefined;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-warning.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-warning.asm-family-member__badge')
+          );
           expect(badgeEl).toBeFalsy();
         }));
 
@@ -232,7 +258,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.coveredByOtherAffiliate = true;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-warning.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-warning.asm-family-member__badge')
+          );
 
           expect(badgeEl).toBeTruthy();
         }));
@@ -241,7 +269,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.coveredByOtherAffiliate = false;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-warning.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-warning.asm-family-member__badge')
+          );
 
           expect(badgeEl === null).toBeTruthy();
         }));
@@ -249,13 +279,17 @@ describe('FamilyMemberComponent', () => {
 
       describe('Sickness Coverage Badge', () => {
         it('should render badge', async(() => {
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-heart.asm-family-member__badge')
+          );
           expect(badgeEl).toBeTruthy();
         }));
 
         it('should render properly with no rights set', async(() => {
           component.familyMember.sicknessCoverage = undefined;
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-heart.asm-family-member__badge')
+          );
 
           fixture.detectChanges();
 
@@ -267,7 +301,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.sicknessCoverage = Coverage.None;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-heart.asm-family-member__badge')
+          );
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
@@ -277,7 +313,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.sicknessCoverage = Coverage.Complementary;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-heart.asm-family-member__badge')
+          );
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeTruthy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
@@ -287,7 +325,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.sicknessCoverage = Coverage.Full;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-heart.asm-family-member__badge'));
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-heart.asm-family-member__badge')
+          );
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeTruthy();
@@ -296,15 +336,19 @@ describe('FamilyMemberComponent', () => {
 
       describe('Accident Coverage Badge', () => {
         it('should render badge', async(() => {
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-plus.asm-family-member__badge'))
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-plus.asm-family-member__badge')
+          )
           expect(badgeEl).toBeTruthy();
         }));
 
         it('should render properly with no rights set', async(() => {
           component.familyMember.accidentCoverage = undefined;
           fixture.detectChanges();
-          
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-plus.asm-family-member__badge'))
+
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-plus.asm-family-member__badge')
+          )
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
@@ -314,7 +358,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.accidentCoverage = Coverage.None;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-plus.asm-family-member__badge'))
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-plus.asm-family-member__badge')
+          )
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
@@ -324,7 +370,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.accidentCoverage = Coverage.Complementary;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-plus.asm-family-member__badge'))
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-plus.asm-family-member__badge')
+          )
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeTruthy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
@@ -334,7 +382,9 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.accidentCoverage = Coverage.Full;
           fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(By.css('.fa.fa-plus.asm-family-member__badge'))
+          let badgeEl: DebugElement = debugElement.query(
+            By.css('.fa.fa-plus.asm-family-member__badge')
+          )
 
           expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
           expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeTruthy();
