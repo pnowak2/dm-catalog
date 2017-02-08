@@ -25,5 +25,9 @@ export interface FamilyMemberViewModel {
   coveredByOtherAffiliate?: boolean;
   hasComments?: boolean;
   sicknessCoverage?: Coverage;
+  sicknessCoverageFrom?: Date;
+  sicknessCoverageTo?: Date;
   accidentCoverage?: Coverage;
+  accidentCoverageFrom?: Date;
+  accidentCoverageTo?: Date;
 }

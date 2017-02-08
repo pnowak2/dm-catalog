@@ -49,7 +49,7 @@ export class FamilyMemberComponent {
     } if (!birthDate && deathDate) {
       return `(?) - ${deathDate}`;
     } else if (!birthDate && !deathDate) {
-      return `(?) - (?)`;
+      return `(?)`;
     } else {
       return birthDate;
     }

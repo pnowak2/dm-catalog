@@ -191,7 +191,7 @@ describe('FamilyMemberComponent', () => {
       it('should handle both dates undefined', () => {
         component.familyMember.birthDate = undefined;
         component.familyMember.deathDate = undefined;
-        expect(component.getBirthAndDeathDates()).toEqual('(?) - (?)');
+        expect(component.getBirthAndDeathDates()).toEqual('(?)');
       });
     });
   });
