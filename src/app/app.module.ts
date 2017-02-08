@@ -7,12 +7,14 @@ import { DatePipe } from '@angular/common';
 import { AppComponent } from './app.component';
 import { SwitchComponent } from './components/switch/switch.component';
 import { FamilyMemberComponent } from './components/family-bar/family-member/family-member.component';
+import { FamilyBarComponent } from './components/family-bar/family-bar/family-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SwitchComponent,
-    FamilyMemberComponent
+    FamilyMemberComponent,
+    FamilyBarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+<div class="asm-family-bar">
+  <div class="asm-family-bar__members-container">
+    <asm-family-member 
+      *ngFor="let familyMember of familyMembers"
+      [familyMember]="familyMember">
+    </asm-family-member>
+  </div>
+  <div class="asm-family-bar__tab-container">
+    <div class="asm-family-bar__tab-button">
+      <div class="asm-family-bar__scroll-left-container">
+        <span class="fa fa-arrow-circle-left"></span>
+      </div>
+      <div class="asm-family-bar__scroll-right-container">
+        <span class="fa fa-arrow-circle-right"></span>
+      </div>
+      <div class="asm-family-bar__tab-title">
+        Family Composition (3/7)
+      </div>
+      <div class="asm-family-bar__tab-member">
+        <span class="asm-family-bar__tab-member-first-name">Dirk Andrew</span>
+        <span class="asm-family-bar__tab-member-last-name">Van Rooy</span>
+      </div>
+      <span class="fa fa-caret-up asm-family-bar__tab-caret"></span>
+    </div>
+    <div class="asm-family-bar__family-plus-container">
+      <label class="asm-family-bar__family-plus-label">Family+</label>
+      <asm-switch></asm-switch>
+    </div>
+  </div>
+</div>
