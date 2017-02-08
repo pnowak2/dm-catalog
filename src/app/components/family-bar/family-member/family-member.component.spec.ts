@@ -44,12 +44,14 @@ describe('FamilyMemberComponent', () => {
   });
 
   describe('Markup', () => {
-    it('should render proper root element', async(() => {
-      let root = debugElement.query(
-        By.css('.asm-family-member:first-child')
-      );
-      expect(root).not.toBeNull();
-    }));
+    describe('Default Appearance', () => {
+      it('should render proper root element', async(() => {
+        let root = debugElement.query(
+          By.css('.asm-family-member:first-child')
+        );
+        expect(root).not.toBeNull();
+      }));
+    });
 
     describe('Selected / Unselected State', () => {
       it('should render properly when selected', async(() => {
@@ -105,9 +107,36 @@ describe('FamilyMemberComponent', () => {
 
       it('should render personal number', async(() => {
         component.familyMember.personalNumber = '234642';
+        component.familyMember.coveredByOtherAffiliate = false;
+
         fixture.detectChanges();
 
         expect(debugElement.nativeElement.textContent).toContain('234642');
+      }));
+
+      it('should not render personal number as a link if not covered by another affiliate', async(() => {
+        component.familyMember.personalNumber = '123456';
+        component.familyMember.coveredByOtherAffiliate = false;
+
+        fixture.detectChanges();
+
+        let linkEl: DebugElement = debugElement.query(
+          By.css('.asm-family-member__member-number')
+        );
+        expect(linkEl).toBeFalsy();
+      }));
+
+      it('should render personal number as a link if covered by another affiliate', async(() => {
+        component.familyMember.personalNumber = '123456';
+        component.familyMember.coveredByOtherAffiliate = true;
+
+        fixture.detectChanges();
+
+        let linkEl: DebugElement = debugElement.query(
+          By.css('.asm-family-member__member-number')
+        );
+        expect(linkEl).toBeTruthy();
+        expect(linkEl.nativeElement.textContent).toContain('123456');
       }));
     });
 
@@ -193,202 +222,236 @@ describe('FamilyMemberComponent', () => {
 
     describe('Footer Section', () => {
       describe('Languages', () => {
-        it('should render main language', async(() => {
+        it('should render main language section if language provided', async(() => {
           component.familyMember.language = 'POL';
+
           fixture.detectChanges();
 
-          expect(debugElement.nativeElement.textContent).toContain('POL');
+          let langEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__language')
+          );
+          expect(langEl).toBeTruthy();
+          expect(langEl.nativeElement.textContent).toContain('POL');
         }));
 
-        it('should render country code', async(() => {
+        it('should not render main language section if language not provided', async(() => {
+          component.familyMember.language = undefined;
+
+          fixture.detectChanges();
+
+          let linkEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__language')
+          );
+          expect(linkEl).toBeFalsy();
+        }));
+
+        it('should render country code section if country is provided', async(() => {
           component.familyMember.country = 'BEL';
+
           fixture.detectChanges();
 
-          expect(debugElement.nativeElement.textContent).toContain('BEL');
+          let langEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__language')
+          );
+          expect(langEl).toBeTruthy();
+          expect(langEl.nativeElement.textContent).toContain('BEL');
+        }));
+
+        it('should not render country code section if country is not provided', async(() => {
+          component.familyMember.country = undefined;
+
+          fixture.detectChanges();
+
+          let langEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__language')
+          );
+          expect(langEl).toBeFalsy();
         }));
       });
 
-      describe('Comments Badge', () => {
-        it('should not render badge if no flag set', async(() => {
-          component.familyMember.hasComments = undefined;
-          fixture.detectChanges();
+      describe('Badges', () => {
+        describe('Comments', () => {
+          it('should not render badge if no flag set', async(() => {
+            component.familyMember.hasComments = undefined;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-comment.asm-family-member__badge')
-          );
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-comment.asm-family-member__badge')
+            );
 
-          expect(badgeEl).toBeFalsy();
-        }));
+            expect(badgeEl).toBeFalsy();
+          }));
 
-        it('should render properly if flag is set to true', async(() => {
-          component.familyMember.hasComments = true;
-          fixture.detectChanges();
+          it('should render properly if flag is set to true', async(() => {
+            component.familyMember.hasComments = true;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-comment.asm-family-member__badge')
-          );
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-comment.asm-family-member__badge')
+            );
 
-          expect(badgeEl).toBeTruthy();
-        }));
+            expect(badgeEl).toBeTruthy();
+          }));
 
-        it('should render properly if flag is set to false', async(() => {
-          component.familyMember.hasComments = false;
-          fixture.detectChanges();
+          it('should render properly if flag is set to false', async(() => {
+            component.familyMember.hasComments = false;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-comment.asm-family-member__badge')
-          );
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-comment.asm-family-member__badge')
+            );
 
-          expect(badgeEl === null).toBeTruthy();
-        }));
-      });
+            expect(badgeEl === null).toBeTruthy();
+          }));
+        });
 
-      describe('Covered By Other Affiliate Badge', () => {
-        it('should render properly if no flag set', async(() => {
-          component.familyMember.coveredByOtherAffiliate = undefined;
-          fixture.detectChanges();
+        describe('Covered By Other Affiliate', () => {
+          it('should render properly if no flag set', async(() => {
+            component.familyMember.coveredByOtherAffiliate = undefined;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-warning.asm-family-member__badge')
-          );
-          expect(badgeEl).toBeFalsy();
-        }));
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-warning.asm-family-member__badge')
+            );
+            expect(badgeEl).toBeFalsy();
+          }));
 
-        it('should render properly if flag is set to true', async(() => {
-          component.familyMember.coveredByOtherAffiliate = true;
-          fixture.detectChanges();
+          it('should render properly if flag is set to true', async(() => {
+            component.familyMember.coveredByOtherAffiliate = true;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-warning.asm-family-member__badge')
-          );
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-warning.asm-family-member__badge')
+            );
 
-          expect(badgeEl).toBeTruthy();
-        }));
+            expect(badgeEl).toBeTruthy();
+          }));
 
-        it('should render properly if flag is set to false', async(() => {
-          component.familyMember.coveredByOtherAffiliate = false;
-          fixture.detectChanges();
+          it('should render properly if flag is set to false', async(() => {
+            component.familyMember.coveredByOtherAffiliate = false;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-warning.asm-family-member__badge')
-          );
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-warning.asm-family-member__badge')
+            );
 
-          expect(badgeEl === null).toBeTruthy();
-        }));
-      });
+            expect(badgeEl === null).toBeTruthy();
+          }));
+        });
 
-      describe('Sickness Coverage Badge', () => {
-        it('should render badge', async(() => {
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-heart.asm-family-member__badge')
-          );
-          expect(badgeEl).toBeTruthy();
-        }));
+        describe('Sickness Coverage', () => {
+          it('should render badge', async(() => {
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-heart.asm-family-member__badge')
+            );
+            expect(badgeEl).toBeTruthy();
+          }));
 
-        it('should render properly with no rights set', async(() => {
-          component.familyMember.sicknessCoverage = undefined;
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-heart.asm-family-member__badge')
-          );
+          it('should render properly with no rights set', async(() => {
+            component.familyMember.sicknessCoverage = undefined;
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-heart.asm-family-member__badge')
+            );
 
-          fixture.detectChanges();
+            fixture.detectChanges();
 
-          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
-          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
-        }));
+            expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+          }));
 
-        it('should render properly with rights set to None', async(() => {
-          component.familyMember.sicknessCoverage = Coverage.None;
-          fixture.detectChanges();
+          it('should render properly with rights set to None', async(() => {
+            component.familyMember.sicknessCoverage = Coverage.None;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-heart.asm-family-member__badge')
-          );
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-heart.asm-family-member__badge')
+            );
 
-          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
-          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
-        }));
+            expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+          }));
 
-        it('should render properly with rights set to Complementary', async(() => {
-          component.familyMember.sicknessCoverage = Coverage.Complementary;
-          fixture.detectChanges();
+          it('should render properly with rights set to Complementary', async(() => {
+            component.familyMember.sicknessCoverage = Coverage.Complementary;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-heart.asm-family-member__badge')
-          );
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-heart.asm-family-member__badge')
+            );
 
-          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeTruthy();
-          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
-        }));
+            expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeTruthy();
+            expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+          }));
 
-        it('should render properly with rights set to Full', async(() => {
-          component.familyMember.sicknessCoverage = Coverage.Full;
-          fixture.detectChanges();
+          it('should render properly with rights set to Full', async(() => {
+            component.familyMember.sicknessCoverage = Coverage.Full;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-heart.asm-family-member__badge')
-          );
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-heart.asm-family-member__badge')
+            );
 
-          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
-          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeTruthy();
-        }));
-      });
+            expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeTruthy();
+          }));
+        });
 
-      describe('Accident Coverage Badge', () => {
-        it('should render badge', async(() => {
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-plus.asm-family-member__badge')
-          )
-          expect(badgeEl).toBeTruthy();
-        }));
+        describe('Accident Coverage', () => {
+          it('should render badge', async(() => {
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-plus.asm-family-member__badge')
+            )
+            expect(badgeEl).toBeTruthy();
+          }));
 
-        it('should render properly with no rights set', async(() => {
-          component.familyMember.accidentCoverage = undefined;
-          fixture.detectChanges();
+          it('should render properly with no rights set', async(() => {
+            component.familyMember.accidentCoverage = undefined;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-plus.asm-family-member__badge')
-          )
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-plus.asm-family-member__badge')
+            )
 
-          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
-          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
-        }));
+            expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+          }));
 
-        it('should render properly with rights set to None', async(() => {
-          component.familyMember.accidentCoverage = Coverage.None;
-          fixture.detectChanges();
+          it('should render properly with rights set to None', async(() => {
+            component.familyMember.accidentCoverage = Coverage.None;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-plus.asm-family-member__badge')
-          )
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-plus.asm-family-member__badge')
+            )
 
-          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
-          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
-        }));
+            expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+          }));
 
-        it('should render properly with rights set to Complementary', async(() => {
-          component.familyMember.accidentCoverage = Coverage.Complementary;
-          fixture.detectChanges();
+          it('should render properly with rights set to Complementary', async(() => {
+            component.familyMember.accidentCoverage = Coverage.Complementary;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-plus.asm-family-member__badge')
-          )
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-plus.asm-family-member__badge')
+            )
 
-          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeTruthy();
-          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
-        }));
+            expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeTruthy();
+            expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeFalsy();
+          }));
 
-        it('should render properly with rights set to Full', async(() => {
-          component.familyMember.accidentCoverage = Coverage.Full;
-          fixture.detectChanges();
+          it('should render properly with rights set to Full', async(() => {
+            component.familyMember.accidentCoverage = Coverage.Full;
+            fixture.detectChanges();
 
-          let badgeEl: DebugElement = debugElement.query(
-            By.css('.fa.fa-plus.asm-family-member__badge')
-          )
+            let badgeEl: DebugElement = debugElement.query(
+              By.css('.fa.fa-plus.asm-family-member__badge')
+            )
 
-          expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
-          expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeTruthy();
-        }));
+            expect(badgeEl.classes['asm-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['asm-family-member__badge--full-rights']).toBeTruthy();
+          }));
+        });
       });
     });
   });

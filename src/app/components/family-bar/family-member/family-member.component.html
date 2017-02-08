@@ -2,30 +2,43 @@
      [class.asm-family-member--selected]="familyMember.selected"
      [class.asm-family-member--disabled]="familyMember.disabled">
 
-     {{ familyMember?.relationName }}
-     {{ familyMember?.personalNumber }}
+     {{ familyMember.relationName }}
+     
+     <a href="#" *ngIf="familyMember.coveredByOtherAffiliate" class="asm-family-member__member-number">
+       {{ familyMember.personalNumber }}
+     </a>
 
-     {{ familyMember?.firstName }}
-     {{ familyMember?.familyName }}
-     {{ familyMember?.birthDate | date:'dd/MM/yyyy' }}
-     {{ familyMember?.deathDate | date:'dd/MM/yyyy' }}
+     <span *ngIf="!familyMember.coveredByOtherAffiliate">
+       {{ familyMember.personalNumber }}
+     </span>
 
-     {{ familyMember?.language }}
-     {{ familyMember?.country }}
+     {{ familyMember.firstName }}
+     {{ familyMember.familyName }}
+     {{ familyMember.birthDate | date:'dd/MM/yyyy' }}
+     {{ familyMember.deathDate | date:'dd/MM/yyyy' }}
+
+     <div *ngIf="familyMember.language" 
+          class="asm-family-member__language">
+        {{ familyMember.language }}
+     </div>
+     
+     <div *ngIf="familyMember.country"
+          class="asm-family-member__language">
+        <i class="fa fa-globe"></i> {{ familyMember.country }}
+     </div>
 
      <i class="fa"
         [class.fa-mars]="familyMember.isMale"
         [class.fa-venus]="familyMember.isFemale"
         [class.fa-genderless]="familyMember.isSexUnknown">
-
      </i>
 
-     <i class="fa fa-comment asm-family-member__badge asm-family-member__badge--comments"
-        *ngIf="familyMember.hasComments">
+     <i *ngIf="familyMember.hasComments"
+        class="fa fa-comment asm-family-member__badge asm-family-member__badge--comments">
      </i>
 
-     <i class="fa fa-warning asm-family-member__badge asm-family-member__badge--covered-by-other"
-        *ngIf="familyMember.coveredByOtherAffiliate">
+     <i *ngIf="familyMember.coveredByOtherAffiliate"
+        class="fa fa-warning asm-family-member__badge asm-family-member__badge--covered-by-other">
      </i>
 
      <i class="fa fa-heart asm-family-member__badge"

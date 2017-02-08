@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FamilyMemberViewModel, Coverage, Sex } from './components/family-bar/family-member/model/family-member.viewmodel';
 
 @Component({
@@ -29,4 +29,16 @@ export class AppComponent {
     this.familyMember.accidentCoverage = Coverage.Full;
     this.familyMember.sicknessCoverage = Coverage.Complementary;
   }
+
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    this.familyMember.disabled = !this.familyMember.disabled;
+    this.familyMember.selected = !this.familyMember.selected;
+    this.familyMember.coveredByOtherAffiliate = !this.familyMember.coveredByOtherAffiliate;
+    this.familyMember.sicknessCoverage = Coverage.Full;
+    this.familyMember.language = null;
+    this.familyMember.country = null;
+    this.familyMember.hasComments = false;
+  }
+
 }

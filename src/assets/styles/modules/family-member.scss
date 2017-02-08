@@ -114,6 +114,10 @@
     padding: .2em .3em;
     text-transform: uppercase;
   }
+
+  &__language:empty {
+    display: none;
+  }
   
   &__badges {
     display: inline-block;
