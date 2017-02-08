@@ -7,7 +7,7 @@ import { FamilyMemberViewModel, Coverage, Sex } from './components/family-bar/fa
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  familyMember: FamilyMemberViewModel = new FamilyMemberViewModel();
+  familyMember: FamilyMemberViewModel = {};
   
   md: Date = new Date();
   title: 'app works!';

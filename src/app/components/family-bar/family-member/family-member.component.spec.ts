@@ -38,8 +38,132 @@ describe('FamilyMemberComponent', () => {
       });
 
       it(`should be of appropriate type`, () => {
-        expect(component.familyMember).toEqual(jasmine.any(FamilyMemberViewModel));
+        expect(component.familyMember).toEqual({});
       });
+    });
+
+    describe('.hasSicknessComplementaryRights', () => {
+      it('should return false when set to None', () => {
+        component.familyMember.sicknessCoverage = Coverage.None;
+        expect(component.hasSicknessComplementaryRights).toBe(false);
+      })
+
+      it('should return true when set to Complementary', () => {
+        component.familyMember.sicknessCoverage = Coverage.Complementary;
+        expect(component.hasSicknessComplementaryRights).toBe(true);
+      })
+
+      it('should return false when set to Full', () => {
+        component.familyMember.sicknessCoverage = Coverage.Full;
+        expect(component.hasSicknessComplementaryRights).toBe(false);
+      })
+    });
+
+    describe('.hasSicknessFullRights', () => {
+      it('should return false when set to None', () => {
+        component.familyMember.sicknessCoverage = Coverage.None;
+        expect(component.hasSicknessFullRights).toBe(false);
+      })
+
+      it('should return false when set to Complementary', () => {
+        component.familyMember.sicknessCoverage = Coverage.Complementary;
+        expect(component.hasSicknessFullRights).toBe(false);
+      })
+
+      it('should return true when set to Full', () => {
+        component.familyMember.sicknessCoverage = Coverage.Full;
+        expect(component.hasSicknessFullRights).toBe(true);
+      })
+    });
+
+    describe('.hasAccidentComplementaryRights', () => {
+      it('should return false when set to None', () => {
+        component.familyMember.accidentCoverage = Coverage.None;
+        expect(component.hasAccidentComplementaryRights).toBe(false);
+      })
+
+      it('should return true when set to Complementary', () => {
+        component.familyMember.accidentCoverage = Coverage.Complementary;
+        expect(component.hasAccidentComplementaryRights).toBe(true);
+      })
+
+      it('should return false when set to Full', () => {
+        component.familyMember.accidentCoverage = Coverage.Full;
+        expect(component.hasAccidentComplementaryRights).toBe(false);
+      })
+    });
+
+    describe('.hasAccidentFullRights', () => {
+      it('should return false when set to None', () => {
+        component.familyMember.accidentCoverage = Coverage.None;
+        expect(component.hasAccidentFullRights).toBe(false);
+      })
+
+      it('should return false when set to Complementary', () => {
+        component.familyMember.accidentCoverage = Coverage.Complementary;
+        expect(component.hasAccidentFullRights).toBe(false);
+      })
+
+      it('should return true when set to Full', () => {
+        component.familyMember.accidentCoverage = Coverage.Full;
+        expect(component.hasAccidentFullRights).toBe(true);
+      })
+    });
+
+    describe('.isMale', () => {
+      it('should return true when male', () => {
+        component.familyMember.sex = Sex.Male;
+        expect(component.isMale).toBe(true);
+      })
+
+      it('should return false when female', () => {
+        component.familyMember.sex = Sex.Female;
+        expect(component.isMale).toBe(false);
+      })
+
+      it('should return false when unknown', () => {
+        component.familyMember.sex = Sex.Unknown;
+        expect(component.isMale).toBe(false);
+      })
+    });
+
+    describe('.isFemale', () => {
+      it('should return true when female', () => {
+        component.familyMember.sex = Sex.Female;
+        expect(component.isFemale).toBe(true);
+      })
+
+      it('should return false when male', () => {
+        component.familyMember.sex = Sex.Male;
+        expect(component.isFemale).toBe(false);
+      })
+
+      it('should return false when unknown', () => {
+        component.familyMember.sex = Sex.Unknown;
+        expect(component.isFemale).toBe(false);
+      })
+    });
+
+    describe('.isSexUnknown', () => {
+      it('should return false when male', () => {
+        component.familyMember.sex = Sex.Male;
+        expect(component.isSexUnknown).toBe(false);
+      })
+
+      it('should return false when female', () => {
+        component.familyMember.sex = Sex.Female;
+        expect(component.isSexUnknown).toBe(false);
+      })
+
+      it('should return true when unknown', () => {
+        component.familyMember.sex = Sex.Unknown;
+        expect(component.isSexUnknown).toBe(true);
+      })
+
+      it('should return true when undefined', () => {
+        component.familyMember.sex = undefined;
+        expect(component.isSexUnknown).toBe(true);
+      })
     });
   });
 

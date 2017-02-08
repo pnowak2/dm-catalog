@@ -28,9 +28,9 @@
      </div>
 
      <i class="fa"
-        [class.fa-mars]="familyMember.isMale"
-        [class.fa-venus]="familyMember.isFemale"
-        [class.fa-genderless]="familyMember.isSexUnknown">
+        [class.fa-mars]="isMale"
+        [class.fa-venus]="isFemale"
+        [class.fa-genderless]="isSexUnknown">
      </i>
 
      <i *ngIf="familyMember.hasComments"
@@ -42,12 +42,12 @@
      </i>
 
      <i class="fa fa-heart asm-family-member__badge"
-        [class.asm-family-member__badge--complementary-rights]="familyMember.hasSicknessComplementaryRights"
-        [class.asm-family-member__badge--full-rights]="familyMember.hasSicknessFullRights">
+        [class.asm-family-member__badge--complementary-rights]="hasSicknessComplementaryRights"
+        [class.asm-family-member__badge--full-rights]="hasSicknessFullRights">
      </i>
 
      <i class="fa fa-plus asm-family-member__badge"
-        [class.asm-family-member__badge--complementary-rights]="familyMember.hasAccidentComplementaryRights"
-        [class.asm-family-member__badge--full-rights]="familyMember.hasAccidentFullRights">
+        [class.asm-family-member__badge--complementary-rights]="hasAccidentComplementaryRights"
+        [class.asm-family-member__badge--full-rights]="hasAccidentFullRights">
      </i>
 </div>
