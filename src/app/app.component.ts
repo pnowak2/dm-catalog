@@ -20,7 +20,7 @@ export class AppComponent {
     this.familyMember.birthDate = new Date();
     this.familyMember.deathDate = new Date();
     this.familyMember.country = 'BEL';
-    this.familyMember.disabled = true;
+    this.familyMember.disabled = false;
     this.familyMember.personalNumber = '346001';
     this.familyMember.relationName = 'Affiliate';
     this.familyMember.selected = true;
@@ -32,13 +32,13 @@ export class AppComponent {
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
-    this.familyMember.disabled = !this.familyMember.disabled;
-    this.familyMember.selected = !this.familyMember.selected;
-    this.familyMember.coveredByOtherAffiliate = !this.familyMember.coveredByOtherAffiliate;
-    this.familyMember.sicknessCoverage = Coverage.Full;
-    this.familyMember.language = null;
-    this.familyMember.country = null;
-    this.familyMember.hasComments = false;
+    // this.familyMember.disabled = !this.familyMember.disabled;
+    // this.familyMember.selected = !this.familyMember.selected;
+    // this.familyMember.coveredByOtherAffiliate = !this.familyMember.coveredByOtherAffiliate;
+    // this.familyMember.sicknessCoverage = Coverage.Full;
+    // this.familyMember.language = null;
+    // this.familyMember.country = null;
+    // this.familyMember.hasComments = false;
   }
 
 }

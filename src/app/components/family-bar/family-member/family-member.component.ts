@@ -5,7 +5,7 @@ import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.view
 @Component({
   selector: 'asm-family-member',
   templateUrl: './family-member.component.html',
-  styleUrls: ['./family-member.component.css']
+  styleUrls: ['./family-member.component.scss']
 })
 export class FamilyMemberComponent {
   @Input() public familyMember: FamilyMemberViewModel = {};
