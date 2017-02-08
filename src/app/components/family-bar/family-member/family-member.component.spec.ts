@@ -417,7 +417,7 @@ describe('FamilyMemberComponent', () => {
         }));
 
         it('should render country code section if country is provided', async(() => {
-          component.familyMember.country = 'BEL';
+          component.familyMember.delegationCountry = 'BEL';
 
           fixture.detectChanges();
 
@@ -429,7 +429,7 @@ describe('FamilyMemberComponent', () => {
         }));
 
         it('should not render country code section if country is not provided', async(() => {
-          component.familyMember.country = undefined;
+          component.familyMember.delegationCountry = undefined;
 
           fixture.detectChanges();
 
