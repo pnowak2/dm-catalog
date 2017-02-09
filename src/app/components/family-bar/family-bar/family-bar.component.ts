@@ -1,32 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FamilyMemberViewModel, Sex, Coverage } from '../family-member/model/family-member.viewmodel';
+import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'asm-family-bar',
   templateUrl: './family-bar.component.html',
   styleUrls: ['./family-bar.component.scss']
 })
-export class FamilyBarComponent implements OnInit {
-  @Input() familyMembers: FamilyMemberViewModel[];
-
-  constructor() {
-    this.familyMembers = [
-      {
-        firstName: 'Piotr',
-        familyName: 'Nowak',
-        birthDate: '1986-04-12',
-        sex: Sex.Male,
-        personalNumber: '123456',
-        mainLanguage: 'POL',
-        selected: true,
-        relationName: 'Affiliate',
-        sicknessCoverage: Coverage.Full,
-        accidentCoverage: Coverage.Complementary
-      }
-    ]
-  }
-
-  ngOnInit() {
-  }
-
+export class FamilyBarComponent {
+  @Input() familyMembers: [FamilyMemberViewModel];
 }
