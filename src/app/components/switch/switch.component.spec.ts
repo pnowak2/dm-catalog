@@ -112,26 +112,30 @@ describe('SwitchComponent', () => {
 
     describe('rendering', () => {
       it('should render switch markup', async(() => {
-        expect(compiled.querySelector('.asm-switch')).not.toBeNull();
+        let el = fixture.debugElement.query(By.css('.asm-switch'));
+        expect(el).not.toBeNull();
       }));
 
       describe('checked/unchecked', () => {
         it('should not render checked switch by default', async(() => {
-          expect(compiled.querySelector('.asm-switch').classList).not.toContain('asm-switch--checked');
+          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          expect(el.classes['asm-switch--checked']).toBeFalsy();
         }));
 
         it('should render checked switch if property is set to true', async(() => {
           component.checked = true;
           fixture.detectChanges();
 
-          expect(compiled.querySelector('.asm-switch').classList).toContain('asm-switch--checked');
+          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          expect(el.classes['asm-switch--checked']).toBeTruthy();
         }));
 
         it('should not render checked switch if property is set to false', async(() => {
           component.checked = false;
           fixture.detectChanges();
 
-          expect(compiled.querySelector('.asm-switch').classList).not.toContain('asm-switch--checked');
+          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          expect(el.classes['asm-switch--checked']).toBeFalsy();
         }));
       });
 
@@ -140,14 +144,16 @@ describe('SwitchComponent', () => {
           component.disabled = false;
           fixture.detectChanges();
 
-          expect(compiled.querySelector('.asm-switch').classList).not.toContain('asm-switch--disabled');
+          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          expect(el.classes['asm-switch--disabled']).toBeFalsy();
         }));
 
         it('should render disabled switch if property is set to true', async(() => {
           component.disabled = true;
           fixture.detectChanges();
 
-          expect(compiled.querySelector('.asm-switch').classList).toContain('asm-switch--disabled');
+          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          expect(el.classes['asm-switch--disabled']).toBeTruthy();
         }));
       });
     });

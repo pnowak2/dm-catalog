@@ -168,25 +168,25 @@ describe('FamilyMemberComponent', () => {
     });
 
     describe('.getBirthAndDeathDates()', () => {
-      it('should return only birth date', () => {
+      it('should return only birth date if death date not defined', () => {
         component.familyMember.birthDate = '16/02/1986';
         component.familyMember.deathDate = null;
         expect(component.getBirthAndDeathDates()).toEqual('16/02/1986');
       });
 
-      it('should return only death date', () => {
+      it('should return only placeholder and death date if birth date not defined and death date is defined', () => {
         component.familyMember.birthDate = null;
         component.familyMember.deathDate = '19/05/2000';
         expect(component.getBirthAndDeathDates()).toEqual('(?) - 19/05/2000');
       });
 
-      it('should return both birth and death date', () => {
+      it('should return both birth and death date if both are defined', () => {
         component.familyMember.birthDate = '16/02/1986';
         component.familyMember.deathDate = '19/05/2000';
         expect(component.getBirthAndDeathDates()).toEqual('16/02/1986 - 19/05/2000');
       });
 
-      it('should handle both dates undefined', () => {
+      it('should return palceholder if both birth and death dates are not defined', () => {
         component.familyMember.birthDate = null;
         component.familyMember.deathDate = null;
         expect(component.getBirthAndDeathDates()).toEqual('(?)');
@@ -205,7 +205,7 @@ describe('FamilyMemberComponent', () => {
     });
 
     describe('Selected / Unselected State', () => {
-      it('should render properly when selected', async(() => {
+      it('should render selection when member selected', async(() => {
         component.familyMember.selected = true;
         fixture.detectChanges();
 
@@ -215,7 +215,7 @@ describe('FamilyMemberComponent', () => {
         expect(root.classes['asm-family-member--selected']).toBeTruthy();
       }));
 
-      it('should render properly when unselected', async(() => {
+      it('should not render selection when member unselected', async(() => {
         component.familyMember.selected = false;
         fixture.detectChanges();
 
@@ -227,7 +227,7 @@ describe('FamilyMemberComponent', () => {
     });
 
     describe('Enabled / Disabled State', () => {
-      it('should render properly when enabled', async(() => {
+      it('should render enabled when member enabled', async(() => {
         component.familyMember.disabled = false;
         fixture.detectChanges();
 
@@ -237,7 +237,7 @@ describe('FamilyMemberComponent', () => {
         expect(root.classes['asm-family-member--disabled']).toBeFalsy();
       }));
 
-      it('should render properly when disabled', async(() => {
+      it('should render disabled properly when member disabled', async(() => {
         component.familyMember.disabled = true;
         fixture.detectChanges();
 
@@ -317,7 +317,7 @@ describe('FamilyMemberComponent', () => {
     });
 
     describe('Main Data Section', () => {
-      describe('Name', () => {
+      describe('Name of Member', () => {
         it('should render first name', async(() => {
           component.familyMember.firstName = 'Piotr';
           fixture.detectChanges();
