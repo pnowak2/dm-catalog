@@ -23,8 +23,10 @@ describe('SwitchComponent', () => {
     compiled = fixture.debugElement.nativeElement;
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  describe('Creation', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
   });
 
   describe('api', () => {
@@ -58,21 +60,21 @@ describe('SwitchComponent', () => {
       });
     });
 
-    describe('onClicked()', () => {
+    describe('clicked()', () => {
       it('should be defined', () => {
-        expect(SwitchComponent.prototype.onClicked).toEqual(jasmine.any(Function));
+        expect(SwitchComponent.prototype.clicked).toEqual(jasmine.any(Function));
       });
 
       it(`should negate checked property if set to false'`, () => {
         component.checked = false;
-        component.onClicked();
+        component.clicked();
 
         expect(component.checked).toBe(true);
       });
 
       it(`should negate checked property if set to true'`, () => {
         component.checked = true;
-        component.onClicked();
+        component.clicked();
 
         expect(component.checked).toBe(false);
       });
@@ -81,7 +83,7 @@ describe('SwitchComponent', () => {
         spyOn(component.toggle, 'emit');
 
         component.checked = false;
-        component.onClicked();
+        component.clicked();
 
         expect(component.toggle.emit).toHaveBeenCalledWith(true);
       });
@@ -90,7 +92,7 @@ describe('SwitchComponent', () => {
         spyOn(component.toggle, 'emit');
 
         component.disabled = true;
-        component.onClicked();
+        component.clicked();
 
         expect(component.toggle.emit).not.toHaveBeenCalled();
       });
@@ -100,11 +102,11 @@ describe('SwitchComponent', () => {
   describe('markup', () => {
     describe('events', () => {
       it('should call appropriate handler when clicked host element', async(() => {
-        spyOn(component, 'onClicked');
+        spyOn(component, 'clicked');
 
         fixture.debugElement.triggerEventHandler('click', {});
 
-        expect(component.onClicked).toHaveBeenCalled();
+        expect(component.clicked).toHaveBeenCalled();
       }));
     });
 

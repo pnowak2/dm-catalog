@@ -42,12 +42,9 @@ describe('FamilyBarComponent', () => {
 
     describe('.selectedMember', () => {
       it(`should return selected member if one member has selection`, () => {
-        const one: FamilyMemberViewModel = {
-          selected: true
-        };
-        const two: FamilyMemberViewModel = {
-          selected: false
-        };
+        const one: FamilyMemberViewModel = { selected: true };
+        const two: FamilyMemberViewModel = { selected: false };
+
         component.familyMembers = [one, two];
         fixture.detectChanges();
 
@@ -55,12 +52,8 @@ describe('FamilyBarComponent', () => {
       });
 
       it(`should return first selected member if more than one members have selection`, () => {
-        const one: FamilyMemberViewModel = {
-          selected: true
-        };
-        const two: FamilyMemberViewModel = {
-          selected: true
-        };
+        const one: FamilyMemberViewModel = { selected: true };
+        const two: FamilyMemberViewModel = { selected: true };
 
         component.familyMembers = [one, two];
         fixture.detectChanges();
@@ -68,13 +61,9 @@ describe('FamilyBarComponent', () => {
         expect(component.selectedMember).toBe(one);
       });
 
-      it(`should return undefined if no selected members`, () => {
-        const one: FamilyMemberViewModel = {
-          selected: false
-        };
-        const two: FamilyMemberViewModel = {
-          selected: false
-        };
+      it(`should return undefined if none of members have selection`, () => {
+        const one: FamilyMemberViewModel = { selected: false };
+        const two: FamilyMemberViewModel = { selected: false };
 
         component.familyMembers = [one, two];
         fixture.detectChanges();
@@ -124,7 +113,7 @@ describe('FamilyBarComponent', () => {
 
     describe('Actions Section', () => {
       describe('Tab', () => {
-        describe('General', () => {
+        describe('General Appearance', () => {
           it('should render the container', () => {
             const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
             expect(el).not.toBeNull();
@@ -220,7 +209,10 @@ describe('FamilyBarComponent', () => {
       });
 
       describe('Family+ Switch', () => {
-
+        it('should render family members inside container', () => {
+          const el = debugElement.queryAll(By.css('asm-switch'));
+          expect(el.length).not.toBeNull();
+        });
       });
     });
   });
