@@ -35,8 +35,51 @@ describe('FamilyBarComponent', () => {
 
   describe('Api', () => {
     describe('.familyMembers', () => {
-      it(`should be defined and empty array`, () => {
+      it(`should be initialized to empty array`, () => {
         expect(component.familyMembers).toEqual([]);
+      });
+    });
+
+    describe('.selectedMember', () => {
+      it(`should return selected member if one member has selection`, () => {
+        const one: FamilyMemberViewModel = {
+          selected: true
+        };
+        const two: FamilyMemberViewModel = {
+          selected: false
+        };
+        component.familyMembers = [one, two];
+        fixture.detectChanges();
+
+        expect(component.selectedMember).toBe(one);
+      });
+
+      it(`should return first selected member if more than one members have selection`, () => {
+        const one: FamilyMemberViewModel = {
+          selected: true
+        };
+        const two: FamilyMemberViewModel = {
+          selected: true
+        };
+
+        component.familyMembers = [one, two];
+        fixture.detectChanges();
+
+        expect(component.selectedMember).toBe(one);
+      });
+
+      it(`should return undefined if no selected members`, () => {
+        const one: FamilyMemberViewModel = {
+          selected: false
+        };
+        const two: FamilyMemberViewModel = {
+          selected: false
+        };
+
+        component.familyMembers = [one, two];
+        fixture.detectChanges();
+
+        expect(component.selectedMember).toBeUndefined();
       });
     });
   });

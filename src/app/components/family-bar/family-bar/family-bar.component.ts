@@ -12,5 +12,4 @@ export class FamilyBarComponent {
   get selectedMember(): FamilyMemberViewModel {
     return this.familyMembers.find(member => member.selected);
   }
-
 }
