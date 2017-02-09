@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.viewmodel';
 
 @Component({
@@ -50,5 +50,10 @@ export class FamilyMemberComponent {
     } else {
       return birthDate;
     }
+  }
+
+  clicked(evt) {
+    evt.stopPropagation();
+    console.log('ckd', evt);
   }
 }

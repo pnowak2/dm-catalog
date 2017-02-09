@@ -1,20 +1,21 @@
 <div class="asm-family-bar">
-  <div class="asm-family-bar__members-container">
+  <div #scroll class="asm-family-bar__members-container">
     <asm-family-member 
-      *ngFor="let familyMember of familyMembers"
+      *ngFor="let familyMember of members"
+      (click)="clicked(familyMember)"
       [familyMember]="familyMember">
     </asm-family-member>
   </div>
   <div class="asm-family-bar__tab-container">
     <div class="asm-family-bar__tab-button">
       <div class="asm-family-bar__scroll-left-container">
-        <span class="fa fa-arrow-circle-left"></span>
+        <span (click)="sla()" class="fa fa-arrow-circle-left"></span>
       </div>
       <div class="asm-family-bar__scroll-right-container">
-        <span class="fa fa-arrow-circle-right"></span>
+        <span (click)="sld()" class="fa fa-arrow-circle-right"></span>
       </div>
       <div class="asm-family-bar__tab-title">
-        Family Composition (3/7)
+        Family Composition ({{ members.length }}/{{ familyMembers.length }})
       </div>
       <div class="asm-family-bar__tab-member">
         <span *ngIf="selectedMember"
