@@ -6,13 +6,13 @@ import { Component, HostListener, Input, Output, EventEmitter } from '@angular/c
   styleUrls: ['./switch.component.scss'],
 })
 export class SwitchComponent {
-  @Input() checked: boolean = false;
-  @Input() disabled: boolean = false;
+  @Input() checked = false;
+  @Input() disabled = false;
   @Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
   @HostListener('click')
   clicked() {
-    if(this.disabled) {
+    if (this.disabled) {
       return;
     }
     this.checked = !this.checked;

@@ -153,7 +153,7 @@ describe('FamilyBarComponent', () => {
 
           it('should render member not selected label', () => {
             const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
-            expect(el.nativeElement.textContent).toContain('(No selection)')
+            expect(el.nativeElement.textContent).toContain('(No selection)');
           });
         });
 

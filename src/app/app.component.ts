@@ -8,7 +8,7 @@ import { FamilyMemberViewModel, Coverage, Sex } from './components/family-bar/fa
 })
 export class AppComponent {
   familyMember: FamilyMemberViewModel = {};
-  
+
   md: Date = new Date();
   title: 'app works!';
 
