@@ -17,8 +17,12 @@
         Family Composition (3/7)
       </div>
       <div class="asm-family-bar__tab-member">
-        <span class="asm-family-bar__tab-member-first-name">Dirk Andrew</span>
-        <span class="asm-family-bar__tab-member-last-name">Van Rooy</span>
+        <span *ngIf="selectedMember"
+              class="asm-family-bar__tab-member-first-name">{{ selectedMember?.firstName }}</span>
+        <span *ngIf="selectedMember"
+              class="asm-family-bar__tab-member-last-name">{{ selectedMember?.familyName }}</span>
+        <span *ngIf="!selectedMember" 
+              class="asm-family-bar__tab-member-not-selected">(No selection)</span>
       </div>
       <span class="fa fa-caret-up asm-family-bar__tab-caret"></span>
     </div>

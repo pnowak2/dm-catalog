@@ -7,5 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./family-bar.component.scss']
 })
 export class FamilyBarComponent {
-  @Input() familyMembers: [FamilyMemberViewModel];
+  @Input() familyMembers: Array<FamilyMemberViewModel> = [];
+
+  get selectedMember(): FamilyMemberViewModel {
+    return this.familyMembers.find(member => member.selected);
+  }
+
 }

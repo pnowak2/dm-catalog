@@ -35,8 +35,8 @@ describe('FamilyBarComponent', () => {
 
   describe('Api', () => {
     describe('.familyMembers', () => {
-      it(`should be undefined`, () => {
-        expect(component.familyMembers).toBeUndefined();
+      it(`should be defined and empty array`, () => {
+        expect(component.familyMembers).toEqual([]);
       });
     });
   });
@@ -80,41 +80,87 @@ describe('FamilyBarComponent', () => {
     });
 
     describe('Actions Section', () => {
-      const one: FamilyMemberViewModel = {
-        firstName: 'Piotr',
-        familyName: 'Nowak',
-        selected: true
-      };
-      const two: FamilyMemberViewModel = {
-        firstName: 'Tom',
-        familyName: 'Goemaes',
-        selected: false
-      };
-      const three: FamilyMemberViewModel = {
-        firstName: 'Jeremy',
-        familyName: 'Lebrun',
-        selected: false
-      };
-
-      beforeEach(() => {
-        component.familyMembers = [one, two, three];
-        fixture.detectChanges();
-      });
-
       describe('Tab', () => {
-        it('should render the container', () => {
-          const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
-          expect(el).not.toBeNull();
+        describe('General', () => {
+          it('should render the container', () => {
+            const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
+            expect(el).not.toBeNull();
+          });
+
+          it('should render static label text', () => {
+            const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
+            expect(el.nativeElement.textContent).toContain('Family Composition');
+          });
         });
 
-        it('should render static label text', () => {
-          const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
-          expect(el.nativeElement.textContent).toContain('Family Composition');
+        describe('None of the Members Selected', () => {
+          const one: FamilyMemberViewModel = {
+            selected: false
+          };
+          const two: FamilyMemberViewModel = {
+            selected: false
+          };
+          const three: FamilyMemberViewModel = {
+            selected: false
+          };
+
+          beforeEach(() => {
+            component.familyMembers = [one, two, three];
+            fixture.detectChanges();
+          });
+
+          it('should not render first name', () => {
+            const el = debugElement.query(By.css('.asm-family-bar__tab-member-first-name'));
+            expect(el).toBeNull();
+          });
+
+          it('should not render last name', () => {
+            const el = debugElement.query(By.css('.asm-family-bar__tab-member-last-name'));
+            expect(el).toBeNull();
+          });
+
+          it('should render member not selected label', () => {
+            const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
+            expect(el.nativeElement.textContent).toContain('(No selection)')
+          });
         });
 
-        it('should render first and family name of selected member', () => {
-          const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
-          expect(el.nativeElement.textContent).toContain('Piotr Nowak');
+        describe('One Member Selected', () => {
+          const one: FamilyMemberViewModel = {
+            firstName: 'Piotr',
+            familyName: 'Nowak',
+            selected: true
+          };
+          const two: FamilyMemberViewModel = {
+            firstName: 'Tom',
+            familyName: 'Goemaes',
+            selected: false
+          };
+          const three: FamilyMemberViewModel = {
+            firstName: 'Jeremy',
+            familyName: 'Lebrun',
+            selected: false
+          };
+
+          beforeEach(() => {
+            component.familyMembers = [one, two, three];
+            fixture.detectChanges();
+          });
+
+          it('should render first name of selected member', () => {
+            const el = debugElement.query(By.css('.asm-family-bar__tab-member-first-name'));
+            expect(el.nativeElement.textContent).toContain('Piotr');
+          });
+
+          it('should render last name of selected member', () => {
+            const el = debugElement.query(By.css('.asm-family-bar__tab-member-last-name'));
+            expect(el.nativeElement.textContent).toContain('Nowak');
+          });
+
+          it('should not render member not selected label', () => {
+            const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
+            expect(el).toBeNull();
+          });
         });
       });
 
