@@ -80,24 +80,52 @@ describe('FamilyBarComponent', () => {
     });
 
     describe('Actions Section', () => {
+      const one: FamilyMemberViewModel = {
+        firstName: 'Piotr',
+        familyName: 'Nowak',
+        selected: true
+      };
+      const two: FamilyMemberViewModel = {
+        firstName: 'Tom',
+        familyName: 'Goemaes',
+        selected: false
+      };
+      const three: FamilyMemberViewModel = {
+        firstName: 'Jeremy',
+        familyName: 'Lebrun',
+        selected: false
+      };
+
+      beforeEach(() => {
+        component.familyMembers = [one, two, three];
+        fixture.detectChanges();
+      });
+
       describe('Tab', () => {
         it('should render the container', () => {
           const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
-
           expect(el).not.toBeNull();
+        });
+
+        it('should render static label text', () => {
+          const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
+          expect(el.nativeElement.textContent).toContain('Family Composition');
+        });
+
+        it('should render first and family name of selected member', () => {
+          const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
+          expect(el.nativeElement.textContent).toContain('Piotr Nowak');
         });
       });
 
       describe('Scroll Buttons', () => {
         it('should render scroll left button', () => {
           const el = debugElement.query(By.css('.fa.fa-arrow-circle-left'));
-
           expect(el).not.toBeNull();
         });
 
         it('should render scroll right button', () => {
           const el = debugElement.query(By.css('.fa.fa-arrow-circle-right'));
-
           expect(el).not.toBeNull();
         });
       });
