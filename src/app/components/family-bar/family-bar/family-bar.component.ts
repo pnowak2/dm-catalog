@@ -7,23 +7,23 @@ import { FamilyMemberViewModel, Sex, Coverage } from '../family-member/model/fam
   styleUrls: ['./family-bar.component.scss']
 })
 export class FamilyBarComponent implements OnInit {
-  // @Input() familyMembers: FamilyMemberViewModel[];
+  @Input() familyMembers: FamilyMemberViewModel[];
 
   constructor() {
-    // this.familyMembers = [
-    //   {
-    //     firstName: 'Piotr',
-    //     familyName: 'Nowak',
-    //     birthDate: new Date(1980, 4, 28),
-    //     sex: Sex.Male,
-    //     personalNumber: '123456',
-    //     mainLanguage: 'POL',
-    //     selected: true,
-    //     relationName: 'Affiliate',
-    //     sicknessCoverage: Coverage.Full,
-    //     accidentCoverage: Coverage.Complementary
-    //   }
-    // ]
+    this.familyMembers = [
+      {
+        firstName: 'Piotr',
+        familyName: 'Nowak',
+        birthDate: '1986-04-12',
+        sex: Sex.Male,
+        personalNumber: '123456',
+        mainLanguage: 'POL',
+        selected: true,
+        relationName: 'Affiliate',
+        sicknessCoverage: Coverage.Full,
+        accidentCoverage: Coverage.Complementary
+      }
+    ]
   }
 
   ngOnInit() {

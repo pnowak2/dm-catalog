@@ -18,16 +18,16 @@ export interface FamilyMemberViewModel {
   selected?: boolean;
   disabled?: boolean;
   relationName?: string;
-  birthDate?: Date;
-  deathDate?: Date;
+  birthDate?: string;
+  deathDate?: string;
   mainLanguage?: string;
   delegationCountry?: string;
   coveredByOtherAffiliate?: boolean;
   hasComments?: boolean;
   sicknessCoverage?: Coverage;
-  sicknessCoverageFrom?: Date;
-  sicknessCoverageTo?: Date;
+  sicknessCoverageDateFrom?: string;
+  sicknessCoverageDateTo?: string;
   accidentCoverage?: Coverage;
-  accidentCoverageFrom?: Date;
-  accidentCoverageTo?: Date;
+  accidentCoverageDateFrom?: string;
+  accidentCoverageDateTo?: string;
 }

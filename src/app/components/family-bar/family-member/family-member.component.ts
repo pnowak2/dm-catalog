@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { DatePipe } from '@angular/common';
 import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.viewmodel';
 
 @Component({
@@ -9,8 +8,6 @@ import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.view
 })
 export class FamilyMemberComponent {
   @Input() public familyMember: FamilyMemberViewModel = {};
-
-  constructor(private datePipe: DatePipe) { }
 
   hasSicknessComplementaryRights(): boolean {
     return this.familyMember.sicknessCoverage === Coverage.Complementary;
@@ -41,8 +38,8 @@ export class FamilyMemberComponent {
   }
 
   getBirthAndDeathDates(): string {
-    const birthDate = this.datePipe.transform(this.familyMember.birthDate, 'dd/MM/yyyy');
-    const deathDate = this.datePipe.transform(this.familyMember.deathDate, 'dd/MM/yyyy');
+    const birthDate = this.familyMember.birthDate;
+    const deathDate = this.familyMember.deathDate;
 
     if (birthDate && deathDate) {
       return `${birthDate} - ${deathDate}`;

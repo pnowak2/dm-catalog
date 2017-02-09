@@ -5,7 +5,6 @@ import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
 import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.viewmodel';
-import { DatePipe } from '@angular/common';
 
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;
@@ -15,8 +14,7 @@ describe('FamilyMemberComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [FamilyMemberComponent],
-      schemas: [NO_ERRORS_SCHEMA],
-      providers: [DatePipe]
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -171,26 +169,26 @@ describe('FamilyMemberComponent', () => {
 
     describe('.getBirthAndDeathDates()', () => {
       it('should return only birth date', () => {
-        component.familyMember.birthDate = new Date(1986, 1, 16);
-        component.familyMember.deathDate = undefined;
+        component.familyMember.birthDate = '16/02/1986';
+        component.familyMember.deathDate = null;
         expect(component.getBirthAndDeathDates()).toEqual('16/02/1986');
       });
 
       it('should return only death date', () => {
-        component.familyMember.birthDate = undefined;
-        component.familyMember.deathDate = new Date(2000, 4, 19);
+        component.familyMember.birthDate = null;
+        component.familyMember.deathDate = '19/05/2000';
         expect(component.getBirthAndDeathDates()).toEqual('(?) - 19/05/2000');
       });
 
       it('should return both birth and death date', () => {
-        component.familyMember.birthDate = new Date(1986, 1, 16);
-        component.familyMember.deathDate = new Date(2000, 4, 19);
+        component.familyMember.birthDate = '16/02/1986';
+        component.familyMember.deathDate = '19/05/2000';
         expect(component.getBirthAndDeathDates()).toEqual('16/02/1986 - 19/05/2000');
       });
 
       it('should handle both dates undefined', () => {
-        component.familyMember.birthDate = undefined;
-        component.familyMember.deathDate = undefined;
+        component.familyMember.birthDate = null;
+        component.familyMember.deathDate = null;
         expect(component.getBirthAndDeathDates()).toEqual('(?)');
       });
     });

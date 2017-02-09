@@ -17,8 +17,8 @@ export class AppComponent {
     this.familyMember.familyName = 'Nowak';
     this.familyMember.mainLanguage = 'pol';
     this.familyMember.sex = Sex.Male;
-    this.familyMember.birthDate = new Date();
-    this.familyMember.deathDate = new Date();
+    this.familyMember.birthDate = '1986/04/06';
+    this.familyMember.deathDate = '2004/12/16';
     this.familyMember.delegationCountry = 'BEL';
     this.familyMember.disabled = false;
     this.familyMember.personalNumber = '346001';
