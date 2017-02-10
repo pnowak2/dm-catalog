@@ -17,4 +17,12 @@ export class FamilyBarComponent {
   tabClicked() {
     this.closed = !this.closed;
   }
+
+  scrollLeftClicked(evt) {
+    evt.stopPropagation();
+  }
+
+  scrollRightClicked(evt) {
+    evt.stopPropagation();
+  }
 }

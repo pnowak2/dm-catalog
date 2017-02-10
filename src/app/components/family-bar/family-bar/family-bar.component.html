@@ -8,10 +8,10 @@
   </div>
   <div class="asm-family-bar__tab-container">
     <div (click)="tabClicked($event)" class="asm-family-bar__tab-button">
-      <div class="asm-family-bar__scroll-left-container">
+      <div (click)="scrollLeftClicked($event)" class="asm-family-bar__scroll-left-container">
         <span class="fa fa-arrow-circle-left"></span>
       </div>
-      <div class="asm-family-bar__scroll-right-container">
+      <div (click)="scrollRightClicked($event)" class="asm-family-bar__scroll-right-container">
         <span class="fa fa-arrow-circle-right"></span>
       </div>
       <div class="asm-family-bar__tab-title">

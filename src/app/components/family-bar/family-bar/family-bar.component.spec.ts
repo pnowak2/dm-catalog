@@ -39,7 +39,7 @@ describe('FamilyBarComponent', () => {
         expect(component.familyMembers).toEqual([]);
       });
     });
-    
+
     describe('.closed', () => {
       it('should be defined', () => {
         expect(component.closed).toBeDefined();
@@ -81,19 +81,45 @@ describe('FamilyBarComponent', () => {
         expect(component.selectedMember).toBeUndefined();
       });
     });
-    
+
     describe('.tabClicked()', () => {
       it('should be defined', () => {
         expect(FamilyBarComponent.prototype.tabClicked).toEqual(jasmine.any(Function));
       });
-      
+
       it('should toggle closed property', () => {
         component.closed = false;
         component.tabClicked();
 
         expect(component.closed).toBe(true);
       });
-        
+
+    });
+
+    describe('.scrollLeftClicked()', () => {
+      it('should be defined', () => {
+        expect(FamilyBarComponent.prototype.scrollLeftClicked).toEqual(jasmine.any(Function));
+      });
+
+      it('should stop event propagation', () => {
+        const fakeEvent = jasmine.createSpyObj('evt', ['stopPropagation']);
+        component.scrollLeftClicked(fakeEvent);
+
+        expect(fakeEvent.stopPropagation).toHaveBeenCalled();
+      });
+    });
+
+    describe('.scrollRightClicked()', () => {
+      it('should be defined', () => {
+        expect(FamilyBarComponent.prototype.scrollRightClicked).toEqual(jasmine.any(Function));
+      });
+
+      it('should stop event propagation', () => {
+        const fakeEvent = jasmine.createSpyObj('evt', ['stopPropagation']);
+        component.scrollRightClicked(fakeEvent);
+
+        expect(fakeEvent.stopPropagation).toHaveBeenCalled();
+      });
     });
   });
 
@@ -133,7 +159,7 @@ describe('FamilyBarComponent', () => {
         expect(el[1].properties['familyMember']).toEqual(two);
         expect(el[2].properties['familyMember']).toEqual(three);
       });
-      
+
       it('should be visible if closed property is set false', () => {
         component.closed = false;
         fixture.detectChanges();
@@ -244,7 +270,7 @@ describe('FamilyBarComponent', () => {
             const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
             expect(el).toBeNull();
           });
-        });         
+        });
       });
 
       describe('Scroll Buttons', () => {
@@ -253,9 +279,29 @@ describe('FamilyBarComponent', () => {
           expect(el).not.toBeNull();
         });
 
+        it('should trigger click event for scroll left', () => {
+          spyOn(component, 'scrollLeftClicked');
+
+          const el = debugElement.query(By.css('.asm-family-bar__scroll-left-container'));
+          const fakeEvent = {};
+          el.triggerEventHandler('click', fakeEvent);
+
+          expect(component.scrollLeftClicked).toHaveBeenCalledWith(fakeEvent);
+        });
+
         it('should render scroll right button', () => {
           const el = debugElement.query(By.css('.fa.fa-arrow-circle-right'));
           expect(el).not.toBeNull();
+        });
+
+        it('should trigger click event for scroll right', () => {
+          spyOn(component, 'scrollRightClicked');
+
+          const el = debugElement.query(By.css('.asm-family-bar__scroll-right-container'));
+          const fakeEvent = {};
+          el.triggerEventHandler('click', fakeEvent);
+
+          expect(component.scrollRightClicked).toHaveBeenCalledWith(fakeEvent);
         });
       });
 
