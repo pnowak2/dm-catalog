@@ -29,7 +29,7 @@ describe('SwitchComponent', () => {
     });
   });
 
-  describe('api', () => {
+  describe('Api', () => {
     describe('.checked', () => {
       it(`should be defined`, () => {
         expect(component.checked).toBeDefined();
@@ -99,7 +99,7 @@ describe('SwitchComponent', () => {
     });
   });
 
-  describe('markup', () => {
+  describe('Markup', () => {
     describe('events', () => {
       it('should call appropriate handler when clicked host element', async(() => {
         spyOn(component, 'clicked');

@@ -366,7 +366,7 @@ describe('FamilyBarComponent', () => {
       });
 
       describe('Family+ Switch', () => {
-        it('should render family members inside container', () => {
+        it('should render switch component', () => {
           const el = debugElement.queryAll(By.css('asm-switch'));
           expect(el.length).not.toBeNull();
         });
