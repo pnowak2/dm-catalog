@@ -8,7 +8,16 @@ import { FamilyMemberViewModel, Coverage, Sex } from './components/family-bar/fa
 })
 export class AppComponent {
   familyMembers: Array<FamilyMemberViewModel> = [{
-    firstName: 'Piotr'
+    firstName: 'Piotr',
+    familyName: 'Bardzo Długa Nazwa Że Aż Szok',
+    personalNumber: '123456'
+  },{
+    firstName: 'Andrzej',
+    familyName: 'Poniedzielski',
+    personalNumber: '256002',
+    coveredByOtherAffiliate: true
+  },{
+    firstName: 'Roman'
   }];
 
   md: Date = new Date();

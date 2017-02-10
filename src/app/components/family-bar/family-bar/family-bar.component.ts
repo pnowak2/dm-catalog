@@ -14,6 +14,11 @@ export class FamilyBarComponent {
     return this.familyMembers.find(member => member.selected);
   }
 
+  familyMemberClicked(member: FamilyMemberViewModel) {
+    this.familyMembers.forEach(member => member.selected = false);
+    member.selected = true;
+  }
+
   tabClicked() {
     this.closed = !this.closed;
   }

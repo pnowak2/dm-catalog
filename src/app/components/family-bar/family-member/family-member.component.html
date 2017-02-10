@@ -7,11 +7,11 @@
         {{ familyMember.relationName }}
         
         <a href="#" *ngIf="familyMember.coveredByOtherAffiliate" class="asm-family-member__member-number">
-          #{{ familyMember.personalNumber }}
+          <span *ngIf="familyMember.personalNumber">#</span>{{ familyMember.personalNumber }}
         </a>
 
         <span *ngIf="!familyMember.coveredByOtherAffiliate">
-          #{{ familyMember.personalNumber }}
+          <span *ngIf="familyMember.personalNumber">#</span>{{ familyMember.personalNumber }}
         </span>
       </span>
     </div>

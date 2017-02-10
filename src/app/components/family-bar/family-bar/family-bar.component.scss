@@ -48,6 +48,12 @@
     margin-top: -.5em;
   }
   
+  &__tab-member {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   &__tab-member-first-name,
   &__tab-member-last-name {
     color: #bbb;

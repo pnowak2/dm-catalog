@@ -121,6 +121,26 @@ describe('FamilyBarComponent', () => {
         expect(fakeEvent.stopPropagation).toHaveBeenCalled();
       });
     });
+    
+    describe('.familyMemberClicked()', () => {
+      it('should be defined', () => {
+        expect(FamilyBarComponent.prototype.familyMemberClicked).toEqual(jasmine.any(Function));
+      });
+      
+      it('should unselect all family members but the selected one', () => {
+        let one: FamilyMemberViewModel = { selected: true };
+        let two: FamilyMemberViewModel = { selected: false };
+        let three: FamilyMemberViewModel = { selected: false };
+
+        component.familyMembers = [one, two, three];
+
+        component.familyMemberClicked(three)
+
+        expect(one.selected).toBe(false);
+        expect(two.selected).toBe(false);
+        expect(three.selected).toBe(true);
+      });
+    });
   });
 
   describe('Markup', () => {
@@ -159,6 +179,16 @@ describe('FamilyBarComponent', () => {
         expect(el[1].properties['familyMember']).toEqual(two);
         expect(el[2].properties['familyMember']).toEqual(three);
       });
+      
+      it('should trigger click event when family member clicked', () => {
+        spyOn(component, 'familyMemberClicked');
+        const el = debugElement.queryAll(By.css('asm-family-member'));
+
+        el[2].triggerEventHandler('click', null);
+
+        expect(component.familyMemberClicked).toHaveBeenCalledWith(three);
+      });
+        
 
       it('should be visible if closed property is set false', () => {
         component.closed = false;
@@ -196,7 +226,7 @@ describe('FamilyBarComponent', () => {
             spyOn(component, 'tabClicked');
 
             const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
-            el.triggerEventHandler('click', {});
+            el.triggerEventHandler('click', null);
 
             expect(component.tabClicked).toHaveBeenCalled();
           });
