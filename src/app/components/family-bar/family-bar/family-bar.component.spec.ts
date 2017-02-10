@@ -39,6 +39,16 @@ describe('FamilyBarComponent', () => {
         expect(component.familyMembers).toEqual([]);
       });
     });
+    
+    describe('.closed', () => {
+      it('should be defined', () => {
+        expect(component.closed).toBeDefined();
+      });
+
+      it('should be false', () => {
+        expect(component.closed).toBe(false);
+      });
+    });
 
     describe('.selectedMember', () => {
       it(`should return selected member if one member has selection`, () => {

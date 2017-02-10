@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class FamilyBarComponent {
   @Input() familyMembers: Array<FamilyMemberViewModel> = [];
+  @Input() closed = false;
 
   get selectedMember(): FamilyMemberViewModel {
     return this.familyMembers.find(member => member.selected);
