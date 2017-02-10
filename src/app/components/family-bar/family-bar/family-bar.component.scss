@@ -125,6 +125,14 @@
     visibility: hidden;
   }
 
+  &--closed &__scroll-left-container {
+    left: -3.5em;
+  }
+
+  &--closed &__scroll-right-container {
+    right: -3.5em;
+  }
+
   &--closed .asm-family-member {
     visibility: hidden;
   }
