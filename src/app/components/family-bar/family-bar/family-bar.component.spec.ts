@@ -81,6 +81,20 @@ describe('FamilyBarComponent', () => {
         expect(component.selectedMember).toBeUndefined();
       });
     });
+    
+    describe('.tabClicked()', () => {
+      it('should be defined', () => {
+        expect(FamilyBarComponent.prototype.tabClicked).toEqual(jasmine.any(Function));
+      });
+      
+      it('should toggle closed property', () => {
+        component.closed = false;
+        component.tabClicked();
+
+        expect(component.closed).toBe(true);
+      });
+        
+    });
   });
 
   describe('Markup', () => {
@@ -119,6 +133,24 @@ describe('FamilyBarComponent', () => {
         expect(el[1].properties['familyMember']).toEqual(two);
         expect(el[2].properties['familyMember']).toEqual(three);
       });
+      
+      it('should be visible if closed property is set false', () => {
+        component.closed = false;
+        fixture.detectChanges();
+
+        const el = debugElement.query(By.css('.asm-family-bar'));
+
+        expect(el.classes['asm-family-bar--closed']).toBeFalsy();
+      });
+
+      it('should be hidden if closed property is set true', () => {
+        component.closed = true;
+        fixture.detectChanges();
+
+        const el = debugElement.query(By.css('.asm-family-bar'));
+
+        expect(el.classes['asm-family-bar--closed']).toBeTruthy();
+      });
     });
 
     describe('Actions Section', () => {
@@ -132,6 +164,15 @@ describe('FamilyBarComponent', () => {
           it('should render static label text', () => {
             const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
             expect(el.nativeElement.textContent).toContain('Family Composition');
+          });
+
+          it('should trigger click event', () => {
+            spyOn(component, 'tabClicked');
+
+            const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
+            el.triggerEventHandler('click', {});
+
+            expect(component.tabClicked).toHaveBeenCalled();
           });
         });
 
@@ -203,7 +244,7 @@ describe('FamilyBarComponent', () => {
             const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
             expect(el).toBeNull();
           });
-        });
+        });         
       });
 
       describe('Scroll Buttons', () => {

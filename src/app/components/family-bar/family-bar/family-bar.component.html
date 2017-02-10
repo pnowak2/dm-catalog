@@ -1,4 +1,5 @@
-<div class="asm-family-bar">
+<div class="asm-family-bar"
+     [class.asm-family-bar--closed]="closed">
   <div class="asm-family-bar__members-container">
     <asm-family-member 
       *ngFor="let familyMember of familyMembers"
@@ -6,7 +7,7 @@
     </asm-family-member>
   </div>
   <div class="asm-family-bar__tab-container">
-    <div class="asm-family-bar__tab-button">
+    <div (click)="tabClicked($event)" class="asm-family-bar__tab-button">
       <div class="asm-family-bar__scroll-left-container">
         <span class="fa fa-arrow-circle-left"></span>
       </div>

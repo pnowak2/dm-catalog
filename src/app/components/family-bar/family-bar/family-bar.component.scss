@@ -63,6 +63,7 @@
     position: absolute;
     top: .4em;
     right: .6em;
+    transition: all .5s;
   }
 
   &__family-plus-label {
@@ -79,7 +80,7 @@
     position: absolute;
     top: .2em;
     font-size: 2em;
-    transition: all .3s;
+    transition: all .5s;
   }
 
   &__scroll-left-container {
@@ -106,11 +107,13 @@
   }
 
   &--closed &__family-plus-container {
+    opacity: 0;
     visibility: hidden;
   }
 
   &--closed &__scroll-left-container,
   &--closed &__scroll-right-container {
+    opacity: 0;
     visibility: hidden;
   }
 
