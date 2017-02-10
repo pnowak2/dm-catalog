@@ -7,11 +7,26 @@ import { FamilyMemberViewModel } from './viewmodel/family-member.viewmodel';
   templateUrl: './family-member.component.html',
   styleUrls: ['./family-member.component.scss']
 })
-export class FamilyMemberComponent {
+export class FamilyMemberComponent implements FamilyMemberView {
   vm: FamilyMemberViewModel;
+  presenter: FamilyMemberPresenter;
+
+  constructor() {
+    this.presenter.view = this;
+  }
 
   @Input() 
   set familyMember(familyMember: FamilyMemberModel) {
-    this.vm = new FamilyMemberViewModel(familyMember);
+    this.presenter.familyMember = familyMember;
+  }
+
+  onScrollClicked(evt) {
+    let id = evt.target.id;
+    this.presenter.scrollClicked(id);
+  }
+
+  onSaveClicked(evt) {
+    let data = evt.data;
+    this.presenter.save(data);
   }
 }
