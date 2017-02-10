@@ -1,5 +1,4 @@
 import { Component, HostListener } from '@angular/core';
-import { FamilyMemberViewModel, Coverage, Sex } from './components/family-bar/family-member/model/family-member.viewmodel';
 
 @Component({
   selector: 'app-root',
@@ -13,21 +12,7 @@ export class AppComponent {
   title: 'app works!';
 
   constructor() {
-    this.familyMember.firstName = 'Piotr';
-    this.familyMember.familyName = 'Nowak';
-    this.familyMember.mainLanguage = 'pol';
-    this.familyMember.sex = Sex.Male;
-    this.familyMember.birthDate = '1986/04/06';
-    this.familyMember.deathDate = '2004/12/16';
-    this.familyMember.delegationCountry = 'BEL';
-    this.familyMember.disabled = false;
-    this.familyMember.personalNumber = '346001';
-    this.familyMember.relationName = 'Affiliate';
-    this.familyMember.selected = true;
-    this.familyMember.hasComments = true;
-    this.familyMember.coveredByOtherAffiliate = true;
-    this.familyMember.accidentCoverage = Coverage.Full;
-    this.familyMember.sicknessCoverage = Coverage.Complementary;
+
   }
 
   @HostListener('document:click', ['$event'])

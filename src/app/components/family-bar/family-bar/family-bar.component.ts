@@ -1,4 +1,4 @@
-import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
+import { FamilyMemberModel } from './../family-member/model/family-member.model';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,9 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./family-bar.component.scss']
 })
 export class FamilyBarComponent {
-  @Input() familyMembers: Array<FamilyMemberViewModel> = [];
+  @Input() familyMembers: Array<FamilyMemberModel> = [];
 
-  get selectedMember(): FamilyMemberViewModel {
-    return this.familyMembers.find(member => member.selected);
-  }
 }

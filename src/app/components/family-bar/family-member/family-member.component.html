@@ -1,72 +1,12 @@
-<div class="asm-family-member"
-     [class.asm-family-member--selected]="familyMember.selected"
-     [class.asm-family-member--disabled]="familyMember.disabled">
-  <div class="asm-family-member__header">
-    <div class="asm-family-member__member-type">
-      <span class="asm-family-member__member-role">
-        {{ familyMember.relationName }}
-        
-        <a href="#" *ngIf="familyMember.coveredByOtherAffiliate" class="asm-family-member__member-number">
-          #{{ familyMember.personalNumber }}
-        </a>
-
-        <span *ngIf="!familyMember.coveredByOtherAffiliate">
-          #{{ familyMember.personalNumber }}
-        </span>
-      </span>
-    </div>
-    <div class="asm-family-member__more-menu">
-        <a class="asm-family-member__more-menu-label" data-toggle="dropdown">
-          More <span class="fa fa-caret-down"></span>
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Show Info</a>
-          <a class="dropdown-item" href="#">Send e-mail</a>
-        </div>
-    </div>
-  </div>
-
-  <div class="asm-family-member__data-section">
-    <div class="asm-family-member__person-name">
-      <span class="asm-family-member__person-first-name">{{ familyMember.firstName }}</span>
-      <span class="asm-family-member__person-last-name">{{ familyMember.familyName }}</span>
-    </div>
-    <div class="asm-family-member__person-born">
-      <i class="fa"
-          [class.fa-mars]="isMale()"
-          [class.fa-venus]="isFemale()"
-          [class.fa-genderless]="isSexUnknown()">
-      </i>
-      {{ getBirthAndDeathDates() }}
-    </div>
-  </div>
-
-  <div class="asm-family-member__footer">
-    <div class="asm-family-member__languages">
-      <div *ngIf="familyMember.mainLanguage" 
-            class="asm-family-member__language">
-        {{ familyMember.mainLanguage }}
-      </div>
-      <div *ngIf="familyMember.delegationCountry"
-            class="asm-family-member__language">
-          <i class="fa fa-globe"></i> {{ familyMember.delegationCountry }}
-      </div>
-    </div>
-    <div class="asm-family-member__badges">
-      <i *ngIf="familyMember.hasComments"
-          class="fa fa-comment asm-family-member__badge asm-family-member__badge--comments">
-      </i>
-      <i *ngIf="familyMember.coveredByOtherAffiliate"
-          class="fa fa-warning asm-family-member__badge asm-family-member__badge--covered-by-other">
-      </i>
-      <i class="fa fa-heart asm-family-member__badge"
-          [class.asm-family-member__badge--complementary-rights]="hasSicknessComplementaryRights()"
-          [class.asm-family-member__badge--full-rights]="hasSicknessFullRights()">
-      </i>
-      <i class="fa fa-plus asm-family-member__badge"
-          [class.asm-family-member__badge--complementary-rights]="hasAccidentComplementaryRights()"
-          [class.asm-family-member__badge--full-rights]="hasAccidentFullRights()">
-      </i>
-    </div>
-  </div>
+<div> 
+  #{{ vm.personalNumber }}
 </div>
+
+<div>
+  #{{ vm.personalNumber | date }}
+</div>
+
+<i class="fa fa-plus asm-family-member__badge"
+    [class.asm-badge--complementary]="vm.hasAccidentComplementaryCoverage"
+    [class.asm-badge--full]="vm.hasAccidentFullCoverage">
+</i>
