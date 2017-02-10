@@ -84,17 +84,19 @@
   &__scroll-left-container,
   &__scroll-right-container {
     position: absolute;
-    top: .2em;
     font-size: 2em;
+    height: 1.5em;
+    top: 50%;
+    margin-top: -.75em;
     transition: all .5s;
   }
 
   &__scroll-left-container {
-    left: -2em;
+    left: -1.5em;
   }
 
   &__scroll-right-container {
-    right: -2em;
+    right: -1.5em;
   }
 
   &__scroll-left-container:active,
