@@ -1,3 +1,4 @@
+import { ElementRef } from '@angular/core';
 /* tslint:disable:no-unused-variable */
 import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -41,6 +42,16 @@ describe('FamilyBarComponent', () => {
       
       it('should be type of event emmiter', () => {
         expect(component.familyMemberSelected).toEqual(jasmine.any(EventEmitter));
+      });
+    });
+
+    describe('.familyMembersScrollContainer', () => {
+      it(`should be defined`, () => {
+        expect(component.familyMembersScrollContainer).toBeDefined();
+      });
+      
+      it('should by type of element ref', () => {
+        expect(component.familyMembersScrollContainer).toEqual(jasmine.any(ElementRef));
       });
     });
 

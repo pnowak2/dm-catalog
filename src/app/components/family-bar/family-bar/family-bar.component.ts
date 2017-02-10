@@ -1,5 +1,5 @@
 import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'asm-family-bar',
@@ -7,6 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./family-bar.component.scss']
 })
 export class FamilyBarComponent {
+  @ViewChild('familyMembersScrollContainer') familyMembersScrollContainer: ElementRef;
   @Output() familyMemberSelected = new EventEmitter<FamilyMemberViewModel>();
   @Input() familyMembers: Array<FamilyMemberViewModel> = [];
   @Input() closed = false;

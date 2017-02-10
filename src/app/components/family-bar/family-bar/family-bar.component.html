@@ -1,6 +1,6 @@
 <div class="asm-family-bar"
      [class.asm-family-bar--closed]="closed">
-  <div class="asm-family-bar__members-container">
+  <div #familyMembersScrollContainer class="asm-family-bar__members-container">
     <asm-family-member 
       *ngFor="let familyMember of familyMembers"
       [familyMember]="familyMember"
