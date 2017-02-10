@@ -1,7 +1,7 @@
-import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
 /* tslint:disable:no-unused-variable */
+import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA, EventEmitter } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -34,6 +34,16 @@ describe('FamilyBarComponent', () => {
   });
 
   describe('Api', () => {
+    describe('familyMemberSelected', () => {
+      it('should be defined', () => {
+        expect(component.familyMemberSelected).toBeDefined();
+      });
+      
+      it('should be type of event emmiter', () => {
+        expect(component.familyMemberSelected).toEqual(jasmine.any(EventEmitter));
+      });
+    });
+
     describe('.familyMembers', () => {
       it(`should be initialized to empty array`, () => {
         expect(component.familyMembers).toEqual([]);
@@ -140,7 +150,16 @@ describe('FamilyBarComponent', () => {
         expect(two.selected).toBe(false);
         expect(three.selected).toBe(true);
       });
-    });
+      
+      it('should trigger component event', () => {
+        let member: FamilyMemberViewModel = { selected: true };
+        spyOn(component.familyMemberSelected, 'next');
+
+        component.familyMemberClicked(member);
+
+        expect(component.familyMemberSelected.next).toHaveBeenCalledWith(member);
+      });
+    });   
   });
 
   describe('Markup', () => {

@@ -11,15 +11,19 @@ export class AppComponent {
     firstName: 'Piotr',
     familyName: 'Bardzo Długa Nazwa Że Aż Szok',
     personalNumber: '123456'
-  },{
+  }, {
     firstName: 'Andrzej',
     familyName: 'Poniedzielski',
     personalNumber: '256002',
     coveredByOtherAffiliate: true
-  },{
+  }, {
     firstName: 'Roman'
   }];
 
   md: Date = new Date();
   title: 'app works!';
+
+  familyMemberSelected(member: FamilyMemberViewModel) {
+    console.log('selected: ', member);
+  }
 }
