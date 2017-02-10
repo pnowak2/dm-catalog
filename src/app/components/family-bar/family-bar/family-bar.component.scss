@@ -25,13 +25,15 @@
     border: .1em solid #ddd;
     border-top: 0;
     border-radius: 0 0 .2em .2em;
-    display: inline-block;
+    display: block;
     font-size: .7em;
     padding: .3em .7em;
     color: #999;
     cursor: pointer;
     position: relative; 
-    padding-right: 2em
+    padding-right: 2em;
+    width: 16em;
+    margin: 0 auto;
   }
   
   &__tab-title {
