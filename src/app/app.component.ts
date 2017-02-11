@@ -10,12 +10,18 @@ export class AppComponent {
   familyMembers: Array<FamilyMemberViewModel> = [{
     firstName: 'Piotr',
     familyName: 'Bardzo Długa Nazwa Że Aż Szok',
-    personalNumber: '123456'
+    personalNumber: '123456',
+    accidentCoverage: Coverage.Full,
+    sicknessCoverage: Coverage.Complementary,
+    birthDate: '28/05/1980'
   }, {
     firstName: 'Andrzej',
     familyName: 'Poniedzielski',
     personalNumber: '256002',
-    coveredByOtherAffiliate: true
+    coveredByOtherAffiliate: true,
+    birthDate: '12/10/1964',
+    deathDate: '01/07/2004',
+    sex: Sex.Male
   }, {
     firstName: 'Roman'
   }];

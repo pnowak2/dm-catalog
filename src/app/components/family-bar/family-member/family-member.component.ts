@@ -9,31 +9,31 @@ import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.view
 export class FamilyMemberComponent {
   @Input() public familyMember: FamilyMemberViewModel = {};
 
-  hasSicknessComplementaryRights(): boolean {
+  get hasSicknessComplementaryRights(): boolean {
     return this.familyMember.sicknessCoverage === Coverage.Complementary;
   }
 
-  hasSicknessFullRights(): boolean {
+  get hasSicknessFullRights(): boolean {
     return this.familyMember.sicknessCoverage === Coverage.Full;
   }
 
-  hasAccidentComplementaryRights(): boolean {
+  get hasAccidentComplementaryRights(): boolean {
     return this.familyMember.accidentCoverage === Coverage.Complementary;
   }
 
-  hasAccidentFullRights(): boolean {
+  get hasAccidentFullRights(): boolean {
     return this.familyMember.accidentCoverage === Coverage.Full;
   }
 
-  isMale(): boolean {
+  get isMale(): boolean {
     return this.familyMember.sex === Sex.Male;
   }
 
-  isFemale(): boolean {
+  get isFemale(): boolean {
     return this.familyMember.sex === Sex.Female;
   }
 
-  isSexUnknown(): boolean {
+  get isSexUnknown(): boolean {
     return this.familyMember.sex === Sex.Unknown || this.familyMember.sex === undefined;
   }
 
