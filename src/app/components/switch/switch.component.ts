@@ -11,7 +11,7 @@ export class SwitchComponent {
   @Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
   @HostListener('click')
-  clicked() {
+  handleClicked() {
     if (this.disabled) {
       return;
     }

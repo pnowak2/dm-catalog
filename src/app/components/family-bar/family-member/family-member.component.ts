@@ -10,7 +10,7 @@ export class FamilyMemberComponent {
   @Output() customerNumberClick = new EventEmitter<FamilyMemberViewModel>();
   @Input() familyMember: FamilyMemberViewModel = {};
 
-  customerNumberClicked(): void {
+  handleCustomerNumberClicked(): void {
     this.customerNumberClick.next(this.familyMember);
   }
 

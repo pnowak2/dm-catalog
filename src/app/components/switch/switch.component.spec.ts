@@ -60,21 +60,21 @@ describe('SwitchComponent', () => {
       });
     });
 
-    describe('clicked()', () => {
+    describe('handleClicked()', () => {
       it('should be defined', () => {
-        expect(SwitchComponent.prototype.clicked).toEqual(jasmine.any(Function));
+        expect(SwitchComponent.prototype.handleClicked).toEqual(jasmine.any(Function));
       });
 
       it(`should negate checked property if set to false'`, () => {
         component.checked = false;
-        component.clicked();
+        component.handleClicked();
 
         expect(component.checked).toBe(true);
       });
 
       it(`should negate checked property if set to true'`, () => {
         component.checked = true;
-        component.clicked();
+        component.handleClicked();
 
         expect(component.checked).toBe(false);
       });
@@ -83,7 +83,7 @@ describe('SwitchComponent', () => {
         spyOn(component.toggle, 'emit');
 
         component.checked = false;
-        component.clicked();
+        component.handleClicked();
 
         expect(component.toggle.emit).toHaveBeenCalledWith(true);
       });
@@ -92,7 +92,7 @@ describe('SwitchComponent', () => {
         spyOn(component.toggle, 'emit');
 
         component.disabled = true;
-        component.clicked();
+        component.handleClicked();
 
         expect(component.toggle.emit).not.toHaveBeenCalled();
       });
@@ -102,11 +102,11 @@ describe('SwitchComponent', () => {
   describe('Markup', () => {
     describe('events', () => {
       it('should call appropriate handler when clicked host element', async(() => {
-        spyOn(component, 'clicked');
+        spyOn(component, 'handleClicked');
 
         fixture.debugElement.triggerEventHandler('click', {});
 
-        expect(component.clicked).toHaveBeenCalled();
+        expect(component.handleClicked).toHaveBeenCalled();
       }));
     });
 

@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@
 })
 export class FamilyBarComponent {
   @ViewChild('familyMembersScrollContainer') familyMembersScrollContainer: ElementRef;
-  @Output() familyMemberSelected = new EventEmitter<FamilyMemberViewModel>();
+  @Output() memberSelected = new EventEmitter<FamilyMemberViewModel>();
   @Input() familyMembers: Array<FamilyMemberViewModel> = [];
   @Input() closed = false;
 
@@ -16,21 +16,21 @@ export class FamilyBarComponent {
     return this.familyMembers.find(member => member.selected);
   }
 
-  familyMemberClicked(member: FamilyMemberViewModel) {
+  handleMemberClicked(member: FamilyMemberViewModel) {
     this.familyMembers.forEach(member => member.selected = false);
     member.selected = true;
-    this.familyMemberSelected.next(member);
+    this.memberSelected.next(member);
   }
 
-  tabClicked() {
+  handleTabClicked() {
     this.closed = !this.closed;
   }
 
-  scrollLeftClicked(evt) {
+  handleScrollLeftClicked(evt) {
     evt.stopPropagation();
   }
 
-  scrollRightClicked(evt) {
+  handleScrollRightClicked(evt) {
     evt.stopPropagation();
   }
 }

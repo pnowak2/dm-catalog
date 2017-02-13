@@ -7,7 +7,7 @@
         {{ familyMember.relationName }}
         
         <a *ngIf="familyMember.coveredByOtherAffiliate" 
-          (click)="customerNumberClicked()"
+          (click)="handleCustomerNumberClicked()"
           class="asm-family-member__member-number"
           href="#">
           <span *ngIf="familyMember.personalNumber">#</span>{{ familyMember.personalNumber }}

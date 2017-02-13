@@ -43,9 +43,9 @@ describe('FamilyMemberComponent', () => {
       });
     });
 
-    describe('customerNumberClicked()', () => {
+    describe('handleCustomerNumberClicked()', () => {
       it('should be defined', () => {
-        expect(FamilyMemberComponent.prototype.customerNumberClicked).toEqual(jasmine.any(Function));
+        expect(FamilyMemberComponent.prototype.handleCustomerNumberClicked).toEqual(jasmine.any(Function));
       });
       
       it('should trigger component event', () => {
@@ -53,7 +53,7 @@ describe('FamilyMemberComponent', () => {
         const member: FamilyMemberViewModel = {}
         component.familyMember = member;
 
-        component.customerNumberClicked();
+        component.handleCustomerNumberClicked();
 
         expect(component.customerNumberClick.next).toHaveBeenCalledWith(member);
       });
@@ -317,8 +317,8 @@ describe('FamilyMemberComponent', () => {
           expect(linkEl.nativeElement.textContent).toContain('123456');
         }));
 
-        it('should ..', async(() => {
-          spyOn(component, 'customerNumberClicked');
+        it('should call event handler when clicked', async(() => {
+          spyOn(component, 'handleCustomerNumberClicked');
 
           const member: FamilyMemberViewModel = {
             personalNumber: '123456',
@@ -333,7 +333,7 @@ describe('FamilyMemberComponent', () => {
           
           linkEl.triggerEventHandler('click', null);
 
-          expect(component.customerNumberClicked).toHaveBeenCalled();
+          expect(component.handleCustomerNumberClicked).toHaveBeenCalled();
         }));
       });
 

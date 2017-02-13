@@ -35,13 +35,13 @@ describe('FamilyBarComponent', () => {
   });
 
   describe('Api', () => {
-    describe('familyMemberSelected', () => {
+    describe('memberSelected', () => {
       it('should be defined', () => {
-        expect(component.familyMemberSelected).toBeDefined();
+        expect(component.memberSelected).toBeDefined();
       });
       
       it('should be type of event emmiter', () => {
-        expect(component.familyMemberSelected).toEqual(jasmine.any(EventEmitter));
+        expect(component.memberSelected).toEqual(jasmine.any(EventEmitter));
       });
     });
 
@@ -103,48 +103,48 @@ describe('FamilyBarComponent', () => {
       });
     });
 
-    describe('.tabClicked()', () => {
+    describe('.handleTabClicked()', () => {
       it('should be defined', () => {
-        expect(FamilyBarComponent.prototype.tabClicked).toEqual(jasmine.any(Function));
+        expect(FamilyBarComponent.prototype.handleTabClicked).toEqual(jasmine.any(Function));
       });
 
       it('should toggle closed property', () => {
         component.closed = false;
-        component.tabClicked();
+        component.handleTabClicked();
 
         expect(component.closed).toBe(true);
       });
     });
 
-    describe('.scrollLeftClicked()', () => {
+    describe('.handleScrollLeftClicked()', () => {
       it('should be defined', () => {
-        expect(FamilyBarComponent.prototype.scrollLeftClicked).toEqual(jasmine.any(Function));
+        expect(FamilyBarComponent.prototype.handleScrollLeftClicked).toEqual(jasmine.any(Function));
       });
 
       it('should stop event propagation', () => {
         const fakeEvent = jasmine.createSpyObj('evt', ['stopPropagation']);
-        component.scrollLeftClicked(fakeEvent);
+        component.handleScrollLeftClicked(fakeEvent);
 
         expect(fakeEvent.stopPropagation).toHaveBeenCalled();
       });
     });
 
-    describe('.scrollRightClicked()', () => {
+    describe('.handleScrollRightClicked()', () => {
       it('should be defined', () => {
-        expect(FamilyBarComponent.prototype.scrollRightClicked).toEqual(jasmine.any(Function));
+        expect(FamilyBarComponent.prototype.handleScrollRightClicked).toEqual(jasmine.any(Function));
       });
 
       it('should stop event propagation', () => {
         const fakeEvent = jasmine.createSpyObj('evt', ['stopPropagation']);
-        component.scrollRightClicked(fakeEvent);
+        component.handleScrollRightClicked(fakeEvent);
 
         expect(fakeEvent.stopPropagation).toHaveBeenCalled();
       });
     });
     
-    describe('.familyMemberClicked()', () => {
+    describe('.handleMemberClicked()', () => {
       it('should be defined', () => {
-        expect(FamilyBarComponent.prototype.familyMemberClicked).toEqual(jasmine.any(Function));
+        expect(FamilyBarComponent.prototype.handleMemberClicked).toEqual(jasmine.any(Function));
       });
       
       it('should unselect all family members but the selected one', () => {
@@ -154,7 +154,7 @@ describe('FamilyBarComponent', () => {
 
         component.familyMembers = [one, two, three];
 
-        component.familyMemberClicked(three)
+        component.handleMemberClicked(three)
 
         expect(one.selected).toBe(false);
         expect(two.selected).toBe(false);
@@ -163,11 +163,11 @@ describe('FamilyBarComponent', () => {
       
       it('should trigger component event', () => {
         let member: FamilyMemberViewModel = { selected: true };
-        spyOn(component.familyMemberSelected, 'next');
+        spyOn(component.memberSelected, 'next');
 
-        component.familyMemberClicked(member);
+        component.handleMemberClicked(member);
 
-        expect(component.familyMemberSelected.next).toHaveBeenCalledWith(member);
+        expect(component.memberSelected.next).toHaveBeenCalledWith(member);
       });
     });   
   });
@@ -210,12 +210,12 @@ describe('FamilyBarComponent', () => {
       });
       
       it('should trigger click event when family member clicked', () => {
-        spyOn(component, 'familyMemberClicked');
+        spyOn(component, 'handleMemberClicked');
         const el = debugElement.queryAll(By.css('asm-family-member'));
 
         el[2].triggerEventHandler('click', null);
 
-        expect(component.familyMemberClicked).toHaveBeenCalledWith(three);
+        expect(component.handleMemberClicked).toHaveBeenCalledWith(three);
       });
         
 
@@ -252,12 +252,12 @@ describe('FamilyBarComponent', () => {
           });
 
           it('should trigger click event', () => {
-            spyOn(component, 'tabClicked');
+            spyOn(component, 'handleTabClicked');
 
             const el = debugElement.query(By.css('.asm-family-bar__tab-button'));
             el.triggerEventHandler('click', null);
 
-            expect(component.tabClicked).toHaveBeenCalled();
+            expect(component.handleTabClicked).toHaveBeenCalled();
           });
         });
 
@@ -339,13 +339,13 @@ describe('FamilyBarComponent', () => {
         });
 
         it('should trigger click event for scroll left', () => {
-          spyOn(component, 'scrollLeftClicked');
+          spyOn(component, 'handleScrollLeftClicked');
 
           const el = debugElement.query(By.css('.asm-family-bar__scroll-left-container'));
           const fakeEvent = {};
           el.triggerEventHandler('click', fakeEvent);
 
-          expect(component.scrollLeftClicked).toHaveBeenCalledWith(fakeEvent);
+          expect(component.handleScrollLeftClicked).toHaveBeenCalledWith(fakeEvent);
         });
 
         it('should render scroll right button', () => {
@@ -354,13 +354,13 @@ describe('FamilyBarComponent', () => {
         });
 
         it('should trigger click event for scroll right', () => {
-          spyOn(component, 'scrollRightClicked');
+          spyOn(component, 'handleScrollRightClicked');
 
           const el = debugElement.query(By.css('.asm-family-bar__scroll-right-container'));
           const fakeEvent = {};
           el.triggerEventHandler('click', fakeEvent);
 
-          expect(component.scrollRightClicked).toHaveBeenCalledWith(fakeEvent);
+          expect(component.handleScrollRightClicked).toHaveBeenCalledWith(fakeEvent);
         });
       });
 
