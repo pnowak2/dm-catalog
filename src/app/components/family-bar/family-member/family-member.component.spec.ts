@@ -33,6 +33,32 @@ describe('FamilyMemberComponent', () => {
   });
 
   describe('Api', () => {
+    describe('.customerNumberClick', () => {
+      it('should be defined', () => {
+        expect(component.customerNumberClick).toBeDefined();
+      });
+
+      it('should be type of event emmiter', () => {
+        expect(component.customerNumberClick).toEqual(jasmine.any(EventEmitter));
+      });
+    });
+
+    describe('customerNumberClicked()', () => {
+      it('should be defined', () => {
+        expect(FamilyMemberComponent.prototype.customerNumberClicked).toEqual(jasmine.any(Function));
+      });
+      
+      it('should trigger component event', () => {
+        spyOn(component.customerNumberClick, 'next');
+        const member: FamilyMemberViewModel = {}
+        component.familyMember = member;
+
+        component.customerNumberClicked();
+
+        expect(component.customerNumberClick.next).toHaveBeenCalledWith(member);
+      });
+    });
+
     describe('.familyMember', () => {
       it(`should be defined`, () => {
         expect(component.familyMember).toBeDefined();
@@ -289,6 +315,25 @@ describe('FamilyMemberComponent', () => {
           );
           expect(linkEl).toBeTruthy();
           expect(linkEl.nativeElement.textContent).toContain('123456');
+        }));
+
+        it('should ..', async(() => {
+          spyOn(component, 'customerNumberClicked');
+
+          const member: FamilyMemberViewModel = {
+            personalNumber: '123456',
+            coveredByOtherAffiliate: true
+          }
+          component.familyMember = member;
+          fixture.detectChanges();
+
+          let linkEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__member-number')
+          );
+          
+          linkEl.triggerEventHandler('click', null);
+
+          expect(component.customerNumberClicked).toHaveBeenCalled();
         }));
       });
 

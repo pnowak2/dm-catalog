@@ -114,7 +114,6 @@ describe('FamilyBarComponent', () => {
 
         expect(component.closed).toBe(true);
       });
-
     });
 
     describe('.scrollLeftClicked()', () => {

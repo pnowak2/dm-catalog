@@ -6,7 +6,10 @@
       <span class="asm-family-member__member-role">
         {{ familyMember.relationName }}
         
-        <a href="#" *ngIf="familyMember.coveredByOtherAffiliate" class="asm-family-member__member-number">
+        <a *ngIf="familyMember.coveredByOtherAffiliate" 
+          (click)="customerNumberClicked()"
+          class="asm-family-member__member-number"
+          href="#">
           <span *ngIf="familyMember.personalNumber">#</span>{{ familyMember.personalNumber }}
         </a>
 

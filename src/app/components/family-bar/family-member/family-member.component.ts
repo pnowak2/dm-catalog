@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.viewmodel';
 
 @Component({
@@ -7,7 +7,12 @@ import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.view
   styleUrls: ['./family-member.component.scss']
 })
 export class FamilyMemberComponent {
-  @Input() public familyMember: FamilyMemberViewModel = {};
+  @Output() customerNumberClick = new EventEmitter<FamilyMemberViewModel>();
+  @Input() familyMember: FamilyMemberViewModel = {};
+
+  customerNumberClicked(): void {
+    this.customerNumberClick.next(this.familyMember);
+  }
 
   get hasSicknessComplementaryRights(): boolean {
     return this.familyMember.sicknessCoverage === Coverage.Complementary;
