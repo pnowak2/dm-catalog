@@ -1,4 +1,4 @@
-import { ElementRef } from '@angular/core';
+import { ElementRef, Renderer } from '@angular/core';
 /* tslint:disable:no-unused-variable */
 import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -35,13 +35,13 @@ describe('FamilyBarComponent', () => {
   });
 
   describe('Api', () => {
-    describe('memberSelected', () => {
+    describe('.ScrollStep', () => {
       it('should be defined', () => {
-        expect(component.memberSelected).toBeDefined();
+        expect(component.ScrollStep).toBeDefined();
       });
-      
-      it('should be type of event emmiter', () => {
-        expect(component.memberSelected).toEqual(jasmine.any(EventEmitter));
+
+      it('should be set to comfortable value', () => {
+        expect(component.ScrollStep).toEqual(80);
       });
     });
 
@@ -49,9 +49,19 @@ describe('FamilyBarComponent', () => {
       it(`should be defined`, () => {
         expect(component.familyMembersScrollContainer).toBeDefined();
       });
-      
+
       it('should by type of element ref', () => {
         expect(component.familyMembersScrollContainer).toEqual(jasmine.any(ElementRef));
+      });
+    });
+
+    describe('memberSelected', () => {
+      it('should be defined', () => {
+        expect(component.memberSelected).toBeDefined();
+      });
+
+      it('should be type of event emmiter', () => {
+        expect(component.memberSelected).toEqual(jasmine.any(EventEmitter));
       });
     });
 
@@ -68,6 +78,18 @@ describe('FamilyBarComponent', () => {
 
       it('should be false', () => {
         expect(component.closed).toBe(false);
+      });
+    });
+    
+    describe('.familySize', () => {
+      it('should be defined', () => {
+        expect(component.familySize).toBeDefined();
+      });
+      
+      it('should return count of all family members', () => {
+        component.familyMembers = [{}, {}, {}];
+
+        expect(component.familySize).toEqual(3);
       });
     });
 
@@ -117,8 +139,34 @@ describe('FamilyBarComponent', () => {
     });
 
     describe('.handleScrollLeftClicked()', () => {
+      let originalScrollEl;
+      let fakeScrollEl;
+
+      beforeEach(() => {
+        originalScrollEl = component.familyMembersScrollContainer.nativeElement;
+        fakeScrollEl = {
+          scrollLeft: 0
+        };
+        component.familyMembersScrollContainer.nativeElement = fakeScrollEl;
+      });
+
+      afterEach(() => {
+        component.familyMembersScrollContainer.nativeElement = originalScrollEl;
+      });
+
       it('should be defined', () => {
         expect(FamilyBarComponent.prototype.handleScrollLeftClicked).toEqual(jasmine.any(Function));
+      });
+
+      it('should scroll family members container left', () => {
+        const fakeEvent = { stopPropagation: () => { } };
+        component.familyMembersScrollContainer.nativeElement.scrollLeft = 100;
+        
+        component.handleScrollLeftClicked(fakeEvent);
+
+        expect(
+          component.familyMembersScrollContainer.nativeElement.scrollLeft
+        ).toEqual(20);
       });
 
       it('should stop event propagation', () => {
@@ -130,8 +178,34 @@ describe('FamilyBarComponent', () => {
     });
 
     describe('.handleScrollRightClicked()', () => {
+      let originalScrollEl;
+      let fakeScrollEl;
+
+      beforeEach(() => {
+        originalScrollEl = component.familyMembersScrollContainer.nativeElement;
+        fakeScrollEl = {
+          scrollLeft: 0
+        };
+        component.familyMembersScrollContainer.nativeElement = fakeScrollEl;
+      });
+
+      afterEach(() => {
+        component.familyMembersScrollContainer.nativeElement = originalScrollEl;
+      });
+
       it('should be defined', () => {
         expect(FamilyBarComponent.prototype.handleScrollRightClicked).toEqual(jasmine.any(Function));
+      });
+
+      it('should scroll family members container right', () => {
+        const fakeEvent = { stopPropagation: () => { } };
+        component.familyMembersScrollContainer.nativeElement.scrollLeft = 15;
+
+        component.handleScrollRightClicked(fakeEvent);
+
+        expect(
+          component.familyMembersScrollContainer.nativeElement.scrollLeft
+        ).toEqual(95);
       });
 
       it('should stop event propagation', () => {
@@ -141,12 +215,12 @@ describe('FamilyBarComponent', () => {
         expect(fakeEvent.stopPropagation).toHaveBeenCalled();
       });
     });
-    
+
     describe('.handleMemberClicked()', () => {
       it('should be defined', () => {
         expect(FamilyBarComponent.prototype.handleMemberClicked).toEqual(jasmine.any(Function));
       });
-      
+
       it('should unselect all family members but the selected one', () => {
         let one: FamilyMemberViewModel = { selected: true };
         let two: FamilyMemberViewModel = { selected: false };
@@ -160,7 +234,7 @@ describe('FamilyBarComponent', () => {
         expect(two.selected).toBe(false);
         expect(three.selected).toBe(true);
       });
-      
+
       it('should trigger component event', () => {
         let member: FamilyMemberViewModel = { selected: true };
         spyOn(component.memberSelected, 'next');
@@ -169,7 +243,7 @@ describe('FamilyBarComponent', () => {
 
         expect(component.memberSelected.next).toHaveBeenCalledWith(member);
       });
-    });   
+    });
   });
 
   describe('Markup', () => {
@@ -208,7 +282,7 @@ describe('FamilyBarComponent', () => {
         expect(el[1].properties['familyMember']).toEqual(two);
         expect(el[2].properties['familyMember']).toEqual(three);
       });
-      
+
       it('should trigger click event when family member clicked', () => {
         spyOn(component, 'handleMemberClicked');
         const el = debugElement.queryAll(By.css('asm-family-member'));
@@ -217,7 +291,7 @@ describe('FamilyBarComponent', () => {
 
         expect(component.handleMemberClicked).toHaveBeenCalledWith(three);
       });
-        
+
 
       it('should be visible if closed property is set false', () => {
         component.closed = false;

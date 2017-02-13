@@ -1,5 +1,5 @@
 import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer } from '@angular/core';
 
 @Component({
   selector: 'asm-family-bar',
@@ -7,10 +7,17 @@ import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@
   styleUrls: ['./family-bar.component.scss']
 })
 export class FamilyBarComponent {
+  ScrollStep = 80;
   @ViewChild('familyMembersScrollContainer') familyMembersScrollContainer: ElementRef;
   @Output() memberSelected = new EventEmitter<FamilyMemberViewModel>();
   @Input() familyMembers: Array<FamilyMemberViewModel> = [];
   @Input() closed = false;
+
+  constructor(private renderer: Renderer) { }
+
+  get familySize(): number {
+    return this.familyMembers.length;
+  }
 
   get selectedMember(): FamilyMemberViewModel {
     return this.familyMembers.find(member => member.selected);
@@ -27,10 +34,26 @@ export class FamilyBarComponent {
   }
 
   handleScrollLeftClicked(evt) {
+    let currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
+
+    this.renderer.setElementProperty(
+      this.familyMembersScrollContainer.nativeElement,
+      'scrollLeft',
+      currentPosition - this.ScrollStep
+    );
+
     evt.stopPropagation();
   }
 
   handleScrollRightClicked(evt) {
+    let currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
+    
+    this.renderer.setElementProperty(
+      this.familyMembersScrollContainer.nativeElement,
+      'scrollLeft',
+      currentPosition + this.ScrollStep
+    );
+
     evt.stopPropagation();
   }
 }
