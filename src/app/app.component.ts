@@ -13,14 +13,14 @@ export class AppComponent {
     personalNumber: '123456',
     accidentCoverage: Coverage.Full,
     sicknessCoverage: Coverage.Complementary,
-    birthDate: '28/05/1980'
+    birthDate: new Date(1980, 4, 28)
   }, {
     firstName: 'Andrzej',
     familyName: 'Poniedzielski',
     personalNumber: '256002',
     coveredByOtherAffiliate: true,
-    birthDate: '12/10/1964',
-    deathDate: '01/07/2004',
+    birthDate: new Date(1980, 4, 28),
+    deathDate: new Date(1980, 4, 28),
     sex: Sex.Male
   }, {
     firstName: 'Roman'

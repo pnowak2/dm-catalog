@@ -192,32 +192,6 @@ describe('FamilyMemberComponent', () => {
         expect(component.isSexUnknown).toBe(true);
       });
     });
-
-    describe('.getBirthAndDeathDates()', () => {
-      it('should return only birth date if death date not defined', () => {
-        component.familyMember.birthDate = '16/02/1986';
-        component.familyMember.deathDate = null;
-        expect(component.getBirthAndDeathDates()).toEqual('16/02/1986');
-      });
-
-      it('should return only placeholder and death date if birth date not defined and death date is defined', () => {
-        component.familyMember.birthDate = null;
-        component.familyMember.deathDate = '19/05/2000';
-        expect(component.getBirthAndDeathDates()).toEqual('(?) - 19/05/2000');
-      });
-
-      it('should return both birth and death date if both are defined', () => {
-        component.familyMember.birthDate = '16/02/1986';
-        component.familyMember.deathDate = '19/05/2000';
-        expect(component.getBirthAndDeathDates()).toEqual('16/02/1986 - 19/05/2000');
-      });
-
-      it('should return palceholder if both birth and death dates are not defined', () => {
-        component.familyMember.birthDate = null;
-        component.familyMember.deathDate = null;
-        expect(component.getBirthAndDeathDates()).toEqual('(?)');
-      });
-    });
   });
 
   describe('Markup', () => {
@@ -379,11 +353,24 @@ describe('FamilyMemberComponent', () => {
       });
 
       describe('Dates', () => {
-        it('should properly render birth and death dates', async(() => {
-          spyOn(component, 'getBirthAndDeathDates').and.returnValue('fake date');
+        it('should properly render birth date', async(() => {
+          component.familyMember.birthDate = new Date(2017, 2, 12);
           fixture.detectChanges();
 
-          expect(debugElement.nativeElement.textContent).toContain('fake date');
+          let el = fixture.debugElement.query(By.css('.asm-family-member__person-born'));
+
+          expect(el.nativeElement.textContent).toContain('12/03/2017');
+        }));
+
+        it('should properly render birth and death date', async(() => {
+          component.familyMember.birthDate = new Date(1968, 0, 1);
+          component.familyMember.deathDate = new Date(2017, 1, 13);
+          fixture.detectChanges();
+
+          let el = fixture.debugElement.query(By.css('.asm-family-member__person-born'));
+
+          expect(el.nativeElement.textContent).toContain('01/01/1968');
+          expect(el.nativeElement.textContent).toContain('13/02/2017');
         }));
       });
 

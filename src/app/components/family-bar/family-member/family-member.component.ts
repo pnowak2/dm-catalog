@@ -41,19 +41,4 @@ export class FamilyMemberComponent {
   get isSexUnknown(): boolean {
     return this.familyMember.sex === Sex.Unknown || this.familyMember.sex === undefined;
   }
-
-  getBirthAndDeathDates(): string {
-    const birthDate = this.familyMember.birthDate;
-    const deathDate = this.familyMember.deathDate;
-
-    if (birthDate && deathDate) {
-      return `${birthDate} - ${deathDate}`;
-    } if (!birthDate && deathDate) {
-      return `(?) - ${deathDate}`;
-    } else if (!birthDate && !deathDate) {
-      return `(?)`;
-    } else {
-      return birthDate;
-    }
-  }
 }

@@ -40,7 +40,10 @@
           [class.fa-venus]="isFemale"
           [class.fa-genderless]="isSexUnknown">
       </i>
-      {{ getBirthAndDeathDates() }}
+      {{ familyMember.birthDate | date:'dd/MM/yyyy' }}
+      <span *ngIf="familyMember.deathDate">
+        - {{ familyMember.deathDate | date:'dd/MM/yyyy' }}
+      </span>
     </div>
   </div>
 
