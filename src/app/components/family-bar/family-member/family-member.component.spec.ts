@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
-import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.viewmodel';
+import { FamilyMemberViewModel, Coverage, Gender } from './model/family-member.viewmodel';
 
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;
@@ -139,57 +139,57 @@ describe('FamilyMemberComponent', () => {
 
     describe('.isMale', () => {
       it('should return true when male', () => {
-        component.familyMember.sex = Sex.Male;
+        component.familyMember.gender = Gender.Male;
         expect(component.isMale).toBe(true);
       });
 
       it('should return false when female', () => {
-        component.familyMember.sex = Sex.Female;
+        component.familyMember.gender = Gender.Female;
         expect(component.isMale).toBe(false);
       });
 
       it('should return false when unknown', () => {
-        component.familyMember.sex = Sex.Unknown;
+        component.familyMember.gender = Gender.Unknown;
         expect(component.isMale).toBe(false);
       });
     });
 
     describe('.isFemale', () => {
       it('should return true when female', () => {
-        component.familyMember.sex = Sex.Female;
+        component.familyMember.gender = Gender.Female;
         expect(component.isFemale).toBe(true);
       });
 
       it('should return false when male', () => {
-        component.familyMember.sex = Sex.Male;
+        component.familyMember.gender = Gender.Male;
         expect(component.isFemale).toBe(false);
       });
 
       it('should return false when unknown', () => {
-        component.familyMember.sex = Sex.Unknown;
+        component.familyMember.gender = Gender.Unknown;
         expect(component.isFemale).toBe(false);
       });
     });
 
-    describe('.isSexUnknown', () => {
+    describe('.isGenderUnknown', () => {
       it('should return false when male', () => {
-        component.familyMember.sex = Sex.Male;
-        expect(component.isSexUnknown).toBe(false);
+        component.familyMember.gender = Gender.Male;
+        expect(component.isGenderUnknown).toBe(false);
       });
 
       it('should return false when female', () => {
-        component.familyMember.sex = Sex.Female;
-        expect(component.isSexUnknown).toBe(false);
+        component.familyMember.gender = Gender.Female;
+        expect(component.isGenderUnknown).toBe(false);
       });
 
       it('should return true when unknown', () => {
-        component.familyMember.sex = Sex.Unknown;
-        expect(component.isSexUnknown).toBe(true);
+        component.familyMember.gender = Gender.Unknown;
+        expect(component.isGenderUnknown).toBe(true);
       });
 
       it('should return true when undefined', () => {
-        component.familyMember.sex = undefined;
-        expect(component.isSexUnknown).toBe(true);
+        component.familyMember.gender = undefined;
+        expect(component.isGenderUnknown).toBe(true);
       });
     });
   });
@@ -374,49 +374,49 @@ describe('FamilyMemberComponent', () => {
         }));
       });
 
-      describe('Sex', () => {
+      describe('Gender', () => {
         it('should render appropriate icon for male', async(() => {
-          component.familyMember.sex = Sex.Male;
+          component.familyMember.gender = Gender.Male;
           fixture.detectChanges();
 
-          let sexEl: DebugElement = debugElement.query(
+          let el: DebugElement = debugElement.query(
             By.css('.fa.fa-mars')
           );
 
-          expect(sexEl).toBeTruthy();
+          expect(el).toBeTruthy();
         }));
 
         it('should render appropriate icon for female', async(() => {
-          component.familyMember.sex = Sex.Female;
+          component.familyMember.gender = Gender.Female;
           fixture.detectChanges();
 
-          let sexEl: DebugElement = debugElement.query(
+          let el: DebugElement = debugElement.query(
             By.css('.fa.fa-venus')
           );
 
-          expect(sexEl).toBeTruthy();
+          expect(el).toBeTruthy();
         }));
 
-        it('should render appropriate icon for unknown sex', async(() => {
-          component.familyMember.sex = Sex.Unknown;
+        it('should render appropriate icon for unknown gender', async(() => {
+          component.familyMember.gender = Gender.Unknown;
           fixture.detectChanges();
 
-          let sexEl: DebugElement = debugElement.query(
+          let el: DebugElement = debugElement.query(
             By.css('.fa.fa-genderless')
           );
 
-          expect(sexEl).toBeTruthy();
+          expect(el).toBeTruthy();
         }));
 
-        it('should render appropriate icon for sex undefined', async(() => {
-          component.familyMember.sex = undefined;
+        it('should render appropriate icon for gender undefined', async(() => {
+          component.familyMember.gender = undefined;
           fixture.detectChanges();
 
-          let sexEl: DebugElement = debugElement.query(
+          let el: DebugElement = debugElement.query(
             By.css('.fa.fa-genderless')
           );
 
-          expect(sexEl).toBeTruthy();
+          expect(el).toBeTruthy();
         }));
       });
     });

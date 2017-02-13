@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FamilyMemberViewModel, Coverage, Sex } from './model/family-member.viewmodel';
+import { FamilyMemberViewModel, Coverage, Gender } from './model/family-member.viewmodel';
 
 @Component({
   selector: 'asm-family-member',
@@ -31,14 +31,14 @@ export class FamilyMemberComponent {
   }
 
   get isMale(): boolean {
-    return this.familyMember.sex === Sex.Male;
+    return this.familyMember.gender === Gender.Male;
   }
 
   get isFemale(): boolean {
-    return this.familyMember.sex === Sex.Female;
+    return this.familyMember.gender === Gender.Female;
   }
 
-  get isSexUnknown(): boolean {
-    return this.familyMember.sex === Sex.Unknown || this.familyMember.sex === undefined;
+  get isGenderUnknown(): boolean {
+    return this.familyMember.gender === Gender.Unknown || this.familyMember.gender === undefined;
   }
 }

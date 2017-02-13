@@ -4,7 +4,7 @@ export enum Coverage {
   Full
 }
 
-export enum Sex {
+export enum Gender {
   Male,
   Female,
   Unknown
@@ -14,7 +14,7 @@ export interface FamilyMemberViewModel {
   personalNumber?: string;
   firstName?: string;
   familyName?: string;
-  sex?: Sex;
+  gender?: Gender;
   selected?: boolean;
   disabled?: boolean;
   relationName?: string;

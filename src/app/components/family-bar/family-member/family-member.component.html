@@ -38,7 +38,7 @@
       <i class="fa"
           [class.fa-mars]="isMale"
           [class.fa-venus]="isFemale"
-          [class.fa-genderless]="isSexUnknown">
+          [class.fa-genderless]="isGenderUnknown">
       </i>
       {{ familyMember.birthDate | date:'dd/MM/yyyy' }}
       <span *ngIf="familyMember.deathDate">
