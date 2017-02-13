@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { FamilyMemberViewModel, Coverage, Gender } from './components/family-bar/family-member/model/family-member.viewmodel';
+import { FamilyMemberViewModel, CoverageType, Gender } from './components/family-bar/family-member/model/family-member.viewmodel';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,8 @@ export class AppComponent {
     firstName: 'Piotr',
     familyName: 'Bardzo Długa Nazwa Że Aż Szok',
     personalNumber: '123456',
-    accidentCoverage: Coverage.Full,
-    sicknessCoverage: Coverage.Complementary,
+    accidentCoverage: CoverageType.Full,
+    sicknessCoverage: CoverageType.Complementary,
     birthDate: new Date(1980, 4, 28)
   }, {
     firstName: 'Andrzej',

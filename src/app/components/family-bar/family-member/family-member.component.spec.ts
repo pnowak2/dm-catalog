@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
-import { FamilyMemberViewModel, Coverage, Gender } from './model/family-member.viewmodel';
+import { FamilyMemberViewModel, CoverageType, Gender } from './model/family-member.viewmodel';
 
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;
@@ -71,68 +71,68 @@ describe('FamilyMemberComponent', () => {
 
     describe('.hasSicknessComplementaryRights', () => {
       it('should return false when set to None', () => {
-        component.familyMember.sicknessCoverage = Coverage.None;
+        component.familyMember.sicknessCoverage = CoverageType.None;
         expect(component.hasSicknessComplementaryRights).toBe(false);
       });
 
       it('should return true when set to Complementary', () => {
-        component.familyMember.sicknessCoverage = Coverage.Complementary;
+        component.familyMember.sicknessCoverage = CoverageType.Complementary;
         expect(component.hasSicknessComplementaryRights).toBe(true);
       });
 
       it('should return false when set to Full', () => {
-        component.familyMember.sicknessCoverage = Coverage.Full;
+        component.familyMember.sicknessCoverage = CoverageType.Full;
         expect(component.hasSicknessComplementaryRights).toBe(false);
       });
     });
 
     describe('.hasSicknessFullRights', () => {
       it('should return false when set to None', () => {
-        component.familyMember.sicknessCoverage = Coverage.None;
+        component.familyMember.sicknessCoverage = CoverageType.None;
         expect(component.hasSicknessFullRights).toBe(false);
       });
 
       it('should return false when set to Complementary', () => {
-        component.familyMember.sicknessCoverage = Coverage.Complementary;
+        component.familyMember.sicknessCoverage = CoverageType.Complementary;
         expect(component.hasSicknessFullRights).toBe(false);
       });
 
       it('should return true when set to Full', () => {
-        component.familyMember.sicknessCoverage = Coverage.Full;
+        component.familyMember.sicknessCoverage = CoverageType.Full;
         expect(component.hasSicknessFullRights).toBe(true);
       });
     });
 
     describe('.hasAccidentComplementaryRights', () => {
       it('should return false when set to None', () => {
-        component.familyMember.accidentCoverage = Coverage.None;
+        component.familyMember.accidentCoverage = CoverageType.None;
         expect(component.hasAccidentComplementaryRights).toBe(false);
       });
 
       it('should return true when set to Complementary', () => {
-        component.familyMember.accidentCoverage = Coverage.Complementary;
+        component.familyMember.accidentCoverage = CoverageType.Complementary;
         expect(component.hasAccidentComplementaryRights).toBe(true);
       });
 
       it('should return false when set to Full', () => {
-        component.familyMember.accidentCoverage = Coverage.Full;
+        component.familyMember.accidentCoverage = CoverageType.Full;
         expect(component.hasAccidentComplementaryRights).toBe(false);
       });
     });
 
     describe('.hasAccidentFullRights', () => {
       it('should return false when set to None', () => {
-        component.familyMember.accidentCoverage = Coverage.None;
+        component.familyMember.accidentCoverage = CoverageType.None;
         expect(component.hasAccidentFullRights).toBe(false);
       });
 
       it('should return false when set to Complementary', () => {
-        component.familyMember.accidentCoverage = Coverage.Complementary;
+        component.familyMember.accidentCoverage = CoverageType.Complementary;
         expect(component.hasAccidentFullRights).toBe(false);
       });
 
       it('should return true when set to Full', () => {
-        component.familyMember.accidentCoverage = Coverage.Full;
+        component.familyMember.accidentCoverage = CoverageType.Full;
         expect(component.hasAccidentFullRights).toBe(true);
       });
     });
@@ -561,7 +561,7 @@ describe('FamilyMemberComponent', () => {
           }));
 
           it('should render properly with rights set to None', async(() => {
-            component.familyMember.sicknessCoverage = Coverage.None;
+            component.familyMember.sicknessCoverage = CoverageType.None;
             fixture.detectChanges();
 
             let badgeEl: DebugElement = debugElement.query(
@@ -573,7 +573,7 @@ describe('FamilyMemberComponent', () => {
           }));
 
           it('should render properly with rights set to Complementary', async(() => {
-            component.familyMember.sicknessCoverage = Coverage.Complementary;
+            component.familyMember.sicknessCoverage = CoverageType.Complementary;
             fixture.detectChanges();
 
             let badgeEl: DebugElement = debugElement.query(
@@ -585,7 +585,7 @@ describe('FamilyMemberComponent', () => {
           }));
 
           it('should render properly with rights set to Full', async(() => {
-            component.familyMember.sicknessCoverage = Coverage.Full;
+            component.familyMember.sicknessCoverage = CoverageType.Full;
             fixture.detectChanges();
 
             let badgeEl: DebugElement = debugElement.query(
@@ -618,7 +618,7 @@ describe('FamilyMemberComponent', () => {
           }));
 
           it('should render properly with rights set to None', async(() => {
-            component.familyMember.accidentCoverage = Coverage.None;
+            component.familyMember.accidentCoverage = CoverageType.None;
             fixture.detectChanges();
 
             let badgeEl: DebugElement = debugElement.query(
@@ -630,7 +630,7 @@ describe('FamilyMemberComponent', () => {
           }));
 
           it('should render properly with rights set to Complementary', async(() => {
-            component.familyMember.accidentCoverage = Coverage.Complementary;
+            component.familyMember.accidentCoverage = CoverageType.Complementary;
             fixture.detectChanges();
 
             let badgeEl: DebugElement = debugElement.query(
@@ -642,7 +642,7 @@ describe('FamilyMemberComponent', () => {
           }));
 
           it('should render properly with rights set to Full', async(() => {
-            component.familyMember.accidentCoverage = Coverage.Full;
+            component.familyMember.accidentCoverage = CoverageType.Full;
             fixture.detectChanges();
 
             let badgeEl: DebugElement = debugElement.query(

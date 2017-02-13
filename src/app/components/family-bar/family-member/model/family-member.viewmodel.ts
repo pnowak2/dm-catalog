@@ -1,4 +1,4 @@
-export enum Coverage {
+export enum CoverageType {
   None,
   Complementary,
   Full
@@ -24,10 +24,10 @@ export interface FamilyMemberViewModel {
   delegationCountry?: string;
   coveredByOtherAffiliate?: boolean;
   hasComments?: boolean;
-  sicknessCoverage?: Coverage;
+  sicknessCoverage?: CoverageType;
   sicknessCoverageDateFrom?: Date;
   sicknessCoverageDateTo?: Date;
-  accidentCoverage?: Coverage;
+  accidentCoverage?: CoverageType;
   accidentCoverageDateFrom?: Date;
   accidentCoverageDateTo?: Date;
 }

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FamilyMemberViewModel, Coverage, Gender } from './model/family-member.viewmodel';
+import { FamilyMemberViewModel, CoverageType, Gender } from './model/family-member.viewmodel';
 
 @Component({
   selector: 'asm-family-member',
@@ -15,19 +15,19 @@ export class FamilyMemberComponent {
   }
 
   get hasSicknessComplementaryRights(): boolean {
-    return this.familyMember.sicknessCoverage === Coverage.Complementary;
+    return this.familyMember.sicknessCoverage === CoverageType.Complementary;
   }
 
   get hasSicknessFullRights(): boolean {
-    return this.familyMember.sicknessCoverage === Coverage.Full;
+    return this.familyMember.sicknessCoverage === CoverageType.Full;
   }
 
   get hasAccidentComplementaryRights(): boolean {
-    return this.familyMember.accidentCoverage === Coverage.Complementary;
+    return this.familyMember.accidentCoverage === CoverageType.Complementary;
   }
 
   get hasAccidentFullRights(): boolean {
-    return this.familyMember.accidentCoverage === Coverage.Full;
+    return this.familyMember.accidentCoverage === CoverageType.Full;
   }
 
   get isMale(): boolean {
