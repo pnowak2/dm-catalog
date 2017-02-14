@@ -1,3 +1,4 @@
+import { SwitchComponent } from './../../switch/switch.component';
 import { ElementRef, Renderer } from '@angular/core';
 /* tslint:disable:no-unused-variable */
 import { FamilyMemberViewModel, CoverageType } from './../family-member/model/family-member.viewmodel';
@@ -15,7 +16,7 @@ describe('FamilyBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FamilyBarComponent],
+      declarations: [FamilyBarComponent, SwitchComponent],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
@@ -55,6 +56,16 @@ describe('FamilyBarComponent', () => {
       });
     });
 
+    describe('.familyPlusSwitch', () => {
+      it(`should be defined`, () => {
+        expect(component.familyPlusSwitch).toBeDefined();
+      });
+
+      it('should by type of element ref', () => {
+        expect(component.familyPlusSwitch).toEqual(jasmine.any(SwitchComponent));
+      });
+    });
+
     describe('memberSelected', () => {
       it('should be defined', () => {
         expect(component.memberSelected).toBeDefined();
@@ -68,6 +79,41 @@ describe('FamilyBarComponent', () => {
     describe('.familyMembers', () => {
       it(`should be initialized to empty array`, () => {
         expect(component.familyMembers).toEqual([]);
+      });
+    });
+
+    describe('.familyBarMembers', () => {
+      const one: FamilyMemberViewModel = {
+        sicknessCoverage: CoverageType.None,
+        accidentCoverage: undefined
+      }
+
+      const two: FamilyMemberViewModel = {
+        sicknessCoverage: undefined,
+        accidentCoverage: CoverageType.None
+      }
+
+      const three: FamilyMemberViewModel = {
+        sicknessCoverage: CoverageType.Complementary,
+        accidentCoverage: undefined
+      }
+
+      it(`should be initialized to empty array`, () => {
+        expect(component.familyBarMembers).toEqual([]);
+      });
+
+      it('should return all family members if family plus is not checked', () => {
+        component.familyMembers = [one, two, three];
+        component.familyPlusSwitch.checked = false;
+
+        expect(component.familyBarMembers).toEqual([one, two, three]);
+      });
+
+      it('should return only covered family members if family plus is checked', () => {
+        component.familyMembers = [one, two, three];
+        component.familyPlusSwitch.checked = true;
+
+        expect(component.familyBarMembers).toEqual([three]);
       });
     });
 
@@ -463,19 +509,19 @@ describe('FamilyBarComponent', () => {
         });
 
         describe('Family Size Section', () => {
-            const one: FamilyMemberViewModel = {
-              sicknessCoverage: CoverageType.Complementary
-            };
-            const two: FamilyMemberViewModel = {
-            };
-            const three: FamilyMemberViewModel = {
-            };
-            const four: FamilyMemberViewModel = {
-              sicknessCoverage: CoverageType.Full
-            };
-            const five: FamilyMemberViewModel = {
-              sicknessCoverage: CoverageType.Full
-            };
+          const one: FamilyMemberViewModel = {
+            sicknessCoverage: CoverageType.Complementary
+          };
+          const two: FamilyMemberViewModel = {
+          };
+          const three: FamilyMemberViewModel = {
+          };
+          const four: FamilyMemberViewModel = {
+            sicknessCoverage: CoverageType.Full
+          };
+          const five: FamilyMemberViewModel = {
+            sicknessCoverage: CoverageType.Full
+          };
 
           it('should render properly for mixed coverage ', () => {
             component.familyMembers = [one, two, three];
