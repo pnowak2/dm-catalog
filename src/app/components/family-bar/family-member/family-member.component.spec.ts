@@ -47,7 +47,7 @@ describe('FamilyMemberComponent', () => {
       it('should be defined', () => {
         expect(FamilyMemberComponent.prototype.handleCustomerNumberClicked).toEqual(jasmine.any(Function));
       });
-      
+
       it('should trigger component event', () => {
         spyOn(component.customerNumberClick, 'next');
         const member: FamilyMemberViewModel = {}
@@ -67,6 +67,33 @@ describe('FamilyMemberComponent', () => {
       it(`should be of appropriate type`, () => {
         expect(component.familyMember).toEqual({});
       });
+    });
+
+    describe('.fullName', () => {
+      it('should be defined', () => {
+        expect(component.fullName).toBeDefined();
+      });
+
+      it('should return full member name when all data is provided', () => {
+        let member: FamilyMemberViewModel = {
+          firstName: 'Piotr',
+          familyName: 'Nowak'
+        }
+        component.familyMember = member;
+
+        expect(component.fullName).toEqual('Piotr Nowak');
+      });
+
+      it('should return full member name when some of the data is provided', () => {
+        let member: FamilyMemberViewModel = {
+          firstName: undefined,
+          familyName: 'Nowak'
+        }
+        component.familyMember = member;
+
+        expect(component.fullName).toEqual('Nowak');
+      });
+
     });
 
     describe('.hasSicknessComplementaryRights', () => {
@@ -304,7 +331,7 @@ describe('FamilyMemberComponent', () => {
           let linkEl: DebugElement = debugElement.query(
             By.css('.asm-family-member__member-number')
           );
-          
+
           linkEl.triggerEventHandler('click', null);
 
           expect(component.handleCustomerNumberClicked).toHaveBeenCalled();
@@ -350,6 +377,26 @@ describe('FamilyMemberComponent', () => {
 
           expect(debugElement.nativeElement.textContent).toContain('Nowak');
         }));
+
+        it('should render name tooltip if all data provided', () => {
+          component.familyMember.firstName = 'Piotr';
+          component.familyMember.familyName = 'Nowak';
+          fixture.detectChanges();
+
+          let el = debugElement.query(By.css('.asm-family-member__person-name'));
+
+          expect(el.properties['title']).toEqual('Piotr Nowak');
+        });
+
+        it('should render name tooltip if data is missing', () => {
+          component.familyMember.firstName = undefined;
+          component.familyMember.familyName = 'Nowak';
+          fixture.detectChanges();
+
+          let el = debugElement.query(By.css('.asm-family-member__person-name'));
+
+          expect(el.properties['title']).toEqual('Nowak');
+        });
       });
 
       describe('Dates', () => {

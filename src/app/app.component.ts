@@ -13,7 +13,9 @@ export class AppComponent {
     personalNumber: '123456',
     accidentCoverage: CoverageType.Full,
     sicknessCoverage: CoverageType.Complementary,
-    birthDate: new Date(1980, 4, 28)
+    birthDate: new Date(1980, 4, 28),
+    mainLanguage: 'pol',
+    delegationCountry: 'bel'
   }, {
     firstName: 'Andrzej',
     familyName: 'Poniedzielski',

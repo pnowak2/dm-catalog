@@ -14,6 +14,12 @@ export class FamilyMemberComponent {
     this.customerNumberClick.next(this.familyMember);
   }
 
+  get fullName(): string {
+    return [this.familyMember.firstName, this.familyMember.familyName]
+      .filter(name => name !== undefined)
+      .join(' ');
+  }
+
   get hasSicknessComplementaryRights(): boolean {
     return this.familyMember.sicknessCoverage === CoverageType.Complementary;
   }

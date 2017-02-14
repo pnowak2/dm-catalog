@@ -30,7 +30,7 @@
   </div>
 
   <div class="asm-family-member__data-section">
-    <div class="asm-family-member__person-name">
+    <div class="asm-family-member__person-name" [title]="fullName">
       <span class="asm-family-member__person-first-name">{{ familyMember.firstName }}</span>
       <span class="asm-family-member__person-last-name">{{ familyMember.familyName }}</span>
     </div>
@@ -50,11 +50,13 @@
   <div class="asm-family-member__footer">
     <div class="asm-family-member__languages">
       <div *ngIf="familyMember.mainLanguage" 
-            class="asm-family-member__language">
+            class="asm-family-member__language"
+            title="TODO">
         {{ familyMember.mainLanguage }}
       </div>
       <div *ngIf="familyMember.delegationCountry"
-            class="asm-family-member__language">
+            class="asm-family-member__language"
+            title="TODO">
           <i class="fa fa-globe"></i> {{ familyMember.delegationCountry }}
       </div>
     </div>
@@ -63,15 +65,18 @@
           class="fa fa-comment asm-family-member__badge asm-family-member__badge--comments">
       </i>
       <i *ngIf="familyMember.coveredByOtherAffiliate"
+          title="Covered by other affiliate"
           class="fa fa-warning asm-family-member__badge asm-family-member__badge--covered-by-other">
       </i>
       <i class="fa fa-heart asm-family-member__badge"
           [class.asm-family-member__badge--complementary-rights]="hasSicknessComplementaryRights"
-          [class.asm-family-member__badge--full-rights]="hasSicknessFullRights">
+          [class.asm-family-member__badge--full-rights]="hasSicknessFullRights"
+          title="TODO">
       </i>
       <i class="fa fa-plus asm-family-member__badge"
           [class.asm-family-member__badge--complementary-rights]="hasAccidentComplementaryRights"
-          [class.asm-family-member__badge--full-rights]="hasAccidentFullRights">
+          [class.asm-family-member__badge--full-rights]="hasAccidentFullRights"
+          title="TODO">
       </i>
     </div>
   </div>
