@@ -15,8 +15,18 @@ export class FamilyBarComponent {
 
   constructor(private renderer: Renderer) { }
 
+  get familyMembersWithCoverage(): Array<FamilyMemberViewModel> {
+    return this.familyMembers.filter(member => {
+      return member.accidentCoverage || member.sicknessCoverage;
+    })
+  }
+
   get familySize(): number {
     return this.familyMembers.length;
+  }
+
+  get familyCoveredSize(): number {
+    return this.familyMembersWithCoverage.length;
   }
 
   get selectedMember(): FamilyMemberViewModel {
@@ -47,7 +57,7 @@ export class FamilyBarComponent {
 
   handleScrollRightClicked(evt) {
     let currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
-    
+
     this.renderer.setElementProperty(
       this.familyMembersScrollContainer.nativeElement,
       'scrollLeft',

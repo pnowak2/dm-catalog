@@ -1,6 +1,6 @@
 import { ElementRef, Renderer } from '@angular/core';
 /* tslint:disable:no-unused-variable */
-import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
+import { FamilyMemberViewModel, CoverageType } from './../family-member/model/family-member.viewmodel';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, EventEmitter } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -71,6 +71,34 @@ describe('FamilyBarComponent', () => {
       });
     });
 
+    describe('.familyMembersWithCoverage', () => {
+      it('should be defined', () => {
+        expect(component.familyMembersWithCoverage).toBeDefined();
+      });
+
+      it('should return only members which are not covered at all', () => {
+        const one: FamilyMemberViewModel = {
+          sicknessCoverage: CoverageType.None,
+          accidentCoverage: undefined
+        }
+
+        const two: FamilyMemberViewModel = {
+          sicknessCoverage: undefined,
+          accidentCoverage: CoverageType.None
+        }
+
+        const three: FamilyMemberViewModel = {
+          sicknessCoverage: CoverageType.Complementary,
+          accidentCoverage: undefined
+        }
+
+        component.familyMembers = [one, two, three];
+
+        expect(component.familyMembersWithCoverage).toEqual([three])
+      });
+
+    });
+
     describe('.closed', () => {
       it('should be defined', () => {
         expect(component.closed).toBeDefined();
@@ -80,16 +108,43 @@ describe('FamilyBarComponent', () => {
         expect(component.closed).toBe(false);
       });
     });
-    
+
     describe('.familySize', () => {
       it('should be defined', () => {
         expect(component.familySize).toBeDefined();
       });
-      
+
       it('should return count of all family members', () => {
         component.familyMembers = [{}, {}, {}];
 
         expect(component.familySize).toEqual(3);
+      });
+    });
+
+    describe('.familyCoveredSize', () => {
+      it('should be defined', () => {
+        expect(component.familyCoveredSize).toBeDefined();
+      });
+
+      it('should return count of all family members which are covered', () => {
+        const one: FamilyMemberViewModel = {
+          sicknessCoverage: CoverageType.None,
+          accidentCoverage: undefined
+        }
+
+        const two: FamilyMemberViewModel = {
+          sicknessCoverage: undefined,
+          accidentCoverage: CoverageType.None
+        }
+
+        const three: FamilyMemberViewModel = {
+          sicknessCoverage: CoverageType.Complementary,
+          accidentCoverage: undefined
+        }
+
+        component.familyMembers = [one, two, three];
+
+        expect(component.familyCoveredSize).toEqual(1);
       });
     });
 
@@ -161,7 +216,7 @@ describe('FamilyBarComponent', () => {
       it('should scroll family members container left', () => {
         const fakeEvent = { stopPropagation: () => { } };
         component.familyMembersScrollContainer.nativeElement.scrollLeft = 100;
-        
+
         component.handleScrollLeftClicked(fakeEvent);
 
         expect(
@@ -335,73 +390,118 @@ describe('FamilyBarComponent', () => {
           });
         });
 
-        describe('None of the Members Selected', () => {
-          const one: FamilyMemberViewModel = {
-            selected: false
-          };
-          const two: FamilyMemberViewModel = {
-            selected: false
-          };
-          const three: FamilyMemberViewModel = {
-            selected: false
-          };
+        describe('Selected Member Section', () => {
+          describe('None of the Members Selected', () => {
+            const one: FamilyMemberViewModel = {
+              selected: false
+            };
+            const two: FamilyMemberViewModel = {
+              selected: false
+            };
+            const three: FamilyMemberViewModel = {
+              selected: false
+            };
 
-          beforeEach(() => {
-            component.familyMembers = [one, two, three];
-            fixture.detectChanges();
+            beforeEach(() => {
+              component.familyMembers = [one, two, three];
+              fixture.detectChanges();
+            });
+
+            it('should not render first name', () => {
+              const el = debugElement.query(By.css('.asm-family-bar__tab-member-first-name'));
+              expect(el).toBeNull();
+            });
+
+            it('should not render last name', () => {
+              const el = debugElement.query(By.css('.asm-family-bar__tab-member-last-name'));
+              expect(el).toBeNull();
+            });
+
+            it('should render member not selected label', () => {
+              const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
+              expect(el.nativeElement.textContent).toContain('(No selection)');
+            });
           });
 
-          it('should not render first name', () => {
-            const el = debugElement.query(By.css('.asm-family-bar__tab-member-first-name'));
-            expect(el).toBeNull();
-          });
+          describe('One Member Selected', () => {
+            const one: FamilyMemberViewModel = {
+              firstName: 'Piotr',
+              familyName: 'Nowak',
+              selected: true
+            };
+            const two: FamilyMemberViewModel = {
+              firstName: 'Tom',
+              familyName: 'Goemaes',
+              selected: false
+            };
+            const three: FamilyMemberViewModel = {
+              firstName: 'Jeremy',
+              familyName: 'Lebrun',
+              selected: false
+            };
 
-          it('should not render last name', () => {
-            const el = debugElement.query(By.css('.asm-family-bar__tab-member-last-name'));
-            expect(el).toBeNull();
-          });
+            beforeEach(() => {
+              component.familyMembers = [one, two, three];
+              fixture.detectChanges();
+            });
 
-          it('should render member not selected label', () => {
-            const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
-            expect(el.nativeElement.textContent).toContain('(No selection)');
+            it('should render first name of selected member', () => {
+              const el = debugElement.query(By.css('.asm-family-bar__tab-member-first-name'));
+              expect(el.nativeElement.textContent).toContain('Piotr');
+            });
+
+            it('should render last name of selected member', () => {
+              const el = debugElement.query(By.css('.asm-family-bar__tab-member-last-name'));
+              expect(el.nativeElement.textContent).toContain('Nowak');
+            });
+
+            it('should not render member not selected label', () => {
+              const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
+              expect(el).toBeNull();
+            });
           });
         });
 
-        describe('One Member Selected', () => {
-          const one: FamilyMemberViewModel = {
-            firstName: 'Piotr',
-            familyName: 'Nowak',
-            selected: true
-          };
-          const two: FamilyMemberViewModel = {
-            firstName: 'Tom',
-            familyName: 'Goemaes',
-            selected: false
-          };
-          const three: FamilyMemberViewModel = {
-            firstName: 'Jeremy',
-            familyName: 'Lebrun',
-            selected: false
-          };
+        describe('Family Size Section', () => {
+            const one: FamilyMemberViewModel = {
+              sicknessCoverage: CoverageType.Complementary
+            };
+            const two: FamilyMemberViewModel = {
+            };
+            const three: FamilyMemberViewModel = {
+            };
+            const four: FamilyMemberViewModel = {
+              sicknessCoverage: CoverageType.Full
+            };
+            const five: FamilyMemberViewModel = {
+              sicknessCoverage: CoverageType.Full
+            };
 
-          beforeEach(() => {
+          it('should render properly for mixed coverage ', () => {
             component.familyMembers = [one, two, three];
             fixture.detectChanges();
+
+            let el = debugElement.query(By.css('.asm-family-bar__tab-title'));
+
+            expect(el.nativeElement.textContent).toContain('1/3');
           });
 
-          it('should render first name of selected member', () => {
-            const el = debugElement.query(By.css('.asm-family-bar__tab-member-first-name'));
-            expect(el.nativeElement.textContent).toContain('Piotr');
+          it('should render properly for all family covered', () => {
+            component.familyMembers = [one, four, five];
+            fixture.detectChanges();
+
+            let el = debugElement.query(By.css('.asm-family-bar__tab-title'));
+
+            expect(el.nativeElement.textContent).toContain('3/3');
           });
 
-          it('should render last name of selected member', () => {
-            const el = debugElement.query(By.css('.asm-family-bar__tab-member-last-name'));
-            expect(el.nativeElement.textContent).toContain('Nowak');
-          });
+          it('should render properly for no one from family covered', () => {
+            component.familyMembers = [two, three];
+            fixture.detectChanges();
 
-          it('should not render member not selected label', () => {
-            const el = debugElement.query(By.css('.asm-family-bar__tab-member-not-selected'));
-            expect(el).toBeNull();
+            let el = debugElement.query(By.css('.asm-family-bar__tab-title'));
+
+            expect(el.nativeElement.textContent).toContain('0/2');
           });
         });
       });
