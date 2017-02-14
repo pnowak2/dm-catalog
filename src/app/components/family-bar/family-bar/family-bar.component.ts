@@ -1,3 +1,4 @@
+import { SwitchComponent } from './../../switch/switch.component';
 import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer } from '@angular/core';
 
@@ -9,14 +10,34 @@ import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer
 export class FamilyBarComponent {
   ScrollStep = 80;
   @ViewChild('familyMembersScrollContainer') familyMembersScrollContainer: ElementRef;
+  @ViewChild(SwitchComponent) familyPlusSwitch: SwitchComponent;
   @Output() memberSelected = new EventEmitter<FamilyMemberViewModel>();
   @Input() familyMembers: Array<FamilyMemberViewModel> = [];
   @Input() closed = false;
 
   constructor(private renderer: Renderer) { }
 
+  get familyBarMembers(): Array<FamilyMemberViewModel> {
+    console.log('testing')
+    if (this.familyPlusSwitch.checked) {
+      return this.familyMembersWithCoverage
+    } else {
+      return this.familyMembers;
+    }
+  }
+
+  get familyMembersWithCoverage(): Array<FamilyMemberViewModel> {
+    return this.familyMembers.filter(member => {
+      return member.accidentCoverage || member.sicknessCoverage;
+    })
+  }
+
   get familySize(): number {
     return this.familyMembers.length;
+  }
+
+  get familyCoveredSize(): number {
+    return this.familyMembersWithCoverage.length;
   }
 
   get selectedMember(): FamilyMemberViewModel {
@@ -47,7 +68,7 @@ export class FamilyBarComponent {
 
   handleScrollRightClicked(evt) {
     let currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
-    
+
     this.renderer.setElementProperty(
       this.familyMembersScrollContainer.nativeElement,
       'scrollLeft',

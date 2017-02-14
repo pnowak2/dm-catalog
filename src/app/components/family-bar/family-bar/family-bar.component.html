@@ -2,7 +2,7 @@
      [class.asm-family-bar--closed]="closed">
   <div #familyMembersScrollContainer class="asm-family-bar__members-container">
     <asm-family-member 
-      *ngFor="let familyMember of familyMembers"
+      *ngFor="let familyMember of familyBarMembers"
       [familyMember]="familyMember"
       (click)="handleMemberClicked(familyMember)">
     </asm-family-member>
@@ -16,7 +16,7 @@
         <span class="fa fa-arrow-circle-right"></span>
       </div>
       <div class="asm-family-bar__tab-title">
-        Family Composition (3/7)
+        Family Composition ({{ familyCoveredSize }}/{{ familySize }})
       </div>
       <div class="asm-family-bar__tab-member">
         <span *ngIf="selectedMember"
