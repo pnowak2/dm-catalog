@@ -17,3 +17,30 @@ body {
         }
     }
 }
+
+.page-header-default {
+  margin-bottom: 0;
+}
+
+.asm-family-bar {
+  margin-bottom: 20px;
+}
+
+.navbar-brand > img {
+    margin-top: -9px;
+    height: 32px;
+}
+
+.navigation > li.active > a, .navigation > li.active > a:hover, .navigation > li.active > a:focus {
+    background-color: #22B573;
+}
+
+a.asm-family-member__more-menu-label {
+  color: #999 !important;
+}
+
+
+.sidebar-xs .sidebar-main .navigation > li > a > span {
+    background-color: #22B573;
+    border: 1px solid #22B573;
+}
