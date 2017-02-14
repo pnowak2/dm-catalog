@@ -360,21 +360,39 @@ describe('FamilyBarComponent', () => {
     describe('Family Members Section', () => {
       const one: FamilyMemberViewModel = {};
       const two: FamilyMemberViewModel = {};
-      const three: FamilyMemberViewModel = {};
+      const three: FamilyMemberViewModel = {
+        accidentCoverage: CoverageType.Full
+      };
 
       beforeEach(() => {
         component.familyMembers = [one, two, three];
         fixture.detectChanges();
       });
 
+
+      describe('Family Plus Switch Off', () => {
+        it('should render family members inside container', () => {
+          component.familyPlusSwitch.checked = false;
+          fixture.detectChanges();
+
+          const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
+          expect(el.length).toBe(3);
+        });
+      });
+
+      describe('Family Plus Switch On', () => {
+        it('should render family members inside container', () => {
+          component.familyPlusSwitch.checked = true;
+          fixture.detectChanges();
+
+          const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
+          expect(el.length).toBe(1);
+        });
+      });
+
       it('should render the members container', () => {
         const el = debugElement.query(By.css('.asm-family-bar__members-container'));
         expect(el).not.toBeNull();
-      });
-
-      it('should render family members inside container', () => {
-        const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
-        expect(el.length).toBe(3);
       });
 
       it('should properly pass properties to family members', () => {

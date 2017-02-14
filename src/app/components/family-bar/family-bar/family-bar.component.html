@@ -2,7 +2,7 @@
      [class.asm-family-bar--closed]="closed">
   <div #familyMembersScrollContainer class="asm-family-bar__members-container">
     <asm-family-member 
-      *ngFor="let familyMember of familyMembers"
+      *ngFor="let familyMember of familyBarMembers"
       [familyMember]="familyMember"
       (click)="handleMemberClicked(familyMember)">
     </asm-family-member>
