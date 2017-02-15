@@ -18,7 +18,7 @@ export interface FamilyMemberViewModel {
   selected?: boolean;
   disabled?: boolean;
   relationName?: string;
-  isExspouse?: boolean;
+  isExrelation?: boolean;
   birthDate?: Date;
   deathDate?: Date;
   mainLanguage?: string;

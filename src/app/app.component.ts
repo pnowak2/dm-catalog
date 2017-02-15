@@ -12,7 +12,7 @@ export class AppComponent {
     familyName: 'Bardzo Długa Nazwa Że Aż Szok',
     personalNumber: '123456',
     relationName: 'spouse',
-    isExspouse: true,
+    isExrelation: true,
     accidentCoverage: CoverageType.Full,
     sicknessCoverage: CoverageType.Complementary,
     birthDate: new Date(1980, 4, 28),

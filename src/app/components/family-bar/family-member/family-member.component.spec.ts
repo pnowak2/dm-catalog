@@ -276,24 +276,24 @@ describe('FamilyMemberComponent', () => {
     });
 
     describe('Ex-spouse State', () => {
-      it('should render properly ex-spouse if set to false', async(() => {
-        component.familyMember.isExspouse = false;
+      it('should render properly ex-relation if set to false', async(() => {
+        component.familyMember.isExrelation = false;
         fixture.detectChanges();
 
         let root = debugElement.query(
           By.css('.asm-family-member')
         );
-        expect(root.classes['asm-family-member--ex-spouse']).toBeFalsy();
+        expect(root.classes['asm-family-member--ex-relation']).toBeFalsy();
       }));
 
-      it('should render properly ex-spouse if set to true', async(() => {
-        component.familyMember.isExspouse = true;
+      it('should render properly ex-relation if set to true', async(() => {
+        component.familyMember.isExrelation = true;
         fixture.detectChanges();
 
         let root = debugElement.query(
           By.css('.asm-family-member')
         );
-        expect(root.classes['asm-family-member--ex-spouse']).toBeTruthy();
+        expect(root.classes['asm-family-member--ex-relation']).toBeTruthy();
       }));
     });
 
