@@ -39,8 +39,8 @@
     opacity: 0.6;
   }
 
-  &--ex-relation &__member-relation {
-    text-decoration: line-through;
+  &__member-relation--ex {
+      text-decoration: line-through; 
   }
   
   &__member-role,

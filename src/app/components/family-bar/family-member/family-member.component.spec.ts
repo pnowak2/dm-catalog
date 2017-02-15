@@ -275,27 +275,27 @@ describe('FamilyMemberComponent', () => {
       }));
     });
 
-    describe('Ex-spouse State', () => {
-      it('should render properly ex-relation if set to false', async(() => {
-        component.familyMember.isExrelation = false;
-        fixture.detectChanges();
+    // describe('Ex-relation State', () => {
+    //   it('should render properly ex-relation if set to false', async(() => {
+    //     component.familyMember.isExrelation = false;
+    //     fixture.detectChanges();
 
-        let root = debugElement.query(
-          By.css('.asm-family-member')
-        );
-        expect(root.classes['asm-family-member--ex-relation']).toBeFalsy();
-      }));
+    //     let root = debugElement.query(
+    //       By.css('.asm-family-member')
+    //     );
+    //     expect(root.classes['asm-family-member--ex-relation']).toBeFalsy();
+    //   }));
 
-      it('should render properly ex-relation if set to true', async(() => {
-        component.familyMember.isExrelation = true;
-        fixture.detectChanges();
+    //   it('should render properly ex-relation if set to true', async(() => {
+    //     component.familyMember.isExrelation = true;
+    //     fixture.detectChanges();
 
-        let root = debugElement.query(
-          By.css('.asm-family-member')
-        );
-        expect(root.classes['asm-family-member--ex-relation']).toBeTruthy();
-      }));
-    });
+    //     let root = debugElement.query(
+    //       By.css('.asm-family-member')
+    //     );
+    //     expect(root.classes['asm-family-member--ex-relation']).toBeTruthy();
+    //   }));
+    // });
 
     describe('Header Section', () => {
       describe('Relation & Personal number', () => {
@@ -305,6 +305,28 @@ describe('FamilyMemberComponent', () => {
 
           expect(debugElement.nativeElement.textContent).toContain('Affiliate');
         }));
+
+      it('should render properly ex-relation if set to true', async(() => {
+        component.familyMember.isExrelation = true;
+        fixture.detectChanges();
+
+        let el = debugElement.query(
+          By.css('.asm-family-member__member-relation')
+        );
+
+        expect(el.classes['asm-family-member__member-relation--ex']).toBeTruthy();
+      }));
+
+      it('should render properly ex-relation if set to false', async(() => {
+        component.familyMember.isExrelation = false;
+        fixture.detectChanges();
+
+        let el = debugElement.query(
+          By.css('.asm-family-member__member-relation')
+        );
+
+        expect(el.classes['asm-family-member__member-relation--ex']).toBeFalsy();
+      }));
 
         it('should render personal number', async(() => {
           component.familyMember.personalNumber = '234642';

@@ -1,11 +1,13 @@
 <div class="asm-family-member"
      [class.asm-family-member--selected]="familyMember.selected"
-     [class.asm-family-member--disabled]="familyMember.disabled"
-     [class.asm-family-member--ex-relation]="familyMember.isExrelation">
+     [class.asm-family-member--disabled]="familyMember.disabled">
   <div class="asm-family-member__header">
     <div class="asm-family-member__member-type">
       <span class="asm-family-member__member-role">
-        <span class="asm-family-member__member-relation">{{ familyMember.relationName }}</span>
+        <span class="asm-family-member__member-relation"
+              [class.asm-family-member__member-relation--ex]="familyMember.isExrelation">
+          {{ familyMember.relationName }}
+        </span>
         
         <a *ngIf="familyMember.coveredByOtherAffiliate" 
           (click)="handleCustomerNumberClicked()"
