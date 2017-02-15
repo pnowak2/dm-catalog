@@ -35,6 +35,6 @@ export class AppComponent {
   title: 'app works!';
 
   familyMemberSelected(member: FamilyMemberViewModel) {
-    // console.log('selected: ', member);
+    console.log('selected: ', member);
   }
 }
