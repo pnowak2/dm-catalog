@@ -155,6 +155,16 @@ describe('FamilyBarComponent', () => {
       });
     });
 
+    describe('.readOnly', () => {
+      it('should be defined', () => {
+        expect(component.readOnly).toBeDefined();
+      });
+
+      it('should be false', () => {
+        expect(component.readOnly).toBe(false);
+      });
+    });
+
     describe('.familySize', () => {
       it('should be defined', () => {
         expect(component.familySize).toBeDefined();
@@ -355,6 +365,15 @@ describe('FamilyBarComponent', () => {
         );
         expect(root).not.toBeNull();
       }));
+      
+      it('should render properly in read only mode', () => {
+        component.readOnly = true;
+        fixture.detectChanges();
+
+        let el = debugElement.query(By.css('.asm-family-bar'));
+
+        expect(el.classes['asm-family-bar--readonly']).toBeTruthy();
+      });
     });
 
     describe('Family Members Section', () => {

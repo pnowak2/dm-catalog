@@ -15,6 +15,7 @@ export class FamilyBarComponent {
   @Output() memberSelected = new EventEmitter<FamilyMemberViewModel>();
   @Input() familyMembers: Array<FamilyMemberViewModel> = [];
   @Input() closed = false;
+  @Input() readOnly = false;
 
   constructor(private renderer: Renderer) { }
 

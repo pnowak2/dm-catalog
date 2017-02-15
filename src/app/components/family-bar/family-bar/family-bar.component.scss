@@ -137,7 +137,7 @@
     visibility: hidden;
   }
 
-  &--disabled .asm-family-member {
+  &--readonly .asm-family-member {
     cursor: not-allowed;
   }
 }
