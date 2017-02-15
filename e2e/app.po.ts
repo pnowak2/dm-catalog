@@ -1,11 +1,11 @@
 import { browser, element, by } from 'protractor';
 
-export class PgdPage {
+export class TestingPage {
   navigateTo() {
     return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.css('.asm-family-member')).getText();
+    return element(by.css('app-root h1')).getText();
   }
 }

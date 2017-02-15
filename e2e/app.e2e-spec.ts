@@ -1,14 +1,14 @@
-import { PgdPage } from './app.po';
+import { TestingPage } from './app.po';
 
-describe('pgd App', function() {
-  let page: PgdPage;
+describe('testing App', function() {
+  let page: TestingPage;
 
   beforeEach(() => {
-    page = new PgdPage();
+    page = new TestingPage();
   });
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toContain('Dirk');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
