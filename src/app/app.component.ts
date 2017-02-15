@@ -11,6 +11,8 @@ export class AppComponent {
     firstName: 'Piotr',
     familyName: 'Bardzo Długa Nazwa Że Aż Szok',
     personalNumber: '123456',
+    relationName: 'spouse',
+    isExspouse: true,
     accidentCoverage: CoverageType.Full,
     sicknessCoverage: CoverageType.Complementary,
     birthDate: new Date(1980, 4, 28),

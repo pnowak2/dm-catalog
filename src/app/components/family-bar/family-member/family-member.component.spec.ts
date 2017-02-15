@@ -275,6 +275,28 @@ describe('FamilyMemberComponent', () => {
       }));
     });
 
+    describe('Ex-spouse State', () => {
+      it('should render properly ex-spouse if set to false', async(() => {
+        component.familyMember.isExspouse = false;
+        fixture.detectChanges();
+
+        let root = debugElement.query(
+          By.css('.asm-family-member')
+        );
+        expect(root.classes['asm-family-member--ex-spouse']).toBeFalsy();
+      }));
+
+      it('should render properly ex-spouse if set to true', async(() => {
+        component.familyMember.isExspouse = true;
+        fixture.detectChanges();
+
+        let root = debugElement.query(
+          By.css('.asm-family-member')
+        );
+        expect(root.classes['asm-family-member--ex-spouse']).toBeTruthy();
+      }));
+    });
+
     describe('Header Section', () => {
       describe('Relation & Personal number', () => {
         it('should render relation name', async(() => {
