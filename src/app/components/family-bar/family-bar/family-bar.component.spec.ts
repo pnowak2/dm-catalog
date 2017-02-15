@@ -354,6 +354,17 @@ describe('FamilyBarComponent', () => {
 
         expect(component.memberSelected.next).toHaveBeenCalledWith(member);
       });
+  
+      it('should not trigger component event while in read mode', () => {
+        let member: FamilyMemberViewModel = { selected: false };
+        spyOn(component.memberSelected, 'next');
+
+        component.readOnly = true;
+
+        component.handleMemberClicked(member);
+
+        expect(component.memberSelected.next).not.toHaveBeenCalled();
+      });
     });
   });
 

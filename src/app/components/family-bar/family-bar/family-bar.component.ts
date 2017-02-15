@@ -46,6 +46,8 @@ export class FamilyBarComponent {
   }
 
   handleMemberClicked(member: FamilyMemberViewModel) {
+    if(this.readOnly) return;
+    
     this.familyMembers.forEach(member => member.selected = false);
     member.selected = true;
     this.memberSelected.next(member);
