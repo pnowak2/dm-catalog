@@ -1,10 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { FamilyMemberViewModel, CoverageType, Gender } from './model/family-member.viewmodel';
 
 @Component({
   selector: 'asm-family-member',
   templateUrl: './family-member.component.html',
-  styleUrls: ['./family-member.component.scss']
+  styleUrls: ['./family-member.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FamilyMemberComponent {
   @Output() customerNumberClick = new EventEmitter<FamilyMemberViewModel>();

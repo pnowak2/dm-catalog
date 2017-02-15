@@ -1,11 +1,12 @@
 import { SwitchComponent } from './../../switch/switch.component';
 import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'asm-family-bar',
   templateUrl: './family-bar.component.html',
-  styleUrls: ['./family-bar.component.scss']
+  styleUrls: ['./family-bar.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FamilyBarComponent {
   ScrollStep = 80;
