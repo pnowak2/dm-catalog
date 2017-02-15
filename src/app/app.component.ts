@@ -27,7 +27,8 @@ export class AppComponent {
     deathDate: new Date(1980, 4, 28),
     gender: Gender.Male
   }, {
-    firstName: 'Roman'
+    firstName: 'Roman',
+    disabled: true
   }];
 
   md: Date = new Date();
