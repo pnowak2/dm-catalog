@@ -112,13 +112,13 @@ describe('SwitchComponent', () => {
 
     describe('rendering', () => {
       it('should render switch markup', async(() => {
-        let el = fixture.debugElement.query(By.css('.asm-switch'));
+        const el = fixture.debugElement.query(By.css('.asm-switch'));
         expect(el).not.toBeNull();
       }));
 
       describe('checked/unchecked', () => {
         it('should not render checked switch by default', async(() => {
-          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          const el = fixture.debugElement.query(By.css('.asm-switch'));
           expect(el.classes['asm-switch--checked']).toBeFalsy();
         }));
 
@@ -126,7 +126,7 @@ describe('SwitchComponent', () => {
           component.checked = true;
           fixture.detectChanges();
 
-          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          const el = fixture.debugElement.query(By.css('.asm-switch'));
           expect(el.classes['asm-switch--checked']).toBeTruthy();
         }));
 
@@ -134,7 +134,7 @@ describe('SwitchComponent', () => {
           component.checked = false;
           fixture.detectChanges();
 
-          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          const el = fixture.debugElement.query(By.css('.asm-switch'));
           expect(el.classes['asm-switch--checked']).toBeFalsy();
         }));
       });
@@ -144,7 +144,7 @@ describe('SwitchComponent', () => {
           component.disabled = false;
           fixture.detectChanges();
 
-          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          const el = fixture.debugElement.query(By.css('.asm-switch'));
           expect(el.classes['asm-switch--disabled']).toBeFalsy();
         }));
 
@@ -152,7 +152,7 @@ describe('SwitchComponent', () => {
           component.disabled = true;
           fixture.detectChanges();
 
-          let el = fixture.debugElement.query(By.css('.asm-switch'));
+          const el = fixture.debugElement.query(By.css('.asm-switch'));
           expect(el.classes['asm-switch--disabled']).toBeTruthy();
         }));
       });

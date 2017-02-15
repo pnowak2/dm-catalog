@@ -21,7 +21,7 @@ export class FamilyBarComponent {
 
   get familyBarMembers(): Array<FamilyMemberViewModel> {
     if (this.familyPlusSwitch.checked) {
-      return this.familyMembersWithCoverage
+      return this.familyMembersWithCoverage;
     } else {
       return this.familyMembers;
     }
@@ -30,7 +30,7 @@ export class FamilyBarComponent {
   get familyMembersWithCoverage(): Array<FamilyMemberViewModel> {
     return this.familyMembers.filter(member => {
       return member.accidentCoverage || member.sicknessCoverage;
-    })
+    });
   }
 
   get familySize(): number {
@@ -46,9 +46,11 @@ export class FamilyBarComponent {
   }
 
   handleMemberClicked(member: FamilyMemberViewModel) {
-    if(this.readOnly) return;
+    if (this.readOnly) {
+      return;
+    };
 
-    this.familyMembers.forEach(member => member.selected = false);
+    this.familyMembers.forEach(m => m.selected = false);
     member.selected = true;
     this.memberSelected.next(member);
   }
@@ -58,7 +60,7 @@ export class FamilyBarComponent {
   }
 
   handleScrollLeftClicked(evt) {
-    let currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
+    const currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
 
     this.renderer.setElementProperty(
       this.familyMembersScrollContainer.nativeElement,
@@ -70,7 +72,7 @@ export class FamilyBarComponent {
   }
 
   handleScrollRightClicked(evt) {
-    let currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
+    const currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
 
     this.renderer.setElementProperty(
       this.familyMembersScrollContainer.nativeElement,

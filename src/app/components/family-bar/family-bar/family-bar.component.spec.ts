@@ -86,17 +86,17 @@ describe('FamilyBarComponent', () => {
       const one: FamilyMemberViewModel = {
         sicknessCoverage: CoverageType.None,
         accidentCoverage: undefined
-      }
+      };
 
       const two: FamilyMemberViewModel = {
         sicknessCoverage: undefined,
         accidentCoverage: CoverageType.None
-      }
+      };
 
       const three: FamilyMemberViewModel = {
         sicknessCoverage: CoverageType.Complementary,
         accidentCoverage: undefined
-      }
+      };
 
       it(`should be initialized to empty array`, () => {
         expect(component.familyBarMembers).toEqual([]);
@@ -126,21 +126,21 @@ describe('FamilyBarComponent', () => {
         const one: FamilyMemberViewModel = {
           sicknessCoverage: CoverageType.None,
           accidentCoverage: undefined
-        }
+        };
 
         const two: FamilyMemberViewModel = {
           sicknessCoverage: undefined,
           accidentCoverage: CoverageType.None
-        }
+        };
 
         const three: FamilyMemberViewModel = {
           sicknessCoverage: CoverageType.Complementary,
           accidentCoverage: undefined
-        }
+        };
 
         component.familyMembers = [one, two, three];
 
-        expect(component.familyMembersWithCoverage).toEqual([three])
+        expect(component.familyMembersWithCoverage).toEqual([three]);
       });
 
     });
@@ -186,17 +186,17 @@ describe('FamilyBarComponent', () => {
         const one: FamilyMemberViewModel = {
           sicknessCoverage: CoverageType.None,
           accidentCoverage: undefined
-        }
+        };
 
         const two: FamilyMemberViewModel = {
           sicknessCoverage: undefined,
           accidentCoverage: CoverageType.None
-        }
+        };
 
         const three: FamilyMemberViewModel = {
           sicknessCoverage: CoverageType.Complementary,
           accidentCoverage: undefined
-        }
+        };
 
         component.familyMembers = [one, two, three];
 
@@ -333,13 +333,13 @@ describe('FamilyBarComponent', () => {
       });
 
       it('should unselect all family members but the selected one', () => {
-        let one: FamilyMemberViewModel = { selected: true };
-        let two: FamilyMemberViewModel = { selected: false };
-        let three: FamilyMemberViewModel = { selected: false };
+        const one: FamilyMemberViewModel = { selected: true };
+        const two: FamilyMemberViewModel = { selected: false };
+        const three: FamilyMemberViewModel = { selected: false };
 
         component.familyMembers = [one, two, three];
 
-        component.handleMemberClicked(three)
+        component.handleMemberClicked(three);
 
         expect(one.selected).toBe(false);
         expect(two.selected).toBe(false);
@@ -347,16 +347,16 @@ describe('FamilyBarComponent', () => {
       });
 
       it('should trigger component event', () => {
-        let member: FamilyMemberViewModel = { selected: true };
+        const member: FamilyMemberViewModel = { selected: true };
         spyOn(component.memberSelected, 'next');
 
         component.handleMemberClicked(member);
 
         expect(component.memberSelected.next).toHaveBeenCalledWith(member);
       });
-  
+
       it('should not trigger component event while in read mode', () => {
-        let member: FamilyMemberViewModel = { selected: false };
+        const member: FamilyMemberViewModel = { selected: false };
         spyOn(component.memberSelected, 'next');
 
         component.readOnly = true;
@@ -371,17 +371,17 @@ describe('FamilyBarComponent', () => {
   describe('Markup', () => {
     describe('Default Appearance', () => {
       it('should render proper root element', async(() => {
-        let root = debugElement.query(
+        const root = debugElement.query(
           By.css('.asm-family-bar:first-child')
         );
         expect(root).not.toBeNull();
       }));
-      
+
       it('should render properly in read only mode', () => {
         component.readOnly = true;
         fixture.detectChanges();
 
-        let el = debugElement.query(By.css('.asm-family-bar'));
+        const el = debugElement.query(By.css('.asm-family-bar'));
 
         expect(el.classes['asm-family-bar--readonly']).toBeTruthy();
       });
@@ -575,7 +575,7 @@ describe('FamilyBarComponent', () => {
             component.familyMembers = [one, two, three];
             fixture.detectChanges();
 
-            let el = debugElement.query(By.css('.asm-family-bar__tab-title'));
+            const el = debugElement.query(By.css('.asm-family-bar__tab-title'));
 
             expect(el.nativeElement.textContent).toContain('1/3');
           });
@@ -584,7 +584,7 @@ describe('FamilyBarComponent', () => {
             component.familyMembers = [one, four, five];
             fixture.detectChanges();
 
-            let el = debugElement.query(By.css('.asm-family-bar__tab-title'));
+            const el = debugElement.query(By.css('.asm-family-bar__tab-title'));
 
             expect(el.nativeElement.textContent).toContain('3/3');
           });
@@ -593,7 +593,7 @@ describe('FamilyBarComponent', () => {
             component.familyMembers = [two, three];
             fixture.detectChanges();
 
-            let el = debugElement.query(By.css('.asm-family-bar__tab-title'));
+            const el = debugElement.query(By.css('.asm-family-bar__tab-title'));
 
             expect(el.nativeElement.textContent).toContain('0/2');
           });
