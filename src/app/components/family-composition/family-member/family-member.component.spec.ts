@@ -537,6 +537,18 @@ describe('FamilyMemberComponent', () => {
           );
           expect(langEl).toBeFalsy();
         }));
+
+        it('should render languages tooltip', () => {
+          component.familyMember.mainLanguage = 'pol';
+          component.familyMember.languages = ['Poland', 'Germany'];
+
+          fixture.detectChanges();
+
+          const langEl: DebugElement = debugElement.query(
+            By.css('.asm-family-member__language')
+          );
+          expect(langEl.properties['title']).toEqual(['Poland', 'Germany']);
+        });
       });
 
       describe('Badges', () => {
@@ -616,6 +628,20 @@ describe('FamilyMemberComponent', () => {
             );
             expect(badgeEl).toBeTruthy();
           }));
+
+          it('should render badge tooltip', () => {
+            component.familyMember.firstName = 'piotr';
+            component.familyMember.sicknessCoverageDateFrom = new Date(2011, 4, 24);
+            component.familyMember.sicknessCoverageDateTo = new Date(2017, 1, 14);
+
+            fixture.detectChanges();
+
+            const badgeEl: DebugElement = debugElement.query(
+              By.css('.asm-family-member__badge--sickness')
+            );
+
+            expect(badgeEl.properties['title']).toEqual('24/05/2011 > 14/02/2017');
+          });
 
           it('should render properly with no rights set', async(() => {
             component.familyMember.sicknessCoverage = undefined;

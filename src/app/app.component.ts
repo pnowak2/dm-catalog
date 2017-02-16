@@ -17,6 +17,7 @@ export class AppComponent {
     sicknessCoverage: CoverageType.Complementary,
     birthDate: new Date(1980, 4, 28),
     mainLanguage: 'pol',
+    languages: ['Polish', 'Greek'],
     delegationCountry: 'bel'
   }, {
     firstName: 'Andrzej',

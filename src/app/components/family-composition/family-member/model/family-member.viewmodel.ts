@@ -22,6 +22,7 @@ export interface FamilyMemberViewModel {
   birthDate?: Date;
   deathDate?: Date;
   mainLanguage?: string;
+  languages?: string[];
   delegationCountry?: string;
   coveredByOtherAffiliate?: boolean;
   hasComments?: boolean;

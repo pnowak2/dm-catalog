@@ -54,7 +54,7 @@
     <div class="asm-family-member__languages">
       <div *ngIf="familyMember.mainLanguage" 
             class="asm-family-member__language"
-            title="TODO">
+            [title]="familyMember.languages">
         {{ familyMember.mainLanguage }}
       </div>
       <div *ngIf="familyMember.delegationCountry"
@@ -71,15 +71,15 @@
           title="Covered by other affiliate"
           class="fa fa-warning asm-family-member__badge asm-family-member__badge--covered-by-other">
       </i>
-      <i class="fa fa-heart asm-family-member__badge"
+      <i class="fa fa-heart asm-family-member__badge asm-family-member__badge--sickness"
           [class.asm-family-member__badge--complementary-rights]="hasSicknessComplementaryRights"
           [class.asm-family-member__badge--full-rights]="hasSicknessFullRights"
           title="TODO">
       </i>
-      <i class="fa fa-plus asm-family-member__badge"
+      <i class="fa fa-plus asm-family-member__badge asm-family-member__badge--accident"
           [class.asm-family-member__badge--complementary-rights]="hasAccidentComplementaryRights"
           [class.asm-family-member__badge--full-rights]="hasAccidentFullRights"
-          title="TODO">
+          [title]="TODO">
       </i>
     </div>
   </div>

@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { FamilyMemberViewModel, CoverageType, Gender } from './model/family-member.viewmodel';
 
