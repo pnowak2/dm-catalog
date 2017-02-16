@@ -102,18 +102,18 @@ describe('FamilyBarComponent', () => {
         expect(component.familyBarMembers).toEqual([]);
       });
 
-      it('should return all family members if family plus is not checked', () => {
+      it('should return only covered family members if family plus is not checked', () => {
         component.familyMembers = [one, two, three];
         component.familyPlusSwitch.checked = false;
 
-        expect(component.familyBarMembers).toEqual([one, two, three]);
+        expect(component.familyBarMembers).toEqual([three]);
       });
 
-      it('should return only covered family members if family plus is checked', () => {
+      it('should return all family members if family plus is checked', () => {
         component.familyMembers = [one, two, three];
         component.familyPlusSwitch.checked = true;
 
-        expect(component.familyBarMembers).toEqual([three]);
+        expect(component.familyBarMembers).toEqual([one, two, three]);
       });
     });
 
@@ -122,7 +122,7 @@ describe('FamilyBarComponent', () => {
         expect(component.familyMembersWithCoverage).toBeDefined();
       });
 
-      it('should return only members which are not covered at all', () => {
+      it('should return only members which are covered', () => {
         const one: FamilyMemberViewModel = {
           sicknessCoverage: CoverageType.None,
           accidentCoverage: undefined
@@ -400,24 +400,20 @@ describe('FamilyBarComponent', () => {
       });
 
 
-      describe('Family Plus Switch Off', () => {
-        it('should render family members inside container', () => {
-          component.familyPlusSwitch.checked = false;
-          fixture.detectChanges();
+      it('should render only covered family members inside container when family plus switched off', () => {
+        component.familyPlusSwitch.checked = false;
+        fixture.detectChanges();
 
-          const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
-          expect(el.length).toBe(3);
-        });
+        const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
+        expect(el.length).toBe(1);
       });
 
-      describe('Family Plus Switch On', () => {
-        it('should render family members inside container', () => {
-          component.familyPlusSwitch.checked = true;
-          fixture.detectChanges();
+      it('should render all family members inside container when family plus switched on', () => {
+        component.familyPlusSwitch.checked = true;
+        fixture.detectChanges();
 
-          const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
-          expect(el.length).toBe(1);
-        });
+        const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
+        expect(el.length).toBe(3);
       });
 
       it('should render the members container', () => {
@@ -427,20 +423,17 @@ describe('FamilyBarComponent', () => {
 
       it('should properly pass properties to family members', () => {
         const el = debugElement.queryAll(By.css('asm-family-member'));
-        expect(el[0].properties['familyMember']).toEqual(one);
-        expect(el[1].properties['familyMember']).toEqual(two);
-        expect(el[2].properties['familyMember']).toEqual(three);
+        expect(el[0].properties['familyMember']).toEqual(three);
       });
 
       it('should trigger click event when family member clicked', () => {
         spyOn(component, 'handleMemberClicked');
         const el = debugElement.queryAll(By.css('asm-family-member'));
 
-        el[2].triggerEventHandler('click', null);
+        el[0].triggerEventHandler('click', null);
 
         expect(component.handleMemberClicked).toHaveBeenCalledWith(three);
       });
-
 
       it('should be visible if closed property is set false', () => {
         component.closed = false;

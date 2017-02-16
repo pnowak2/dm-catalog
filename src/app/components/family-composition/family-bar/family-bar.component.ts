@@ -21,9 +21,9 @@ export class FamilyBarComponent {
 
   get familyBarMembers(): Array<FamilyMemberViewModel> {
     if (this.familyPlusSwitch.checked) {
-      return this.familyMembersWithCoverage;
-    } else {
       return this.familyMembers;
+    } else {
+      return this.familyMembersWithCoverage;
     }
   }
 
