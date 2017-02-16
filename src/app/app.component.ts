@@ -2,7 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { FamilyMemberViewModel, CoverageType, Gender } from './components/family-bar/family-member/model/family-member.viewmodel';
 
 @Component({
-  selector: 'app-root',
+  selector: 'asm-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
