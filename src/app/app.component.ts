@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { FamilyMemberViewModel, CoverageType, Gender } from './components/family-bar/family-member/model/family-member.viewmodel';
+import { FamilyMemberViewModel, CoverageType, Gender } from './components/family-composition/family-member/model/family-member.viewmodel';
 
 @Component({
   selector: 'asm-root',
