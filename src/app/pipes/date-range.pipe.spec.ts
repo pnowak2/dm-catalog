@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
@@ -37,5 +38,15 @@ describe('DateRangePipe', () => {
   it('should format properly when undefined provided', () => {
     const parsed = pipe.transform(undefined);
     expect(parsed).toEqual('');
+  });
+
+  it('should pass format to date pipe', () => {
+    spyOn(DatePipe.prototype, 'transform');
+    const fakeDates = [new Date(2016, 1, 14), new Date(2017, 2, 16)];
+    const fakeFormat = 'yMd';
+    
+    const parsed = pipe.transform(fakeDates, fakeFormat);
+    expect(DatePipe.prototype.transform).toHaveBeenCalledWith(fakeDates[0], fakeFormat);
+    expect(DatePipe.prototype.transform).toHaveBeenCalledWith(fakeDates[1], fakeFormat);
   });
 });

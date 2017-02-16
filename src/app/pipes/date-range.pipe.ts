@@ -8,14 +8,14 @@ export class DateRangePipe implements PipeTransform {
 
   constructor( @Inject(LOCALE_ID) private locale: string) { }
 
-  transform(dates: Date[]): string {
+  transform(dates: Date[], pattern: string = 'yMd'): string {
     if(!dates) {
       return '';
     }
     
     const datePipe = new DatePipe(this.locale);
-    const from = datePipe.transform(dates[0], 'yMd') || '';
-    const to = datePipe.transform(dates[1], 'yMd') || '';
+    const from = datePipe.transform(dates[0], pattern) || '';
+    const to = datePipe.transform(dates[1], pattern) || '';
 
     if(!from && !to) {
       return ''
