@@ -1,7 +1,8 @@
+import { DateRangePipe } from './../../../pipes/date-range.pipe';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA } from '@angular/core';
+import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA, LOCALE_ID } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
 import { FamilyMemberViewModel, CoverageType, Gender } from './model/family-member.viewmodel';
@@ -13,7 +14,8 @@ describe('FamilyMemberComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FamilyMemberComponent],
+      declarations: [FamilyMemberComponent, DateRangePipe],
+      providers: [{ provide: LOCALE_ID, useValue: 'fr-fr' }],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
@@ -630,7 +632,6 @@ describe('FamilyMemberComponent', () => {
           }));
 
           it('should render badge tooltip', () => {
-            component.familyMember.firstName = 'piotr';
             component.familyMember.sicknessCoverageDateFrom = new Date(2011, 4, 24);
             component.familyMember.sicknessCoverageDateTo = new Date(2017, 1, 14);
 
@@ -699,6 +700,19 @@ describe('FamilyMemberComponent', () => {
             );
             expect(badgeEl).toBeTruthy();
           }));
+
+          it('should render badge tooltip', () => {
+            component.familyMember.accidentCoverageDateFrom = new Date(2011, 4, 24);
+            component.familyMember.accidentCoverageDateTo = new Date(2017, 1, 14);
+
+            fixture.detectChanges();
+
+            const badgeEl: DebugElement = debugElement.query(
+              By.css('.asm-family-member__badge--accident')
+            );
+
+            expect(badgeEl.properties['title']).toEqual('24/05/2011 > 14/02/2017');
+          });
 
           it('should render properly with no rights set', async(() => {
             component.familyMember.accidentCoverage = undefined;

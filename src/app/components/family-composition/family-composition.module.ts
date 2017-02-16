@@ -1,3 +1,4 @@
+import { DateRangePipe } from './../../pipes/date-range.pipe';
 import { SwitchModule } from './../switch/switch.module';
 import { FamilyMemberComponent } from './../family-composition/family-member/family-member.component';
 import { FamilyBarComponent } from './../family-composition/family-bar/family-bar.component';
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
   ],
   declarations: [
     FamilyBarComponent,
-    FamilyMemberComponent
+    FamilyMemberComponent,
+    DateRangePipe
   ]
 })
 export class FamilyCompositionModule { }

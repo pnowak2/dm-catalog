@@ -15,6 +15,8 @@ export class AppComponent {
     isExrelation: true,
     accidentCoverage: CoverageType.Full,
     sicknessCoverage: CoverageType.Complementary,
+    sicknessCoverageDateFrom: new Date(1980, 4, 28),
+    sicknessCoverageDateTo: new Date(1986, 9, 3),
     birthDate: new Date(1980, 4, 28),
     mainLanguage: 'pol',
     languages: ['Polish', 'Greek'],
