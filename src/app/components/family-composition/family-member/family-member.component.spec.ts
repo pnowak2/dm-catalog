@@ -631,7 +631,7 @@ describe('FamilyMemberComponent', () => {
             expect(badgeEl).toBeTruthy();
           }));
 
-          it('should render badge tooltip', () => {
+          it('should render badge tooltip with dates provided', () => {
             component.familyMember.sicknessCoverageDateFrom = new Date(2011, 4, 24);
             component.familyMember.sicknessCoverageDateTo = new Date(2017, 1, 14);
 
@@ -642,6 +642,45 @@ describe('FamilyMemberComponent', () => {
             );
 
             expect(badgeEl.properties['title']).toEqual('24/05/2011 > 14/02/2017');
+          });
+
+          it('should render badge tooltip with end date missing', () => {
+            component.familyMember.sicknessCoverageDateFrom = new Date(2011, 4, 24);
+            component.familyMember.sicknessCoverageDateTo = undefined;            
+
+            fixture.detectChanges();
+
+            const badgeEl: DebugElement = debugElement.query(
+              By.css('.asm-family-member__badge--sickness')
+            );
+
+            expect(badgeEl.properties['title']).toEqual('24/05/2011 > ');
+          });
+
+          it('should render badge tooltip with start date missing', () => {
+            component.familyMember.sicknessCoverageDateFrom = undefined;
+            component.familyMember.sicknessCoverageDateTo = new Date(2017, 1, 14);
+
+            fixture.detectChanges();
+
+            const badgeEl: DebugElement = debugElement.query(
+              By.css('.asm-family-member__badge--sickness')
+            );
+
+            expect(badgeEl.properties['title']).toEqual(' > 14/02/2017');
+          });
+
+          it('should render badge tooltip with both dates missing', () => {
+            component.familyMember.sicknessCoverageDateFrom = undefined;
+            component.familyMember.sicknessCoverageDateTo = undefined;
+
+            fixture.detectChanges();
+
+            const badgeEl: DebugElement = debugElement.query(
+              By.css('.asm-family-member__badge--sickness')
+            );
+
+            expect(badgeEl.properties['title']).toEqual('');
           });
 
           it('should render properly with no rights set', async(() => {
@@ -712,6 +751,45 @@ describe('FamilyMemberComponent', () => {
             );
 
             expect(badgeEl.properties['title']).toEqual('24/05/2011 > 14/02/2017');
+          });
+
+          it('should render badge tooltip with end date missing', () => {
+            component.familyMember.accidentCoverageDateFrom = new Date(2011, 4, 24);
+            component.familyMember.accidentCoverageDateTo = undefined;            
+
+            fixture.detectChanges();
+
+            const badgeEl: DebugElement = debugElement.query(
+              By.css('.asm-family-member__badge--accident')
+            );
+
+            expect(badgeEl.properties['title']).toEqual('24/05/2011 > ');
+          });
+
+          it('should render badge tooltip with start date missing', () => {
+            component.familyMember.accidentCoverageDateFrom = undefined;
+            component.familyMember.accidentCoverageDateTo = new Date(2017, 1, 14);
+
+            fixture.detectChanges();
+
+            const badgeEl: DebugElement = debugElement.query(
+              By.css('.asm-family-member__badge--accident')
+            );
+
+            expect(badgeEl.properties['title']).toEqual(' > 14/02/2017');
+          });
+
+          it('should render badge tooltip with both dates missing', () => {
+            component.familyMember.accidentCoverageDateFrom = undefined;
+            component.familyMember.accidentCoverageDateTo = undefined;
+
+            fixture.detectChanges();
+
+            const badgeEl: DebugElement = debugElement.query(
+              By.css('.asm-family-member__badge--accident')
+            );
+
+            expect(badgeEl.properties['title']).toEqual('');
           });
 
           it('should render properly with no rights set', async(() => {

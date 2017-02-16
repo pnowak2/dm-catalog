@@ -9,9 +9,18 @@ export class DateRangePipe implements PipeTransform {
   constructor( @Inject(LOCALE_ID) private locale: string) { }
 
   transform(dates: Date[]): string {
-    const from = new DatePipe(this.locale).transform(dates[0], 'yMd') || '';
-    const to = new DatePipe(this.locale).transform(dates[1], 'yMd') || '';
+    if(!dates) {
+      return '';
+    }
+    
+    const datePipe = new DatePipe(this.locale);
+    const from = datePipe.transform(dates[0], 'yMd') || '';
+    const to = datePipe.transform(dates[1], 'yMd') || '';
 
-    return `${from} > ${to}`;
+    if(!from && !to) {
+      return ''
+    } else {
+      return `${from} > ${to}`
+    }
   }
 }
