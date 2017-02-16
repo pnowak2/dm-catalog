@@ -388,32 +388,17 @@ describe('FamilyBarComponent', () => {
     });
 
     describe('Family Members Section', () => {
-      const one: FamilyMemberViewModel = {};
-      const two: FamilyMemberViewModel = {};
+      const one: FamilyMemberViewModel = {
+      };
+      const two: FamilyMemberViewModel = {
+      };
       const three: FamilyMemberViewModel = {
-        accidentCoverage: CoverageType.Full
       };
 
       beforeEach(() => {
+        component.familyPlusSwitch.checked = true;
         component.familyMembers = [one, two, three];
         fixture.detectChanges();
-      });
-
-
-      it('should render only covered family members inside container when family plus switched off', () => {
-        component.familyPlusSwitch.checked = false;
-        fixture.detectChanges();
-
-        const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
-        expect(el.length).toBe(1);
-      });
-
-      it('should render all family members inside container when family plus switched on', () => {
-        component.familyPlusSwitch.checked = true;
-        fixture.detectChanges();
-
-        const el = debugElement.queryAll(By.css('.asm-family-bar__members-container asm-family-member'));
-        expect(el.length).toBe(3);
       });
 
       it('should render the members container', () => {
@@ -421,9 +406,16 @@ describe('FamilyBarComponent', () => {
         expect(el).not.toBeNull();
       });
 
+      it('should properly render family members', () => {
+        const el = debugElement.queryAll(By.css('asm-family-member'));
+        expect(el.length).toBe(3);
+      });
+
       it('should properly pass properties to family members', () => {
         const el = debugElement.queryAll(By.css('asm-family-member'));
-        expect(el[0].properties['familyMember']).toEqual(three);
+        expect(el[0].properties['familyMember']).toEqual(one);
+        expect(el[1].properties['familyMember']).toEqual(two);
+        expect(el[2].properties['familyMember']).toEqual(three);
       });
 
       it('should trigger click event when family member clicked', () => {
@@ -432,7 +424,7 @@ describe('FamilyBarComponent', () => {
 
         el[0].triggerEventHandler('click', null);
 
-        expect(component.handleMemberClicked).toHaveBeenCalledWith(three);
+        expect(component.handleMemberClicked).toHaveBeenCalledWith(one);
       });
 
       it('should be visible if closed property is set false', () => {
