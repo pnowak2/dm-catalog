@@ -1,3 +1,4 @@
+import { FamilyCompositionModule } from './components/family-composition/family-composition.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,21 +6,16 @@ import { HttpModule } from '@angular/http';
 import { DatePipe } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { SwitchComponent } from './components/switch/switch.component';
-import { FamilyMemberComponent } from './components/family-composition/family-member/family-member.component';
-import { FamilyBarComponent } from './components/family-composition/family-bar/family-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SwitchComponent,
-    FamilyMemberComponent,
-    FamilyBarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    FamilyCompositionModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
