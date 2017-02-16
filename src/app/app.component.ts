@@ -26,6 +26,7 @@ export class AppComponent {
     familyName: 'Poniedzielski',
     personalNumber: '256002',
     coveredByOtherAffiliate: true,
+    accidentCoverageDateTo: new Date(),
     birthDate: new Date(1980, 4, 28),
     deathDate: new Date(1980, 4, 28),
     gender: Gender.Male
