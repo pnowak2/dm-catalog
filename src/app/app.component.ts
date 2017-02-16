@@ -33,8 +33,4 @@ export class AppComponent {
 
   md: Date = new Date();
   title: 'app works!';
-
-  familyMemberSelected(member: FamilyMemberViewModel) {
-    console.log('selected: ', member);
-  }
 }
