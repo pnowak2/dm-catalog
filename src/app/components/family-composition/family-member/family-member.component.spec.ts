@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA, LOCALE_ID } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
-import { FamilyMemberViewModel, CoverageType, Gender } from './model/family-member.viewmodel';
+import { FamilyMemberModel, CoverageType, Gender } from './model/family-member.model';
 
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;
@@ -52,7 +52,7 @@ describe('FamilyMemberComponent', () => {
 
       it('should trigger component event', () => {
         spyOn(component.customerNumberClick, 'next');
-        const member: FamilyMemberViewModel = {};
+        const member: FamilyMemberModel = {};
         component.familyMember = member;
 
         component.handleCustomerNumberClicked();
@@ -77,7 +77,7 @@ describe('FamilyMemberComponent', () => {
       });
 
       it('should return full member name when all data is provided', () => {
-        const member: FamilyMemberViewModel = {
+        const member: FamilyMemberModel = {
           firstName: 'Piotr',
           familyName: 'Nowak'
         };
@@ -87,7 +87,7 @@ describe('FamilyMemberComponent', () => {
       });
 
       it('should return full member name when some of the data is provided', () => {
-        const member: FamilyMemberViewModel = {
+        const member: FamilyMemberModel = {
           firstName: undefined,
           familyName: 'Nowak'
         };
@@ -345,7 +345,7 @@ describe('FamilyMemberComponent', () => {
         it('should call event handler when clicked', async(() => {
           spyOn(component, 'handleCustomerNumberClicked');
 
-          const member: FamilyMemberViewModel = {
+          const member: FamilyMemberModel = {
             personalNumber: '123456',
             coveredByOtherAffiliate: true
           };

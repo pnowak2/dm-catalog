@@ -10,7 +10,7 @@ export enum Gender {
   Unknown
 }
 
-export interface FamilyMemberViewModel {
+export interface FamilyMemberModel {
   personalNumber?: string;
   firstName?: string;
   familyName?: string;

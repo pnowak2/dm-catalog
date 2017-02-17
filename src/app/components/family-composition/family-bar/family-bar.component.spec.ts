@@ -1,7 +1,7 @@
 import { SwitchComponent } from './../../switch/switch.component';
 import { ElementRef, Renderer } from '@angular/core';
 /* tslint:disable:no-unused-variable */
-import { FamilyMemberViewModel, CoverageType } from './../family-member/model/family-member.viewmodel';
+import { FamilyMemberModel, CoverageType } from './../family-member/model/family-member.model';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, EventEmitter } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -83,17 +83,17 @@ describe('FamilyBarComponent', () => {
     });
 
     describe('.familyBarMembers', () => {
-      const one: FamilyMemberViewModel = {
+      const one: FamilyMemberModel = {
         sicknessCoverage: CoverageType.None,
         accidentCoverage: undefined
       };
 
-      const two: FamilyMemberViewModel = {
+      const two: FamilyMemberModel = {
         sicknessCoverage: undefined,
         accidentCoverage: CoverageType.None
       };
 
-      const three: FamilyMemberViewModel = {
+      const three: FamilyMemberModel = {
         sicknessCoverage: CoverageType.Complementary,
         accidentCoverage: undefined
       };
@@ -123,17 +123,17 @@ describe('FamilyBarComponent', () => {
       });
 
       it('should return only members which are covered', () => {
-        const one: FamilyMemberViewModel = {
+        const one: FamilyMemberModel = {
           sicknessCoverage: CoverageType.None,
           accidentCoverage: undefined
         };
 
-        const two: FamilyMemberViewModel = {
+        const two: FamilyMemberModel = {
           sicknessCoverage: undefined,
           accidentCoverage: CoverageType.None
         };
 
-        const three: FamilyMemberViewModel = {
+        const three: FamilyMemberModel = {
           sicknessCoverage: CoverageType.Complementary,
           accidentCoverage: undefined
         };
@@ -183,17 +183,17 @@ describe('FamilyBarComponent', () => {
       });
 
       it('should return count of all family members which are covered', () => {
-        const one: FamilyMemberViewModel = {
+        const one: FamilyMemberModel = {
           sicknessCoverage: CoverageType.None,
           accidentCoverage: undefined
         };
 
-        const two: FamilyMemberViewModel = {
+        const two: FamilyMemberModel = {
           sicknessCoverage: undefined,
           accidentCoverage: CoverageType.None
         };
 
-        const three: FamilyMemberViewModel = {
+        const three: FamilyMemberModel = {
           sicknessCoverage: CoverageType.Complementary,
           accidentCoverage: undefined
         };
@@ -206,8 +206,8 @@ describe('FamilyBarComponent', () => {
 
     describe('.selectedMember', () => {
       it(`should return selected member if one member has selection`, () => {
-        const one: FamilyMemberViewModel = { selected: true };
-        const two: FamilyMemberViewModel = { selected: false };
+        const one: FamilyMemberModel = { selected: true };
+        const two: FamilyMemberModel = { selected: false };
 
         component.familyMembers = [one, two];
         fixture.detectChanges();
@@ -216,8 +216,8 @@ describe('FamilyBarComponent', () => {
       });
 
       it(`should return first selected member if more than one members have selection`, () => {
-        const one: FamilyMemberViewModel = { selected: true };
-        const two: FamilyMemberViewModel = { selected: true };
+        const one: FamilyMemberModel = { selected: true };
+        const two: FamilyMemberModel = { selected: true };
 
         component.familyMembers = [one, two];
         fixture.detectChanges();
@@ -226,8 +226,8 @@ describe('FamilyBarComponent', () => {
       });
 
       it(`should return undefined if none of members have selection`, () => {
-        const one: FamilyMemberViewModel = { selected: false };
-        const two: FamilyMemberViewModel = { selected: false };
+        const one: FamilyMemberModel = { selected: false };
+        const two: FamilyMemberModel = { selected: false };
 
         component.familyMembers = [one, two];
         fixture.detectChanges();
@@ -333,9 +333,9 @@ describe('FamilyBarComponent', () => {
       });
 
       it('should unselect all family members but the selected one', () => {
-        const one: FamilyMemberViewModel = { selected: true };
-        const two: FamilyMemberViewModel = { selected: false };
-        const three: FamilyMemberViewModel = { selected: false };
+        const one: FamilyMemberModel = { selected: true };
+        const two: FamilyMemberModel = { selected: false };
+        const three: FamilyMemberModel = { selected: false };
 
         component.familyMembers = [one, two, three];
 
@@ -347,7 +347,7 @@ describe('FamilyBarComponent', () => {
       });
 
       it('should trigger component event', () => {
-        const member: FamilyMemberViewModel = { selected: true };
+        const member: FamilyMemberModel = { selected: true };
         spyOn(component.memberSelected, 'next');
 
         component.handleMemberClicked(member);
@@ -356,7 +356,7 @@ describe('FamilyBarComponent', () => {
       });
 
       it('should not trigger component event while in read mode', () => {
-        const member: FamilyMemberViewModel = { selected: false };
+        const member: FamilyMemberModel = { selected: false };
         spyOn(component.memberSelected, 'next');
 
         component.readOnly = true;
@@ -388,11 +388,11 @@ describe('FamilyBarComponent', () => {
     });
 
     describe('Family Members Section', () => {
-      const one: FamilyMemberViewModel = {
+      const one: FamilyMemberModel = {
       };
-      const two: FamilyMemberViewModel = {
+      const two: FamilyMemberModel = {
       };
-      const three: FamilyMemberViewModel = {
+      const three: FamilyMemberModel = {
       };
 
       beforeEach(() => {
@@ -471,13 +471,13 @@ describe('FamilyBarComponent', () => {
 
         describe('Selected Member Section', () => {
           describe('None of the Members Selected', () => {
-            const one: FamilyMemberViewModel = {
+            const one: FamilyMemberModel = {
               selected: false
             };
-            const two: FamilyMemberViewModel = {
+            const two: FamilyMemberModel = {
               selected: false
             };
-            const three: FamilyMemberViewModel = {
+            const three: FamilyMemberModel = {
               selected: false
             };
 
@@ -503,17 +503,17 @@ describe('FamilyBarComponent', () => {
           });
 
           describe('One Member Selected', () => {
-            const one: FamilyMemberViewModel = {
+            const one: FamilyMemberModel = {
               firstName: 'Piotr',
               familyName: 'Nowak',
               selected: true
             };
-            const two: FamilyMemberViewModel = {
+            const two: FamilyMemberModel = {
               firstName: 'Tom',
               familyName: 'Goemaes',
               selected: false
             };
-            const three: FamilyMemberViewModel = {
+            const three: FamilyMemberModel = {
               firstName: 'Jeremy',
               familyName: 'Lebrun',
               selected: false
@@ -542,17 +542,17 @@ describe('FamilyBarComponent', () => {
         });
 
         describe('Family Size Section', () => {
-          const one: FamilyMemberViewModel = {
+          const one: FamilyMemberModel = {
             sicknessCoverage: CoverageType.Complementary
           };
-          const two: FamilyMemberViewModel = {
+          const two: FamilyMemberModel = {
           };
-          const three: FamilyMemberViewModel = {
+          const three: FamilyMemberModel = {
           };
-          const four: FamilyMemberViewModel = {
+          const four: FamilyMemberModel = {
             sicknessCoverage: CoverageType.Full
           };
-          const five: FamilyMemberViewModel = {
+          const five: FamilyMemberModel = {
             sicknessCoverage: CoverageType.Full
           };
 

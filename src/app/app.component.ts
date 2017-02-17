@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { FamilyMemberViewModel, CoverageType, Gender } from './components/family-composition/family-member/model/family-member.viewmodel';
+import { FamilyMemberModel, CoverageType, Gender } from './components/family-composition/family-member/model/family-member.model';
 
 @Component({
   selector: 'asm-root',
@@ -7,7 +7,7 @@ import { FamilyMemberViewModel, CoverageType, Gender } from './components/family
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  familyMembers: Array<FamilyMemberViewModel> = [{
+  familyMembers: Array<FamilyMemberModel> = [{
     firstName: 'Piotr',
     familyName: 'Bardzo Długa Nazwa Że Aż Szok',
     personalNumber: '123456',

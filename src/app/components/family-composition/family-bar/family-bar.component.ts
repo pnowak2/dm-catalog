@@ -1,5 +1,5 @@
 import { SwitchComponent } from './../../switch/switch.component';
-import { FamilyMemberViewModel } from './../family-member/model/family-member.viewmodel';
+import { FamilyMemberModel } from './../family-member/model/family-member.model';
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -11,8 +11,8 @@ import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer
 export class FamilyBarComponent {
   @ViewChild('familyMembersScrollContainer') familyMembersScrollContainer: ElementRef;
   @ViewChild(SwitchComponent) familyPlusSwitch: SwitchComponent;
-  @Output() memberSelected = new EventEmitter<FamilyMemberViewModel>();
-  @Input() familyMembers: Array<FamilyMemberViewModel> = [];
+  @Output() memberSelected = new EventEmitter<FamilyMemberModel>();
+  @Input() familyMembers: Array<FamilyMemberModel> = [];
   @Input() closed = false;
   @Input() readOnly = false;
 
@@ -22,7 +22,7 @@ export class FamilyBarComponent {
     return 80;
   }
 
-  get familyBarMembers(): Array<FamilyMemberViewModel> {
+  get familyBarMembers(): Array<FamilyMemberModel> {
     if (this.familyPlusSwitch.checked) {
       return this.familyMembers;
     } else {
@@ -30,7 +30,7 @@ export class FamilyBarComponent {
     }
   }
 
-  get familyMembersWithCoverage(): Array<FamilyMemberViewModel> {
+  get familyMembersWithCoverage(): Array<FamilyMemberModel> {
     return this.familyMembers.filter(member => {
       return member.accidentCoverage || member.sicknessCoverage;
     });
@@ -44,11 +44,11 @@ export class FamilyBarComponent {
     return this.familyMembersWithCoverage.length;
   }
 
-  get selectedMember(): FamilyMemberViewModel {
+  get selectedMember(): FamilyMemberModel {
     return this.familyMembers.find(member => member.selected);
   }
 
-  handleMemberClicked(member: FamilyMemberViewModel) {
+  handleMemberClicked(member: FamilyMemberModel) {
     if (this.readOnly) {
       return;
     };

@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { FamilyMemberViewModel, CoverageType, Gender } from './model/family-member.viewmodel';
+import { FamilyMemberModel, CoverageType, Gender } from './model/family-member.model';
 
 @Component({
   selector: 'asm-family-member',
@@ -9,8 +9,8 @@ import { FamilyMemberViewModel, CoverageType, Gender } from './model/family-memb
   encapsulation: ViewEncapsulation.None
 })
 export class FamilyMemberComponent {
-  @Output() customerNumberClick = new EventEmitter<FamilyMemberViewModel>();
-  @Input() familyMember: FamilyMemberViewModel = {};
+  @Output() customerNumberClick = new EventEmitter<FamilyMemberModel>();
+  @Input() familyMember: FamilyMemberModel = {};
 
   handleCustomerNumberClicked(): void {
     this.customerNumberClick.next(this.familyMember);
