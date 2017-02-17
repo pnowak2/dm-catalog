@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { DatePipe } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { DateRangePipe } from './pipes/date-range.pipe';
 
 @NgModule({
   declarations: [

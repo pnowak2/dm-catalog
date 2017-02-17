@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { FamilyMemberModel, CoverageType, Gender } from './model/family-member.model';
+import { FamilyMemberModel, CoverageType, Gender } from '../model/family-member.model';
 
 @Component({
   selector: 'asm-family-member',

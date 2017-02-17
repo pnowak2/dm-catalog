@@ -1,7 +1,7 @@
 import { SwitchComponent } from './../../switch/switch.component';
 import { ElementRef, Renderer } from '@angular/core';
 /* tslint:disable:no-unused-variable */
-import { FamilyMemberModel, CoverageType } from './../family-member/model/family-member.model';
+import { FamilyMemberModel, CoverageType } from '../model/family-member.model';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, EventEmitter } from '@angular/core';
 import { By } from '@angular/platform-browser';
