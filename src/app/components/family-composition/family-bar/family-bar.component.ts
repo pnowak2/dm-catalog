@@ -9,7 +9,6 @@ import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer
   encapsulation: ViewEncapsulation.None
 })
 export class FamilyBarComponent {
-  ScrollStep = 80;
   @ViewChild('familyMembersScrollContainer') familyMembersScrollContainer: ElementRef;
   @ViewChild(SwitchComponent) familyPlusSwitch: SwitchComponent;
   @Output() memberSelected = new EventEmitter<FamilyMemberViewModel>();
@@ -18,6 +17,10 @@ export class FamilyBarComponent {
   @Input() readOnly = false;
 
   constructor(private renderer: Renderer) { }
+
+  get ScrollStep(): number {
+    return 80;
+  }
 
   get familyBarMembers(): Array<FamilyMemberViewModel> {
     if (this.familyPlusSwitch.checked) {
