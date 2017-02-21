@@ -7,13 +7,3 @@ body {
   background-color: $body-bg;
   font-family: $font-family-base;   
 }
-
-@if $border-box-global == true {
-    * {
-        &,
-        &:before,
-        &:after {
-          box-sizing: border-box;
-        }
-    }
-}
