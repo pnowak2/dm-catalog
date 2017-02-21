@@ -19,7 +19,7 @@
       "tsconfig": "tsconfig.json",
       "prefix": "asm",
       "styles": [
-        "assets/styles/index.scss"
+        "assets/scss/index.scss"
       ],
       "scripts": [],
       "environments": {
