@@ -1,11 +1,11 @@
-import { DateRangePipe } from './../../../pipes/date-range.pipe';
+import { DateRangePipe } from '../pipes/date-range.pipe';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, EventEmitter, NO_ERRORS_SCHEMA, LOCALE_ID } from '@angular/core';
 
 import { FamilyMemberComponent } from './family-member.component';
-import { FamilyMemberModel, CoverageType, Gender } from './model/family-member.model';
+import { FamilyMemberModel, CoverageType, Gender } from '../model/family-member.model';
 
 describe('FamilyMemberComponent', () => {
   let component: FamilyMemberComponent;

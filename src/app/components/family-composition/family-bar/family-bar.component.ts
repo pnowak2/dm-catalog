@@ -1,5 +1,5 @@
 import { SwitchComponent } from './../../switch/switch.component';
-import { FamilyMemberModel } from './../family-member/model/family-member.model';
+import { FamilyMemberModel } from '../model/family-member.model';
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer, ViewEncapsulation } from '@angular/core';
 
 @Component({
