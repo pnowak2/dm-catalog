@@ -1,66 +1,86 @@
-<div class="asm-sidebar">
-  <ul class="asm-sidebar__items">
-    <li class="asm-sidebar__items-category">
+<h3>Sidebar Category</h3>
+<a class="asm-sidebar-category" href="#">
+  Dashboards
+</a>
+
+<h3>Sidebar Item</h3>
+<a class="asm-sidebar-item" href="#">
+  <i class="fa fa-home asm-sidebar-item__icon"></i> Home
+</a>
+
+<h3>Sidebar Item - Has Subitems</h3>
+<a class="asm-sidebar-item asm-sidebar-item--has-subitems" href="#">
+  <i class="fa fa-home asm-sidebar-item__icon"></i> Home
+</a>
+
+<h3>Sidebar Item - Has Subitems and Opened</h3>
+<a class="asm-sidebar-item asm-sidebar-item--opened asm-sidebar-item--has-subitems" href="#">
+  <i class="fa fa-home asm-sidebar-item__icon"></i> Home
+</a>
+
+<h3>Sidebar Stack</h3>
+<ul class="asm-sidebar-stack">
+  <li>
+    <a class="asm-sidebar-category" href="#">
       Dashboards
-    </li>
-    <li class="asm-sidebar__item asm-sidebar__item--opened">
-      <a class="asm-sidebar__item-link asm-sidebar__item-link--has-subitems" href="#">
-        <i class="fa fa-home asm-sidebar__item-icon"></i>
-        <span class="asm-sidebar__item-label">Home</span>
-      </a>
-      <ul class="asm-sidebar__items">
-        <li class="asm-sidebar__item">
-          <a class="asm-sidebar__item-link asm-sidebar__item-link--has-subitems" href="#">
-            <span class="asm-sidebar__item-label">Subcategory 1</span>
-          </a>
-        </li>
-        <li class="asm-sidebar__item asm-sidebar__item--opened">
-          <a class="asm-sidebar__item-link asm-sidebar__item-link--has-subitems" href="#">
-            <span class="asm-sidebar__item-label">Subcategory 2</span>
-          </a>
-          <ul class="asm-sidebar__items">
-            <li class="asm-sidebar__item">
-              <a class="asm-sidebar__item-link" href="#">
-                <i class="fa fa-star-o asm-sidebar__item-icon"></i>
-                <span class="asm-sidebar__item-label">Sub Subcategory 1</span>
-              </a>
-            </li>
-            <li class="asm-sidebar__item">
-              <a class="asm-sidebar__item-link" href="#">
-                <i class="fa fa-star asm-sidebar__item-icon"></i>
-                <span class="asm-sidebar__item-label">Sub Subcategory 2</span>
-              </a>
-              <ul class="asm-sidebar__items">
-                <li class="asm-sidebar__item">
-                  <a class="asm-sidebar__item-link" href="#">
-                    <span class="asm-sidebar__item-label">Sub Sub Subcategory 1</span>
-                  </a>
-                </li>
-                <li class="asm-sidebar__item">
-                  <a class="asm-sidebar__item-link" href="#">
-                    <span class="asm-sidebar__item-label">Sub Sub Subcategory 2</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="asm-sidebar__items-category">
-      Administration
-    </li>
-    <li class="asm-sidebar__item">
-      <a class="asm-sidebar__item-link asm-sidebar__item-link--has-subitems" href="#">
-        <i class="fa fa-globe asm-sidebar__item-icon"></i>
-        <span class="asm-sidebar__item-label">Medicines</span>
-      </a>
-    </li>
-    <li class="asm-sidebar__item">
-      <a class="asm-sidebar__item-link asm-sidebar__item-link--has-subitems" href="#">
-        <i class="fa fa-flag asm-sidebar__item-icon"></i>
-        <span class="asm-sidebar__item-label">Other</span>
-      </a>
-    </li>
-  </ul>
-</div>
+    </a>
+  </li>
+  <li>
+    <a class="asm-sidebar-item asm-sidebar-item--opened asm-sidebar-item--has-subitems" href="#">
+      <i class="fa fa-home asm-sidebar-item__icon"></i> Home
+    </a>
+    <ul class="asm-sidebar-stack__subitems">
+      <li>
+        <a class="asm-sidebar-item" href="#">
+          <i class="fa fa-home asm-sidebar-item__icon"></i> Item 1
+        </a>
+      </li>
+      <li>
+        <a class="asm-sidebar-item asm-sidebar-item--has-subitems" href="#">
+          <i class="fa fa-home asm-sidebar-item__icon"></i> Item 2
+        </a>
+        <ul class="asm-sidebar-stack__subitems">
+          <li>
+            <a class="asm-sidebar-item" href="#">
+              Item 1
+            </a>
+          </li>
+          <li>
+            <a class="asm-sidebar-item asm-sidebar-item--opened asm-sidebar-item--has-subitems" href="#">
+              Item 2
+            </a>
+            <ul class="asm-sidebar-stack__subitems">
+              <li>
+                <a class="asm-sidebar-item" href="#">
+                  Item 1
+                </a>
+              </li>
+              <li>
+                <a class="asm-sidebar-item" href="#">
+                  Item 2
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a class="asm-sidebar-category" href="#">
+      Other
+    </a>
+  </li>
+  <li>
+    <a class="asm-sidebar-item asm-sidebar-item--opened asm-sidebar-item--has-subitems" href="#">
+      <i class="fa fa-globe asm-sidebar-item__icon"></i> Settings
+    </a>
+    <ul class="asm-sidebar-stack__subitems">
+      <li>
+        <a class="asm-sidebar-item" href="#">
+          <i class="fa fa-home asm-sidebar-item__icon"></i> Item 1
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
