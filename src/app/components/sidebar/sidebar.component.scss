@@ -53,9 +53,13 @@
   &__item-icon {
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
-    margin-right: 10px;
+    margin-right: 6px;
     vertical-align: middle;
   }
+}
+
+.asm-sidebar__item--opened > .asm-sidebar__item-link:nth-child(1) {
+  background-color: #22B573;
 }
 
 .asm-sidebar__item--opened > .asm-sidebar__item-link--has-subitems:after {
