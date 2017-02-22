@@ -7,14 +7,18 @@ import { DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FamilyBarDemoComponent } from './catalog/family-bar-demo/family-bar-demo.component';
 import { ButtonsDemoComponent } from './catalog/buttons-demo/buttons-demo.component';
+import { SidebarDemoComponent } from './catalog/sidebar-demo/sidebar-demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FamilyBarDemoComponent,
     ButtonsDemoComponent,
+    SidebarComponent,
+    SidebarDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,8 @@ import { ButtonsDemoComponent } from './catalog/buttons-demo/buttons-demo.compon
     FamilyCompositionModule,
     RouterModule.forRoot([
       { path: 'demo/family-bar', component: FamilyBarDemoComponent },
-      { path: 'demo/buttons', component: ButtonsDemoComponent }
+      { path: 'demo/buttons', component: ButtonsDemoComponent },
+      { path: 'demo/sidebar', component: SidebarDemoComponent },
     ])
   ],
   providers: [
