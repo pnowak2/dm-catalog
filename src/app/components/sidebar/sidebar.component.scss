@@ -3,11 +3,15 @@
   display: block;
   font-family: 'Roboto';
   font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
   padding: 12px 35px 12px 20px;
   position: relative;
   text-decoration: none;
+  text-overflow: ellipsis;
   text-transform: uppercase;
   transition: all .3s;
+  white-space: nowrap;
 
   &:hover {
     background-color: darken(#263238, 4%);
@@ -58,12 +62,17 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 280px;
+
+  &__row {
+    position: relative;
+  }
 
   & &__subitems {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: darken(#263238, 1%);
+    background-color: darken(#263238, 5%);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .03);
     display: none;
   }
@@ -73,20 +82,23 @@
   }
 
   & &__subitems .asm-sidebar-item--opened {
-    background-color: darken(#263238, 5%);
+    background-color: rgba(0, 0, 0, .1);;
   }
 
   & &__subitems .asm-sidebar-item {
     padding-left: 43px;
+    font-weight: 200;
   }
 
   & &__subitems &__subitems .asm-sidebar-item {
     padding-left: 60px;
     text-transform: none;
+    font-weight: 200;
   }
 
   & &__subitems &__subitems &__subitems .asm-sidebar-item {
     padding-left: 80px;
     text-transform: none;
+    font-weight: 200;
   }
 }
