@@ -82,9 +82,11 @@
 
   & &__subitems &__subitems .asm-sidebar-item {
     padding-left: 60px;
+    text-transform: none;
   }
 
   & &__subitems &__subitems &__subitems .asm-sidebar-item {
     padding-left: 80px;
+    text-transform: none;
   }
 }
