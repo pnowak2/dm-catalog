@@ -1,38 +1,3 @@
 .btn {
   position: relative;
-
-    &,
-    &:active,
-    &.active {
-        &:focus,
-        &.focus {
-            outline: 0;
-        }
-    }
-
-    // Firefox fix
-    &::-moz-focus-inner {
-        border: 0;
-    }
-
-    &:hover,
-    &:focus,
-    &.focus {
-        @include box-shadow(0 0 0 100px fade(#000, 5%) inset); // Use box shadow instead of color for all buttons - contextual and custom
-    }
-
-    // Active state
-    &:active,
-    &.active {
-        @include box-shadow(0 0 0 100px fade(#000, 10%) inset); // The same as above - no color changes, only box shadow
-    }
-
-    // Custom color buttons
-    &[class*=bg-] {
-        &:hover,
-        &:focus,
-        &.focus {
-            color: #fff;
-        }
-    }
 }
