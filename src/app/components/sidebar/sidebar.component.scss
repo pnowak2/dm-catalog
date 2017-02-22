@@ -51,10 +51,24 @@
   }
 
   &__item-icon {
-    font-size: 16px;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
     margin-right: 10px;
     vertical-align: middle;
   }
+}
+
+.asm-sidebar__item--opened > .asm-sidebar__item-link--has-subitems:after {
+  transform: rotate(90deg);
+}
+
+.asm-sidebar__item--opened > .asm-sidebar__items {
+  display: block;
+}
+
+.asm-sidebar__items 
+.asm-sidebar__items {
+  display: none;
 }
 
 .asm-sidebar__items 
