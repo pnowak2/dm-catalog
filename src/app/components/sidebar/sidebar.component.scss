@@ -62,6 +62,10 @@
   background-color: #22B573;
 }
 
+.asm-sidebar__item--opened .asm-sidebar__item--opened > .asm-sidebar__item-link:nth-child(1) {
+  background-color: rgba(0,0,0,.1);;
+}
+
 .asm-sidebar__item--opened > .asm-sidebar__item-link--has-subitems:after {
   transform: rotate(90deg);
 }
