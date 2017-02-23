@@ -2,7 +2,7 @@
   color: rgba(255, 255, 255, .92);
   display: block;
   overflow: hidden;
-  padding: 12px 35px 12px 20px;
+  padding: 12px 20px 12px 20px;
   position: relative;
   text-decoration: none;
   text-overflow: ellipsis;
@@ -34,6 +34,10 @@
     font-weight: 500;
   }
 
+  &--has-subitems {
+    padding-right: 35px;
+  }
+
   &--has-subitems:after {
     content: "\e9c7";
     display: block;
@@ -53,7 +57,7 @@
   color: rgba(255, 255, 255, .5);
   display: block;
 
-  padding: 10px 35px 10px 20px;
+  padding: 10px 20px 10px 20px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -93,7 +97,7 @@
   }
 
   & &__subitems .asm-sidebar-item {
-    padding-left: 43px;
+    padding-left: 48px;
     font-weight: 200;
   }
 
