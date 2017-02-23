@@ -5,6 +5,17 @@
   color: #ffbb00;
 }
 
+.icon-star-empty3, .icon-star-full2 {
+  transition: all .5s;
+  transition-timing-function: ease-in-out;  
+  transform: rotate(0) scale(1.0);
+}
+
+.icon-star-empty3:hover, .icon-star-full2:hover {
+  transform: rotate(360deg) scale(1.2);
+  color: #ff9900;
+}
+
 .asm-sidebar-item {
   color: rgba(255, 255, 255, .92);
   display: block;
@@ -143,6 +154,10 @@
 
     .asm-sidebar-item {
       color: #333;
+    }
+
+    .asm-sidebar-item:hover {
+      background-color: #ccc;
     }
 
     .asm-sidebar-category {
