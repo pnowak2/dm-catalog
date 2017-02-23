@@ -68,6 +68,12 @@
   }
 }
 
+.asm-sidebar-divider {
+  margin: 10px 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, .1);
+}
+
 .asm-sidebar-stack {
   background-color: #263238;
   list-style-type: none;
