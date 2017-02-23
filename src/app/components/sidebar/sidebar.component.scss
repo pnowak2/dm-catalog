@@ -180,5 +180,17 @@
         display: none
       }
     }
+
+    .asm-sidebar-stack__subitems .asm-sidebar-item {
+      padding-left: 12px;
+    }
+
+    .asm-sidebar-stack__subitems .asm-sidebar-stack__subitems .asm-sidebar-item {
+      padding-left: 22px;
+    }
+
+    .asm-sidebar-stack__subitems .asm-sidebar-stack__subitems .asm-sidebar-stack__subitems .asm-sidebar-item {
+      padding-left: 42px;
+    }
   }
 }
