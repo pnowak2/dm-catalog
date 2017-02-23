@@ -1,6 +1,10 @@
 @import '../../../assets/scss/bootstrap/variables';
 @import '../../../assets/scss/bootstrap/mixins';
 
+.icon-star-empty3, .icon-star-full2 {
+  color: #ffbb00;
+}
+
 .asm-sidebar-item {
   color: rgba(255, 255, 255, .92);
   display: block;
@@ -132,6 +136,30 @@
 
   .asm-sidebar-item--opened + &__subitems {
     display: block;
+  }
+
+  &--inverted {
+    background-color: #fff;
+
+    .asm-sidebar-item {
+      color: #333;
+    }
+
+    .asm-sidebar-category {
+      color: #777;
+    }
+
+    .asm-sidebar-stack__subitems {
+      background-color: #f2f2f2;
+    }
+
+    .asm-sidebar-item--opened, .asm-sidebar-item--opened:hover {
+      color: #fff;
+    }
+
+    .asm-sidebar-stack__subitems .asm-sidebar-item--opened {
+      color: #333;
+    }
   }
 
   &--closed {
