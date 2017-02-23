@@ -10,7 +10,7 @@
   text-decoration: none;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  transition: all .3s;
+  transition: background-color .3s;
   user-select: none;
   white-space: nowrap;
 
@@ -72,6 +72,10 @@
     font-family: 'Roboto';
     font-size: 11px;
   }
+
+  &__icon {
+    display: none;
+  }
 }
 
 .asm-sidebar-divider {
@@ -124,5 +128,45 @@
 
   & &__subitems &__subitems &__subitems .asm-sidebar-item {
     padding-left: 80px;
+  }
+
+  &--closed {
+    width: 57px;
+
+    .asm-sidebar-category {
+      text-align: center;
+    }
+
+    .asm-sidebar-category__label {
+      display: none;     
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .asm-sidebar-category__icon {
+      display: inline-block;
+    }
+
+    .asm-sidebar-item {
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .asm-sidebar-item__icon {
+      text-align: center;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    > .asm-sidebar-stack__row > .asm-sidebar-item > .asm-sidebar-item__label,
+    > .asm-sidebar-stack__row > .asm-sidebar-item--has-subitems:after,
+    > .asm-sidebar-stack__row > .asm-sidebar-stack__subitems {
+      display: none;
+    }
+
+    > .asm-sidebar-stack__row > .asm-sidebar-stack__subitems {
+      width: 250px;
+    }
   }
 }
