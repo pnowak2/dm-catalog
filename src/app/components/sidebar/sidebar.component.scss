@@ -133,40 +133,45 @@
   &--closed {
     width: 57px;
 
-    .asm-sidebar-category {
+    > .asm-sidebar-stack__row > .asm-sidebar-category {
       text-align: center;
+
+      .asm-sidebar-category__label {
+        display: none;     
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .asm-sidebar-category__icon {
+        display: inline-block;
+      }
     }
 
-    .asm-sidebar-category__label {
-      display: none;     
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .asm-sidebar-category__icon {
-      display: inline-block;
-    }
-
-    .asm-sidebar-item {
+    > .asm-sidebar-stack__row > .asm-sidebar-item {
       text-align: center;
       padding-left: 0;
       padding-right: 0;
+
+      .asm-sidebar-item__label {
+        display: none;
+      }
+
+      .asm-sidebar-item__icon {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
 
-    .asm-sidebar-item__icon {
-      text-align: center;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    > .asm-sidebar-stack__row > .asm-sidebar-item > .asm-sidebar-item__label,
     > .asm-sidebar-stack__row > .asm-sidebar-item--has-subitems:after,
     > .asm-sidebar-stack__row > .asm-sidebar-stack__subitems {
       display: none;
     }
 
     > .asm-sidebar-stack__row > .asm-sidebar-stack__subitems {
-      width: 250px;
+      position: absolute;
+      width: 260px;
+      left: 100%;
+      display: block;
     }
   }
 }
