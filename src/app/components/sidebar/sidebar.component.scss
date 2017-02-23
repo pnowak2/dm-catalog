@@ -11,6 +11,7 @@
   text-overflow: ellipsis;
   text-transform: uppercase;
   transition: all .3s;
+  user-select: none;
   white-space: nowrap;
 
   &:hover {
@@ -64,6 +65,8 @@
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: default;
+  user-select: none;
 
   &__label {
     font-family: 'Roboto';
