@@ -157,9 +157,18 @@
         text-align: center;
         padding-left: 0;
         padding-right: 0;
+        overflow: visible;
 
         .asm-sidebar-item__label {
           display: none;
+          position: absolute;
+          width: 260px;
+          left: 100%;
+          top: 0;
+          padding-top: 14px;
+          padding-bottom: 14px;
+          height: 100%;
+          background-color: #22B573;
         }
 
         .asm-sidebar-item__icon {
@@ -173,11 +182,23 @@
         position: absolute;
         width: 260px;
         left: 100%;
-        display: block;
       }
 
       .asm-sidebar-item--has-subitems:after {
         display: none
+      }
+    }
+
+    > .asm-sidebar-stack__row:hover > {
+
+      .asm-sidebar-item .asm-sidebar-item__label {
+        display: block;
+        text-align: left;
+        padding-left: 20px;
+      }
+
+      .asm-sidebar-stack__subitems {
+        display: block;
       }
     }
 
