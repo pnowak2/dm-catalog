@@ -1,3 +1,6 @@
+@import '../../../assets/scss/bootstrap/variables';
+@import '../../../assets/scss/bootstrap/mixins';
+
 .asm-sidebar-item {
   color: rgba(255, 255, 255, .92);
   display: block;
@@ -69,7 +72,7 @@
 }
 
 .asm-sidebar-divider {
-  margin: 10px 0;
+  margin: 5px 0;
   height: 1px;
   background-color: rgba(255, 255, 255, .1);
 }
@@ -111,17 +114,12 @@
     padding-left: 60px;
   }
 
-  & &__subitems &__subitems &__subitems .asm-sidebar-item {
-    padding-left: 80px;
-  }
-
   & &__subitems &__subitems .asm-sidebar-item__label {
     text-transform: none;
     font-weight: 200;
   }
 
-  & &__subitems &__subitems &__subitems .asm-sidebar-item__label {
-    text-transform: none;
-    font-weight: 200;
+  & &__subitems &__subitems &__subitems .asm-sidebar-item {
+    padding-left: 80px;
   }
 }
