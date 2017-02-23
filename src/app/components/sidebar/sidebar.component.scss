@@ -102,76 +102,83 @@
     background-color: darken(#263238, 2%);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .03);
     display: none;
+
+    .asm-sidebar-item {
+      padding-left: 48px;
+      font-weight: 200;
+    }
+
+    .asm-sidebar-item--opened {
+      background-color: rgba(0, 0, 0, .1);;
+    }
+  }
+
+  & &__subitems &__subitems {
+    .asm-sidebar-item {
+      padding-left: 60px;
+    }
+
+    .asm-sidebar-item__label {
+      text-transform: none;
+      font-weight: 200;
+    }
+  }
+
+  & &__subitems &__subitems &__subitems {
+    .asm-sidebar-item {
+      padding-left: 80px;
+    }
   }
 
   .asm-sidebar-item--opened + &__subitems {
     display: block;
   }
 
-  & &__subitems .asm-sidebar-item--opened {
-    background-color: rgba(0, 0, 0, .1);;
-  }
-
-  & &__subitems .asm-sidebar-item {
-    padding-left: 48px;
-    font-weight: 200;
-  }
-
-  & &__subitems &__subitems .asm-sidebar-item {
-    padding-left: 60px;
-  }
-
-  & &__subitems &__subitems .asm-sidebar-item__label {
-    text-transform: none;
-    font-weight: 200;
-  }
-
-  & &__subitems &__subitems &__subitems .asm-sidebar-item {
-    padding-left: 80px;
-  }
-
   &--closed {
     width: 57px;
 
-    > .asm-sidebar-stack__row > .asm-sidebar-category {
-      text-align: center;
+    > .asm-sidebar-stack__row > {
 
-      .asm-sidebar-category__label {
-        display: none;     
-        margin-left: 0;
-        margin-right: 0;
+      .asm-sidebar-category {
+        text-align: center;
+
+        .asm-sidebar-category__label {
+          display: none;     
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        .asm-sidebar-category__icon {
+          display: inline-block;
+        }
       }
 
-      .asm-sidebar-category__icon {
-        display: inline-block;
+      .asm-sidebar-item {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+
+        .asm-sidebar-item__label {
+          display: none;
+        }
+
+        .asm-sidebar-item__icon {
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
-    }
 
-    > .asm-sidebar-stack__row > .asm-sidebar-item {
-      text-align: center;
-      padding-left: 0;
-      padding-right: 0;
-
-      .asm-sidebar-item__label {
+      .asm-sidebar-stack__subitems {
         display: none;
+        position: absolute;
+        width: 260px;
+        left: 100%;
+        display: block;
       }
 
-      .asm-sidebar-item__icon {
-        margin-left: 0;
-        margin-right: 0;
+      .asm-sidebar-item--has-subitems:after {
+        display: none
       }
-    }
-
-    > .asm-sidebar-stack__row > .asm-sidebar-item--has-subitems:after,
-    > .asm-sidebar-stack__row > .asm-sidebar-stack__subitems {
-      display: none;
-    }
-
-    > .asm-sidebar-stack__row > .asm-sidebar-stack__subitems {
-      position: absolute;
-      width: 260px;
-      left: 100%;
-      display: block;
     }
   }
 }
