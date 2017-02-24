@@ -34,28 +34,11 @@
   }
 
   &__label {
-    display: inline-block;
+    display: inline;
     vertical-align: middle;
-  }
-
-  &__label-elements {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 13px;
-  }
-
-  &__label-title {
     font-family: 'Roboto';
     font-size: 13px;
     font-weight: 500;
-  }
-
-  &__label-subtitle {
-    color: rgba(255, 255, 255, .5);
-    font-family: 'Roboto';
-    font-size: 10px;
-    font-weight: 200;
   }
 
   &--has-subitems {
@@ -137,12 +120,10 @@
       padding-left: 60px;
     }
 
-    .asm-navigation-item__label-title {
+    .asm-navigation-item__label {
       text-transform: none;
       font-weight: 200;
-    }
-
-    
+    }   
   }
 
   & &__subitems &__subitems &__subitems {
@@ -186,10 +167,15 @@
           width: 260px;
           left: 100%;
           top: 0;
+          padding-top: 14px;
+          padding-bottom: 14px;
           height: 100%;
           background-color: #22B573;
           text-align: left;
           padding-left: 20px;
+          padding-right: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis
         }
 
         .asm-navigation-item__icon {
@@ -213,7 +199,7 @@
     > .asm-navigation-stack__row:hover > {
 
       .asm-navigation-item .asm-navigation-item__label {
-        display: block;
+        display: inline;
       }
 
       .asm-navigation-stack__subitems {
