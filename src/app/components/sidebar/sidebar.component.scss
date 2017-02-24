@@ -169,6 +169,8 @@
           padding-bottom: 14px;
           height: 100%;
           background-color: #22B573;
+          text-align: left;
+          padding-left: 20px;
         }
 
         .asm-navigation-item__icon {
@@ -193,8 +195,6 @@
 
       .asm-navigation-item .asm-navigation-item__label {
         display: block;
-        text-align: left;
-        padding-left: 20px;
       }
 
       .asm-navigation-stack__subitems {
