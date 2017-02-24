@@ -13,7 +13,7 @@
   transition: background-color .3s;
   user-select: none;
   white-space: nowrap;
-  line-height: 1.1;
+  line-height: 1.2;
 
   &:hover {
     background-color: darken(#263238, 4%);
@@ -38,19 +38,20 @@
     vertical-align: middle;
   }
 
-  &__label-container {
+  &__label-elements {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 13px;
   }
 
-  &__title {
+  &__label-title {
     font-family: 'Roboto';
     font-size: 13px;
     font-weight: 500;
   }
 
-  &__subtitle {
+  &__label-subtitle {
     color: rgba(255, 255, 255, .5);
     font-family: 'Roboto';
     font-size: 10px;
@@ -136,10 +137,12 @@
       padding-left: 60px;
     }
 
-    .asm-navigation-item__label {
+    .asm-navigation-item__label-title {
       text-transform: none;
       font-weight: 200;
     }
+
+    
   }
 
   & &__subitems &__subitems &__subitems {

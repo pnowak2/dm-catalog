@@ -1,10 +1,12 @@
 <h5>Navigation Category</h5>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quae praesentium veniam molestiae? Praesentium dolorem animi
   velit labore est distinctio asperiores ad minus reprehenderit deleniti, ab veritatis, modi quae ullam.</p>
-  <span class="asm-navigation-category">
-    <i class="icon-menu asm-navigation-category__icon" title="Category Title"></i>
-    <span class="asm-navigation-category__label">Dashboards</span>
-  </span>
+  <div class="card card-primary">
+    <span class="asm-navigation-category">
+      <i class="icon-menu asm-navigation-category__icon" title="Category Title"></i>
+      <span class="asm-navigation-category__label">Dashboards</span>
+    </span>
+  </div>
 
 <h5>Navigation Item</h5>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quae praesentium veniam molestiae? Praesentium dolorem animi
@@ -13,8 +15,8 @@
   <a class="asm-navigation-item" href="#">
     <i class="icon-home4 asm-navigation-item__icon"></i>
     <div class="asm-navigation-item__label">
-      <div class="asm-navigation-item__label-container">
-        <div class="asm-navigation-item__title">Home</div>
+      <div class="asm-navigation-item__label-elements">
+        <div class="asm-navigation-item__label-title">Home</div>
       </div>
     </div>
   </a>
@@ -27,8 +29,8 @@
   <a class="asm-navigation-item asm-navigation-item--has-subitems" href="#">
     <i class="icon-home4 asm-navigation-item__icon"></i>
     <div class="asm-navigation-item__label">
-      <div class="asm-navigation-item__label-container">
-        <div class="asm-navigation-item__title">Home</div>
+      <div class="asm-navigation-item__label-elements">
+        <div class="asm-navigation-item__label-title">Home</div>
       </div>
     </div>
   </a>
@@ -40,8 +42,8 @@
 <a class="asm-navigation-item asm-navigation-item--opened asm-navigation-item--has-subitems" href="#">
   <i class="icon-home4 asm-navigation-item__icon"></i>
   <div class="asm-navigation-item__label">
-    <div class="asm-navigation-item__label-container">
-      <div class="asm-navigation-item__title">Home</div>
+    <div class="asm-navigation-item__label-elements">
+      <div class="asm-navigation-item__label-title">Home</div>
     </div>
   </div>
 </a>
@@ -52,9 +54,9 @@
 <a class="asm-navigation-item asm-navigation-item--opened asm-navigation-item--has-subitems" href="#">
   <i class="icon-home4 asm-navigation-item__icon"></i>
   <div class="asm-navigation-item__label">
-    <div class="asm-navigation-item__label-container">
-      <div class="asm-navigation-item__title">Home</div>
-      <div class="asm-navigation-item__subtitle">Ctrl + H</div>
+    <div class="asm-navigation-item__label-elements">
+      <div class="asm-navigation-item__label-title">Home</div>
+      <div class="asm-navigation-item__label-subtitle">Ctrl + H</div>
     </div>
   </div>
 </a>
@@ -80,8 +82,8 @@
     <a class="asm-navigation-item asm-navigation-item--has-subitems" href="#">
       <i class="icon-home4 asm-navigation-item__icon"></i>
       <div class="asm-navigation-item__label">
-        <div class="asm-navigation-item__label-container">
-          <div class="asm-navigation-item__title">Home</div>
+        <div class="asm-navigation-item__label-elements">
+          <div class="asm-navigation-item__label-title">Home</div>
         </div>
       </div>
     </a>
@@ -90,8 +92,8 @@
     <a class="asm-navigation-item" href="#">
       <i class="icon-search4 asm-navigation-item__icon"></i>
       <div class="asm-navigation-item__label">
-        <div class="asm-navigation-item__label-container">
-          <div class="asm-navigation-item__title">Search</div>
+        <div class="asm-navigation-item__label-elements">
+          <div class="asm-navigation-item__label-title">Search</div>
         </div>
       </div>
     </a>
@@ -100,9 +102,9 @@
     <a class="asm-navigation-item asm-navigation-item--opened asm-navigation-item--has-subitems" href="#">
       <i class="icon-coin-euro asm-navigation-item__icon"></i>
       <div class="asm-navigation-item__label">
-        <div class="asm-navigation-item__label-container">
-          <div class="asm-navigation-item__title">Tarification</div>
-          <div class="asm-navigation-item__subtitle">Ctrl + H</div>
+        <div class="asm-navigation-item__label-elements">
+          <div class="asm-navigation-item__label-title">Tarification</div>
+          <div class="asm-navigation-item__label-subtitle">Ctrl + H</div>
         </div>
       </div>
     </a>
@@ -110,8 +112,8 @@
       <li class="asm-navigation-stack__row">
         <a class="asm-navigation-item" href="#">
         <div class="asm-navigation-item__label">
-          <div class="asm-navigation-item__label-container">
-            <div class="asm-navigation-item__title">Supervisor</div>
+          <div class="asm-navigation-item__label-elements">
+            <div class="asm-navigation-item__label-title">Supervisor</div>
           </div>
         </div>
         </a>
@@ -119,8 +121,8 @@
       <li class="asm-navigation-stack__row">
         <a class="asm-navigation-item asm-navigation-item--opened asm-navigation-item--has-subitems" href="#">
         <div class="asm-navigation-item__label">
-          <div class="asm-navigation-item__label-container">
-            <div class="asm-navigation-item__title">Medical Officer</div>
+          <div class="asm-navigation-item__label-elements">
+            <div class="asm-navigation-item__label-title">Medical Officer</div>
           </div>
         </div>
         </a>
@@ -129,8 +131,9 @@
             <a class="asm-navigation-item" href="#">
               <i class="icon-star-empty3 asm-navigation-item__icon"></i>
               <div class="asm-navigation-item__label">
-                <div class="asm-navigation-item__label-container">
-                  <div class="asm-navigation-item__title">Paper Claims</div>
+                <div class="asm-navigation-item__label-elements">
+                  <div class="asm-navigation-item__label-title">Paper Claims</div>
+                  <div class="asm-navigation-item__label-subtitle">Ctrl + Alt + C</div>
                 </div>
               </div>
             </a>
@@ -139,8 +142,8 @@
             <a class="asm-navigation-item asm-navigation-item--opened asm-navigation-item--has-subitems" href="#">
               <i class="icon-star-full2 asm-navigation-item__icon"></i>
             <div class="asm-navigation-item__label">
-              <div class="asm-navigation-item__label-container">
-                <div class="asm-navigation-item__title">Online Claims</div>
+              <div class="asm-navigation-item__label-elements">
+                <div class="asm-navigation-item__label-title">Online Claims</div>
               </div>
             </div>
             </a>
@@ -148,8 +151,8 @@
               <li class="asm-navigation-stack__row">
                 <a class="asm-navigation-item" href="#">
                 <div class="asm-navigation-item__label">
-                  <div class="asm-navigation-item__label-container">
-                    <div class="asm-navigation-item__title">Needs Acceptance</div>
+                  <div class="asm-navigation-item__label-elements">
+                    <div class="asm-navigation-item__label-title">Needs Acceptance</div>
                   </div>
                 </div>
                 </a>
@@ -157,8 +160,8 @@
               <li class="asm-navigation-stack__row">
                 <a class="asm-navigation-item" href="#">
                 <div class="asm-navigation-item__label">
-                  <div class="asm-navigation-item__label-container">
-                    <div class="asm-navigation-item__title">Accepter</div>
+                  <div class="asm-navigation-item__label-elements">
+                    <div class="asm-navigation-item__label-title">Accepter</div>
                   </div>
                 </div>
                 </a>
@@ -169,8 +172,8 @@
               <li class="asm-navigation-stack__row">
                 <a class="asm-navigation-item" href="#">
                 <div class="asm-navigation-item__label">
-                  <div class="asm-navigation-item__label-container">
-                    <div class="asm-navigation-item__title">Rejected</div>
+                  <div class="asm-navigation-item__label-elements">
+                    <div class="asm-navigation-item__label-title">Rejected</div>
                   </div>
                 </div>
                 </a>
@@ -178,8 +181,8 @@
               <li class="asm-navigation-stack__row">
                 <a class="asm-navigation-item" href="#">
                 <div class="asm-navigation-item__label">
-                  <div class="asm-navigation-item__label-container">
-                    <div class="asm-navigation-item__title">Waiting for tarification</div>
+                  <div class="asm-navigation-item__label-elements">
+                    <div class="asm-navigation-item__label-title">Waiting for tarification</div>
                   </div>
                 </div>
                 </a>
@@ -200,9 +203,9 @@
     <a class="asm-navigation-item" href="#">
       <i class="icon-alarm asm-navigation-item__icon"></i>
       <div class="asm-navigation-item__label">
-        <div class="asm-navigation-item__label-container">
-          <div class="asm-navigation-item__title">Waiting List</div>
-          <div class="asm-navigation-item__subtitle">Ctrl + Alt + W</div>
+        <div class="asm-navigation-item__label-elements">
+          <div class="asm-navigation-item__label-title">Waiting List</div>
+          <div class="asm-navigation-item__label-subtitle">Ctrl + Alt + W</div>
         </div>
       </div>
     </a>
@@ -211,9 +214,9 @@
     <a class="asm-navigation-item" href="#">
       <i class="icon-printer asm-navigation-item__icon"></i>
       <div class="asm-navigation-item__label">
-        <div class="asm-navigation-item__label-container">
-          <div class="asm-navigation-item__title">To Be Printed</div>
-          <div class="asm-navigation-item__subtitle">Ctrl + Alt + P</div>
+        <div class="asm-navigation-item__label-elements">
+          <div class="asm-navigation-item__label-title">To Be Printed</div>
+          <div class="asm-navigation-item__label-subtitle">Ctrl + Alt + P</div>
         </div>
       </div>
     </a>
@@ -228,8 +231,8 @@
     <a class="asm-navigation-item asm-navigation-item--opened asm-navigation-item--has-subitems" href="#">
       <i class="icon-grid6 asm-navigation-item__icon"></i>
       <div class="asm-navigation-item__label">
-        <div class="asm-navigation-item__label-container">
-          <div class="asm-navigation-item__title">System Modules</div>
+        <div class="asm-navigation-item__label-elements">
+          <div class="asm-navigation-item__label-title">System Modules</div>
         </div>
       </div>
     </a>
@@ -238,8 +241,8 @@
         <a class="asm-navigation-item" href="#">
           <i class="icon-aid-kit asm-navigation-item__icon"></i>
           <div class="asm-navigation-item__label">
-            <div class="asm-navigation-item__label-container">
-              <div class="asm-navigation-item__title">Medicines</div>
+            <div class="asm-navigation-item__label-elements">
+              <div class="asm-navigation-item__label-title">Medicines</div>
             </div>
           </div>
         </a>
