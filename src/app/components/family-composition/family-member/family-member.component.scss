@@ -1,15 +1,33 @@
 @import '../../../../assets/scss/index';
 
+$family-member-bg: #fff;
+$family-member-hover-bg: #fff;
+
+$family-member-header-personal-number-link-color: #FF7043;
+$family-member-header-text-color: #999;
+
+$family-member-born-text-color: #999;
+$family-member-language-bg: #999;
+$family-member-language-text-color: #fff;
+
+$family-member-badge-bg: #ddd;
+$family-member-badge-text-color: #bbb;
+$family-member-badge-full-rights-text-color: #81C784;
+$family-member-badge-complementary-rights-text-color: #FF7043;
+$family-member-badge-comments-text-color: #ffcc00;
+$family-member-badge-covered-by-other-bg: #FF7043;
+$family-member-badge-covered-by-other-text-color: #FFF;
+
 @mixin asm-family-member-header-text {
   font-size: .7em;
-  color: #999;
+  color: $family-member-header-text-color;
 }
 
 .asm-family-member {
   font-size: 1rem;
   overflow: visible;
   transition: background-color .5s;
-  background-color: #fff;
+  background-color: $family-member-bg;
   width: 14em;
   padding: .7em;
   border-radius: 0;
@@ -19,7 +37,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: #f3f3f3;
+    background-color: $family-member-hover-bg;
   }
   
   &--big {
@@ -59,7 +77,7 @@
   &__member-number,
   &__member-number:hover,
   &__member-number:visited {
-    color: #FF7043;
+    color: $family-member-header-personal-number-link-color;
     text-decoration: underline;
   }
   
@@ -91,7 +109,7 @@
   }
   
   &__person-born {
-    color: #999;
+    color: $family-member-born-text-color;
     font-size: .75em;
   }
   
@@ -110,8 +128,8 @@
   
   &__language {
     display: inline-block;
-    background-color: #999;
-    color: #fff;
+    background-color: $family-member-language-bg;
+    color: $family-member-language-text-color;
     font-size: 0.7em;
     padding: .2em .3em;
     text-transform: uppercase;
@@ -130,26 +148,26 @@
     font-size: .9em; 
     padding: .45em; 
     border-radius: 100%; 
-    background-color: #ddd;
-    color: #bbb;
+    background-color: $family-member-badge-bg;
+    color: $family-member-badge-text-color;
     display: inline-block;
   }
   
   &__badge--full-rights {
-    color: #81C784;
+    color: $family-member-badge-full-rights-text-color;
   }
 
   &__badge--complementary-rights {
-    color: #FF7043;
+    color: $family-member-badge-complementary-rights-text-color;
   }
 
   &__badge--comments {
-    color: #FFCC00;
+    color: $family-member-badge-comments-text-color;
     background-color: transparent;
   }
 
   &__badge--covered-by-other {
-    color: #fff;
-    background-color: #FF7043;
+    color: $family-member-badge-covered-by-other-text-color;
+    background-color: $family-member-badge-covered-by-other-bg;
   }
 }

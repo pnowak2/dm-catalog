@@ -20,7 +20,8 @@ export class FamilyBarDemoComponent implements OnInit {
     birthDate: new Date(1980, 4, 28),
     mainLanguage: 'pol',
     languages: ['Polish', 'Greek'],
-    delegationCountry: 'bel'
+    delegationCountry: 'bel',
+    hasComments: true
   };
 
   familyMembers: Array<FamilyMemberModel> = [{
@@ -36,7 +37,8 @@ export class FamilyBarDemoComponent implements OnInit {
     birthDate: new Date(1980, 4, 28),
     mainLanguage: 'pol',
     languages: ['Polish', 'Greek'],
-    delegationCountry: 'bel'
+    delegationCountry: 'bel',
+    coveredByOtherAffiliate: true
   }, {
     firstName: 'Andrzej',
     familyName: 'Poniedzielski',
