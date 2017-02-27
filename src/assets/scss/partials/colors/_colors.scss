@@ -1,0 +1,43 @@
+.bg {
+  &-primary {
+    background-color: $color-primary-500;
+    border-color: $color-primary-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-primary-300;
+      border-color: $color-primary-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-primary-400;
+      border-color: $color-primary-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-primary-500;
+      border-color: $color-primary-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-primary-600;
+      border-color: $color-primary-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-primary-700;
+      border-color: $color-primary-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-primary-800;
+      border-color: $color-primary-800;
+      color: #fff;
+    }
+  }
+}
