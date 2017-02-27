@@ -1,7 +1,8 @@
 @import "bootstrap/bootstrap";
 @import "bootstrap-overrides/bootstrap";
 
-@import "base/variables";
-@import "base/mixins";
-@import "base/scaffolding";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/layout";
+@import "partials/scaffolding";
 
