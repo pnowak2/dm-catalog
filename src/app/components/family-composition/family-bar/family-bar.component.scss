@@ -1,11 +1,20 @@
 @import '../../../../assets/scss/index';
 
+$family-bar-members-container-bg: #ddd;
+
+$family-bar-tab-button-bg: #fff;
+$family-bar-tab-button-color: #999;
+$family-bar-tab-button-border-color: #ddd;
+
+$family-bar-tab-member-name-color: #bbb;
+$family-bar-tab-family-plus-color: #bbb;
+
 .asm-family-bar { 
   font-size: 1rem;
 
   &__members-container {
     font-size: 0;
-    background-color: #ddd;
+    background-color: $family-bar-members-container-bg;
     padding: .7rem;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -23,14 +32,14 @@
   }
   
   &__tab-button {
-    background-color: #fff;
-    border: .1em solid #ddd;
+    background-color: $family-bar-tab-button-bg;
+    border: .1em solid $family-bar-tab-button-border-color;
     border-top: 0;
     border-radius: 0 0 .2em .2em;
     display: block;
     font-size: .7em;
     padding: .3em .7em;
-    color: #999;
+    color: $family-bar-tab-button-color;
     cursor: pointer;
     position: relative; 
     padding-right: 2em;
@@ -58,7 +67,7 @@
 
   &__tab-member-first-name,
   &__tab-member-last-name {
-    color: #bbb;
+    color: $family-bar-tab-member-name-color;
   }
   
   &__tab-member-last-name {
@@ -76,7 +85,7 @@
 
   &__family-plus-label {
     font-size: .7em;
-    color: #bbb;
+    color: $family-bar-tab-family-plus-color;
     vertical-align: middle;
     margin: 0;
     margin-right: .3em;
