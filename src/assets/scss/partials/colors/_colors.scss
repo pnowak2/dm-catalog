@@ -40,4 +40,639 @@
       color: #fff;
     }
   }
+
+  &-danger {
+    background-color: $color-danger-500;
+    border-color: $color-danger-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-danger-300;
+      border-color: $color-danger-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-danger-400;
+      border-color: $color-danger-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-danger-500;
+      border-color: $color-danger-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-danger-600;
+      border-color: $color-danger-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-danger-700;
+      border-color: $color-danger-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-danger-800;
+      border-color: $color-danger-800;
+      color: #fff;
+    }
+  }
+
+  &-success {
+    background-color: $color-success-500;
+    border-color: $color-success-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-success-300;
+      border-color: $color-success-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-success-400;
+      border-color: $color-success-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-success-500;
+      border-color: $color-success-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-success-600;
+      border-color: $color-success-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-success-700;
+      border-color: $color-success-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-success-800;
+      border-color: $color-success-800;
+      color: #fff;
+    }
+  }
+
+  &-warning {
+    background-color: $color-warning-500;
+    border-color: $color-warning-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-warning-300;
+      border-color: $color-warning-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-warning-400;
+      border-color: $color-warning-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-warning-500;
+      border-color: $color-warning-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-warning-600;
+      border-color: $color-warning-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-warning-700;
+      border-color: $color-warning-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-warning-800;
+      border-color: $color-warning-800;
+      color: #fff;
+    }
+  }
+
+  &-info {
+    background-color: $color-info-500;
+    border-color: $color-info-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-info-300;
+      border-color: $color-info-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-info-400;
+      border-color: $color-info-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-info-500;
+      border-color: $color-info-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-info-600;
+      border-color: $color-info-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-info-700;
+      border-color: $color-info-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-info-800;
+      border-color: $color-info-800;
+      color: #fff;
+    }
+  }
+  
+  &-pink {
+    background-color: $color-pink-500;
+    border-color: $color-pink-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-pink-300;
+      border-color: $color-pink-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-pink-400;
+      border-color: $color-pink-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-pink-500;
+      border-color: $color-pink-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-pink-600;
+      border-color: $color-pink-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-pink-700;
+      border-color: $color-pink-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-pink-800;
+      border-color: $color-pink-800;
+      color: #fff;
+    }
+  }
+
+  &-violet {
+    background-color: $color-violet-500;
+    border-color: $color-violet-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-violet-300;
+      border-color: $color-violet-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-violet-400;
+      border-color: $color-violet-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-violet-500;
+      border-color: $color-violet-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-violet-600;
+      border-color: $color-violet-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-violet-700;
+      border-color: $color-violet-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-violet-800;
+      border-color: $color-violet-800;
+      color: #fff;
+    }
+  }
+
+  &-purple {
+    background-color: $color-purple-500;
+    border-color: $color-purple-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-purple-300;
+      border-color: $color-purple-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-purple-400;
+      border-color: $color-purple-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-purple-500;
+      border-color: $color-purple-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-purple-600;
+      border-color: $color-purple-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-purple-700;
+      border-color: $color-purple-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-purple-800;
+      border-color: $color-purple-800;
+      color: #fff;
+    }
+  }
+
+  &-indigo {
+    background-color: $color-indigo-500;
+    border-color: $color-indigo-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-indigo-300;
+      border-color: $color-indigo-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-indigo-400;
+      border-color: $color-indigo-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-indigo-500;
+      border-color: $color-indigo-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-indigo-600;
+      border-color: $color-indigo-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-indigo-700;
+      border-color: $color-indigo-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-indigo-800;
+      border-color: $color-indigo-800;
+      color: #fff;
+    }
+  }
+
+  &-blue {
+    background-color: $color-blue-500;
+    border-color: $color-blue-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-blue-300;
+      border-color: $color-blue-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-blue-400;
+      border-color: $color-blue-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-blue-500;
+      border-color: $color-blue-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-blue-600;
+      border-color: $color-blue-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-blue-700;
+      border-color: $color-blue-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-blue-800;
+      border-color: $color-blue-800;
+      color: #fff;
+    }
+  }
+
+  &-teal {
+    background-color: $color-teal-500;
+    border-color: $color-teal-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-teal-300;
+      border-color: $color-teal-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-teal-400;
+      border-color: $color-teal-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-teal-500;
+      border-color: $color-teal-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-teal-600;
+      border-color: $color-teal-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-teal-700;
+      border-color: $color-teal-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-teal-800;
+      border-color: $color-teal-800;
+      color: #fff;
+    }
+  }
+
+  &-green {
+    background-color: $color-green-500;
+    border-color: $color-green-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-green-300;
+      border-color: $color-green-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-green-400;
+      border-color: $color-green-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-green-500;
+      border-color: $color-green-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-green-600;
+      border-color: $color-green-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-green-700;
+      border-color: $color-green-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-green-800;
+      border-color: $color-green-800;
+      color: #fff;
+    }
+  }
+
+  &-orange {
+    background-color: $color-orange-500;
+    border-color: $color-orange-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-orange-300;
+      border-color: $color-orange-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-orange-400;
+      border-color: $color-orange-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-orange-500;
+      border-color: $color-orange-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-orange-600;
+      border-color: $color-orange-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-orange-700;
+      border-color: $color-orange-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-orange-800;
+      border-color: $color-orange-800;
+      color: #fff;
+    }
+  }
+
+  &-brown {
+    background-color: $color-brown-500;
+    border-color: $color-brown-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-brown-300;
+      border-color: $color-brown-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-brown-400;
+      border-color: $color-brown-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-brown-500;
+      border-color: $color-brown-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-brown-600;
+      border-color: $color-brown-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-brown-700;
+      border-color: $color-brown-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-brown-800;
+      border-color: $color-brown-800;
+      color: #fff;
+    }
+  }
+
+  &-grey {
+    background-color: $color-grey-500;
+    border-color: $color-grey-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-grey-300;
+      border-color: $color-grey-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-grey-400;
+      border-color: $color-grey-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-grey-500;
+      border-color: $color-grey-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-grey-600;
+      border-color: $color-grey-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-grey-700;
+      border-color: $color-grey-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-grey-800;
+      border-color: $color-grey-800;
+      color: #fff;
+    }
+  }
+
+  &-slate {
+    background-color: $color-slate-500;
+    border-color: $color-slate-500;
+    color: #fff;
+
+    &-300  {
+      background-color: $color-slate-300;
+      border-color: $color-slate-300;
+      color: #fff;
+    }
+
+    &-400 {
+      background-color: $color-slate-400;
+      border-color: $color-slate-400;
+      color: #fff;
+    }
+
+    &-500 {
+      background-color: $color-slate-500;
+      border-color: $color-slate-500;
+      color: #fff;
+    }
+
+    &-600 {
+      background-color: $color-slate-600;
+      border-color: $color-slate-600;
+      color: #fff;
+    }
+
+    &-700 {
+      background-color: $color-slate-700;
+      border-color: $color-slate-700;
+      color: #fff;
+    }
+
+    &-800 {
+      background-color: $color-slate-800;
+      border-color: $color-slate-800;
+      color: #fff;
+    }
+  }
+
+  &-white {
+    background-color: #fff;
+    // color: $text-color;
+  }
 }
