@@ -1,8 +1,15 @@
 @import '../../../assets/scss/bootstrap/variables';
 @import '../../../assets/scss/bootstrap/mixins';
 
+$navigation-stack-bg: #263238;
+
+$navigation-item-text-color: rgba(255, 255, 255, .92);
+$navigation-item-bg-hover: darken($navigation-stack-bg, 4%);
+$navigation-item-opened-bg: $brand-warning;
+
+
 .asm-navigation-item {
-  color: rgba(255, 255, 255, .92);
+  color: $navigation-item-text-color;
   display: block;
   overflow: hidden;
   padding: 12px 20px 12px 20px;
@@ -16,12 +23,12 @@
   line-height: 1.2;
 
   &:hover {
-    background-color: darken(#263238, 4%);
-    color: #fff;
+    background-color: $navigation-item-bg-hover;
+    color: $navigation-item-text-color;
   }
 
   &--opened, &--opened:hover {
-    background-color: #22B573;
+    background-color: $navigation-item-opened-bg;
   }
 
   &--opened.asm-navigation-item--has-subitems:after {
@@ -87,7 +94,7 @@
 }
 
 .asm-navigation-stack {
-  background-color: #263238;
+  background-color: $navigation-stack-bg;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -168,7 +175,7 @@
           padding-top: 14px;
           padding-bottom: 14px;
           height: 100%;
-          background-color: #22B573;
+          background-color: $navigation-item-opened-bg;
           text-align: left;
           padding-left: 20px;
           padding-right: 20px;
