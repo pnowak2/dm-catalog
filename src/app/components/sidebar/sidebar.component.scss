@@ -24,6 +24,7 @@ $navigation-item-opened-bg: $brand-primary;
   &:hover {
     background-color: $navigation-item-bg-hover;
     color: $navigation-item-text-color;
+    text-decoration: none;
   }
 
   &__icon {
@@ -37,6 +38,7 @@ $navigation-item-opened-bg: $brand-primary;
     font-family: 'Roboto';
     font-size: 13px;
     font-weight: 500;
+    text-decoration: none;
   }
 
   &--has-subitems {
@@ -91,10 +93,6 @@ $navigation-item-opened-bg: $brand-primary;
   padding: 0;
   width: 280px;
 
-  &__row {
-    position: relative;
-  }
-
   & &__subitems {
     list-style-type: none;
     margin: 0;
@@ -123,6 +121,16 @@ $navigation-item-opened-bg: $brand-primary;
   & &__subitems &__subitems &__subitems {
     .asm-navigation-item {
       padding-left: 80px;
+    }
+  }
+
+  &__row {
+    position: relative;
+  }
+
+  & > &__row--active  {
+   > .asm-navigation-item--has-subitems {
+      background-color: $navigation-item-opened-bg;
     }
   }
 
