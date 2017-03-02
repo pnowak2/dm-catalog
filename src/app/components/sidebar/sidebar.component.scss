@@ -128,8 +128,8 @@ $navigation-item-opened-bg: $brand-primary;
     position: relative;
   }
 
-  & > &__row--active  {
-   > .asm-navigation-item--has-subitems {
+  & > &__row--active > {
+    .asm-navigation-item--has-subitems {
       background-color: $navigation-item-opened-bg;
     }
   }
