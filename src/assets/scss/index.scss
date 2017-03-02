@@ -1,5 +1,5 @@
-@import "global/index";
-@import "global/variables/colors";
+@import "base/module";
 
-@import "bootstrap/bootstrap";
-@import "bootstrap-overrides/bootstrap";
+@import "vendors-overrides/bootstrap/variables";
+@import "vendors/bootstrap/bootstrap";
+@import "vendors-overrides/bootstrap/bootstrap";
