@@ -1,7 +1,7 @@
-@import "base/module";
-
-@import "vendors-overrides/bootstrap/variables";
+@import "public/module";
 @import "vendors/bootstrap/bootstrap";
 @import "vendors-overrides/bootstrap/bootstrap";
 
 @import "global/module";
+
+@import "components/navigation-stack/component";

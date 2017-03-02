@@ -1,11 +1,8 @@
-@import '../../../assets/scss/base/module';
-
 $navigation-stack-bg: #263238;
 
 $navigation-item-text-color: rgba(255, 255, 255, .92);
 $navigation-item-bg-hover: darken($navigation-stack-bg, 4%);
 $navigation-item-opened-bg: $brand-primary;
-
 
 .asm-navigation-item {
   color: $navigation-item-text-color;
