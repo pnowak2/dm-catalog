@@ -26,14 +26,6 @@ $navigation-item-opened-bg: $brand-primary;
     color: $navigation-item-text-color;
   }
 
-  &--opened, &--opened:hover {
-    background-color: $navigation-item-opened-bg;
-  }
-
-  &--opened.asm-navigation-item--has-subitems:after {
-    transform: rotate(90deg);
-  }
-
   &__icon {
     font-size: 16px;
     margin-right: 8px;
@@ -115,10 +107,6 @@ $navigation-item-opened-bg: $brand-primary;
       padding-left: 48px;
       font-weight: 200;
     }
-
-    .asm-navigation-item--opened {
-      background-color: rgba(0, 0, 0, .1);;
-    }
   }
 
   & &__subitems &__subitems {
@@ -138,8 +126,18 @@ $navigation-item-opened-bg: $brand-primary;
     }
   }
 
-  .asm-navigation-item--opened + &__subitems {
-    display: block;
+  &__row--active > {
+    .asm-navigation-item--has-subitems {
+      background-color: rgba(0, 0, 0, .1);
+    }
+
+    .asm-navigation-item:after {
+      transform: rotate(90deg);
+    }
+
+    .asm-navigation-stack__subitems {
+      display: block;
+    }
   }
 
   &--closed {
