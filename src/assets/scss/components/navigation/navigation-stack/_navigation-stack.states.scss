@@ -1,28 +1,28 @@
-.ux-navigation-stack {
+.ux-c-navigation-stack {
   &--closed {
     width: 56px;
 
-    > .ux-navigation-stack__row > {
+    > .ux-c-navigation-stack__row > {
 
-      .ux-navigation-category {
+      .ux-c-navigation-category {
         text-align: center;
 
-        .ux-navigation-category__label {
+        .ux-c-navigation-category__label {
           display: none;    
         }
 
-        .ux-navigation-category__icon {
+        .ux-c-navigation-category__icon {
           display: inline-block;
         }
       }
 
-      .ux-navigation-item {
+      .ux-c-navigation-item {
         text-align: center;
         padding-left: 0;
         padding-right: 0;
         overflow: visible;
 
-        .ux-navigation-item__label {
+        .ux-c-navigation-item__label {
           display: none;
           position: absolute;
           width: 260px;
@@ -39,44 +39,44 @@
           text-overflow: ellipsis
         }
 
-        .ux-navigation-item__icon {
+        .ux-c-navigation-item__icon {
           margin-left: 0;
           margin-right: 0;
         }
       }
 
-      .ux-navigation-stack__subitems {
+      .ux-c-navigation-stack__subitems {
         display: none;
         position: absolute;
         width: 260px;
         left: 100%;
       }
 
-      .ux-navigation-item--has-subitems:after {
+      .ux-c-navigation-item--has-subitems:after {
         display: none
       }
     }
 
-    > .ux-navigation-stack__row:hover > {
+    > .ux-c-navigation-stack__row:hover > {
 
-      .ux-navigation-item .ux-navigation-item__label {
+      .ux-c-navigation-item .ux-c-navigation-item__label {
         display: inline;
       }
 
-      .ux-navigation-stack__subitems {
+      .ux-c-navigation-stack__subitems {
         display: block;
       }
     }
 
-    .ux-navigation-stack__subitems .ux-navigation-item {
+    .ux-c-navigation-stack__subitems .ux-c-navigation-item {
       padding-left: 22px;
     }
 
-    .ux-navigation-stack__subitems .ux-navigation-stack__subitems .ux-navigation-item {
+    .ux-c-navigation-stack__subitems .ux-c-navigation-stack__subitems .ux-c-navigation-item {
       padding-left: 32px;
     }
 
-    .ux-navigation-stack__subitems .ux-navigation-stack__subitems .ux-navigation-stack__subitems .ux-navigation-item {
+    .ux-c-navigation-stack__subitems .ux-c-navigation-stack__subitems .ux-c-navigation-stack__subitems .ux-c-navigation-item {
       padding-left: 42px;
     }
   }

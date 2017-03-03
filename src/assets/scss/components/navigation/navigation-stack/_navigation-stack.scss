@@ -4,7 +4,7 @@ $navigation-item-text-color: rgba(255, 255, 255, .92);
 $navigation-item-bg-hover: darken($navigation-stack-bg, 4%);
 $navigation-item-opened-bg: $brand-primary;
 
-.ux-navigation-stack {
+.ux-c-navigation-stack {
   background-color: $navigation-stack-bg;
   list-style-type: none;
   margin: 0;
@@ -19,25 +19,25 @@ $navigation-item-opened-bg: $brand-primary;
     box-shadow: 0 1px 0 rgba(255, 255, 255, .03);
     display: none;
 
-    .ux-navigation-item {
+    .ux-c-navigation-item {
       padding-left: 48px;
       font-weight: 200;
     }
   }
 
   & &__subitems &__subitems {
-    .ux-navigation-item {
+    .ux-c-navigation-item {
       padding-left: 60px;
     }
 
-    .ux-navigation-item__label {
+    .ux-c-navigation-item__label {
       text-transform: none;
       font-weight: 200;
     }   
   }
 
   & &__subitems &__subitems &__subitems {
-    .ux-navigation-item {
+    .ux-c-navigation-item {
       padding-left: 80px;
     }
   }
@@ -47,21 +47,21 @@ $navigation-item-opened-bg: $brand-primary;
   }
 
   & > &__row--active > {
-    .ux-navigation-item--has-subitems {
+    .ux-c-navigation-item--has-subitems {
       background-color: $navigation-item-opened-bg;
     }
   }
 
   &__row--active > {
-    .ux-navigation-item--has-subitems {
+    .ux-c-navigation-item--has-subitems {
       background-color: rgba(0, 0, 0, .1);
     }
 
-    .ux-navigation-item:after {
+    .ux-c-navigation-item:after {
       transform: rotate(90deg);
     }
 
-    .ux-navigation-stack__subitems {
+    .ux-c-navigation-stack__subitems {
       display: block;
     }
   }
