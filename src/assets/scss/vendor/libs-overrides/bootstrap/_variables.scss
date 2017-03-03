@@ -3,3 +3,8 @@ $brand-success: $ux-core-color-success;
 $brand-info: $ux-core-color-info;
 $brand-warning: $ux-core-color-warning;
 $brand-danger: $ux-core-color-danger;
+
+$body-bg:       darken($ux-core-color-body-bg, 3%) !default;
+$body-color:    $ux-core-color-text !default;
+
+$font-family-sans-serif: "Roboto", "Helvetica Neue", Arial, sans-serif !default;
