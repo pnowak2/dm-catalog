@@ -1,4 +1,7 @@
 @import "core/module";
 @import "vendor/module";
 @import "global/module";
-@import "components/navigation-stack/component";
+@import "components/navigation-item/navigation-item";
+@import "components/navigation-category/navigation-category";
+@import "components/navigation-divider/navigation-divider";
+@import "components/navigation-stack/navigation-stack";

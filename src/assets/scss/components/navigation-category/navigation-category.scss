@@ -1,0 +1,13 @@
+.asm-navigation-category {
+  color: rgba(255, 255, 255, .5);
+  display: block;
+  padding: 10px 20px 10px 20px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: default;
+  user-select: none;
+
+  @import "navigation-category__icon";
+  @import "navigation-category__label";
+}

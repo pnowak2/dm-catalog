@@ -1,0 +1,23 @@
+&__row {
+  position: relative;
+}
+
+& > &__row--active > {
+  .asm-navigation-item--has-subitems {
+    background-color: $navigation-item-opened-bg;
+  }
+}
+
+&__row--active > {
+  .asm-navigation-item--has-subitems {
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  .asm-navigation-item:after {
+    transform: rotate(90deg);
+  }
+
+  .asm-navigation-stack__subitems {
+    display: block;
+  }
+}

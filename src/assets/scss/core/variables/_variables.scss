@@ -1,1 +1,7 @@
 $font-family-base: 			'Roboto', sans-serif;
+
+$navigation-stack-bg: #263238;
+
+$navigation-item-text-color: rgba(255, 255, 255, .92);
+$navigation-item-bg-hover: darken($navigation-stack-bg, 4%);
+$navigation-item-opened-bg: $brand-primary;
