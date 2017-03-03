@@ -112,30 +112,30 @@ describe('SwitchComponent', () => {
 
     describe('rendering', () => {
       it('should render switch markup', async(() => {
-        const el = fixture.debugElement.query(By.css('.asm-switch'));
+        const el = fixture.debugElement.query(By.css('.asm-c-switch'));
         expect(el).not.toBeNull();
       }));
 
       describe('checked/unchecked', () => {
         it('should not render checked switch by default', async(() => {
-          const el = fixture.debugElement.query(By.css('.asm-switch'));
-          expect(el.classes['asm-switch--checked']).toBeFalsy();
+          const el = fixture.debugElement.query(By.css('.asm-c-switch'));
+          expect(el.classes['asm-c-switch--checked']).toBeFalsy();
         }));
 
         it('should render checked switch if property is set to true', async(() => {
           component.checked = true;
           fixture.detectChanges();
 
-          const el = fixture.debugElement.query(By.css('.asm-switch'));
-          expect(el.classes['asm-switch--checked']).toBeTruthy();
+          const el = fixture.debugElement.query(By.css('.asm-c-switch'));
+          expect(el.classes['asm-c-switch--checked']).toBeTruthy();
         }));
 
         it('should not render checked switch if property is set to false', async(() => {
           component.checked = false;
           fixture.detectChanges();
 
-          const el = fixture.debugElement.query(By.css('.asm-switch'));
-          expect(el.classes['asm-switch--checked']).toBeFalsy();
+          const el = fixture.debugElement.query(By.css('.asm-c-switch'));
+          expect(el.classes['asm-c-switch--checked']).toBeFalsy();
         }));
       });
 
@@ -144,16 +144,16 @@ describe('SwitchComponent', () => {
           component.disabled = false;
           fixture.detectChanges();
 
-          const el = fixture.debugElement.query(By.css('.asm-switch'));
-          expect(el.classes['asm-switch--disabled']).toBeFalsy();
+          const el = fixture.debugElement.query(By.css('.asm-c-switch'));
+          expect(el.classes['asm-c-switch--disabled']).toBeFalsy();
         }));
 
         it('should render disabled switch if property is set to true', async(() => {
           component.disabled = true;
           fixture.detectChanges();
 
-          const el = fixture.debugElement.query(By.css('.asm-switch'));
-          expect(el.classes['asm-switch--disabled']).toBeTruthy();
+          const el = fixture.debugElement.query(By.css('.asm-c-switch'));
+          expect(el.classes['asm-c-switch--disabled']).toBeTruthy();
         }));
       });
     });
