@@ -1,781 +1,972 @@
-$text-color: #333;
 $panel-default-border: #999;
 
-.bg {
+.ux-core-bg {
   &-primary {
-    background-color: $color-primary-500;
-    border-color: $color-primary-500;
+    background-color: $ux-core-color-primary;
+    border-color: $ux-core-color-primary;
     color: #fff;
-
-    &-300  {
-      background-color: $color-primary-300;
-      border-color: $color-primary-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-primary-lightester;
+      border-color: $ux-core-color-primary-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-primary-400;
-      border-color: $color-primary-400;
+    &-lightest {
+      background-color: $ux-core-color-primary-lightest;
+      border-color: $ux-core-color-primary-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-primary-500;
-      border-color: $color-primary-500;
+    &-lighter  {
+      background-color: $ux-core-color-primary-lighter;
+      border-color: $ux-core-color-primary-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-primary-600;
-      border-color: $color-primary-600;
+    &-light {
+      background-color: $ux-core-color-primary-light;
+      border-color: $ux-core-color-primary-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-primary-700;
-      border-color: $color-primary-700;
+    &-dark {
+      background-color: $ux-core-color-primary-dark;
+      border-color: $ux-core-color-primary-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-primary-800;
-      border-color: $color-primary-800;
+    &-darker {
+      background-color: $ux-core-color-primary-darker;
+      border-color: $ux-core-color-primary-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-primary-darkest;
+      border-color: $ux-core-color-primary-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-primary-darkester;
+      border-color: $ux-core-color-primary-darkester;
       color: #fff;
     }
   }
 
   &-danger {
-    background-color: $color-danger-500;
-    border-color: $color-danger-500;
+    background-color: $ux-core-color-danger;
+    border-color: $ux-core-color-danger;
     color: #fff;
-
-    &-300  {
-      background-color: $color-danger-300;
-      border-color: $color-danger-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-danger-lightester;
+      border-color: $ux-core-color-danger-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-danger-400;
-      border-color: $color-danger-400;
+    &-lightest {
+      background-color: $ux-core-color-danger-lightest;
+      border-color: $ux-core-color-danger-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-danger-500;
-      border-color: $color-danger-500;
+    &-lighter  {
+      background-color: $ux-core-color-danger-lighter;
+      border-color: $ux-core-color-danger-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-danger-600;
-      border-color: $color-danger-600;
+    &-light {
+      background-color: $ux-core-color-danger-light;
+      border-color: $ux-core-color-danger-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-danger-700;
-      border-color: $color-danger-700;
+    &-dark {
+      background-color: $ux-core-color-danger-dark;
+      border-color: $ux-core-color-danger-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-danger-800;
-      border-color: $color-danger-800;
+    &-darker {
+      background-color: $ux-core-color-danger-darker;
+      border-color: $ux-core-color-danger-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-danger-darkest;
+      border-color: $ux-core-color-danger-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-danger-darkester;
+      border-color: $ux-core-color-danger-darkester;
       color: #fff;
     }
   }
 
   &-success {
-    background-color: $color-success-500;
-    border-color: $color-success-500;
+    background-color: $ux-core-color-success;
+    border-color: $ux-core-color-success;
     color: #fff;
-
-    &-300  {
-      background-color: $color-success-300;
-      border-color: $color-success-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-success-lightester;
+      border-color: $ux-core-color-success-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-success-400;
-      border-color: $color-success-400;
+    &-lightest {
+      background-color: $ux-core-color-success-lightest;
+      border-color: $ux-core-color-success-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-success-500;
-      border-color: $color-success-500;
+    &-lighter  {
+      background-color: $ux-core-color-success-lighter;
+      border-color: $ux-core-color-success-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-success-600;
-      border-color: $color-success-600;
+    &-light {
+      background-color: $ux-core-color-success-light;
+      border-color: $ux-core-color-success-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-success-700;
-      border-color: $color-success-700;
+    &-dark {
+      background-color: $ux-core-color-success-dark;
+      border-color: $ux-core-color-success-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-success-800;
-      border-color: $color-success-800;
+    &-darker {
+      background-color: $ux-core-color-success-darker;
+      border-color: $ux-core-color-success-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-success-darkest;
+      border-color: $ux-core-color-success-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-success-darkester;
+      border-color: $ux-core-color-success-darkester;
       color: #fff;
     }
   }
 
   &-warning {
-    background-color: $color-warning-500;
-    border-color: $color-warning-500;
+    background-color: $ux-core-color-warning;
+    border-color: $ux-core-color-warning;
     color: #fff;
-
-    &-300  {
-      background-color: $color-warning-300;
-      border-color: $color-warning-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-warning-lightester;
+      border-color: $ux-core-color-warning-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-warning-400;
-      border-color: $color-warning-400;
+    &-lightest {
+      background-color: $ux-core-color-warning-lightest;
+      border-color: $ux-core-color-warning-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-warning-500;
-      border-color: $color-warning-500;
+    &-lighter  {
+      background-color: $ux-core-color-warning-lighter;
+      border-color: $ux-core-color-warning-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-warning-600;
-      border-color: $color-warning-600;
+    &-light {
+      background-color: $ux-core-color-warning-light;
+      border-color: $ux-core-color-warning-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-warning-700;
-      border-color: $color-warning-700;
+    &-dark {
+      background-color: $ux-core-color-warning-dark;
+      border-color: $ux-core-color-warning-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-warning-800;
-      border-color: $color-warning-800;
+    &-darker {
+      background-color: $ux-core-color-warning-darker;
+      border-color: $ux-core-color-warning-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-warning-darkest;
+      border-color: $ux-core-color-warning-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-warning-darkester;
+      border-color: $ux-core-color-warning-darkester;
       color: #fff;
     }
   }
 
   &-info {
-    background-color: $color-info-500;
-    border-color: $color-info-500;
+    background-color: $ux-core-color-info;
+    border-color: $ux-core-color-info;
     color: #fff;
-
-    &-300  {
-      background-color: $color-info-300;
-      border-color: $color-info-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-info-lightester;
+      border-color: $ux-core-color-info-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-info-400;
-      border-color: $color-info-400;
+    &-lightest {
+      background-color: $ux-core-color-info-lightest;
+      border-color: $ux-core-color-info-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-info-500;
-      border-color: $color-info-500;
+    &-lighter  {
+      background-color: $ux-core-color-info-lighter;
+      border-color: $ux-core-color-info-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-info-600;
-      border-color: $color-info-600;
+    &-light {
+      background-color: $ux-core-color-info-light;
+      border-color: $ux-core-color-info-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-info-700;
-      border-color: $color-info-700;
+    &-dark {
+      background-color: $ux-core-color-info-dark;
+      border-color: $ux-core-color-info-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-info-800;
-      border-color: $color-info-800;
+    &-darker {
+      background-color: $ux-core-color-info-darker;
+      border-color: $ux-core-color-info-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-info-darkest;
+      border-color: $ux-core-color-info-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-info-darkester;
+      border-color: $ux-core-color-info-darkester;
       color: #fff;
     }
   }
   
   &-pink {
-    background-color: $color-pink-500;
-    border-color: $color-pink-500;
+    background-color: $ux-core-color-pink;
+    border-color: $ux-core-color-pink;
     color: #fff;
-
-    &-300  {
-      background-color: $color-pink-300;
-      border-color: $color-pink-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-pink-lightester;
+      border-color: $ux-core-color-pink-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-pink-400;
-      border-color: $color-pink-400;
+    &-lightest {
+      background-color: $ux-core-color-pink-lightest;
+      border-color: $ux-core-color-pink-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-pink-500;
-      border-color: $color-pink-500;
+    &-lighter  {
+      background-color: $ux-core-color-pink-lighter;
+      border-color: $ux-core-color-pink-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-pink-600;
-      border-color: $color-pink-600;
+    &-light {
+      background-color: $ux-core-color-pink-light;
+      border-color: $ux-core-color-pink-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-pink-700;
-      border-color: $color-pink-700;
+    &-dark {
+      background-color: $ux-core-color-pink-dark;
+      border-color: $ux-core-color-pink-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-pink-800;
-      border-color: $color-pink-800;
+    &-darker {
+      background-color: $ux-core-color-pink-darker;
+      border-color: $ux-core-color-pink-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-pink-darkest;
+      border-color: $ux-core-color-pink-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-pink-darkester;
+      border-color: $ux-core-color-pink-darkester;
       color: #fff;
     }
   }
 
   &-violet {
-    background-color: $color-violet-500;
-    border-color: $color-violet-500;
+    background-color: $ux-core-color-violet;
+    border-color: $ux-core-color-violet;
     color: #fff;
-
-    &-300  {
-      background-color: $color-violet-300;
-      border-color: $color-violet-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-violet-lightester;
+      border-color: $ux-core-color-violet-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-violet-400;
-      border-color: $color-violet-400;
+    &-lightest {
+      background-color: $ux-core-color-violet-lightest;
+      border-color: $ux-core-color-violet-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-violet-500;
-      border-color: $color-violet-500;
+    &-lighter  {
+      background-color: $ux-core-color-violet-lighter;
+      border-color: $ux-core-color-violet-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-violet-600;
-      border-color: $color-violet-600;
+    &-light {
+      background-color: $ux-core-color-violet-light;
+      border-color: $ux-core-color-violet-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-violet-700;
-      border-color: $color-violet-700;
+    &-dark {
+      background-color: $ux-core-color-violet-dark;
+      border-color: $ux-core-color-violet-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-violet-800;
-      border-color: $color-violet-800;
+    &-darker {
+      background-color: $ux-core-color-violet-darker;
+      border-color: $ux-core-color-violet-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-violet-darkest;
+      border-color: $ux-core-color-violet-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-violet-darkester;
+      border-color: $ux-core-color-violet-darkester;
       color: #fff;
     }
   }
 
   &-purple {
-    background-color: $color-purple-500;
-    border-color: $color-purple-500;
+    background-color: $ux-core-color-purple;
+    border-color: $ux-core-color-purple;
     color: #fff;
-
-    &-300  {
-      background-color: $color-purple-300;
-      border-color: $color-purple-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-purple-lightester;
+      border-color: $ux-core-color-purple-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-purple-400;
-      border-color: $color-purple-400;
+    &-lightest {
+      background-color: $ux-core-color-purple-lightest;
+      border-color: $ux-core-color-purple-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-purple-500;
-      border-color: $color-purple-500;
+    &-lighter  {
+      background-color: $ux-core-color-purple-lighter;
+      border-color: $ux-core-color-purple-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-purple-600;
-      border-color: $color-purple-600;
+    &-light {
+      background-color: $ux-core-color-purple-light;
+      border-color: $ux-core-color-purple-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-purple-700;
-      border-color: $color-purple-700;
+    &-dark {
+      background-color: $ux-core-color-purple-dark;
+      border-color: $ux-core-color-purple-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-purple-800;
-      border-color: $color-purple-800;
+    &-darker {
+      background-color: $ux-core-color-purple-darker;
+      border-color: $ux-core-color-purple-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-purple-darkest;
+      border-color: $ux-core-color-purple-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-purple-darkester;
+      border-color: $ux-core-color-purple-darkester;
       color: #fff;
     }
   }
 
   &-indigo {
-    background-color: $color-indigo-500;
-    border-color: $color-indigo-500;
+    background-color: $ux-core-color-indigo;
+    border-color: $ux-core-color-indigo;
     color: #fff;
-
-    &-300  {
-      background-color: $color-indigo-300;
-      border-color: $color-indigo-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-indigo-lightester;
+      border-color: $ux-core-color-indigo-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-indigo-400;
-      border-color: $color-indigo-400;
+    &-lightest {
+      background-color: $ux-core-color-indigo-lightest;
+      border-color: $ux-core-color-indigo-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-indigo-500;
-      border-color: $color-indigo-500;
+    &-lighter  {
+      background-color: $ux-core-color-indigo-lighter;
+      border-color: $ux-core-color-indigo-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-indigo-600;
-      border-color: $color-indigo-600;
+    &-light {
+      background-color: $ux-core-color-indigo-light;
+      border-color: $ux-core-color-indigo-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-indigo-700;
-      border-color: $color-indigo-700;
+    &-dark {
+      background-color: $ux-core-color-indigo-dark;
+      border-color: $ux-core-color-indigo-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-indigo-800;
-      border-color: $color-indigo-800;
+    &-darker {
+      background-color: $ux-core-color-indigo-darker;
+      border-color: $ux-core-color-indigo-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-indigo-darkest;
+      border-color: $ux-core-color-indigo-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-indigo-darkester;
+      border-color: $ux-core-color-indigo-darkester;
       color: #fff;
     }
   }
 
   &-blue {
-    background-color: $color-blue-500;
-    border-color: $color-blue-500;
+    background-color: $ux-core-color-blue;
+    border-color: $ux-core-color-blue;
     color: #fff;
-
-    &-300  {
-      background-color: $color-blue-300;
-      border-color: $color-blue-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-blue-lightester;
+      border-color: $ux-core-color-blue-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-blue-400;
-      border-color: $color-blue-400;
+    &-lightest {
+      background-color: $ux-core-color-blue-lightest;
+      border-color: $ux-core-color-blue-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-blue-500;
-      border-color: $color-blue-500;
+    &-lighter  {
+      background-color: $ux-core-color-blue-lighter;
+      border-color: $ux-core-color-blue-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-blue-600;
-      border-color: $color-blue-600;
+    &-light {
+      background-color: $ux-core-color-blue-light;
+      border-color: $ux-core-color-blue-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-blue-700;
-      border-color: $color-blue-700;
+    &-dark {
+      background-color: $ux-core-color-blue-dark;
+      border-color: $ux-core-color-blue-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-blue-800;
-      border-color: $color-blue-800;
+    &-darker {
+      background-color: $ux-core-color-blue-darker;
+      border-color: $ux-core-color-blue-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-blue-darkest;
+      border-color: $ux-core-color-blue-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-blue-darkester;
+      border-color: $ux-core-color-blue-darkester;
       color: #fff;
     }
   }
 
   &-teal {
-    background-color: $color-teal-500;
-    border-color: $color-teal-500;
+    background-color: $ux-core-color-teal;
+    border-color: $ux-core-color-teal;
     color: #fff;
-
-    &-300  {
-      background-color: $color-teal-300;
-      border-color: $color-teal-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-teal-lightester;
+      border-color: $ux-core-color-teal-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-teal-400;
-      border-color: $color-teal-400;
+    &-lightest {
+      background-color: $ux-core-color-teal-lightest;
+      border-color: $ux-core-color-teal-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-teal-500;
-      border-color: $color-teal-500;
+    &-lighter  {
+      background-color: $ux-core-color-teal-lighter;
+      border-color: $ux-core-color-teal-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-teal-600;
-      border-color: $color-teal-600;
+    &-light {
+      background-color: $ux-core-color-teal-light;
+      border-color: $ux-core-color-teal-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-teal-700;
-      border-color: $color-teal-700;
+    &-dark {
+      background-color: $ux-core-color-teal-dark;
+      border-color: $ux-core-color-teal-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-teal-800;
-      border-color: $color-teal-800;
+    &-darker {
+      background-color: $ux-core-color-teal-darker;
+      border-color: $ux-core-color-teal-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-teal-darkest;
+      border-color: $ux-core-color-teal-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-teal-darkester;
+      border-color: $ux-core-color-teal-darkester;
       color: #fff;
     }
   }
 
   &-green {
-    background-color: $color-green-500;
-    border-color: $color-green-500;
+    background-color: $ux-core-color-green;
+    border-color: $ux-core-color-green;
     color: #fff;
-
-    &-300  {
-      background-color: $color-green-300;
-      border-color: $color-green-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-green-lightester;
+      border-color: $ux-core-color-green-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-green-400;
-      border-color: $color-green-400;
+    &-lightest {
+      background-color: $ux-core-color-green-lightest;
+      border-color: $ux-core-color-green-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-green-500;
-      border-color: $color-green-500;
+    &-lighter  {
+      background-color: $ux-core-color-green-lighter;
+      border-color: $ux-core-color-green-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-green-600;
-      border-color: $color-green-600;
+    &-light {
+      background-color: $ux-core-color-green-light;
+      border-color: $ux-core-color-green-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-green-700;
-      border-color: $color-green-700;
+    &-dark {
+      background-color: $ux-core-color-green-dark;
+      border-color: $ux-core-color-green-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-green-800;
-      border-color: $color-green-800;
+    &-darker {
+      background-color: $ux-core-color-green-darker;
+      border-color: $ux-core-color-green-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-green-darkest;
+      border-color: $ux-core-color-green-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-green-darkester;
+      border-color: $ux-core-color-green-darkester;
       color: #fff;
     }
   }
 
   &-orange {
-    background-color: $color-orange-500;
-    border-color: $color-orange-500;
+    background-color: $ux-core-color-orange;
+    border-color: $ux-core-color-orange;
     color: #fff;
-
-    &-300  {
-      background-color: $color-orange-300;
-      border-color: $color-orange-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-orange-lightester;
+      border-color: $ux-core-color-orange-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-orange-400;
-      border-color: $color-orange-400;
+    &-lightest {
+      background-color: $ux-core-color-orange-lightest;
+      border-color: $ux-core-color-orange-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-orange-500;
-      border-color: $color-orange-500;
+    &-lighter  {
+      background-color: $ux-core-color-orange-lighter;
+      border-color: $ux-core-color-orange-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-orange-600;
-      border-color: $color-orange-600;
+    &-light {
+      background-color: $ux-core-color-orange-light;
+      border-color: $ux-core-color-orange-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-orange-700;
-      border-color: $color-orange-700;
+    &-dark {
+      background-color: $ux-core-color-orange-dark;
+      border-color: $ux-core-color-orange-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-orange-800;
-      border-color: $color-orange-800;
+    &-darker {
+      background-color: $ux-core-color-orange-darker;
+      border-color: $ux-core-color-orange-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-orange-darkest;
+      border-color: $ux-core-color-orange-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-orange-darkester;
+      border-color: $ux-core-color-orange-darkester;
       color: #fff;
     }
   }
 
   &-brown {
-    background-color: $color-brown-500;
-    border-color: $color-brown-500;
+    background-color: $ux-core-color-brown;
+    border-color: $ux-core-color-brown;
     color: #fff;
-
-    &-300  {
-      background-color: $color-brown-300;
-      border-color: $color-brown-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-brown-lightester;
+      border-color: $ux-core-color-brown-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-brown-400;
-      border-color: $color-brown-400;
+    &-lightest {
+      background-color: $ux-core-color-brown-lightest;
+      border-color: $ux-core-color-brown-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-brown-500;
-      border-color: $color-brown-500;
+    &-lighter  {
+      background-color: $ux-core-color-brown-lighter;
+      border-color: $ux-core-color-brown-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-brown-600;
-      border-color: $color-brown-600;
+    &-light {
+      background-color: $ux-core-color-brown-light;
+      border-color: $ux-core-color-brown-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-brown-700;
-      border-color: $color-brown-700;
+    &-dark {
+      background-color: $ux-core-color-brown-dark;
+      border-color: $ux-core-color-brown-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-brown-800;
-      border-color: $color-brown-800;
+    &-darker {
+      background-color: $ux-core-color-brown-darker;
+      border-color: $ux-core-color-brown-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-brown-darkest;
+      border-color: $ux-core-color-brown-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-brown-darkester;
+      border-color: $ux-core-color-brown-darkester;
       color: #fff;
     }
   }
 
   &-grey {
-    background-color: $color-grey-500;
-    border-color: $color-grey-500;
+    background-color: $ux-core-color-grey;
+    border-color: $ux-core-color-grey;
     color: #fff;
-
-    &-300  {
-      background-color: $color-grey-300;
-      border-color: $color-grey-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-grey-lightester;
+      border-color: $ux-core-color-grey-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-grey-400;
-      border-color: $color-grey-400;
+    &-lightest {
+      background-color: $ux-core-color-grey-lightest;
+      border-color: $ux-core-color-grey-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-grey-500;
-      border-color: $color-grey-500;
+    &-lighter  {
+      background-color: $ux-core-color-grey-lighter;
+      border-color: $ux-core-color-grey-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-grey-600;
-      border-color: $color-grey-600;
+    &-light {
+      background-color: $ux-core-color-grey-light;
+      border-color: $ux-core-color-grey-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-grey-700;
-      border-color: $color-grey-700;
+    &-dark {
+      background-color: $ux-core-color-grey-dark;
+      border-color: $ux-core-color-grey-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-grey-800;
-      border-color: $color-grey-800;
+    &-darker {
+      background-color: $ux-core-color-grey-darker;
+      border-color: $ux-core-color-grey-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-grey-darkest;
+      border-color: $ux-core-color-grey-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-grey-darkester;
+      border-color: $ux-core-color-grey-darkester;
       color: #fff;
     }
   }
 
   &-slate {
-    background-color: $color-slate-500;
-    border-color: $color-slate-500;
+    background-color: $ux-core-color-slate;
+    border-color: $ux-core-color-slate;
     color: #fff;
-
-    &-300  {
-      background-color: $color-slate-300;
-      border-color: $color-slate-300;
+    
+    &-lightester {
+      background-color: $ux-core-color-slate-lightester;
+      border-color: $ux-core-color-slate-lightester;
       color: #fff;
     }
 
-    &-400 {
-      background-color: $color-slate-400;
-      border-color: $color-slate-400;
+    &-lightest {
+      background-color: $ux-core-color-slate-lightest;
+      border-color: $ux-core-color-slate-lightest;
       color: #fff;
     }
 
-    &-500 {
-      background-color: $color-slate-500;
-      border-color: $color-slate-500;
+    &-lighter  {
+      background-color: $ux-core-color-slate-lighter;
+      border-color: $ux-core-color-slate-lighter;
       color: #fff;
     }
 
-    &-600 {
-      background-color: $color-slate-600;
-      border-color: $color-slate-600;
+    &-light {
+      background-color: $ux-core-color-slate-light;
+      border-color: $ux-core-color-slate-light;
       color: #fff;
     }
 
-    &-700 {
-      background-color: $color-slate-700;
-      border-color: $color-slate-700;
+    &-dark {
+      background-color: $ux-core-color-slate-dark;
+      border-color: $ux-core-color-slate-dark;
       color: #fff;
     }
 
-    &-800 {
-      background-color: $color-slate-800;
-      border-color: $color-slate-800;
+    &-darker {
+      background-color: $ux-core-color-slate-darker;
+      border-color: $ux-core-color-slate-darker;
+      color: #fff;
+    }
+
+    &-darkest {
+      background-color: $ux-core-color-slate-darkest;
+      border-color: $ux-core-color-slate-darkest;
+      color: #fff;
+    }
+
+    &-darkester {
+      background-color: $ux-core-color-slate-darkester;
+      border-color: $ux-core-color-slate-darkester;
       color: #fff;
     }
   }
 
   &-white {
     background-color: #fff;
-    // color: $text-color;
+    color: $ux-core-color-text
   }
 }
 
 // Alpha colors
-.alpha {
+.ux-core-alpha {
     // Primary
     &-primary {
-        background-color: $color-primary-50;
-        border-color: $color-primary-600;
+        background-color: $ux-core-color-primary-lightester-2;
+        border-color: $ux-core-color-primary-dark;
     }
 
     // Danger
     &-danger {
-        background-color: $color-danger-50;
-        border-color: $color-danger-600;
+        background-color: $ux-core-color-danger-lightester-2;
+        border-color: $ux-core-color-danger-dark;
     }
 
     // Success
     &-success {
-        background-color: $color-success-50;
-        border-color: $color-success-600;
+        background-color: $ux-core-color-success-lightester-2;
+        border-color: $ux-core-color-success-dark;
     }
 
     // Warning
     &-warning {
-        background-color: $color-warning-50;
-        border-color: $color-warning-600;
+        background-color: $ux-core-color-warning-lightester-2;
+        border-color: $ux-core-color-warning-dark;
     }
 
     // Info
     &-info {
-        background-color: $color-info-50;
-        border-color: $color-info-600;
+        background-color: $ux-core-color-info-lightester-2;
+        border-color: $ux-core-color-info-dark;
     }
 
     // Pink
     &-pink {
-        background-color: $color-pink-50;
-        border-color: $color-pink-600;
+        background-color: $ux-core-color-pink-lightester-2;
+        border-color: $ux-core-color-pink-dark;
     }
 
     // Violet
     &-violet {
-        background-color: $color-violet-50;
-        border-color: $color-violet-600;
+        background-color: $ux-core-color-violet-lightester-2;
+        border-color: $ux-core-color-violet-dark;
     }
 
     // Purple
     &-purple {
-        background-color: $color-purple-50;
-        border-color: $color-purple-600;
+        background-color: $ux-core-color-purple-lightester-2;
+        border-color: $ux-core-color-purple-dark;
     }
 
     // Indino
     &-indigo {
-        background-color: $color-indigo-50;
-        border-color: $color-indigo-600;
+        background-color: $ux-core-color-indigo-lightester-2;
+        border-color: $ux-core-color-indigo-dark;
     }
 
     // Blue
     &-blue {
-        background-color: $color-blue-50;
-        border-color: $color-blue-600;
+        background-color: $ux-core-color-blue-lightester-2;
+        border-color: $ux-core-color-blue-dark;
     }
 
     // Teal
     &-teal {
-        background-color: $color-teal-50;
-        border-color: $color-teal-600;
+        background-color: $ux-core-color-teal-lightester-2;
+        border-color: $ux-core-color-teal-dark;
     }
 
     // Green
     &-green {
-        background-color: $color-green-50;
-        border-color: $color-green-600;
+        background-color: $ux-core-color-green-lightester-2;
+        border-color: $ux-core-color-green-dark;
     }
 
     // Orange
     &-orange {
-        background-color: $color-orange-50;
-        border-color: $color-orange-600;
+        background-color: $ux-core-color-orange-lightester-2;
+        border-color: $ux-core-color-orange-dark;
     }
 
     // Brown
     &-brown {
-        background-color: $color-brown-50;
-        border-color: $color-brown-600;
+        background-color: $ux-core-color-brown-lightester-2;
+        border-color: $ux-core-color-brown-dark;
     }
 
     // Grey
     &-grey {
-        background-color: $color-grey-50;
-        border-color: $color-grey-600;
+        background-color: $ux-core-color-grey-lightester-2;
+        border-color: $ux-core-color-grey-dark;
     }
 
     // Slate
     &-slate {
-        background-color: $color-slate-50;
-        border-color: $color-slate-600;
+        background-color: $ux-core-color-slate-lightester-2;
+        border-color: $ux-core-color-slate-dark;
     }
 }
 
@@ -783,7 +974,7 @@ $panel-default-border: #999;
 // Single border colors
 // ------------------------------
 
-.border {
+.ux-core-border {
 
     // Primary
     &-primary {
@@ -1201,7 +1392,7 @@ $panel-default-border: #999;
 // ------------------------------
 
 // Top
-.border-top {
+.ux-core-border-top {
 
     // Primary
     &-primary {
@@ -1610,7 +1801,7 @@ $panel-default-border: #999;
 }
 
 // Bottom
-.border-bottom {
+.ux-core-border-bottom {
 
     // Primary
     &-primary {
@@ -2019,7 +2210,7 @@ $panel-default-border: #999;
 }
 
 // Left
-.border-left {
+.ux-core-border-left {
 
     // Primary
     &-primary {
@@ -2428,7 +2619,7 @@ $panel-default-border: #999;
 }
 
 // Right
-.border-right {
+.ux-core-border-right {
 
     // Primary
     &-primary {
@@ -2839,7 +3030,7 @@ $panel-default-border: #999;
 // Text colors
 // ------------------------------
 
-.text {
+.ux-core-text {
     // Primary
     &-primary {
         &,
@@ -3638,7 +3829,7 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $text-color!important;
+            color: $ux-core-color-text!important;
         }
     }
 }
