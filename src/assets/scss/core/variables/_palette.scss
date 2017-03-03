@@ -1,26 +1,53 @@
 // Primary palette
-$color-primary-50: #D2F0E2;
-$color-primary-100: #61CA9B;
-$color-primary-200: #61CA9B;
-$color-primary-300: #61CA9B;
-$color-primary-400: #42C087;
-$color-primary-500: #22B573;
-$color-primary-600: #51A881;
-$color-primary-700: #418767;
-$color-primary-800: #31654E;
-$color-primary-900: #204334;
+
+$palette-primary:
+#D2F0E2
+#61CA9B
+#61CA9B
+#61CA9B
+#42C087
+#22B573
+#51A881
+#418767
+#31654E
+#204334
+;
+
+$color-primary-50: nth($palette-primary, 1);
+$color-primary-100: nth($palette-primary, 2);
+$color-primary-200: nth($palette-primary, 3);
+$color-primary-300: nth($palette-primary, 4);
+$color-primary-400: nth($palette-primary, 5);
+$color-primary-500: nth($palette-primary, 6);
+$color-primary-600: nth($palette-primary, 7);
+$color-primary-700: nth($palette-primary, 8);
+$color-primary-800: nth($palette-primary, 9);
+$color-primary-900: nth($palette-primary, 10);
+
+$palette-danger:
+#FFEBEE
+#E57373
+#E57373
+#E57373
+#EF5350
+#F44336
+#E53935
+#D32F2F
+#C62828
+#B71C1C
+;
 
 // Danger palette
-$color-danger-50: #FFEBEE;
-$color-danger-100: #E57373;
-$color-danger-200: #E57373;
-$color-danger-300: #E57373;
-$color-danger-400: #EF5350;
-$color-danger-500: #F44336;
-$color-danger-600: #E53935;
-$color-danger-700: #D32F2F;
-$color-danger-800: #C62828;
-$color-danger-900: #B71C1C;
+$color-danger-50: nth($palette-danger, 1);
+$color-danger-100: nth($palette-danger, 2);
+$color-danger-200: nth($palette-danger, 3);
+$color-danger-300: nth($palette-danger, 4);
+$color-danger-400: nth($palette-danger, 5);
+$color-danger-500: nth($palette-danger, 6);
+$color-danger-600: nth($palette-danger, 7);
+$color-danger-700: nth($palette-danger, 8);
+$color-danger-800: nth($palette-danger, 9);
+$color-danger-900: nth($palette-danger, 10);
 
 // Success palette
 $color-success-50: #E8F5E9;
