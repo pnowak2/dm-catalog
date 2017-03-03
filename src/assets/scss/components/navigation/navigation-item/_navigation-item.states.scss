@@ -1,0 +1,19 @@
+.asm-navigation-item {
+  &--has-subitems {
+    padding-right: 35px;
+  }
+
+  &--has-subitems:after {
+    content: "\e9c7";
+    display: block;
+    font-family: icomoon;
+    font-size: 16px;
+    line-height: 1;
+    margin-top: -8px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: rotate(0);
+    transition: transform .2s ease-in-out;
+  }
+}
