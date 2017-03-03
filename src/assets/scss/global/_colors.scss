@@ -978,401 +978,593 @@ $panel-default-border: #999;
 
     // Primary
     &-primary {
-        border-color: $color-primary-500;
+        border-color: $ux-core-color-primary;
 
-        &-300 {
-            border-color: $color-primary-300;
+        &-lightester {
+            border-color: $ux-core-color-primary-lightester;
         }
 
-        &-400 {
-            border-color: $color-primary-400;
+        &-lightest {
+            border-color: $ux-core-color-primary-lightest;
         }
 
-        &-600 {
-            border-color: $color-primary-600;
+        &-lighter {
+            border-color: $ux-core-color-primary-lighter;
         }
 
-        &-700 {
-            border-color: $color-primary-700;
+        &-light {
+            border-color: $ux-core-color-primary-light;
         }
 
-        &-800 {
-            border-color: $color-primary-800;
+        &-dark {
+            border-color: $ux-core-color-primary-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-primary-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-primary-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-primary-darkester;
         }
     }
 
     // Danger
     &-danger {
-        border-color: $color-danger-500;
+        border-color: $ux-core-color-danger;
 
-        &-300 {
-            border-color: $color-danger-300;
+        &-lightester {
+            border-color: $ux-core-color-danger-lightester;
         }
 
-        &-400 {
-            border-color: $color-danger-400;
+        &-lightest {
+            border-color: $ux-core-color-danger-lightest;
         }
 
-        &-600 {
-            border-color: $color-danger-600;
+        &-lighter {
+            border-color: $ux-core-color-danger-lighter;
         }
 
-        &-700 {
-            border-color: $color-danger-700;
+        &-light {
+            border-color: $ux-core-color-danger-light;
         }
 
-        &-800 {
-            border-color: $color-danger-800;
+        &-dark {
+            border-color: $ux-core-color-danger-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-danger-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-danger-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-danger-darkester;
         }
     }
 
     // Success
     &-success {
-        border-color: $color-success-500;
+        border-color: $ux-core-color-success;
 
-        &-300 {
-            border-color: $color-success-300;
+        &-lightester {
+            border-color: $ux-core-color-success-lightester;
         }
 
-        &-400 {
-            border-color: $color-success-400;
+        &-lightest {
+            border-color: $ux-core-color-success-lightest;
         }
 
-        &-600 {
-            border-color: $color-success-600;
+        &-lighter {
+            border-color: $ux-core-color-success-lighter;
         }
 
-        &-700 {
-            border-color: $color-success-700;
+        &-light {
+            border-color: $ux-core-color-success-light;
         }
 
-        &-800 {
-            border-color: $color-success-800;
+        &-dark {
+            border-color: $ux-core-color-success-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-success-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-success-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-success-darkester;
         }
     }
 
     // Warning
     &-warning {
-        border-color: $color-warning-500;
+        border-color: $ux-core-color-warning;
 
-        &-300 {
-            border-color: $color-warning-300;
+        &-lightester {
+            border-color: $ux-core-color-warning-lightester;
         }
 
-        &-400 {
-            border-color: $color-warning-400;
+        &-lightest {
+            border-color: $ux-core-color-warning-lightest;
         }
 
-        &-600 {
-            border-color: $color-warning-600;
+        &-lighter {
+            border-color: $ux-core-color-warning-lighter;
         }
 
-        &-700 {
-            border-color: $color-warning-700;
+        &-light {
+            border-color: $ux-core-color-warning-light;
         }
 
-        &-800 {
-            border-color: $color-warning-800;
+        &-dark {
+            border-color: $ux-core-color-warning-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-warning-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-warning-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-warning-darkester;
         }
     }
 
     // Info
     &-info {
-        border-color: $color-info-500;
+        border-color: $ux-core-color-info;
 
-        &-300 {
-            border-color: $color-info-300;
+        &-lightester {
+            border-color: $ux-core-color-info-lightester;
         }
 
-        &-400 {
-            border-color: $color-info-400;
+        &-lightest {
+            border-color: $ux-core-color-info-lightest;
         }
 
-        &-600 {
-            border-color: $color-info-600;
+        &-lighter {
+            border-color: $ux-core-color-info-lighter;
         }
 
-        &-700 {
-            border-color: $color-info-700;
+        &-light {
+            border-color: $ux-core-color-info-light;
         }
 
-        &-800 {
-            border-color: $color-info-800;
+        &-dark {
+            border-color: $ux-core-color-info-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-info-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-info-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-info-darkester;
         }
     }
 
     // Pink
     &-pink {
-        border-color: $color-pink-500;
+        border-color: $ux-core-color-pink;
 
-        &-300 {
-            border-color: $color-pink-300;
+        &-lightester {
+            border-color: $ux-core-color-pink-lightester;
         }
 
-        &-400 {
-            border-color: $color-pink-400;
+        &-lightest {
+            border-color: $ux-core-color-pink-lightest;
         }
 
-        &-600 {
-            border-color: $color-pink-600;
+        &-lighter {
+            border-color: $ux-core-color-pink-lighter;
         }
 
-        &-700 {
-            border-color: $color-pink-700;
+        &-light {
+            border-color: $ux-core-color-pink-light;
         }
 
-        &-800 {
-            border-color: $color-pink-800;
+        &-dark {
+            border-color: $ux-core-color-pink-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-pink-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-pink-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-pink-darkest;
         }
     }
 
     // Violet
     &-violet {
-        border-color: $color-violet-500;
+        border-color: $ux-core-color-violet;
 
-        &-300 {
-            border-color: $color-violet-300;
+        &-lightester {
+            border-color: $ux-core-color-violet-lightester;
         }
 
-        &-400 {
-            border-color: $color-violet-400;
+        &-lightest {
+            border-color: $ux-core-color-violet-lightest;
         }
 
-        &-600 {
-            border-color: $color-violet-600;
+        &-lighter {
+            border-color: $ux-core-color-violet-lighter;
         }
 
-        &-700 {
-            border-color: $color-violet-700;
+        &-light {
+            border-color: $ux-core-color-violet-light;
         }
 
-        &-800 {
-            border-color: $color-violet-800;
+        &-dark {
+            border-color: $ux-core-color-violet-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-violet-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-violet-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-violet-darkester;
         }
     }
 
     // Purple
     &-purple {
-        border-color: $color-purple-500;
+        border-color: $ux-core-color-purple;
 
-        &-300 {
-            border-color: $color-purple-300;
+        &-lightester {
+            border-color: $ux-core-color-purple-lightester;
         }
 
-        &-400 {
-            border-color: $color-purple-400;
+        &-lightest {
+            border-color: $ux-core-color-purple-lightest;
         }
 
-        &-600 {
-            border-color: $color-purple-600;
+        &-lighter {
+            border-color: $ux-core-color-purple-lighter;
         }
 
-        &-700 {
-            border-color: $color-purple-700;
+        &-light {
+            border-color: $ux-core-color-purple-light;
         }
 
-        &-800 {
-            border-color: $color-purple-800;
+        &-dark {
+            border-color: $ux-core-color-purple-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-purple-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-purple-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-purple-darkester;
         }
     }
 
     // Indino
     &-indigo {
-        border-color: $color-indigo-500;
+        border-color: $ux-core-color-indigo;
 
-        &-300 {
-            border-color: $color-indigo-300;
+        &-lightester {
+            border-color: $ux-core-color-indigo-lightester;
         }
 
-        &-400 {
-            border-color: $color-indigo-400;
+        &-lightest {
+            border-color: $ux-core-color-indigo-lightest;
         }
 
-        &-600 {
-            border-color: $color-indigo-600;
+        &-lighter {
+            border-color: $ux-core-color-indigo-lighter;
         }
 
-        &-700 {
-            border-color: $color-indigo-700;
+        &-light {
+            border-color: $ux-core-color-indigo-light;
         }
 
-        &-800 {
-            border-color: $color-indigo-800;
+        &-dark {
+            border-color: $ux-core-color-indigo-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-indigo-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-indigo-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-indigo-darkester;
         }
     }
 
     // Blue
     &-blue {
-        border-color: $color-blue-500;
+        border-color: $ux-core-color-blue;
 
-        &-300 {
-            border-color: $color-blue-300;
+        &-lightester {
+            border-color: $ux-core-color-blue-lightester;
         }
 
-        &-400 {
-            border-color: $color-blue-400;
+        &-lightest {
+            border-color: $ux-core-color-blue-lightest;
         }
 
-        &-600 {
-            border-color: $color-blue-600;
+        &-lighter {
+            border-color: $ux-core-color-blue-lighter;
         }
 
-        &-700 {
-            border-color: $color-blue-700;
+        &-light {
+            border-color: $ux-core-color-blue-light;
         }
 
-        &-800 {
-            border-color: $color-blue-800;
+        &-dark {
+            border-color: $ux-core-color-blue-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-blue-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-blue-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-blue-darkester;
         }
     }
 
     // Teal
     &-teal {
-        border-color: $color-teal-500;
+        border-color: $ux-core-color-teal;
 
-        &-300 {
-            border-color: $color-teal-300;
+        &-lightester {
+            border-color: $ux-core-color-teal-lightester;
         }
 
-        &-400 {
-            border-color: $color-teal-400;
+        &-lightest {
+            border-color: $ux-core-color-teal-lightest;
         }
 
-        &-600 {
-            border-color: $color-teal-600;
+        &-lighter {
+            border-color: $ux-core-color-teal-lighter;
         }
 
-        &-700 {
-            border-color: $color-teal-700;
+        &-light {
+            border-color: $ux-core-color-teal-light;
         }
 
-        &-800 {
-            border-color: $color-teal-800;
+        &-dark {
+            border-color: $ux-core-color-teal-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-teal-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-teal-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-teal-darkester;
         }
     }
 
     // Green
     &-green {
-        border-color: $color-green-500;
+        border-color: $ux-core-color-green;
 
-        &-300 {
-            border-color: $color-green-300;
+        &-lightester {
+            border-color: $ux-core-color-green-lightester;
         }
 
-        &-400 {
-            border-color: $color-green-400;
+        &-lightest {
+            border-color: $ux-core-color-green-lightest;
         }
 
-        &-600 {
-            border-color: $color-green-600;
+        &-lighter {
+            border-color: $ux-core-color-green-lighter;
         }
 
-        &-700 {
-            border-color: $color-green-700;
+        &-light {
+            border-color: $ux-core-color-green-light;
         }
 
-        &-800 {
-            border-color: $color-green-800;
+        &-dark {
+            border-color: $ux-core-color-green-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-green-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-green-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-green-darkester;
         }
     }
 
     // Orange
     &-orange {
-        border-color: $color-orange-500;
+        border-color: $ux-core-color-orange;
 
-        &-300 {
-            border-color: $color-orange-300;
+        &-lightester {
+            border-color: $ux-core-color-orange-lightester;
         }
 
-        &-400 {
-            border-color: $color-orange-400;
+        &-lightest {
+            border-color: $ux-core-color-orange-lightest;
         }
 
-        &-600 {
-            border-color: $color-orange-600;
+        &-lighter {
+            border-color: $ux-core-color-orange-lighter;
         }
 
-        &-700 {
-            border-color: $color-orange-700;
+        &-light {
+            border-color: $ux-core-color-orange-light;
         }
 
-        &-800 {
-            border-color: $color-orange-800;
+        &-dark {
+            border-color: $ux-core-color-orange-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-orange-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-orange-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-orange-darkest;
         }
     }
 
     // Brown
     &-brown {
-        border-color: $color-brown-500;
+        border-color: $ux-core-color-brown;
 
-        &-300 {
-            border-color: $color-brown-300;
+        &-lightester {
+            border-color: $ux-core-color-brown-lightester;
         }
 
-        &-400 {
-            border-color: $color-brown-400;
+        &-lightest {
+            border-color: $ux-core-color-brown-lightest;
         }
 
-        &-600 {
-            border-color: $color-brown-600;
+        &-lighter {
+            border-color: $ux-core-color-brown-lighter;
         }
 
-        &-700 {
-            border-color: $color-brown-700;
+        &-light {
+            border-color: $ux-core-color-brown-light;
         }
 
-        &-800 {
-            border-color: $color-brown-800;
+        &-dark {
+            border-color: $ux-core-color-brown-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-brown-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-brown-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-brown-darkester;
         }
     }
 
     // Grey
     &-grey {
-        border-color: $color-grey-500;
+        border-color: $ux-core-color-grey;
 
-        &-300 {
-            border-color: $color-grey-300;
+        &-lightester {
+            border-color: $ux-core-color-grey-lightester;
         }
 
-        &-400 {
-            border-color: $color-grey-400;
+        &-lightest {
+            border-color: $ux-core-color-grey-lightest;
         }
 
-        &-600 {
-            border-color: $color-grey-600;
+        &-lighter {
+            border-color: $ux-core-color-grey-lighter;
         }
 
-        &-700 {
-            border-color: $color-grey-700;
+        &-light {
+            border-color: $ux-core-color-grey-light;
         }
 
-        &-800 {
-            border-color: $color-grey-800;
+        &-dark {
+            border-color: $ux-core-color-grey-dark;
         }
+
+        &-darker {
+            border-color: $ux-core-color-grey-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-grey-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-grey-darkester;
+        }        
     }
 
     // Slate
     &-slate {
-        border-color: $color-slate-500;
+        border-color: $ux-core-color-slate;
 
-        &-300 {
-            border-color: $color-slate-300;
+        &-lightester {
+            border-color: $ux-core-color-slate-lightester;
         }
 
-        &-400 {
-            border-color: $color-slate-400;
+        &-lightest {
+            border-color: $ux-core-color-slate-lightest;
         }
 
-        &-600 {
-            border-color: $color-slate-600;
+        &-lighter {
+            border-color: $ux-core-color-slate-lighter;
         }
 
-        &-700 {
-            border-color: $color-slate-700;
+        &-light {
+            border-color: $ux-core-color-slate-light;
         }
 
-        &-800 {
-            border-color: $color-slate-800;
+        &-dark {
+            border-color: $ux-core-color-slate-dark;
+        }
+
+        &-darker {
+            border-color: $ux-core-color-slate-darker;
+        }
+
+        &-darkest {
+            border-color: $ux-core-color-slate-darkest;
+        }
+
+        &-darkester {
+            border-color: $ux-core-color-slate-darkester;
         }
     }
 
@@ -1386,7 +1578,6 @@ $panel-default-border: #999;
         border-color: $panel-default-border;
     }
 }
-
 
 // Separate border colors
 // ------------------------------
