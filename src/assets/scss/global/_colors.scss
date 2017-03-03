@@ -1587,407 +1587,604 @@ $panel-default-border: #999;
 
     // Primary
     &-primary {
-        border-top-color: $color-primary-500;
+        border-top-color: $ux-core-color-primary;
 
-        &-300 {
-            border-top-color: $color-primary-300;
+        &-lightester {
+            border-top-color: $ux-core-color-primary-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-primary-400;
+        &-lightest {
+            border-top-color: $ux-core-color-primary-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-primary-600;
+        &-lighter {
+            border-top-color: $ux-core-color-primary-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-primary-700;
+        &-light {
+            border-top-color: $ux-core-color-primary-light;
         }
 
-        &-800 {
-            border-top-color: $color-primary-800;
+        &-dark {
+            border-top-color: $ux-core-color-primary-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-primary-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-primary-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-primary-darkester;
         }
     }
 
     // Danger
     &-danger {
-        border-top-color: $color-danger-500;
+        border-top-color: $ux-core-color-danger;
 
-        &-300 {
-            border-top-color: $color-danger-300;
+        &-lightester {
+            border-top-color: $ux-core-color-danger-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-danger-400;
+        &-lightest {
+            border-top-color: $ux-core-color-danger-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-danger-600;
+        &-lighter {
+            border-top-color: $ux-core-color-danger-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-danger-700;
+        &-light {
+            border-top-color: $ux-core-color-danger-light;
         }
 
-        &-800 {
-            border-top-color: $color-danger-800;
+        &-dark {
+            border-top-color: $ux-core-color-danger-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-danger-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-danger-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-danger-darkester;
         }
     }
 
     // Success
     &-success {
-        border-top-color: $color-success-500;
+        border-top-color: $ux-core-color-success;
 
-        &-300 {
-            border-top-color: $color-success-300;
+        &-lightester {
+            border-top-color: $ux-core-color-success-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-success-400;
+        &-lightest {
+            border-top-color: $ux-core-color-success-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-success-600;
+        &-lighter {
+            border-top-color: $ux-core-color-success-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-success-700;
+        &-light {
+            border-top-color: $ux-core-color-success-light;
         }
 
-        &-800 {
-            border-top-color: $color-success-800;
+        &-dark {
+            border-top-color: $ux-core-color-success-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-success-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-success-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-success-darkester;
         }
     }
 
     // Warning
     &-warning {
-        border-top-color: $color-warning-500;
+        border-top-color: $ux-core-color-warning;
 
-        &-300 {
-            border-top-color: $color-warning-300;
+        &-lightester {
+            border-top-color: $ux-core-color-warning-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-warning-400;
+        &-lightest {
+            border-top-color: $ux-core-color-warning-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-warning-600;
+        &-lighter {
+            border-top-color: $ux-core-color-warning-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-warning-700;
+        &-light {
+            border-top-color: $ux-core-color-warning-light;
         }
 
-        &-800 {
-            border-top-color: $color-warning-800;
+        &-dark {
+            border-top-color: $ux-core-color-warning-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-warning-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-warning-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-warning-darkester;
         }
     }
 
     // Info
     &-info {
-        border-top-color: $color-info-500;
+        border-top-color: $ux-core-color-info;
 
-        &-300 {
-            border-top-color: $color-info-300;
+        &-lightester {
+            border-top-color: $ux-core-color-info-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-info-400;
+        &-lightest {
+            border-top-color: $ux-core-color-info-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-info-600;
+        &-lighter {
+            border-top-color: $ux-core-color-info-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-info-700;
+        &-light {
+            border-top-color: $ux-core-color-info-light;
         }
 
-        &-800 {
-            border-top-color: $color-info-800;
+        &-dark {
+            border-top-color: $ux-core-color-info-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-info-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-info-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-info-darkester;
         }
     }
 
     // Pink
     &-pink {
-        border-top-color: $color-pink-500;
+        border-top-color: $ux-core-color-pink;
 
-        &-300 {
-            border-top-color: $color-pink-300;
+        &-lightester {
+            border-top-color: $ux-core-color-pink-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-pink-400;
+        &-lightest {
+            border-top-color: $ux-core-color-pink-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-pink-600;
+        &-lighter {
+            border-top-color: $ux-core-color-pink-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-pink-700;
+        &-light {
+            border-top-color: $ux-core-color-pink-light;
         }
 
-        &-800 {
-            border-top-color: $color-pink-800;
+        &-dark {
+            border-top-color: $ux-core-color-pink-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-pink-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-pink-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-pink-darkest;
         }
     }
 
     // Violet
     &-violet {
-        border-top-color: $color-violet-500;
+        border-top-color: $ux-core-color-violet;
 
-        &-300 {
-            border-top-color: $color-violet-300;
+        &-lightester {
+            border-top-color: $ux-core-color-violet-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-violet-400;
+        &-lightest {
+            border-top-color: $ux-core-color-violet-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-violet-600;
+        &-lighter {
+            border-top-color: $ux-core-color-violet-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-violet-700;
+        &-light {
+            border-top-color: $ux-core-color-violet-light;
         }
 
-        &-800 {
-            border-top-color: $color-violet-800;
+        &-dark {
+            border-top-color: $ux-core-color-violet-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-violet-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-violet-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-violet-darkester;
         }
     }
 
     // Purple
     &-purple {
-        border-top-color: $color-purple-500;
+        border-top-color: $ux-core-color-purple;
 
-        &-300 {
-            border-top-color: $color-purple-300;
+        &-lightester {
+            border-top-color: $ux-core-color-purple-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-purple-400;
+        &-lightest {
+            border-top-color: $ux-core-color-purple-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-purple-600;
+        &-lighter {
+            border-top-color: $ux-core-color-purple-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-purple-700;
+        &-light {
+            border-top-color: $ux-core-color-purple-light;
         }
 
-        &-800 {
-            border-top-color: $color-purple-800;
+        &-dark {
+            border-top-color: $ux-core-color-purple-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-purple-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-purple-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-purple-darkester;
         }
     }
 
     // Indino
     &-indigo {
-        border-top-color: $color-indigo-500;
+        border-top-color: $ux-core-color-indigo;
 
-        &-300 {
-            border-top-color: $color-indigo-300;
+        &-lightester {
+            border-top-color: $ux-core-color-indigo-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-indigo-400;
+        &-lightest {
+            border-top-color: $ux-core-color-indigo-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-indigo-600;
+        &-lighter {
+            border-top-color: $ux-core-color-indigo-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-indigo-700;
+        &-light {
+            border-top-color: $ux-core-color-indigo-light;
         }
 
-        &-800 {
-            border-top-color: $color-indigo-800;
+        &-dark {
+            border-top-color: $ux-core-color-indigo-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-indigo-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-indigo-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-indigo-darkester;
         }
     }
 
     // Blue
     &-blue {
-        border-top-color: $color-blue-500;
+        border-top-color: $ux-core-color-blue;
 
-        &-300 {
-            border-top-color: $color-blue-300;
+        &-lightester {
+            border-top-color: $ux-core-color-blue-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-blue-400;
+        &-lightest {
+            border-top-color: $ux-core-color-blue-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-blue-600;
+        &-lighter {
+            border-top-color: $ux-core-color-blue-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-blue-700;
+        &-light {
+            border-top-color: $ux-core-color-blue-light;
         }
 
-        &-800 {
-            border-top-color: $color-blue-800;
+        &-dark {
+            border-top-color: $ux-core-color-blue-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-blue-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-blue-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-blue-darkester;
         }
     }
 
     // Teal
     &-teal {
-        border-top-color: $color-teal-500;
+        border-top-color: $ux-core-color-teal;
 
-        &-300 {
-            border-top-color: $color-teal-300;
+        &-lightester {
+            border-top-color: $ux-core-color-teal-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-teal-400;
+        &-lightest {
+            border-top-color: $ux-core-color-teal-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-teal-600;
+        &-lighter {
+            border-top-color: $ux-core-color-teal-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-teal-700;
+        &-light {
+            border-top-color: $ux-core-color-teal-light;
         }
 
-        &-800 {
-            border-top-color: $color-teal-800;
+        &-dark {
+            border-top-color: $ux-core-color-teal-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-teal-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-teal-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-teal-darkester;
         }
     }
 
     // Green
     &-green {
-        border-top-color: $color-green-500;
+        border-top-color: $ux-core-color-green;
 
-        &-300 {
-            border-top-color: $color-green-300;
+        &-lightester {
+            border-top-color: $ux-core-color-green-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-green-400;
+        &-lightest {
+            border-top-color: $ux-core-color-green-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-green-600;
+        &-lighter {
+            border-top-color: $ux-core-color-green-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-green-700;
+        &-light {
+            border-top-color: $ux-core-color-green-light;
         }
 
-        &-800 {
-            border-top-color: $color-green-800;
+        &-dark {
+            border-top-color: $ux-core-color-green-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-green-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-green-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-green-darkester;
         }
     }
 
     // Orange
     &-orange {
-        border-top-color: $color-orange-500;
+        border-top-color: $ux-core-color-orange;
 
-        &-300 {
-            border-top-color: $color-orange-300;
+        &-lightester {
+            border-top-color: $ux-core-color-orange-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-orange-400;
+        &-lightest {
+            border-top-color: $ux-core-color-orange-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-orange-600;
+        &-lighter {
+            border-top-color: $ux-core-color-orange-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-orange-700;
+        &-light {
+            border-top-color: $ux-core-color-orange-light;
         }
 
-        &-800 {
-            border-top-color: $color-orange-800;
+        &-dark {
+            border-top-color: $ux-core-color-orange-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-orange-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-orange-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-orange-darkest;
         }
     }
 
     // Brown
     &-brown {
-        border-top-color: $color-brown-500;
+        border-top-color: $ux-core-color-brown;
 
-        &-300 {
-            border-top-color: $color-brown-300;
+        &-lightester {
+            border-top-color: $ux-core-color-brown-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-brown-400;
+        &-lightest {
+            border-top-color: $ux-core-color-brown-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-brown-600;
+        &-lighter {
+            border-top-color: $ux-core-color-brown-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-brown-700;
+        &-light {
+            border-top-color: $ux-core-color-brown-light;
         }
 
-        &-800 {
-            border-top-color: $color-brown-800;
+        &-dark {
+            border-top-color: $ux-core-color-brown-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-brown-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-brown-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-brown-darkester;
         }
     }
 
     // Grey
     &-grey {
-        border-top-color: $color-grey-500;
+        border-top-color: $ux-core-color-grey;
 
-        &-300 {
-            border-top-color: $color-grey-300;
+        &-lightester {
+            border-top-color: $ux-core-color-grey-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-grey-400;
+        &-lightest {
+            border-top-color: $ux-core-color-grey-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-grey-600;
+        &-lighter {
+            border-top-color: $ux-core-color-grey-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-grey-700;
+        &-light {
+            border-top-color: $ux-core-color-grey-light;
         }
 
-        &-800 {
-            border-top-color: $color-grey-800;
+        &-dark {
+            border-top-color: $ux-core-color-grey-dark;
         }
+
+        &-darker {
+            border-top-color: $ux-core-color-grey-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-grey-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-grey-darkester;
+        }        
     }
 
     // Slate
     &-slate {
-        border-top-color: $color-slate-500;
+        border-top-color: $ux-core-color-slate;
 
-        &-300 {
-            border-top-color: $color-slate-300;
+        &-lightester {
+            border-top-color: $ux-core-color-slate-lightester;
         }
 
-        &-400 {
-            border-top-color: $color-slate-400;
+        &-lightest {
+            border-top-color: $ux-core-color-slate-lightest;
         }
 
-        &-600 {
-            border-top-color: $color-slate-600;
+        &-lighter {
+            border-top-color: $ux-core-color-slate-lighter;
         }
 
-        &-700 {
-            border-top-color: $color-slate-700;
+        &-light {
+            border-top-color: $ux-core-color-slate-light;
         }
 
-        &-800 {
-            border-top-color: $color-slate-800;
+        &-dark {
+            border-top-color: $ux-core-color-slate-dark;
+        }
+
+        &-darker {
+            border-top-color: $ux-core-color-slate-darker;
+        }
+
+        &-darkest {
+            border-top-color: $ux-core-color-slate-darkest;
+        }
+
+        &-darkester {
+            border-top-color: $ux-core-color-slate-darkester;
         }
     }
 
     // White
     &-white {
         border-top-color: #fff;
+    }
+
+    // Default grey
+    &-default {
+        border-top-color: $panel-default-border;
     }
 }
 
@@ -1996,407 +2193,604 @@ $panel-default-border: #999;
 
     // Primary
     &-primary {
-        border-bottom-color: $color-primary-500;
+        border-bottom-color: $ux-core-color-primary;
 
-        &-300 {
-            border-bottom-color: $color-primary-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-primary-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-primary-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-primary-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-primary-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-primary-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-primary-700;
+        &-light {
+            border-bottom-color: $ux-core-color-primary-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-primary-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-primary-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-primary-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-primary-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-primary-darkester;
         }
     }
 
     // Danger
     &-danger {
-        border-bottom-color: $color-danger-500;
+        border-bottom-color: $ux-core-color-danger;
 
-        &-300 {
-            border-bottom-color: $color-danger-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-danger-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-danger-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-danger-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-danger-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-danger-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-danger-700;
+        &-light {
+            border-bottom-color: $ux-core-color-danger-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-danger-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-danger-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-danger-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-danger-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-danger-darkester;
         }
     }
 
     // Success
     &-success {
-        border-bottom-color: $color-success-500;
+        border-bottom-color: $ux-core-color-success;
 
-        &-300 {
-            border-bottom-color: $color-success-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-success-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-success-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-success-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-success-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-success-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-success-700;
+        &-light {
+            border-bottom-color: $ux-core-color-success-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-success-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-success-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-success-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-success-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-success-darkester;
         }
     }
 
     // Warning
     &-warning {
-        border-bottom-color: $color-warning-500;
+        border-bottom-color: $ux-core-color-warning;
 
-        &-300 {
-            border-bottom-color: $color-warning-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-warning-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-warning-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-warning-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-warning-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-warning-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-warning-700;
+        &-light {
+            border-bottom-color: $ux-core-color-warning-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-warning-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-warning-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-warning-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-warning-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-warning-darkester;
         }
     }
 
     // Info
     &-info {
-        border-bottom-color: $color-info-500;
+        border-bottom-color: $ux-core-color-info;
 
-        &-300 {
-            border-bottom-color: $color-info-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-info-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-info-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-info-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-info-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-info-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-info-700;
+        &-light {
+            border-bottom-color: $ux-core-color-info-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-info-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-info-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-info-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-info-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-info-darkester;
         }
     }
 
     // Pink
     &-pink {
-        border-bottom-color: $color-pink-500;
+        border-bottom-color: $ux-core-color-pink;
 
-        &-300 {
-            border-bottom-color: $color-pink-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-pink-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-pink-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-pink-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-pink-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-pink-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-pink-700;
+        &-light {
+            border-bottom-color: $ux-core-color-pink-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-pink-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-pink-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-pink-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-pink-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-pink-darkest;
         }
     }
 
     // Violet
     &-violet {
-        border-bottom-color: $color-violet-500;
+        border-bottom-color: $ux-core-color-violet;
 
-        &-300 {
-            border-bottom-color: $color-violet-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-violet-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-violet-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-violet-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-violet-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-violet-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-violet-700;
+        &-light {
+            border-bottom-color: $ux-core-color-violet-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-violet-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-violet-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-violet-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-violet-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-violet-darkester;
         }
     }
 
     // Purple
     &-purple {
-        border-bottom-color: $color-purple-500;
+        border-bottom-color: $ux-core-color-purple;
 
-        &-300 {
-            border-bottom-color: $color-purple-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-purple-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-purple-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-purple-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-purple-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-purple-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-purple-700;
+        &-light {
+            border-bottom-color: $ux-core-color-purple-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-purple-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-purple-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-purple-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-purple-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-purple-darkester;
         }
     }
 
     // Indino
     &-indigo {
-        border-bottom-color: $color-indigo-500;
+        border-bottom-color: $ux-core-color-indigo;
 
-        &-300 {
-            border-bottom-color: $color-indigo-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-indigo-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-indigo-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-indigo-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-indigo-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-indigo-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-indigo-700;
+        &-light {
+            border-bottom-color: $ux-core-color-indigo-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-indigo-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-indigo-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-indigo-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-indigo-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-indigo-darkester;
         }
     }
 
     // Blue
     &-blue {
-        border-bottom-color: $color-blue-500;
+        border-bottom-color: $ux-core-color-blue;
 
-        &-300 {
-            border-bottom-color: $color-blue-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-blue-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-blue-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-blue-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-blue-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-blue-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-blue-700;
+        &-light {
+            border-bottom-color: $ux-core-color-blue-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-blue-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-blue-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-blue-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-blue-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-blue-darkester;
         }
     }
 
     // Teal
     &-teal {
-        border-bottom-color: $color-teal-500;
+        border-bottom-color: $ux-core-color-teal;
 
-        &-300 {
-            border-bottom-color: $color-teal-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-teal-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-teal-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-teal-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-teal-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-teal-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-teal-700;
+        &-light {
+            border-bottom-color: $ux-core-color-teal-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-teal-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-teal-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-teal-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-teal-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-teal-darkester;
         }
     }
 
     // Green
     &-green {
-        border-bottom-color: $color-green-500;
+        border-bottom-color: $ux-core-color-green;
 
-        &-300 {
-            border-bottom-color: $color-green-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-green-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-green-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-green-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-green-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-green-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-green-700;
+        &-light {
+            border-bottom-color: $ux-core-color-green-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-green-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-green-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-green-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-green-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-green-darkester;
         }
     }
 
     // Orange
     &-orange {
-        border-bottom-color: $color-orange-500;
+        border-bottom-color: $ux-core-color-orange;
 
-        &-300 {
-            border-bottom-color: $color-orange-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-orange-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-orange-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-orange-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-orange-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-orange-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-orange-700;
+        &-light {
+            border-bottom-color: $ux-core-color-orange-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-orange-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-orange-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-orange-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-orange-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-orange-darkest;
         }
     }
 
     // Brown
     &-brown {
-        border-bottom-color: $color-brown-500;
+        border-bottom-color: $ux-core-color-brown;
 
-        &-300 {
-            border-bottom-color: $color-brown-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-brown-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-brown-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-brown-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-brown-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-brown-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-brown-700;
+        &-light {
+            border-bottom-color: $ux-core-color-brown-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-brown-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-brown-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-brown-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-brown-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-brown-darkester;
         }
     }
 
     // Grey
     &-grey {
-        border-bottom-color: $color-grey-500;
+        border-bottom-color: $ux-core-color-grey;
 
-        &-300 {
-            border-bottom-color: $color-grey-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-grey-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-grey-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-grey-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-grey-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-grey-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-grey-700;
+        &-light {
+            border-bottom-color: $ux-core-color-grey-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-grey-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-grey-dark;
         }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-grey-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-grey-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-grey-darkester;
+        }        
     }
 
     // Slate
     &-slate {
-        border-bottom-color: $color-slate-500;
+        border-bottom-color: $ux-core-color-slate;
 
-        &-300 {
-            border-bottom-color: $color-slate-300;
+        &-lightester {
+            border-bottom-color: $ux-core-color-slate-lightester;
         }
 
-        &-400 {
-            border-bottom-color: $color-slate-400;
+        &-lightest {
+            border-bottom-color: $ux-core-color-slate-lightest;
         }
 
-        &-600 {
-            border-bottom-color: $color-slate-600;
+        &-lighter {
+            border-bottom-color: $ux-core-color-slate-lighter;
         }
 
-        &-700 {
-            border-bottom-color: $color-slate-700;
+        &-light {
+            border-bottom-color: $ux-core-color-slate-light;
         }
 
-        &-800 {
-            border-bottom-color: $color-slate-800;
+        &-dark {
+            border-bottom-color: $ux-core-color-slate-dark;
+        }
+
+        &-darker {
+            border-bottom-color: $ux-core-color-slate-darker;
+        }
+
+        &-darkest {
+            border-bottom-color: $ux-core-color-slate-darkest;
+        }
+
+        &-darkester {
+            border-bottom-color: $ux-core-color-slate-darkester;
         }
     }
 
     // White
     &-white {
         border-bottom-color: #fff;
+    }
+
+    // Default grey
+    &-default {
+        border-bottom-color: $panel-default-border;
     }
 }
 
@@ -2405,407 +2799,604 @@ $panel-default-border: #999;
 
     // Primary
     &-primary {
-        border-left-color: $color-primary-500;
+        border-left-color: $ux-core-color-primary;
 
-        &-300 {
-            border-left-color: $color-primary-300;
+        &-lightester {
+            border-left-color: $ux-core-color-primary-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-primary-400;
+        &-lightest {
+            border-left-color: $ux-core-color-primary-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-primary-600;
+        &-lighter {
+            border-left-color: $ux-core-color-primary-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-primary-700;
+        &-light {
+            border-left-color: $ux-core-color-primary-light;
         }
 
-        &-800 {
-            border-left-color: $color-primary-800;
+        &-dark {
+            border-left-color: $ux-core-color-primary-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-primary-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-primary-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-primary-darkester;
         }
     }
 
     // Danger
     &-danger {
-        border-left-color: $color-danger-500;
+        border-left-color: $ux-core-color-danger;
 
-        &-300 {
-            border-left-color: $color-danger-300;
+        &-lightester {
+            border-left-color: $ux-core-color-danger-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-danger-400;
+        &-lightest {
+            border-left-color: $ux-core-color-danger-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-danger-600;
+        &-lighter {
+            border-left-color: $ux-core-color-danger-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-danger-700;
+        &-light {
+            border-left-color: $ux-core-color-danger-light;
         }
 
-        &-800 {
-            border-left-color: $color-danger-800;
+        &-dark {
+            border-left-color: $ux-core-color-danger-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-danger-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-danger-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-danger-darkester;
         }
     }
 
     // Success
     &-success {
-        border-left-color: $color-success-500;
+        border-left-color: $ux-core-color-success;
 
-        &-300 {
-            border-left-color: $color-success-300;
+        &-lightester {
+            border-left-color: $ux-core-color-success-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-success-400;
+        &-lightest {
+            border-left-color: $ux-core-color-success-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-success-600;
+        &-lighter {
+            border-left-color: $ux-core-color-success-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-success-700;
+        &-light {
+            border-left-color: $ux-core-color-success-light;
         }
 
-        &-800 {
-            border-left-color: $color-success-800;
+        &-dark {
+            border-left-color: $ux-core-color-success-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-success-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-success-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-success-darkester;
         }
     }
 
     // Warning
     &-warning {
-        border-left-color: $color-warning-500;
+        border-left-color: $ux-core-color-warning;
 
-        &-300 {
-            border-left-color: $color-warning-300;
+        &-lightester {
+            border-left-color: $ux-core-color-warning-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-warning-400;
+        &-lightest {
+            border-left-color: $ux-core-color-warning-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-warning-600;
+        &-lighter {
+            border-left-color: $ux-core-color-warning-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-warning-700;
+        &-light {
+            border-left-color: $ux-core-color-warning-light;
         }
 
-        &-800 {
-            border-left-color: $color-warning-800;
+        &-dark {
+            border-left-color: $ux-core-color-warning-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-warning-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-warning-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-warning-darkester;
         }
     }
 
     // Info
     &-info {
-        border-left-color: $color-info-500;
+        border-left-color: $ux-core-color-info;
 
-        &-300 {
-            border-left-color: $color-info-300;
+        &-lightester {
+            border-left-color: $ux-core-color-info-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-info-400;
+        &-lightest {
+            border-left-color: $ux-core-color-info-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-info-600;
+        &-lighter {
+            border-left-color: $ux-core-color-info-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-info-700;
+        &-light {
+            border-left-color: $ux-core-color-info-light;
         }
 
-        &-800 {
-            border-left-color: $color-info-800;
+        &-dark {
+            border-left-color: $ux-core-color-info-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-info-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-info-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-info-darkester;
         }
     }
 
     // Pink
     &-pink {
-        border-left-color: $color-pink-500;
+        border-left-color: $ux-core-color-pink;
 
-        &-300 {
-            border-left-color: $color-pink-300;
+        &-lightester {
+            border-left-color: $ux-core-color-pink-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-pink-400;
+        &-lightest {
+            border-left-color: $ux-core-color-pink-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-pink-600;
+        &-lighter {
+            border-left-color: $ux-core-color-pink-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-pink-700;
+        &-light {
+            border-left-color: $ux-core-color-pink-light;
         }
 
-        &-800 {
-            border-left-color: $color-pink-800;
+        &-dark {
+            border-left-color: $ux-core-color-pink-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-pink-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-pink-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-pink-darkest;
         }
     }
 
     // Violet
     &-violet {
-        border-left-color: $color-violet-500;
+        border-left-color: $ux-core-color-violet;
 
-        &-300 {
-            border-left-color: $color-violet-300;
+        &-lightester {
+            border-left-color: $ux-core-color-violet-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-violet-400;
+        &-lightest {
+            border-left-color: $ux-core-color-violet-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-violet-600;
+        &-lighter {
+            border-left-color: $ux-core-color-violet-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-violet-700;
+        &-light {
+            border-left-color: $ux-core-color-violet-light;
         }
 
-        &-800 {
-            border-left-color: $color-violet-800;
+        &-dark {
+            border-left-color: $ux-core-color-violet-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-violet-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-violet-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-violet-darkester;
         }
     }
 
     // Purple
     &-purple {
-        border-left-color: $color-purple-500;
+        border-left-color: $ux-core-color-purple;
 
-        &-300 {
-            border-left-color: $color-purple-300;
+        &-lightester {
+            border-left-color: $ux-core-color-purple-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-purple-400;
+        &-lightest {
+            border-left-color: $ux-core-color-purple-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-purple-600;
+        &-lighter {
+            border-left-color: $ux-core-color-purple-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-purple-700;
+        &-light {
+            border-left-color: $ux-core-color-purple-light;
         }
 
-        &-800 {
-            border-left-color: $color-purple-800;
+        &-dark {
+            border-left-color: $ux-core-color-purple-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-purple-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-purple-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-purple-darkester;
         }
     }
 
     // Indino
     &-indigo {
-        border-left-color: $color-indigo-500;
+        border-left-color: $ux-core-color-indigo;
 
-        &-300 {
-            border-left-color: $color-indigo-300;
+        &-lightester {
+            border-left-color: $ux-core-color-indigo-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-indigo-400;
+        &-lightest {
+            border-left-color: $ux-core-color-indigo-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-indigo-600;
+        &-lighter {
+            border-left-color: $ux-core-color-indigo-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-indigo-700;
+        &-light {
+            border-left-color: $ux-core-color-indigo-light;
         }
 
-        &-800 {
-            border-left-color: $color-indigo-800;
+        &-dark {
+            border-left-color: $ux-core-color-indigo-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-indigo-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-indigo-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-indigo-darkester;
         }
     }
 
     // Blue
     &-blue {
-        border-left-color: $color-blue-500;
+        border-left-color: $ux-core-color-blue;
 
-        &-300 {
-            border-left-color: $color-blue-300;
+        &-lightester {
+            border-left-color: $ux-core-color-blue-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-blue-400;
+        &-lightest {
+            border-left-color: $ux-core-color-blue-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-blue-600;
+        &-lighter {
+            border-left-color: $ux-core-color-blue-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-blue-700;
+        &-light {
+            border-left-color: $ux-core-color-blue-light;
         }
 
-        &-800 {
-            border-left-color: $color-blue-800;
+        &-dark {
+            border-left-color: $ux-core-color-blue-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-blue-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-blue-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-blue-darkester;
         }
     }
 
     // Teal
     &-teal {
-        border-left-color: $color-teal-500;
+        border-left-color: $ux-core-color-teal;
 
-        &-300 {
-            border-left-color: $color-teal-300;
+        &-lightester {
+            border-left-color: $ux-core-color-teal-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-teal-400;
+        &-lightest {
+            border-left-color: $ux-core-color-teal-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-teal-600;
+        &-lighter {
+            border-left-color: $ux-core-color-teal-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-teal-700;
+        &-light {
+            border-left-color: $ux-core-color-teal-light;
         }
 
-        &-800 {
-            border-left-color: $color-teal-800;
+        &-dark {
+            border-left-color: $ux-core-color-teal-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-teal-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-teal-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-teal-darkester;
         }
     }
 
     // Green
     &-green {
-        border-left-color: $color-green-500;
+        border-left-color: $ux-core-color-green;
 
-        &-300 {
-            border-left-color: $color-green-300;
+        &-lightester {
+            border-left-color: $ux-core-color-green-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-green-400;
+        &-lightest {
+            border-left-color: $ux-core-color-green-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-green-600;
+        &-lighter {
+            border-left-color: $ux-core-color-green-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-green-700;
+        &-light {
+            border-left-color: $ux-core-color-green-light;
         }
 
-        &-800 {
-            border-left-color: $color-green-800;
+        &-dark {
+            border-left-color: $ux-core-color-green-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-green-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-green-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-green-darkester;
         }
     }
 
     // Orange
     &-orange {
-        border-left-color: $color-orange-500;
+        border-left-color: $ux-core-color-orange;
 
-        &-300 {
-            border-left-color: $color-orange-300;
+        &-lightester {
+            border-left-color: $ux-core-color-orange-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-orange-400;
+        &-lightest {
+            border-left-color: $ux-core-color-orange-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-orange-600;
+        &-lighter {
+            border-left-color: $ux-core-color-orange-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-orange-700;
+        &-light {
+            border-left-color: $ux-core-color-orange-light;
         }
 
-        &-800 {
-            border-left-color: $color-orange-800;
+        &-dark {
+            border-left-color: $ux-core-color-orange-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-orange-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-orange-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-orange-darkest;
         }
     }
 
     // Brown
     &-brown {
-        border-left-color: $color-brown-500;
+        border-left-color: $ux-core-color-brown;
 
-        &-300 {
-            border-left-color: $color-brown-300;
+        &-lightester {
+            border-left-color: $ux-core-color-brown-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-brown-400;
+        &-lightest {
+            border-left-color: $ux-core-color-brown-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-brown-600;
+        &-lighter {
+            border-left-color: $ux-core-color-brown-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-brown-700;
+        &-light {
+            border-left-color: $ux-core-color-brown-light;
         }
 
-        &-800 {
-            border-left-color: $color-brown-800;
+        &-dark {
+            border-left-color: $ux-core-color-brown-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-brown-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-brown-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-brown-darkester;
         }
     }
 
     // Grey
     &-grey {
-        border-left-color: $color-grey-500;
+        border-left-color: $ux-core-color-grey;
 
-        &-300 {
-            border-left-color: $color-grey-300;
+        &-lightester {
+            border-left-color: $ux-core-color-grey-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-grey-400;
+        &-lightest {
+            border-left-color: $ux-core-color-grey-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-grey-600;
+        &-lighter {
+            border-left-color: $ux-core-color-grey-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-grey-700;
+        &-light {
+            border-left-color: $ux-core-color-grey-light;
         }
 
-        &-800 {
-            border-left-color: $color-grey-800;
+        &-dark {
+            border-left-color: $ux-core-color-grey-dark;
         }
+
+        &-darker {
+            border-left-color: $ux-core-color-grey-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-grey-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-grey-darkester;
+        }        
     }
 
     // Slate
     &-slate {
-        border-left-color: $color-slate-500;
+        border-left-color: $ux-core-color-slate;
 
-        &-300 {
-            border-left-color: $color-slate-300;
+        &-lightester {
+            border-left-color: $ux-core-color-slate-lightester;
         }
 
-        &-400 {
-            border-left-color: $color-slate-400;
+        &-lightest {
+            border-left-color: $ux-core-color-slate-lightest;
         }
 
-        &-600 {
-            border-left-color: $color-slate-600;
+        &-lighter {
+            border-left-color: $ux-core-color-slate-lighter;
         }
 
-        &-700 {
-            border-left-color: $color-slate-700;
+        &-light {
+            border-left-color: $ux-core-color-slate-light;
         }
 
-        &-800 {
-            border-left-color: $color-slate-800;
+        &-dark {
+            border-left-color: $ux-core-color-slate-dark;
+        }
+
+        &-darker {
+            border-left-color: $ux-core-color-slate-darker;
+        }
+
+        &-darkest {
+            border-left-color: $ux-core-color-slate-darkest;
+        }
+
+        &-darkester {
+            border-left-color: $ux-core-color-slate-darkester;
         }
     }
 
     // White
     &-white {
         border-left-color: #fff;
+    }
+
+    // Default grey
+    &-default {
+        border-left-color: $panel-default-border;
     }
 }
 
@@ -2814,407 +3405,604 @@ $panel-default-border: #999;
 
     // Primary
     &-primary {
-        border-right-color: $color-primary-500;
+        border-right-color: $ux-core-color-primary;
 
-        &-300 {
-            border-right-color: $color-primary-300;
+        &-lightester {
+            border-right-color: $ux-core-color-primary-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-primary-400;
+        &-lightest {
+            border-right-color: $ux-core-color-primary-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-primary-600;
+        &-lighter {
+            border-right-color: $ux-core-color-primary-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-primary-700;
+        &-light {
+            border-right-color: $ux-core-color-primary-light;
         }
 
-        &-800 {
-            border-right-color: $color-primary-800;
+        &-dark {
+            border-right-color: $ux-core-color-primary-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-primary-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-primary-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-primary-darkester;
         }
     }
 
     // Danger
     &-danger {
-        border-right-color: $color-danger-500;
+        border-right-color: $ux-core-color-danger;
 
-        &-300 {
-            border-right-color: $color-danger-300;
+        &-lightester {
+            border-right-color: $ux-core-color-danger-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-danger-400;
+        &-lightest {
+            border-right-color: $ux-core-color-danger-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-danger-600;
+        &-lighter {
+            border-right-color: $ux-core-color-danger-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-danger-700;
+        &-light {
+            border-right-color: $ux-core-color-danger-light;
         }
 
-        &-800 {
-            border-right-color: $color-danger-800;
+        &-dark {
+            border-right-color: $ux-core-color-danger-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-danger-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-danger-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-danger-darkester;
         }
     }
 
     // Success
     &-success {
-        border-right-color: $color-success-500;
+        border-right-color: $ux-core-color-success;
 
-        &-300 {
-            border-right-color: $color-success-300;
+        &-lightester {
+            border-right-color: $ux-core-color-success-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-success-400;
+        &-lightest {
+            border-right-color: $ux-core-color-success-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-success-600;
+        &-lighter {
+            border-right-color: $ux-core-color-success-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-success-700;
+        &-light {
+            border-right-color: $ux-core-color-success-light;
         }
 
-        &-800 {
-            border-right-color: $color-success-800;
+        &-dark {
+            border-right-color: $ux-core-color-success-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-success-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-success-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-success-darkester;
         }
     }
 
     // Warning
     &-warning {
-        border-right-color: $color-warning-500;
+        border-right-color: $ux-core-color-warning;
 
-        &-300 {
-            border-right-color: $color-warning-300;
+        &-lightester {
+            border-right-color: $ux-core-color-warning-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-warning-400;
+        &-lightest {
+            border-right-color: $ux-core-color-warning-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-warning-600;
+        &-lighter {
+            border-right-color: $ux-core-color-warning-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-warning-700;
+        &-light {
+            border-right-color: $ux-core-color-warning-light;
         }
 
-        &-800 {
-            border-right-color: $color-warning-800;
+        &-dark {
+            border-right-color: $ux-core-color-warning-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-warning-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-warning-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-warning-darkester;
         }
     }
 
     // Info
     &-info {
-        border-right-color: $color-info-500;
+        border-right-color: $ux-core-color-info;
 
-        &-300 {
-            border-right-color: $color-info-300;
+        &-lightester {
+            border-right-color: $ux-core-color-info-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-info-400;
+        &-lightest {
+            border-right-color: $ux-core-color-info-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-info-600;
+        &-lighter {
+            border-right-color: $ux-core-color-info-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-info-700;
+        &-light {
+            border-right-color: $ux-core-color-info-light;
         }
 
-        &-800 {
-            border-right-color: $color-info-800;
+        &-dark {
+            border-right-color: $ux-core-color-info-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-info-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-info-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-info-darkester;
         }
     }
 
     // Pink
     &-pink {
-        border-right-color: $color-pink-500;
+        border-right-color: $ux-core-color-pink;
 
-        &-300 {
-            border-right-color: $color-pink-300;
+        &-lightester {
+            border-right-color: $ux-core-color-pink-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-pink-400;
+        &-lightest {
+            border-right-color: $ux-core-color-pink-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-pink-600;
+        &-lighter {
+            border-right-color: $ux-core-color-pink-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-pink-700;
+        &-light {
+            border-right-color: $ux-core-color-pink-light;
         }
 
-        &-800 {
-            border-right-color: $color-pink-800;
+        &-dark {
+            border-right-color: $ux-core-color-pink-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-pink-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-pink-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-pink-darkest;
         }
     }
 
     // Violet
     &-violet {
-        border-right-color: $color-violet-500;
+        border-right-color: $ux-core-color-violet;
 
-        &-300 {
-            border-right-color: $color-violet-300;
+        &-lightester {
+            border-right-color: $ux-core-color-violet-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-violet-400;
+        &-lightest {
+            border-right-color: $ux-core-color-violet-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-violet-600;
+        &-lighter {
+            border-right-color: $ux-core-color-violet-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-violet-700;
+        &-light {
+            border-right-color: $ux-core-color-violet-light;
         }
 
-        &-800 {
-            border-right-color: $color-violet-800;
+        &-dark {
+            border-right-color: $ux-core-color-violet-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-violet-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-violet-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-violet-darkester;
         }
     }
 
     // Purple
     &-purple {
-        border-right-color: $color-purple-500;
+        border-right-color: $ux-core-color-purple;
 
-        &-300 {
-            border-right-color: $color-purple-300;
+        &-lightester {
+            border-right-color: $ux-core-color-purple-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-purple-400;
+        &-lightest {
+            border-right-color: $ux-core-color-purple-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-purple-600;
+        &-lighter {
+            border-right-color: $ux-core-color-purple-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-purple-700;
+        &-light {
+            border-right-color: $ux-core-color-purple-light;
         }
 
-        &-800 {
-            border-right-color: $color-purple-800;
+        &-dark {
+            border-right-color: $ux-core-color-purple-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-purple-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-purple-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-purple-darkester;
         }
     }
 
     // Indino
     &-indigo {
-        border-right-color: $color-indigo-500;
+        border-right-color: $ux-core-color-indigo;
 
-        &-300 {
-            border-right-color: $color-indigo-300;
+        &-lightester {
+            border-right-color: $ux-core-color-indigo-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-indigo-400;
+        &-lightest {
+            border-right-color: $ux-core-color-indigo-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-indigo-600;
+        &-lighter {
+            border-right-color: $ux-core-color-indigo-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-indigo-700;
+        &-light {
+            border-right-color: $ux-core-color-indigo-light;
         }
 
-        &-800 {
-            border-right-color: $color-indigo-800;
+        &-dark {
+            border-right-color: $ux-core-color-indigo-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-indigo-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-indigo-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-indigo-darkester;
         }
     }
 
     // Blue
     &-blue {
-        border-right-color: $color-blue-500;
+        border-right-color: $ux-core-color-blue;
 
-        &-300 {
-            border-right-color: $color-blue-300;
+        &-lightester {
+            border-right-color: $ux-core-color-blue-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-blue-400;
+        &-lightest {
+            border-right-color: $ux-core-color-blue-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-blue-600;
+        &-lighter {
+            border-right-color: $ux-core-color-blue-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-blue-700;
+        &-light {
+            border-right-color: $ux-core-color-blue-light;
         }
 
-        &-800 {
-            border-right-color: $color-blue-800;
+        &-dark {
+            border-right-color: $ux-core-color-blue-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-blue-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-blue-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-blue-darkester;
         }
     }
 
     // Teal
     &-teal {
-        border-right-color: $color-teal-500;
+        border-right-color: $ux-core-color-teal;
 
-        &-300 {
-            border-right-color: $color-teal-300;
+        &-lightester {
+            border-right-color: $ux-core-color-teal-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-teal-400;
+        &-lightest {
+            border-right-color: $ux-core-color-teal-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-teal-600;
+        &-lighter {
+            border-right-color: $ux-core-color-teal-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-teal-700;
+        &-light {
+            border-right-color: $ux-core-color-teal-light;
         }
 
-        &-800 {
-            border-right-color: $color-teal-800;
+        &-dark {
+            border-right-color: $ux-core-color-teal-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-teal-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-teal-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-teal-darkester;
         }
     }
 
     // Green
     &-green {
-        border-right-color: $color-green-500;
+        border-right-color: $ux-core-color-green;
 
-        &-300 {
-            border-right-color: $color-green-300;
+        &-lightester {
+            border-right-color: $ux-core-color-green-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-green-400;
+        &-lightest {
+            border-right-color: $ux-core-color-green-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-green-600;
+        &-lighter {
+            border-right-color: $ux-core-color-green-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-green-700;
+        &-light {
+            border-right-color: $ux-core-color-green-light;
         }
 
-        &-800 {
-            border-right-color: $color-green-800;
+        &-dark {
+            border-right-color: $ux-core-color-green-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-green-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-green-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-green-darkester;
         }
     }
 
     // Orange
     &-orange {
-        border-right-color: $color-orange-500;
+        border-right-color: $ux-core-color-orange;
 
-        &-300 {
-            border-right-color: $color-orange-300;
+        &-lightester {
+            border-right-color: $ux-core-color-orange-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-orange-400;
+        &-lightest {
+            border-right-color: $ux-core-color-orange-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-orange-600;
+        &-lighter {
+            border-right-color: $ux-core-color-orange-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-orange-700;
+        &-light {
+            border-right-color: $ux-core-color-orange-light;
         }
 
-        &-800 {
-            border-right-color: $color-orange-800;
+        &-dark {
+            border-right-color: $ux-core-color-orange-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-orange-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-orange-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-orange-darkest;
         }
     }
 
     // Brown
     &-brown {
-        border-right-color: $color-brown-500;
+        border-right-color: $ux-core-color-brown;
 
-        &-300 {
-            border-right-color: $color-brown-300;
+        &-lightester {
+            border-right-color: $ux-core-color-brown-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-brown-400;
+        &-lightest {
+            border-right-color: $ux-core-color-brown-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-brown-600;
+        &-lighter {
+            border-right-color: $ux-core-color-brown-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-brown-700;
+        &-light {
+            border-right-color: $ux-core-color-brown-light;
         }
 
-        &-800 {
-            border-right-color: $color-brown-800;
+        &-dark {
+            border-right-color: $ux-core-color-brown-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-brown-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-brown-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-brown-darkester;
         }
     }
 
     // Grey
     &-grey {
-        border-right-color: $color-grey-500;
+        border-right-color: $ux-core-color-grey;
 
-        &-300 {
-            border-right-color: $color-grey-300;
+        &-lightester {
+            border-right-color: $ux-core-color-grey-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-grey-400;
+        &-lightest {
+            border-right-color: $ux-core-color-grey-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-grey-600;
+        &-lighter {
+            border-right-color: $ux-core-color-grey-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-grey-700;
+        &-light {
+            border-right-color: $ux-core-color-grey-light;
         }
 
-        &-800 {
-            border-right-color: $color-grey-800;
+        &-dark {
+            border-right-color: $ux-core-color-grey-dark;
         }
+
+        &-darker {
+            border-right-color: $ux-core-color-grey-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-grey-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-grey-darkester;
+        }        
     }
 
     // Slate
     &-slate {
-        border-right-color: $color-slate-500;
+        border-right-color: $ux-core-color-slate;
 
-        &-300 {
-            border-right-color: $color-slate-300;
+        &-lightester {
+            border-right-color: $ux-core-color-slate-lightester;
         }
 
-        &-400 {
-            border-right-color: $color-slate-400;
+        &-lightest {
+            border-right-color: $ux-core-color-slate-lightest;
         }
 
-        &-600 {
-            border-right-color: $color-slate-600;
+        &-lighter {
+            border-right-color: $ux-core-color-slate-lighter;
         }
 
-        &-700 {
-            border-right-color: $color-slate-700;
+        &-light {
+            border-right-color: $ux-core-color-slate-light;
         }
 
-        &-800 {
-            border-right-color: $color-slate-800;
+        &-dark {
+            border-right-color: $ux-core-color-slate-dark;
+        }
+
+        &-darker {
+            border-right-color: $ux-core-color-slate-darker;
+        }
+
+        &-darkest {
+            border-right-color: $ux-core-color-slate-darkest;
+        }
+
+        &-darkester {
+            border-right-color: $ux-core-color-slate-darkester;
         }
     }
 
     // White
     &-white {
         border-right-color: #fff;
+    }
+
+    // Default grey
+    &-default {
+        border-right-color: $panel-default-border;
     }
 }
 
@@ -3227,46 +4015,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-primary-500!important;
+            color: $ux-core-color-primary!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-primary-500!important;
+                color: $ux-core-color-primary-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-primary-400!important;
+                color: $ux-core-color-primary-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-primary-600!important;
+                color: $ux-core-color-primary-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-primary-700!important;
+                color: $ux-core-color-primary-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-primary-800!important;
+                color: $ux-core-color-primary-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-primary-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-primary-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-primary-darkester!important;
             }
         }
     }
@@ -3276,46 +4088,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-danger-500!important;
+            color: $ux-core-color-danger!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-danger-300!important;
+                color: $ux-core-color-danger-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-danger-400!important;
+                color: $ux-core-color-danger-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-danger-600!important;
+                color: $ux-core-color-danger-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-danger-700!important;
+                color: $ux-core-color-danger-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-danger-800!important;
+                color: $ux-core-color-danger-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-danger-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-danger-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-danger-darkester!important;
             }
         }
     }
@@ -3325,46 +4161,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-success-500!important;
+            color: $ux-core-color-success!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-success-300!important;
+                color: $ux-core-color-success-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-success-400!important;
+                color: $ux-core-color-success-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-success-600!important;
+                color: $ux-core-color-success-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-success-700!important;
+                color: $ux-core-color-success-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-success-800!important;
+                color: $ux-core-color-success-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-success-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-success-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-success-darkester!important;
             }
         }
     }
@@ -3374,46 +4234,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-warning-500!important;
+            color: $ux-core-color-warning!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-warning-300!important;
+                color: $ux-core-color-warning-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-warning-400!important;
+                color: $ux-core-color-warning-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-warning-600!important;
+                color: $ux-core-color-warning-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-warning-700!important;
+                color: $ux-core-color-warning-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-warning-800!important;
+                color: $ux-core-color-warning-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-warning-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-warning-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-warning-darkester!important;
             }
         }
     }
@@ -3423,46 +4307,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-info-500!important;
+            color: $ux-core-color-info!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-info-300!important;
+                color: $ux-core-color-info-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-info-400!important;
+                color: $ux-core-color-info-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-info-600!important;
+                color: $ux-core-color-info-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-info-700!important;
+                color: $ux-core-color-info-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-info-800!important;
+                color: $ux-core-color-info-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-info-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-info-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-info-darkester!important;
             }
         }
     }
@@ -3472,46 +4380,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-pink-500!important;
+            color: $ux-core-color-pink!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-pink-300!important;
+                color: $ux-core-color-pink-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-pink-400!important;
+                color: $ux-core-color-pink-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-pink-600!important;
+                color: $ux-core-color-pink-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-pink-700!important;
+                color: $ux-core-color-pink-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-pink-800!important;
+                color: $ux-core-color-pink-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-pink-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-pink-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-pink-darkester!important;
             }
         }
     }
@@ -3521,46 +4453,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-violet-500!important;
+            color: $ux-core-color-violet!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-violet-300!important;
+                color: $ux-core-color-violet-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-violet-400!important;
+                color: $ux-core-color-violet-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-violet-600!important;
+                color: $ux-core-color-violet-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-violet-700!important;
+                color: $ux-core-color-violet-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-violet-800!important;
+                color: $ux-core-color-violet-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-violet-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-violet-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-violet-darkester!important;
             }
         }
     }
@@ -3570,46 +4526,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-purple-500!important;
+            color: $ux-core-color-purple!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-purple-300!important;
+                color: $ux-core-color-purple-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-purple-400!important;
+                color: $ux-core-color-purple-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-purple-600!important;
+                color: $ux-core-color-purple-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-purple-700!important;
+                color: $ux-core-color-purple-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-purple-800!important;
+                color: $ux-core-color-purple-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-purple-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-purple-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-purple-darkester!important;
             }
         }
     }
@@ -3619,46 +4599,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-indigo-500!important;
+            color: $ux-core-color-indigo!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-indigo-300!important;
+                color: $ux-core-color-indigo-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-indigo-400!important;
+                color: $ux-core-color-indigo-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-indigo-600!important;
+                color: $ux-core-color-indigo-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-indigo-700!important;
+                color: $ux-core-color-indigo-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-indigo-800!important;
+                color: $ux-core-color-indigo-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-indigo-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-indigo-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-indigo-darkester!important;
             }
         }
     }
@@ -3668,46 +4672,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-blue-500!important;
+            color: $ux-core-color-blue!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-blue-300!important;
+                color: $ux-core-color-blue-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-blue-400!important;
+                color: $ux-core-color-blue-lightest!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-blue-600!important;
+                color: $ux-core-color-blue-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-blue-700!important;
+                color: $ux-core-color-blue-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-blue-800!important;
+                color: $ux-core-color-blue-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-blue-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-blue-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-blue-darkester!important;
             }
         }
     }
@@ -3717,46 +4745,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-teal-500!important;
+            color: $ux-core-color-teal!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-teal-300!important;
+                color: $ux-core-color-teal-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-teal-400!important;
+                color: $ux-core-color-teal-lighter!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-teal-600!important;
+                color: $ux-core-color-teal-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-teal-700!important;
+                color: $ux-core-color-teal-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-teal-800!important;
+                color: $ux-core-color-teal-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-teal-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-teal-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-teal-darkester!important;
             }
         }
     }
@@ -3766,46 +4818,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-green-500!important;
+            color: $ux-core-color-green!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-green-300!important;
+                color: $ux-core-color-green-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-green-400!important;
+                color: $ux-core-color-green-lighter!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-green-600!important;
+                color: $ux-core-color-green-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-green-700!important;
+                color: $ux-core-color-green-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-green-800!important;
+                color: $ux-core-color-green-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-green-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-green-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-green-darkester!important;
             }
         }
     }
@@ -3815,46 +4891,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-orange-500!important;
+            color: $ux-core-color-orange!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-orange-300!important;
+                color: $ux-core-color-orange-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-orange-400!important;
+                color: $ux-core-color-orange-lighter!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-orange-600!important;
+                color: $ux-core-color-orange-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-orange-700!important;
+                color: $ux-core-color-orange-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-orange-800!important;
+                color: $ux-core-color-orange-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-orange-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-orange-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-orange-darkester!important;
             }
         }
     }
@@ -3864,46 +4964,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-brown-500!important;
+            color: $ux-core-color-brown!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-brown-300!important;
+                color: $ux-core-color-brown-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-brown-400!important;
+                color: $ux-core-color-brown-lighter!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-brown-600!important;
+                color: $ux-core-color-brown-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-brown-700!important;
+                color: $ux-core-color-brown-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-brown-800!important;
+                color: $ux-core-color-brown-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-brown-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-brown-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-brown-darkester!important;
             }
         }
     }
@@ -3913,46 +5037,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-grey-500!important;
+            color: $ux-core-color-grey!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-grey-300!important;
+                color: $ux-core-color-grey-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-grey-400!important;
+                color: $ux-core-color-grey-lighter!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-grey-600!important;
+                color: $ux-core-color-grey-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-grey-700!important;
+                color: $ux-core-color-grey-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-grey-800!important;
+                color: $ux-core-color-grey-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-grey-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-grey-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-grey-darkester!important;
             }
         }
     }
@@ -3962,46 +5110,70 @@ $panel-default-border: #999;
         &,
         &:hover,
         &:focus {
-            color: $color-slate-500!important;
+            color: $ux-core-color-slate!important;
         }
 
-        &-300 {
+        &-lightester {
             &,
             &:hover,
             &:focus {
-                color: $color-slate-300!important;
+                color: $ux-core-color-slate-lightester!important;
             }
         }
 
-        &-400 {
+        &-lightest {
             &,
             &:hover,
             &:focus {
-                color: $color-slate-400!important;
+                color: $ux-core-color-slate-lighter!important;
             }
         }
 
-        &-600 {
+        &-lighter {
             &,
             &:hover,
             &:focus {
-                color: $color-slate-600!important;
+                color: $ux-core-color-slate-lighter!important;
             }
         }
 
-        &-700 {
+        &-light {
             &,
             &:hover,
             &:focus {
-                color: $color-slate-700!important;
+                color: $ux-core-color-slate-light!important;
             }
         }
 
-        &-800 {
+        &-dark {
             &,
             &:hover,
             &:focus {
-                color: $color-slate-800!important;
+                color: $ux-core-color-slate-dark!important;
+            }
+        }
+
+        &-darker {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-slate-darker!important;
+            }
+        }
+
+        &-darkest {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-slate-darkest!important;
+            }
+        }
+
+        &-darkester {
+            &,
+            &:hover,
+            &:focus {
+                color: $ux-core-color-slate-darkester!important;
             }
         }
     }
