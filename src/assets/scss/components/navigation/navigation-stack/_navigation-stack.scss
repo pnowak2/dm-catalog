@@ -1,10 +1,10 @@
-$navigation-stack-bg: #263238;
+$navigation-stack-bg: $ux-core-color-slate-darkester;
 
 $navigation-item-text-color: rgba(255, 255, 255, .92);
 $navigation-item-bg-hover: darken($navigation-stack-bg, 4%);
 $navigation-item-opened-bg: $brand-primary;
 
-.asm-navigation-stack {
+.ux-navigation-stack {
   background-color: $navigation-stack-bg;
   list-style-type: none;
   margin: 0;
@@ -19,25 +19,25 @@ $navigation-item-opened-bg: $brand-primary;
     box-shadow: 0 1px 0 rgba(255, 255, 255, .03);
     display: none;
 
-    .asm-navigation-item {
+    .ux-navigation-item {
       padding-left: 48px;
       font-weight: 200;
     }
   }
 
   & &__subitems &__subitems {
-    .asm-navigation-item {
+    .ux-navigation-item {
       padding-left: 60px;
     }
 
-    .asm-navigation-item__label {
+    .ux-navigation-item__label {
       text-transform: none;
       font-weight: 200;
     }   
   }
 
   & &__subitems &__subitems &__subitems {
-    .asm-navigation-item {
+    .ux-navigation-item {
       padding-left: 80px;
     }
   }
@@ -47,21 +47,21 @@ $navigation-item-opened-bg: $brand-primary;
   }
 
   & > &__row--active > {
-    .asm-navigation-item--has-subitems {
+    .ux-navigation-item--has-subitems {
       background-color: $navigation-item-opened-bg;
     }
   }
 
   &__row--active > {
-    .asm-navigation-item--has-subitems {
+    .ux-navigation-item--has-subitems {
       background-color: rgba(0, 0, 0, .1);
     }
 
-    .asm-navigation-item:after {
+    .ux-navigation-item:after {
       transform: rotate(90deg);
     }
 
-    .asm-navigation-stack__subitems {
+    .ux-navigation-stack__subitems {
       display: block;
     }
   }

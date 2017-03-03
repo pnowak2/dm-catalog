@@ -1,28 +1,28 @@
-.asm-navigation-stack {
+.ux-navigation-stack {
   &--closed {
     width: 56px;
 
-    > .asm-navigation-stack__row > {
+    > .ux-navigation-stack__row > {
 
-      .asm-navigation-category {
+      .ux-navigation-category {
         text-align: center;
 
-        .asm-navigation-category__label {
+        .ux-navigation-category__label {
           display: none;    
         }
 
-        .asm-navigation-category__icon {
+        .ux-navigation-category__icon {
           display: inline-block;
         }
       }
 
-      .asm-navigation-item {
+      .ux-navigation-item {
         text-align: center;
         padding-left: 0;
         padding-right: 0;
         overflow: visible;
 
-        .asm-navigation-item__label {
+        .ux-navigation-item__label {
           display: none;
           position: absolute;
           width: 260px;
@@ -39,44 +39,44 @@
           text-overflow: ellipsis
         }
 
-        .asm-navigation-item__icon {
+        .ux-navigation-item__icon {
           margin-left: 0;
           margin-right: 0;
         }
       }
 
-      .asm-navigation-stack__subitems {
+      .ux-navigation-stack__subitems {
         display: none;
         position: absolute;
         width: 260px;
         left: 100%;
       }
 
-      .asm-navigation-item--has-subitems:after {
+      .ux-navigation-item--has-subitems:after {
         display: none
       }
     }
 
-    > .asm-navigation-stack__row:hover > {
+    > .ux-navigation-stack__row:hover > {
 
-      .asm-navigation-item .asm-navigation-item__label {
+      .ux-navigation-item .ux-navigation-item__label {
         display: inline;
       }
 
-      .asm-navigation-stack__subitems {
+      .ux-navigation-stack__subitems {
         display: block;
       }
     }
 
-    .asm-navigation-stack__subitems .asm-navigation-item {
+    .ux-navigation-stack__subitems .ux-navigation-item {
       padding-left: 22px;
     }
 
-    .asm-navigation-stack__subitems .asm-navigation-stack__subitems .asm-navigation-item {
+    .ux-navigation-stack__subitems .ux-navigation-stack__subitems .ux-navigation-item {
       padding-left: 32px;
     }
 
-    .asm-navigation-stack__subitems .asm-navigation-stack__subitems .asm-navigation-stack__subitems .asm-navigation-item {
+    .ux-navigation-stack__subitems .ux-navigation-stack__subitems .ux-navigation-stack__subitems .ux-navigation-item {
       padding-left: 42px;
     }
   }
