@@ -1,15 +1,160 @@
-$brand-primary: $color-primary-500;
-$brand-success: $color-success-500;
-$brand-info: $color-info-500;
-$brand-warning: $color-warning-500;
-$brand-danger: $color-danger-500;
+$ux-core-color-text: $color-grey-900;
+$ux-core-color-body-bg: $color-grey-50;
 
-$gray-base: #000;
-$gray-darker: lighten($gray-base, 13.5%); // #222
-$gray-dark: lighten($gray-base, 20%);   // #333
-$gray: lighten($gray-base, 33.5%); // #555
-$gray-light: lighten($gray-base, 46.7%); // #777
-$gray-lighter: lighten($gray-base, 93.5%); // #eee
+$ux-core-color-primary: $color-primary-500;
+$ux-core-color-primary-dark: $color-primary-600;
+$ux-core-color-primary-darker: $color-primary-700;
+$ux-core-color-primary-darkest: $color-primary-800;
+$ux-core-color-primary-darkester: $color-primary-900;
+$ux-core-color-primary-light: $color-primary-400;
+$ux-core-color-primary-lighter: $color-primary-300;
+$ux-core-color-primary-lightest: $color-primary-200;
+$ux-core-color-primary-lightester: $color-primary-100;
 
-$text-color: $gray-dark;
-$body-bg: $gray-lighter;
+$ux-core-color-danger: $color-danger-500;
+$ux-core-color-danger-dark: $color-danger-600;
+$ux-core-color-danger-darker: $color-danger-700;
+$ux-core-color-danger-darkest: $color-danger-800;
+$ux-core-color-danger-darkester: $color-danger-900;
+$ux-core-color-danger-light: $color-danger-400;
+$ux-core-color-danger-lighter: $color-danger-300;
+$ux-core-color-danger-lightest: $color-danger-200;
+$ux-core-color-danger-lightester: $color-danger-100;
+
+$ux-core-color-success: $color-success-500;
+$ux-core-color-success-dark: $color-success-600;
+$ux-core-color-success-darker: $color-success-700;
+$ux-core-color-success-darkest: $color-success-800;
+$ux-core-color-success-darkester: $color-success-900;
+$ux-core-color-success-light: $color-success-400;
+$ux-core-color-success-lighter: $color-success-300;
+$ux-core-color-success-lightest: $color-success-200;
+$ux-core-color-success-lightester: $color-success-100;
+
+$ux-core-color-warning: $color-warning-500;
+$ux-core-color-warning-dark: $color-warning-600;
+$ux-core-color-warning-darker: $color-warning-700;
+$ux-core-color-warning-darkest: $color-warning-800;
+$ux-core-color-warning-darkester: $color-warning-900;
+$ux-core-color-warning-light: $color-warning-400;
+$ux-core-color-warning-lighter: $color-warning-300;
+$ux-core-color-warning-lightest: $color-warning-200;
+$ux-core-color-warning-lightester: $color-warning-100;
+
+$ux-core-color-info: $color-info-500;
+$ux-core-color-info-dark: $color-info-600;
+$ux-core-color-info-darker: $color-info-700;
+$ux-core-color-info-darkest: $color-info-800;
+$ux-core-color-info-darkester: $color-info-900;
+$ux-core-color-info-light: $color-info-400;
+$ux-core-color-info-lighter: $color-info-300;
+$ux-core-color-info-lightest: $color-info-200;
+$ux-core-color-info-lightester: $color-info-100;
+
+$ux-core-color-pink: $color-pink-500;
+$ux-core-color-pink-dark: $color-pink-600;
+$ux-core-color-pink-darker: $color-pink-700;
+$ux-core-color-pink-darkest: $color-pink-800;
+$ux-core-color-pink-darkester: $color-pink-900;
+$ux-core-color-pink-light: $color-pink-400;
+$ux-core-color-pink-lighter: $color-pink-300;
+$ux-core-color-pink-lightest: $color-pink-200;
+$ux-core-color-pink-lightester: $color-pink-100;
+
+$ux-core-color-violet: $color-violet-500;
+$ux-core-color-violet-dark: $color-violet-600;
+$ux-core-color-violet-darker: $color-violet-700;
+$ux-core-color-violet-darkest: $color-violet-800;
+$ux-core-color-violet-darkester: $color-violet-900;
+$ux-core-color-violet-light: $color-violet-400;
+$ux-core-color-violet-lighter: $color-violet-300;
+$ux-core-color-violet-lightest: $color-violet-200;
+$ux-core-color-violet-lightester: $color-violet-100;
+
+$ux-core-color-purple: $color-purple-500;
+$ux-core-color-purple-dark: $color-purple-600;
+$ux-core-color-purple-darker: $color-purple-700;
+$ux-core-color-purple-darkest: $color-purple-800;
+$ux-core-color-purple-darkester: $color-purple-900;
+$ux-core-color-purple-light: $color-purple-400;
+$ux-core-color-purple-lighter: $color-purple-300;
+$ux-core-color-purple-lightest: $color-purple-200;
+$ux-core-color-purple-lightester: $color-purple-100;
+
+$ux-core-color-indigo: $color-indigo-500;
+$ux-core-color-indigo-dark: $color-indigo-600;
+$ux-core-color-indigo-darker: $color-indigo-700;
+$ux-core-color-indigo-darkest: $color-indigo-800;
+$ux-core-color-indigo-darkester: $color-indigo-900;
+$ux-core-color-indigo-light: $color-indigo-400;
+$ux-core-color-indigo-lighter: $color-indigo-300;
+$ux-core-color-indigo-lightest: $color-indigo-200;
+$ux-core-color-indigo-lightester: $color-indigo-100;
+
+$ux-core-color-blue: $color-blue-500;
+$ux-core-color-blue-dark: $color-blue-600;
+$ux-core-color-blue-darker: $color-blue-700;
+$ux-core-color-blue-darkest: $color-blue-800;
+$ux-core-color-blue-darkester: $color-blue-900;
+$ux-core-color-blue-light: $color-blue-400;
+$ux-core-color-blue-lighter: $color-blue-300;
+$ux-core-color-blue-lightest: $color-blue-200;
+$ux-core-color-blue-lightester: $color-blue-100;
+
+$ux-core-color-teal: $color-teal-500;
+$ux-core-color-teal-dark: $color-teal-600;
+$ux-core-color-teal-darker: $color-teal-700;
+$ux-core-color-teal-darkest: $color-teal-800;
+$ux-core-color-teal-darkester: $color-teal-900;
+$ux-core-color-teal-light: $color-teal-400;
+$ux-core-color-teal-lighter: $color-teal-300;
+$ux-core-color-teal-lightest: $color-teal-200;
+$ux-core-color-teal-lightester: $color-teal-100;
+
+$ux-core-color-green: $color-green-500;
+$ux-core-color-green-dark: $color-green-600;
+$ux-core-color-green-darker: $color-green-700;
+$ux-core-color-green-darkest: $color-green-800;
+$ux-core-color-green-darkester: $color-green-900;
+$ux-core-color-green-light: $color-green-400;
+$ux-core-color-green-lighter: $color-green-300;
+$ux-core-color-green-lightest: $color-green-200;
+$ux-core-color-green-lightester: $color-green-100;
+
+$ux-core-color-orange: $color-orange-500;
+$ux-core-color-orange-dark: $color-orange-600;
+$ux-core-color-orange-darker: $color-orange-700;
+$ux-core-color-orange-darkest: $color-orange-800;
+$ux-core-color-orange-darkester: $color-orange-900;
+$ux-core-color-orange-light: $color-orange-400;
+$ux-core-color-orange-lighter: $color-orange-300;
+$ux-core-color-orange-lightest: $color-orange-200;
+$ux-core-color-orange-lightester: $color-orange-100;
+
+$ux-core-color-brown: $color-brown-500;
+$ux-core-color-brown-dark: $color-brown-600;
+$ux-core-color-brown-darker: $color-brown-700;
+$ux-core-color-brown-darkest: $color-brown-800;
+$ux-core-color-brown-darkester: $color-brown-900;
+$ux-core-color-brown-light: $color-brown-400;
+$ux-core-color-brown-lighter: $color-brown-300;
+$ux-core-color-brown-lightest: $color-brown-200;
+$ux-core-color-brown-lightester: $color-brown-100;
+
+$ux-core-color-grey: $color-grey-500;
+$ux-core-color-grey-dark: $color-grey-600;
+$ux-core-color-grey-darker: $color-grey-700;
+$ux-core-color-grey-darkester: $color-grey-900;
+$ux-core-color-grey-light: $color-grey-400;
+$ux-core-color-grey-lighter: $color-grey-300;
+$ux-core-color-grey-lightest: $color-grey-200;
+$ux-core-color-grey-lightester: $color-grey-100;
+
+$ux-core-color-slate: $color-slate-500;
+$ux-core-color-slate-dark: $color-slate-600;
+$ux-core-color-slate-darker: $color-slate-700;
+$ux-core-color-slate-darkester: $color-slate-900;
+$ux-core-color-slate-light: $color-slate-400;
+$ux-core-color-slate-lighter: $color-slate-300;
+$ux-core-color-slate-lightest: $color-slate-200;
+$ux-core-color-slate-lightester: $color-slate-100;
