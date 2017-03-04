@@ -1,4 +1,4 @@
-@include MQ(L) {
+@include media-breakpoint-down(md) {
   .ux-c-navigation-stack\@small {
     display: block;
   }
