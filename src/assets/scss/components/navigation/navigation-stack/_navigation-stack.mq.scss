@@ -1,3 +1,5 @@
-@include MQ(S) {
-
+@include MQ(L) {
+  .ux-c-navigation-stack\@small {
+    display: block;
+  }
 }
