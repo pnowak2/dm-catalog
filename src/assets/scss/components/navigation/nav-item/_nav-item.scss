@@ -1,5 +1,5 @@
-.ux-c-navigation-item {
-  color: $navigation-item-text-color;
+.ux-c-nav-item {
+  color: $nav-item-text-color;
   display: block;
   overflow: hidden;
   padding: 12px 20px 12px 20px;
@@ -13,8 +13,8 @@
   line-height: 1.2;
 
   &:hover {
-    background-color: $navigation-item-bg-hover;
-    color: $navigation-item-text-color;
+    background-color: $nav-item-bg-hover;
+    color: $nav-item-text-color;
     text-decoration: none;
   }
 
