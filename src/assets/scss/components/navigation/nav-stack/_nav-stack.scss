@@ -1,11 +1,11 @@
-$nav-stack-bg: $ux-core-color-slate-darkester;
+$ux-nav-stack-bg: $ux-core-color-slate-darkester;
 
-$nav-item-text-color: rgba(255, 255, 255, .92);
-$nav-item-bg-hover: darken($nav-stack-bg, 4%);
-$nav-item-opened-bg: $brand-primary;
+$ux-nav-item-text: rgba(255, 255, 255, .92);
+$ux-nav-item-bg-hover: darken($ux-nav-stack-bg, 4%);
+$ux-nav-item-bg-opened: $brand-primary;
 
 .ux-c-nav-stack {
-  background-color: $nav-stack-bg;
+  background-color: $ux-nav-stack-bg;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -48,7 +48,7 @@ $nav-item-opened-bg: $brand-primary;
 
   & > &__row--active > {
     .ux-c-nav-item--has-subitems {
-      background-color: $nav-item-opened-bg;
+      background-color: $ux-nav-item-bg-opened;
     }
   }
 
