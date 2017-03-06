@@ -1,6 +1,6 @@
 .ux-c-sidebar {
   &--closed {
-    width: 56px;
+    width: $ux-sidebar-closed-width;
 
     .ux-c-sidebar__category:not(.ux-c-sidebar__category--visible) {
       display: none;
@@ -30,7 +30,7 @@
           .ux-c-nav-item__label {
             display: none;
             position: absolute;
-            width: 260px;
+            width: $ux-sidebar-width;
             left: 100%;
             top: 0;
             padding-top: 14px;
@@ -53,7 +53,7 @@
         .ux-c-nav-stack__subitems {
           display: none;
           position: absolute;
-          width: 260px;
+          width: $ux-sidebar-width;
           left: 100%;
         }
 

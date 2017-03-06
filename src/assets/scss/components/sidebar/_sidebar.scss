@@ -1,6 +1,6 @@
 .ux-c-sidebar {
   background-color: $ux-sidebar-bg;
-  width: 280px;
+  width: $ux-sidebar-width;
 
   &__category-header {
     border-bottom: 1px solid rgba(255,255,255,.1);
