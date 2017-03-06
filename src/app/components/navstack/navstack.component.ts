@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'asm-sidebar',
-  templateUrl: './sidebar.component.html',
+  selector: 'asm-navstack',
+  templateUrl: './navstack.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class SidebarComponent implements OnInit {
+export class NavstackComponent implements OnInit {
   closed = false;
 
   constructor() { }

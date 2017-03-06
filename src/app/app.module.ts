@@ -7,18 +7,18 @@ import { DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavstackComponent } from './components/navstack/navstack.component';
 import { FamilyBarDemoComponent } from './catalog/family-bar-demo/family-bar-demo.component';
 import { ButtonsDemoComponent } from './catalog/buttons-demo/buttons-demo.component';
-import { SidebarDemoComponent } from './catalog/sidebar-demo/sidebar-demo.component';
+import { NavstackDemoComponent } from './catalog/navstack-demo/navstack-demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FamilyBarDemoComponent,
     ButtonsDemoComponent,
-    SidebarComponent,
-    SidebarDemoComponent,
+    NavstackComponent,
+    NavstackDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { SidebarDemoComponent } from './catalog/sidebar-demo/sidebar-demo.compon
     RouterModule.forRoot([
       { path: 'demo/family-bar', component: FamilyBarDemoComponent },
       { path: 'demo/buttons', component: ButtonsDemoComponent },
-      { path: 'demo/sidebar', component: SidebarDemoComponent },
+      { path: 'demo/navstack', component: NavstackDemoComponent },
     ])
   ],
   providers: [
