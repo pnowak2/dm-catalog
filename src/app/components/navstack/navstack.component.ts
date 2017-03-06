@@ -6,15 +6,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class NavstackComponent implements OnInit {
-  closed = false;
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  toggleClosed() {
-    console.log('toggle')
-    this.closed = !this.closed;
   }
 }
