@@ -1,9 +1,3 @@
-$ux-nav-stack-bg: $ux-core-color-slate-darkester;
-
-$ux-nav-item-text: rgba(255, 255, 255, .92);
-$ux-nav-item-bg-hover: darken($ux-nav-stack-bg, 4%);
-$ux-nav-item-bg-opened: $brand-primary;
-
 .ux-c-nav-stack {
   background-color: $ux-nav-stack-bg;
   list-style-type: none;
