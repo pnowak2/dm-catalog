@@ -2,7 +2,11 @@
   &--closed {
     width: 56px;
 
-    > .ux-c-nav-stack {
+    .ux-c-sidebar__category:not(.ux-c-sidebar__category--visible) {
+      display: none;
+    }
+
+    .ux-c-nav-stack {
       > .ux-c-nav-stack__row > {
 
         .ux-c-nav-category {

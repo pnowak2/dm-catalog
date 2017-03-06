@@ -3,8 +3,25 @@
   width: 280px;
 
   &__category-header {
-    padding: 12px 46px 12px 20px;
     border-bottom: 1px solid rgba(255,255,255,.1);
+    padding: 12px 46px 12px 20px;
+    position: relative;
+
+    &:after {
+      color: #fff;
+      content: "\e9c1";
+      cursor: pointer;
+      display: block;
+      font-family: icomoon;
+      font-size: 16px;
+      line-height: 1;
+      margin-top: -8px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: rotate(0);
+      transition: transform .2s ease-in-out;
+    }
   }
 
   &__category-title {
