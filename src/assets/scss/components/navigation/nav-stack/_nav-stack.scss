@@ -37,6 +37,7 @@
 
   &__row {
     position: relative;
+    list-style-type: none;
   }
 
   & > &__row--active > {

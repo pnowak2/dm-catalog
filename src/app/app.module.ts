@@ -16,6 +16,7 @@ import { SidebarDemoComponent } from './catalog/sidebar-demo/sidebar-demo.compon
 import { NavItemComponent } from './components/navstack/nav-item/nav-item.component';
 import { NavCategoryComponent } from './components/navstack/nav-category/nav-category.component';
 import { NavDividerComponent } from './components/navstack/nav-divider/nav-divider.component';
+import { NavSubitemsComponent } from './components/navstack/nav-subitems/nav-subitems.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NavDividerComponent } from './components/navstack/nav-divider/nav-divid
     NavItemComponent,
     NavCategoryComponent,
     NavDividerComponent,
+    NavSubitemsComponent,
   ],
   imports: [
     BrowserModule,
