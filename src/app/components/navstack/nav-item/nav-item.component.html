@@ -1,13 +1,8 @@
-<li class="ux-c-nav-stack__row"
-    [class.ux-c-nav-stack__row--active]="isOpened">
-
-  <a [class.ux-c-nav-item--has-subitems]="hasSubitems" 
-     [class.ux-c-nav-item--is-opened]="isOpened" 
-     class="ux-c-nav-item" 
-     href="#"
-     (click)="onItemClicked($event)">
-     <i *ngIf="icon" class="{{ icon }} ux-c-nav-item__icon"></i>
-     <span class="ux-c-nav-item__label">{{ title }}</span>
-  </a>
-  <ng-content></ng-content>
-</li>
+<a [class.ux-c-nav-item--has-subitems]="hasSubitems" 
+   [class.ux-c-nav-item--is-opened]="isOpened" 
+   class="ux-c-nav-item" 
+   href="#"
+   (click)="onItemClicked($event)">
+   <i *ngIf="icon" class="{{ icon }} ux-c-nav-item__icon"></i>
+   <span class="ux-c-nav-item__label">{{ title }}</span>
+</a>

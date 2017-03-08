@@ -1,34 +1,17 @@
 <ul class="ux-c-nav-stack">
-  <asm-nav-category title="Dashboards"></asm-nav-category>
-  <asm-nav-item title="Home" icon="icon-home4"></asm-nav-item>
-  <asm-nav-item title="Search" icon="icon-search4"></asm-nav-item>
-  <asm-nav-item title="Tarification" icon="icon-coin-euro" [hasSubitems]="true" [isOpened]="true">
-    <asm-nav-subitems>
-      <asm-nav-item title="Supervisor"></asm-nav-item>
-      <asm-nav-item title="Medical Officer" [hasSubitems]="true">
-        <asm-nav-subitems>
-          <asm-nav-item title="Paper Claims" icon="icon-star-empty3 ux-o-text-orange-lightest"></asm-nav-item>
-          <asm-nav-item title="Online Claims" icon="icon-star-full2 ux-o-text-orange-lightest" [hasSubitems]="true">
-            <asm-nav-subitems>
-              <asm-nav-item title="Needs Acceptance"></asm-nav-item>
-              <asm-nav-item title="Accepted"></asm-nav-item>
-              <asm-nav-divider></asm-nav-divider>
-              <asm-nav-item title="Rejected"></asm-nav-item>
-              <asm-nav-item title="Waiting for tarification"></asm-nav-item>
-            </asm-nav-subitems>
-          </asm-nav-item>
-        </asm-nav-subitems>
-      </asm-nav-item>
-    </asm-nav-subitems>
-  </asm-nav-item>
+  <li class="ux-c-nav-stack__row">
+    <asm-nav-category title="Dashboards"></asm-nav-category>
+  </li>
 
-  <asm-nav-category title="My Bookmarks"></asm-nav-category>
-  <asm-nav-item title="Waiting list" icon="icon-alarm"></asm-nav-item>
-  <asm-nav-item title="To be printed" icon="icon-printer"></asm-nav-item>
-  <asm-nav-category title="Administration"></asm-nav-category>
-  <asm-nav-item title="System modules" icon="icon-grid6" [hasSubitems]="true">
+  <li class="ux-c-nav-stack__row">
+    <asm-nav-item title="Home" icon="icon-home4"></asm-nav-item>
+  </li>
+  <li class="ux-c-nav-stack__row ux-c-nav-stack__row--active">
+    <asm-nav-item title="Search" icon="icon-search4" [hasSubitems]="true" [isOpened]="true"></asm-nav-item>
     <asm-nav-subitems>
-      <asm-nav-item title="Medicines" icon="icon-aid-kit"></asm-nav-item>
+      <li class="ux-c-nav-stack__row">
+        <asm-nav-item title="Inner"></asm-nav-item>
+      </li>
     </asm-nav-subitems>
-  </asm-nav-item>
+  </li>
 </ul>
