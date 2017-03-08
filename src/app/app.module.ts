@@ -11,6 +11,8 @@ import { NavstackComponent } from './components/navstack/navstack.component';
 import { FamilyBarDemoComponent } from './catalog/family-bar-demo/family-bar-demo.component';
 import { ButtonsDemoComponent } from './catalog/buttons-demo/buttons-demo.component';
 import { NavstackDemoComponent } from './catalog/navstack-demo/navstack-demo.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SidebarDemoComponent } from './catalog/sidebar-demo/sidebar-demo.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { NavstackDemoComponent } from './catalog/navstack-demo/navstack-demo.com
     ButtonsDemoComponent,
     NavstackComponent,
     NavstackDemoComponent,
+    SidebarComponent,
+    SidebarDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,7 @@ import { NavstackDemoComponent } from './catalog/navstack-demo/navstack-demo.com
       { path: 'demo/family-bar', component: FamilyBarDemoComponent },
       { path: 'demo/buttons', component: ButtonsDemoComponent },
       { path: 'demo/navstack', component: NavstackDemoComponent },
+      { path: 'demo/sidebar', component: SidebarDemoComponent },
     ])
   ],
   providers: [
