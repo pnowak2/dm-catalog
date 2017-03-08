@@ -3,23 +3,23 @@
   <asm-nav-item title="Home" icon="icon-home4"></asm-nav-item>
   <asm-nav-item title="Search" icon="icon-search4"></asm-nav-item>
   <asm-nav-item title="Tarification" icon="icon-coin-euro" [hasSubitems]="true" [isOpened]="true">
-    <ul class="ux-c-nav-stack__subitems">
+    <asm-nav-subitems>
       <asm-nav-item title="Supervisor"></asm-nav-item>
       <asm-nav-item title="Medical Officer" [hasSubitems]="true">
-        <ul class="ux-c-nav-stack__subitems">
+        <asm-nav-subitems>
           <asm-nav-item title="Paper Claims" icon="icon-star-empty3 ux-o-text-orange-lightest"></asm-nav-item>
           <asm-nav-item title="Online Claims" icon="icon-star-full2 ux-o-text-orange-lightest" [hasSubitems]="true">
-            <ul class="ux-c-nav-stack__subitems">
+            <asm-nav-subitems>
               <asm-nav-item title="Needs Acceptance"></asm-nav-item>
               <asm-nav-item title="Accepted"></asm-nav-item>
               <asm-nav-divider></asm-nav-divider>
               <asm-nav-item title="Rejected"></asm-nav-item>
               <asm-nav-item title="Waiting for tarification"></asm-nav-item>
-            </ul>
+            </asm-nav-subitems>
           </asm-nav-item>
-        </ul>
+        </asm-nav-subitems>
       </asm-nav-item>
-    </ul>
+    </asm-nav-subitems>
   </asm-nav-item>
 
   <asm-nav-category title="My Bookmarks"></asm-nav-category>
@@ -27,8 +27,8 @@
   <asm-nav-item title="To be printed" icon="icon-printer"></asm-nav-item>
   <asm-nav-category title="Administration"></asm-nav-category>
   <asm-nav-item title="System modules" icon="icon-grid6" [hasSubitems]="true">
-    <ul class="ux-c-nav-stack__subitems">
+    <asm-nav-subitems>
       <asm-nav-item title="Medicines" icon="icon-aid-kit"></asm-nav-item>
-    </ul>
+    </asm-nav-subitems>
   </asm-nav-item>
 </ul>

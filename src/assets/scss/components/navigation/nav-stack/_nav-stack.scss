@@ -46,7 +46,7 @@
     }
   }
 
-  &__row--active > {
+  &__row--active > * > {
     .ux-c-nav-item--has-subitems {
       background-color: rgba(0, 0, 0, .1);
     }
