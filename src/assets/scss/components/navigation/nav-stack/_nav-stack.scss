@@ -3,43 +3,4 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-
-  &__row {
-    position: relative;
-
-    .ux-c-nav-stack__subitems {
-      display: none;
-    }
-  }
-
-  &__row--active > * > {
-    .ux-c-nav-stack__subitems {
-      display: block;
-    }
-  }
-
-  & &__subitems {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: darken(#263238, 2%);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, .03);
-
-    .ux-c-nav-item {
-      padding-left: 48px;
-      font-weight: 200;
-    }
-  }
-
-  & &__subitems &__subitems {
-    .ux-c-nav-item {
-      padding-left: 60px;
-    } 
-  }
-
-  & &__subitems &__subitems &__subitems {
-    .ux-c-nav-item {
-      padding-left: 80px;
-    }
-  }
 }
