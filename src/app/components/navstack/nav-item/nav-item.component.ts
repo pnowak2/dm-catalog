@@ -10,7 +10,7 @@ export class NavItemComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
   @Input() hasSubitems: boolean;
-  @Input() isOpened: boolean;
+  @Input() isActive: boolean;
 
   constructor() { }
 
@@ -21,7 +21,7 @@ export class NavItemComponent implements OnInit {
     e.preventDefault();
     if(this.hasSubitems) {
 
-    this.isOpened = !this.isOpened;
+    this.isActive = !this.isActive;
     }
   }
 
