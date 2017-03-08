@@ -10,6 +10,7 @@ export class NavItemComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
   @Input() hasSubitems: boolean;
+  @Input() isOpened: boolean;
 
   constructor() { }
 

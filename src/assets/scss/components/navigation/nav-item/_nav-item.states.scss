@@ -16,4 +16,12 @@
     transform: rotate(0);
     transition: transform .2s ease-in-out;
   }
+
+  &--is-opened {
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  &--is-opened.ux-c-nav-item--has-subitems:after {
+    transform: rotate(90deg);
+  }
 }
