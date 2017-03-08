@@ -12,6 +12,11 @@
   white-space: nowrap;
   line-height: 1.2;
 
+  &:visited, &:active, &:focus {
+    color: $ux-nav-item-text;
+    text-decoration: none;
+  }
+
   &:hover {
     background-color: $ux-nav-item-bg-hover;
     color: $ux-nav-item-text;

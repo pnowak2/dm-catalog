@@ -1,9 +1,7 @@
 <a [class.ux-c-nav-item--has-subitems]="hasSubitems" 
    [class.ux-c-nav-item--is-opened]="isOpened" 
    class="ux-c-nav-item" 
-   href="#">
-  <i *ngIf="icon" class="{{ icon }} ux-c-nav-item__icon"></i>
-  <span class="ux-c-nav-item__label">
-    {{ title }}
-  </span>
+   href="#"
+   (click)="onItemClicked($event)">
+  <i *ngIf="icon" class="{{ icon }} ux-c-nav-item__icon"></i><span class="ux-c-nav-item__label">{{ title }}</span>
 </a>

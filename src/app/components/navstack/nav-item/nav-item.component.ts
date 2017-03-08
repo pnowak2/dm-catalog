@@ -17,4 +17,9 @@ export class NavItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  onItemClicked(e) {
+    e.preventDefault();
+    this.isOpened = !this.isOpened;
+  }
+
 }
