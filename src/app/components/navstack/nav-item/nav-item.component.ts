@@ -19,7 +19,10 @@ export class NavItemComponent implements OnInit {
 
   onItemClicked(e) {
     e.preventDefault();
+    if(this.hasSubitems) {
+
     this.isOpened = !this.isOpened;
+    }
   }
 
 }
