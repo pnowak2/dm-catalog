@@ -1,3 +1,27 @@
 .ux-c-icons-list {
- 
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 0;
+  list-style: none;
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 13px;
+  }
+
+  &__link:after {
+    content: '\e9c1';
+    min-width: 16px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: icomoon;
+    font-size: 16px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
