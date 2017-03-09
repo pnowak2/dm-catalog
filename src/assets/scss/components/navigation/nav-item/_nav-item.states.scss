@@ -29,5 +29,21 @@
     transform: rotate(90deg);
   }
 
+  .ux-is-closed & {
+    text-align: center;
+    padding-left: 12px;
+    padding-right: 12px;
 
+    &__label {
+      display: none;
+    }
+
+    &__icon {
+      margin: 0;
+    }
+
+    &--has-subitems:after {
+      display: none;
+    }
+  }
 }
