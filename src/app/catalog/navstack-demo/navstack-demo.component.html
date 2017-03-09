@@ -1,17 +1,36 @@
 <h3>Navstack</h3>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quae, sit ullam eaque enim praesentium sint, vero magnam iure
-  illum eum, doloribus! Ea doloribus, at magnam nihil vero iste voluptate.
-</p>
 
-<asm-navstack></asm-navstack>
+<asm-navstack>
+  <asm-nav-category title="Dashboards"></asm-nav-category>
+  <asm-nav-item title="Home" icon="icon-home4"></asm-nav-item>
+  <asm-nav-item title="Search" icon="icon-search4"></asm-nav-item>
+  <asm-nav-item title="Tarification" icon="icon-coin-euro" [hasSubitems]="true" [isActive]="true">
+    <asm-nav-item title="Supervisor"></asm-nav-item>
+    <asm-nav-item title="Medical Officer" [hasSubitems]="true">
+      <asm-nav-item title="Paper Claims" icon="icon-star-empty3 ux-o-text-orange-lightest"></asm-nav-item>
+      <asm-nav-item title="Online Claims" icon="icon-star-full2 ux-o-text-orange-lightest" [hasSubitems]="true">
+        <asm-nav-item title="Needs Acceptance"></asm-nav-item>
+        <asm-nav-item title="Accepted"></asm-nav-item>
+        <asm-nav-divider></asm-nav-divider>
+        <asm-nav-item title="Rejected"></asm-nav-item>
+        <asm-nav-item title="Waiting for tarification"></asm-nav-item>
+      </asm-nav-item>
+    </asm-nav-item>
+  </asm-nav-item>
+
+  <asm-nav-category title="My Bookmarks"></asm-nav-category>
+  <asm-nav-item title="Waiting list" icon="icon-alarm"></asm-nav-item>
+  <asm-nav-item title="To be printed" icon="icon-printer"></asm-nav-item>
+  <asm-nav-category title="Administration"></asm-nav-category>
+  <asm-nav-item title="System modules" icon="icon-grid6" [hasSubitems]="true">
+    <asm-nav-item title="Medicines" icon="icon-aid-kit"></asm-nav-item>
+  </asm-nav-item>
+</asm-navstack>
 
 <h5>nav Category</h5>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quae praesentium veniam molestiae? Praesentium dolorem animi
-  velit labore est distinctio asperiores ad minus reprehenderit deleniti, ab veritatis, modi quae ullam.</p>
-  <div class="card card-primary">
-    <asm-nav-category title="Dashboards"></asm-nav-category>
-  </div>
+<div class="card card-primary">
+  <asm-nav-category title="Dashboards"></asm-nav-category>
+</div>
 
 <h5>nav Item</h5>
 <div class="card card-primary">
