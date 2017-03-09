@@ -1,6 +1,5 @@
 .ux-c-sidebar {
-
-  &.ux-is-closed {
+  .ux-is-closed & {
     width: $ux-sidebar-closed-width;
   }
 
