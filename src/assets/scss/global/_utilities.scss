@@ -1,3 +1,26 @@
-.ux-u-no-padding {
-  padding: 0 !important;
+.ux-u- {
+  &no-padding {
+    padding: 0 !important;
+  }
+
+  &rotate-45 {
+    transform: rotate(45deg);
+  }
+  &rotate-90 {
+    transform: rotate(90deg);
+  }
+  &rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  &rotate-45-inverse {
+    transform: rotate(-45deg);
+  }
+  &rotate-90-inverse {
+    transform: rotate(-90deg);
+  }
+  &rotate-180-inverse {
+    transform: rotate(-180deg);
+  }
 }
+
