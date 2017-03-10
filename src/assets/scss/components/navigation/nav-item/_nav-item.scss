@@ -1,15 +1,14 @@
 .ux-c-nav-item {
+  display: flex;
+  align-items: center;
   color: $ux-nav-item-text;
-  display: block;
-  overflow: hidden;
-  padding: 12px 20px 12px 20px;
+  padding: 16px 20px 16px 20px;
   position: relative;
   text-decoration: none;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
+
   transition: background-color .3s;
   user-select: none;
-  white-space: nowrap;
+
   line-height: 1.2;
 
   &:visited, &:active, &:focus {
@@ -35,6 +34,9 @@
     font-size: 13px;
     font-weight: 500;
     text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   &__subitems {
