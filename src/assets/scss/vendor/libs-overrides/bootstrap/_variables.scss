@@ -1,8 +1,19 @@
-$brand-primary: $ux-core-color-primary;
-$brand-success: $ux-core-color-success;
-$brand-info: $ux-core-color-info;
-$brand-warning: $ux-core-color-warning;
-$brand-danger: $ux-core-color-danger;
+$white:  $ux-core-color-white !default;
+$black:  $ux-core-color-black !default;
+$red:    $ux-core-color-red !default;
+$orange: $ux-core-color-orange !default;
+$yellow: $ux-core-color-yellow !default;
+$green:  $ux-core-color-green !default;
+$blue:   $ux-core-color-blue !default;
+$teal:   $ux-core-color-teal !default;
+$pink:   $ux-core-color-pink !default;
+$purple: $ux-core-color-purple !default;
+
+$brand-primary: $ux-core-color-primary !default;
+$brand-success: $ux-core-color-success !default;
+$brand-info: $ux-core-color-info !default;
+$brand-warning: $ux-core-color-warning !default;
+$brand-danger: $ux-core-color-danger !default;
 
 $body-bg:       darken($ux-core-color-body-bg, 3%) !default;
 $body-color:    $ux-core-color-text !default;

@@ -1,8 +1,11 @@
-$color-types: primary danger success warning info pink violet purple indigo blue teal green orange brown grey slate;
+$color-types: primary danger success warning info red yellow pink violet purple indigo blue teal green orange brown grey slate;
 $color-shades: dark darker darkest darkester light lighter lightest lightester lightester-2;
 
 $ux-core-color-text: $color-grey-900 !default;
 $ux-core-color-body-bg: $color-grey-50 !default;
+
+$ux-core-color-white: #fff;
+$ux-core-color-black: #000;
 
 $ux-core-color-primary: $color-primary-500 !default;
 $ux-core-color-primary-dark: $color-primary-600 !default;
@@ -58,6 +61,28 @@ $ux-core-color-info-lighter: $color-info-300 !default;
 $ux-core-color-info-lightest: $color-info-200 !default;
 $ux-core-color-info-lightester: $color-info-100 !default;
 $ux-core-color-info-lightester-2: $color-info-50 !default;
+
+$ux-core-color-red: $color-red-500 !default;
+$ux-core-color-red-dark: $color-red-600 !default;
+$ux-core-color-red-darker: $color-red-700 !default;
+$ux-core-color-red-darkest: $color-red-800 !default;
+$ux-core-color-red-darkester: $color-red-900 !default;
+$ux-core-color-red-light: $color-red-400 !default;
+$ux-core-color-red-lighter: $color-red-300 !default;
+$ux-core-color-red-lightest: $color-red-200 !default;
+$ux-core-color-red-lightester: $color-red-100 !default;
+$ux-core-color-red-lightester-2: $color-red-50 !default;
+
+$ux-core-color-yellow: $color-yellow-500 !default;
+$ux-core-color-yellow-dark: $color-yellow-600 !default;
+$ux-core-color-yellow-darker: $color-yellow-700 !default;
+$ux-core-color-yellow-darkest: $color-yellow-800 !default;
+$ux-core-color-yellow-darkester: $color-yellow-900 !default;
+$ux-core-color-yellow-light: $color-yellow-400 !default;
+$ux-core-color-yellow-lighter: $color-yellow-300 !default;
+$ux-core-color-yellow-lightest: $color-yellow-200 !default;
+$ux-core-color-yellow-lightester: $color-yellow-100 !default;
+$ux-core-color-yellow-lightester-2: $color-yellow-50 !default;
 
 $ux-core-color-pink: $color-pink-500 !default;
 $ux-core-color-pink-dark: $color-pink-600 !default;
@@ -246,6 +271,28 @@ $ux-colors: (
     pink-darker: $ux-core-color-pink-darker,
     pink-darkest: $ux-core-color-pink-darkest,
     pink-darkester: $ux-core-color-pink-darkester,
+
+    red: $ux-core-color-red,
+    red-light: $ux-core-color-red-light,
+    red-lighter: $ux-core-color-red-lighter,
+    red-lightest: $ux-core-color-red-lightest,
+    red-lightester: $ux-core-color-red-lightester,
+    red-lightester-2: $ux-core-color-red-lightester-2,
+    red-dark: $ux-core-color-red-dark,
+    red-darker: $ux-core-color-red-darker,
+    red-darkest: $ux-core-color-red-darkest,
+    red-darkester: $ux-core-color-red-darkester,
+
+    yellow: $ux-core-color-yellow,
+    yellow-light: $ux-core-color-yellow-light,
+    yellow-lighter: $ux-core-color-yellow-lighter,
+    yellow-lightest: $ux-core-color-yellow-lightest,
+    yellow-lightester: $ux-core-color-yellow-lightester,
+    yellow-lightester-2: $ux-core-color-yellow-lightester-2,
+    yellow-dark: $ux-core-color-yellow-dark,
+    yellow-darker: $ux-core-color-yellow-darker,
+    yellow-darkest: $ux-core-color-yellow-darkest,
+    yellow-darkester: $ux-core-color-yellow-darkester,
 
     violet: $ux-core-color-violet,
     violet-light: $ux-core-color-violet-light,
