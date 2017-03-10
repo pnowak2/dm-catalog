@@ -1,5 +1,3 @@
-$panel-default-border: #999;
-
 @each $color-type in $color-types {
   .ux-o-color-#{$color-type} {
     color: get-color(#{$color-type}) !important;
