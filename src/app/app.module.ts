@@ -19,6 +19,8 @@ import { NavDividerComponent } from './components/nav-stack/nav-divider/nav-divi
 import { IconsComponent } from './components/icons/icons.component';
 import { IconsDemoComponent } from './catalog/icons-demo/icons-demo.component';
 import { TypographyDemoComponent } from './catalog/typography-demo/typography-demo.component';
+import { CardDemoComponent } from './catalog/card-demo/card-demo.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { TypographyDemoComponent } from './catalog/typography-demo/typography-de
     IconsComponent,
     IconsDemoComponent,
     TypographyDemoComponent,
+    CardDemoComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { TypographyDemoComponent } from './catalog/typography-demo/typography-de
       { path: 'demo/family-bar', component: FamilyBarDemoComponent },
       { path: 'demo/typography', component: TypographyDemoComponent },
       { path: 'demo/buttons', component: ButtonsDemoComponent },
+      { path: 'demo/card', component: CardDemoComponent },
       { path: 'demo/navstack', component: NavstackDemoComponent },
       { path: 'demo/sidebar', component: SidebarDemoComponent },
       { path: 'demo/icons', component: IconsDemoComponent },

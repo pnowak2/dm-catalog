@@ -1,0 +1,8 @@
+.card-header > {
+  .ux-o-heading-elements {
+    position: absolute;
+    top: 50%;
+    right: $card-spacer-y;
+    transform: translateY(-50%);
+  }
+}

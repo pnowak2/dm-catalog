@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+    {{ title }}
+    <small *ngIf="subtitle">{{ subtitle }}</small>
+    <div class="ux-o-heading-elements">
+      <asm-icons></asm-icons>
+    </div>
+  </div>
+  <div class="card-block">
+    <ng-content></ng-content>
+  </div>
+</div>
