@@ -18,7 +18,7 @@
     border-color: get-color(#{$color-type}) !important;
   }
   .ux-o-border-top-#{$color-type} {
-    border-color: get-color(#{$color-type}) !important;
+    border-top-color: get-color(#{$color-type}) !important;
   }
   .ux-o-border-bottom-#{$color-type} {
     border-bottom-color: get-color(#{$color-type}) !important;

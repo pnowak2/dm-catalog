@@ -1,12 +1,20 @@
 <div class="card">
+
   <div class="card-header">
-    {{ title }}
+    <i class="icon-cog3 mr-1"></i> {{ title }}
     <small *ngIf="subtitle">{{ subtitle }}</small>
     <div class="ux-o-heading-elements">
       <asm-icons></asm-icons>
     </div>
   </div>
+
   <div class="card-block">
     <ng-content></ng-content>
+  </div>
+
+  <div class="card-footer">
+    <div class="ux-o-heading-elements">
+      <span class="">Hello Footer</span>
+    </div>
   </div>
 </div>
