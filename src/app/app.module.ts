@@ -18,6 +18,7 @@ import { NavCategoryComponent } from './components/nav-stack/nav-category/nav-ca
 import { NavDividerComponent } from './components/nav-stack/nav-divider/nav-divider.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { IconsDemoComponent } from './catalog/icons-demo/icons-demo.component';
+import { TypographyComponent } from './catalog/typography/typography.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { IconsDemoComponent } from './catalog/icons-demo/icons-demo.component';
     NavDividerComponent,
     IconsComponent,
     IconsDemoComponent,
+    TypographyComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { IconsDemoComponent } from './catalog/icons-demo/icons-demo.component';
     FamilyCompositionModule,
     RouterModule.forRoot([
       { path: 'demo/family-bar', component: FamilyBarDemoComponent },
+      { path: 'demo/typography', component: TypographyComponent },
       { path: 'demo/buttons', component: ButtonsDemoComponent },
       { path: 'demo/navstack', component: NavstackDemoComponent },
       { path: 'demo/sidebar', component: SidebarDemoComponent },
