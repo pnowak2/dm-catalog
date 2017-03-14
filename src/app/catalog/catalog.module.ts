@@ -19,8 +19,8 @@ import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
 @NgModule({
   imports: [
     CommonModule,
-    ComponentsModule,
-    CatalogRoutingModule
+    CatalogRoutingModule,
+    ComponentsModule
   ],
   declarations: [
     CatalogComponent,

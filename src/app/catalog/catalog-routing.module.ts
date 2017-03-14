@@ -12,6 +12,7 @@ import { IconsDemoComponent } from './icons-demo/icons-demo.component';
 import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'catalog/typography', pathMatch: 'full' },
   {
     path: 'catalog', component: CatalogComponent, children: [
       { path: 'typography', component: TypographyDemoComponent },
