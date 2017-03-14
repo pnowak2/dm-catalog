@@ -4,9 +4,7 @@ import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer
 
 @Component({
   selector: 'ux-family-bar',
-  templateUrl: './family-bar.component.html',
-  styleUrls: ['./family-bar.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './family-bar.component.html'
 })
 export class FamilyBarComponent {
   @ViewChild('familyMembersScrollContainer') familyMembersScrollContainer: ElementRef;

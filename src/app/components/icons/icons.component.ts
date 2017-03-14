@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ux-icons',
-  templateUrl: './icons.component.html',
-  styleUrls: ['./icons.component.scss']
+  templateUrl: './icons.component.html'
 })
 export class IconsComponent implements OnInit {
 

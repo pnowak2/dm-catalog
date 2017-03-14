@@ -2,8 +2,7 @@ import { Component, HostListener, Input, Output, EventEmitter } from '@angular/c
 
 @Component({
   selector: 'ux-switch',
-  templateUrl: './switch.component.html',
-  styleUrls: ['./switch.component.scss'],
+  templateUrl: './switch.component.html'
 })
 export class SwitchComponent {
   @Input() checked = false;
