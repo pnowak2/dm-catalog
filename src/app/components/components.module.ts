@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 
-import { FamilyCompositionModule } from './family-composition/family-composition.module';
 import { CardModule } from './card/card.module';
-import { NavStackModule } from './nav-stack/nav-stack.module';
+import { FamilyCompositionModule } from './family-composition/family-composition.module';
 import { IconsModule } from './icons/icons.module';
+import { NavStackModule } from './nav-stack/nav-stack.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { SwitchModule } from './switch/switch.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FamilyCompositionModule,
-    CardModule
+    SharedModule
   ],
   declarations: [],
   providers: [],
