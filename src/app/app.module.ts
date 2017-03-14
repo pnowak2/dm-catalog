@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { AppRoutingModule }   from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { NavstackComponent } from './components/nav-stack/nav-stack/navstack.component';
 import { FamilyBarDemoComponent } from './catalog/family-bar-demo/family-bar-demo.component';
@@ -45,15 +47,7 @@ import { CardComponent } from './components/card/card.component';
     FormsModule,
     HttpModule,
     FamilyCompositionModule,
-    RouterModule.forRoot([
-      { path: 'demo/family-bar', component: FamilyBarDemoComponent },
-      { path: 'demo/typography', component: TypographyDemoComponent },
-      { path: 'demo/buttons', component: ButtonsDemoComponent },
-      { path: 'demo/card', component: CardDemoComponent },
-      { path: 'demo/navstack', component: NavstackDemoComponent },
-      { path: 'demo/sidebar', component: SidebarDemoComponent },
-      { path: 'demo/icons', component: IconsDemoComponent },
-    ])
+    AppRoutingModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-fr' },
