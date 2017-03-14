@@ -3,7 +3,7 @@ import { FamilyMemberModel } from '../model/family-member.model';
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'asm-family-bar',
+  selector: 'ux-family-bar',
   templateUrl: './family-bar.component.html',
   styleUrls: ['./family-bar.component.scss'],
   encapsulation: ViewEncapsulation.None

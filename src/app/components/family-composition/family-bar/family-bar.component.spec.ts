@@ -372,7 +372,7 @@ describe('FamilyBarComponent', () => {
     describe('Default Appearance', () => {
       it('should render proper root element', async(() => {
         const root = debugElement.query(
-          By.css('.asm-c-family-bar:first-child')
+          By.css('.ux-c-family-bar:first-child')
         );
         expect(root).not.toBeNull();
       }));
@@ -381,9 +381,9 @@ describe('FamilyBarComponent', () => {
         component.readOnly = true;
         fixture.detectChanges();
 
-        const el = debugElement.query(By.css('.asm-c-family-bar'));
+        const el = debugElement.query(By.css('.ux-c-family-bar'));
 
-        expect(el.classes['asm-c-family-bar--readonly']).toBeTruthy();
+        expect(el.classes['ux-c-family-bar--readonly']).toBeTruthy();
       });
     });
 
@@ -402,17 +402,17 @@ describe('FamilyBarComponent', () => {
       });
 
       it('should render the members container', () => {
-        const el = debugElement.query(By.css('.asm-c-family-bar__members-container'));
+        const el = debugElement.query(By.css('.ux-c-family-bar__members-container'));
         expect(el).not.toBeNull();
       });
 
       it('should properly render family members', () => {
-        const el = debugElement.queryAll(By.css('asm-family-member'));
+        const el = debugElement.queryAll(By.css('ux-family-member'));
         expect(el.length).toBe(3);
       });
 
       it('should properly pass properties to family members', () => {
-        const el = debugElement.queryAll(By.css('asm-family-member'));
+        const el = debugElement.queryAll(By.css('ux-family-member'));
         expect(el[0].properties['familyMember']).toEqual(one);
         expect(el[1].properties['familyMember']).toEqual(two);
         expect(el[2].properties['familyMember']).toEqual(three);
@@ -420,7 +420,7 @@ describe('FamilyBarComponent', () => {
 
       it('should trigger click event when family member clicked', () => {
         spyOn(component, 'handleMemberClicked');
-        const el = debugElement.queryAll(By.css('asm-family-member'));
+        const el = debugElement.queryAll(By.css('ux-family-member'));
 
         el[0].triggerEventHandler('click', null);
 
@@ -431,18 +431,18 @@ describe('FamilyBarComponent', () => {
         component.closed = false;
         fixture.detectChanges();
 
-        const el = debugElement.query(By.css('.asm-c-family-bar'));
+        const el = debugElement.query(By.css('.ux-c-family-bar'));
 
-        expect(el.classes['asm-c-family-bar--closed']).toBeFalsy();
+        expect(el.classes['ux-c-family-bar--closed']).toBeFalsy();
       });
 
       it('should be hidden if closed property is set true', () => {
         component.closed = true;
         fixture.detectChanges();
 
-        const el = debugElement.query(By.css('.asm-c-family-bar'));
+        const el = debugElement.query(By.css('.ux-c-family-bar'));
 
-        expect(el.classes['asm-c-family-bar--closed']).toBeTruthy();
+        expect(el.classes['ux-c-family-bar--closed']).toBeTruthy();
       });
     });
 
@@ -450,19 +450,19 @@ describe('FamilyBarComponent', () => {
       describe('Tab', () => {
         describe('General Appearance', () => {
           it('should render the container', () => {
-            const el = debugElement.query(By.css('.asm-c-family-bar__tab-button'));
+            const el = debugElement.query(By.css('.ux-c-family-bar__tab-button'));
             expect(el).not.toBeNull();
           });
 
           it('should render static label text', () => {
-            const el = debugElement.query(By.css('.asm-c-family-bar__tab-button'));
+            const el = debugElement.query(By.css('.ux-c-family-bar__tab-button'));
             expect(el.nativeElement.textContent).toContain('Family Composition');
           });
 
           it('should trigger click event', () => {
             spyOn(component, 'handleTabClicked');
 
-            const el = debugElement.query(By.css('.asm-c-family-bar__tab-button'));
+            const el = debugElement.query(By.css('.ux-c-family-bar__tab-button'));
             el.triggerEventHandler('click', null);
 
             expect(component.handleTabClicked).toHaveBeenCalled();
@@ -487,17 +487,17 @@ describe('FamilyBarComponent', () => {
             });
 
             it('should not render first name', () => {
-              const el = debugElement.query(By.css('.asm-c-family-bar__tab-member-first-name'));
+              const el = debugElement.query(By.css('.ux-c-family-bar__tab-member-first-name'));
               expect(el).toBeNull();
             });
 
             it('should not render last name', () => {
-              const el = debugElement.query(By.css('.asm-c-family-bar__tab-member-last-name'));
+              const el = debugElement.query(By.css('.ux-c-family-bar__tab-member-last-name'));
               expect(el).toBeNull();
             });
 
             it('should render member not selected label', () => {
-              const el = debugElement.query(By.css('.asm-c-family-bar__tab-member-not-selected'));
+              const el = debugElement.query(By.css('.ux-c-family-bar__tab-member-not-selected'));
               expect(el.nativeElement.textContent).toContain('(No selection)');
             });
           });
@@ -525,17 +525,17 @@ describe('FamilyBarComponent', () => {
             });
 
             it('should render first name of selected member', () => {
-              const el = debugElement.query(By.css('.asm-c-family-bar__tab-member-first-name'));
+              const el = debugElement.query(By.css('.ux-c-family-bar__tab-member-first-name'));
               expect(el.nativeElement.textContent).toContain('Piotr');
             });
 
             it('should render last name of selected member', () => {
-              const el = debugElement.query(By.css('.asm-c-family-bar__tab-member-last-name'));
+              const el = debugElement.query(By.css('.ux-c-family-bar__tab-member-last-name'));
               expect(el.nativeElement.textContent).toContain('Nowak');
             });
 
             it('should not render member not selected label', () => {
-              const el = debugElement.query(By.css('.asm-c-family-bar__tab-member-not-selected'));
+              const el = debugElement.query(By.css('.ux-c-family-bar__tab-member-not-selected'));
               expect(el).toBeNull();
             });
           });
@@ -560,7 +560,7 @@ describe('FamilyBarComponent', () => {
             component.familyMembers = [one, two, three];
             fixture.detectChanges();
 
-            const el = debugElement.query(By.css('.asm-c-family-bar__tab-title'));
+            const el = debugElement.query(By.css('.ux-c-family-bar__tab-title'));
 
             expect(el.nativeElement.textContent).toContain('1/3');
           });
@@ -569,7 +569,7 @@ describe('FamilyBarComponent', () => {
             component.familyMembers = [one, four, five];
             fixture.detectChanges();
 
-            const el = debugElement.query(By.css('.asm-c-family-bar__tab-title'));
+            const el = debugElement.query(By.css('.ux-c-family-bar__tab-title'));
 
             expect(el.nativeElement.textContent).toContain('3/3');
           });
@@ -578,7 +578,7 @@ describe('FamilyBarComponent', () => {
             component.familyMembers = [two, three];
             fixture.detectChanges();
 
-            const el = debugElement.query(By.css('.asm-c-family-bar__tab-title'));
+            const el = debugElement.query(By.css('.ux-c-family-bar__tab-title'));
 
             expect(el.nativeElement.textContent).toContain('0/2');
           });
@@ -594,7 +594,7 @@ describe('FamilyBarComponent', () => {
         it('should trigger click event for scroll left', () => {
           spyOn(component, 'handleScrollLeftClicked');
 
-          const el = debugElement.query(By.css('.asm-c-family-bar__scroll-left-container'));
+          const el = debugElement.query(By.css('.ux-c-family-bar__scroll-left-container'));
           const fakeEvent = {};
           el.triggerEventHandler('click', fakeEvent);
 
@@ -609,7 +609,7 @@ describe('FamilyBarComponent', () => {
         it('should trigger click event for scroll right', () => {
           spyOn(component, 'handleScrollRightClicked');
 
-          const el = debugElement.query(By.css('.asm-c-family-bar__scroll-right-container'));
+          const el = debugElement.query(By.css('.ux-c-family-bar__scroll-right-container'));
           const fakeEvent = {};
           el.triggerEventHandler('click', fakeEvent);
 
@@ -619,7 +619,7 @@ describe('FamilyBarComponent', () => {
 
       describe('Family+ Switch', () => {
         it('should render switch component', () => {
-          const el = debugElement.queryAll(By.css('asm-switch'));
+          const el = debugElement.queryAll(By.css('ux-switch'));
           expect(el.length).not.toBeNull();
         });
       });

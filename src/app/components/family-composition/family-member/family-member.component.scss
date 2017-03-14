@@ -18,12 +18,12 @@ $family-member-badge-comments-text-color: #ffcc00;
 $family-member-badge-covered-by-other-bg: #FF7043;
 $family-member-badge-covered-by-other-text-color: #FFF;
 
-@mixin asm-family-member-header-text {
+@mixin ux-family-member-header-text {
   font-size: .7em;
   color: $family-member-header-text-color;
 }
 
-.asm-c-family-member {
+.ux-c-family-member {
   font-size: 1rem;
   overflow: visible;
   transition: background-color .5s;
@@ -70,7 +70,7 @@ $family-member-badge-covered-by-other-text-color: #FFF;
   }
     
   &__member-type {
-    @include asm-family-member-header-text;
+    @include ux-family-member-header-text;
     float: left;
   }
 
@@ -82,7 +82,7 @@ $family-member-badge-covered-by-other-text-color: #FFF;
   }
   
   &__more-menu {
-    @include asm-family-member-header-text;
+    @include ux-family-member-header-text;
     float: right;
     position: relative;
     user-select: none;

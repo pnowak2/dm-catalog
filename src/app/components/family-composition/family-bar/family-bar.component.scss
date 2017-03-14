@@ -9,7 +9,7 @@ $family-bar-tab-button-border-color: #ddd;
 $family-bar-tab-member-name-color: #bbb;
 $family-bar-tab-family-plus-color: #bbb;
 
-.asm-c-family-bar { 
+.ux-c-family-bar { 
   font-size: 1rem;
 
   &__members-container {
@@ -144,11 +144,11 @@ $family-bar-tab-family-plus-color: #bbb;
     right: -3.5em;
   }
 
-  &--closed .asm-c-family-member {
+  &--closed .ux-c-family-member {
     visibility: hidden;
   }
 
-  &--readonly .asm-c-family-member {
+  &--readonly .ux-c-family-member {
     cursor: not-allowed;
   }
 }

@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angu
 import { FamilyMemberModel, CoverageType, Gender } from '../model/family-member.model';
 
 @Component({
-  selector: 'asm-family-member',
+  selector: 'ux-family-member',
   templateUrl: './family-member.component.html',
   styleUrls: ['./family-member.component.scss'],
   encapsulation: ViewEncapsulation.None

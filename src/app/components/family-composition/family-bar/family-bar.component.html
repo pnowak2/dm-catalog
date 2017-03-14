@@ -1,37 +1,37 @@
-<div class="asm-c-family-bar asm-c-family-bar"
-     [class.asm-c-family-bar--closed]="closed"
-     [class.asm-c-family-bar--readonly]="readOnly">
-  <div #familyMembersScrollContainer class="asm-c-family-bar__members-container">
-    <asm-family-member 
+<div class="ux-c-family-bar ux-c-family-bar"
+     [class.ux-c-family-bar--closed]="closed"
+     [class.ux-c-family-bar--readonly]="readOnly">
+  <div #familyMembersScrollContainer class="ux-c-family-bar__members-container">
+    <ux-family-member 
       *ngFor="let familyMember of familyBarMembers"
       [familyMember]="familyMember"
       (click)="handleMemberClicked(familyMember)">
-    </asm-family-member>
+    </ux-family-member>
   </div>
-  <div class="asm-c-family-bar__tab-container">
-    <div (click)="handleTabClicked($event)" class="asm-c-family-bar__tab-button">
-      <div (click)="handleScrollLeftClicked($event)" class="asm-c-family-bar__scroll-left-container">
+  <div class="ux-c-family-bar__tab-container">
+    <div (click)="handleTabClicked($event)" class="ux-c-family-bar__tab-button">
+      <div (click)="handleScrollLeftClicked($event)" class="ux-c-family-bar__scroll-left-container">
         <span class="fa fa-arrow-circle-left"></span>
       </div>
-      <div (click)="handleScrollRightClicked($event)" class="asm-c-family-bar__scroll-right-container">
+      <div (click)="handleScrollRightClicked($event)" class="ux-c-family-bar__scroll-right-container">
         <span class="fa fa-arrow-circle-right"></span>
       </div>
-      <div class="asm-c-family-bar__tab-title">
+      <div class="ux-c-family-bar__tab-title">
         Family Composition ({{ familyCoveredSize }}/{{ familySize }})
       </div>
-      <div class="asm-c-family-bar__tab-member">
+      <div class="ux-c-family-bar__tab-member">
         <span *ngIf="selectedMember"
-              class="asm-c-family-bar__tab-member-first-name">{{ selectedMember?.firstName }}</span>
+              class="ux-c-family-bar__tab-member-first-name">{{ selectedMember?.firstName }}</span>
         <span *ngIf="selectedMember"
-              class="asm-c-family-bar__tab-member-last-name">{{ selectedMember?.familyName }}</span>
+              class="ux-c-family-bar__tab-member-last-name">{{ selectedMember?.familyName }}</span>
         <span *ngIf="!selectedMember" 
-              class="asm-c-family-bar__tab-member-not-selected">(No selection)</span>
+              class="ux-c-family-bar__tab-member-not-selected">(No selection)</span>
       </div>
-      <span class="fa fa-caret-up asm-c-family-bar__tab-caret"></span>
+      <span class="fa fa-caret-up ux-c-family-bar__tab-caret"></span>
     </div>
-    <div class="asm-c-family-bar__family-plus-container">
-      <label class="asm-c-family-bar__family-plus-label">Family+</label>
-      <asm-switch></asm-switch>
+    <div class="ux-c-family-bar__family-plus-container">
+      <label class="ux-c-family-bar__family-plus-label">Family+</label>
+      <ux-switch></ux-switch>
     </div>
   </div>
 </div>

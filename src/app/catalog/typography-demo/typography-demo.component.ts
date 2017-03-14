@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'asm-typography',
+  selector: 'ux-typography',
   templateUrl: './typography-demo.component.html',
   styleUrls: ['./typography-demo.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'asm-buttons-demo',
+  selector: 'ux-buttons-demo',
   templateUrl: './buttons-demo.component.html',
   styleUrls: ['./buttons-demo.component.css']
 })

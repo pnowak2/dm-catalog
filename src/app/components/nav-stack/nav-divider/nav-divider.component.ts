@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'asm-nav-divider',
+  selector: 'ux-nav-divider',
   templateUrl: './nav-divider.component.html',
   styleUrls: ['./nav-divider.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'asm-nav-category',
+  selector: 'ux-nav-category',
   templateUrl: './nav-category.component.html',
   styleUrls: ['./nav-category.component.scss']
 })

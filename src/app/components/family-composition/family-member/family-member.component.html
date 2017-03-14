@@ -1,17 +1,17 @@
-<div class="asm-c-family-member"
-     [class.asm-c-family-member--selected]="familyMember.selected"
-     [class.asm-c-family-member--disabled]="familyMember.disabled">
-  <div class="asm-c-family-member__header">
-    <div class="asm-c-family-member__member-type">
-      <span class="asm-c-family-member__member-role">
-        <span class="asm-c-family-member__member-relation"
-              [class.asm-c-family-member__member-relation--ex]="familyMember.isExrelation">
+<div class="ux-c-family-member"
+     [class.ux-c-family-member--selected]="familyMember.selected"
+     [class.ux-c-family-member--disabled]="familyMember.disabled">
+  <div class="ux-c-family-member__header">
+    <div class="ux-c-family-member__member-type">
+      <span class="ux-c-family-member__member-role">
+        <span class="ux-c-family-member__member-relation"
+              [class.ux-c-family-member__member-relation--ex]="familyMember.isExrelation">
           {{ familyMember.relationName }}
         </span>
         
         <a *ngIf="familyMember.coveredByOtherAffiliate" 
           (click)="handleCustomerNumberClicked()"
-          class="asm-c-family-member__member-number"
+          class="ux-c-family-member__member-number"
           href="#">
           <span *ngIf="familyMember.personalNumber">#</span>{{ familyMember.personalNumber }}
         </a>
@@ -21,8 +21,8 @@
         </span>
       </span>
     </div>
-    <div class="asm-c-family-member__more-menu">
-        <a class="asm-c-family-member__more-menu-label" data-toggle="dropdown">
+    <div class="ux-c-family-member__more-menu">
+        <a class="ux-c-family-member__more-menu-label" data-toggle="dropdown">
           More <span class="fa fa-caret-down"></span>
         </a>
         <div class="dropdown-menu">
@@ -32,12 +32,12 @@
     </div>
   </div>
 
-  <div class="asm-c-family-member__data-section">
-    <div class="asm-c-family-member__person-name" [title]="fullName">
-      <span class="asm-c-family-member__person-first-name">{{ familyMember.firstName }}</span>
-      <span class="asm-c-family-member__person-last-name">{{ familyMember.familyName }}</span>
+  <div class="ux-c-family-member__data-section">
+    <div class="ux-c-family-member__person-name" [title]="fullName">
+      <span class="ux-c-family-member__person-first-name">{{ familyMember.firstName }}</span>
+      <span class="ux-c-family-member__person-last-name">{{ familyMember.familyName }}</span>
     </div>
-    <div class="asm-c-family-member__person-born">
+    <div class="ux-c-family-member__person-born">
       <i class="fa"
           [class.fa-mars]="isMale"
           [class.fa-venus]="isFemale"
@@ -50,35 +50,35 @@
     </div>
   </div>
 
-  <div class="asm-c-family-member__footer">
-    <div class="asm-c-family-member__languages">
+  <div class="ux-c-family-member__footer">
+    <div class="ux-c-family-member__languages">
       <div *ngIf="familyMember.mainLanguage" 
-            class="asm-c-family-member__language"
+            class="ux-c-family-member__language"
             [title]="familyMember.languages">
         {{ familyMember.mainLanguage }}
       </div>
       <div *ngIf="familyMember.delegationCountry"
-            class="asm-c-family-member__language"
+            class="ux-c-family-member__language"
             title="TODO">
           <i class="fa fa-globe"></i> {{ familyMember.delegationCountry }}
       </div>
     </div>
-    <div class="asm-c-family-member__badges">
+    <div class="ux-c-family-member__badges">
       <i *ngIf="familyMember.hasComments"
-          class="fa fa-comment asm-c-family-member__badge asm-c-family-member__badge--comments">
+          class="fa fa-comment ux-c-family-member__badge ux-c-family-member__badge--comments">
       </i>
       <i *ngIf="familyMember.coveredByOtherAffiliate"
           title="Covered by other affiliate"
-          class="fa fa-warning asm-c-family-member__badge asm-c-family-member__badge--covered-by-other">
+          class="fa fa-warning ux-c-family-member__badge ux-c-family-member__badge--covered-by-other">
       </i>
-      <i class="fa fa-heart asm-c-family-member__badge asm-c-family-member__badge--sickness"
-          [class.asm-c-family-member__badge--complementary-rights]="hasSicknessComplementaryRights"
-          [class.asm-c-family-member__badge--full-rights]="hasSicknessFullRights"
+      <i class="fa fa-heart ux-c-family-member__badge ux-c-family-member__badge--sickness"
+          [class.ux-c-family-member__badge--complementary-rights]="hasSicknessComplementaryRights"
+          [class.ux-c-family-member__badge--full-rights]="hasSicknessFullRights"
           [title]="[familyMember.sicknessCoverageDateFrom, familyMember.sicknessCoverageDateTo] | uxDateRange">
       </i>
-      <i class="fa fa-plus asm-c-family-member__badge asm-c-family-member__badge--accident"
-          [class.asm-c-family-member__badge--complementary-rights]="hasAccidentComplementaryRights"
-          [class.asm-c-family-member__badge--full-rights]="hasAccidentFullRights"
+      <i class="fa fa-plus ux-c-family-member__badge ux-c-family-member__badge--accident"
+          [class.ux-c-family-member__badge--complementary-rights]="hasAccidentComplementaryRights"
+          [class.ux-c-family-member__badge--full-rights]="hasAccidentFullRights"
           [title]="[familyMember.accidentCoverageDateFrom, familyMember.accidentCoverageDateTo] | uxDateRange">
       </i>
     </div>

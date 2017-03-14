@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'asm-navstack',
+  selector: 'ux-navstack',
   templateUrl: './navstack.component.html',
   encapsulation: ViewEncapsulation.None
 })

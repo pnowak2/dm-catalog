@@ -1,7 +1,7 @@
 import { Component, HostListener, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'asm-switch',
+  selector: 'ux-switch',
   templateUrl: './switch.component.html',
   styleUrls: ['./switch.component.scss'],
 })
