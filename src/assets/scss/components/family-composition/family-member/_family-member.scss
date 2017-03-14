@@ -1,31 +1,13 @@
-$family-member-bg: #fff;
-$family-member-hover-bg: #fff;
-
-$family-member-header-personal-number-link-color: #FF7043;
-$family-member-header-text-color: #999;
-
-$family-member-born-text-color: #999;
-$family-member-language-bg: #999;
-$family-member-language-text-color: #fff;
-
-$family-member-badge-bg: #ddd;
-$family-member-badge-text-color: #bbb;
-$family-member-badge-full-rights-text-color: #81C784;
-$family-member-badge-complementary-rights-text-color: #FF7043;
-$family-member-badge-comments-text-color: #ffcc00;
-$family-member-badge-covered-by-other-bg: #FF7043;
-$family-member-badge-covered-by-other-text-color: #FFF;
-
 @mixin ux-family-member-header-text {
   font-size: .7em;
-  color: $family-member-header-text-color;
+  color: $ux-family-member-header-text-color;
 }
 
 .ux-c-family-member {
   font-size: 1rem;
   overflow: visible;
   transition: background-color .5s;
-  background-color: $family-member-bg;
+  background-color: $ux-family-member-bg;
   width: 14em;
   padding: .7em;
   border-radius: 0;
@@ -35,7 +17,7 @@ $family-member-badge-covered-by-other-text-color: #FFF;
   cursor: pointer;
 
   &:hover {
-    background-color: $family-member-hover-bg;
+    background-color: $ux-family-member-hover-bg;
   }
   
   &--big {
@@ -75,7 +57,7 @@ $family-member-badge-covered-by-other-text-color: #FFF;
   &__member-number,
   &__member-number:hover,
   &__member-number:visited {
-    color: $family-member-header-personal-number-link-color;
+    color: $ux-family-member-header-personal-number-link-color;
     text-decoration: underline;
   }
   
@@ -107,7 +89,7 @@ $family-member-badge-covered-by-other-text-color: #FFF;
   }
   
   &__person-born {
-    color: $family-member-born-text-color;
+    color: $ux-family-member-born-text-color;
     font-size: .75em;
   }
   
@@ -126,8 +108,8 @@ $family-member-badge-covered-by-other-text-color: #FFF;
   
   &__language {
     display: inline-block;
-    background-color: $family-member-language-bg;
-    color: $family-member-language-text-color;
+    background-color: $ux-family-member-language-bg;
+    color: $ux-family-member-language-text-color;
     font-size: 0.7em;
     padding: .2em .3em;
     text-transform: uppercase;
@@ -146,26 +128,26 @@ $family-member-badge-covered-by-other-text-color: #FFF;
     font-size: .9em; 
     padding: .45em; 
     border-radius: 100%; 
-    background-color: $family-member-badge-bg;
-    color: $family-member-badge-text-color;
+    background-color: $ux-family-member-badge-bg;
+    color: $ux-family-member-badge-text-color;
     display: inline-block;
   }
   
   &__badge--full-rights {
-    color: $family-member-badge-full-rights-text-color;
+    color: $ux-family-member-badge-full-rights-text-color;
   }
 
   &__badge--complementary-rights {
-    color: $family-member-badge-complementary-rights-text-color;
+    color: $ux-family-member-badge-complementary-rights-text-color;
   }
 
   &__badge--comments {
-    color: $family-member-badge-comments-text-color;
+    color: $ux-family-member-badge-comments-text-color;
     background-color: transparent;
   }
 
   &__badge--covered-by-other {
-    color: $family-member-badge-covered-by-other-text-color;
-    background-color: $family-member-badge-covered-by-other-bg;
+    color: $ux-family-member-badge-covered-by-other-text-color;
+    background-color: $ux-family-member-badge-covered-by-other-bg;
   }
 }
