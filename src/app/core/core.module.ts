@@ -1,11 +1,16 @@
-import { NgModule, ModuleWithProviders, Optional, SkipSelf } from '@angular/core';
+import { NgModule, ModuleWithProviders, Optional, SkipSelf, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   imports: [CommonModule],
   declarations: [],
   exports: [],
-  providers: []
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr-fr' },
+    DatePipe
+  ],
 })
 export class CoreModule {
   constructor( @Optional() @SkipSelf() parentModule: CoreModule) {

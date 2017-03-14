@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FamilyMemberModel, CoverageType, Gender } from '../../components/family-composition/model/family-member.model';
 
 @Component({
-  selector: 'asm-family-bar-demo',
+  selector: 'ux-family-bar-demo',
   templateUrl: './family-bar-demo.component.html',
   styleUrls: ['./family-bar-demo.component.css']
 })

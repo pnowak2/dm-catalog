@@ -1,0 +1,33 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <a class="navbar-brand">Assmal<sup>ng</sup></a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['typography']">Typography</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['buttons']">Buttons</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['card']">Card</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['./family-bar']">Family Bar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['navstack']">Navstack</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['sidebar']">Sidebar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['icons']">Icons List</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container asm-demo-catalog">
+  <router-outlet></router-outlet>
+</div>
