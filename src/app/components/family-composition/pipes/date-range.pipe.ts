@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform, LOCALE_ID, Inject } from '@angular/core';
 
 @Pipe({
-  name: 'asmDateRange'
+  name: 'uxDateRange'
 })
 export class DateRangePipe implements PipeTransform {
 

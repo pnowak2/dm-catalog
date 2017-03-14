@@ -74,12 +74,12 @@
       <i class="fa fa-heart asm-c-family-member__badge asm-c-family-member__badge--sickness"
           [class.asm-c-family-member__badge--complementary-rights]="hasSicknessComplementaryRights"
           [class.asm-c-family-member__badge--full-rights]="hasSicknessFullRights"
-          [title]="[familyMember.sicknessCoverageDateFrom, familyMember.sicknessCoverageDateTo] | asmDateRange">
+          [title]="[familyMember.sicknessCoverageDateFrom, familyMember.sicknessCoverageDateTo] | uxDateRange">
       </i>
       <i class="fa fa-plus asm-c-family-member__badge asm-c-family-member__badge--accident"
           [class.asm-c-family-member__badge--complementary-rights]="hasAccidentComplementaryRights"
           [class.asm-c-family-member__badge--full-rights]="hasAccidentFullRights"
-          [title]="[familyMember.accidentCoverageDateFrom, familyMember.accidentCoverageDateTo] | asmDateRange">
+          [title]="[familyMember.accidentCoverageDateFrom, familyMember.accidentCoverageDateTo] | uxDateRange">
       </i>
     </div>
   </div>
