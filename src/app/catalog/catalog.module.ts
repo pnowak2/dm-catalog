@@ -22,7 +22,8 @@ import { CardDemoComponent } from './card-demo/card-demo.component';
   ],
   declarations: [
     CatalogComponent,
-    FamilyBarDemoComponent
+    FamilyBarDemoComponent,
+    ButtonsDemoComponent
   ],
   providers: [],
   exports: []
