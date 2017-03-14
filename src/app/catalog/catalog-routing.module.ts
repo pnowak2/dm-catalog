@@ -6,7 +6,7 @@ import { FamilyBarDemoComponent } from './family-bar-demo/family-bar-demo.compon
 
 export const routes: Routes = [
   {
-    path: '', component: CatalogComponent, children: [
+    path: 'catalog', component: CatalogComponent, children: [
       { path: 'family-bar', component: FamilyBarDemoComponent }
     ]
   }
