@@ -1,11 +1,3 @@
-@mixin clearfix() {
-  &::after {
-    display: block;
-    content: "";
-    clear: both;
-  }
-}
-
 @function get-color($key){
   @if map-has-key($ux-colors, $key){
     @return map-get($ux-colors, $key);
