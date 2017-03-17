@@ -10,12 +10,12 @@
   user-select: none;
   line-height: 1.2;
 
-  &:visited, &:active, &:focus {
+  @include hover-focus-active {
     color: $ux-nav-item-text;
     text-decoration: none;
   }
 
-  &:hover {
+  @include hover {
     background-color: $ux-nav-item-bg-hover;
     color: $ux-nav-item-text;
     text-decoration: none;
@@ -44,22 +44,18 @@
     background-color: darken(#263238, 2%);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .03);
     display: none;
-    
-    .ux-c-nav-item {
-      padding-left: 48px;
-      font-weight: 200;
-    }
   }
 
-  &__subitems &__subitems {
-    .ux-c-nav-item {
-      padding-left: 60px;
-    } 
+  &__subitems & {
+    padding-left: 48px;
+    font-weight: 200;
   }
 
-  &__subitems &__subitems &__subitems {
-    .ux-c-nav-item {
-      padding-left: 80px;
-    }
-  }
+  &__subitems &__subitems & {
+    padding-left: 60px;
+  } 
+
+  &__subitems &__subitems &__subitems & {
+    padding-left: 80px;
+  } 
 }
