@@ -78,9 +78,7 @@
   &__person-name {
     color: $ux-core-color-text;
     font-size: .8em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @include text-truncate();
   }
   
   &__person-last-name {
