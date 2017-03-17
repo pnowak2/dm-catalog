@@ -17,7 +17,7 @@
     transition: transform .2s ease-in-out;
   }
 
-  &--is-active {
+  &.ux-is-active {
     background-color: rgba(0, 0, 0, .1);
 
     + .ux-c-nav-item__subitems {
@@ -25,7 +25,7 @@
     }
   }
 
-  &--is-active.ux-c-nav-item--has-subitems:after {
+  &.ux-is-active.ux-c-nav-item--has-subitems:after {
     transform: rotate(90deg);
   }
 
