@@ -5,6 +5,7 @@ import { NavCategoryComponent } from './nav-category/nav-category.component';
 import { NavDividerComponent } from './nav-divider/nav-divider.component';
 import { NavItemComponent } from './nav-item/nav-item.component';
 import { NavstackComponent } from './nav-stack/navstack.component';
+import { NavLinkComponent } from './nav-link/nav-link.component';
 
 @NgModule({
   imports: [
@@ -14,13 +15,15 @@ import { NavstackComponent } from './nav-stack/navstack.component';
     NavCategoryComponent,
     NavDividerComponent,
     NavItemComponent,
-    NavstackComponent
+    NavstackComponent,
+    NavLinkComponent
   ],
   declarations: [
     NavCategoryComponent,
     NavDividerComponent,
     NavItemComponent,
-    NavstackComponent
+    NavstackComponent,
+    NavLinkComponent
   ]
 })
 export class NavStackModule { }

@@ -1,0 +1,8 @@
+<a class="ux-c-nav-link"
+   [class.ux-c-nav-link--has-subitems]="hasSubitems" 
+   [class.ux-is-active]="isActive" 
+   href="#"
+   (click)="onClicked($event)">
+   <i *ngIf="icon" class="{{ icon }} ux-c-nav-link__icon"></i>
+   <span class="ux-c-nav-link__label">{{ title }}</span>
+</a>

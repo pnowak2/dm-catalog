@@ -1,0 +1,27 @@
+.ux-c-nav-link {
+  &--has-subitems {
+    padding-right: 35px;
+  }
+
+  &--has-subitems:after {
+    content: "\e9c7";
+    display: block;
+    font-family: icomoon;
+    font-size: 16px;
+    line-height: 1;
+    margin-top: -8px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: rotate(0);
+    transition: transform .2s ease-in-out;
+  }
+
+  &.ux-is-active {
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  &.ux-is-active.ux-c-nav-link--has-subitems:after {
+    transform: rotate(90deg);
+  }
+}
