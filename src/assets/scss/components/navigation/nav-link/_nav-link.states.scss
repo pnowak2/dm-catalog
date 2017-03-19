@@ -13,7 +13,7 @@
       right: 1.25em;
       top: 50%;
       transform: rotate(0);
-      transition: transform .2s ease-in-out;
+      @include transition();
     }
   }
 

@@ -8,9 +8,9 @@
   position: relative;
   text-decoration: none;
   user-select: none;
-  transition: background-color .3s;
   user-select: none;
   line-height: 1.2;
+  @include transition();
 
   @include hover-focus-active {
     color: $ux-nav-item-text;
