@@ -1,13 +1,13 @@
 .ux-c-sidebar {
   .ux-is-closed & {
     width: $ux-sidebar-closed-width;
-  }
 
-  .ux-is-closed &__category-header {
-    display: none;
-  }
+    &__category-header {
+      display: none;
+    }
 
-  .ux-is-closed &__category-content {
-    display: none;
+    &__category-content {
+      display: none;
+    }
   }
 }

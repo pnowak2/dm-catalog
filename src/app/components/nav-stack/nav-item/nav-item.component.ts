@@ -5,10 +5,8 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './nav-item.component.html'
 })
 export class NavItemComponent implements OnInit {
-
   @Input() title: string;
   @Input() icon: string;
-  @Input() hasSubitems: boolean;
   @Input() isActive: boolean;
 
   constructor() { }
@@ -16,12 +14,7 @@ export class NavItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onItemClicked(e) {
-    e.preventDefault();
-    if(this.hasSubitems) {
-
-    this.isActive = !this.isActive;
-    }
+  onToggle(state: boolean) {
+    this.isActive = state;
   }
-
 }

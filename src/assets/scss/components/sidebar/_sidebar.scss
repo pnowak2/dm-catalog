@@ -1,16 +1,17 @@
 .ux-c-sidebar {
+  font-size: 1rem;
   background-color: $ux-sidebar-bg;
   width: $ux-sidebar-width;
 
   &__category-header {
     border-bottom: 1px solid rgba(255,255,255,.1);
-    padding: 12px 46px 12px 20px;
+    padding: 0.75em 2.875em 0.75em 1.25em;
     position: relative;
   }
 
   &__category-title {
     color: #fff;
-    font-size: 11px;
+    font-size: 0.6875em;
     font-weight: 500;
     text-transform: uppercase;
   }
@@ -18,12 +19,12 @@
   &__category-icons {
     color: #fff;
     position: absolute;
-    right: 16px;
+    right: 1em;
     top: 50%;
     transform: translateY(-50%);
   }
 
   &__category-content {
-    padding: 20px;
+    padding: 1.25em;
   }
 }

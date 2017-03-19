@@ -1,42 +1,5 @@
 .ux-c-nav-item {
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  color: $ux-nav-item-text;
-  padding: 6px 20px 6px 20px;
-  height: 3rem;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  transition: background-color .3s;
-  user-select: none;
-  line-height: 1.2;
-
-  @include hover-focus-active {
-    color: $ux-nav-item-text;
-    text-decoration: none;
-  }
-
-  @include hover {
-    background-color: $ux-nav-item-bg-hover;
-    color: $ux-nav-item-text;
-    text-decoration: none;
-  }
-
-  &__icon {
-    font-size: 16px;
-    margin-right: 8px;
-  }
-
-  &__label {
-    display: inline;
-    vertical-align: middle;
-    font-family: 'Roboto';
-    font-size: 13px;
-    font-weight: 500;
-    text-decoration: none;
-    @include text-truncate();
-  }
 
   &__subitems {
     margin: 0;
@@ -46,16 +9,16 @@
     display: none;
   }
 
-  &__subitems & {
-    padding-left: 48px;
+  &__subitems .ux-c-nav-link {
+    padding-left: 3em;
     font-weight: 200;
   }
 
-  &__subitems &__subitems & {
-    padding-left: 60px;
+  &__subitems &__subitems .ux-c-nav-link {
+    padding-left: 3.75em;
   } 
 
-  &__subitems &__subitems &__subitems & {
-    padding-left: 80px;
+  &__subitems &__subitems &__subitems .ux-c-nav-link {
+    padding-left: 5em;
   } 
 }
