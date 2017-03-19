@@ -3,7 +3,8 @@
     background-color: rgba(0, 0, 0, .1);
 
     > .ux-c-nav-item__subitems {
-        display: block;
+        max-height: 50em;
+        @include transition();
     }
   }
 }

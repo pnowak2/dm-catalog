@@ -6,7 +6,9 @@
     padding: 0;
     background-color: darken(#263238, 2%);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .03);
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    @include transition();
   }
 
   &__subitems .ux-c-nav-link {
