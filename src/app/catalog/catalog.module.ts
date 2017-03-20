@@ -16,6 +16,7 @@ import { TypographyDemoComponent } from './typography-demo/typography-demo.compo
 import { CardDemoComponent } from './card-demo/card-demo.component';
 import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
 import { MainLayoutDemoComponent } from './layouts/main/main-layout-demo.component';
+import { NavbarDemoComponent } from './navbar-demo/navbar-demo.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { MainLayoutDemoComponent } from './layouts/main/main-layout-demo.compone
     CardDemoComponent,
     NavstackDemoComponent,
     IconsDemoComponent,
+    NavbarDemoComponent,
     SidebarDemoComponent,
     SwitchDemoComponent,
     MainLayoutDemoComponent

@@ -7,6 +7,7 @@ import { ButtonsDemoComponent } from './buttons-demo/buttons-demo.component';
 import { FamilyBarDemoComponent } from './family-bar-demo/family-bar-demo.component';
 import { CardDemoComponent } from './card-demo/card-demo.component';
 import { NavstackDemoComponent } from './navstack-demo/navstack-demo.component';
+import { NavbarDemoComponent } from './navbar-demo/navbar-demo.component';
 import { SidebarDemoComponent } from './sidebar-demo/sidebar-demo.component';
 import { IconsDemoComponent } from './icons-demo/icons-demo.component';
 import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
@@ -22,6 +23,7 @@ export const routes: Routes = [
       { path: 'family-bar', component: FamilyBarDemoComponent },
       { path: 'card', component: CardDemoComponent },
       { path: 'navstack', component: NavstackDemoComponent },
+      { path: 'navbar', component: NavbarDemoComponent },
       { path: 'sidebar', component: SidebarDemoComponent },
       { path: 'icons', component: IconsDemoComponent },
       { path: 'layout', component: MainLayoutDemoComponent },
