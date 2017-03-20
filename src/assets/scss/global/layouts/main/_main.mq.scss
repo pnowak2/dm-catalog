@@ -1,0 +1,7 @@
+.ux-l-main {
+  @include media-breakpoint-down(xs) {
+    &__page-container {
+      flex-direction: column;
+    }
+  }
+}

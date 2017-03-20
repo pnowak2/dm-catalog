@@ -1,0 +1,25 @@
+.ux-l-main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__page-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  &__navbar {
+    background: red;
+  }
+
+  &__sidebar {
+    background: blue;
+    flex-basis: 15rem;
+  }
+
+  &__content {
+    background: grey;
+    flex: 1;
+  }
+}

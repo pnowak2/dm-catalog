@@ -15,6 +15,7 @@ import { IconsDemoComponent } from './icons-demo/icons-demo.component';
 import { TypographyDemoComponent } from './typography-demo/typography-demo.component';
 import { CardDemoComponent } from './card-demo/card-demo.component';
 import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
+import { MainLayoutDemoComponent } from './layouts/main/main-layout-demo.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
     NavstackDemoComponent,
     IconsDemoComponent,
     SidebarDemoComponent,
-    SwitchDemoComponent
+    SwitchDemoComponent,
+    MainLayoutDemoComponent
   ],
   providers: [],
   exports: []
