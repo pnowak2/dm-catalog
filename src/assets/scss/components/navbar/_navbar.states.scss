@@ -1,3 +1,5 @@
 .ux-c-navbar {
-
+  &--standalone {
+    @include border-radius();
+  }
 }
