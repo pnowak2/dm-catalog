@@ -26,4 +26,4 @@ import { NavLinkComponent } from './nav-link/nav-link.component';
     NavLinkComponent
   ]
 })
-export class NavStackModule { }
+export class NavigationModule { }

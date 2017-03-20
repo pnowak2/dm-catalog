@@ -4,7 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CardModule } from './card/card.module';
 import { FamilyCompositionModule } from './family-composition/family-composition.module';
 import { IconsModule } from './icons/icons.module';
-import { NavStackModule } from './nav-stack/nav-stack.module';
+import { NavigationModule } from './navigation/navigation.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { SwitchModule } from './switch/switch.module';
 
@@ -17,7 +17,7 @@ import { SwitchModule } from './switch/switch.module';
   exports: [
     FamilyCompositionModule,
     CardModule,
-    NavStackModule,
+    NavigationModule,
     IconsModule,
     SidebarModule,
     SwitchModule
