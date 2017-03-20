@@ -1,7 +1,7 @@
-<div class="ux-l-main ux-is-closed">
+<div class="ux-l-main">
   <div class="ux-l-main__navbar">menu</div>
   <div class="ux-l-main__page-container">
-    <div class="ux-l-main__sidebar">
+    <div class="ux-l-main__sidebar ux-is-closed">
       <ux-sidebar>
         <ux-navstack>
           <ux-nav-category title="Dashboards"></ux-nav-category>
@@ -32,5 +32,35 @@
       </ux-sidebar>
     </div>
     <div class="ux-l-main__content">content</div>
+    <div class="ux-l-main__actionbar">
+      <ux-sidebar>
+        <ux-navstack>
+          <ux-nav-category title="Dashboards"></ux-nav-category>
+          <ux-nav-item title="Home" icon="icon-home4"></ux-nav-item>
+          <ux-nav-item title="Search" icon="icon-search4"></ux-nav-item>
+          <ux-nav-item title="Tarification" icon="icon-coin-euro">
+            <ux-nav-item title="Supervisor"></ux-nav-item>
+            <ux-nav-item title="Medical Officer">
+              <ux-nav-item title="Paper Claims" icon="icon-star-empty3 ux-o-text-orange-lightest"></ux-nav-item>
+              <ux-nav-item title="Online Claims" icon="icon-star-full2 ux-o-text-orange-lightest">
+                <ux-nav-item title="Needs Acceptance"></ux-nav-item>
+                <ux-nav-item title="Accepted"></ux-nav-item>
+                <ux-nav-divider></ux-nav-divider>
+                <ux-nav-item title="Rejected"></ux-nav-item>
+                <ux-nav-item title="Waiting for tarification"></ux-nav-item>
+              </ux-nav-item>
+            </ux-nav-item>
+          </ux-nav-item>
+
+          <ux-nav-category title="My Bookmarks"></ux-nav-category>
+          <ux-nav-item title="Waiting list" icon="icon-alarm"></ux-nav-item>
+          <ux-nav-item title="To be printed" icon="icon-printer"></ux-nav-item>
+          <ux-nav-category title="Administration"></ux-nav-category>
+          <ux-nav-item title="System modules" icon="icon-grid6">
+            <ux-nav-item title="Medicines" icon="icon-aid-kit"></ux-nav-item>
+          </ux-nav-item>
+        </ux-navstack>
+      </ux-sidebar>
+    </div>
   </div>
 </div>

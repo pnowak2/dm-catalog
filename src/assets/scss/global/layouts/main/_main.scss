@@ -18,6 +18,10 @@
     flex-basis: content;
   }
 
+  &__actionbar {
+    background: green;
+  }
+
   &__content {
     background: grey;
     flex: 1;
