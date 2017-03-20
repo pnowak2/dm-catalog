@@ -18,4 +18,6 @@ $brand-danger: $ux-core-color-danger !default;
 $body-bg:       darken($ux-core-color-body-bg, 3%) !default;
 $body-color:    $ux-core-color-text !default;
 
-$font-family-sans-serif: "Roboto", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: $ux-core-font-family !default;
+
+$border-width: $ux-core-border-width !default;
