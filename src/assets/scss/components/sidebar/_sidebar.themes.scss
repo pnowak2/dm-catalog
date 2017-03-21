@@ -1,0 +1,17 @@
+.ux-t-light {
+  .ux-c-sidebar {
+    background: #fff;
+
+    &__category-header {
+      border-color: rgba($ux-core-color-black, 0.1);
+    }
+
+    &__category-title {
+      color: #333;
+    }
+
+    &__category-icons {
+      color: #333;
+    }
+  }
+}

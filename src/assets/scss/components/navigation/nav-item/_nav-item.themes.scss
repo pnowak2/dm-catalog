@@ -1,5 +1,5 @@
-.ux-c-nav-item {
-  .ux-t-light & {
+.ux-t-light {
+  .ux-c-nav-item {
     &__subitems {
       background: rgba(0, 0, 0, .01);
       box-shadow: 0 $ux-core-border-width 0 rgba($ux-core-color-black, .07);
