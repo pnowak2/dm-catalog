@@ -1,0 +1,9 @@
+.ux-c-nav-stack {
+  .ux-t-light & {
+    background: #fff;
+
+    & > * > .ux-c-nav-item.ux-is-active > * > .ux-c-nav-link {
+      color: #fff;
+    }
+  }
+}

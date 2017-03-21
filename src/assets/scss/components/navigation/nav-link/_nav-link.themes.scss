@@ -1,0 +1,15 @@
+.ux-c-nav-link {
+  .ux-t-light & {
+    color: #333;
+    background: #fff;
+
+    @include hover {
+      background-color: rgba(0, 0, 0, .05);
+      color: #333;
+    }
+
+    &.ux-is-active {
+      background-color: rgba(0, 0, 0, .05);
+    }
+  }
+}
