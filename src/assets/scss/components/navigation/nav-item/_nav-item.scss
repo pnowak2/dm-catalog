@@ -8,7 +8,6 @@
     box-shadow: 0 $ux-core-border-width 0 rgba(255, 255, 255, .03);
     max-height: 0;
     overflow: hidden;
-    @include transition();
   }
 
   &__subitems .ux-c-nav-link {
