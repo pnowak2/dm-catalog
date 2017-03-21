@@ -6,7 +6,7 @@
   padding: 0;
   height: 100%;
 
-  & > * > .ux-c-nav-item.ux-is-active {
+  & > * > .ux-c-nav-item.ux-is-active > * > .ux-c-nav-link {
     background-color: $ux-nav-item-bg-opened;
   }
 }

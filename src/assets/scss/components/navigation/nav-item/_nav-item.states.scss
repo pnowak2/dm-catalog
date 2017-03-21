@@ -1,7 +1,5 @@
 .ux-c-nav-item {
   &.ux-is-active {
-    background-color: rgba(0, 0, 0, .1);
-
     > .ux-c-nav-item__subitems {
         max-height: 500em;
     }

@@ -4,8 +4,8 @@
   &__subitems {
     margin: 0;
     padding: 0;
-    background-color: darken(#263238, 2%);
-    box-shadow: 0 $ux-core-border-width 0 rgba(255, 255, 255, .03);
+    background-color: darken($ux-nav-item-subitems-bg, 2%);
+    box-shadow: 0 $ux-core-border-width 0 rgba($ux-core-color-white, .07);
     max-height: 0;
     overflow: hidden;
   }
