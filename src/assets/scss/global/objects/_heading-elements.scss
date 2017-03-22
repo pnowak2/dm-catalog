@@ -1,17 +1,7 @@
-.card-header > {
-  .ux-o-heading-elements {
-    position: absolute;
-    top: 50%;
-    right: $card-spacer-y;
-    transform: translateY(-50%);
-    display: none;
-  }
+.ux-o-heading-elements {
+  display: flex;
+}
 
-  .ux-o-heading-elements-toggle {
-    position: absolute;
-    right: $card-spacer-y;
-    top: 50%;
-    transform: translateY(-50%);
-    // display: none;
-  }
+.ux-o-heading-elements-toggle {
+  display: none;
 }
