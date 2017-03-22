@@ -18,7 +18,12 @@ $brand-danger: $ux-core-color-danger !default;
 $body-bg:       darken($ux-core-color-body-bg, 3%) !default;
 $body-color:    $ux-core-color-text !default;
 
-$font-family-sans-serif: $ux-core-font-family !default;
+$font-family-sans-serif: $ux-core-font-family-sans-serif !default;
+$font-family-serif:      $ux-core-font-family-serif !default;
+$font-family-monospace:  $ux-core-font-family-monospace !default;
+$font-family-base:       $ux-core-font-family-base !default;
+
+$font-size-base: $ux-core-font-size-base !default;
 
 $spacer:   $ux-core-spacer !default;
 $ux-core-spacer-x: $ux-core-spacer !default;
