@@ -1,0 +1,17 @@
+.ux-o-media {
+  display: flex;
+  flex-direction: row;
+  border: $ux-core-border-width solid $ux-core-color-grey;
+
+  &__left {
+    padding-right: $ux-core-spacer-x;
+  }
+
+  &__body {
+    flex: 1;
+  }
+
+  &__right {
+    padding-left: $ux-core-spacer-x;
+  }
+}

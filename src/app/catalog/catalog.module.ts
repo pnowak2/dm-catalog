@@ -17,6 +17,7 @@ import { CardDemoComponent } from './card-demo/card-demo.component';
 import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
 import { MainLayoutDemoComponent } from './layouts/main/main-layout-demo.component';
 import { NavbarDemoComponent } from './navbar-demo/navbar-demo.component';
+import { MediaDemoComponent } from './media-demo/media-demo.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { NavbarDemoComponent } from './navbar-demo/navbar-demo.component';
     NavbarDemoComponent,
     SidebarDemoComponent,
     SwitchDemoComponent,
-    MainLayoutDemoComponent
+    MainLayoutDemoComponent,
+    MediaDemoComponent
   ],
   providers: [],
   exports: []

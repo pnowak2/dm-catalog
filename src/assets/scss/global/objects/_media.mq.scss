@@ -1,0 +1,14 @@
+@include media-breakpoint-down(xs) {
+  .ux-o-media {
+    flex-direction: column;
+
+    &__left {
+      padding: 0;
+    }
+
+    &__right {
+      padding: 0;
+    }
+  }
+}
+

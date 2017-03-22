@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CatalogComponent } from './catalog.component';
 import { TypographyDemoComponent } from './typography-demo/typography-demo.component';
+import { MediaDemoComponent } from './media-demo/media-demo.component';
 import { ButtonsDemoComponent } from './buttons-demo/buttons-demo.component';
 import { FamilyBarDemoComponent } from './family-bar-demo/family-bar-demo.component';
 import { CardDemoComponent } from './card-demo/card-demo.component';
@@ -18,6 +19,7 @@ export const routes: Routes = [
   {
     path: 'catalog', component: CatalogComponent, children: [
       { path: 'typography', component: TypographyDemoComponent },
+      { path: 'media', component: MediaDemoComponent },
       { path: 'buttons', component: ButtonsDemoComponent },
       { path: 'switch', component: SwitchDemoComponent },
       { path: 'family-bar', component: FamilyBarDemoComponent },
