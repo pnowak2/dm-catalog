@@ -7,3 +7,8 @@
     0% {transform: rotate(0deg);}
     100% {transform: rotate(-360deg);}
 }
+
+.ux-o-spinner {
+    display: inline-block;
+    animation: ux-o-anim-rotation 1s linear infinite;
+}
