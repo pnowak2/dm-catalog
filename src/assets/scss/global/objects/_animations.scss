@@ -1,0 +1,9 @@
+@keyframes ux-o-anim-rotation {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes ux-o-anim-rotation-reverse {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
