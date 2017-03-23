@@ -3,5 +3,9 @@
     &__page-container {
       flex-direction: column;
     }
+
+    .ux-c-sidebar {
+      display: none;
+    }
   }
 }
