@@ -1,74 +1,74 @@
 @each $color-type in $dm-settings-color-types {
   .dm-o-color-#{$color-type} {
-    color: get-color(#{$color-type}) !important;
+    color: dm-get-color(#{$color-type}) !important;
   }
   .dm-o-bg-color-#{$color-type} {
-    background-color: get-color(#{$color-type}) !important;
+    background-color: dm-get-color(#{$color-type}) !important;
   }
   .dm-o-bg-#{$color-type} {
-    background-color: get-color(#{$color-type}) !important;
-    border-color: get-color(#{$color-type}) !important;
+    background-color: dm-get-color(#{$color-type}) !important;
+    border-color: dm-get-color(#{$color-type}) !important;
     color: #fff !important;
   }
   .dm-o-alpha-#{$color-type} {
-    background-color: get-color(#{$color-type}-lightester-2) !important; 
-    border-color:  get-color(#{$color-type}-dark) !important;
+    background-color: dm-get-color(#{$color-type}-lightester-2) !important; 
+    border-color:  dm-get-color(#{$color-type}-dark) !important;
   }
   .dm-o-border-#{$color-type} {
-    border-color: get-color(#{$color-type}) !important;
+    border-color: dm-get-color(#{$color-type}) !important;
   }
   .dm-o-border-top-#{$color-type} {
-    border-top-color: get-color(#{$color-type}) !important;
+    border-top-color: dm-get-color(#{$color-type}) !important;
   }
   .dm-o-border-bottom-#{$color-type} {
-    border-bottom-color: get-color(#{$color-type}) !important;
+    border-bottom-color: dm-get-color(#{$color-type}) !important;
   }
   .dm-o-border-left-#{$color-type} {
-    border-left-color: get-color(#{$color-type}) !important;
+    border-left-color: dm-get-color(#{$color-type}) !important;
   }
   .dm-o-border-right-#{$color-type} {
-    border-right-color: get-color(#{$color-type}) !important;
+    border-right-color: dm-get-color(#{$color-type}) !important;
   }
   .dm-o-text-#{$color-type} {
     &,
     &:hover,
     &:focus {
-        color: get-color(#{$color-type}) !important;
+        color: dm-get-color(#{$color-type}) !important;
     }
   }
 
   @each $color-shade in $dm-settings-color-shades {
     .dm-o-color-#{$color-type}-#{$color-shade} {
-      color: get-color(#{$color-type}-#{$color-shade}) !important;
+      color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
     }
     .dm-o-bg-color-#{$color-type}-#{$color-shade} {
-      color: get-color(#{$color-type}-#{$color-shade}) !important;
+      color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
     }
     .dm-o-bg-#{$color-type}-#{$color-shade} {
-      background-color: get-color(#{$color-type}-#{$color-shade}) !important;
-      border-color: get-color(#{$color-type}-#{$color-shade}) !important;
+      background-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
+      border-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
       color: #fff !important;
     }
     .dm-o-border-#{$color-type}-#{$color-shade} {
-      border-color: get-color(#{$color-type}-#{$color-shade}) !important;
+      border-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
     }
     .dm-o-border-top-#{$color-type}-#{$color-shade} {
-      border-top-color: get-color(#{$color-type}-#{$color-shade}) !important;
+      border-top-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
     }
     .dm-o-border-bottom-#{$color-type}-#{$color-shade} {
-      border-bottom-color: get-color(#{$color-type}-#{$color-shade}) !important;
+      border-bottom-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
     }
     .dm-o-border-left-#{$color-type}-#{$color-shade} {
-      border-left-color: get-color(#{$color-type}-#{$color-shade}) !important;
+      border-left-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
     }
     .dm-o-border-right-#{$color-type}-#{$color-shade} {
-      border-right-color: get-color(#{$color-type}-#{$color-shade}) !important;
+      border-right-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
     }
     .dm-o-text-#{$color-type}-#{$color-shade} {
       &,
       &:hover,
       &:focus {
-          color: get-color(#{$color-type}-#{$color-shade}) !important;
+          color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
       }
     }
   }
