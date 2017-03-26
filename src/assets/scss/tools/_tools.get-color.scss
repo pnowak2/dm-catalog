@@ -1,0 +1,11 @@
+/**
+ * Gets color from globally defined set of color definitions
+ *
+ * 1. Retrieves color from global colors definition
+ */
+
+@function get-color($key){
+  @if map-has-key($ux-colors, $key){
+    @return map-get($ux-colors, $key); /* [1] */
+  }
+}

@@ -1,9 +1,17 @@
-@import "core/module";
+@import "settings/module";
+
+@import "tools/module";
+
+@import "generic/module";
+
+@import "elements/module";
 
 @import "vendor/module";
 
-@import "global/module";
+@import "objects/module";
 
 @import "components/module";
 
 @import "layouts/module";
+
+@import "utilities/module";

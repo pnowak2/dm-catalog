@@ -1,0 +1,9 @@
+$ux-settings-config: (
+  env: dev,
+  healthcheck: false,
+  debug: true,
+);
+
+@function ux-settings-config($key) {
+  @return map-get($ux-settings-config, $key);
+}

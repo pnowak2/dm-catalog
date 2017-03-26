@@ -1,5 +1,0 @@
-@function get-color($key){
-  @if map-has-key($ux-colors, $key){
-    @return map-get($ux-colors, $key);
-  }
-}
