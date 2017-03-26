@@ -1,32 +1,32 @@
-$white:  $dm-core-color-white !default;
-$black:  $dm-core-color-black !default;
-$red:    $dm-core-color-red !default;
-$orange: $dm-core-color-orange !default;
-$yellow: $dm-core-color-yellow !default;
-$green:  $dm-core-color-green !default;
-$blue:   $dm-core-color-blue !default;
-$teal:   $dm-core-color-teal !default;
-$pink:   $dm-core-color-pink !default;
-$purple: $dm-core-color-purple !default;
+$white:  $dm-settings-color-white !default;
+$black:  $dm-settings-color-black !default;
+$red:    $dm-settings-color-red !default;
+$orange: $dm-settings-color-orange !default;
+$yellow: $dm-settings-color-yellow !default;
+$green:  $dm-settings-color-green !default;
+$blue:   $dm-settings-color-blue !default;
+$teal:   $dm-settings-color-teal !default;
+$pink:   $dm-settings-color-pink !default;
+$purple: $dm-settings-color-purple !default;
 
-$brand-primary: $dm-core-color-primary !default;
-$brand-success: $dm-core-color-success !default;
-$brand-info: $dm-core-color-info !default;
-$brand-warning: $dm-core-color-warning !default;
-$brand-danger: $dm-core-color-danger !default;
+$brand-primary: $dm-settings-color-primary !default;
+$brand-success: $dm-settings-color-success !default;
+$brand-info: $dm-settings-color-info !default;
+$brand-warning: $dm-settings-color-warning !default;
+$brand-danger: $dm-settings-color-danger !default;
 
-$body-bg:       darken($dm-core-color-body-bg, 3%) !default;
-$body-color:    $dm-core-color-text !default;
+$body-bg:       darken($dm-settings-color-body-bg, 3%) !default;
+$body-color:    $dm-settings-color-text !default;
 
-$font-family-sans-serif: $dm-core-font-family-sans-serif !default;
-$font-family-serif:      $dm-core-font-family-serif !default;
-$font-family-monospace:  $dm-core-font-family-monospace !default;
-$font-family-base:       $dm-core-font-family-base !default;
+$font-family-sans-serif: $dm-settings-font-family-sans-serif !default;
+$font-family-serif:      $dm-settings-font-family-serif !default;
+$font-family-monospace:  $dm-settings-font-family-monospace !default;
+$font-family-base:       $dm-settings-font-family-base !default;
 
-$font-size-base: $dm-core-font-size-base !default;
+$font-size-base: $dm-settings-font-size-base !default;
 
-$spacer:   $dm-core-spacer !default;
-$dm-core-spacer-x: $dm-core-spacer !default;
-$dm-core-spacer-y: $dm-core-spacer !default;
+$spacer:   $dm-settings-spacer !default;
+$dm-settings-spacer-x: $dm-settings-spacer !default;
+$dm-settings-spacer-y: $dm-settings-spacer !default;
 
-$border-width: $dm-core-border-width !default;
+$border-width: $dm-settings-border-width !default;

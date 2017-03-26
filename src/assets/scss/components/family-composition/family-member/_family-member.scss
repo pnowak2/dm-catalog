@@ -76,7 +76,7 @@
   }
   
   &__person-name {
-    color: $dm-core-color-text;
+    color: $dm-settings-color-text;
     font-size: .8em;
     @include text-truncate();
   }

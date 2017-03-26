@@ -1,4 +1,4 @@
-@each $color-type in $color-types {
+@each $color-type in $dm-settings-color-types {
   .dm-o-color-#{$color-type} {
     color: get-color(#{$color-type}) !important;
   }
@@ -37,7 +37,7 @@
     }
   }
 
-  @each $color-shade in $color-shades {
+  @each $color-shade in $dm-settings-color-shades {
     .dm-o-color-#{$color-type}-#{$color-shade} {
       color: get-color(#{$color-type}-#{$color-shade}) !important;
     }
