@@ -12,17 +12,6 @@
   line-height: 1.2;
   @include transition();
 
-  @include hover-focus-active {
-    color: $dm-nav-item-text;
-    text-decoration: none;
-  }
-
-  @include hover {
-    background-color: $dm-nav-item-bg-hover;
-    color: $dm-nav-item-text;
-    text-decoration: none;
-  }
-
   &__icon {
     font-size: 1em;
     margin-right: 0.5em;
