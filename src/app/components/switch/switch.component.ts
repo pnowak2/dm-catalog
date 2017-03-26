@@ -1,7 +1,7 @@
 import { Component, HostListener, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'ux-switch',
+  selector: 'dm-switch',
   templateUrl: './switch.component.html'
 })
 export class SwitchComponent {

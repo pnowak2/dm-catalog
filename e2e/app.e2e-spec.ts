@@ -1,10 +1,10 @@
-import { UxPlaygroundPage } from './app.po';
+import { DmPlaygroundPage } from './app.po';
 
-describe('UX Playground App', () => {
-  let page: UxPlaygroundPage;
+describe('Dm Catalog App', () => {
+  let page: DmPlaygroundPage;
 
   beforeEach(() => {
-    page = new UxPlaygroundPage();
+    page = new DmPlaygroundPage();
   });
 
   it('should display message saying app works', () => {

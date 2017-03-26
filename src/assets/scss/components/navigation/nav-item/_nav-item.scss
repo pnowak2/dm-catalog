@@ -1,24 +1,24 @@
-.ux-c-nav-item {
+.dm-c-nav-item {
   font-size: 1rem;
 
   &__subitems {
     margin: 0;
     padding: 0;
-    background-color: darken($ux-nav-item-subitems-bg, 2%);
-    box-shadow: 0 $ux-core-border-width 0 rgba($ux-core-color-white, .07);
+    background-color: darken($dm-nav-item-subitems-bg, 2%);
+    box-shadow: 0 $dm-core-border-width 0 rgba($dm-core-color-white, .07);
     max-height: 0;
     overflow: hidden;
   }
 
-  &__subitems .ux-c-nav-link {
+  &__subitems .dm-c-nav-link {
     padding-left: 3em;
   }
 
-  &__subitems &__subitems .ux-c-nav-link {
+  &__subitems &__subitems .dm-c-nav-link {
     padding-left: 3.75em;
   } 
 
-  &__subitems &__subitems &__subitems .ux-c-nav-link {
+  &__subitems &__subitems &__subitems .dm-c-nav-link {
     padding-left: 5em;
   } 
 }

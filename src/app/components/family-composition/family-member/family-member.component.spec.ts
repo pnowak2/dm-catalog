@@ -227,7 +227,7 @@ describe('FamilyMemberComponent', () => {
     describe('Default Appearance', () => {
       it('should render proper root element', async(() => {
         const root = debugElement.query(
-          By.css('.ux-c-family-member:first-child')
+          By.css('.dm-c-family-member:first-child')
         );
         expect(root).not.toBeNull();
       }));
@@ -239,9 +239,9 @@ describe('FamilyMemberComponent', () => {
         fixture.detectChanges();
 
         const root = debugElement.query(
-          By.css('.ux-c-family-member')
+          By.css('.dm-c-family-member')
         );
-        expect(root.classes['ux-c-family-member--selected']).toBeTruthy();
+        expect(root.classes['dm-c-family-member--selected']).toBeTruthy();
       }));
 
       it('should not render selection when member unselected', async(() => {
@@ -249,9 +249,9 @@ describe('FamilyMemberComponent', () => {
         fixture.detectChanges();
 
         const root = debugElement.query(
-          By.css('.ux-c-family-member')
+          By.css('.dm-c-family-member')
         );
-        expect(root.classes['ux-c-family-member--selected']).not.toBeTruthy();
+        expect(root.classes['dm-c-family-member--selected']).not.toBeTruthy();
       }));
     });
 
@@ -261,9 +261,9 @@ describe('FamilyMemberComponent', () => {
         fixture.detectChanges();
 
         const root = debugElement.query(
-          By.css('.ux-c-family-member')
+          By.css('.dm-c-family-member')
         );
-        expect(root.classes['ux-c-family-member--disabled']).toBeFalsy();
+        expect(root.classes['dm-c-family-member--disabled']).toBeFalsy();
       }));
 
       it('should render disabled properly when member disabled', async(() => {
@@ -271,9 +271,9 @@ describe('FamilyMemberComponent', () => {
         fixture.detectChanges();
 
         const root = debugElement.query(
-          By.css('.ux-c-family-member')
+          By.css('.dm-c-family-member')
         );
-        expect(root.classes['ux-c-family-member--disabled']).toBeTruthy();
+        expect(root.classes['dm-c-family-member--disabled']).toBeTruthy();
       }));
     });
 
@@ -291,10 +291,10 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const el = debugElement.query(
-            By.css('.ux-c-family-member__member-relation')
+            By.css('.dm-c-family-member__member-relation')
           );
 
-          expect(el.classes['ux-c-family-member__member-relation--ex']).toBeTruthy();
+          expect(el.classes['dm-c-family-member__member-relation--ex']).toBeTruthy();
         }));
 
         it('should render properly ex-relation if set to false', async(() => {
@@ -302,10 +302,10 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const el = debugElement.query(
-            By.css('.ux-c-family-member__member-relation')
+            By.css('.dm-c-family-member__member-relation')
           );
 
-          expect(el.classes['ux-c-family-member__member-relation--ex']).toBeFalsy();
+          expect(el.classes['dm-c-family-member__member-relation--ex']).toBeFalsy();
         }));
 
         it('should render personal number', async(() => {
@@ -324,7 +324,7 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const linkEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__member-number')
+            By.css('.dm-c-family-member__member-number')
           );
           expect(linkEl).toBeFalsy();
         }));
@@ -336,7 +336,7 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const linkEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__member-number')
+            By.css('.dm-c-family-member__member-number')
           );
           expect(linkEl).toBeTruthy();
           expect(linkEl.nativeElement.textContent).toContain('123456');
@@ -353,7 +353,7 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const linkEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__member-number')
+            By.css('.dm-c-family-member__member-number')
           );
 
           linkEl.triggerEventHandler('click', null);
@@ -365,21 +365,21 @@ describe('FamilyMemberComponent', () => {
       describe('More menu', () => {
         it('should render the menu', async(() => {
           const menuEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__more-menu')
+            By.css('.dm-c-family-member__more-menu')
           );
           expect(menuEl).toBeTruthy();
         }));
 
         it('should render Show Info menu item', async(() => {
           const menuEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__more-menu')
+            By.css('.dm-c-family-member__more-menu')
           );
           expect(menuEl.nativeElement.textContent).toContain('Show Info');
         }));
 
         it('should render Send Email menu item', async(() => {
           const menuEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__more-menu')
+            By.css('.dm-c-family-member__more-menu')
           );
           expect(menuEl.nativeElement.textContent).toContain('Send e-mail');
         }));
@@ -407,7 +407,7 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.familyName = 'Nowak';
           fixture.detectChanges();
 
-          const el = debugElement.query(By.css('.ux-c-family-member__person-name'));
+          const el = debugElement.query(By.css('.dm-c-family-member__person-name'));
 
           expect(el.properties['title']).toEqual('Piotr Nowak');
         });
@@ -417,7 +417,7 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.familyName = 'Nowak';
           fixture.detectChanges();
 
-          const el = debugElement.query(By.css('.ux-c-family-member__person-name'));
+          const el = debugElement.query(By.css('.dm-c-family-member__person-name'));
 
           expect(el.properties['title']).toEqual('Nowak');
         });
@@ -428,7 +428,7 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.birthDate = new Date(2017, 2, 12);
           fixture.detectChanges();
 
-          const el = fixture.debugElement.query(By.css('.ux-c-family-member__person-born'));
+          const el = fixture.debugElement.query(By.css('.dm-c-family-member__person-born'));
 
           expect(el.nativeElement.textContent).toContain('12/03/2017');
         }));
@@ -438,7 +438,7 @@ describe('FamilyMemberComponent', () => {
           component.familyMember.deathDate = new Date(2017, 1, 13);
           fixture.detectChanges();
 
-          const el = fixture.debugElement.query(By.css('.ux-c-family-member__person-born'));
+          const el = fixture.debugElement.query(By.css('.dm-c-family-member__person-born'));
 
           expect(el.nativeElement.textContent).toContain('01/01/1968');
           expect(el.nativeElement.textContent).toContain('13/02/2017');
@@ -500,7 +500,7 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const langEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__language')
+            By.css('.dm-c-family-member__language')
           );
           expect(langEl).toBeTruthy();
           expect(langEl.nativeElement.textContent).toContain('POL');
@@ -512,7 +512,7 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const linkEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__language')
+            By.css('.dm-c-family-member__language')
           );
           expect(linkEl).toBeFalsy();
         }));
@@ -523,7 +523,7 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const langEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__language')
+            By.css('.dm-c-family-member__language')
           );
           expect(langEl).toBeTruthy();
           expect(langEl.nativeElement.textContent).toContain('BEL');
@@ -535,7 +535,7 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const langEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__language')
+            By.css('.dm-c-family-member__language')
           );
           expect(langEl).toBeFalsy();
         }));
@@ -547,7 +547,7 @@ describe('FamilyMemberComponent', () => {
           fixture.detectChanges();
 
           const langEl: DebugElement = debugElement.query(
-            By.css('.ux-c-family-member__language')
+            By.css('.dm-c-family-member__language')
           );
           expect(langEl.properties['title']).toEqual(['Poland', 'Germany']);
         });
@@ -560,7 +560,7 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-comment.ux-c-family-member__badge')
+              By.css('.fa.fa-comment.dm-c-family-member__badge')
             );
 
             expect(badgeEl).toBeFalsy();
@@ -571,7 +571,7 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-comment.ux-c-family-member__badge')
+              By.css('.fa.fa-comment.dm-c-family-member__badge')
             );
 
             expect(badgeEl).toBeTruthy();
@@ -582,7 +582,7 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-comment.ux-c-family-member__badge')
+              By.css('.fa.fa-comment.dm-c-family-member__badge')
             );
 
             expect(badgeEl === null).toBeTruthy();
@@ -595,7 +595,7 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-warning.ux-c-family-member__badge')
+              By.css('.fa.fa-warning.dm-c-family-member__badge')
             );
             expect(badgeEl).toBeFalsy();
           }));
@@ -605,7 +605,7 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-warning.ux-c-family-member__badge')
+              By.css('.fa.fa-warning.dm-c-family-member__badge')
             );
 
             expect(badgeEl).toBeTruthy();
@@ -616,7 +616,7 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-warning.ux-c-family-member__badge')
+              By.css('.fa.fa-warning.dm-c-family-member__badge')
             );
 
             expect(badgeEl === null).toBeTruthy();
@@ -626,7 +626,7 @@ describe('FamilyMemberComponent', () => {
         describe('Sickness Coverage', () => {
           it('should render badge', async(() => {
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-heart.ux-c-family-member__badge')
+              By.css('.fa.fa-heart.dm-c-family-member__badge')
             );
             expect(badgeEl).toBeTruthy();
           }));
@@ -638,7 +638,7 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.ux-c-family-member__badge--sickness')
+              By.css('.dm-c-family-member__badge--sickness')
             );
 
             expect(badgeEl.properties['title']).toEqual('24/05/2011 > 14/02/2017');
@@ -647,13 +647,13 @@ describe('FamilyMemberComponent', () => {
           it('should render properly with no rights set', async(() => {
             component.familyMember.sicknessCoverage = undefined;
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-heart.ux-c-family-member__badge')
+              By.css('.fa.fa-heart.dm-c-family-member__badge')
             );
 
             fixture.detectChanges();
 
-            expect(badgeEl.classes['ux-c-family-member__badge--complementary-rights']).toBeFalsy();
-            expect(badgeEl.classes['ux-c-family-member__badge--full-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--full-rights']).toBeFalsy();
           }));
 
           it('should render properly with rights set to None', async(() => {
@@ -661,11 +661,11 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-heart.ux-c-family-member__badge')
+              By.css('.fa.fa-heart.dm-c-family-member__badge')
             );
 
-            expect(badgeEl.classes['ux-c-family-member__badge--complementary-rights']).toBeFalsy();
-            expect(badgeEl.classes['ux-c-family-member__badge--full-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--full-rights']).toBeFalsy();
           }));
 
           it('should render properly with rights set to Complementary', async(() => {
@@ -673,11 +673,11 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-heart.ux-c-family-member__badge')
+              By.css('.fa.fa-heart.dm-c-family-member__badge')
             );
 
-            expect(badgeEl.classes['ux-c-family-member__badge--complementary-rights']).toBeTruthy();
-            expect(badgeEl.classes['ux-c-family-member__badge--full-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--complementary-rights']).toBeTruthy();
+            expect(badgeEl.classes['dm-c-family-member__badge--full-rights']).toBeFalsy();
           }));
 
           it('should render properly with rights set to Full', async(() => {
@@ -685,18 +685,18 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-heart.ux-c-family-member__badge')
+              By.css('.fa.fa-heart.dm-c-family-member__badge')
             );
 
-            expect(badgeEl.classes['ux-c-family-member__badge--complementary-rights']).toBeFalsy();
-            expect(badgeEl.classes['ux-c-family-member__badge--full-rights']).toBeTruthy();
+            expect(badgeEl.classes['dm-c-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--full-rights']).toBeTruthy();
           }));
         });
 
         describe('Accident Coverage', () => {
           it('should render badge', async(() => {
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-plus.ux-c-family-member__badge')
+              By.css('.fa.fa-plus.dm-c-family-member__badge')
             );
             expect(badgeEl).toBeTruthy();
           }));
@@ -708,7 +708,7 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.ux-c-family-member__badge--accident')
+              By.css('.dm-c-family-member__badge--accident')
             );
 
             expect(badgeEl.properties['title']).toEqual('24/05/2011 > 14/02/2017');
@@ -719,11 +719,11 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-plus.ux-c-family-member__badge')
+              By.css('.fa.fa-plus.dm-c-family-member__badge')
             );
 
-            expect(badgeEl.classes['ux-c-family-member__badge--complementary-rights']).toBeFalsy();
-            expect(badgeEl.classes['ux-c-family-member__badge--full-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--full-rights']).toBeFalsy();
           }));
 
           it('should render properly with rights set to None', async(() => {
@@ -731,11 +731,11 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-plus.ux-c-family-member__badge')
+              By.css('.fa.fa-plus.dm-c-family-member__badge')
             );
 
-            expect(badgeEl.classes['ux-c-family-member__badge--complementary-rights']).toBeFalsy();
-            expect(badgeEl.classes['ux-c-family-member__badge--full-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--full-rights']).toBeFalsy();
           }));
 
           it('should render properly with rights set to Complementary', async(() => {
@@ -743,11 +743,11 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-plus.ux-c-family-member__badge')
+              By.css('.fa.fa-plus.dm-c-family-member__badge')
             );
 
-            expect(badgeEl.classes['ux-c-family-member__badge--complementary-rights']).toBeTruthy();
-            expect(badgeEl.classes['ux-c-family-member__badge--full-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--complementary-rights']).toBeTruthy();
+            expect(badgeEl.classes['dm-c-family-member__badge--full-rights']).toBeFalsy();
           }));
 
           it('should render properly with rights set to Full', async(() => {
@@ -755,11 +755,11 @@ describe('FamilyMemberComponent', () => {
             fixture.detectChanges();
 
             const badgeEl: DebugElement = debugElement.query(
-              By.css('.fa.fa-plus.ux-c-family-member__badge')
+              By.css('.fa.fa-plus.dm-c-family-member__badge')
             );
 
-            expect(badgeEl.classes['ux-c-family-member__badge--complementary-rights']).toBeFalsy();
-            expect(badgeEl.classes['ux-c-family-member__badge--full-rights']).toBeTruthy();
+            expect(badgeEl.classes['dm-c-family-member__badge--complementary-rights']).toBeFalsy();
+            expect(badgeEl.classes['dm-c-family-member__badge--full-rights']).toBeTruthy();
           }));
         });
       });

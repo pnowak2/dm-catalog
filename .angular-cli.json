@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ux-playground"
+    "name": "dm-catalog"
   },
   "apps": [
     {
@@ -17,7 +17,7 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "ux",
+      "prefix": "dm",
       "styles": [
         "assets/scss/index.scss"
       ],

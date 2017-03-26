@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'ux-nav-item',
+  selector: 'dm-nav-item',
   templateUrl: './nav-item.component.html'
 })
 export class NavItemComponent implements OnInit {

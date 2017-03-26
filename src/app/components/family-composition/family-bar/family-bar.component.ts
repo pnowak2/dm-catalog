@@ -3,7 +3,7 @@ import { FamilyMemberModel } from '../model/family-member.model';
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'ux-family-bar',
+  selector: 'dm-family-bar',
   templateUrl: './family-bar.component.html'
 })
 export class FamilyBarComponent {

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'ux-nav-category',
+  selector: 'dm-nav-category',
   templateUrl: './nav-category.component.html'
 })
 export class NavCategoryComponent implements OnInit {

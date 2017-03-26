@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angu
 import { FamilyMemberModel, CoverageType, Gender } from '../model/family-member.model';
 
 @Component({
-  selector: 'ux-family-member',
+  selector: 'dm-family-member',
   templateUrl: './family-member.component.html'
 })
 export class FamilyMemberComponent {

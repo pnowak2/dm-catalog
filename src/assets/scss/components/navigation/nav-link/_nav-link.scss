@@ -1,8 +1,8 @@
-.ux-c-nav-link {
+.dm-c-nav-link {
   font-size: 1rem;
   display: flex;
   align-items: center;
-  color: $ux-nav-item-text;
+  color: $dm-nav-item-text;
   padding: 0.375em 1.25em 0.375em 1.25em;
   height: 3em;
   position: relative;
@@ -13,13 +13,13 @@
   @include transition();
 
   @include hover-focus-active {
-    color: $ux-nav-item-text;
+    color: $dm-nav-item-text;
     text-decoration: none;
   }
 
   @include hover {
-    background-color: $ux-nav-item-bg-hover;
-    color: $ux-nav-item-text;
+    background-color: $dm-nav-item-bg-hover;
+    color: $dm-nav-item-text;
     text-decoration: none;
   }
 

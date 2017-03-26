@@ -1,4 +1,4 @@
-.ux-c-nav-link {
+.dm-c-nav-link {
   &--has-subitems {
     padding-right: 2.25em;
 
@@ -17,10 +17,10 @@
     }
   }
 
-  &.ux-is-active {
+  &.dm-is-active {
     background-color: rgba(0, 0, 0, .1);
 
-    &.ux-c-nav-link--has-subitems:after {
+    &.dm-c-nav-link--has-subitems:after {
       transform: rotate(90deg);
     }
   }

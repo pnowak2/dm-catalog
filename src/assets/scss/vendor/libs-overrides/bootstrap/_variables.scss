@@ -1,32 +1,32 @@
-$white:  $ux-core-color-white !default;
-$black:  $ux-core-color-black !default;
-$red:    $ux-core-color-red !default;
-$orange: $ux-core-color-orange !default;
-$yellow: $ux-core-color-yellow !default;
-$green:  $ux-core-color-green !default;
-$blue:   $ux-core-color-blue !default;
-$teal:   $ux-core-color-teal !default;
-$pink:   $ux-core-color-pink !default;
-$purple: $ux-core-color-purple !default;
+$white:  $dm-core-color-white !default;
+$black:  $dm-core-color-black !default;
+$red:    $dm-core-color-red !default;
+$orange: $dm-core-color-orange !default;
+$yellow: $dm-core-color-yellow !default;
+$green:  $dm-core-color-green !default;
+$blue:   $dm-core-color-blue !default;
+$teal:   $dm-core-color-teal !default;
+$pink:   $dm-core-color-pink !default;
+$purple: $dm-core-color-purple !default;
 
-$brand-primary: $ux-core-color-primary !default;
-$brand-success: $ux-core-color-success !default;
-$brand-info: $ux-core-color-info !default;
-$brand-warning: $ux-core-color-warning !default;
-$brand-danger: $ux-core-color-danger !default;
+$brand-primary: $dm-core-color-primary !default;
+$brand-success: $dm-core-color-success !default;
+$brand-info: $dm-core-color-info !default;
+$brand-warning: $dm-core-color-warning !default;
+$brand-danger: $dm-core-color-danger !default;
 
-$body-bg:       darken($ux-core-color-body-bg, 3%) !default;
-$body-color:    $ux-core-color-text !default;
+$body-bg:       darken($dm-core-color-body-bg, 3%) !default;
+$body-color:    $dm-core-color-text !default;
 
-$font-family-sans-serif: $ux-core-font-family-sans-serif !default;
-$font-family-serif:      $ux-core-font-family-serif !default;
-$font-family-monospace:  $ux-core-font-family-monospace !default;
-$font-family-base:       $ux-core-font-family-base !default;
+$font-family-sans-serif: $dm-core-font-family-sans-serif !default;
+$font-family-serif:      $dm-core-font-family-serif !default;
+$font-family-monospace:  $dm-core-font-family-monospace !default;
+$font-family-base:       $dm-core-font-family-base !default;
 
-$font-size-base: $ux-core-font-size-base !default;
+$font-size-base: $dm-core-font-size-base !default;
 
-$spacer:   $ux-core-spacer !default;
-$ux-core-spacer-x: $ux-core-spacer !default;
-$ux-core-spacer-y: $ux-core-spacer !default;
+$spacer:   $dm-core-spacer !default;
+$dm-core-spacer-x: $dm-core-spacer !default;
+$dm-core-spacer-y: $dm-core-spacer !default;
 
-$border-width: $ux-core-border-width !default;
+$border-width: $dm-core-border-width !default;

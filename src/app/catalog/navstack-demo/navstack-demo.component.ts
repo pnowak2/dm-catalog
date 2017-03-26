@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ux-sidebar-demo',
+  selector: 'dm-sidebar-demo',
   templateUrl: './navstack-demo.component.html',
   styleUrls: ['./navstack-demo.component.css']
 })

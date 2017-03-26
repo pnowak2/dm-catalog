@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class UxPlaygroundPage {
+export class DmPlaygroundPage {
   navigateTo() {
     return browser.get('/');
   }

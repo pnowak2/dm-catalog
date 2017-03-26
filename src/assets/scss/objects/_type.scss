@@ -1,4 +1,4 @@
-.ux-o- {
+.dm-o- {
   &text-black {
       font-weight: 900 !important;
   }
@@ -24,7 +24,7 @@
   }
 
   &caret::after {
-    border-color: $ux-core-color-text;
+    border-color: $dm-core-color-text;
     display: inline-block;
     width: 0;
     height: 0;
@@ -40,7 +40,7 @@
     font-size: 1rem;
     width: 0.5em;
     height: 0.5em;
-    border: $ux-core-border-width-lg solid;
+    border: $dm-core-border-width-lg solid;
     border-radius: 50%;
     display: inline-block;
   }

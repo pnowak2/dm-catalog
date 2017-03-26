@@ -1,6 +1,6 @@
-.ux-c-sidebar {
-  .ux-is-closed & {
-    width: $ux-sidebar-closed-width;
+.dm-c-sidebar {
+  .dm-is-closed & {
+    width: $dm-sidebar-closed-width;
 
     &__category-header {
       display: none;

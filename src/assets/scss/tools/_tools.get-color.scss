@@ -5,7 +5,7 @@
  */
 
 @function get-color($key){
-  @if map-has-key($ux-colors, $key){
-    @return map-get($ux-colors, $key); /* [1] */
+  @if map-has-key($dm-colors, $key){
+    @return map-get($dm-colors, $key); /* [1] */
   }
 }

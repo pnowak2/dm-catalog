@@ -1,10 +1,10 @@
-.ux-c-sidebar {
+.dm-c-sidebar {
   font-size: 1rem;
-  background-color: $ux-sidebar-bg;
-  width: $ux-sidebar-width;
+  background-color: $dm-sidebar-bg;
+  width: $dm-sidebar-width;
 
   &__category-header {
-    border-bottom: $ux-core-border-width solid rgba(255,255,255,.1);
+    border-bottom: $dm-core-border-width solid rgba(255,255,255,.1);
     padding: 0.75em 2.875em 0.75em 1.25em;
     position: relative;
   }

@@ -1,12 +1,12 @@
-.ux-c-nav-stack {
+.dm-c-nav-stack {
   font-size: 1rem;
-  background-color: $ux-nav-stack-bg;
+  background-color: $dm-nav-stack-bg;
   list-style-type: none;
   margin: 0;
   padding: 0;
   height: 100%;
 
-  & > * > .ux-c-nav-item.ux-is-active > * > .ux-c-nav-link {
-    background-color: $ux-nav-item-bg-opened;
+  & > * > .dm-c-nav-item.dm-is-active > * > .dm-c-nav-link {
+    background-color: $dm-nav-item-bg-opened;
   }
 }

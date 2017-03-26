@@ -1,14 +1,14 @@
-@keyframes ux-o-anim-rotation {
+@keyframes dm-o-anim-rotation {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
 }
 
-@keyframes ux-o-anim-rotation-reverse {
+@keyframes dm-o-anim-rotation-reverse {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(-360deg);}
 }
 
-.ux-o-spinner {
+.dm-o-spinner {
     display: inline-block;
-    animation: ux-o-anim-rotation 1s linear infinite;
+    animation: dm-o-anim-rotation 1s linear infinite;
 }

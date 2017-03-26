@@ -1,8 +1,8 @@
-$ux-sidebar-width: 16.25em;
-$ux-sidebar-closed-width: 3.5em;
-$ux-sidebar-bg: $ux-core-color-slate-darkester;
+$dm-sidebar-width: 16.25em;
+$dm-sidebar-closed-width: 3.5em;
+$dm-sidebar-bg: $dm-core-color-slate-darkester;
 
-$ux-nav-stack-bg: $ux-core-color-slate-darkester;
-$ux-nav-item-text: rgba(255, 255, 255, .92);
-$ux-nav-item-bg-hover: darken($ux-nav-stack-bg, 4%);
-$ux-nav-item-bg-opened: $brand-primary;
+$dm-nav-stack-bg: $dm-core-color-slate-darkester;
+$dm-nav-item-text: rgba(255, 255, 255, .92);
+$dm-nav-item-bg-hover: darken($dm-nav-stack-bg, 4%);
+$dm-nav-item-bg-opened: $brand-primary;

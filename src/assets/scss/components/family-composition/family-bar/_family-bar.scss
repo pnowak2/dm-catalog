@@ -1,9 +1,9 @@
-.ux-c-family-bar { 
+.dm-c-family-bar { 
   font-size: 1rem;
 
   &__members-container {
     font-size: 0;
-    background-color: $ux-family-bar-members-container-bg;
+    background-color: $dm-family-bar-members-container-bg;
     padding: .7rem;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -21,14 +21,14 @@
   }
   
   &__tab-button {
-    background-color: $ux-family-bar-tab-button-bg;
-    border: .1em solid $ux-family-bar-tab-button-border-color;
+    background-color: $dm-family-bar-tab-button-bg;
+    border: .1em solid $dm-family-bar-tab-button-border-color;
     border-top: 0;
     border-radius: 0 0 .2em .2em;
     display: block;
     font-size: .7em;
     padding: .3em .7em;
-    color: $ux-family-bar-tab-button-color;
+    color: $dm-family-bar-tab-button-color;
     cursor: pointer;
     position: relative; 
     padding-right: 2em;
@@ -54,7 +54,7 @@
 
   &__tab-member-first-name,
   &__tab-member-last-name {
-    color: $ux-family-bar-tab-member-name-color;
+    color: $dm-family-bar-tab-member-name-color;
   }
   
   &__tab-member-last-name {
@@ -72,7 +72,7 @@
 
   &__family-plus-label {
     font-size: .7em;
-    color: $ux-family-bar-tab-family-plus-color;
+    color: $dm-family-bar-tab-family-plus-color;
     vertical-align: middle;
     margin: 0;
     margin-right: .3em;
@@ -133,11 +133,11 @@
     right: -3.5em;
   }
 
-  &--closed .ux-c-family-member {
+  &--closed .dm-c-family-member {
     visibility: hidden;
   }
 
-  &--readonly .ux-c-family-member {
+  &--readonly .dm-c-family-member {
     cursor: not-allowed;
   }
 }

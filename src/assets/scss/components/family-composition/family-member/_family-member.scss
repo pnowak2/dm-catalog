@@ -1,13 +1,13 @@
-@mixin ux-family-member-header-text {
+@mixin dm-family-member-header-text {
   font-size: .7em;
-  color: $ux-family-member-header-text-color;
+  color: $dm-family-member-header-text-color;
 }
 
-.ux-c-family-member {
+.dm-c-family-member {
   font-size: 1rem;
   overflow: visible;
   transition: background-color .5s;
-  background-color: $ux-family-member-bg;
+  background-color: $dm-family-member-bg;
   width: 14em;
   padding: .7em;
   border-radius: 0;
@@ -17,7 +17,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $ux-family-member-hover-bg;
+    background-color: $dm-family-member-hover-bg;
   }
   
   &--big {
@@ -50,19 +50,19 @@
   }
     
   &__member-type {
-    @include ux-family-member-header-text;
+    @include dm-family-member-header-text;
     float: left;
   }
 
   &__member-number,
   &__member-number:hover,
   &__member-number:visited {
-    color: $ux-family-member-header-personal-number-link-color;
+    color: $dm-family-member-header-personal-number-link-color;
     text-decoration: underline;
   }
   
   &__more-menu {
-    @include ux-family-member-header-text;
+    @include dm-family-member-header-text;
     float: right;
     position: relative;
     user-select: none;
@@ -76,7 +76,7 @@
   }
   
   &__person-name {
-    color: $ux-core-color-text;
+    color: $dm-core-color-text;
     font-size: .8em;
     @include text-truncate();
   }
@@ -87,7 +87,7 @@
   }
   
   &__person-born {
-    color: $ux-family-member-born-text-color;
+    color: $dm-family-member-born-text-color;
     font-size: .75em;
   }
   
@@ -106,8 +106,8 @@
   
   &__language {
     display: inline-block;
-    background-color: $ux-family-member-language-bg;
-    color: $ux-family-member-language-text-color;
+    background-color: $dm-family-member-language-bg;
+    color: $dm-family-member-language-text-color;
     font-size: 0.7em;
     padding: .2em .3em;
     text-transform: uppercase;
@@ -126,26 +126,26 @@
     font-size: .9em; 
     padding: .45em; 
     border-radius: 100%; 
-    background-color: $ux-family-member-badge-bg;
-    color: $ux-family-member-badge-text-color;
+    background-color: $dm-family-member-badge-bg;
+    color: $dm-family-member-badge-text-color;
     display: inline-block;
   }
   
   &__badge--full-rights {
-    color: $ux-family-member-badge-full-rights-text-color;
+    color: $dm-family-member-badge-full-rights-text-color;
   }
 
   &__badge--complementary-rights {
-    color: $ux-family-member-badge-complementary-rights-text-color;
+    color: $dm-family-member-badge-complementary-rights-text-color;
   }
 
   &__badge--comments {
-    color: $ux-family-member-badge-comments-text-color;
+    color: $dm-family-member-badge-comments-text-color;
     background-color: transparent;
   }
 
   &__badge--covered-by-other {
-    color: $ux-family-member-badge-covered-by-other-text-color;
-    background-color: $ux-family-member-badge-covered-by-other-bg;
+    color: $dm-family-member-badge-covered-by-other-text-color;
+    background-color: $dm-family-member-badge-covered-by-other-bg;
   }
 }

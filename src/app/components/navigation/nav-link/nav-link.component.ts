@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'ux-nav-link',
+  selector: 'dm-nav-link',
   templateUrl: './nav-link.component.html'
 })
 export class NavLinkComponent implements OnInit {

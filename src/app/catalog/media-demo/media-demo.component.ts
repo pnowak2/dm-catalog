@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ux-media-demo',
+  selector: 'dm-media-demo',
   templateUrl: './media-demo.component.html',
   styleUrls: ['./media-demo.component.scss']
 })

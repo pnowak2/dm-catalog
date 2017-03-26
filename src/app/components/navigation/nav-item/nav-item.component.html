@@ -1,9 +1,9 @@
-<div class="ux-c-nav-item" [class.ux-is-active]="isActive" >
-  <ux-nav-link [title]="title" 
+<div class="dm-c-nav-item" [class.dm-is-active]="isActive" >
+  <dm-nav-link [title]="title" 
                [icon]="icon" 
                [isActive]="isActive"
                [hasSubitems]="subitems.children.length" 
                (toggle)="onToggle($event)">
-  </ux-nav-link>
-  <div #subitems class="ux-c-nav-item__subitems"><ng-content></ng-content></div>
+  </dm-nav-link>
+  <div #subitems class="dm-c-nav-item__subitems"><ng-content></ng-content></div>
 </div>

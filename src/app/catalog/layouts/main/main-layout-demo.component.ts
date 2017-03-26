@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ux-main-layout-demo',
+  selector: 'dm-main-layout-demo',
   templateUrl: './main-layout-demo.component.html',
   styleUrls: ['./main-layout-demo.component.scss']
 })

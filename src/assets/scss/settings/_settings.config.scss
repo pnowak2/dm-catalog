@@ -1,9 +1,9 @@
-$ux-settings-config: (
+$dm-settings-config: (
   env: dev,
   healthcheck: false,
   debug: true,
 );
 
-@function ux-settings-config($key) {
-  @return map-get($ux-settings-config, $key);
+@function dm-settings-config($key) {
+  @return map-get($dm-settings-config, $key);
 }
