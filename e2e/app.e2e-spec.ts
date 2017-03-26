@@ -1,10 +1,10 @@
-import { TestingPage } from './app.po';
+import { UxPlaygroundPage } from './app.po';
 
-describe('testing App', function() {
-  let page: TestingPage;
+describe('UX Playground App', () => {
+  let page: UxPlaygroundPage;
 
   beforeEach(() => {
-    page = new TestingPage();
+    page = new UxPlaygroundPage();
   });
 
   it('should display message saying app works', () => {
