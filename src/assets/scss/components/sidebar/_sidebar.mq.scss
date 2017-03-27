@@ -1,3 +1,5 @@
 .dm-c-sidebar {
-
+  @include mq($until: mobile) {
+    color: $dm-settings-color-white;
+  }
 }
