@@ -10,7 +10,7 @@
   user-select: none;
   user-select: none;
   line-height: 1.2;
-  @include transition();
+  @include dm-transition();
 
   &__icon {
     font-size: 1em;
@@ -24,6 +24,6 @@
     font-size: .8125em;
     font-weight: 500;
     text-decoration: none;
-    @include text-truncate();
+    @include dm-text-truncate();
   }
 }

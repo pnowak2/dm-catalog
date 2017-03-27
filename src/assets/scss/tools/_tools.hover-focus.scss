@@ -1,0 +1,11 @@
+@mixin dm-hover {
+  &:hover { @content }
+}
+
+@mixin dm-hover-focus-active {
+  &:focus,
+  &:active,
+  &:hover {
+    @content
+  }  
+}

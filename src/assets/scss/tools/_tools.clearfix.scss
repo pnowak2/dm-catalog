@@ -1,0 +1,7 @@
+@mixin dm-clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

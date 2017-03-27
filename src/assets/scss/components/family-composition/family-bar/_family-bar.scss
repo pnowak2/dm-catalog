@@ -49,7 +49,7 @@
   }
   
   &__tab-member {
-    @include text-truncate();
+    @include dm-text-truncate();
   }
 
   &__tab-member-first-name,

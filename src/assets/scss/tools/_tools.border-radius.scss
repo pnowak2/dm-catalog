@@ -1,0 +1,35 @@
+// Single side border-radius
+
+@mixin dm-border-radius($radius: $dm-settings-global-radius) {
+  @if $dm-settings-enable-rounded {
+    border-radius: $radius;
+  }
+}
+
+@mixin dm-border-top-radius($radius) {
+  @if $dm-settings-enable-rounded {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+  }
+}
+
+@mixin dm-border-right-radius($radius) {
+  @if $dm-settings-enable-rounded {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+}
+
+@mixin dm-border-bottom-radius($radius) {
+  @if $dm-settings-enable-rounded {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+}
+
+@mixin dm-border-left-radius($radius) {
+  @if $dm-settings-enable-rounded {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+  }
+}

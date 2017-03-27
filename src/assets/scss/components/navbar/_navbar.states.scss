@@ -1,5 +1,5 @@
 .dm-c-navbar {
   &--standalone {
-    @include border-radius();
+    @include dm-border-radius();
   }
 }

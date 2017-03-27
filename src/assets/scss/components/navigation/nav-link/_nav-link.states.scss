@@ -1,10 +1,10 @@
 .dm-c-nav-link {
-  @include hover-focus-active {
+  @include dm-hover-focus-active {
     color: $dm-nav-item-text;
     text-decoration: none;
   }
 
-  @include hover {
+  @include dm-hover {
     background-color: $dm-nav-item-bg-hover;
     color: $dm-nav-item-text;
     text-decoration: none;
@@ -24,7 +24,7 @@
       right: 1.25em;
       top: 50%;
       transform: rotate(0);
-      @include transition();
+      @include dm-transition();
     }
   }
 

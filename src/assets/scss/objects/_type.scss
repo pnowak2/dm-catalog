@@ -28,12 +28,12 @@
     display: inline-block;
     width: 0;
     height: 0;
-    margin-left: $caret-width / 2;
+    margin-left: $dm-settings-caret-width / 2;
     vertical-align: middle;
     content: "";
-    border-top: $caret-width solid;
-    border-right: $caret-width solid transparent;
-    border-left: $caret-width solid transparent;
+    border-top:$dm-settings-caret-width solid;
+    border-right: $dm-settings-caret-width solid transparent;
+    border-left: $dm-settings-caret-width solid transparent;
   }
 
   &status-mark {
