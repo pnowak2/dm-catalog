@@ -21,10 +21,10 @@
   }
   
   &__tab-button {
+    @include dm-border-radius(0 0 .2em .2em);
     background-color: $dm-family-bar-tab-button-bg;
     border: .1em solid $dm-family-bar-tab-button-border-color;
     border-top: 0;
-    border-radius: 0 0 .2em .2em;
     display: block;
     font-size: .7em;
     padding: .3em .7em;
