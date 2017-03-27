@@ -1,5 +1,9 @@
 .dm-c-sidebar {
-  @include mq($until: mobile) {
+  @include mq($until: tablet) {
     color: $dm-settings-color-white;
+  }
+
+  @include mq($from: tablet, $until: desktop) {
+    color: $dm-settings-color-green;
   }
 }
