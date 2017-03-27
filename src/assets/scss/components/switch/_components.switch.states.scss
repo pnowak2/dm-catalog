@@ -1,0 +1,23 @@
+.dm-c-switch {
+  &--checked {
+    background: $dm-switch-checked-bg;
+    border-color: $dm-switch-checked-bg;
+  }
+
+  &--checked &__handle {
+    left: .8125em;
+  }
+
+  &--disabled {
+    opacity: .50;
+    cursor: not-allowed;
+  }
+
+  &--big {
+    font-size: 2rem;
+  }
+
+  &--medium {
+    font-size: 1.5rem;
+  }
+}

@@ -1,7 +1,7 @@
 .dm-c-switch {
   font-size: 1rem;
-  background: #fff;
-  border: $dm-settings-border-width solid #dfdfdf;
+  background: $dm-switch-bg;
+  border: $dm-settings-border-width solid $dm-switch-border-color;
   position: relative;
   display: inline-block;
   box-sizing: content-box;
@@ -14,32 +14,10 @@
   vertical-align: middle;
   user-select: none;
   background-clip: content-box;
-  
+
   width: 2.0625em;
   height: 1.25em;
-  border-radius: 1.25em;
-
-  &--big {
-    font-size: 2rem;
-  }
-
-  &--medium {
-    font-size: 1.5rem;
-  }
-
-  &--checked {
-    background: rgb(100, 189, 99);
-    border-color: rgb(100, 189, 99);
-  }
-
-  &--checked &__handle {
-    left: .8125em;
-  }
-
-  &--disabled {
-    opacity: .50;
-    cursor: not-allowed;
-  }
+  @include dm-border-radius(1.25em);
 
   &__handle {
     font-size: 1em;
