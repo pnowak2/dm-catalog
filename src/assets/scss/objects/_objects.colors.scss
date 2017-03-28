@@ -1,75 +1,52 @@
-@each $color-type in $dm-settings-color-types {
-  .dm-o-color-#{$color-type} {
-    color: dm-get-color(#{$color-type}) !important;
+@each $color-name in map-keys($dm-settings-colors) {
+  .dm-o-color-#{$color-name} {
+    color: dm-get-color(#{$color-name}) !important;
   }
-  .dm-o-bg-color-#{$color-type} {
-    background-color: dm-get-color(#{$color-type}) !important;
+
+  .dm-o-bg-color-#{$color-name} {
+    background-color: dm-get-color(#{$color-name}) !important;
   }
-  .dm-o-bg-#{$color-type} {
-    background-color: dm-get-color(#{$color-type}) !important;
-    border-color: dm-get-color(#{$color-type}) !important;
-    color: #fff !important;
+
+  .dm-o-bg-#{$color-name} {
+    background-color: dm-get-color(#{$color-name}) !important;
+    border-color: dm-get-color(#{$color-name}) !important;
+    color: dm-get-color(white) !important;
   }
-  .dm-o-alpha-#{$color-type} {
-    background-color: dm-get-color(#{$color-type}-lightester-2) !important; 
-    border-color:  dm-get-color(#{$color-type}-dark) !important;
+
+  .dm-o-border-#{$color-name} {
+    border-color: dm-get-color(#{$color-name}) !important;
   }
-  .dm-o-border-#{$color-type} {
-    border-color: dm-get-color(#{$color-type}) !important;
+
+  .dm-o-border-top-#{$color-name} {
+    border-top-color: dm-get-color(#{$color-name}) !important;
   }
-  .dm-o-border-top-#{$color-type} {
-    border-top-color: dm-get-color(#{$color-type}) !important;
+
+  .dm-o-border-bottom-#{$color-name} {
+    border-bottom-color: dm-get-color(#{$color-name}) !important;
   }
-  .dm-o-border-bottom-#{$color-type} {
-    border-bottom-color: dm-get-color(#{$color-type}) !important;
+
+  .dm-o-border-left-#{$color-name} {
+    border-left-color: dm-get-color(#{$color-name}) !important;
   }
-  .dm-o-border-left-#{$color-type} {
-    border-left-color: dm-get-color(#{$color-type}) !important;
+
+  .dm-o-border-right-#{$color-name} {
+    border-right-color: dm-get-color(#{$color-name}) !important;
   }
-  .dm-o-border-right-#{$color-type} {
-    border-right-color: dm-get-color(#{$color-type}) !important;
-  }
-  .dm-o-text-#{$color-type} {
+
+  .dm-o-text-#{$color-name} {
     &,
     &:hover,
     &:focus {
-        color: dm-get-color(#{$color-type}) !important;
+        color: dm-get-color(#{$color-name}) !important;
     }
   }
 
-  @each $color-shade in $dm-settings-color-shades {
-    .dm-o-color-#{$color-type}-#{$color-shade} {
-      color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-    }
-    .dm-o-bg-color-#{$color-type}-#{$color-shade} {
-      color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-    }
-    .dm-o-bg-#{$color-type}-#{$color-shade} {
-      background-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-      border-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-      color: #fff !important;
-    }
-    .dm-o-border-#{$color-type}-#{$color-shade} {
-      border-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-    }
-    .dm-o-border-top-#{$color-type}-#{$color-shade} {
-      border-top-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-    }
-    .dm-o-border-bottom-#{$color-type}-#{$color-shade} {
-      border-bottom-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-    }
-    .dm-o-border-left-#{$color-type}-#{$color-shade} {
-      border-left-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-    }
-    .dm-o-border-right-#{$color-type}-#{$color-shade} {
-      border-right-color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-    }
-    .dm-o-text-#{$color-type}-#{$color-shade} {
-      &,
-      &:hover,
-      &:focus {
-          color: dm-get-color(#{$color-type}-#{$color-shade}) !important;
-      }
+  @if(dm-has-color(#{$color-name}-lightester-2)) {
+    @if(dm-has-color(#{$color-name}-dark)) {
+      .dm-o-alpha-#{$color-name} {
+        background-color: dm-get-color(#{$color-name}-lightester-2) !important; 
+        border-color:  dm-get-color(#{$color-name}-dark) !important;
+      } 
     }
   }
 }
