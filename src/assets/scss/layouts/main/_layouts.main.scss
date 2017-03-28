@@ -10,20 +10,20 @@
   }
 
   &__navbar {
-    background: red;
+    background: dm-get-color(red);
   }
 
   &__sidebar {
-    background: blue;
+    background: dm-get-color(blue);
     flex-basis: content;
   }
 
   &__actionbar {
-    background: green;
+    background: dm-get-color(green);
   }
 
   &__content {
-    background: grey;
+    background: dm-get-color(grey);
     flex: 1;
   }
 }
