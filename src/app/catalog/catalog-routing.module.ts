@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CatalogComponent } from './catalog.component';
+import { ColorSystemDemoComponent } from './color-system-demo/color-system-demo.component';
 import { TypographyDemoComponent } from './typography-demo/typography-demo.component';
 import { MediaDemoComponent } from './media-demo/media-demo.component';
 import { ButtonsDemoComponent } from './buttons-demo/buttons-demo.component';
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'catalog/typography', pathMatch: 'full' },
   {
     path: 'catalog', component: CatalogComponent, children: [
+      { path: 'color-system', component: ColorSystemDemoComponent },
       { path: 'typography', component: TypographyDemoComponent },
       { path: 'media', component: MediaDemoComponent },
       { path: 'buttons', component: ButtonsDemoComponent },
