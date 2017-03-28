@@ -1,19 +1,19 @@
-$white:  $dm-settings-color-white !default;
-$black:  $dm-settings-color-black !default;
-$red:    $dm-settings-color-red !default;
-$orange: $dm-settings-color-orange !default;
-$yellow: $dm-settings-color-yellow !default;
-$green:  $dm-settings-color-green !default;
-$blue:   $dm-settings-color-blue !default;
-$teal:   $dm-settings-color-teal !default;
-$pink:   $dm-settings-color-pink !default;
-$purple: $dm-settings-color-purple !default;
+$white:  dm-get-color(white) !default;
+$black:  dm-get-color(black) !default;
+$red:    dm-get-color(red) !default;
+$orange: dm-get-color(orange) !default;
+$yellow: dm-get-color(yellow) !default;
+$green:  dm-get-color(green) !default;
+$blue:   dm-get-color(blue) !default;
+$teal:   dm-get-color(teal) !default;
+$pink:   dm-get-color(pink) !default;
+$purple: dm-get-color(purple) !default;
 
-$brand-primary: $dm-settings-color-primary !default;
-$brand-success: $dm-settings-color-success !default;
-$brand-info: $dm-settings-color-info !default;
-$brand-warning: $dm-settings-color-warning !default;
-$brand-danger: $dm-settings-color-danger !default;
+$brand-primary: dm-get-color(primary) !default;
+$brand-success: dm-get-color(success) !default;
+$brand-info: dm-get-color(info) !default;
+$brand-warning: dm-get-color(warning) !default;
+$brand-danger: dm-get-color(danger) !default;
 
 $body-bg:       darken($dm-settings-color-body-bg, 3%) !default;
 $body-color:    $dm-settings-color-text !default;

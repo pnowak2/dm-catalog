@@ -3,7 +3,7 @@
     background: #fff;
 
     &__category-header {
-      border-color: rgba($dm-settings-color-black, 0.1);
+      border-color: rgba(dm-get-color(black), 0.1);
     }
 
     &__category-title {

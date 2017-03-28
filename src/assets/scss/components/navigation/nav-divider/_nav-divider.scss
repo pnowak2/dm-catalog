@@ -2,5 +2,5 @@
   font-size: 1rem;
   margin: 0.3125em 0;
   height: $dm-settings-border-width;
-  background-color: rgba($dm-settings-color-white, .1);
+  background-color: rgba(dm-get-color(white), .1);
 }
