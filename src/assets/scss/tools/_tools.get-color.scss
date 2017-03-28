@@ -5,7 +5,7 @@
  */
 
 @function dm-has-color($key){
-  @if map-has-key($dm-settings-colors, $key){
+  @if map-has-key($dm-settings-colors-palette, $key){
     @return true;
   } @else {
     @return false;
@@ -13,7 +13,7 @@
 }
 
 @function dm-get-color($key){
-  @if map-has-key($dm-settings-colors, $key){
-    @return map-get($dm-settings-colors, $key); /* [1] */
+  @if map-has-key($dm-settings-colors-palette, $key){
+    @return map-get($dm-settings-colors-palette, $key); /* [1] */
   }
 }
