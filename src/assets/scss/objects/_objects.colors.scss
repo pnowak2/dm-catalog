@@ -1,4 +1,4 @@
-@each $color-name in map-keys(dm-get-palette()) {
+@each $color-name in dm-get-palette-color-names() {
   .dm-o-color-#{$color-name} {
     color: dm-get-color(#{$color-name}) !important;
   }
