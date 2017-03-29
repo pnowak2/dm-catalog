@@ -7,3 +7,9 @@
      class="dm-o-text-thin dm-o-color-{{color}}">
   <small>dm-o-color-{{ color }}</small>
 </div>
+
+<div *ngFor="let color of colors"
+     class="dm-o-border-top-{{color}}"
+     style="border-style: solid; border-width: 1px">
+  <small>dm-o-border-{{ color }}</small>
+</div>
