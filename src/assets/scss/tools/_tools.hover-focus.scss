@@ -2,6 +2,13 @@
   &:hover { @content }
 };
 
+@mixin dm-hover-focus {
+  &:focus,
+  &:hover {
+    @content
+  }
+};
+
 @mixin dm-hover-focus-active {
   &:focus,
   &:active,
@@ -9,3 +16,4 @@
     @content
   }  
 };
+
