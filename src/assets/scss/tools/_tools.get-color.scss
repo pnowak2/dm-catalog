@@ -4,8 +4,12 @@
  * 1. Retrieves color from global colors definition
  */
 
+@function dm-get-palette(){
+  @return $dm-settings-color-palette;
+}
+
 @function dm-has-color($key){
-  @if map-has-key($dm-settings-colors-palette, $key){
+  @if map-has-key(dm-get-palette(), $key){
     @return true;
   } @else {
     @return false;
@@ -13,7 +17,7 @@
 }
 
 @function dm-get-color($key){
-  @if map-has-key($dm-settings-colors-palette, $key){
-    @return map-get($dm-settings-colors-palette, $key); /* [1] */
+  @if map-has-key(dm-get-palette(), $key){
+    @return map-get(dm-get-palette(), $key); /* [1] */
   }
 }
