@@ -1,14 +1,16 @@
 /**
  * Gets color from globally defined set of color definitions
  *
- * 1. Retrieves color from global colors definition
+ * 1. Retrieves color palette from settings
+ * 2. Checks if color exists in settings palette
+ * 3. Retrieves color from global colors definition or fails
  */
 
 @function dm-get-palette(){
-  @return $dm-settings-color-palette;
+  @return $dm-settings-color-palette; /* [1] */
 }
 
-@function dm-has-color($key){
+@function dm-has-color($key){ /* [2] */
   @if map-has-key(dm-get-palette(), $key){
     @return true;
   } @else {
@@ -16,8 +18,9 @@
   }
 }
 
-@function dm-get-color($key){
-  @if map-has-key(dm-get-palette(), $key){
-    @return map-get(dm-get-palette(), $key); /* [1] */
+@function dm-get-color($key){ /* [3] */
+  $dm-palette: dm-get-palette();
+  @if map-has-key($dm-palette, $key){
+    @return map-get($dm-palette, $key); 
   }
 }
