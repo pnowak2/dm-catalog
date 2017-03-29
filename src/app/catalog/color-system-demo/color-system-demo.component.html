@@ -1,4 +1,9 @@
 <div *ngFor="let color of colors"
      class="dm-o-text-thin dm-o-bg-{{color}}">
-  <small>{{ color }}</small>
+  <small>dm-o-bg-{{ color }}</small>
+</div>
+
+<div *ngFor="let color of colors"
+     class="dm-o-text-thin dm-o-color-{{color}}">
+  <small>dm-o-color-{{ color }}</small>
 </div>
