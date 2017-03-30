@@ -1,0 +1,4 @@
+@mixin dm-font-size($font-size, $line-height: auto, $important: false) {
+  font-size: $font-size $important;
+  font-size: ($font-size / $inuit-global-font-size) * 1rem $important;
+}
