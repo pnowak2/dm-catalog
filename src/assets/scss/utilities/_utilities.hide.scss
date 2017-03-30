@@ -1,0 +1,7 @@
+.dm-u-hidden-visually {
+  @include dm-hidden-visually();
+}
+
+.dm-u-hidden {
+  display: none !important;
+}
