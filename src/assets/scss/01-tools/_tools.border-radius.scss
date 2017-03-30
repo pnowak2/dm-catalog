@@ -1,5 +1,3 @@
-// Single side border-radius
-
 @mixin dm-border-radius($radius: $dm-settings-global-radius) {
   @if $dm-settings-enable-rounded {
     border-radius: $radius;
