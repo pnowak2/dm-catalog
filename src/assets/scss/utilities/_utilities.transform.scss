@@ -1,21 +1,23 @@
-.dm-u- {
-  &rotate-45 {
-    transform: rotate(45deg) !important;
-  }
-  &rotate-90 {
-    transform: rotate(90deg) !important;
-  }
-  &rotate-180 {
-    transform: rotate(180deg) !important;
-  }
-  &rotate-45-inverse {
-    transform: rotate(-45deg) !important;
-  }
-  &rotate-90-inverse {
-    transform: rotate(-90deg) !important;
-  }
-  &rotate-180-inverse {
-    transform: rotate(-180deg) !important;
-  }
+.dm-u-rotate-45 {
+  transform: rotate(45deg) !important;
 }
 
+.dm-u-rotate-90 {
+  transform: rotate(90deg) !important;
+}
+
+.dm-u-rotate-180 {
+  transform: rotate(180deg) !important;
+}
+
+.dm-u-rotate-45-inverse {
+  transform: rotate(-45deg) !important;
+}
+
+.dm-u-rotate-90-inverse {
+  transform: rotate(-90deg) !important;
+}
+
+.dm-u-rotate-180-inverse {
+  transform: rotate(-180deg) !important;
+}
