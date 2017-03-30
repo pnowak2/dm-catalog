@@ -1,29 +1,39 @@
-//
-// Border
-//
+.dm-u-border-0 { 
+  border: 0 !important; 
+}
 
-.dm-u-border-0        { border: 0 !important; }
-.dm-u-border-top-0    { border-top: 0 !important; }
-.dm-u-border-right-0  { border-right: 0 !important; }
-.dm-u-border-bottom-0 { border-bottom: 0 !important; }
-.dm-u-border-left-0   { border-left: 0 !important; }
+.dm-u-border-top-0 { 
+  border-top: 0 !important; 
+}
 
-//
-// Border-radius
-//
+.dm-u-border-right-0  {
+   border-right: 0 !important; 
+}
+
+.dm-u-border-bottom-0 {
+   border-bottom: 0 !important; 
+}
+
+.dm-u-border-left-0 { 
+  border-left: 0 !important; 
+}
 
 .dm-u-rounded {
   @include dm-border-radius($dm-settings-global-radius);
 }
+
 .dm-u-rounded-top {
   @include dm-border-top-radius($dm-settings-global-radius);
 }
+
 .dm-u-rounded-right {
   @include dm-border-right-radius($dm-settings-global-radius);
 }
+
 .dm-u-rounded-bottom {
   @include dm-border-bottom-radius($dm-settings-global-radius);
 }
+
 .dm-u-rounded-left {
   @include dm-border-left-radius($dm-settings-global-radius);
 }

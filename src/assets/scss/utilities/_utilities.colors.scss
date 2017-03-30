@@ -1,39 +1,39 @@
 @each $color-name in dm-get-palette-color-names() {
-  .dm-o-color-#{$color-name} {
+  .dm-u-color-#{$color-name} {
     color: dm-get-color(#{$color-name}) !important;
   }
 
-  .dm-o-bg-color-#{$color-name} {
+  .dm-u-bg-color-#{$color-name} {
     background-color: dm-get-color(#{$color-name}) !important;
   }
 
-  .dm-o-bg-#{$color-name} {
+  .dm-u-bg-#{$color-name} {
     background-color: dm-get-color(#{$color-name}) !important;
     border-color: dm-get-color(#{$color-name}) !important;
     color: dm-get-color(white) !important;
   }
 
-  .dm-o-border-#{$color-name} {
+  .dm-u-border-#{$color-name} {
     border-color: dm-get-color(#{$color-name}) !important;
   }
 
-  .dm-o-border-top-#{$color-name} {
+  .dm-u-border-top-#{$color-name} {
     border-top-color: dm-get-color(#{$color-name}) !important;
   }
 
-  .dm-o-border-bottom-#{$color-name} {
+  .dm-u-border-bottom-#{$color-name} {
     border-bottom-color: dm-get-color(#{$color-name}) !important;
   }
 
-  .dm-o-border-left-#{$color-name} {
+  .dm-u-border-left-#{$color-name} {
     border-left-color: dm-get-color(#{$color-name}) !important;
   }
 
-  .dm-o-border-right-#{$color-name} {
+  .dm-u-border-right-#{$color-name} {
     border-right-color: dm-get-color(#{$color-name}) !important;
   }
 
-  .dm-o-text-#{$color-name} {
+  .dm-u-text-#{$color-name} {
     &,
     &:hover,
     &:focus {
@@ -43,7 +43,7 @@
 
   @if(dm-has-color(#{$color-name}-lightester-2)) {
     @if(dm-has-color(#{$color-name}-dark)) {
-      .dm-o-alpha-#{$color-name} {
+      .dm-u-alpha-#{$color-name} {
         background-color: dm-get-color(#{$color-name}-lightester-2) !important; 
         border-color:  dm-get-color(#{$color-name}-dark) !important;
       } 
