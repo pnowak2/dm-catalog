@@ -3,15 +3,11 @@
     @include dm-make-container();
     @include dm-make-container-max-widths();
   }
-}
 
-@if $dm-settings-enable-grid-classes {
   .dm-o-container-fluid {
     @include dm-make-container();
   }
-}
 
-@if $dm-settings-enable-grid-classes {
   .dm-o-row {
     @include dm-make-row();
   }
@@ -28,8 +24,6 @@
       padding-left: 0;
     }
   }
-}
 
-@if $dm-settings-enable-grid-classes {
   @include dm-make-grid-columns();
 }
