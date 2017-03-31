@@ -1,11 +1,11 @@
 @mixin dm-reset-text {
-  font-family: $font-family-base;
+  font-family: $dm-settings-font-family-base;
   // We deliberately do NOT reset font-size or word-wrap.
   font-style: normal;
-  font-weight: $font-weight-normal;
+  font-weight: $dm-settings-font-weight-normal;
   letter-spacing: normal;
   line-break: auto;
-  line-height: $line-height-base;
+  line-height: $dm-settings-line-height-base;
   text-align: left; // Fallback for where `start` is not supported
   text-align: start;
   text-decoration: none;
