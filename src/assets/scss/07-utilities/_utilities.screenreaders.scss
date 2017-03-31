@@ -1,0 +1,11 @@
+//
+// Screenreaders
+//
+
+.dm-u-sr-only {
+  @include dm-sr-only();
+}
+
+.dm-u-sr-only-focusable {
+  @include dm-sr-only-focusable();
+}

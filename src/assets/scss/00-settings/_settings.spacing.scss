@@ -2,5 +2,32 @@ $dm-settings-spacer:   1rem !default;
 $dm-settings-spacer-x: $dm-settings-spacer !default;
 $dm-settings-spacer-y: $dm-settings-spacer !default;
 
+$dm-settings-spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: ($dm-settings-spacer-x * .25),
+    y: ($dm-settings-spacer-y * .25)
+  ),
+  2: (
+    x: ($dm-settings-spacer-x * .5),
+    y: ($dm-settings-spacer-y * .5)
+  ),
+  3: (
+    x: $dm-settings-spacer-x,
+    y: $dm-settings-spacer-y
+  ),
+  4: (
+    x: ($dm-settings-spacer-x * 1.5),
+    y: ($dm-settings-spacer-y * 1.5)
+  ),
+  5: (
+    x: ($dm-settings-spacer-x * 3),
+    y: ($dm-settings-spacer-y * 3)
+  )
+) !default;
+
 $dm-settings-border-width: 1px !default;
 $dm-settings-border-width-lg: $dm-settings-border-width * 2 !default;
