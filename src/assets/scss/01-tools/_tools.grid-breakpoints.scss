@@ -14,7 +14,7 @@
 }
 
 @function dm-breakpoint-infix($name, $breakpoints: $dm-settings-grid-breakpoints) {
-  @return if(dm-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+  @return if(dm-breakpoint-min($name, $breakpoints) == null, "", "\\@#{$name}");
 }
 
 @mixin dm-media-breakpoint-up($name, $breakpoints: $dm-settings-grid-breakpoints) {

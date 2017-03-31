@@ -2,13 +2,13 @@
   @include dm-media-breakpoint-up($breakpoint) {
     $infix: dm-breakpoint-infix($breakpoint, $dm-settings-grid-breakpoints);
 
-    .dm-u-d#{$infix}-none { display: none !important; }
-    .dm-u-d#{$infix}-inline { display: inline !important; }
-    .dm-u-d#{$infix}-inline-block { display: inline-block !important; }
-    .dm-u-d#{$infix}-block { display: block !important; }
-    .dm-u-d#{$infix}-table { display: table !important; }
-    .dm-u-d#{$infix}-table-cell { display: table-cell !important; }
-    .dm-u-d#{$infix}-flex { display: flex !important; }
-    .dm-u-d#{$infix}-inline-flex { display: inline-flex !important; }
+    .dm-u-d-none#{$infix} { display: none !important; }
+    .dm-u-d-inline#{$infix} { display: inline !important; }
+    .dm-u-d-inline-block#{$infix} { display: inline-block !important; }
+    .dm-u-d-block#{$infix} { display: block !important; }
+    .dm-u-d-table#{$infix} { display: table !important; }
+    .dm-u-d-table-cell#{$infix} { display: table-cell !important; }
+    .dm-u-d-flex#{$infix} { display: flex !important; }
+    .dm-u-d-inline-flex#{$infix} { display: inline-flex !important; }
   }
 }

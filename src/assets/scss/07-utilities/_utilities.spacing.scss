@@ -9,16 +9,16 @@
         $length-x: map-get($lengths, x);
         $length-y: map-get($lengths, y);
 
-        .dm-u-#{$abbrev}#{$infix}-#{$size}  { #{$prop}:        $length-y $length-x !important; }
-        .dm-u-#{$abbrev}t#{$infix}-#{$size} { #{$prop}-top:    $length-y !important; }
-        .dm-u-#{$abbrev}r#{$infix}-#{$size} { #{$prop}-right:  $length-x !important; }
-        .dm-u-#{$abbrev}b#{$infix}-#{$size} { #{$prop}-bottom: $length-y !important; }
-        .dm-u-#{$abbrev}l#{$infix}-#{$size} { #{$prop}-left:   $length-x !important; }
-        .dm-u-#{$abbrev}x#{$infix}-#{$size} {
+        .dm-u-#{$abbrev}-#{$size}#{$infix}  { #{$prop}:        $length-y $length-x !important; }
+        .dm-u-#{$abbrev}t-#{$size}#{$infix} { #{$prop}-top:    $length-y !important; }
+        .dm-u-#{$abbrev}r-#{$size}#{$infix} { #{$prop}-right:  $length-x !important; }
+        .dm-u-#{$abbrev}b-#{$size}#{$infix} { #{$prop}-bottom: $length-y !important; }
+        .dm-u-#{$abbrev}l-#{$size}#{$infix} { #{$prop}-left:   $length-x !important; }
+        .dm-u-#{$abbrev}x-#{$size}#{$infix} {
           #{$prop}-right: $length-x !important;
           #{$prop}-left:  $length-x !important;
         }
-        .dm-u-#{$abbrev}y#{$infix}-#{$size} {
+        .dm-u-#{$abbrev}y-#{$size}#{$infix} {
           #{$prop}-top:    $length-y !important;
           #{$prop}-bottom: $length-y !important;
         }
@@ -26,16 +26,16 @@
     }
 
     // Some special margin utils
-    .dm-u-m#{$infix}-auto  { margin:        auto !important; }
-    .dm-u-mt#{$infix}-auto { margin-top:    auto !important; }
-    .dm-u-mr#{$infix}-auto { margin-right:  auto !important; }
-    .dm-u-mb#{$infix}-auto { margin-bottom: auto !important; }
-    .dm-u-ml#{$infix}-auto { margin-left:   auto !important; }
-    .dm-u-mx#{$infix}-auto {
+    .dm-u-m-auto#{$infix}  { margin:        auto !important; }
+    .dm-u-mt-auto#{$infix} { margin-top:    auto !important; }
+    .dm-u-mr-auto#{$infix} { margin-right:  auto !important; }
+    .dm-u-mb-auto#{$infix} { margin-bottom: auto !important; }
+    .dm-u-ml-auto#{$infix} { margin-left:   auto !important; }
+    .dm-u-mx-auto#{$infix} {
       margin-right: auto !important;
       margin-left:  auto !important;
     }
-    .dm-u-my#{$infix}-auto {
+    .dm-u-my-auto#{$infix} {
       margin-top:    auto !important;
       margin-bottom: auto !important;
     }
