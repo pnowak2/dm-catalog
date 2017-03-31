@@ -1,0 +1,9 @@
+@each $breakpoint in map-keys($dm-settings-grid-breakpoints) {
+  @include dm-media-breakpoint-up($breakpoint) {
+    $infix: dm-breakpoint-infix($breakpoint, $dm-settings-grid-breakpoints);
+
+    .dm-u-float#{$infix}-left  { @include dm-float-left; }
+    .dm-u-float#{$infix}-right { @include dm-float-right; }
+    .dm-u-float#{$infix}-none  { @include dm-float-none; }
+  }
+}
