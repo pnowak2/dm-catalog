@@ -1,3 +1,90 @@
+@mixin dm-make-container($gutters: $dm-settings-grid-gutter-widths) {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  @each $breakpoint in map-keys($gutters) {
+    @include dm-media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left:  ($gutter / 2);
+    }
+  }
+}
+
+@mixin dm-make-container-max-widths($max-widths: $dm-settings-container-max-widths, $breakpoints: $dm-settings-grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include dm-media-breakpoint-up($breakpoint, $breakpoints) {
+      width: $container-max-width;
+      max-width: 100%;
+    }
+  }
+}
+
+@mixin dm-make-gutters($gutters: $dm-settings-grid-gutter-widths) {
+  @each $breakpoint in map-keys($gutters) {
+    @include dm-media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left:  ($gutter / 2);
+    }
+  }
+}
+
+@mixin dm-make-row($gutters: $dm-settings-grid-gutter-widths) {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $breakpoint in map-keys($gutters) {
+    @include dm-media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      margin-right: ($gutter / -2);
+      margin-left:  ($gutter / -2);
+    }
+  }
+}
+
+@mixin dm-make-col-ready($gutters: $dm-settings-grid-gutter-widths) {
+  position: relative;
+  width: 100%;
+  min-height: 1px; // Prevent collapsing
+
+  @each $breakpoint in map-keys($gutters) {
+    @include dm-media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left:  ($gutter / 2);
+    }
+  }
+}
+
+@mixin dm-make-col($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+@mixin dm-make-col-offset($size, $columns: $grid-columns) {
+  margin-left: percentage($size / $columns);
+}
+
+@mixin dm-make-col-push($size, $columns: $grid-columns) {
+  left: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin dm-make-col-pull($size, $columns: $grid-columns) {
+  right: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin dm-make-col-modifier($type, $size, $columns) {
+  @if $type == push {
+    @include dm-make-col-push($size, $columns);
+  } @else if $type == pull {
+    @include dm-make-col-pull($size, $columns);
+  } @else if $type == offset {
+    @include dm-make-col-offset($size, $columns);
+  }
+}
+
 @mixin dm-make-grid-columns($columns: $dm-settings-grid-columns, $gutters: $dm-settings-grid-gutter-widths, $breakpoints: $dm-settings-grid-breakpoints) {
   // Common properties for all breakpoints
   %grid-column {
