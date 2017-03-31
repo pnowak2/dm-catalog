@@ -1,3 +1,5 @@
 .dm-c-sidebar {
-
+  @include dm-media-breakpoint-only(xs) {
+    color: red;
+  }
 }
