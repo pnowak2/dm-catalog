@@ -1,0 +1,60 @@
+@mixin dm-make-grid-columns($columns: $dm-settings-grid-columns, $gutters: $dm-settings-grid-gutter-widths, $breakpoints: $dm-settings-grid-breakpoints) {
+  // Common properties for all breakpoints
+  %grid-column {
+    position: relative;
+    width: 100%;
+    min-height: 1px; // Prevent columns from collapsing when empty
+
+    @include dm-make-gutters($gutters);
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: dm-breakpoint-infix($breakpoint, $breakpoints);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .dm-o-col#{$infix}-#{$i} {
+        @extend %grid-column;
+      }
+    }
+    .dm-o-col#{$infix} {
+      @extend %grid-column;
+    }
+
+    @include dm-media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.dm-o-col-{bp}` classes for equal-width flexbox columns
+      .dm-o-col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+      .dm-o-col#{$infix}-auto {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+      @for $i from 1 through $columns {
+        .dm-o-col#{$infix}-#{$i} {
+          @include dm-make-col($i, $columns);
+        }
+      }
+
+      @each $modifier in (pull, push) {
+        @for $i from 0 through $columns {
+          .#{$modifier}#{$infix}-#{$i} {
+            @include dm-make-col-modifier($modifier, $i, $columns)
+          }
+        }
+      }
+
+      // `$columns - 1` because offsetting by the width of an entire row isn't possible
+      @for $i from 0 through ($columns - 1) {
+        @if not ($infix == "" and $i == 0) { // Avoid emitting useless .dm-o-offset-xs-0
+          .dm-o-offset#{$infix}-#{$i} {
+            @include dm-make-col-modifier(offset, $i, $columns)
+          }
+        }
+      }
+    }
+  }
+}

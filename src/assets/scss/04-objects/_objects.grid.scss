@@ -1,0 +1,35 @@
+@if $dm-settings-enable-grid-classes {
+  .dm-o-container {
+    @include dm-make-container();
+    @include dm-make-container-max-widths();
+  }
+}
+
+@if $dm-settings-enable-grid-classes {
+  .dm-o-container-fluid {
+    @include dm-make-container();
+  }
+}
+
+@if $dm-settings-enable-grid-classes {
+  .dm-o-row {
+    @include dm-make-row();
+  }
+
+  // Remove the negative margin from default .row, then the horizontal padding
+  // from all immediate children columns (to prevent runaway style inheritance).
+  .dm-o-no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .dm-o-col,
+    > [class*="dm-o-col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+@if $dm-settings-enable-grid-classes {
+  @include dm-make-grid-columns();
+}

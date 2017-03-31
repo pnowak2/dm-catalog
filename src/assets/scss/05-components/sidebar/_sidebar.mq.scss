@@ -1,9 +1,3 @@
 .dm-c-sidebar {
-  @include mq($until: tablet) {
-    color: dm-get-color(white);
-  }
 
-  @include mq($from: tablet, $until: desktop) {
-    color: dm-get-color(green);
-  }
 }

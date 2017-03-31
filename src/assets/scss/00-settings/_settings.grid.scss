@@ -1,0 +1,26 @@
+$dm-settings-enable-grid-classes: true !default;
+
+$dm-settings-grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$dm-settings-container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$dm-settings-grid-columns: 12 !default;
+$dm-settings-grid-gutter-width-base: 30px !default;
+$dm-settings-grid-gutter-widths: (
+  xs: $dm-settings-grid-gutter-width-base,
+  sm: $dm-settings-grid-gutter-width-base,
+  md: $dm-settings-grid-gutter-width-base,
+  lg: $dm-settings-grid-gutter-width-base,
+  xl: $dm-settings-grid-gutter-width-base
+) !default;
