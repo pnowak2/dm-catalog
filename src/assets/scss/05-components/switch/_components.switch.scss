@@ -10,24 +10,24 @@
   margin: 0;            
   cursor: pointer;
   box-shadow: rgb(223, 223, 223) 0 0 0 0 inset;
-  transition: 0.3s ease-out all;
   vertical-align: middle;
   user-select: none;
   background-clip: content-box;
 
   width: 2.0625em;
   height: 1.25em;
+  @include dm-transition(0.3s ease-out background);
   @include dm-border-radius(1.25em);
 
   &__handle {
     font-size: 1em;
-    @include dm-border-radius(100%);
     box-shadow: 0 .0625em .1875em rgba(0, 0, 0, 0.4);          
     position: absolute;
     top: 0;
     left: 0;
-    transition: 0.3s ease-out all;
     background-color: $dm-switch-handle-bg;
+    @include dm-transition(0.3s ease-out left);
+    @include dm-border-radius(100%);
 
     width: 1.25em;
     height: 1.25em;
