@@ -1,0 +1,38 @@
+.dm-c-family-bar { 
+  &--closed &__members-container {
+    padding: 0;
+    height: 0;
+  }
+  
+  &--closed &__tab-caret {
+    transform: rotate(180deg);
+    margin-top: -.35em;
+  }
+
+  &--closed &__family-plus-container {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--closed &__scroll-left-container,
+  &--closed &__scroll-right-container {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--closed &__scroll-left-container {
+    left: -3.5em;
+  }
+
+  &--closed &__scroll-right-container {
+    right: -3.5em;
+  }
+
+  &--closed .dm-c-family-member {
+    visibility: hidden;
+  }
+
+  &--readonly .dm-c-family-member {
+    cursor: not-allowed;
+  }
+}

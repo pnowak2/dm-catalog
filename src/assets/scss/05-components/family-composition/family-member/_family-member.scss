@@ -8,33 +8,11 @@
   overflow: visible;
   transition: background-color .5s;
   background-color: $dm-family-member-bg;
-  width: 14em;
   padding: .7em;
-  border-radius: 0;
   display: inline-block;
-  margin-right: .7em;
   vertical-align: top;
   cursor: pointer;
-
-  &:hover {
-    background-color: $dm-family-member-hover-bg;
-  }
-  
-  &--big {
-    font-size: 2rem;
-  }
-
-  &--selected {
-    box-shadow: inset 0 0 0 .15rem dm-get-color(primary);
-  }
-
-  &--non-selectable {
-    cursor: not-allowed;
-  }
-  
-  &--disabled {
-    opacity: 0.6;
-  }
+  @include dm-border-radius();
 
   &__member-relation--ex {
       text-decoration: line-through; 

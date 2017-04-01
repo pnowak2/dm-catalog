@@ -1,6 +1,11 @@
 .dm-c-family-bar { 
   font-size: 1rem;
 
+  .dm-c-family-member {
+    margin-right: 0.7em;
+    width: 14em;
+  }
+
   &__members-container {
     font-size: 0;
     background-color: $dm-family-bar-members-container-bg;
@@ -102,42 +107,5 @@
   &__scroll-left-container:active,
   &__scroll-right-container:active {
     transform: scale(1.2)
-  }
-
-  &--closed &__members-container {
-    padding: 0;
-    height: 0;
-  }
-  
-  &--closed &__tab-caret {
-    transform: rotate(180deg);
-    margin-top: -.35em;
-  }
-
-  &--closed &__family-plus-container {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &--closed &__scroll-left-container,
-  &--closed &__scroll-right-container {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &--closed &__scroll-left-container {
-    left: -3.5em;
-  }
-
-  &--closed &__scroll-right-container {
-    right: -3.5em;
-  }
-
-  &--closed .dm-c-family-member {
-    visibility: hidden;
-  }
-
-  &--readonly .dm-c-family-member {
-    cursor: not-allowed;
   }
 }
