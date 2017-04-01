@@ -12,7 +12,7 @@
   }
 }
 
-@mixin dm-make-container-max-widths($max-widths: $dm-settings-container-max-widths, $breakpoints: $dm-settings-grid-breakpoints) {
+@mixin dm-make-container-max-widths($max-widths: $dm-settings-grid-container-max-widths, $breakpoints: $dm-settings-grid-breakpoints) {
   @each $breakpoint, $container-max-width in $max-widths {
     @include dm-media-breakpoint-up($breakpoint, $breakpoints) {
       width: $container-max-width;

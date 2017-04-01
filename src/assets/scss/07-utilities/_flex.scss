@@ -1,7 +1,3 @@
-// Flex variation
-//
-// Custom styles for additional flex alignment options.
-
 @each $breakpoint in map-keys($dm-settings-grid-breakpoints) {
   @include dm-media-breakpoint-up($breakpoint) {
     $infix: dm-breakpoint-infix($breakpoint, $dm-settings-grid-breakpoints);

@@ -1,12 +1,18 @@
+/**
+ * Resetting font size to defaults
+ *
+ * 1. We deliberately do NOT reset font-size or word-wrap.
+ * 2. Fallback for where `start` is not supported
+ */
 @mixin dm-reset-text {
   font-family: $dm-settings-font-family-base;
-  // We deliberately do NOT reset font-size or word-wrap.
+  /* [1] */
   font-style: normal;
   font-weight: $dm-settings-font-weight-normal;
   letter-spacing: normal;
   line-break: auto;
   line-height: $dm-settings-line-height-base;
-  text-align: left; // Fallback for where `start` is not supported
+  text-align: left; /* [2] */ 
   text-align: start;
   text-decoration: none;
   text-shadow: none;

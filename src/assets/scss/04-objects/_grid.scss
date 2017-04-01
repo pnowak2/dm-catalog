@@ -1,3 +1,9 @@
+/**
+ * Grid system
+ *
+ * 1. Remove the negative margin from default .row, then the horizontal padding
+ *    from all immediate children columns (to prevent runaway style inheritance).
+ */
 @if $dm-settings-enable-grid-classes {
   .dm-o-container {
     @include dm-make-container();
@@ -12,8 +18,7 @@
     @include dm-make-row();
   }
 
-  // Remove the negative margin from default .row, then the horizontal padding
-  // from all immediate children columns (to prevent runaway style inheritance).
+  /* [1] */
   .dm-o-no-gutters {
     margin-right: 0;
     margin-left: 0;

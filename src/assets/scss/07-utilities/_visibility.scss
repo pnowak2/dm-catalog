@@ -2,7 +2,9 @@
   @include dm-invisible();
 }
 
-// Responsive visibility utilities
+/**
+ * Responsive visibility utilities
+ */
 
 @each $bp in map-keys($dm-settings-grid-breakpoints) {
   .dm-u-hidden-#{$bp}-up {
@@ -18,9 +20,11 @@
   }
 }
 
-// Print utilities
-//
-// Media queries are placed on the inside to be mixin-friendly.
+/**
+ * Print utilities
+ *
+ * Media queries are placed on the inside to be mixin-friendly.
+ */
 
 .dm-u-visible-print-block {
   display: none !important;

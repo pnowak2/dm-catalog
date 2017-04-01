@@ -1,5 +1,6 @@
-// Margin and Padding
-
+/**
+ * Margin and Padding
+ */
 @each $breakpoint in map-keys($dm-settings-grid-breakpoints) {
   @include dm-media-breakpoint-up($breakpoint) {
     $infix: dm-breakpoint-infix($breakpoint, $dm-settings-grid-breakpoints);
@@ -25,7 +26,6 @@
       }
     }
 
-    // Some special margin utils
     .dm-u-m-auto#{$infix}  { margin:        auto !important; }
     .dm-u-mt-auto#{$infix} { margin-top:    auto !important; }
     .dm-u-mr-auto#{$infix} { margin-right:  auto !important; }
