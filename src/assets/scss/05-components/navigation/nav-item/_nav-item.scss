@@ -8,6 +8,7 @@
     box-shadow: 0 $dm-settings-border-width 0 rgba(dm-get-color(white), .07);
     max-height: 0;
     overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
   }
 
   &__subitems .dm-c-nav-link {
