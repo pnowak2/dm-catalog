@@ -1,6 +1,6 @@
 import { SwitchComponent } from './../../switch/switch.component';
 import { FamilyMemberModel } from '../model/family-member.model';
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer, ViewEncapsulation } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer2, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'dm-family-bar',
@@ -14,7 +14,7 @@ export class FamilyBarComponent {
   @Input() closed = false;
   @Input() readOnly = false;
 
-  constructor(private renderer: Renderer) { }
+  constructor(private renderer: Renderer2) { }
 
   get ScrollStep(): number {
     return 80;
@@ -63,7 +63,7 @@ export class FamilyBarComponent {
   handleScrollLeftClicked(evt) {
     const currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
 
-    this.renderer.setElementProperty(
+    this.renderer.setProperty(
       this.familyMembersScrollContainer.nativeElement,
       'scrollLeft',
       currentPosition - this.ScrollStep
@@ -75,7 +75,7 @@ export class FamilyBarComponent {
   handleScrollRightClicked(evt) {
     const currentPosition = this.familyMembersScrollContainer.nativeElement.scrollLeft;
 
-    this.renderer.setElementProperty(
+    this.renderer.setProperty(
       this.familyMembersScrollContainer.nativeElement,
       'scrollLeft',
       currentPosition + this.ScrollStep
