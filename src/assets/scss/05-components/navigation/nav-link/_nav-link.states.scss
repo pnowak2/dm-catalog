@@ -7,7 +7,6 @@
   @include dm-hover {
     background-color: $dm-nav-item-bg-hover;
     color: $dm-nav-item-text;
-    text-decoration: none;
   }
   
   &--has-subitems {

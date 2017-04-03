@@ -1,7 +1,5 @@
 .dm-c-nav-item {
-  &.dm-is-active {
-    > .dm-c-nav-item__subitems {
-        max-height: 500em;
-    }
+  &.dm-is-active > .dm-c-nav-item__subitems {
+    max-height: 500em;  
   }
 }
