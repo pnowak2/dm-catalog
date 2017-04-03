@@ -6,12 +6,12 @@
 .dm-c-family-member {
   font-size: 1rem;
   overflow: visible;
-  transition: background-color .5s;
   background-color: $dm-family-member-bg;
   padding: .7em;
   display: inline-block;
   vertical-align: top;
   cursor: pointer;
+  @include dm-transition(background-color .5s);
   @include dm-border-radius();
 
   &__member-relation--ex {

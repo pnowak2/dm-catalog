@@ -72,7 +72,7 @@
     position: absolute;
     top: .4em;
     right: .6em;
-    transition: all .5s;
+    @include dm-transition(all .5s);
   }
 
   &__family-plus-label {
@@ -90,10 +90,10 @@
     font-size: 2em;
     height: 100%;
     top: 0;
-    transition: all .3s;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include dm-transition(all .3s);
   }
 
   &__scroll-left-container {
