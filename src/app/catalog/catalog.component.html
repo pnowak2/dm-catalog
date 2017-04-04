@@ -1,48 +1,40 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <a class="navbar-brand">Catalog<sup>dm</sup></a>
+<ul>
+  <li>
+    <a [routerLink]="['color-system']">Color System</a>
+  </li>
+  <li>
+    <a [routerLink]="['typography']">Typography</a>
+  </li>
+  <li>
+    <a [routerLink]="['media']">Media</a>
+  </li>
+  <li>
+    <a [routerLink]="['buttons']">Buttons</a>
+  </li>
+  <li>
+    <a [routerLink]="['switch']">Switch</a>
+  </li>
+  <li>
+    <a [routerLink]="['card']">Card</a>
+  </li>
+  <li>
+    <a [routerLink]="['family-bar']">Family Bar</a>
+  </li>
+  <li>
+    <a [routerLink]="['navbar']">Navbar</a>
+  </li>
+  <li>
+    <a [routerLink]="['navstack']">Navstack</a>
+  </li>
+  <li>
+    <a [routerLink]="['sidebar']">Sidebar</a>
+  </li>
+  <li>
+    <a [routerLink]="['icons']">Icons List</a>
+  </li>
+  <li>
+    <a [routerLink]="['layout']">Layout</a>
+  </li>
+</ul>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['color-system']">Color System</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['typography']">Typography</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['media']">Media</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['buttons']">Buttons</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['switch']">Switch</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['card']">Card</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['family-bar']">Family Bar</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['navbar']">Navbar</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['navstack']">Navstack</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['sidebar']">Sidebar</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['icons']">Icons List</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['layout']">Layout</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="dm-o-container dm-demo-catalog">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>
