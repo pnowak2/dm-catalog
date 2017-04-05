@@ -2,7 +2,7 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
-  color: $dm-nav-item-text;
+  color: $dm-nav-link-text-color;
   padding: 0.375em 1.25em 0.375em 1.25em;
   height: 3em;
   position: relative;
@@ -19,7 +19,6 @@
   &__label {
     display: inline;
     vertical-align: middle;
-    font-family: 'Roboto';
     font-size: .8125em;
     font-weight: 500;
     text-decoration: none;
