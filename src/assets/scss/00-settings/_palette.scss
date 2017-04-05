@@ -25,6 +25,10 @@ $dm-settings-color-danger-600: #E53935;
 $dm-settings-color-danger-700: #D32F2F;
 $dm-settings-color-danger-800: #C62828;
 $dm-settings-color-danger-900: #B71C1C;
+$dm-settings-color-danger-A100: #ff8a80;
+$dm-settings-color-danger-A200: #ff5252;
+$dm-settings-color-danger-A400: #ff1744;
+$dm-settings-color-danger-A700: #d50000;
 
 // Success palette
 $dm-settings-color-success-50: #E8F5E9;
@@ -61,6 +65,10 @@ $dm-settings-color-info-600: #00ACC1;
 $dm-settings-color-info-700: #0097A7;
 $dm-settings-color-info-800: #00838F;
 $dm-settings-color-info-900: #006064;
+$dm-settings-color-info-A100: #82b1ff;
+$dm-settings-color-info-A200: #448aff;
+$dm-settings-color-info-A400: #2979ff;
+$dm-settings-color-info-A700: #2962ff;
 
 // Additional colors
 // ------------------------------
@@ -297,6 +305,10 @@ $dm-settings-color-palette: (
   danger-darker: $dm-settings-color-danger-700,
   danger-darkest: $dm-settings-color-danger-800,
   danger-darkester: $dm-settings-color-danger-900,
+  danger-accent: $dm-settings-color-danger-A100,
+  danger-accent-dark: $dm-settings-color-danger-A200,
+  danger-accent-darker: $dm-settings-color-danger-A400,
+  danger-accent-darkest: $dm-settings-color-danger-A700,
 
   warning: $dm-settings-color-warning-500,
   warning-light: $dm-settings-color-warning-400,
@@ -319,6 +331,10 @@ $dm-settings-color-palette: (
   info-darker: $dm-settings-color-info-700,
   info-darkest: $dm-settings-color-info-800,
   info-darkester: $dm-settings-color-info-900,
+  info-accent: $dm-settings-color-info-A100,
+  info-accent-dark: $dm-settings-color-info-A200,
+  info-accent-darker: $dm-settings-color-info-A400,
+  info-accent-darkest: $dm-settings-color-info-A700,
 
   pink: $dm-settings-color-pink-500,
   pink-light: $dm-settings-color-pink-400,
