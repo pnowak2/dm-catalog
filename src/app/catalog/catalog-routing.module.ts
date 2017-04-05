@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CatalogComponent } from './catalog.component';
+import { HtmlDefaultsDemoComponent } from './html-defaults-demo/html-defaults-demo.component';
 import { ColorSystemDemoComponent } from './color-system-demo/color-system-demo.component';
 import { TypographyDemoComponent } from './typography-demo/typography-demo.component';
 import { MediaDemoComponent } from './media-demo/media-demo.component';
@@ -15,6 +16,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'catalog/typography', pathMatch: 'full' },
   {
     path: 'catalog', component: CatalogComponent, children: [
+      { path: 'html-defaults', component: HtmlDefaultsDemoComponent },
       { path: 'color-system', component: ColorSystemDemoComponent },
       { path: 'typography', component: TypographyDemoComponent },
       { path: 'media', component: MediaDemoComponent },

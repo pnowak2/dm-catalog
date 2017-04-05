@@ -15,6 +15,7 @@ import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
 import { MainLayoutDemoComponent } from './layouts/main/main-layout-demo.component';
 import { MediaDemoComponent } from './media-demo/media-demo.component';
 import { ColorSystemDemoComponent } from './color-system-demo/color-system-demo.component';
+import { HtmlDefaultsDemoComponent } from './html-defaults-demo/html-defaults-demo.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { ColorSystemDemoComponent } from './color-system-demo/color-system-demo.
     SwitchDemoComponent,
     MainLayoutDemoComponent,
     MediaDemoComponent,
-    ColorSystemDemoComponent
+    ColorSystemDemoComponent,
+    HtmlDefaultsDemoComponent
   ],
   providers: [],
   exports: []
