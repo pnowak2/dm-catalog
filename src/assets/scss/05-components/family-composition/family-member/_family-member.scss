@@ -1,8 +1,3 @@
-@mixin dm-family-member-header-text {
-  font-size: .7em;
-  color: $dm-family-member-header-text-color;
-}
-
 .dm-c-family-member {
   font-size: 1rem;
   overflow: visible;
@@ -11,7 +6,7 @@
   display: inline-block;
   vertical-align: top;
   cursor: pointer;
-  @include dm-transition(background-color .5s);
+  @include dm-transition();
   @include dm-border-radius();
 
   &__member-relation--ex {
@@ -40,11 +35,11 @@
   }
   
   &__more-menu {
-    @include dm-family-member-header-text;
     float: right;
     position: relative;
     user-select: none;
     display: none;
+    @include dm-family-member-header-text;
   }
   
   &__data-section {
@@ -55,7 +50,7 @@
   }
   
   &__person-name {
-    color: $dm-settings-color-text;
+    color: $dm-family-member-person-name-text-color;
     font-size: .8em;
     @include dm-text-truncate();
   }
