@@ -9,7 +9,7 @@
   padding: 0;
   margin: 0;            
   cursor: pointer;
-  box-shadow: rgb(223, 223, 223) 0 0 0 0 inset;
+  box-shadow: $dm-switch-box-shadow-color 0 0 0 0 inset;
   vertical-align: middle;
   user-select: none;
   background-clip: content-box;
@@ -21,7 +21,7 @@
 
   &__handle {
     font-size: 1em;
-    box-shadow: 0 .0625em .1875em rgba(0, 0, 0, 0.4);          
+    box-shadow: 0 .0625em .1875em $dm-switch-handle-box-shadow-color;          
     position: absolute;
     top: 0;
     left: 0;

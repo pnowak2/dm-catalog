@@ -7,6 +7,6 @@
   height: 100%;
 
   & > * > .dm-c-nav-item.dm-is-active > * > .dm-c-nav-link {
-    background-color: $dm-nav-item-bg-opened;
+    background-color: $dm-nav-stack-nav-item-bg-opened;
   }
 }

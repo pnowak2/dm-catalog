@@ -4,20 +4,20 @@
   width: $dm-sidebar-width;
 
   &__category-header {
-    border-bottom: $dm-settings-border-width solid rgba(255,255,255,.1);
+    border-bottom: $dm-sidebar-header-border-width solid $dm-sidebar-header-border-color;
     padding: 0.75em 2.875em 0.75em 1.25em;
     position: relative;
   }
 
   &__category-title {
-    color: #fff;
+    color: $dm-sidebar-category-title-color;
     font-size: 0.6875em;
     font-weight: 500;
     text-transform: uppercase;
   }
 
   &__category-icons {
-    color: #fff;
+    color: $dm-sidebar-category-icons-color;
     position: absolute;
     right: 1em;
     top: 50%;

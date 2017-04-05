@@ -2,6 +2,8 @@ $dm-sidebar-width: 16.25em;
 $dm-sidebar-closed-width: 3.5em;
 $dm-sidebar-bg: dm-get-color(slate-darkester);
 
-$dm-nav-stack-bg: dm-get-color(slate-darkester);
-$dm-nav-item-text: rgba(255, 255, 255, .92);
-$dm-nav-item-bg-hover: darken($dm-nav-stack-bg, 4%);
+$dm-sidebar-header-border-width: $dm-settings-border-width;
+$dm-sidebar-header-border-color: transparentize(dm-get-color(white), .9);
+
+$dm-sidebar-category-title-color: dm-get-color(white);
+$dm-sidebar-category-icons-color: dm-get-color(white);
