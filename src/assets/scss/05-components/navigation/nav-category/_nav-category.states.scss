@@ -1,8 +1,8 @@
 .dm-c-nav-category {
   .dm-is-closed & {
     text-align: center;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 0;
+    padding-right: 0;
 
     &__label {
       display: none;

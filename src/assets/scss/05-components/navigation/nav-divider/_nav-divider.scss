@@ -1,6 +1,6 @@
 .dm-c-nav-divider {
   font-size: 1rem;
   margin: 0.3125em 0;
-  height: $dm-settings-border-width;
-  background-color: rgba(dm-get-color(white), .1);
+  height: $dm-nav-divider-height;
+  background-color: transparentize(dm-get-color(white), .9);
 }

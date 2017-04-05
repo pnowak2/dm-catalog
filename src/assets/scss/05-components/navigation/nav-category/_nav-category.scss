@@ -1,6 +1,6 @@
 .dm-c-nav-category {
   font-size: 1rem;
-  color: rgba(255, 255, 255, .5);
+  color: $dm-nav-category-color;
   display: block;
   padding: 0.375em 1.25em 0.375em 1.25em;
   position: relative;
@@ -10,7 +10,6 @@
   user-select: none;
 
   &__label {
-    font-family: 'Roboto';
     font-size: 0.6875em;
   }
 

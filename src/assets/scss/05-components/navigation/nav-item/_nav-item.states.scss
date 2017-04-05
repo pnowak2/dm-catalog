@@ -1,6 +1,6 @@
 .dm-c-nav-item {
   &.dm-is-active > .dm-c-nav-item__subitems {
     max-height: 80em;  
-    @include dm-transition(max-height 1s ease-in-out);
+    @include dm-transition();
   }
 }
