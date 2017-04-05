@@ -2,7 +2,7 @@
   .dm-c-nav-item {
     &__subitems {
       background: rgba(0, 0, 0, .01);
-      box-shadow: 0 $dm-settings-border-width 0 rgba(dm-get-color(black), .07);
+      @include dm-box-shadow(0 $dm-settings-border-width 0 rgba(dm-get-color(black), .07));
     }
   }
 }

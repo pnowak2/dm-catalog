@@ -5,9 +5,9 @@
     margin: 0;
     padding: 0;
     background-color: darken($dm-nav-item-subitems-bg, 2%);
-    box-shadow: 0 $dm-nav-item-subitems-border-size 0 $dm-nav-item-subitems-border-bg;
     max-height: 0;
     overflow: hidden;
+    @include dm-box-shadow(0 $dm-nav-item-subitems-border-size 0 $dm-nav-item-subitems-border-bg);
     @include dm-transition(max-height 0.5s cubic-bezier(0, 1, 0, 1));
   }
 

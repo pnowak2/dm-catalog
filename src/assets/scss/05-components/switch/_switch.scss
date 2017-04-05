@@ -9,23 +9,23 @@
   padding: 0;
   margin: 0;            
   cursor: pointer;
-  box-shadow: $dm-switch-box-shadow-color 0 0 0 0 inset;
   vertical-align: middle;
   user-select: none;
   background-clip: content-box;
-
-  width: 2.0625em;
-  height: 1.25em;
+  @include dm-box-shadow($dm-switch-box-shadow-color 0 0 0 0 inset);
   @include dm-transition(0.3s ease-out background);
   @include dm-border-radius(1.25em);
+  
+  width: 2.0625em;
+  height: 1.25em;
 
   &__handle {
     font-size: 1em;
-    box-shadow: 0 .0625em .1875em $dm-switch-handle-box-shadow-color;          
     position: absolute;
     top: 0;
     left: 0;
     background-color: $dm-switch-handle-bg;
+    @include dm-box-shadow(0 .0625em .1875em $dm-switch-handle-box-shadow-color);          
     @include dm-transition(0.3s ease-out left);
     @include dm-border-radius(100%);
 
