@@ -6,41 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color-system-demo.component.scss']
 })
 export class ColorSystemDemoComponent implements OnInit {
-  colors = [
-    'primary', 
-    'primary-dark', 
-    'primary-darker', 
-    'warning', 
-    'warning-dark', 
-    'warning-darker', 
-    'danger',
-    'danger-dark',
-    'danger-darker',
-    'success',
-    'success-dark',
-    'success-darker',
-    'info',
-    'info-dark',
-    'info-darker',
-    'pink',
-    'pink-dark',
-    'pink-darker',
-    'red',
-    'red-dark',
-    'red-darker',
-    'red-accent',
-    'red-accent-dark',
-    'red-accent-darker',
-    'red-accent-darkest',
-    'grey',
-    'grey-dark',
-    'grey-darker',
-    'slate',
-    'slate-dark',
-    'slate-darker',
-    ];
+  colorTypes = ['primary', 'danger', 'warning', 'success', 'info', 'pink', 'red', 'yellow', 'violet', 'purple', 'indigo', 'blue', 'teal', 'green', 'orange', 'brown', 'grey', 'slate'];
+  colorShades = ['-lightester-2', '-lightester', '-lightest', '-lighter', '-light', '', '-dark', '-darker', '-darkest', '-darkester'];
+  colors = [];
 
-  constructor() { }
+  constructor() { 
+    this.colorTypes.forEach((type) => {
+      this.colorShades.forEach((shade) => {
+        this.colors.push(type + shade);
+      });
+    });
+  }
 
   ngOnInit() {
   }

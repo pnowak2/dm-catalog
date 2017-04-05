@@ -1,17 +1,17 @@
 <h2>Color System</h2>
 
 <div *ngFor="let color of colors"
-     class="dm-u-text-thin dm-u-bg-{{color}}">
+     class="dm-u-bg-{{color}} dm-u-p-2">
   <small>dm-u-bg-{{ color }}</small>
 </div>
 
 <div *ngFor="let color of colors"
-     class="dm-u-text-thin dm-u-color-{{color}}">
+     class="dm-u-color-{{color}} dm-u-p-2">
   <small>dm-u-color-{{ color }}</small>
 </div>
 
 <div *ngFor="let color of colors"
-     class="dm-u-border-top-{{color}}"
-     style="border-style: solid; border-width: 1px">
+     class="dm-u-border-top-{{color}} dm-u-p-2 dm-u-border-bottom-0 dm-u-border-left-0 dm-u-border-right-0"
+     style="border-style: solid">
   <small>dm-u-border-{{ color }}</small>
 </div>
