@@ -5,9 +5,9 @@ $dm-settings-code-color: dm-get-color(red-darkest) !default;
 $dm-settings-code-bg: lighten(dm-get-color(grey-lightester), 30%) !default;
 
 $dm-settings-kbd-box-shadow: inset 0 -.1rem 0 rgba(dm-get-color(black),.25) !default;
-$dm-settings-nested-kbd-font-weight: $dm-settings-font-weight-bold !default;
 $dm-settings-kbd-color: dm-get-color(white) !default;
 $dm-settings-kbd-bg: dm-get-color(grey-darker) !default;
+$dm-settings-kbd-nested-font-weight: $dm-settings-font-weight-bold !default;
 
 $dm-settings-pre-color: dm-get-color(grey-darker) !default;
 
@@ -60,7 +60,7 @@ kbd {
   kbd {
     padding: 0;
     font-size: 100%;
-    font-weight: $dm-settings-nested-kbd-font-weight;
+    font-weight: $dm-settings-kbd-nested-font-weight;
     @include dm-box-shadow(none);
   }
 }
