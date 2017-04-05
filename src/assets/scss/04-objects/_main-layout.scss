@@ -10,7 +10,7 @@
   }
 
   &__navbar {
-    background: dm-get-color(red);
+    background: dm-get-color(white);
   }
 
   &__sidebar {
@@ -23,7 +23,7 @@
   }
 
   &__content {
-    background: dm-get-color(grey);
+    background: dm-get-color(grey-lightester);
     flex: 1;
   }
 }
