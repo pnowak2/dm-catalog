@@ -1,0 +1,14 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $dm-settings-headings-margin-bottom;
+  font-family: $dm-settings-headings-font-family;
+  font-weight: $dm-settings-headings-font-weight;
+  line-height: $dm-settings-headings-line-height;
+  color: $dm-settings-headings-color;
+}
+
+h1 { font-size: $dm-settings-font-size-h1; }
+h2 { font-size: $dm-settings-font-size-h2; }
+h3 { font-size: $dm-settings-font-size-h3; }
+h4 { font-size: $dm-settings-font-size-h4; }
+h5 { font-size: $dm-settings-font-size-h5; }
+h6 { font-size: $dm-settings-font-size-h6; }
