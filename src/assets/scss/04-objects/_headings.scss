@@ -1,0 +1,14 @@
+.dm-o-h1, .dm-o-h2, .dm-o-h3, .dm-o-h4, .dm-o-h5, .dm-o-h6 {
+  margin-bottom: $dm-settings-headings-margin-bottom;
+  font-family: $dm-settings-headings-font-family;
+  font-weight: $dm-settings-headings-font-weight;
+  line-height: $dm-settings-headings-line-height;
+  color: $dm-settings-headings-color;
+}
+
+.dm-o-h1 { font-size: $dm-settings-font-size-h1; }
+.dm-o-h2 { font-size: $dm-settings-font-size-h2; }
+.dm-o-h3 { font-size: $dm-settings-font-size-h3; }
+.dm-o-h4 { font-size: $dm-settings-font-size-h4; }
+.dm-o-h5 { font-size: $dm-settings-font-size-h5; }
+.dm-o-h6 { font-size: $dm-settings-font-size-h6; }

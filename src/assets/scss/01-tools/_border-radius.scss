@@ -1,4 +1,4 @@
-@mixin dm-border-radius($radius: $dm-settings-global-radius) {
+@mixin dm-border-radius($radius: $dm-settings-border-radius) {
   @if $dm-settings-enable-rounded {
     border-radius: $radius;
   }
