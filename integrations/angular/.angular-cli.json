@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "dm",
       "styles": [
-        "../../../scss/index.scss"
+        "../../../scss/dm.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

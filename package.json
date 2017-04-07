@@ -1,0 +1,33 @@
+{
+  "name": "dm-catalog",
+  "version": "0.0.1",
+  "description": "Modular CSS widgets library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass scss/dm.scss dist/dm.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnowak2/dm-catalog.git"
+  },
+  "keywords": [
+    "modular",
+    "css",
+    "components"
+  ],
+  "author": "Piotr Andrzej Nowak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pnowak2/dm-catalog/issues"
+  },
+  "homepage": "https://github.com/pnowak2/dm-catalog#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "node-sass": "^4.5.2",
+    "nodemon": "1.8.1"
+  }
+}
