@@ -18,7 +18,7 @@ const autoprefixerOptions = {
 }
 
 const sassdocOptions = {
-  dest: './public/sassdoc'
+  dest: output + '/sassdoc'
 };
 
 gulp.task('sass', () =>
