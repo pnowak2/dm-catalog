@@ -4,9 +4,7 @@
   "description": "Modular CSS widgets library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node-sass scss/dm.scss dist/dm.css",
-    "watch": "nodemon -e scss -x \"npm run build\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,11 +21,11 @@
     "url": "https://github.com/pnowak2/dm-catalog/issues"
   },
   "homepage": "https://github.com/pnowak2/dm-catalog#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
-    "node-sass": "^4.5.2",
-    "nodemon": "1.8.1"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.1.0",
+    "sassdoc": "^2.2.2"
   }
 }
