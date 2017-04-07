@@ -30,7 +30,7 @@ gulp.task('sass', () =>
 
 gulp.task('sassdoc', function () {
   return gulp
-    .src(inputFolder)
+    .src(inputFolder + '/**')
     .pipe(sassdoc(sassdocOptions))
     .resume();
 });
