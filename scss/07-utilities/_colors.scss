@@ -50,3 +50,11 @@
     }
   }
 }
+
+.dm-u-text-muted {
+  color: $dm-settings-color-text-muted !important;
+  
+  @include dm-hover-focus {
+    color: $dm-settings-color-text-muted !important
+  }
+}

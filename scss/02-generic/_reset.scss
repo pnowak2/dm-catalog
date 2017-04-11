@@ -19,15 +19,15 @@
 //
 // Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 
-// html {
-//   box-sizing: border-box;
-// }
+html {
+  box-sizing: border-box;
+}
 
-// *,
-// *::before,
-// *::after {
-//   box-sizing: inherit;
-// }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 
 // Make viewport responsive
@@ -113,13 +113,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-}
-
-// Abbreviations
-abbr[title],
-// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
-abbr[data-original-title] {
-  cursor: help;
 }
 
 address {
