@@ -4,7 +4,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const sassdoc = require('sassdoc');
 
 var inputFolder = 'scss/';
-var input = inputFolder + 'dm.scss';
+var input = inputFolder + 'index.scss';
 var output = 'dist';
 
 const sassOptions = {
