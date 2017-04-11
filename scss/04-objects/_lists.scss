@@ -1,0 +1,15 @@
+.dm-o-list-unstyled {
+  @include dm-list-unstyled();
+}
+
+.dm-o-list-inline {
+  @include dm-list-unstyled();
+}
+
+.dm-o-list-inline-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $dm-settings-list-inline-padding;
+  }
+}
