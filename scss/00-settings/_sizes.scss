@@ -1,9 +1,11 @@
-$dm-settings-percent-sizes: (
+$dm-settings-sizes-percent: (
   25: 25%,
   50: 50%,
   75: 75%,
   100: 100%
 ) !default;
+
+$dm-settings-size-base-unit: 1rem;
 
 $dm-settings-size-unit-factor-1: 1 !default;
 $dm-settings-size-unit-factor-2: 2 !default;
@@ -29,14 +31,14 @@ $dm-settings-size-unit-factors: (
   $dm-settings-size-unit-factor-10,
 ) !default;
 
-$dm-settings-size-unit-1: 1rem * $dm-settings-size-unit-factor-1;
-$dm-settings-size-unit-2: 1rem * $dm-settings-size-unit-factor-2;
-$dm-settings-size-unit-3: 1rem * $dm-settings-size-unit-factor-3;
-$dm-settings-size-unit-4: 1rem * $dm-settings-size-unit-factor-4;
-$dm-settings-size-unit-5: 1rem * $dm-settings-size-unit-factor-5;
-$dm-settings-size-unit-6: 1rem * $dm-settings-size-unit-factor-6;
-$dm-settings-size-unit-7: 1rem * $dm-settings-size-unit-factor-7;
-$dm-settings-size-unit-8: 1rem * $dm-settings-size-unit-factor-8;
-$dm-settings-size-unit-9: 1rem * $dm-settings-size-unit-factor-9;
-$dm-settings-size-unit-10: 1rem * $dm-settings-size-unit-factor-10;
+$dm-settings-size-unit-1: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-1;
+$dm-settings-size-unit-2: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-2;
+$dm-settings-size-unit-3: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-3;
+$dm-settings-size-unit-4: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-4;
+$dm-settings-size-unit-5: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-5;
+$dm-settings-size-unit-6: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-6;
+$dm-settings-size-unit-7: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-7;
+$dm-settings-size-unit-8: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-8;
+$dm-settings-size-unit-9: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-9;
+$dm-settings-size-unit-10: $dm-settings-size-base-unit * $dm-settings-size-unit-factor-10;
 

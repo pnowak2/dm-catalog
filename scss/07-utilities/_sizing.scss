@@ -1,5 +1,5 @@
 @each $prop, $abbrev in (width: w, height: h) {
-  @each $size, $length in $dm-settings-percent-sizes {
+  @each $size, $length in $dm-settings-sizes-percent {
     .dm-u-#{$abbrev}-#{$size}-percent { #{$prop}: $length !important; }
   }
 }
