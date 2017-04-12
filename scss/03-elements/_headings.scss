@@ -1,9 +1,5 @@
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: $dm-settings-headings-margin-bottom;
-  font-family: $dm-settings-headings-font-family;
-  font-weight: $dm-settings-headings-font-weight;
-  line-height: $dm-settings-headings-line-height;
-  color: $dm-settings-headings-color;
+  @include dm-headings();
 }
 
 h1 { font-size: $dm-settings-font-size-h1; }
