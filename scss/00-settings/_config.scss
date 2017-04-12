@@ -3,7 +3,3 @@ $dm-settings-config: (
   healthcheck: false,
   debug: true,
 );
-
-@function dm-settings-config($key) {
-  @return map-get($dm-settings-config, $key);
-}

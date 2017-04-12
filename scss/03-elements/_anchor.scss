@@ -1,3 +1,8 @@
+$dm-settings-link-color: map-get($dm-settings-color-palette, primary) !default;
+$dm-settings-link-decoration: none !default;
+$dm-settings-link-hover-color: darken($dm-settings-link-color, 15%) !default;
+$dm-settings-link-hover-decoration: underline !default;
+
 /**
  * 1. See https://github.com/twbs/bootstrap/issues/19402
  */
