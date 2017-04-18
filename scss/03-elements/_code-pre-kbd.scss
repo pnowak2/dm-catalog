@@ -39,6 +39,8 @@ pre {
   margin-bottom: 1rem;
   font-size: $dm-settings-code-font-size;
   color: $dm-settings-pre-color;
+  // Normalize v4 removed this property, causing `<pre>` content to break out of wrapping code snippets
+  overflow: auto;
 
   code {
     padding: 0;
