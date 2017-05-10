@@ -1,7 +1,7 @@
 .dm-c-family-member {
   font-size: 1rem;
   overflow: visible;
-  background-color: $dm-family-member-bg;
+  background-color: $dm-c-family-member__bg;
   padding: .7em;
   display: inline-block;
   vertical-align: top;
@@ -30,7 +30,7 @@
   &__member-number,
   &__member-number:hover,
   &__member-number:visited {
-    color: $dm-family-member-header-personal-number-link-color;
+    color: $dm-c-family-member__header-personal-number-link-color;
     text-decoration: underline;
   }
   
@@ -50,7 +50,7 @@
   }
   
   &__person-name {
-    color: $dm-family-member-person-name-text-color;
+    color: $dm-c-family-member__person-name-text-color;
     font-size: .8em;
     @include dm-text-truncate();
   }
@@ -61,7 +61,7 @@
   }
   
   &__person-born {
-    color: $dm-family-member-born-text-color;
+    color: $dm-c-family-member__born-text-color;
     font-size: .75em;
   }
   
@@ -80,8 +80,8 @@
   
   &__language {
     display: inline-block;
-    background-color: $dm-family-member-language-bg;
-    color: $dm-family-member-language-text-color;
+    background-color: $dm-c-family-member__language-bg;
+    color: $dm-c-family-member__language-text-color;
     font-size: 0.7em;
     padding: .2em .3em;
     text-transform: uppercase;
@@ -100,26 +100,26 @@
     font-size: .9em; 
     padding: .45em; 
     border-radius: 100%; 
-    background-color: $dm-family-member-badge-bg;
-    color: $dm-family-member-badge-text-color;
+    background-color: $dm-c-family-member__badge-bg;
+    color: $dm-c-family-member__badge-text-color;
     display: inline-block;
   }
   
   &__badge--full-rights {
-    color: $dm-family-member-badge-full-rights-text-color;
+    color: $dm-c-family-member__badge-full-rights-text-color;
   }
 
   &__badge--complementary-rights {
-    color: $dm-family-member-badge-complementary-rights-text-color;
+    color: $dm-c-family-member__badge-complementary-rights-text-color;
   }
 
   &__badge--comments {
-    color: $dm-family-member-badge-comments-text-color;
+    color: $dm-c-family-member__badge-comments-text-color;
     background-color: transparent;
   }
 
   &__badge--covered-by-other {
-    color: $dm-family-member-badge-covered-by-other-text-color;
-    background-color: $dm-family-member-badge-covered-by-other-bg;
+    color: $dm-c-family-member__badge-covered-by-other-text-color;
+    background-color: $dm-c-family-member__badge-covered-by-other-bg;
   }
 }

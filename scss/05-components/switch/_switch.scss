@@ -1,7 +1,7 @@
 .dm-c-switch {
   font-size: 1rem;
-  background: $dm-switch-bg;
-  border: $dm-settings__border-width solid $dm-switch-border-color;
+  background: $dm-c-switch__bg;
+  border: $dm-settings__border-width solid $dm-c-switch__border-color;
   position: relative;
   display: inline-block;
   box-sizing: content-box;
@@ -12,7 +12,7 @@
   vertical-align: middle;
   user-select: none;
   background-clip: content-box;
-  @include dm-box-shadow($dm-switch-box-shadow-color 0 0 0 0 inset);
+  @include dm-box-shadow($dm-c-switch__box-shadow-color 0 0 0 0 inset);
   @include dm-transition(0.3s ease-out background);
   @include dm-border-radius(1.25em);
   
@@ -24,8 +24,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $dm-switch-handle-bg;
-    @include dm-box-shadow(0 .0625em .1875em $dm-switch-handle-box-shadow-color);          
+    background-color: $dm-c-switch__handle-bg;
+    @include dm-box-shadow(0 .0625em .1875em $dm-c-switch__handle-box-shadow-color);          
     @include dm-transition(0.3s ease-out left);
     @include dm-border-radius(100%);
 

@@ -1,23 +1,23 @@
 .dm-c-sidebar {
   font-size: 1rem;
-  background-color: $dm-sidebar-bg;
-  width: $dm-sidebar-width;
+  background-color: $dm-c-sidebar__bg;
+  width: $dm-c-sidebar__width;
 
   &__category-header {
-    border-bottom: $dm-sidebar-header-border-width solid $dm-sidebar-header-border-color;
+    border-bottom: $dm-c-sidebar__header-border-width solid $dm-c-sidebar__header-border-color;
     padding: 0.75em 2.875em 0.75em 1.25em;
     position: relative;
   }
 
   &__category-title {
-    color: $dm-sidebar-category-title-color;
+    color: $dm-c-sidebar__category-title-color;
     font-size: 0.6875em;
     font-weight: 500;
     text-transform: uppercase;
   }
 
   &__category-icons {
-    color: $dm-sidebar-category-icons-color;
+    color: $dm-c-sidebar__category-icons-color;
     position: absolute;
     right: 1em;
     top: 50%;

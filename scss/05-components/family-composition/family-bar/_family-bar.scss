@@ -8,7 +8,7 @@
 
   &__members-container {
     font-size: 0;
-    background-color: $dm-family-bar-members-container-bg;
+    background-color: $dm-c-family-bar__members-container-bg;
     padding: .7rem;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -24,13 +24,13 @@
   }
   
   &__tab-button {
-    background-color: $dm-family-bar-tab-button-bg;
-    border: .1em solid $dm-family-bar-tab-button-border-color;
+    background-color: $dm-c-family-bar__tab-button-bg;
+    border: .1em solid $dm-c-family-bar__tab-button-border-color;
     border-top: 0;
     display: block;
     font-size: .7em;
     padding: .3em .7em;
-    color: $dm-family-bar-tab-button-color;
+    color: $dm-c-family-bar__tab-button-color;
     cursor: pointer;
     position: relative; 
     padding-right: 2em;
@@ -57,7 +57,7 @@
 
   &__tab-member-first-name,
   &__tab-member-last-name {
-    color: $dm-family-bar-tab-member-name-color;
+    color: $dm-c-family-bar__tab-member-name-color;
   }
   
   &__tab-member-last-name {
@@ -75,7 +75,7 @@
 
   &__family-plus-label {
     font-size: .7em;
-    color: $dm-family-bar-tab-family-plus-color;
+    color: $dm-c-family-bar__tab-family-plus-color;
     vertical-align: middle;
     margin: 0;
     margin-right: .3em;
