@@ -1,5 +1,3 @@
-$dm-settings-list-inline-padding: 5px !default;
-
 .dm-o-list-unstyled {
   @include dm-list-unstyled();
 }
@@ -12,6 +10,6 @@ $dm-settings-list-inline-padding: 5px !default;
   display: inline-block;
 
   &:not(:last-child) {
-    margin-right: $dm-settings-list-inline-padding;
+    margin-right: $dm-o-list__inline-padding;
   }
 }

@@ -1,0 +1,8 @@
+dt {
+  font-weight: $dm-elements-dt-font-weight;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0; // Undo browser default
+}

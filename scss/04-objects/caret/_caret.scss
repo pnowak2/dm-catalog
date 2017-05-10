@@ -1,0 +1,12 @@
+.dm-o-caret::after {
+  border-color: $dm-settings-color-text;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: $dm-o-caret__width / 2;
+  vertical-align: middle;
+  content: "";
+  border-top:$dm-o-caret__width solid;
+  border-right: $dm-o-caret__width solid transparent;
+  border-left: $dm-o-caret__width solid transparent;
+}

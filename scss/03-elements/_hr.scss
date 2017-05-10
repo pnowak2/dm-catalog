@@ -1,9 +1,0 @@
-$dm-settings-hr-border-width: $dm-settings-border-width !default;
-$dm-settings-hr-border-color: transparentize(dm-get-color(black),.9) !default;
-
-hr {
-  margin-top: $dm-settings-spacer-y;
-  margin-bottom: $dm-settings-spacer-y;
-  border: 0;
-  border-top: $dm-settings-hr-border-width solid $dm-settings-hr-border-color;
-}
