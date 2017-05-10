@@ -1,14 +1,8 @@
-////
-/// @group tools
-////
-
-/// Provides next breakpoint
 @function dm-breakpoint-next($name, $breakpoints: $dm-settings-grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
    $n: index($breakpoint-names, $name);
   @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
 }
 
-/// Provides minimum breakpoint
 @function dm-breakpoint-min($name, $breakpoints: $dm-settings-grid-breakpoints) {
   $min: map-get($breakpoints, $name);
   @return if($min != 0, $min, null);

@@ -3,8 +3,6 @@ body {
   font-size: $dm-settings-font-size-base;
   font-weight: $dm-settings-font-weight-base;
   line-height: $dm-settings-line-height-base;
-  // Go easy on the eyes and use something other than `#000` for text
   color: $dm-settings-color-text;
-  // By default, `<body>` has no `background-color` so we set one as a best practice.
   background-color: $dm-settings-color-body-bg;
 }

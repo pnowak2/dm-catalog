@@ -1,8 +1,3 @@
-////
-/// @group tools
-////
-
-/// Makes a container
 @mixin dm-make-container($gutters: $dm-settings-grid-gutter-widths) {
   position: relative;
   margin-left: auto;
