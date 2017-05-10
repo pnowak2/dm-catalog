@@ -1,11 +1,11 @@
-$dm-settings-font-family-sans-serif: "Roboto", system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
-$dm-settings-font-family-serif: Georgia, "Times New Roman", Times, serif !default;
-$dm-settings-font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$dm-settings-font-family-base: $dm-settings-font-family-sans-serif !default;
+$dm-settings__font-family-sans-serif: "Roboto", system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
+$dm-settings__font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$dm-settings__font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$dm-settings__font-family-base: $dm-settings__font-family-sans-serif !default;
 
-$dm-settings-font-size-base: 1rem;
-$dm-settings-line-height-base: 1.5 !default;
+$dm-settings__font-size-base: 1rem;
+$dm-settings__line-height-base: 1.5 !default;
 
-$dm-settings-font-weight-normal: normal !default;
-$dm-settings-font-weight-bold: bold !default;
-$dm-settings-font-weight-base: $dm-settings-font-weight-normal !default;
+$dm-settings__font-weight-normal: normal !default;
+$dm-settings__font-weight-bold: bold !default;
+$dm-settings__font-weight-base: $dm-settings__font-weight-normal !default;

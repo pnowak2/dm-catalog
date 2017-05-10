@@ -4,7 +4,7 @@
  * 1. Remove the negative margin from default .row, then the horizontal padding
  *    from all immediate children columns (to prevent runaway style inheritance).
  */
-@if $dm-settings-enable-grid-classes {
+@if $dm-settings__enable-grid-classes {
   .dm-o-container {
     @include dm-make-container();
     @include dm-make-container-max-widths();

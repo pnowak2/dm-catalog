@@ -1,12 +1,12 @@
 /**
  * Margin and Padding
  */
-@each $breakpoint in map-keys($dm-settings-grid-breakpoints) {
+@each $breakpoint in map-keys($dm-settings__grid-breakpoints) {
   @include dm-media-breakpoint-up($breakpoint) {
-    $infix: dm-breakpoint-infix($breakpoint, $dm-settings-grid-breakpoints);
+    $infix: dm-breakpoint-infix($breakpoint, $dm-settings__grid-breakpoints);
 
     @each $prop, $abbrev in (margin: m, padding: p) {
-      @each $size, $lengths in $dm-settings-spacers {
+      @each $size, $lengths in $dm-settings__spacers {
         $length-x: map-get($lengths, x);
         $length-y: map-get($lengths, y);
 

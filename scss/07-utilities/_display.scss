@@ -1,6 +1,6 @@
-@each $breakpoint in map-keys($dm-settings-grid-breakpoints) {
+@each $breakpoint in map-keys($dm-settings__grid-breakpoints) {
   @include dm-media-breakpoint-up($breakpoint) {
-    $infix: dm-breakpoint-infix($breakpoint, $dm-settings-grid-breakpoints);
+    $infix: dm-breakpoint-infix($breakpoint, $dm-settings__grid-breakpoints);
 
     .dm-u-d-none#{$infix} { display: none !important; }
     .dm-u-d-inline#{$infix} { display: inline !important; }

@@ -1,5 +1,5 @@
 @each $prop, $abbrev in (width: w, height: h) {
-  @each $size, $length in $dm-settings-sizes-percent {
+  @each $size, $length in $dm-settings__sizes-percent {
     .dm-u-#{$abbrev}-#{$size}-percent { #{$prop}: $length !important; }
   }
 }
@@ -8,7 +8,7 @@
 .dm-u-mh-100-percent { max-height: 100% !important; }
 
 @each $prop, $abbrev in (width: w, height: h) {
-  @each $i in $dm-settings-size-unit-factors {
+  @each $i in $dm-settings__size-unit-factors {
     .dm-u-#{$abbrev}-#{$i} { #{$prop}: $i * 1rem !important; }
   }
 }

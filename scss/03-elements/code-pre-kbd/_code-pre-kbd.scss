@@ -2,15 +2,15 @@ code,
 kbd,
 pre,
 samp {
-  font-family: $dm-settings-font-family-monospace;
+  font-family: $dm-settings__font-family-monospace;
 }
 
 code {
-  padding: $dm-elements-code-padding-y $dm-elements-code-padding-x;
-  font-size: $dm-elements-code-font-size;
-  color: $dm-elements-code-color;
-  background-color: $dm-elements-code-bg;
-  @include dm-border-radius($dm-settings-border-radius);
+  padding: $dm-elements__code-padding-y $dm-elements__code-padding-x;
+  font-size: $dm-elements__code-font-size;
+  color: $dm-elements__code-color;
+  background-color: $dm-elements__code-bg;
+  @include dm-border-radius($dm-settings__border-radius);
 
   // Streamline the style when inside anchors to avoid broken underline and more
   a > & {
@@ -24,8 +24,8 @@ pre {
   display: block;
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: $dm-elements-code-font-size;
-  color: $dm-elements-pre-color;
+  font-size: $dm-elements__code-font-size;
+  color: $dm-elements__pre-color;
   // Normalize v4 removed this property, causing `<pre>` content to break out of wrapping code snippets
   overflow: auto;
 
@@ -39,17 +39,17 @@ pre {
 }
 
 kbd {
-  padding: $dm-elements-code-padding-y $dm-elements-code-padding-x;
-  font-size: $dm-elements-code-font-size;
-  color: $dm-elements-kbd-color;
-  background-color: $dm-elements-kbd-bg;
-  @include dm-border-radius($dm-settings-border-radius);
-  @include dm-box-shadow($dm-elements-kbd-box-shadow);
+  padding: $dm-elements__code-padding-y $dm-elements__code-padding-x;
+  font-size: $dm-elements__code-font-size;
+  color: $dm-elements__kbd-color;
+  background-color: $dm-elements__kbd-bg;
+  @include dm-border-radius($dm-settings__border-radius);
+  @include dm-box-shadow($dm-elements__kbd-box-shadow);
 
   kbd {
     padding: 0;
     font-size: 100%;
-    font-weight: $dm-elements-kbd-nested-font-weight;
+    font-weight: $dm-elements__kbd-nested-font-weight;
     @include dm-box-shadow(none);
   }
 }

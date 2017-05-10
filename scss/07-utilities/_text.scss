@@ -26,9 +26,9 @@
 .dm-u-text-nowrap   { white-space: nowrap !important; }
 .dm-u-text-truncate { @include dm-text-truncate; }
 
-@each $breakpoint in map-keys($dm-settings-grid-breakpoints) {
+@each $breakpoint in map-keys($dm-settings__grid-breakpoints) {
   @include dm-media-breakpoint-up($breakpoint) {
-    $infix: dm-breakpoint-infix($breakpoint, $dm-settings-grid-breakpoints);
+    $infix: dm-breakpoint-infix($breakpoint, $dm-settings__grid-breakpoints);
     
     .dm-u-text-left#{$infix}   { text-align: left !important; }
     .dm-u-text-right#{$infix}  { text-align: right !important; }

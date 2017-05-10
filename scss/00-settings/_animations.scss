@@ -1,5 +1,5 @@
-$dm-settings-linear-out-slow-in-timing-function: cubic-bezier(0, 0, .2, 1) !default;
-$dm-settings-fast-out-slow-in-timing-function: cubic-bezier(.4, 0, .2, 1) !default;
-$dm-settings-fast-out-linear-in-timing-function: cubic-bezier(.4, 0, 1, 1) !default;
+$dm-settings__linear-out-slow-in-timing-function: cubic-bezier(0, 0, .2, 1) !default;
+$dm-settings__fast-out-slow-in-timing-function: cubic-bezier(.4, 0, .2, 1) !default;
+$dm-settings__fast-out-linear-in-timing-function: cubic-bezier(.4, 0, 1, 1) !default;
 
-$dm-settings-transition-base: all .3s $dm-settings-linear-out-slow-in-timing-function !default;
+$dm-settings__transition-base: all .3s $dm-settings__linear-out-slow-in-timing-function !default;

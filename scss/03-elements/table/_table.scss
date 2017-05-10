@@ -2,13 +2,13 @@ table {
   // No longer part of Normalize since v4
   border-collapse: collapse;
   // Reset for nesting within parents with `background-color`.
-  background-color: $dm-elements-table-bg;
+  background-color: $dm-elements__table-bg;
 }
 
 caption {
-  padding-top: $dm-elements-table-cell-padding;
-  padding-bottom: $dm-elements-table-cell-padding;
-  color: $dm-settings-color-text-muted;
+  padding-top: $dm-elements__table-cell-padding;
+  padding-bottom: $dm-elements__table-cell-padding;
+  color: $dm-settings__color-text-muted;
   text-align: left;
   caption-side: bottom;
 }

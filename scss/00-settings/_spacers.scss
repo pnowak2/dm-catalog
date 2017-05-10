@@ -1,30 +1,30 @@
-$dm-settings-spacer:   1rem !default;
-$dm-settings-spacer-x: $dm-settings-spacer !default;
-$dm-settings-spacer-y: $dm-settings-spacer !default;
+$dm-settings__spacer:   1rem !default;
+$dm-settings__spacer-x: $dm-settings__spacer !default;
+$dm-settings__spacer-y: $dm-settings__spacer !default;
 
-$dm-settings-spacers: (
+$dm-settings__spacers: (
   0: (
     x: 0,
     y: 0
   ),
   1: (
-    x: ($dm-settings-spacer-x * .25),
-    y: ($dm-settings-spacer-y * .25)
+    x: ($dm-settings__spacer-x * .25),
+    y: ($dm-settings__spacer-y * .25)
   ),
   2: (
-    x: ($dm-settings-spacer-x * .5),
-    y: ($dm-settings-spacer-y * .5)
+    x: ($dm-settings__spacer-x * .5),
+    y: ($dm-settings__spacer-y * .5)
   ),
   3: (
-    x: $dm-settings-spacer-x,
-    y: $dm-settings-spacer-y
+    x: $dm-settings__spacer-x,
+    y: $dm-settings__spacer-y
   ),
   4: (
-    x: ($dm-settings-spacer-x * 1.5),
-    y: ($dm-settings-spacer-y * 1.5)
+    x: ($dm-settings__spacer-x * 1.5),
+    y: ($dm-settings__spacer-y * 1.5)
   ),
   5: (
-    x: ($dm-settings-spacer-x * 3),
-    y: ($dm-settings-spacer-y * 3)
+    x: ($dm-settings__spacer-x * 3),
+    y: ($dm-settings__spacer-y * 3)
   )
 ) !default;
