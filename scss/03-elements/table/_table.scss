@@ -8,7 +8,7 @@ table {
 caption {
   padding-top: $dm-elements-table__cell-padding;
   padding-bottom: $dm-elements-table__cell-padding;
-  color: $dm-settings__color-text-muted;
+  color: $dm-elements-table__caption-color;
   text-align: left;
   caption-side: bottom;
 }
