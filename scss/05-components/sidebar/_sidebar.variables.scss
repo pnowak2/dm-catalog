@@ -1,9 +1,9 @@
-$dm-c-sidebar__width: 16.25em;
-$dm-c-sidebar__closed-width: 3.5em;
-$dm-c-sidebar__bg: dm-get-color(slate-darkester);
+$dm-c-sidebar__width: 16.25em !default;
+$dm-c-sidebar__closed-width: 3.5em !default;
+$dm-c-sidebar__bg: dm-get-color(slate-darkester) !default;
 
-$dm-c-sidebar__header-border-width: $dm-settings__border-width;
-$dm-c-sidebar__header-border-color: transparentize(dm-get-color(white), .9);
+$dm-c-sidebar__header-border-width: $dm-settings__border-width !default;
+$dm-c-sidebar__header-border-color: transparentize(dm-get-color(white), .9) !default;
 
-$dm-c-sidebar__category-title-color: dm-get-color(white);
-$dm-c-sidebar__category-icons-color: dm-get-color(white);
+$dm-c-sidebar__category-title-color: dm-get-color(white) !default;
+$dm-c-sidebar__category-icons-color: dm-get-color(white) !default;

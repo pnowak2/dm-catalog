@@ -1,5 +1,5 @@
-$dm-c-nav-item__width: 250px;
+$dm-c-nav-item__width: 250px !default;
 
-$dm-c-nav-item__subitems-bg: dm-get-color(slate-darkester);
-$dm-c-nav-item__subitems-border-size: $dm-settings__border-width;
-$dm-c-nav-item__subitems-border-bg: rgba(dm-get-color(white), 0.07);
+$dm-c-nav-item__subitems-bg: dm-get-color(slate-darkester) !default;
+$dm-c-nav-item__subitems-border-size: $dm-settings__border-width !default;
+$dm-c-nav-item__subitems-border-bg: rgba(dm-get-color(white), 0.07) !default;
