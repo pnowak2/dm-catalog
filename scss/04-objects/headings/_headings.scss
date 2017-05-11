@@ -2,9 +2,9 @@
   @include dm-headings();
 }
 
-.dm-o-h1 { font-size: $dm-elements__headings-font-size-h1; }
-.dm-o-h2 { font-size: $dm-elements__headings-font-size-h2; }
-.dm-o-h3 { font-size: $dm-elements__headings-font-size-h3; }
-.dm-o-h4 { font-size: $dm-elements__headings-font-size-h4; }
-.dm-o-h5 { font-size: $dm-elements__headings-font-size-h5; }
-.dm-o-h6 { font-size: $dm-elements__headings-font-size-h6; }
+.dm-o-h1 { font-size: $dm-elements-headings__font-size-h1; }
+.dm-o-h2 { font-size: $dm-elements-headings__font-size-h2; }
+.dm-o-h3 { font-size: $dm-elements-headings__font-size-h3; }
+.dm-o-h4 { font-size: $dm-elements-headings__font-size-h4; }
+.dm-o-h5 { font-size: $dm-elements-headings__font-size-h5; }
+.dm-o-h6 { font-size: $dm-elements-headings__font-size-h6; }

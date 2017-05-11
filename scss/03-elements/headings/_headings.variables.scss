@@ -1,12 +1,13 @@
-$dm-elements__headings-font-size-h1: 2.5rem !default;
-$dm-elements__headings-font-size-h2: 2rem !default;
-$dm-elements__headings-font-size-h3: 1.75rem !default;
-$dm-elements__headings-font-size-h4: 1.5rem !default;
-$dm-elements__headings-font-size-h5: 1.25rem !default;
-$dm-elements__headings-font-size-h6: 1rem !default;
+$dm-elements-headings__font-size-h1: 2.5rem !default;
+$dm-elements-headings__font-size-h2: 2rem !default;
+$dm-elements-headings__font-size-h3: 1.75rem !default;
+$dm-elements-headings__font-size-h4: 1.5rem !default;
+$dm-elements-headings__font-size-h5: 1.25rem !default;
+$dm-elements-headings__font-size-h6: 1rem !default;
 
-$dm-elements__headings-margin-bottom: ($dm-settings__spacer / 2) !default;
-$dm-elements__headings-font-family: inherit !default;
-$dm-elements__headings-font-weight: 500 !default;
-$dm-elements__headings-line-height: 1.1 !default;
-$dm-elements__headings-color: inherit !default;
+$dm-elements-headings__font-family: inherit !default;
+$dm-elements-headings__font-weight: 500 !default;
+
+$dm-elements-headings__margin-bottom: ($dm-settings__spacer / 2) !default;
+$dm-elements-headings__line-height: 1.1 !default;
+$dm-elements-headings__color: inherit !default;

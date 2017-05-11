@@ -1,12 +1,12 @@
-$dm-elements__code-font-size: 90% !default;
-$dm-elements__code-padding-x: .4rem !default;
-$dm-elements__code-padding-y: .2rem !default;
-$dm-elements__code-color: dm-get-color(red-darkest) !default;
-$dm-elements__code-bg: lighten(dm-get-color(grey-lightester), 30%) !default;
+$dm-elements-code__font-size: 90% !default;
+$dm-elements-code__padding-x: .4rem !default;
+$dm-elements-code__padding-y: .2rem !default;
+$dm-elements-code__color: dm-get-color(red-darkest) !default;
+$dm-elements-code__bg: lighten(dm-get-color(grey-lightester), 30%) !default;
 
-$dm-elements__kbd-box-shadow: inset 0 -.1rem 0 rgba(dm-get-color(black),.25) !default;
-$dm-elements__kbd-color: dm-get-color(white) !default;
-$dm-elements__kbd-bg: dm-get-color(grey-darker) !default;
-$dm-elements__kbd-nested-font-weight: $dm-settings__font-weight-bold !default;
+$dm-elements-kbd__box-shadow: inset 0 -.1rem 0 rgba(dm-get-color(black),.25) !default;
+$dm-elements-kbd__color: dm-get-color(white) !default;
+$dm-elements-kbd__bg: dm-get-color(grey-darker) !default;
+$dm-elements-kbd__nested-font-weight: $dm-settings__font-weight-bold !default;
 
-$dm-elements__pre-color: dm-get-color(grey-darker) !default;
+$dm-elements-pre__color: dm-get-color(grey-darker) !default;

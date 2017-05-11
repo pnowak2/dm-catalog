@@ -1,8 +1,8 @@
 @mixin dm-headings() {
   margin-top: 0;
-  margin-bottom: $dm-elements__headings-margin-bottom;
-  font-family: $dm-elements__headings-font-family;
-  font-weight: $dm-elements__headings-font-weight;
-  line-height: $dm-elements__headings-line-height;
-  color: $dm-elements__headings-color;
+  margin-bottom: $dm-elements-headings__margin-bottom;
+  font-family: $dm-elements-headings__font-family;
+  font-weight: $dm-elements-headings__font-weight;
+  line-height: $dm-elements-headings__line-height;
+  color: $dm-elements-headings__color;
 }
