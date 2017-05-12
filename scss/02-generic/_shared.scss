@@ -17,19 +17,6 @@
   @-ms-viewport { width: device-width; }
 }
 
-/* ==========================================================================
-   #BOX-SIZING
-   ========================================================================== */
-
-/**
- * More sensible default box-sizing:
- * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
- */
-
-html {
-  box-sizing: border-box;
-}
-
 * {
   &,
   &:before,
