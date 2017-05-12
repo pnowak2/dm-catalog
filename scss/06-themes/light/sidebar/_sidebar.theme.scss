@@ -1,17 +1,15 @@
-.dm-t-light {
-  .dm-c-sidebar {
-    background: #fff;
+.dm-c-sidebar {
+  background: #fff;
 
-    &__category-header {
-      border-color: rgba(dm-get-color(black), 0.1);
-    }
+  &__category-header {
+    border-color: rgba(dm-get-color(black), 0.1);
+  }
 
-    &__category-title {
-      color: #333;
-    }
+  &__category-title {
+    color: #333;
+  }
 
-    &__category-icons {
-      color: #333;
-    }
+  &__category-icons {
+    color: #333;
   }
 }

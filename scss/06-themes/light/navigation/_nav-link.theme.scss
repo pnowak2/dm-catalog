@@ -1,15 +1,13 @@
-.dm-t-light {
-  .dm-c-nav-link {
+.dm-c-nav-link {
+  color: #333;
+  background: #fff;
+
+  @include dm-hover {
+    background-color: rgba(0, 0, 0, .05);
     color: #333;
-    background: #fff;
+  }
 
-    @include dm-hover {
-      background-color: rgba(0, 0, 0, .05);
-      color: #333;
-    }
-
-    &.dm-is-active {
-      background-color: rgba(0, 0, 0, .05);
-    }
+  &.dm-is-active {
+    background-color: rgba(0, 0, 0, .05);
   }
 }

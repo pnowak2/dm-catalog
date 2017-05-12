@@ -1,9 +1,7 @@
-.dm-t-light {
-  .dm-c-nav-stack {
-    background: #fff;
+.dm-c-nav-stack {
+  background: #fff;
 
-    & > * > .dm-c-nav-item.dm-is-active > * > .dm-c-nav-link {
-      color: #fff;
-    }
+  & > * > .dm-c-nav-item.dm-is-active > * > .dm-c-nav-link {
+    color: #fff;
   }
 }
