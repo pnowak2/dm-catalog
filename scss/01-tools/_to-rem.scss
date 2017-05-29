@@ -1,0 +1,4 @@
+@function dm-to-rem($fontSize) {
+  $remSize: $fontSize / $dm-elements-html__font-size-px;
+  @return $remSize * 1rem;
+}

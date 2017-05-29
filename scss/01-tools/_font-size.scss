@@ -1,4 +1,4 @@
-@mixin dm-font-size($font-size, $line-height: auto, $important: false) {
-  font-size: $font-size $important;
-  font-size: ($font-size / $dm-settings__global-font-size) * 1rem $important;
+@mixin dm-font-size($fontSize) {
+  font-size: $fontSize;
+  font-size: to-rem($fontSize);
 }
