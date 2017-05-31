@@ -7,16 +7,16 @@
  * 4. Retrieves color from global colors definition or fails
  */
 
-@function dm-get-palette(){
-  @return $dm-settings__color-palette; /* [1] */
+@function dm-get-colors(){
+  @return $dm-settings__colors; /* [1] */
 }
 
-@function dm-get-palette-color-names(){
-  @return map-keys(dm-get-palette()); /* [2] */
+@function dm-get-color-names(){
+  @return map-keys(dm-get-colors()); /* [2] */
 }
 
 @function dm-has-color($name){ /* [3] */
-  @if map-has-key(dm-get-palette(), $name){
+  @if map-has-key(dm-get-colors(), $name){
     @return true;
   } @else {
     @return false;
@@ -24,8 +24,8 @@
 }
 
 @function dm-get-color($name){ /* [4] */
-  $dm-palette: dm-get-palette();
-  @if map-has-key($dm-palette, $name){
-    @return map-get($dm-palette, $name); 
+  $dm-colors: dm-get-colors();
+  @if dm-has-color($name){
+    @return map-get($dm-colors, $name); 
   }
 }

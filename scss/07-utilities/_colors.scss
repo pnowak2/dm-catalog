@@ -1,43 +1,43 @@
-@each $color-name in dm-get-palette-color-names() {
+@each $color-name in dm-get-color-names() {
   .dm-u-color-#{$color-name} {
-    color: dm-get-color(#{$color-name}) !important;
+    color: dm-get-color($color-name) !important;
   }
 
   .dm-u-bg-color-#{$color-name} {
-    background-color: dm-get-color(#{$color-name}) !important;
+    background-color: dm-get-color($color-name) !important;
   }
 
   .dm-u-bg-#{$color-name} {
-    background-color: dm-get-color(#{$color-name}) !important;
-    border-color: dm-get-color(#{$color-name}) !important;
+    background-color: dm-get-color($color-name) !important;
+    border-color: dm-get-color($color-name) !important;
     color: dm-get-color(white) !important;
   }
 
   .dm-u-border-#{$color-name} {
-    border-color: dm-get-color(#{$color-name}) !important;
+    border-color: dm-get-color($color-name) !important;
   }
 
   .dm-u-border-top-#{$color-name} {
-    border-top-color: dm-get-color(#{$color-name}) !important;
+    border-top-color: dm-get-color($color-name) !important;
   }
 
   .dm-u-border-bottom-#{$color-name} {
-    border-bottom-color: dm-get-color(#{$color-name}) !important;
+    border-bottom-color: dm-get-color($color-name) !important;
   }
 
   .dm-u-border-left-#{$color-name} {
-    border-left-color: dm-get-color(#{$color-name}) !important;
+    border-left-color: dm-get-color($color-name) !important;
   }
 
   .dm-u-border-right-#{$color-name} {
-    border-right-color: dm-get-color(#{$color-name}) !important;
+    border-right-color: dm-get-color($color-name) !important;
   }
 
   .dm-u-text-#{$color-name} {
     &,
     &:hover,
     &:focus {
-        color: dm-get-color(#{$color-name}) !important;
+        color: dm-get-color($color-name) !important;
     }
   }
 

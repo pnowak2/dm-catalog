@@ -1,4 +1,4 @@
-$dm-elements-anchor__color: map-get($dm-settings__color-palette, primary) !default;
+$dm-elements-anchor__color: dm-get-color(primary) !default;
 $dm-elements-anchor__decoration: none !default;
 
 $dm-elements-anchor__hover-color: darken($dm-elements-anchor__color, 10%) !default;
