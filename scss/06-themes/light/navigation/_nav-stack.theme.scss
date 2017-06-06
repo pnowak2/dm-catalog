@@ -1,7 +1,7 @@
 .dm-c-nav-stack {
-  background: #fff;
+  background: dm-get-color(white);
 
   & > * > .dm-c-nav-item.dm-is-active > * > .dm-c-nav-link {
-    color: #fff;
+    color: dm-get-color(white);
   }
 }

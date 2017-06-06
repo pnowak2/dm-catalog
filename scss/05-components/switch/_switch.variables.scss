@@ -1,9 +1,9 @@
 $dm-c-switch__bg: dm-get-color(white) !default;
 $dm-c-switch__checked-bg: dm-get-color(green-dark) !default;
-$dm-c-switch__border-color: #dfdfdf !default;
+$dm-c-switch__border-color: dm-get-color(grey-lightester-2) !default;
 $dm-c-switch__border-width: $dm-settings__border-width !default;
-$dm-c-switch__box-shadow-color: rgb(223, 223, 223) !default;
+$dm-c-switch__box-shadow-color: dm-get-color(grey-lightester) !default;
 
 $dm-c-switch__handle-bg: dm-get-color(white) !default;
-$dm-c-switch__handle-box-shadow-color: rgba(0, 0, 0, 0.4) !default;
+$dm-c-switch__handle-box-shadow-color: transparentize(dm-get-color(black), .6);
 

@@ -1,13 +1,13 @@
 .dm-c-nav-link {
-  color: #333;
-  background: #fff;
+  color: dm-get-color(grey-darkester);
+  background: dm-get-color(white);
 
   @include dm-hover {
-    background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(dm-get-color(black), .05);
     color: #333;
   }
 
   &.dm-is-active {
-    background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(dm-get-color(black), .05);
   }
 }

@@ -1,19 +1,19 @@
-$dm-c-family-member__bg: #fff !default;
-$dm-c-family-member__hover-bg: #eee !default;
+$dm-c-family-member__bg: dm-get-color(white) !default;
+$dm-c-family-member__hover-bg: dm-get-color(grey-lightester-2) !default;
 
-$dm-c-family-member__header-personal-number-link-color: #FF7043 !default;
-$dm-c-family-member__header-text-color: #999 !default;
+$dm-c-family-member__header-personal-number-link-color: dm-get-color(primary) !default;
+$dm-c-family-member__header-text-color: dm-get-color(grey-lighter) !default;
 
-$dm-c-family-member__born-text-color: #999 !default;
-$dm-c-family-member__language-bg: #999 !default;
-$dm-c-family-member__language-text-color: #fff !default;
+$dm-c-family-member__born-text-color: dm-get-color(grey-lighter) !default;
+$dm-c-family-member__language-bg: dm-get-color(grey-lighter) !default;
+$dm-c-family-member__language-text-color: dm-get-color(white) !default;
 
 $dm-c-family-member__person-name-text-color: $dm-settings__color-text !default;
 
-$dm-c-family-member__badge-bg: #ddd !default;
-$dm-c-family-member__badge-text-color: #bbb !default;
-$dm-c-family-member__badge-full-rights-text-color: #81C784 !default;
-$dm-c-family-member__badge-complementary-rights-text-color: #FF7043 !default;
-$dm-c-family-member__badge-comments-text-color: #ffcc00 !default;
-$dm-c-family-member__badge-covered-by-other-bg: #FF7043 !default;
-$dm-c-family-member__badge-covered-by-other-text-color: #FFF !default;
+$dm-c-family-member__badge-bg: dm-get-color(grey-lightester-2) !default;
+$dm-c-family-member__badge-text-color: dm-get-color(grey-lightest) !default;
+$dm-c-family-member__badge-full-rights-text-color: dm-get-color(green) !default;
+$dm-c-family-member__badge-complementary-rights-text-color: dm-get-color(red) !default;
+$dm-c-family-member__badge-comments-text-color: dm-get-color(yellow-darker) !default;
+$dm-c-family-member__badge-covered-by-other-bg: dm-get-color(orange-darker) !default;
+$dm-c-family-member__badge-covered-by-other-text-color: dm-get-color(white) !default;
