@@ -1,4 +1,4 @@
 $dm-elements-hr__border-width: $dm-settings__border-width !default;
 $dm-elements-hr__border-color: transparentize(dm-get-color(black),.9) !default;
-$dm-elements-hr__margin-top: $dm-settings__spacer-y !default;
-$dm-elements-hr__margin-bottom: $dm-settings__spacer-y !default;
+$dm-elements-hr__margin-top: dm-get-spacer(md) !default;
+$dm-elements-hr__margin-bottom: dm-get-spacer(md) !default;

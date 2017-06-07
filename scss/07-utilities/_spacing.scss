@@ -6,22 +6,20 @@
     $infix: dm-breakpoint-infix($breakpoint, $dm-settings__grid-breakpoints);
 
     @each $prop, $abbrev in (margin: m, padding: p) {
-      @each $size, $lengths in $dm-settings__spacers {
-        $length-x: map-get($lengths, x);
-        $length-y: map-get($lengths, y);
+      @each $size, $value in $dm-settings__spacers {
 
-        .dm-u-#{$abbrev}-#{$size}#{$infix}  { #{$prop}:        $length-y $length-x !important; }
-        .dm-u-#{$abbrev}t-#{$size}#{$infix} { #{$prop}-top:    $length-y !important; }
-        .dm-u-#{$abbrev}r-#{$size}#{$infix} { #{$prop}-right:  $length-x !important; }
-        .dm-u-#{$abbrev}b-#{$size}#{$infix} { #{$prop}-bottom: $length-y !important; }
-        .dm-u-#{$abbrev}l-#{$size}#{$infix} { #{$prop}-left:   $length-x !important; }
+        .dm-u-#{$abbrev}-#{$size}#{$infix}  { #{$prop}:        $value $value !important; }
+        .dm-u-#{$abbrev}t-#{$size}#{$infix} { #{$prop}-top:    $value !important; }
+        .dm-u-#{$abbrev}r-#{$size}#{$infix} { #{$prop}-right:  $value !important; }
+        .dm-u-#{$abbrev}b-#{$size}#{$infix} { #{$prop}-bottom: $value !important; }
+        .dm-u-#{$abbrev}l-#{$size}#{$infix} { #{$prop}-left:   $value !important; }
         .dm-u-#{$abbrev}x-#{$size}#{$infix} {
-          #{$prop}-right: $length-x !important;
-          #{$prop}-left:  $length-x !important;
+          #{$prop}-right: $value !important;
+          #{$prop}-left:  $value !important;
         }
         .dm-u-#{$abbrev}y-#{$size}#{$infix} {
-          #{$prop}-top:    $length-y !important;
-          #{$prop}-bottom: $length-y !important;
+          #{$prop}-top:    $value !important;
+          #{$prop}-bottom: $value !important;
         }
       }
     }

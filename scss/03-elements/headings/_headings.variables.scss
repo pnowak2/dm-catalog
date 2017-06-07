@@ -8,6 +8,6 @@ $dm-elements-headings__font-size-h1: $dm-elements-headings__font-size-h2 * $dm-s
 $dm-elements-headings__font-family: inherit !default;
 $dm-elements-headings__font-weight: 500 !default;
 
-$dm-elements-headings__margin-bottom: ($dm-settings__spacer / 2) !default;
+$dm-elements-headings__margin-bottom: (dm-get-spacer(sm)) !default;
 $dm-elements-headings__line-height: 1.1 !default;
 $dm-elements-headings__color: inherit !default;
