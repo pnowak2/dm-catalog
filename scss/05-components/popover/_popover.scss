@@ -7,8 +7,6 @@
   @include dm-box-shadow(0 0 5px $dm-c-popover__shadow-color);
 
   &__header {
-    align-items: center;
-    align-content: center;
     padding: $dm-c-popover__padding;
     border-bottom: 1px solid $dm-c-popover__header-border-color;
   }
