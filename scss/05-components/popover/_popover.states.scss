@@ -1,34 +1,31 @@
 .ux-c-popover {
-  &--heading &__header {
-    padding-bottom: $ux-c-popover__padding;
-    border-bottom: 1px solid $ux-c-popover__border-color;
+  &--top {
+    .ux-c-popover__arrow {
+      border-bottom-width: 0;
+      border-top-color: transparent;
+      border-top-color: $ux-c-popover__arrow-border-color;
+      bottom: -$ux-c-popover__arrow-width;
+
+      &::after {
+        bottom: $ux-c-popover__arrow-border-width;
+        border-bottom-width: 0;
+        border-top-color: $ux-c-popover__arrow-bg-color;
+      }
+    }
   }
 
-  &--colored-heading &__header {
-    background: #ccc;
-    padding-bottom: $ux-c-popover__padding;
-  }
+  &--bottom {
+    .ux-c-popover__arrow {
+      border-top-width: 0;
+      border-bottom-color: transparent;
+      border-bottom-color: $ux-c-popover__arrow-border-color;
+      top: -$ux-c-popover__arrow-width;
 
-  &--colored-heading &__title,
-  &--colored-heading &__close {
-    color: dm-get-color(white);
-  }
-
-  &--colored {
-    border: none;
-    background-color: #555;
-  }
-
-  &--colored &__title,
-  &--colored &__close {
-    color: dm-get-color(white);
-  }
-
-  &--colored &__content {
-    color: transparentize(dm-get-color(white),.2);
-  }
-
-  &--colored &__arrow::after {
-    border-top-color: #555;
+      &::after {
+        top: $ux-c-popover__arrow-border-width;
+        border-top-width: 0;
+        border-bottom-color: $ux-c-popover__arrow-bg-color;
+      }
+    }
   }
 }

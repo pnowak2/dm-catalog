@@ -40,29 +40,22 @@
     display: block;
     width: 0;
     height: 0;
-    border-width: $ux-c-popover__arrow-width;
-    border-color: transparent;
-    border-top-color: transparent;
-    border-style: solid;
     left: 50%;
     margin-left: -$ux-c-popover__arrow-width;
-    border-bottom-width: 0;
-    border-top-color: $ux-c-popover__arrow-border-color;
-    bottom: -$ux-c-popover__arrow-width;
-  }
-
-  &__arrow::after {
-    content: " ";
-    bottom: $ux-c-popover__arrow-border-width;
-    margin-left: -$ux-c-popover__arrow-width + $ux-c-popover__border-width;
-    border-width: $ux-c-popover__arrow-width - $ux-c-popover__border-width;
-    border-bottom-width: 0;
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-top-color: $ux-c-popover__arrow-bg-color;
     border-style: solid;
+    border-color: transparent;
+    border-width: $ux-c-popover__arrow-width;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: " ";
+      width: 0;
+      height: 0;
+      margin-left: -$ux-c-popover__arrow-width + $ux-c-popover__border-width;
+      border-style: solid;
+      border-color: transparent;
+      border-width: $ux-c-popover__arrow-width - $ux-c-popover__border-width;
+    }
   }
 }
