@@ -19,12 +19,14 @@
     font-size: $ux-c-popover__title-font-size;
     text-transform: uppercase;
     font-weight: 700;
+    line-height: 1;
   }
 
   &__close {
     color: $ux-c-popover__close-color;
     font-size: $ux-c-popover__title-font-size;
     cursor: pointer;
+    line-height: 1;
   }
 
   &__content {
