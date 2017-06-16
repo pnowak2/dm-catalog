@@ -7,8 +7,6 @@
   @include dm-box-shadow(0 0 5px $dm-c-popover__shadow-color);
 
   &__header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     align-content: center;
     padding: $dm-c-popover__padding;
@@ -21,9 +19,14 @@
     text-transform: uppercase;
     font-weight: 700;
     line-height: 1;
+    padding-right: $dm-c-popover__title-font-size;
+    @include dm-text-truncate();
   }
 
   &__close {
+    position: absolute;
+    top: $dm-c-popover__padding;
+    right: $dm-c-popover__padding;
     color: $dm-c-popover__close-color;
     font-size: $dm-c-popover__title-font-size;
     cursor: pointer;
