@@ -19,8 +19,10 @@
     .dm-c-popover__arrow {
       left: 50%;
       margin-left: -$dm-c-popover__arrow-width;
+      border-left-color: transparent;
+      border-right-color: transparent;
 
-      &-inside {
+      &-inner {
         margin-left: -$dm-c-popover__arrow-width + $dm-c-popover__border-width;
       }
     }
@@ -29,10 +31,9 @@
   &--top {
     .dm-c-popover__arrow {
       border-bottom-width: 0;
-      border-top-color: $dm-c-popover__arrow-border-color;
       bottom: -$dm-c-popover__arrow-width;
 
-      &-inside {
+      &-inner {
         bottom: $dm-c-popover__arrow-border-width;
         border-bottom-width: 0;
         border-top-color: $dm-c-popover__arrow-bg-color;
@@ -43,10 +44,9 @@
   &--bottom {
     .dm-c-popover__arrow {
       border-top-width: 0;
-      border-bottom-color: $dm-c-popover__arrow-border-color;
       top: -$dm-c-popover__arrow-width;
 
-      &-inside {
+      &-inner {
         top: $dm-c-popover__arrow-border-width;
         border-top-width: 0;
         border-bottom-color: $dm-c-popover__arrow-bg-color;
@@ -59,8 +59,10 @@
     .dm-c-popover__arrow {
       top: 50%;
       margin-top: -$dm-c-popover__arrow-width;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
 
-      &-inside {
+      &-inner {
         top: -$dm-c-popover__arrow-width + $dm-c-popover__border-width;
       }
     }
@@ -70,9 +72,8 @@
     .dm-c-popover__arrow {
       right: -$dm-c-popover__arrow-width;     
       border-right-width: 0;
-      border-left-color: $dm-c-popover__arrow-border-color;
 
-      &-inside {
+      &-inner {
         right: $dm-c-popover__arrow-border-width;
         border-right-width: 0;
         border-left-color: $dm-c-popover__arrow-bg-color;
@@ -84,9 +85,8 @@
     .dm-c-popover__arrow {
       left: -$dm-c-popover__arrow-width;     
       border-left-width: 0;
-      border-right-color: $dm-c-popover__arrow-border-color;
 
-      &-inside {
+      &-inner {
         left: $dm-c-popover__border-width;
         border-left-width: 0;
         border-right-color: $dm-c-popover__arrow-bg-color;
