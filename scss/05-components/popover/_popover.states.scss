@@ -144,4 +144,24 @@
       }
     }
   }
+
+  &--solid {
+    background-color: dm-get-color(grey-dark);
+    border-style: none;
+    border-color: dm-get-color(grey-dark);
+
+    .dm-c-popover__header {
+      border-bottom-color: transparentize(dm-get-color(white), 0.9) !important;
+    }
+
+    .dm-c-popover__title,
+    .dm-c-popover__close,
+    .dm-c-popover__content {
+      color: #fff;
+    }
+
+    .dm-c-popover__arrow-inner {
+      border: none;
+    }
+  }
 }
