@@ -9,8 +9,8 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    align-content: flex-start;
+    align-items: center;
+    align-content: center;
     padding: $ux-c-popover__padding $ux-c-popover__padding 0 $ux-c-popover__padding;
   }
 
