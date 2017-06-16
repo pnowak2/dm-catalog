@@ -1,38 +1,38 @@
-.ux-c-popover {
+.dm-c-popover {
   position: relative;
-  border: $ux-c-popover__border-width solid $ux-c-popover__border-color;
-  max-width: $ux-c-popover__max-width;
-  background-color: $ux-c-popover__bg-color;
-  @include dm-border-radius($ux-c-popover__radius);
-  @include dm-box-shadow(0 3px 5px $ux-c-popover__shadow-color);
+  border: $dm-c-popover__border-width solid $dm-c-popover__border-color;
+  max-width: $dm-c-popover__max-width;
+  background-color: $dm-c-popover__bg-color;
+  @include dm-border-radius($dm-c-popover__radius);
+  @include dm-box-shadow(0 3px 5px $dm-c-popover__shadow-color);
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    padding: $ux-c-popover__padding $ux-c-popover__padding 0 $ux-c-popover__padding;
+    padding: $dm-c-popover__padding $dm-c-popover__padding 0 $dm-c-popover__padding;
   }
 
   &__title {
     color: #333;
-    font-size: $ux-c-popover__title-font-size;
+    font-size: $dm-c-popover__title-font-size;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 1;
   }
 
   &__close {
-    color: $ux-c-popover__close-color;
-    font-size: $ux-c-popover__title-font-size;
+    color: $dm-c-popover__close-color;
+    font-size: $dm-c-popover__title-font-size;
     cursor: pointer;
     line-height: 1;
   }
 
   &__content {
-    font-size: $ux-c-popover__content-font-size;
-    padding: $ux-c-popover__padding;
-    color: $ux-c-popover__content-color;
+    font-size: $dm-c-popover__content-font-size;
+    padding: $dm-c-popover__padding;
+    color: $dm-c-popover__content-color;
   }
 
   &__arrow {
@@ -42,7 +42,7 @@
     height: 0;
     border-style: solid;
     border-color: transparent;
-    border-width: $ux-c-popover__arrow-width;
+    border-width: $dm-c-popover__arrow-width;
 
     &::after {
       position: absolute;
@@ -50,10 +50,9 @@
       content: " ";
       width: 0;
       height: 0;
-      margin-left: -$ux-c-popover__arrow-width + $ux-c-popover__border-width;
       border-style: solid;
       border-color: transparent;
-      border-width: $ux-c-popover__arrow-width - $ux-c-popover__border-width;
+      border-width: $dm-c-popover__arrow-width - $dm-c-popover__border-width;
     }
   }
 }

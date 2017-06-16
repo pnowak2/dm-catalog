@@ -1,19 +1,19 @@
-$ux-c-popover__radius: 4px !default;
-$ux-c-popover__padding: 13px !default;
-$ux-c-popover__border-width: 1px !default;
-$ux-c-popover__max-width: 375px !default;
-$ux-c-popover__bg-color: dm-get-color(white) !default;
-$ux-c-popover__border-color: dm-get-color(grey-lightest) !default;
-$ux-c-popover__shadow-color: transparentize(dm-get-color(black),.9) !default;
+$dm-c-popover__radius: 4px !default;
+$dm-c-popover__padding: 13px !default;
+$dm-c-popover__border-width: 1px !default;
+$dm-c-popover__max-width: 375px !default;
+$dm-c-popover__bg-color: dm-get-color(white) !default;
+$dm-c-popover__border-color: dm-get-color(grey-lightest) !default;
+$dm-c-popover__shadow-color: transparentize(dm-get-color(black),.9) !default;
 
-$ux-c-popover__title-font-size: 11px !default;
+$dm-c-popover__title-font-size: 11px !default;
 
-$ux-c-popover__close-color: dm-get-color(grey-lighter) !default;
+$dm-c-popover__close-color: dm-get-color(grey-lighter) !default;
 
-$ux-c-popover__content-font-size: 12px !default;
-$ux-c-popover__content-color: dm-get-color(grey-lighter) !default;
+$dm-c-popover__content-font-size: 12px !default;
+$dm-c-popover__content-color: dm-get-color(grey-lighter) !default;
 
-$ux-c-popover__arrow-width: 8px !default;
-$ux-c-popover__arrow-border-width: $ux-c-popover__border-width !default;
-$ux-c-popover__arrow-border-color: $ux-c-popover__border-color !default;
-$ux-c-popover__arrow-bg-color: $ux-c-popover__bg-color !default;
+$dm-c-popover__arrow-width: 8px !default;
+$dm-c-popover__arrow-border-width: $dm-c-popover__border-width !default;
+$dm-c-popover__arrow-border-color: $dm-c-popover__border-color !default;
+$dm-c-popover__arrow-bg-color: $dm-c-popover__bg-color !default;
