@@ -10,7 +10,7 @@
     align-items: center;
     align-content: center;
     padding: $dm-c-popover__padding;
-    border-bottom: $dm-c-popover__border-width solid $dm-c-popover__border-color;
+    border-bottom: 1px solid $dm-c-popover__border-color;
   }
 
   &__title {
@@ -48,7 +48,7 @@
     border-color: transparent;
     border-width: $dm-c-popover__arrow-width;
 
-    &::after {
+    &-inside {
       position: absolute;
       display: block;
       content: " ";
