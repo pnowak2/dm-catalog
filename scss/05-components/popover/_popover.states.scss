@@ -1,0 +1,34 @@
+.ux-c-popover {
+  &--heading &__header {
+    padding-bottom: $ux-c-popover__padding;
+    border-bottom: 1px solid $ux-c-popover__border-color;
+  }
+
+  &--colored-heading &__header {
+    background: #ccc;
+    padding-bottom: $ux-c-popover__padding;
+  }
+
+  &--colored-heading &__title,
+  &--colored-heading &__close {
+    color: dm-get-color(white);
+  }
+
+  &--colored {
+    border: none;
+    background-color: #555;
+  }
+
+  &--colored &__title,
+  &--colored &__close {
+    color: dm-get-color(white);
+  }
+
+  &--colored &__content {
+    color: transparentize(dm-get-color(white),.2);
+  }
+
+  &--colored &__arrow::after {
+    border-top-color: #555;
+  }
+}
