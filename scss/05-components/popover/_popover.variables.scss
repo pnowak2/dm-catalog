@@ -8,6 +8,8 @@ $dm-c-popover__bg-color: dm-get-color(white) !default;
 $dm-c-popover__border-color: dm-get-color(grey-lightest) !default;
 $dm-c-popover__shadow-color: transparentize(dm-get-color(black),.9) !default;
 
+$dm-c-popover__header-border-color: dm-get-color(grey-lightester-2) !default;
+
 $dm-c-popover__title-color: #333 !default;
 $dm-c-popover__title-font-size: 11px !default;
 
