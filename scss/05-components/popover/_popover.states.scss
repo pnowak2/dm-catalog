@@ -7,6 +7,13 @@
     max-width: $dm-c-popover__max-width-big;
   }
 
+  &--flat {
+    .dm-c-popover__header {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
   &--top {
     .dm-c-popover__arrow {
       left: 50%;
