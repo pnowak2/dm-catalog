@@ -1,6 +1,9 @@
 .ux-c-popover {
   &--top {
     .ux-c-popover__arrow {
+      left: 50%;
+      margin-left: -$ux-c-popover__arrow-width;
+
       border-bottom-width: 0;
       border-top-color: transparent;
       border-top-color: $ux-c-popover__arrow-border-color;
@@ -16,6 +19,9 @@
 
   &--bottom {
     .ux-c-popover__arrow {
+      left: 50%;
+      margin-left: -$ux-c-popover__arrow-width;
+
       border-top-width: 0;
       border-bottom-color: transparent;
       border-bottom-color: $ux-c-popover__arrow-border-color;
