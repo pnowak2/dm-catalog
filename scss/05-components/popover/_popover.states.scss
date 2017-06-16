@@ -13,7 +13,7 @@
       padding-bottom: 0;
     }
   }
-
+  
   &--top,
   &--bottom {
     .dm-c-popover__arrow {
@@ -24,6 +24,8 @@
 
       &-inner {
         margin-left: -$dm-c-popover__arrow-width + $dm-c-popover__border-width;
+        border-left-color: transparent;
+        border-right-color: transparent;
       }
     }
   }
@@ -36,7 +38,6 @@
       &-inner {
         bottom: $dm-c-popover__arrow-border-width;
         border-bottom-width: 0;
-        border-top-color: $dm-c-popover__arrow-bg-color;
       }
     }
   }
@@ -49,7 +50,6 @@
       &-inner {
         top: $dm-c-popover__arrow-border-width;
         border-top-width: 0;
-        border-bottom-color: $dm-c-popover__arrow-bg-color;
       }
     }
   }
@@ -64,6 +64,8 @@
 
       &-inner {
         top: -$dm-c-popover__arrow-width + $dm-c-popover__border-width;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
       }
     }
   }
@@ -76,7 +78,6 @@
       &-inner {
         right: $dm-c-popover__arrow-border-width;
         border-right-width: 0;
-        border-left-color: $dm-c-popover__arrow-bg-color;
       }
     }
   }
@@ -90,6 +91,56 @@
         left: $dm-c-popover__border-width;
         border-left-width: 0;
         border-right-color: $dm-c-popover__arrow-bg-color;
+      }
+    }
+  }
+
+  &--header-bar {
+    border: none;
+    background: none;
+    border-color: dm-get-color(grey-dark);
+
+    .dm-c-popover__header {
+      background-color: dm-get-color(grey-dark);
+      border: 0;
+      @include dm-border-top-radius($dm-c-popover__radius);
+    }
+
+    .dm-c-popover__title,
+    .dm-c-popover__close {
+      color: dm-get-color(white);
+    }
+
+    .dm-c-popover__content {
+      background-color: $dm-c-popover__bg-color;
+      border-style: solid;
+      border-color: inherit;
+      border-width: $dm-c-popover__header-bar-border-width;
+      border-top: 0;
+      @include dm-border-bottom-radius($dm-c-popover__radius);
+    }
+
+    &.dm-c-popover--left {
+      .dm-c-popover__arrow-inner {
+        right: 3px;
+      }
+    }
+
+    &.dm-c-popover--right {
+      .dm-c-popover__arrow-inner {
+        left: 3px;
+      }
+    }
+
+    &.dm-c-popover--top {
+      .dm-c-popover__arrow-inner {
+        bottom: 3px;
+      }
+    }
+
+    &.dm-c-popover--bottom {
+      .dm-c-popover__arrow-inner {
+        border: 0;
       }
     }
   }

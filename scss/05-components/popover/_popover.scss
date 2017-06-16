@@ -55,7 +55,7 @@
       width: 0;
       height: 0;
       border-style: solid;
-      border-color: transparent;
+      border-color: $dm-c-popover__arrow-bg-color;
       border-width: $dm-c-popover__arrow-width - $dm-c-popover__border-width;
     }
   }
