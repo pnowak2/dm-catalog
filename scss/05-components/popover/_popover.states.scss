@@ -1,4 +1,12 @@
 .dm-c-popover {
+  &--small {
+    max-width: $dm-c-popover__max-width-small;
+  }
+
+  &--big {
+    max-width: $dm-c-popover__max-width-big;
+  }
+
   &--top {
     .dm-c-popover__arrow {
       left: 50%;

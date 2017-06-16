@@ -4,18 +4,19 @@
   max-width: $dm-c-popover__max-width;
   background-color: $dm-c-popover__bg-color;
   @include dm-border-radius($dm-c-popover__radius);
-  @include dm-box-shadow(0 3px 5px $dm-c-popover__shadow-color);
+  @include dm-box-shadow(0 0 5px $dm-c-popover__shadow-color);
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    padding: $dm-c-popover__padding $dm-c-popover__padding 0 $dm-c-popover__padding;
+    padding: $dm-c-popover__padding;
+    padding-bottom: 0;
   }
 
   &__title {
-    color: #333;
+    color: $dm-c-popover__title-color;
     font-size: $dm-c-popover__title-font-size;
     text-transform: uppercase;
     font-weight: 700;
