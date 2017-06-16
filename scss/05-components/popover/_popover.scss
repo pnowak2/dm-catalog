@@ -3,7 +3,6 @@
   border: $dm-c-popover__border-width solid $dm-c-popover__border-color;
   max-width: $dm-c-popover__max-width;
   background-color: $dm-c-popover__bg-color;
-  overflow: hidden;
   @include dm-border-radius($dm-c-popover__radius);
   @include dm-box-shadow(0 0 5px $dm-c-popover__shadow-color);
 
