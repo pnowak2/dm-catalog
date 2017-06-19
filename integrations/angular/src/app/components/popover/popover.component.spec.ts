@@ -34,6 +34,12 @@ fdescribe('PopoverComponent', () => {
       });
     });
 
+    describe('.isDismissable', () => {
+      it(`should be set to true`, () => {
+        expect(component.isDismissable).toBe(true)
+      });
+    });
+
     describe('.title', () => {
       it(`should be set to undefined`, () => {
         expect(component.title).toBeUndefined();

@@ -7,6 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild }
 export class PopoverComponent implements OnInit {
   @ViewChild('popoverContainer') popoverContainer: ElementRef;
 
+  @Input() isDismissable = true;
+
   @Input() title;
 
   @Input() showCloseIcon = false;
