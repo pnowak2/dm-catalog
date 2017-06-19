@@ -127,7 +127,7 @@ describe('SwitchComponent', () => {
           fixture.detectChanges();
 
           const el = fixture.debugElement.query(By.css('.dm-c-switch'));
-          expect(el.classes['dm-c-switch--checked']).toBeTruthy();
+          expect(el.classes['dm-is-checked']).toBeTruthy();
         }));
 
         it('should not render checked switch if property is set to false', async(() => {
@@ -135,7 +135,7 @@ describe('SwitchComponent', () => {
           fixture.detectChanges();
 
           const el = fixture.debugElement.query(By.css('.dm-c-switch'));
-          expect(el.classes['dm-c-switch--checked']).toBeFalsy();
+          expect(el.classes['dm-is-checked']).toBeFalsy();
         }));
       });
 
@@ -145,7 +145,7 @@ describe('SwitchComponent', () => {
           fixture.detectChanges();
 
           const el = fixture.debugElement.query(By.css('.dm-c-switch'));
-          expect(el.classes['dm-c-switch--disabled']).toBeFalsy();
+          expect(el.classes['dm-is-disabled']).toBeFalsy();
         }));
 
         it('should render disabled switch if property is set to true', async(() => {
@@ -153,7 +153,7 @@ describe('SwitchComponent', () => {
           fixture.detectChanges();
 
           const el = fixture.debugElement.query(By.css('.dm-c-switch'));
-          expect(el.classes['dm-c-switch--disabled']).toBeTruthy();
+          expect(el.classes['dm-is-disabled']).toBeTruthy();
         }));
       });
     });
