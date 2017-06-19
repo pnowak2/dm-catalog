@@ -3,7 +3,10 @@
 <div class="dm-o-container">
   <div class="dm-o-row dm-u-flex-column dm-u-p-xl dm-u-align-content-center">
     <div class="dm-u-p-lg">
+      <button (click)="pop1.show($event, target)">Click</button>
+
       <dm-popover
+        #pop1
         title="Popover Title which is very long and cannot fit in this afsfsd"
         [showCloseIcon]="true">
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.Lorem

@@ -19,18 +19,15 @@ export class PopoverComponent implements OnInit {
 
   @Output() onAfterHide: EventEmitter<any> = new EventEmitter();
 
-  container: any;
-
-  constructor(public el: ElementRef) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  show() {
-
+  show(event) {
+    let elementTarget = event.currentTarget || event.target;
   }
 
   hide() {
-
   }
 }
