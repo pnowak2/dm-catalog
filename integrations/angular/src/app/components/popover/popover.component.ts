@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PopoverComponent implements OnInit {
   @Input() title;
+
   @Input() showCloseIcon = false;
 
   @Output() onBeforeShow: EventEmitter<any> = new EventEmitter();
@@ -20,5 +21,4 @@ export class PopoverComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
