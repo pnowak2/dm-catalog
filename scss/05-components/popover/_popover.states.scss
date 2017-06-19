@@ -98,43 +98,43 @@
   &--colored-header {
     border: none;
     background: none;
-    border-color: dm-get-color(grey-dark);
+    border-color: $dm-c-popover--colored-header__border-color;
 
     .dm-c-popover__header {
-      background-color: dm-get-color(grey-dark);
+      background-color: $dm-c-popover--colored-header__header-bg;
       border: 0;
       @include dm-border-top-radius($dm-c-popover__radius);
     }
 
     .dm-c-popover__title,
     .dm-c-popover__close {
-      color: dm-get-color(white);
+      color: $dm-c-popover--colored-header__text-color;
     }
 
     .dm-c-popover__content {
       background-color: $dm-c-popover__bg-color;
       border-style: solid;
       border-color: inherit;
-      border-width: $dm-c-popover__header-bar-border-width;
+      border-width: $dm-c-popover--colored-header__border-width;
       border-top: 0;
       @include dm-border-bottom-radius($dm-c-popover__radius);
     }
 
     &.dm-c-popover--left {
       .dm-c-popover__arrow-inner {
-        right: 3px;
+        right: $dm-c-popover--colored-header__border-width + 1px;
       }
     }
 
     &.dm-c-popover--right {
       .dm-c-popover__arrow-inner {
-        left: 3px;
+        left: $dm-c-popover--colored-header__border-width + 1px;
       }
     }
 
     &.dm-c-popover--top {
       .dm-c-popover__arrow-inner {
-        bottom: 3px;
+        bottom: $dm-c-popover--colored-header__border-width + 1px;
       }
     }
 
@@ -146,18 +146,18 @@
   }
 
   &--colored-solid {
-    background-color: dm-get-color(grey-dark);
+    background-color: $dm-c-popover--colored-solid__bg-color;
     border-style: none;
-    border-color: dm-get-color(grey-dark);
+    border-color: $dm-c-popover--colored-solid__border-color;
 
     .dm-c-popover__header {
-      border-bottom-color: transparentize(dm-get-color(white), 0.9) !important;
+      border-bottom-color: $dm-c-popover--colored-solid__header-border-color;
     }
 
     .dm-c-popover__title,
     .dm-c-popover__close,
     .dm-c-popover__content {
-      color: #fff;
+      color: $dm-c-popover--colored-solid__text-color;
     }
 
     .dm-c-popover__arrow-inner {

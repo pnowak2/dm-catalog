@@ -23,4 +23,12 @@ $dm-c-popover__arrow-border-width: $dm-c-popover__border-width !default;
 $dm-c-popover__arrow-border-color: $dm-c-popover__border-color !default;
 $dm-c-popover__arrow-bg-color: $dm-c-popover__bg-color !default;
 
-$dm-c-popover__header-bar-border-width: 2px;
+$dm-c-popover--colored-header__border-width: 2px;
+$dm-c-popover--colored-header__text-color: dm-get-color(white);
+$dm-c-popover--colored-header__border-color: dm-get-color(grey-dark);
+$dm-c-popover--colored-header__header-bg: dm-get-color(grey-dark);
+
+$dm-c-popover--colored-solid__bg-color: dm-get-color(grey-dark);
+$dm-c-popover--colored-solid__text-color: dm-get-color(white);
+$dm-c-popover--colored-solid__border-color: dm-get-color(grey-dark);
+$dm-c-popover--colored-solid__header-border-color: transparentize(dm-get-color(white), 0.9);
