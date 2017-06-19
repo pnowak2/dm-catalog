@@ -1,10 +1,14 @@
-<div #popoverContainer class="dm-c-popover dm-c-popover--top">
+<div #popoverContainer
+     class="dm-c-popover dm-c-popover--colored-header dm-c-popover--top"
+     [class.dm-u-invisible]="!isVisible">
   <div class="dm-c-popover__arrow">
     <div class="dm-c-popover__arrow-inner"></div>
   </div>
   <div class="dm-c-popover__header">
     <div class="dm-c-popover__title">{{ title }}</div>
-    <div *ngIf="showCloseIcon" class="dm-c-popover__close">
+    <div *ngIf="showCloseIcon"
+         (click)="onCloseClick($event)"
+         class="dm-c-popover__close">
       <i class="fa fa-close"></i>
     </div>
   </div>

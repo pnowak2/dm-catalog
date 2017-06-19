@@ -12,4 +12,9 @@ export class PopoverDemoComponent implements OnInit {
   ngOnInit() {
   }
 
+  beforeHide() {
+  }
+
+  afterHide() {
+  }
 }

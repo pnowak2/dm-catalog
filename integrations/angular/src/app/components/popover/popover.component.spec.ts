@@ -34,12 +34,6 @@ fdescribe('PopoverComponent', () => {
       });
     });
 
-    describe('.isDismissable', () => {
-      it(`should be set to true`, () => {
-        expect(component.isDismissable).toBe(true)
-      });
-    });
-
     describe('.title', () => {
       it(`should be set to undefined`, () => {
         expect(component.title).toBeUndefined();
@@ -85,6 +79,18 @@ fdescribe('PopoverComponent', () => {
     describe('.hide()', () => {
       it(`should be defined`, () => {
         expect(component.hide).toEqual(jasmine.any(Function));
+      });
+    });
+
+    describe('.toggle()', () => {
+      it(`should be defined`, () => {
+        expect(component.toggle).toEqual(jasmine.any(Function));
+      });
+    });
+
+    describe('.isVisible', () => {
+      it(`should be set to false`, () => {
+        expect(component.isVisible).toBe(false);
       });
     });
   });

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener } from '@angular/core';
+import * as positions from 'positions';
 
 @Component({
   selector: 'dm-popover',
@@ -6,8 +7,6 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild }
 })
 export class PopoverComponent implements OnInit {
   @ViewChild('popoverContainer') popoverContainer: ElementRef;
-
-  @Input() isDismissable = true;
 
   @Input() title;
 
@@ -21,15 +20,60 @@ export class PopoverComponent implements OnInit {
 
   @Output() onAfterHide: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  isVisible = false;
+
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
+
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event) {
+    if (!this.el.nativeElement.contains(event.target)) {
+      // this.hide(event);
+    }
+  }
+
+  onCloseClick(event) {
+    this.hide(event);
   }
 
   show(event) {
-    let elementTarget = event.currentTarget || event.target;
+    let popoverContainerElement = this.popoverContainer.nativeElement;
+    let triggerElement = event.currentTarget || event.target;
+
+    this.onBeforeShow.emit(null);
+
+    this.position(popoverContainerElement, triggerElement);
+    this.isVisible = true;
+
+    this.onAfterShow.emit(null);
   }
 
-  hide() {
+  hide(event) {
+    this.onBeforeHide.emit(null);
+    this.isVisible = false;
+    this.onAfterHide.emit(null);
+  }
+
+  toggle(event) {
+    if(this.isVisible) {
+      this.hide(event);
+    } else {
+      this.show(event);
+    }
+  }
+
+  position(popoverContainerElement, triggerElement) {
+    let p = positions(
+      popoverContainerElement,
+      'left center',
+      triggerElement,
+      'right center'
+    );
+
+    popoverContainerElement.style.top = p.top + 'px';
+    popoverContainerElement.style.left = p.left + 15 + 'px';
   }
 }
