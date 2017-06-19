@@ -16,6 +16,7 @@ import { MainLayoutDemoComponent } from './layouts/main/main-layout-demo.compone
 import { MediaDemoComponent } from './media-demo/media-demo.component';
 import { ColorSystemDemoComponent } from './color-system-demo/color-system-demo.component';
 import { HtmlDefaultsDemoComponent } from './html-defaults-demo/html-defaults-demo.component';
+import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { HtmlDefaultsDemoComponent } from './html-defaults-demo/html-defaults-de
     MainLayoutDemoComponent,
     MediaDemoComponent,
     ColorSystemDemoComponent,
-    HtmlDefaultsDemoComponent
+    HtmlDefaultsDemoComponent,
+    PopoverDemoComponent
   ],
   providers: [],
   exports: []

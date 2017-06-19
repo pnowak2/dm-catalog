@@ -5,6 +5,7 @@ import { FamilyCompositionModule } from './family-composition/family-composition
 import { NavigationModule } from './navigation/navigation.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { SwitchModule } from './switch/switch.module';
+import { PopoverModule } from './popover/popover.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { SwitchModule } from './switch/switch.module';
     NavigationModule,
     SidebarModule,
     SwitchModule,
+    PopoverModule
   ]
 })
 export class ComponentsModule { }
