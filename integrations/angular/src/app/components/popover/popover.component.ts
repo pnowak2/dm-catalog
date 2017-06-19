@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'dm-popover',
   templateUrl: './popover.component.html'
 })
 export class PopoverComponent implements OnInit {
+  @ViewChild('popoverContainer') popoverContainer: ElementRef;
+
   @Input() title;
 
   @Input() showCloseIcon = false;
@@ -17,8 +19,18 @@ export class PopoverComponent implements OnInit {
 
   @Output() onAfterHide: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  container: any;
+
+  constructor(public el: ElementRef) { }
 
   ngOnInit() {
+  }
+
+  show() {
+
+  }
+
+  hide() {
+
   }
 }

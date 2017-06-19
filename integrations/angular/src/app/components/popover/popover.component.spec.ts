@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, ElementRef } from '@angular/core';
 import { PopoverComponent } from './popover.component';
 
 fdescribe('PopoverComponent', () => {
@@ -28,6 +28,12 @@ fdescribe('PopoverComponent', () => {
   });
 
   describe('Api', () => {
+    describe('.popoverContainer', () => {
+      it(`should be defined`, () => {
+        expect(component.popoverContainer).toEqual(jasmine.any(ElementRef));
+      });
+    });
+
     describe('.title', () => {
       it(`should be set to undefined`, () => {
         expect(component.title).toBeUndefined();
@@ -61,6 +67,18 @@ fdescribe('PopoverComponent', () => {
     describe('.onAfterHide', () => {
       it(`should be instance of event emitter`, () => {
         expect(component.onAfterHide).toEqual(jasmine.any(EventEmitter));
+      });
+    });
+
+    describe('.show()', () => {
+      it(`should be defined`, () => {
+        expect(component.show).toEqual(jasmine.any(Function));
+      });
+    });
+
+    describe('.hide()', () => {
+      it(`should be defined`, () => {
+        expect(component.hide).toEqual(jasmine.any(Function));
       });
     });
   });
