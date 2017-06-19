@@ -31,12 +31,20 @@ export class PopoverComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event) {
     if (!this.el.nativeElement.contains(event.target)) {
-      // this.hide(event);
+      this.hide(event);
     }
   }
 
   onCloseClick(event) {
     this.hide(event);
+  }
+
+  toggle(event) {
+    if(this.isVisible) {
+      this.hide(event);
+    } else {
+      this.show(event);
+    }
   }
 
   show(event) {
@@ -49,20 +57,14 @@ export class PopoverComponent implements OnInit {
     this.isVisible = true;
 
     this.onAfterShow.emit(null);
+
+    event.stopPropagation();
   }
 
   hide(event) {
     this.onBeforeHide.emit(null);
     this.isVisible = false;
     this.onAfterHide.emit(null);
-  }
-
-  toggle(event) {
-    if(this.isVisible) {
-      this.hide(event);
-    } else {
-      this.show(event);
-    }
   }
 
   position(popoverContainerElement, triggerElement) {
