@@ -95,7 +95,7 @@
     }
   }
 
-  &--dark-header {
+  &--colored-header {
     border: none;
     background: none;
     border-color: dm-get-color(grey-dark);
@@ -145,7 +145,7 @@
     }
   }
 
-  &--dark-solid {
+  &--colored-solid {
     background-color: dm-get-color(grey-dark);
     border-style: none;
     border-color: dm-get-color(grey-dark);
