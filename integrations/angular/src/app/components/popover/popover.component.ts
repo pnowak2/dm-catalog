@@ -42,14 +42,10 @@ export class PopoverComponent implements OnInit {
   }
 
   toggle(event) {
-    let triggerElement = event.currentTarget || event.target;
+    let triggerElement = event.target;
 
-    if (!this.lastTriggerElement || this.lastTriggerElement === triggerElement) {
-      if (this.isVisible) {
-        this.hide(event);
-      } else {
-        this.show(event);
-      }
+    if (this.lastTriggerElement === triggerElement) {
+      this.isVisible ? this.hide(event) : this.show(event);
     } else {
       this.show(event);
     }
@@ -59,7 +55,7 @@ export class PopoverComponent implements OnInit {
 
   show(event) {
     let popoverContainerElement = this.popoverContainer.nativeElement;
-    let triggerElement = event.currentTarget || event.target;
+    let triggerElement = event.target;
 
     this.onBeforeShow.emit(null);
 
