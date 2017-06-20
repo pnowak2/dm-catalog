@@ -70,12 +70,12 @@ export class PopoverComponent implements OnInit {
   position(popoverContainerElement, triggerElement) {
     let p = positions(
       popoverContainerElement,
-      'left center',
+      'top center',
       triggerElement,
-      'right center'
+      'center bottom'
     );
 
-    popoverContainerElement.style.top = p.top + 'px';
-    popoverContainerElement.style.left = p.left + 15 + 'px';
+    popoverContainerElement.style.top = p.top + 15 + 'px';
+    popoverContainerElement.style.left = p.left + 'px';
   }
 }
