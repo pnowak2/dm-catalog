@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
 import * as positions from 'positions';
 
 @Component({
@@ -87,5 +87,9 @@ export class PopoverComponent implements OnInit {
 
     popoverContainerElement.style.top = p.top + 15 + 'px';
     popoverContainerElement.style.left = p.left + 'px';
+  }
+
+  ngOnDestroy() {
+    this.lastTriggerElement = null;
   }
 }
