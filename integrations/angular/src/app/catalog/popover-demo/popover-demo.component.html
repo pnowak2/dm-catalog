@@ -3,7 +3,7 @@
 <div class="dm-o-container">
   <div class="dm-o-row dm-u-flex-column dm-u-p-xl dm-u-align-content-center">
     <div class="dm-u-p-lg">
-      <button (mouseover)="pop1.toggle($event)" (mouseout)="pop1.hide($event)">Click</button>
+      <button (mouseover)="pop1.show($event)" (mouseout)="pop1.hide($event)">Click</button>
       <br/>
       <button (click)="pop1.toggle($event)">Click</button>
       <br/>
@@ -11,12 +11,13 @@
 
       <dm-popover
         #pop1
-        title="Popover Title which is very long and cannot fit in this afsfsd"
+        [title]="title"
         [showCloseIcon]="true"
+        (onBeforeShow)="beforeShow($event)"
+        (onAfterShow)="afterShow($event)"
         (onBeforeHide)="beforeHide($event)"
         (onAfterHide)="afterHide($event)">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.Lorem
-        ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt desperis.
+        {{ content }}
       </dm-popover>
     </div>
   </div>

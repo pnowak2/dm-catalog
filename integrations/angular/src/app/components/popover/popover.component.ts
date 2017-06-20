@@ -22,6 +22,8 @@ export class PopoverComponent implements OnInit {
 
   isVisible = false;
 
+  lastTriggerElement: any;
+
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
@@ -40,11 +42,19 @@ export class PopoverComponent implements OnInit {
   }
 
   toggle(event) {
-    if(this.isVisible) {
-      this.hide(event);
+    let triggerElement = event.currentTarget || event.target;
+
+    if (!this.lastTriggerElement || this.lastTriggerElement === triggerElement) {
+      if (this.isVisible) {
+        this.hide(event);
+      } else {
+        this.show(event);
+      }
     } else {
       this.show(event);
     }
+
+    this.lastTriggerElement = triggerElement;
   }
 
   show(event) {
