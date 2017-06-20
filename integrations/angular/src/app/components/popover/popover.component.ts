@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
 import * as positions from 'positions';
+import * as domAlign from 'dom-align';
 
 @Component({
   selector: 'dm-popover',
@@ -26,9 +27,7 @@ export class PopoverComponent implements OnInit {
 
   constructor(private el: ElementRef) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event) {
@@ -74,15 +73,26 @@ export class PopoverComponent implements OnInit {
   }
 
   position(popoverContainerElement, triggerElement) {
-    let p = positions(
-      popoverContainerElement,
-      'top center',
-      triggerElement,
-      'center bottom'
-    );
+    // let p = positions(
+    //   popoverContainerElement,
+    //   'top center',
+    //   triggerElement,
+    //   'center bottom'
+    // );
 
-    popoverContainerElement.style.top = p.top + 15 + 'px';
-    popoverContainerElement.style.left = p.left + 'px';
+    // popoverContainerElement.style.top = p.top + 15 + 'px';
+    // popoverContainerElement.style.left = p.left + 'px';
+
+
+    domAlign.default(popoverContainerElement, triggerElement, {
+      points: ['tc', 'bc'],
+      offset: [0, 15],
+      overflow: {
+        adjustX: false,
+        adjustY: true
+      },
+      useCssTransform: true
+    });
   }
 
   ngOnDestroy() {
