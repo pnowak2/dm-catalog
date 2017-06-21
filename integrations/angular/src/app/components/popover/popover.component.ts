@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
-import * as positions from 'positions';
-import * as domAlign from 'dom-align';
 import * as mezr from 'mezr';
 
 @Component({
@@ -74,27 +72,6 @@ export class PopoverComponent implements OnInit {
   }
 
   position(popoverContainerElement, triggerElement) {
-    // let p = positions(
-    //   popoverContainerElement,
-    //   'top center',
-    //   triggerElement,
-    //   'center bottom'
-    // );
-
-    // popoverContainerElement.style.top = p.top + 15 + 'px';
-    // popoverContainerElement.style.left = p.left + 'px';
-
-
-    // domAlign.default(popoverContainerElement, triggerElement, {
-    //   points: ['tc', 'bc'],
-    //   offset: [0, 15],
-    //   overflow: {
-    //     adjustX: false,
-    //     adjustY: true
-    //   },
-    //   useCssTransform: true
-    // });
-
     let m = mezr.place({
       element: popoverContainerElement,
       target: triggerElement,
