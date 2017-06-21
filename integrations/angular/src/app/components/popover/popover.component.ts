@@ -8,6 +8,8 @@ import * as mezr from 'mezr';
 export class PopoverComponent implements OnInit {
   @ViewChild('popoverContainer') popoverContainer: ElementRef;
 
+  @ViewChild('popoverArrow') popoverArrow: ElementRef;
+
   @Input() title;
 
   @Input() showCloseIcon = false;

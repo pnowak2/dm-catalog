@@ -1,7 +1,8 @@
 <div #popoverContainer
      class="dm-c-popover dm-c-popover--colored-header dm-c-popover--bottom"
      [class.dm-u-invisible]="!isVisible">
-  <div class="dm-c-popover__arrow">
+  <div #popoverArrow
+       class="dm-c-popover__arrow">
     <div class="dm-c-popover__arrow-inner"></div>
   </div>
   <div *ngIf="title" class="dm-c-popover__header">
