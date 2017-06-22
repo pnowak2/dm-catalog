@@ -67,6 +67,24 @@ export class PopoverService {
             position.top += mezr.height(popoverContainerElement) + mezr.height(triggerElement) + (2 * 15);
           }
         }
+
+        if (desiredPlacement === 'left') {
+          if (data.overflow.left > 0) {
+            popoverContainerElement.classList.remove(`dm-c-popover--left`);
+            popoverContainerElement.classList.add(`dm-c-popover--right`);
+
+            position.left += mezr.width(popoverContainerElement) + mezr.width(triggerElement) + (2 * 15);
+          }
+        }
+
+        if (desiredPlacement === 'right') {
+          if (data.overflow.right > 0) {
+            popoverContainerElement.classList.remove(`dm-c-popover--right`);
+            popoverContainerElement.classList.add(`dm-c-popover--left`);
+
+            position.left -= mezr.width(popoverContainerElement) + mezr.width(triggerElement) + (2 * 15);
+          }
+        }
       }
     });
   }
