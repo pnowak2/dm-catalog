@@ -62,8 +62,6 @@ export class PopoverComponent implements OnDestroy {
     let desiredPlacement = this.placement;
 
     this.onBeforeShow.emit(null);
-    this.isVisible = true;
-    this.onAfterShow.emit(null);
 
     setTimeout(() => {
       this.popoverService.position(
@@ -72,6 +70,8 @@ export class PopoverComponent implements OnDestroy {
         triggerElement,
         popoverArrow
       );
+      this.isVisible = true;
+      this.onAfterShow.emit(null);
     }, 0);
 
     event.stopPropagation();
