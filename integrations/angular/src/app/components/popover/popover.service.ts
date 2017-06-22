@@ -23,10 +23,22 @@ export class PopoverService {
   }
 
   getEffectivePosition(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement): { top: number, left: number } {
+    let position;
+    let offsetY;
+
+    if (desiredPlacement === 'bottom') {
+      position = 'center top center bottom';
+      offsetY = 15;
+    } else if (desiredPlacement === 'top') {
+      position = 'center bottom center top';
+      offsetY = -15;
+    }
+
     return mezr.place({
       element: popoverContainerElement,
       target: triggerElement,
-      position: 'center top center bottom',
+      position: position,
+      offsetY: offsetY,
       contain: {
         onOverflow: 'none'
       }
