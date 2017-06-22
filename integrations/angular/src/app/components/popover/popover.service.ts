@@ -40,6 +40,7 @@ export class PopoverService {
       offsetX = 15;
     }
 
+    // should have different strategies for onOverflow while top/bottom or left/right
     return mezr.place({
       element: popoverContainerElement,
       target: triggerElement,
@@ -56,15 +57,22 @@ export class PopoverService {
         }
       },
       adjust: function (position, data) {
+        popoverArrow.style['margin-left'] = '-8px';
+
         if (desiredPlacement === 'bottom') {
           if (data.overflow.bottom > 0) {
             popoverContainerElement.classList.remove(`dm-c-popover--bottom`);
             popoverContainerElement.classList.add(`dm-c-popover--top`);
 
             position.top -= mezr.height(popoverContainerElement) + mezr.height(triggerElement) + (2 * 15);
+          }
 
-            if (data.overflowCorrection.left > 0) {
-            }
+          if (data.overflowCorrection.left > 0) {
+            popoverArrow.style['margin-left'] = -data.overflowCorrection.left - 6 + 'px';
+          }
+
+          if (data.overflowCorrection.left < 0) {
+            popoverArrow.style['margin-left'] = -data.overflowCorrection.left - 6 + 'px';
           }
         }
 
@@ -74,6 +82,14 @@ export class PopoverService {
             popoverContainerElement.classList.add(`dm-c-popover--bottom`);
 
             position.top += mezr.height(popoverContainerElement) + mezr.height(triggerElement) + (2 * 15);
+          }
+
+          if (data.overflowCorrection.left > 0) {
+            popoverArrow.style['margin-left'] = -data.overflowCorrection.left - 6 + 'px';
+          }
+
+          if (data.overflowCorrection.left < 0) {
+            popoverArrow.style['margin-left'] = -data.overflowCorrection.left - 6 + 'px';
           }
         }
 
