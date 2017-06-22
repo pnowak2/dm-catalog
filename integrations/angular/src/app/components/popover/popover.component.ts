@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
 import { PopoverService } from './popover.service';
+import * as mezr from 'mezr';
 
 @Component({
   selector: 'dm-popover',
@@ -29,8 +30,6 @@ export class PopoverComponent implements OnDestroy {
 
   effectivePlacement: string;
 
-  effectivePosition: any = { top: -10000, left: -10000};
-
   lastTriggerElement: HTMLElement;
 
   constructor(private el: ElementRef, private popoverService: PopoverService) { }
@@ -59,36 +58,22 @@ export class PopoverComponent implements OnDestroy {
   }
 
   show(event) {
-    let popoverContainerElement: HTMLElement = this.popoverContainer.nativeElement;
     let triggerElement: HTMLElement = event.target;
+    let popoverContainerElement: HTMLElement = this.popoverContainer.nativeElement;
     let desiredPlacement = this.placement;
 
     this.onBeforeShow.emit(null);
 
-    this.position(desiredPlacement, popoverContainerElement, triggerElement);
+    this.effectivePlacement = this.popoverService.position(
+      desiredPlacement,
+      popoverContainerElement,
+      triggerElement
+    );
     this.isVisible = true;
 
     this.onAfterShow.emit(null);
 
     event.stopPropagation();
-  }
-
-  position(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement: HTMLElement) {
-    let effectivePlacement = this.popoverService.getEffectivePlacement(
-      desiredPlacement,
-      popoverContainerElement,
-      triggerElement
-    );
-
-    let effectivePosition = this.popoverService.getEffectivePosition(
-      desiredPlacement,
-      popoverContainerElement,
-      triggerElement
-    );
-
-    this.effectivePlacement = effectivePlacement;
-    this.effectivePosition.top = effectivePosition.top + 'px';
-    this.effectivePosition.left = effectivePosition.left + 'px';
   }
 
   hide(event) {
