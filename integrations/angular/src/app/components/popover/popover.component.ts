@@ -58,6 +58,7 @@ export class PopoverComponent implements OnDestroy {
   show(event) {
     let triggerElement: HTMLElement = event.target;
     let popoverContainerElement: HTMLElement = this.popoverContainer.nativeElement;
+    let popoverArrow: HTMLElement = this.popoverArrow.nativeElement;
     let desiredPlacement = this.placement;
 
     this.onBeforeShow.emit(null);
@@ -68,7 +69,8 @@ export class PopoverComponent implements OnDestroy {
       this.popoverService.position(
         desiredPlacement,
         popoverContainerElement,
-        triggerElement
+        triggerElement,
+        popoverArrow
       );
     }, 0);
 

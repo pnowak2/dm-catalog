@@ -3,18 +3,19 @@ import * as mezr from 'mezr';
 
 @Injectable()
 export class PopoverService {
-  position(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement: HTMLElement): void {
+  position(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement: HTMLElement, popoverArrow: HTMLElement): void {
     let effectivePosition = this.getEffectivePosition(
       desiredPlacement,
       popoverContainerElement,
-      triggerElement
+      triggerElement,
+      popoverArrow
     );
 
     popoverContainerElement.style.top = effectivePosition.top + 'px';
     popoverContainerElement.style.left = effectivePosition.left + 'px';
   }
 
-  getEffectivePosition(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement): { top: number, left: number } {
+  getEffectivePosition(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement: HTMLElement, popoverArrow: HTMLElement): { top: number, left: number } {
     let position;
     let offsetY = 0;
     let offsetX = 0;
@@ -47,7 +48,12 @@ export class PopoverService {
       offsetX: offsetX,
       contain: {
         within: window,
-        onOverflow: 'none'
+        onOverflow: {
+          left: 'push',
+          right: 'push',
+          top: 'none',
+          bottom: 'none'
+        }
       },
       adjust: function (position, data) {
         if (desiredPlacement === 'bottom') {
@@ -56,6 +62,9 @@ export class PopoverService {
             popoverContainerElement.classList.add(`dm-c-popover--top`);
 
             position.top -= mezr.height(popoverContainerElement) + mezr.height(triggerElement) + (2 * 15);
+
+            if (data.overflowCorrection.left > 0) {
+            }
           }
         }
 
