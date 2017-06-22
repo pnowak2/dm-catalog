@@ -28,8 +28,6 @@ export class PopoverComponent implements OnDestroy {
 
   isVisible = false;
 
-  effectivePlacement: string;
-
   lastTriggerElement: HTMLElement;
 
   constructor(private el: ElementRef, private popoverService: PopoverService) { }
@@ -64,11 +62,12 @@ export class PopoverComponent implements OnDestroy {
 
     this.onBeforeShow.emit(null);
 
-    this.effectivePlacement = this.popoverService.position(
+    this.popoverService.position(
       desiredPlacement,
       popoverContainerElement,
       triggerElement
     );
+
     this.isVisible = true;
 
     this.onAfterShow.emit(null);
