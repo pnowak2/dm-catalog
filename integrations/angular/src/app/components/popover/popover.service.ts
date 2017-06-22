@@ -57,7 +57,7 @@ export class PopoverService {
         }
       },
       adjust: function (position, data) {
-        popoverArrow.style['margin-left'] = '-8px';
+        popoverArrow.style['margin-left'] = -(mezr.width(popoverArrow) / 2) + 'px';
 
         if (desiredPlacement === 'bottom') {
           if (data.overflow.bottom > 0) {
