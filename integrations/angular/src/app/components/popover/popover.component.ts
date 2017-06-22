@@ -1,16 +1,18 @@
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
 import * as mezr from 'mezr';
 
 @Component({
   selector: 'dm-popover',
   templateUrl: './popover.component.html'
 })
-export class PopoverComponent implements OnInit {
+export class PopoverComponent implements OnDestroy {
   @ViewChild('popoverContainer') popoverContainer: ElementRef;
 
   @ViewChild('popoverArrow') popoverArrow: ElementRef;
 
   @Input() title;
+
+  @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
 
   @Input() showCloseIcon = false;
 
@@ -24,11 +26,11 @@ export class PopoverComponent implements OnInit {
 
   isVisible = false;
 
-  lastTriggerElement: any;
+  effectivePlacement: string;
+
+  lastTriggerElement: HTMLElement;
 
   constructor(private el: ElementRef) { }
-
-  ngOnInit() { }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event) {
@@ -42,7 +44,7 @@ export class PopoverComponent implements OnInit {
   }
 
   toggle(event) {
-    let triggerElement = event.target;
+    let triggerElement: HTMLElement = event.target;
 
     if (this.lastTriggerElement === triggerElement) {
       this.isVisible ? this.hide(event) : this.show(event);
@@ -54,8 +56,8 @@ export class PopoverComponent implements OnInit {
   }
 
   show(event) {
-    let popoverContainerElement = this.popoverContainer.nativeElement;
-    let triggerElement = event.target;
+    let popoverContainerElement: HTMLElement = this.popoverContainer.nativeElement;
+    let triggerElement: HTMLElement = event.target;
 
     this.onBeforeShow.emit(null);
 
@@ -73,21 +75,43 @@ export class PopoverComponent implements OnInit {
     this.onAfterHide.emit(null);
   }
 
-  position(popoverContainerElement, triggerElement) {
-    let m = mezr.place({
+  getEffectivePosition(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement): any {
+    return mezr.place({
       element: popoverContainerElement,
       target: triggerElement,
       position: 'center top center bottom',
+      offsetY: 15,
       contain: {
         onOverflow: 'none'
-      },
-      adjust: function (position, data) {
-        position.top += 15;
       }
     });
+  }
 
-    popoverContainerElement.style.top = m.top + 'px';
-    popoverContainerElement.style.left = m.left + 'px';
+  getEffectivePlacement(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement): string {
+    const effectivePosition = this.getEffectivePosition(
+      desiredPlacement,
+      popoverContainerElement,
+      triggerElement
+    );
+
+    return desiredPlacement;
+  }
+
+  position(popoverContainerElement: HTMLElement, triggerElement: HTMLElement) {
+    let effectivePosition = this.getEffectivePosition(
+      this.placement,
+      popoverContainerElement,
+      triggerElement
+    );
+
+    this.effectivePlacement = this.getEffectivePlacement(
+      this.placement,
+      popoverContainerElement,
+      triggerElement
+    );
+
+    popoverContainerElement.style.top = effectivePosition.top + 'px';
+    popoverContainerElement.style.left = effectivePosition.left + 'px';
   }
 
   ngOnDestroy() {
