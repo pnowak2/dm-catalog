@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
-import * as mezr from 'mezr';
+import { PopoverService } from './popover.service';
 
 @Component({
   selector: 'dm-popover',
-  templateUrl: './popover.component.html'
+  templateUrl: './popover.component.html',
+  providers: [PopoverService]
 })
 export class PopoverComponent implements OnDestroy {
   @ViewChild('popoverContainer') popoverContainer: ElementRef;
@@ -30,7 +31,7 @@ export class PopoverComponent implements OnDestroy {
 
   lastTriggerElement: HTMLElement;
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef, private popoverService: PopoverService) { }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event) {
@@ -58,10 +59,12 @@ export class PopoverComponent implements OnDestroy {
   show(event) {
     let popoverContainerElement: HTMLElement = this.popoverContainer.nativeElement;
     let triggerElement: HTMLElement = event.target;
+    let desiredPlacement = this.placement;
 
     this.onBeforeShow.emit(null);
 
-    this.position(popoverContainerElement, triggerElement);
+    this.position(desiredPlacement, popoverContainerElement, triggerElement);
+
     this.isVisible = true;
 
     this.onAfterShow.emit(null);
@@ -69,49 +72,29 @@ export class PopoverComponent implements OnDestroy {
     event.stopPropagation();
   }
 
-  hide(event) {
-    this.onBeforeHide.emit(null);
-    this.isVisible = false;
-    this.onAfterHide.emit(null);
-  }
-
-  getEffectivePosition(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement): any {
-    return mezr.place({
-      element: popoverContainerElement,
-      target: triggerElement,
-      position: 'center top center bottom',
-      offsetY: 15,
-      contain: {
-        onOverflow: 'none'
-      }
-    });
-  }
-
-  getEffectivePlacement(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement): string {
-    const effectivePosition = this.getEffectivePosition(
+  position(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement: HTMLElement) {
+    let effectivePlacement = this.popoverService.getEffectivePlacement(
       desiredPlacement,
       popoverContainerElement,
       triggerElement
     );
 
-    return desiredPlacement;
-  }
-
-  position(popoverContainerElement: HTMLElement, triggerElement: HTMLElement) {
-    let effectivePosition = this.getEffectivePosition(
-      this.placement,
+    let effectivePosition = this.popoverService.getEffectivePosition(
+      desiredPlacement,
       popoverContainerElement,
       triggerElement
     );
 
-    this.effectivePlacement = this.getEffectivePlacement(
-      this.placement,
-      popoverContainerElement,
-      triggerElement
-    );
+    this.effectivePlacement = effectivePlacement;
 
     popoverContainerElement.style.top = effectivePosition.top + 'px';
     popoverContainerElement.style.left = effectivePosition.left + 'px';
+  }
+
+  hide(event) {
+    this.onBeforeHide.emit(null);
+    this.isVisible = false;
+    this.onAfterHide.emit(null);
   }
 
   ngOnDestroy() {
