@@ -50,18 +50,22 @@ export class PopoverService {
         onOverflow: 'none'
       },
       adjust: function (position, data) {
-        if (data.overflow.bottom > 0) {
-          popoverContainerElement.classList.remove(`dm-c-popover--bottom`);
-          popoverContainerElement.classList.add(`dm-c-popover--top`);
+        if (desiredPlacement === 'bottom') {
+          if (data.overflow.bottom > 0) {
+            popoverContainerElement.classList.remove(`dm-c-popover--bottom`);
+            popoverContainerElement.classList.add(`dm-c-popover--top`);
 
-          position.top -= mezr.height(popoverContainerElement) + mezr.height(triggerElement) + (2 * 15);
+            position.top -= mezr.height(popoverContainerElement) + mezr.height(triggerElement) + (2 * 15);
+          }
         }
 
-        if (data.overflow.top > 0) {
-          popoverContainerElement.classList.remove(`dm-c-popover--top`);
-          popoverContainerElement.classList.add(`dm-c-popover--bottom`);
+        if (desiredPlacement === 'top') {
+          if (data.overflow.top > 0) {
+            popoverContainerElement.classList.remove(`dm-c-popover--top`);
+            popoverContainerElement.classList.add(`dm-c-popover--bottom`);
 
-          position.top += mezr.height(popoverContainerElement) + mezr.height(triggerElement) + (2 * 15);
+            position.top += mezr.height(popoverContainerElement) + mezr.height(triggerElement) + (2 * 15);
+          }
         }
       }
     });
