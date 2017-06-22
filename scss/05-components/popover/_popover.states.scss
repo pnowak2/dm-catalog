@@ -15,6 +15,15 @@
   }
   
   &--top,
+  &--bottom,
+  &--left,
+  &--right {
+    .dm-c-popover__arrow {
+      display: block;
+    }
+  }
+
+  &--top,
   &--bottom {
     .dm-c-popover__arrow {
       left: 50%;

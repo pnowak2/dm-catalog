@@ -29,6 +29,8 @@ export class PopoverComponent implements OnDestroy {
 
   effectivePlacement: string;
 
+  effectivePosition: any = { top: -10000, left: -10000};
+
   lastTriggerElement: HTMLElement;
 
   constructor(private el: ElementRef, private popoverService: PopoverService) { }
@@ -64,7 +66,6 @@ export class PopoverComponent implements OnDestroy {
     this.onBeforeShow.emit(null);
 
     this.position(desiredPlacement, popoverContainerElement, triggerElement);
-
     this.isVisible = true;
 
     this.onAfterShow.emit(null);
@@ -86,9 +87,8 @@ export class PopoverComponent implements OnDestroy {
     );
 
     this.effectivePlacement = effectivePlacement;
-
-    popoverContainerElement.style.top = effectivePosition.top + 'px';
-    popoverContainerElement.style.left = effectivePosition.left + 'px';
+    this.effectivePosition.top = effectivePosition.top + 'px';
+    this.effectivePosition.left = effectivePosition.left + 'px';
   }
 
   hide(event) {
