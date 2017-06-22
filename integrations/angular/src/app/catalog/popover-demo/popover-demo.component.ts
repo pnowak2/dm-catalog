@@ -29,6 +29,7 @@ export class PopoverDemoComponent implements OnInit {
   }
 
   beforeShow() {
+    // this.content = Math.random().toString();
   }
 
   afterShow() {
