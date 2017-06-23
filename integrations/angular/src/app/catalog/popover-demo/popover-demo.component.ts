@@ -29,7 +29,12 @@ export class PopoverDemoComponent implements OnInit {
   }
 
   beforeShow() {
-    // this.content = Math.random().toString();
+    let n = Math.random() * 100;
+    let content = '';
+    for(let i = 0; i < n; i++) {
+      content += 'hello ';
+    }
+    this.content = content;
   }
 
   afterShow() {
