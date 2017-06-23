@@ -4,6 +4,9 @@ import * as mezr from 'mezr';
 @Injectable()
 export class PopoverService {
   position(desiredPlacement: string, popoverContainerElement: HTMLElement, triggerElement: HTMLElement, popoverArrow: HTMLElement): void {
+    popoverContainerElement.style.visibility = 'hidden';
+    popoverContainerElement.style.display = 'block';
+
     let { position, offsetX, offsetY } = calculatePositionConfiguration(desiredPlacement);
 
     // should have different strategies for onOverflow while top/bottom or left/right
@@ -14,7 +17,7 @@ export class PopoverService {
       offsetY: offsetY,
       offsetX: offsetX,
       contain: {
-        within: window,
+        within: [window, 'padding'],
         onOverflow: {
           left: 'push',
           right: 'push',
@@ -28,6 +31,9 @@ export class PopoverService {
     });
 
     updateContainerCoordinates(popoverContainerElement, effectivePosition);
+
+    popoverContainerElement.style.visibility = 'visible';
+    popoverContainerElement.style.display = 'none';
   }
 }
 

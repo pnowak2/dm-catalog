@@ -1,5 +1,6 @@
 .dm-c-popover {
   position: absolute;
+  display: none;
   border: $dm-c-popover__border-width solid $dm-c-popover__border-color;
   max-width: $dm-c-popover__max-width;
   background-color: $dm-c-popover__bg-color;
