@@ -63,6 +63,7 @@ export class PopoverComponent implements OnDestroy {
 
     this.onBeforeShow.emit(null);
 
+    // Make the code evaluate in next event loop to settle events
     setTimeout(() => {
       this.popoverService.position(
         desiredPlacement,
