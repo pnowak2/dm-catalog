@@ -66,6 +66,9 @@ export class PopoverComponent implements OnDestroy {
     // Make the code evaluate in next event loop to settle events
     // Issue, does not show when in p-panel with nested component containing popover.
     // When removed setTimeout its fine, but lost dynamic content calculation feature..
+
+    // consider showing / hiding popover fully using dom, outside angular lifecycle
+    // to avoid problems with settimeout..
     setTimeout(() => {
       this.popoverService.position(
         desiredPlacement,
@@ -73,9 +76,10 @@ export class PopoverComponent implements OnDestroy {
         triggerElement,
         popoverArrow
       );
-      this.isVisible = true;
-      this.onAfterShow.emit(null);
     }, 0);
+
+    this.isVisible = true;
+    this.onAfterShow.emit(null);
 
     event.stopPropagation();
   }
