@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,6 +5,7 @@ import { CatalogComponent } from './catalog.component';
 import { CatalogRoutingModule } from './catalog-routing.module';
 
 import { ComponentsModule } from '../components/components.module';
+import { DirectivesModule } from './../directives/directives.module';
 
 import { FamilyBarDemoComponent } from './family-bar-demo/family-bar-demo.component';
 import { NavstackDemoComponent } from './navstack-demo/navstack-demo.component';
@@ -22,7 +22,8 @@ import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
   imports: [
     CommonModule,
     CatalogRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    DirectivesModule
   ],
   declarations: [
     CatalogComponent,
