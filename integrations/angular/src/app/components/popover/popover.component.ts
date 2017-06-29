@@ -64,6 +64,8 @@ export class PopoverComponent implements OnDestroy {
     this.onBeforeShow.emit(null);
 
     // Make the code evaluate in next event loop to settle events
+    // Issue, does not show when in p-panel with nested component containing popover.
+    // When removed setTimeout its fine, but lost dynamic content calculation feature..
     setTimeout(() => {
       this.popoverService.position(
         desiredPlacement,
