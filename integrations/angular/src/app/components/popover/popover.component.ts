@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
 import { PopoverService } from './popover.service';
-import * as mezr from 'mezr';
 
 @Component({
   selector: 'dm-popover',
