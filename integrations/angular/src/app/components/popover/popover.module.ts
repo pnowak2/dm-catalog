@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [CommonModule],
   exports: [PopoverComponent],
-  declarations: [PopoverComponent],
-  providers: [{provide: 'positionImpl', useClass: PopoverService}]
+  declarations: [PopoverComponent]
 })
 export class PopoverModule { }
