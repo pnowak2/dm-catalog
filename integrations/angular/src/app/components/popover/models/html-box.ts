@@ -16,4 +16,9 @@ export class HtmlBox implements Box {
       left: this.el.getBoundingClientRect().left + window.pageXOffset
     }
   }
+
+  set position(position) {
+    this.el.style.top = position.top + 'px';
+    this.el.style.left = position.left + 'px';
+  }
 }
