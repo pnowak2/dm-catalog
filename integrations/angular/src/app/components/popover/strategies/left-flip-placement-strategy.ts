@@ -23,12 +23,12 @@ export class LeftFlipPlacementStrategy implements PlacementStrategy {
     );
 
     const intersection = this.boxService.calculateIntersection(
-      SimpleBox.create(position, element.dimension),
+      SimpleBox.create(position, element.dimensions),
       WindowBox.create(window)
     );
 
     if (intersection.left < 0) {
-      position.left = trigger.position.left + trigger.dimension.width;
+      position.left = trigger.position.left + trigger.dimensions.width;
     }
 
     return position;

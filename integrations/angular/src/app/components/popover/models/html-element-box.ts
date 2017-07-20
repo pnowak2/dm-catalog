@@ -1,4 +1,4 @@
-import { Box, Position, Dimension } from './../services/interfaces';
+import { Box, Position, Dimensions } from './../services/interfaces';
 
 export class HtmlElementBox implements Box {
   private constructor(private el: HTMLElement) { }
@@ -7,7 +7,7 @@ export class HtmlElementBox implements Box {
     return new HtmlElementBox(el);
   }
 
-  get dimension(): Dimension {
+  get dimensions(): Dimensions {
     return {
       width: this.el.offsetWidth,
       height: this.el.offsetHeight

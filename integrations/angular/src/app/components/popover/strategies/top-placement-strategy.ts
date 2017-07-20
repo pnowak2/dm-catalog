@@ -19,16 +19,16 @@ export class TopPlacementStrategy implements PlacementStrategy {
       left: 0
     };
 
-    position.top = trigger.position.top - element.dimension.height;
-    position.left = trigger.position.left - element.dimension.width / 2 + trigger.dimension.width / 2;
+    position.top = trigger.position.top - element.dimensions.height;
+    position.left = trigger.position.left - element.dimensions.width / 2 + trigger.dimensions.width / 2;
 
     const intersection = this.boxService.calculateIntersection(
-      SimpleBox.create(position, element.dimension),
+      SimpleBox.create(position, element.dimensions),
       WindowBox.create(window)
     );
 
     if (intersection.top < 0) {
-      position.top = trigger.position.top + trigger.dimension.height;
+      position.top = trigger.position.top + trigger.dimensions.height;
     }
 
     return position;

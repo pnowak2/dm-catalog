@@ -4,14 +4,14 @@ export interface Position {
   left: number;
 }
 
-export interface Dimension {
+export interface Dimensions {
   width: number;
   height: number;
 }
 
 export interface Box {
   position: Position;
-  dimension: Dimension;
+  dimensions: Dimensions;
 }
 
 export interface Bounds {

@@ -1,9 +1,9 @@
-import { Box, Position, Dimension } from './../services/interfaces';
+import { Box, Position, Dimensions } from './../services/interfaces';
 
 export class SimpleBox implements Box {
-  private constructor(public position: Position, public dimension: Dimension) { }
+  private constructor(public position: Position, public dimensions: Dimensions) { }
 
-  public static create(position: Position, dimension: Dimension): Box {
+  public static create(position: Position, dimension: Dimensions): Box {
     return new SimpleBox(position, dimension);
   }
 }

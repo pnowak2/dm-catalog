@@ -22,12 +22,12 @@ export class BottomFlipPlacementStrategy implements PlacementStrategy {
     );
 
     const intersection = this.boxService.calculateIntersection(
-      SimpleBox.create(position, element.dimension),
+      SimpleBox.create(position, element.dimensions),
       WindowBox.create(window)
     );
 
     if (intersection.bottom < 0) {
-      position.top = trigger.position.top - element.dimension.height;
+      position.top = trigger.position.top - element.dimensions.height;
     }
     return position;
   }

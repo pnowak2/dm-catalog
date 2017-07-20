@@ -1,4 +1,4 @@
-import { Box, Position, Dimension } from './../services/interfaces';
+import { Box, Position, Dimensions } from './../services/interfaces';
 
 export class WindowBox implements Box {
   private constructor(private window: Window) { }
@@ -7,7 +7,7 @@ export class WindowBox implements Box {
     return new WindowBox(el);
   }
 
-  get dimension(): Dimension {
+  get dimensions(): Dimensions {
     return {
       width: this.window.document.documentElement.clientWidth,
       height: this.window.document.documentElement.clientHeight
