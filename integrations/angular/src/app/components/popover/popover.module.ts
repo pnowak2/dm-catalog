@@ -1,3 +1,4 @@
+import { BoxService } from './services/box.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,10 +14,11 @@ import { BottomPlacementStrategy } from './strategies/bottom-placement-strategy'
   exports: [PopoverComponent],
   declarations: [PopoverComponent],
   providers: [
+    { provide: BoxService, useClass: BoxService },
     { provide: 'PlacementStrategy', useValue: new TopPlacementStrategy(), multi: true },
     { provide: 'PlacementStrategy', useValue: new BottomPlacementStrategy(), multi: true },
     { provide: 'PlacementStrategy', useValue: new LeftPlacementStrategy(), multi: true },
-    { provide: 'PlacementStrategy', useValue: new RightPlacementStrategy(), multi: true },
+    { provide: 'PlacementStrategy', useClass: RightPlacementStrategy, multi: true }
   ]
 })
 export class PopoverModule { }

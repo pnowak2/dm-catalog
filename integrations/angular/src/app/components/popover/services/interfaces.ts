@@ -1,12 +1,24 @@
+import { BoxService } from './box.service';
 export interface Position {
   top: number,
   left: number;
 }
 
+export interface Dimension {
+  width: number;
+  height: number;
+}
+
 export interface Box {
   position: Position;
-  width: number,
-  height: number;
+  dimension: Dimension;
+}
+
+export interface Bounds {
+  top: number;
+  left: number;
+  right: number;
+  bottom: number;
 }
 
 export abstract class PlacementStrategy {

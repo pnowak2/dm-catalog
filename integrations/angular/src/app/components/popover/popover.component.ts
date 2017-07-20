@@ -1,12 +1,7 @@
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
 
 import { PlacementStrategy, Box } from './services/interfaces';
-import { RightPlacementStrategy } from './strategies/right-placement-strategy';
-import { LeftPlacementStrategy } from './strategies/left-placement-strategy';
-import { BottomPlacementStrategy } from './strategies/bottom-placement-strategy';
-import { TopPlacementStrategy } from './strategies/top-placement-strategy';
-
-import { HtmlBox } from './models/html-box';
+import { HtmlElementBox } from './models/html-element-box';
 
 @Component({
   selector: 'dm-popover',
@@ -21,13 +16,19 @@ export class PopoverComponent {
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' = 'right';
 
-  constructor(@Inject('PlacementStrategy') private placementStrategies: [PlacementStrategy]) { }
+  constructor( @Inject('PlacementStrategy') private placementStrategies: [PlacementStrategy]) { }
 
   show(event) {
-    const placementStrategy: PlacementStrategy = this.placementStrategies.find(s => s.getId() === this.placement);
-    const triggerBox: Box = new HtmlBox(event.target);
-    const popoverBox: Box = new HtmlBox(this.popoverContainer.nativeElement);
+    const triggerBox: Box = new HtmlElementBox(event.target);
+    const popoverBox: Box = new HtmlElementBox(this.popoverContainer.nativeElement);
 
-    popoverBox.position = placementStrategy.calculatePosition(triggerBox, popoverBox);
+    const placementStrategy: PlacementStrategy = this.placementStrategies.find(
+      strategy => strategy.getId() === this.placement
+    );
+
+    if (placementStrategy) {
+      popoverBox.position = placementStrategy.calculatePosition(triggerBox, popoverBox);
+    }
+
   }
 }

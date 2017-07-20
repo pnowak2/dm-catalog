@@ -1,13 +1,13 @@
-import { Box, Position } from './../services/interfaces';
-export class HtmlBox implements Box {
+import { Box, Position, Dimension } from './../services/interfaces';
+
+export class HtmlElementBox implements Box {
   constructor(private el: HTMLElement) { }
 
-  get width(): number {
-    return this.el.offsetWidth;
-  }
-
-  get height(): number {
-    return this.el.offsetHeight;
+  get dimension(): Dimension {
+    return {
+      width: this.el.offsetWidth,
+      height: this.el.offsetHeight
+    }
   }
 
   get position(): Position {
