@@ -13,10 +13,6 @@ export class LeftFlipPlacementStrategy extends LeftPlacementStrategy {
     super();
   }
 
-  getId() {
-    return super.getId();
-  }
-
   calculatePosition(trigger: Box, element: Box): Position {
     let position: Position = super.calculatePosition(
       trigger,

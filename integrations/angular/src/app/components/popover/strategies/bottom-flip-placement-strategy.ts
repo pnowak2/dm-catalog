@@ -13,10 +13,6 @@ export class BottomFlipPlacementStrategy extends BottomPlacementStrategy {
     super();
   }
 
-  getId() {
-    return super.getId();
-  }
-
   calculatePosition(trigger: Box, element: Box): Position {
     let position: Position = super.calculatePosition(
       trigger,
