@@ -1,7 +1,7 @@
 import { HtmlBox } from './models/html-box';
 import { Box } from './services/interfaces';
 import { PositionService } from './services/position.service';
-import { Component, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
+import { Component, Input, ElementRef, ViewChild, } from '@angular/core';
 
 @Component({
   selector: 'dm-popover',
@@ -15,9 +15,9 @@ export class PopoverComponent {
 
   @Input() title = "Test title";
 
-  @Input() placement = 'center top center bottom';
+  @Input() placement = 'top';
 
-  constructor(private el: ElementRef, private positionService: PositionService) { }
+  constructor(private positionService: PositionService) { }
 
   show(event) {
     const trigger: Box = new HtmlBox(event.target);
