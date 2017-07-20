@@ -18,7 +18,9 @@ export class PopoverComponent {
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'left';
 
-  constructor( @Inject('PlacementStrategy') private placementStrategies: [PlacementStrategy]) { }
+  constructor(
+     @Inject('PlacementStrategy') private placementStrategies: [PlacementStrategy],
+     private boxService: BoxService) { }
 
   show(event) {
     const triggerBox: Box = new HtmlElementBox(event.target);
@@ -31,9 +33,9 @@ export class PopoverComponent {
     if (placementStrategy) {
       const s: PlacementStrategy = new IntersectionCorrectionPlacementStrategy(
         placementStrategy,
-        new BoxService()
+        this.boxService
       );
-      
+
       popoverBox.position = s.calculatePosition(triggerBox, popoverBox);
     }
   }

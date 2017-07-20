@@ -3,10 +3,10 @@ import { WindowBox } from './../models/window-box';
 import { SimpleBox } from './../models/simple-box';
 import { Position, Box, PlacementStrategy } from '../services/interfaces';
 
-export class IntersectionCorrectionPlacementStrategy extends PlacementStrategy {
-  constructor(private placementStrategy: PlacementStrategy, private boxService: BoxService) {
-    super();
-  }
+export class IntersectionCorrectionPlacementStrategy implements PlacementStrategy {
+  constructor(
+    private placementStrategy: PlacementStrategy,
+    private boxService: BoxService) { }
 
   getId() {
     return this.placementStrategy.getId();
@@ -26,11 +26,11 @@ export class IntersectionCorrectionPlacementStrategy extends PlacementStrategy {
     );
 
     if (intersection.right < 0) {
-      position.left = trigger.position.left - element.dimension.width - this.offset;
+      position.left = trigger.position.left - element.dimension.width;
     }
 
     if (intersection.left < 0) {
-      position.left = trigger.position.left + trigger.dimension.width + this.offset;
+      position.left = trigger.position.left + trigger.dimension.width;
     }
 
     if (intersection.top < 0) {

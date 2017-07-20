@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Position, Box, PlacementStrategy } from '../services/interfaces';
 
 @Injectable()
-export class RightPlacementStrategy extends PlacementStrategy {
+export class RightPlacementStrategy implements PlacementStrategy {
 
   getId() {
     return "right";
@@ -17,7 +17,7 @@ export class RightPlacementStrategy extends PlacementStrategy {
     };
 
     position.top = trigger.position.top - element.dimension.height / 2 + trigger.dimension.height / 2;
-    position.left = trigger.position.left + trigger.dimension.width + this.offset;
+    position.left = trigger.position.left + trigger.dimension.width;
 
     return position;
   }

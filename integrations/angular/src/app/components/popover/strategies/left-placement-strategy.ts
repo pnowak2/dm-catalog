@@ -1,6 +1,6 @@
 import { Position, Box, PlacementStrategy } from '../services/interfaces';
 
-export class LeftPlacementStrategy extends PlacementStrategy {
+export class LeftPlacementStrategy implements PlacementStrategy {
   getId() {
     return "left";
   }
@@ -12,7 +12,7 @@ export class LeftPlacementStrategy extends PlacementStrategy {
     };
 
     position.top = trigger.position.top - element.dimension.height / 2 + trigger.dimension.height / 2;
-    position.left = trigger.position.left - element.dimension.width - this.offset;
+    position.left = trigger.position.left - element.dimension.width;
 
     return position;
   }
