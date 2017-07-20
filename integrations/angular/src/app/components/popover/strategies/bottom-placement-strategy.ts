@@ -11,8 +11,8 @@ export class BottomPlacementStrategy extends PlacementStrategy {
       left: 0
     };
 
-    position.top = trigger.position.top + trigger.height;
-    position.left = trigger.position.left - element.width / 2;
+    position.top = trigger.position.top + trigger.height + this.spacer;
+    position.left = trigger.position.left - element.width / 2 + trigger.width / 2;
 
     return position;
   }
