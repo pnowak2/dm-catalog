@@ -10,7 +10,7 @@ export interface Box {
 }
 
 export abstract class PlacementStrategy {
-  spacer: number = 15;
+  offset: number = 15;
 
   abstract getId(): string;
   abstract calculatePosition(trigger: Box, element: Box): Position;

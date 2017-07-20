@@ -12,10 +12,10 @@ export class RightPlacementStrategy extends PlacementStrategy {
     };
 
     position.top = trigger.position.top - element.height / 2 + trigger.height / 2;
-    position.left = trigger.position.left + trigger.width + this.spacer;
+    position.left = trigger.position.left + trigger.width + this.offset;
 
     if(position.left + element.width > document.documentElement.clientWidth) {
-      position.left = trigger.position.left - element.width - this.spacer;
+      position.left = trigger.position.left - element.width - this.offset;
     }
 
     return position;
