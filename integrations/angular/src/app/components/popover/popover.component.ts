@@ -24,10 +24,10 @@ export class PopoverComponent {
   constructor(@Inject('PlacementStrategy') private placementStrategies: [PlacementStrategy]) { }
 
   show(event) {
-    const strategy: PlacementStrategy = this.placementStrategies.find(s => s.getId() === this.placement);
-    const trigger: Box = new HtmlBox(event.target);
-    const popover: Box = new HtmlBox(this.popoverContainer.nativeElement);
+    const placementStrategy: PlacementStrategy = this.placementStrategies.find(s => s.getId() === this.placement);
+    const triggerBox: Box = new HtmlBox(event.target);
+    const popoverBox: Box = new HtmlBox(this.popoverContainer.nativeElement);
 
-    popover.position = strategy.calculatePosition(trigger, popover);
+    popoverBox.position = placementStrategy.calculatePosition(triggerBox, popoverBox);
   }
 }
