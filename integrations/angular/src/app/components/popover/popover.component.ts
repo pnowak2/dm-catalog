@@ -29,7 +29,11 @@ export class PopoverComponent {
     );
 
     if (placementStrategy) {
-      const s = new IntersectionCorrectionPlacementStrategy(placementStrategy, new BoxService());
+      const s: PlacementStrategy = new IntersectionCorrectionPlacementStrategy(
+        placementStrategy,
+        new BoxService()
+      );
+      
       popoverBox.position = s.calculatePosition(triggerBox, popoverBox);
     }
   }
