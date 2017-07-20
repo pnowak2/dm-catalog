@@ -23,8 +23,8 @@ export class TopPlacementStrategy implements PlacementStrategy {
     position.left = trigger.position.left - element.dimension.width / 2 + trigger.dimension.width / 2;
 
     const intersection = this.boxService.calculateIntersection(
-      new SimpleBox(position, element.dimension),
-      new WindowBox(window)
+      SimpleBox.create(position, element.dimension),
+      WindowBox.create(window)
     );
 
     if (intersection.top < 0) {

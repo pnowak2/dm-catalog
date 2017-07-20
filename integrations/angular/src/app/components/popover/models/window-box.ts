@@ -1,7 +1,11 @@
 import { Box, Position, Dimension } from './../services/interfaces';
 
 export class WindowBox implements Box {
-  constructor(private window: Window) { }
+  private constructor(private window: Window) { }
+
+  public static create(el: Window): Box {
+    return new WindowBox(el);
+  }
 
   get dimension(): Dimension {
     return {

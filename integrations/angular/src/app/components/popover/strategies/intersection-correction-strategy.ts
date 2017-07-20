@@ -21,8 +21,8 @@ export class IntersectionCorrectionPlacementStrategy implements PlacementStrateg
     position = this.placementStrategy.calculatePosition(trigger, element);
 
     const intersection = this.boxService.calculateIntersection(
-      new SimpleBox(position, element.dimension),
-      new WindowBox(window)
+      SimpleBox.create(position, element.dimension),
+      WindowBox.create(window)
     );
 
     if (intersection.right < 0) {

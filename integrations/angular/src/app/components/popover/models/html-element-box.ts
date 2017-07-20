@@ -1,7 +1,11 @@
 import { Box, Position, Dimension } from './../services/interfaces';
 
 export class HtmlElementBox implements Box {
-  constructor(private el: HTMLElement) { }
+  private constructor(private el: HTMLElement) { }
+
+  public static create(el: HTMLElement): Box {
+    return new HtmlElementBox(el);
+  }
 
   get dimension(): Dimension {
     return {

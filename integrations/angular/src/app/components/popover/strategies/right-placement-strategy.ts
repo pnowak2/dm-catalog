@@ -23,8 +23,8 @@ export class RightPlacementStrategy implements PlacementStrategy {
     position.left = trigger.position.left + trigger.dimension.width;
 
     const intersection = this.boxService.calculateIntersection(
-      new SimpleBox(position, element.dimension),
-      new WindowBox(window)
+      SimpleBox.create(position, element.dimension),
+      WindowBox.create(window)
     );
 
     if (intersection.right < 0) {

@@ -9,9 +9,9 @@ import { LeftPlacementStrategy } from './left-placement-strategy';
 export class LeftFlipPlacementStrategy extends LeftPlacementStrategy {
 
   constructor(
-    private boxService: BoxService) { 
-      super();
-    }
+    private boxService: BoxService) {
+    super();
+  }
 
   getId() {
     return super.getId();
@@ -24,14 +24,14 @@ export class LeftFlipPlacementStrategy extends LeftPlacementStrategy {
     );
 
     const intersection = this.boxService.calculateIntersection(
-      new SimpleBox(position, element.dimension),
-      new WindowBox(window)
+      SimpleBox.create(position, element.dimension),
+      WindowBox.create(window)
     );
 
     if (intersection.left < 0) {
       position.left = trigger.position.left + trigger.dimension.width;
     }
-    
+
     return position;
   }
 }

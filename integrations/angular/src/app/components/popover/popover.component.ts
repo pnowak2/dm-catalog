@@ -24,32 +24,28 @@ export class PopoverComponent {
     private boxService: BoxService) { }
 
   show(event) {
-    const triggerBox: Box = this.getTriggerBox(event.target);
-    const popoverBox: Box = this.getPopoverBox(this.popoverContainer.nativeElement);
-
-    const placementStrategy: PlacementStrategy = this.placementStrategies.find(
-      strategy => strategy.getId() === this.placement
+    const triggerBox: Box = HtmlElementBox.create(event.target);
+    const popoverBox: Box = HtmlElementBox.create(this.popoverContainer.nativeElement);
+    const placementStrategy: PlacementStrategy = new IntersectionCorrectionPlacementStrategy(
+      this.pickPlacementStrategy(
+        this.placementStrategies,
+        this.placement
+      ),
+      this.boxService
     );
 
-    if (placementStrategy) {
-
-      const s: PlacementStrategy = new IntersectionCorrectionPlacementStrategy(
-        placementStrategy,
-        this.boxService
-      );
-
-      popoverBox.position = s.calculatePosition(
-        triggerBox,
-        popoverBox
-      );
-    }
+    popoverBox.position = placementStrategy.calculatePosition(
+      triggerBox,
+      popoverBox
+    );
   }
 
-  getTriggerBox(element: HTMLElement): Box {
-    return new HtmlElementBox(element);
-  }
+  pickPlacementStrategy(
+    placementStrategies: [PlacementStrategy],
+    placement: string): PlacementStrategy {
 
-  getPopoverBox(element: HTMLElement): Box {
-    return new HtmlElementBox(element);
+    return placementStrategies.find(
+      strategy => strategy.getId() === placement
+    );
   }
 }

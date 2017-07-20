@@ -9,9 +9,9 @@ import { BottomPlacementStrategy } from './bottom-placement-strategy';
 export class BottomFlipPlacementStrategy extends BottomPlacementStrategy {
 
   constructor(
-    private boxService: BoxService) { 
-      super();
-    }
+    private boxService: BoxService) {
+    super();
+  }
 
   getId() {
     return super.getId();
@@ -24,8 +24,8 @@ export class BottomFlipPlacementStrategy extends BottomPlacementStrategy {
     );
 
     const intersection = this.boxService.calculateIntersection(
-      new SimpleBox(position, element.dimension),
-      new WindowBox(window)
+      SimpleBox.create(position, element.dimension),
+      WindowBox.create(window)
     );
 
     if (intersection.bottom < 0) {
