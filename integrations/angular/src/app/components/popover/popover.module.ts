@@ -17,6 +17,10 @@ import { BottomFlipPlacementStrategy } from './strategies/bottom-flip-placement-
   declarations: [PopoverComponent],
   providers: [
     { provide: BoxService, useClass: BoxService },
+    { provide: TopPlacementStrategy, useClass: TopPlacementStrategy },
+    { provide: BottomPlacementStrategy, useClass: BottomPlacementStrategy },
+    { provide: LeftPlacementStrategy, useClass: LeftPlacementStrategy },
+    { provide: RightPlacementStrategy, useClass: RightPlacementStrategy },
     { provide: 'PlacementStrategy', useClass: TopPlacementStrategy, multi: true },
     { provide: 'PlacementStrategy', useClass: BottomFlipPlacementStrategy, multi: true },
     { provide: 'PlacementStrategy', useClass: LeftFlipPlacementStrategy, multi: true },

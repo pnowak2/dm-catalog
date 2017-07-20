@@ -6,15 +6,17 @@ import { BoxService } from '../services/box.service';
 import { BottomPlacementStrategy } from './bottom-placement-strategy';
 
 @Injectable()
-export class BottomFlipPlacementStrategy extends BottomPlacementStrategy {
-
+export class BottomFlipPlacementStrategy implements PlacementStrategy {
   constructor(
-    private boxService: BoxService) {
-    super();
+    private placementStrategy: BottomPlacementStrategy,
+    private boxService: BoxService) { }
+
+  getId() {
+    return this.placementStrategy.getId();
   }
 
   calculatePosition(trigger: Box, element: Box): Position {
-    let position: Position = super.calculatePosition(
+    let position: Position = this.placementStrategy.calculatePosition(
       trigger,
       element
     );
