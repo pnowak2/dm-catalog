@@ -15,8 +15,8 @@ export class BottomFlipPlacementStrategy implements PlacementStrategy {
     return this.placementStrategy.getId();
   }
 
-  calculatePosition(trigger: Box, element: Box): Position {
-    let position: Position = this.placementStrategy.calculatePosition(
+  calculate(trigger: Box, element: Box): Position {
+    let position: Position = this.placementStrategy.calculate(
       trigger,
       element
     );

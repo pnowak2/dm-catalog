@@ -14,7 +14,7 @@ export interface Box {
   dimensions: Dimensions;
 }
 
-export interface Bounds {
+export interface Intersection {
   top: number;
   left: number;
   right: number;
@@ -23,6 +23,6 @@ export interface Bounds {
 
 export interface PlacementStrategy {
   getId(): string;
-  calculatePosition(trigger: Box, element: Box): Position;
+  calculate(trigger: Box, element: Box): Position;
 }
 

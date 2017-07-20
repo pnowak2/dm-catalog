@@ -12,13 +12,13 @@ export class IntersectionCorrectionPlacementStrategy implements PlacementStrateg
     return this.placementStrategy.getId();
   }
 
-  calculatePosition(trigger: Box, element: Box): Position {
+  calculate(trigger: Box, element: Box): Position {
     let position: Position = {
       top: 0,
       left: 0
     };
 
-    position = this.placementStrategy.calculatePosition(trigger, element);
+    position = this.placementStrategy.calculate(trigger, element);
 
     const intersection = this.boxService.calculateIntersection(
       SimpleBox.create(position, element.dimensions),

@@ -16,7 +16,7 @@ export class PopoverComponent {
 
   @Input() title = "Test title";
 
-  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'left';
+  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
 
   constructor(
     @Inject('PlacementStrategy')
@@ -34,7 +34,7 @@ export class PopoverComponent {
       this.boxService
     );
 
-    popoverBox.position = placementStrategy.calculatePosition(
+    popoverBox.position = placementStrategy.calculate(
       triggerBox,
       popoverBox
     );

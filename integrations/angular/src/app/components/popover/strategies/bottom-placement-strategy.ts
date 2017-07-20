@@ -10,7 +10,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     return "bottom";
   }
 
-  calculatePosition(trigger: Box, element: Box): Position {
+  calculate(trigger: Box, element: Box): Position {
     let position: Position = {
       top: 0,
       left: 0
