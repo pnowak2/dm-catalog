@@ -1,6 +1,11 @@
+import { Injectable } from '@angular/core';
 import { Position, Box, PlacementStrategy } from '../services/interfaces';
+import { SimpleBox } from './../models/simple-box';
+import { WindowBox } from './../models/window-box';
 
+@Injectable()
 export class BottomPlacementStrategy implements PlacementStrategy {
+
   getId() {
     return "bottom";
   }

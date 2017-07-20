@@ -5,7 +5,7 @@ import { Position, Box, PlacementStrategy } from '../services/interfaces';
 import { BoxService } from '../services/box.service';
 
 @Injectable()
-export class TopPlacementStrategy implements PlacementStrategy {
+export class FullPlacementStrategy implements PlacementStrategy {
 
   constructor(private boxService: BoxService) { }
 

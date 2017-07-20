@@ -26,11 +26,11 @@ export class IntersectionCorrectionPlacementStrategy implements PlacementStrateg
     );
 
     if (intersection.right < 0) {
-      position.left = trigger.position.left - element.dimension.width;
+      position.left += intersection.right;
     }
 
     if (intersection.left < 0) {
-      position.left = trigger.position.left + trigger.dimension.width;
+      position.left -= intersection.left;
     }
 
     if (intersection.top < 0) {

@@ -19,24 +19,37 @@ export class PopoverComponent {
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'left';
 
   constructor(
-     @Inject('PlacementStrategy') private placementStrategies: [PlacementStrategy],
-     private boxService: BoxService) { }
+    @Inject('PlacementStrategy')
+    private placementStrategies: [PlacementStrategy],
+    private boxService: BoxService) { }
 
   show(event) {
-    const triggerBox: Box = new HtmlElementBox(event.target);
-    const popoverBox: Box = new HtmlElementBox(this.popoverContainer.nativeElement);
+    const triggerBox: Box = this.getTriggerBox(event.target);
+    const popoverBox: Box = this.getPopoverBox(this.popoverContainer.nativeElement);
 
     const placementStrategy: PlacementStrategy = this.placementStrategies.find(
       strategy => strategy.getId() === this.placement
     );
 
     if (placementStrategy) {
+
       const s: PlacementStrategy = new IntersectionCorrectionPlacementStrategy(
         placementStrategy,
         this.boxService
       );
 
-      popoverBox.position = s.calculatePosition(triggerBox, popoverBox);
+      popoverBox.position = s.calculatePosition(
+        triggerBox,
+        popoverBox
+      );
     }
+  }
+
+  getTriggerBox(element: HTMLElement): Box {
+    return new HtmlElementBox(element);
+  }
+
+  getPopoverBox(element: HTMLElement): Box {
+    return new HtmlElementBox(element);
   }
 }
