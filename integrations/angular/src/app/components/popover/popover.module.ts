@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { PopoverComponent } from './popover.component';
 
 import { BottomPlacementStrategy } from './strategies/bottom-placement-strategy';
-import { BottomFlipPlacementStrategy } from './strategies/bottom-flip-placement-strategy';
 
 @NgModule({
   imports: [CommonModule],
@@ -13,8 +12,7 @@ import { BottomFlipPlacementStrategy } from './strategies/bottom-flip-placement-
   declarations: [PopoverComponent],
   providers: [
     { provide: BoxService, useClass: BoxService },
-    { provide: BottomPlacementStrategy, useClass: BottomPlacementStrategy },
-    { provide: 'PlacementStrategy', useClass: BottomFlipPlacementStrategy, multi: true },
+    { provide: 'PlacementStrategy', useClass: BottomPlacementStrategy, multi: true },
   ]
 })
 export class PopoverModule { }

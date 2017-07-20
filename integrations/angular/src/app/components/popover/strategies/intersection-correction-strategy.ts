@@ -13,13 +13,7 @@ export class IntersectionCorrectionPlacementStrategy implements PlacementStrateg
   }
 
   calculate(trigger: Box, element: Box): Position {
-    let position: Position = {
-      top: 0,
-      left: 0
-    };
-
-    position = this.placementStrategy.calculate(trigger, element);
-
+    const position: Position = this.placementStrategy.calculate(trigger, element);
     const intersection = this.boxService.calculateIntersection(
       SimpleBox.create(position, element.dimensions),
       WindowBox.create(window)

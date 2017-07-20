@@ -2,22 +2,31 @@ import { Injectable } from '@angular/core';
 import { Position, Box, PlacementStrategy } from '../services/interfaces';
 import { SimpleBox } from './../models/simple-box';
 import { WindowBox } from './../models/window-box';
+import { BoxService } from '../services/box.service';
 
 @Injectable()
 export class BottomPlacementStrategy implements PlacementStrategy {
+  constructor(
+    private boxService: BoxService) { }
 
   getId() {
     return "bottom";
   }
 
   calculate(trigger: Box, element: Box): Position {
-    let position: Position = {
-      top: 0,
-      left: 0
-    };
+    const position: Position = this.boxService.calculateBottomCenterPosition(
+      trigger,
+      element
+    );
+    
+    const intersection = this.boxService.calculateIntersection(
+      SimpleBox.create(position, element.dimensions),
+      WindowBox.create(window)
+    );
 
-    position.top = trigger.position.top + trigger.dimensions.height;
-    position.left = trigger.position.left - element.dimensions.width / 2 + trigger.dimensions.width / 2;
+    if (intersection.bottom < 0) {
+      position.top = trigger.position.top - element.dimensions.height;
+    }
 
     return position;
   }
