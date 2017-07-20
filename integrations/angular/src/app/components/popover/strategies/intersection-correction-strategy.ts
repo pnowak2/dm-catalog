@@ -1,0 +1,46 @@
+import { BoxService } from './../services/box.service';
+import { WindowBox } from './../models/window-box';
+import { SimpleBox } from './../models/simple-box';
+import { Position, Box, PlacementStrategy } from '../services/interfaces';
+
+export class IntersectionCorrectionPlacementStrategy extends PlacementStrategy {
+  constructor(private placementStrategy: PlacementStrategy, private boxService: BoxService) {
+    super();
+  }
+
+  getId() {
+    return this.placementStrategy.getId();
+  }
+
+  calculatePosition(trigger: Box, element: Box): Position {
+    let position: Position = {
+      top: 0,
+      left: 0
+    };
+
+    position = this.placementStrategy.calculatePosition(trigger, element);
+
+    const intersection = this.boxService.calculateIntersection(
+      new SimpleBox(position, element.dimension),
+      new WindowBox(window)
+    );
+
+    if (intersection.right < 0) {
+      position.left = trigger.position.left - element.dimension.width - this.offset;
+    }
+
+    if (intersection.left < 0) {
+      position.left = trigger.position.left + trigger.dimension.width + this.offset;
+    }
+
+    if (intersection.top < 0) {
+      position.top -= intersection.top;
+    }
+
+    if (intersection.bottom < 0) {
+      position.top += intersection.bottom;
+    }
+
+    return position;
+  }
+}

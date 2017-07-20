@@ -1,3 +1,5 @@
+import { BoxService } from './services/box.service';
+import { IntersectionCorrectionPlacementStrategy } from './strategies/intersection-correction-strategy';
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
 
 import { PlacementStrategy, Box } from './services/interfaces';
@@ -14,7 +16,7 @@ export class PopoverComponent {
 
   @Input() title = "Test title";
 
-  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'right';
+  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'left';
 
   constructor( @Inject('PlacementStrategy') private placementStrategies: [PlacementStrategy]) { }
 
@@ -27,8 +29,8 @@ export class PopoverComponent {
     );
 
     if (placementStrategy) {
-      popoverBox.position = placementStrategy.calculatePosition(triggerBox, popoverBox);
+      const s = new IntersectionCorrectionPlacementStrategy(placementStrategy, new BoxService());
+      popoverBox.position = s.calculatePosition(triggerBox, popoverBox);
     }
-
   }
 }
