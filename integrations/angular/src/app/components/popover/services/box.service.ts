@@ -4,10 +4,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BoxService {
   calculateBottomCenterPosition(ref: Rectangle, element: Rectangle): Rectangle {
+    const top = ref.position.top + ref.dimensions.height;
+    const left = ref.position.left - element.dimensions.width / 2 + ref.dimensions.width / 2;
+
     const rectangle: Rectangle = {
       position: {
-        top: ref.position.top + ref.dimensions.height,
-        left: ref.position.left - element.dimensions.width / 2 + ref.dimensions.width / 2
+        top, left
       },
       dimensions: { ...element.dimensions }
     }

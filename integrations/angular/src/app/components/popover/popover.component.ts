@@ -36,10 +36,10 @@ export class PopoverComponent {
       popoverBox
     );
 
-    this.popoverContainer.nativeElement.style.left = placement.position.left + 'px';
-    this.popoverContainer.nativeElement.style.top = placement.position.top + 'px';
-    this.popoverContainer.nativeElement.style.height = placement.dimensions.height + 'px';
-    this.popoverContainer.nativeElement.style.width = placement.dimensions.width + 'px';
+    this.updatePlacement(
+      this.popoverContainer.nativeElement,
+      placement
+    );
   }
 
   pickPlacementStrategy(
@@ -49,5 +49,12 @@ export class PopoverComponent {
     return placementStrategies.find(
       strategy => strategy.getId() === placement
     );
+  }
+
+  updatePlacement(popover: HTMLElement, rect: Rectangle) {
+    popover.style.left = rect.position.left + 'px';
+    popover.style.top = rect.position.top + 'px';
+    popover.style.height = rect.dimensions.height + 'px';
+    popover.style.width = rect.dimensions.width + 'px';
   }
 }
