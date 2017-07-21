@@ -1,9 +1,9 @@
-import { Box, Position, Dimensions } from './../services/interfaces';
+import { Rectangle, Position, Dimensions } from './../services/interfaces';
 
-export class WindowBox implements Box {
+export class WindowBox implements Rectangle {
   private constructor(private window: Window) { }
 
-  public static create(el: Window): Box {
+  public static create(el: Window): Rectangle {
     return new WindowBox(el);
   }
 

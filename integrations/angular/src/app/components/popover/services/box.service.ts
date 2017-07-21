@@ -1,21 +1,16 @@
-import { Box, Intersection, Position } from './interfaces';
+import { Rectangle, Intersection, Position } from './interfaces';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BoxService {
-  calculateBottomCenterPosition(ref: Box, element: Box): Position {
-    let position: Position = {
-      top: 0,
-      left: 0
+  calculateBottomCenterPosition(ref: Rectangle, element: Rectangle): Position {
+    return {
+      top: ref.position.top + ref.dimensions.height,
+      left: ref.position.left - element.dimensions.width / 2 + ref.dimensions.width / 2
     };
-
-    position.top = ref.position.top + ref.dimensions.height;
-    position.left = ref.position.left - element.dimensions.width / 2 + ref.dimensions.width / 2;
-
-    return position;
   }
 
-  calculateIntersection(element: Box, parent: Box): Intersection {
+  calculateIntersection(element: Rectangle, parent: Rectangle): Intersection {
     let intersection: Intersection = {
       top: element.position.top - parent.position.top,
       left: element.position.left - parent.position.left,
@@ -24,5 +19,44 @@ export class BoxService {
     }
 
     return intersection;
+  }
+
+  calculatePlacementInsideParent(element: Rectangle, parent: Rectangle): Position {
+    let position: Position = {...element.position};
+
+    const intersection = this.calculateIntersection(
+      element,
+      parent
+    );
+
+    if (intersection.right < 0) {
+      position = {
+        ...position,
+        left: position.left + intersection.right
+      }
+    }
+
+    if (intersection.left < 0) {
+      position = {
+        ...position,
+        left: position.left - intersection.left
+      }
+    }
+
+    if (intersection.top < 0) {
+      position = {
+        ...position,
+        top: position.top - intersection.top,
+      }
+    }
+
+    if (intersection.bottom < 0) {
+      position = {
+        ...position,
+        top: position.top + intersection.bottom,
+      }
+    }
+
+    return position;
   }
 }

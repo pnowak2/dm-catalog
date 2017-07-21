@@ -1,9 +1,9 @@
-import { Box, Position, Dimensions } from './../services/interfaces';
+import { Rectangle, Position, Dimensions } from './../services/interfaces';
 
-export class HtmlElementBox implements Box {
+export class HtmlElementBox implements Rectangle {
   private constructor(private el: HTMLElement) { }
 
-  public static create(el: HTMLElement): Box {
+  public static create(el: HTMLElement): Rectangle {
     return new HtmlElementBox(el);
   }
 
@@ -19,10 +19,5 @@ export class HtmlElementBox implements Box {
       top: this.el.getBoundingClientRect().top + window.pageYOffset,
       left: this.el.getBoundingClientRect().left + window.pageXOffset
     }
-  }
-
-  set position(position) {
-    this.el.style.top = position.top + 'px';
-    this.el.style.left = position.left + 'px';
   }
 }

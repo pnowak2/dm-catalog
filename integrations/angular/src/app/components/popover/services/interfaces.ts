@@ -1,28 +1,28 @@
 import { BoxService } from './box.service';
 export interface Position {
-  top: number,
-  left: number;
+  readonly top: number,
+  readonly left: number;
 }
 
 export interface Dimensions {
-  width: number;
-  height: number;
+  readonly width: number;
+  readonly height: number;
 }
 
-export interface Box {
-  position: Position;
-  dimensions: Dimensions;
+export interface Rectangle {
+  readonly position: Position;
+  readonly dimensions: Dimensions;
 }
 
 export interface Intersection {
-  top: number;
-  left: number;
-  right: number;
-  bottom: number;
+  readonly top: number;
+  readonly left: number;
+  readonly right: number;
+  readonly bottom: number;
 }
 
 export interface PlacementStrategy {
   getId(): string;
-  calculate(trigger: Box, element: Box): Position;
+  calculate(trigger: Rectangle, element: Rectangle): Position;
 }
 

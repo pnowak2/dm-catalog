@@ -1,8 +1,7 @@
 import { BoxService } from './services/box.service';
-import { IntersectionCorrectionPlacementStrategy } from './strategies/intersection-correction-strategy';
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
 
-import { PlacementStrategy, Box } from './services/interfaces';
+import { PlacementStrategy, Rectangle } from './services/interfaces';
 import { HtmlElementBox } from './models/html-element-box';
 
 @Component({
@@ -24,20 +23,20 @@ export class PopoverComponent {
     private boxService: BoxService) { }
 
   show(event) {
-    const triggerBox: Box = HtmlElementBox.create(event.target);
-    const popoverBox: Box = HtmlElementBox.create(this.popoverContainer.nativeElement);
-    const placementStrategy: PlacementStrategy = new IntersectionCorrectionPlacementStrategy(
-      this.pickPlacementStrategy(
-        this.placementStrategies,
-        this.placement
-      ),
-      this.boxService
-    );
+    const triggerBox: Rectangle = HtmlElementBox.create(event.target);
+    const popoverBox: Rectangle = HtmlElementBox.create(this.popoverContainer.nativeElement);
+    const placementStrategy: PlacementStrategy = this.pickPlacementStrategy(
+      this.placementStrategies,
+      this.placement
+    )
 
-    popoverBox.position = placementStrategy.calculate(
+    const position = placementStrategy.calculate(
       triggerBox,
       popoverBox
     );
+
+    this.popoverContainer.nativeElement.style.left = position.left + 'px';
+    this.popoverContainer.nativeElement.style.top = position.top + 'px';
   }
 
   pickPlacementStrategy(
