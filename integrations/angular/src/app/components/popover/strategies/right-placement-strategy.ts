@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Position, Rectangle, PlacementStrategy } from '../interfaces/interfaces';
-import { SimpleBox } from './../models/simple-box';
 import { WindowBox } from './../models/window-box';
 import { RectangleService } from '../services/rectangle.service';
 
@@ -26,7 +25,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
 
     const insideParentRect: Rectangle = this.rectangleService.calculatePlacementInsideParent(
       flippedRect,
-      WindowBox.create(window)
+      WindowBox.create()
     );
 
     return insideParentRect;
