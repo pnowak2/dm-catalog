@@ -15,7 +15,7 @@ export class PopoverComponent {
 
   @Input() title = "Test title";
 
-  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
+  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'right';
 
   constructor(
     @Inject('PlacementStrategy')

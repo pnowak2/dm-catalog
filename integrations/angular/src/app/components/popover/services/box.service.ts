@@ -17,6 +17,20 @@ export class BoxService {
     return rectangle;
   }
 
+  calculateRightPosition(ref: Rectangle, element: Rectangle): Rectangle {
+    const top = ref.position.top - element.dimensions.height / 2 + ref.dimensions.height / 2;
+    const left = ref.position.left + ref.dimensions.width;
+
+    const rectangle: Rectangle = {
+      position: {
+        top, left
+      },
+      dimensions: { ...element.dimensions }
+    }
+
+    return rectangle;
+  }
+
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle {
     const offset = element.position.top - ref.position.top;
 
@@ -28,6 +42,22 @@ export class BoxService {
     } else {
       return {
         position: { ...element.position, top: element.position.top + offset + element.dimensions.height },
+        dimensions: element.dimensions
+      };
+    }
+  }
+
+    flipVertically(ref: Rectangle, element: Rectangle): Rectangle {
+    const offset = element.position.left - ref.position.left;
+
+    if (offset > 0) {
+      return {
+        position: { ...element.position, left: element.position.left - offset - element.dimensions.width },
+        dimensions: element.dimensions
+      };
+    } else {
+      return {
+        position: { ...element.position, left: element.position.left + offset + element.dimensions.width },
         dimensions: element.dimensions
       };
     }
