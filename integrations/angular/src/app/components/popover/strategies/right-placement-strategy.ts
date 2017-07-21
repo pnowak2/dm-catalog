@@ -13,14 +13,14 @@ export class RightPlacementStrategy implements PlacementStrategy {
     return "right";
   }
 
-  calculate(trigger: Rectangle, element: Rectangle): Rectangle {
+  calculate(ref: Rectangle, element: Rectangle): Rectangle {
     const bottomCenterRect: Rectangle = this.boxService.calculateRightPosition(
-      trigger,
+      ref,
       element
     );
 
     const flippedRect: Rectangle = this.boxService.flipVertically(
-      trigger,
+      ref,
       bottomCenterRect
     );
 

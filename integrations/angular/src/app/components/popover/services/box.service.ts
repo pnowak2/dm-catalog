@@ -47,7 +47,7 @@ export class BoxService {
     }
   }
 
-    flipVertically(ref: Rectangle, element: Rectangle): Rectangle {
+  flipVertically(ref: Rectangle, element: Rectangle): Rectangle {
     const offset = element.position.left - ref.position.left;
 
     if (offset > 0) {

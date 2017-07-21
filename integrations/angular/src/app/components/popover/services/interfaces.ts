@@ -23,6 +23,6 @@ export interface Intersection {
 
 export interface PlacementStrategy {
   getId(): string;
-  calculate(trigger: Rectangle, element: Rectangle): Rectangle;
+  calculate(ref: Rectangle, element: Rectangle): Rectangle;
 }
 
