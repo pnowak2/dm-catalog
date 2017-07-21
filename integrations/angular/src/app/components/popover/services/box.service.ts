@@ -3,11 +3,32 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BoxService {
-  calculateBottomCenterPosition(ref: Rectangle, element: Rectangle): Position {
-    return {
-      top: ref.position.top + ref.dimensions.height,
-      left: ref.position.left - element.dimensions.width / 2 + ref.dimensions.width / 2
-    };
+  calculateBottomCenterPosition(ref: Rectangle, element: Rectangle): Rectangle {
+    const rectangle: Rectangle = {
+      position: {
+        top: ref.position.top + ref.dimensions.height,
+        left: ref.position.left - element.dimensions.width / 2 + ref.dimensions.width / 2
+      },
+      dimensions: { ...element.dimensions }
+    }
+
+    return rectangle;
+  }
+
+  flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle {
+    const offset = element.position.top - ref.position.top;
+
+    if (offset > 0) {
+      return {
+        position: { ...element.position, top: element.position.top - offset - element.dimensions.height },
+        dimensions: element.dimensions
+      };
+    } else {
+      return {
+        position: { ...element.position, top: element.position.top + offset + element.dimensions.height },
+        dimensions: element.dimensions
+      };
+    }
   }
 
   calculateIntersection(element: Rectangle, parent: Rectangle): Intersection {
@@ -21,10 +42,10 @@ export class BoxService {
     return intersection;
   }
 
-  calculatePlacementInsideParent(element: Rectangle, parent: Rectangle): Position {
-    let position: Position = {...element.position};
+  calculatePlacementInsideParent(element: Rectangle, parent: Rectangle): Rectangle {
+    let position: Position = { ...element.position };
 
-    const intersection = this.calculateIntersection(
+    const intersection: Intersection = this.calculateIntersection(
       element,
       parent
     );
@@ -57,6 +78,9 @@ export class BoxService {
       }
     }
 
-    return position;
+    return {
+      position: position,
+      dimensions: element.dimensions
+    };
   }
 }

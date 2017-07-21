@@ -13,29 +13,22 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     return "bottom";
   }
 
-  calculate(trigger: Rectangle, element: Rectangle): Position {
-    let position: Position = this.boxService.calculateBottomCenterPosition(
+  calculate(trigger: Rectangle, element: Rectangle): Rectangle {
+    const bottomCenterRect: Rectangle = this.boxService.calculateBottomCenterPosition(
       trigger,
       element
     );
 
-    const intersection = this.boxService.calculateIntersection(
-      SimpleBox.create(position, element.dimensions),
+    const flippedRect: Rectangle = this.boxService.flipHorizontally(
+      trigger,
+      bottomCenterRect
+    );
+
+    const insideParentRect: Rectangle = this.boxService.calculatePlacementInsideParent(
+      flippedRect,
       WindowBox.create(window)
     );
 
-    if (intersection.bottom < 0) {
-      position = {
-        ...position,
-        top: trigger.position.top - element.dimensions.height
-      }
-    }
-
-    position = this.boxService.calculatePlacementInsideParent(
-      SimpleBox.create(position, element.dimensions),
-      WindowBox.create(window)
-    );
-
-    return position;
+    return insideParentRect;
   }
 }
