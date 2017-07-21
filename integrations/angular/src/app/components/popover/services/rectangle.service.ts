@@ -115,4 +115,15 @@ export class RectangleService {
       dimensions: element.dimensions
     };
   }
+
+  toLocalCoords(ref: Rectangle, parent: Rectangle): Rectangle {
+    return {
+        position: { 
+          ...ref.position, 
+          top: ref.position.top - parent.position.top,
+          left: ref.position.left - parent.position.left
+         },
+        dimensions: ref.dimensions
+      };
+  }
 }
