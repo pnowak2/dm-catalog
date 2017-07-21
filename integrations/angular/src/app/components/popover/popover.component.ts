@@ -1,7 +1,6 @@
-import { BoxService } from './services/box.service';
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
 
-import { PlacementStrategy, Rectangle } from './services/interfaces';
+import { PlacementStrategy, Rectangle } from './interfaces/interfaces';
 import { HtmlElementBox } from './models/html-element-box';
 
 @Component({
@@ -19,8 +18,7 @@ export class PopoverComponent {
 
   constructor(
     @Inject('PlacementStrategy')
-    private placementStrategies: [PlacementStrategy],
-    private boxService: BoxService) { }
+    private placementStrategies: [PlacementStrategy]) { }
 
   show(event) {
     const triggerBox: Rectangle = HtmlElementBox.create(event.target);

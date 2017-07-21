@@ -1,4 +1,3 @@
-import { BoxService } from './box.service';
 export interface Position {
   readonly top: number,
   readonly left: number;

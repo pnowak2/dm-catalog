@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
-import { Position, Rectangle, PlacementStrategy } from '../services/interfaces';
+import { Position, Rectangle, PlacementStrategy } from '../interfaces/interfaces';
 import { SimpleBox } from './../models/simple-box';
 import { WindowBox } from './../models/window-box';
-import { BoxService } from '../services/box.service';
+import { RectangleService } from '../services/rectangle.service';
 
 @Injectable()
 export class BottomPlacementStrategy implements PlacementStrategy {
   constructor(
-    private boxService: BoxService) { }
+    private rectangleService: RectangleService) { }
 
   getId() {
     return "bottom";
   }
 
-  calculate(trigger: Rectangle, element: Rectangle): Rectangle {
-    const bottomCenterRect: Rectangle = this.boxService.calculateBottomCenterPosition(
-      trigger,
+  calculate(ref: Rectangle, element: Rectangle): Rectangle {
+    const bottomCenterRect: Rectangle = this.rectangleService.calculateBottomCenterPosition(
+      ref,
       element
     );
 
-    const flippedRect: Rectangle = this.boxService.flipHorizontally(
-      trigger,
+    const flippedRect: Rectangle = this.rectangleService.flipHorizontally(
+      ref,
       bottomCenterRect
     );
 
-    const insideParentRect: Rectangle = this.boxService.calculatePlacementInsideParent(
+    const insideParentRect: Rectangle = this.rectangleService.calculatePlacementInsideParent(
       flippedRect,
       WindowBox.create(window)
     );

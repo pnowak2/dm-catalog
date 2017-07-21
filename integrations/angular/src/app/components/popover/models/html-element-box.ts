@@ -1,4 +1,4 @@
-import { Rectangle, Position, Dimensions } from './../services/interfaces';
+import { Rectangle, Position, Dimensions } from './../interfaces/interfaces';
 
 export class HtmlElementBox implements Rectangle {
   private constructor(private el: HTMLElement) { }
