@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Position, Rectangle, PlacementStrategy } from '../interfaces/interfaces';
+import { Injectable, Inject } from '@angular/core';
+import { Position, Rectangle, PlacementStrategy, RectangleService } from '../interfaces/interfaces';
 import { WindowBox } from './../models/window-box';
-import { RectangleService } from '../services/rectangle.service';
 
 @Injectable()
 export class RightPlacementStrategy implements PlacementStrategy {
   constructor(
+    @Inject('RectangleService')
     private rectangleService: RectangleService) { }
 
   getId() {
-    return "right";
+    return 'right';
   }
 
   calculate(ref: Rectangle, element: Rectangle): Rectangle {

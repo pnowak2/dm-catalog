@@ -1,4 +1,4 @@
-import { RectangleService } from './services/rectangle.service';
+import { RectangleServiceImpl } from './services/rectangle.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,7 +12,7 @@ import { RightPlacementStrategy } from './strategies/right-placement-strategy';
   exports: [PopoverComponent],
   declarations: [PopoverComponent],
   providers: [
-    { provide: RectangleService, useClass: RectangleService },
+    { provide: 'RectangleService', useClass: RectangleServiceImpl },
     { provide: 'PlacementStrategy', useClass: BottomPlacementStrategy, multi: true },
     { provide: 'PlacementStrategy', useClass: RightPlacementStrategy, multi: true },
   ]

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Rectangle, Intersection, Position } from '../interfaces/interfaces';
+import { Rectangle, Intersection, Position, RectangleService } from '../interfaces/interfaces';
 
 @Injectable()
-export class RectangleService {
+export class RectangleServiceImpl implements RectangleService {
   calculateBottomCenterPosition(ref: Rectangle, element: Rectangle): Rectangle {
     const top = ref.position.top + ref.dimensions.height;
     const left = ref.position.left - element.dimensions.width / 2 + ref.dimensions.width / 2;
@@ -12,7 +12,7 @@ export class RectangleService {
         top, left
       },
       dimensions: { ...element.dimensions }
-    }
+    };
 
     return rectangle;
   }
@@ -26,7 +26,7 @@ export class RectangleService {
         top, left
       },
       dimensions: { ...element.dimensions }
-    }
+    };
 
     return rectangle;
   }
@@ -69,7 +69,7 @@ export class RectangleService {
       left: element.position.left - parent.position.left,
       right: (parent.position.left + parent.dimensions.width) - (element.position.left + element.dimensions.width),
       bottom: (parent.position.top + parent.dimensions.height) - (element.position.top + element.dimensions.height)
-    }
+    };
 
     return intersection;
   }
@@ -86,28 +86,28 @@ export class RectangleService {
       position = {
         ...position,
         left: position.left + intersection.right
-      }
+      };
     }
 
     if (intersection.left < 0) {
       position = {
         ...position,
         left: position.left - intersection.left
-      }
+      };
     }
 
     if (intersection.top < 0) {
       position = {
         ...position,
         top: position.top - intersection.top,
-      }
+      };
     }
 
     if (intersection.bottom < 0) {
       position = {
         ...position,
         top: position.top + intersection.bottom,
-      }
+      };
     }
 
     return {

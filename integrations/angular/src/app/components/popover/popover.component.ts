@@ -12,7 +12,7 @@ export class PopoverComponent {
 
   @ViewChild('popoverArrow') popoverArrow: ElementRef;
 
-  @Input() title = "Test title";
+  @Input() title = 'Test title';
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'right';
 
@@ -27,7 +27,7 @@ export class PopoverComponent {
     const placementStrategy: PlacementStrategy = this.pickPlacementStrategy(
       this.placementStrategies,
       this.placement
-    )
+    );
 
     const placement: Rectangle = placementStrategy.calculate(
       triggerBox,
