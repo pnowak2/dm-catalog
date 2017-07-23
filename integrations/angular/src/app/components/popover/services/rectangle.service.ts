@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Rectangle, Intersection, Position, RectangleService } from '../interfaces/interfaces';
+import { Rectangle, Intersection, Point, RectangleService } from '../interfaces/interfaces';
 
 @Injectable()
 export class RectangleServiceImpl implements RectangleService {
@@ -75,7 +75,7 @@ export class RectangleServiceImpl implements RectangleService {
   }
 
   calculatePlacementInsideParent(element: Rectangle, parent: Rectangle): Rectangle {
-    let position: Position = { ...element.position };
+    let position: Point = { ...element.position };
 
     const intersection: Intersection = this.calculateIntersection(
       element,

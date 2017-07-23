@@ -1,4 +1,4 @@
-import { Rectangle, Position, Dimensions } from './../interfaces/interfaces';
+import { Rectangle, Point, Dimensions } from './../interfaces/interfaces';
 
 export class HtmlElementBox implements Rectangle {
   public static create(el: HTMLElement): Rectangle {
@@ -14,7 +14,7 @@ export class HtmlElementBox implements Rectangle {
     };
   }
 
-  get position(): Position {
+  get position(): Point {
     return {
       top: this.el.getBoundingClientRect().top + window.pageYOffset,
       left: this.el.getBoundingClientRect().left + window.pageXOffset

@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { Position, Rectangle, PlacementStrategy, RectangleService } from '../interfaces/interfaces';
+import { Point, Rectangle, PlacementStrategy, RectangleService } from '../interfaces/interfaces';
 import { WindowBox } from './../models/window-box';
 
 @Injectable()

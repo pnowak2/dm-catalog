@@ -1,4 +1,4 @@
-export interface Position {
+export interface Point {
   readonly top: number;
   readonly left: number;
 }
@@ -9,7 +9,7 @@ export interface Dimensions {
 }
 
 export interface Rectangle {
-  readonly position: Position;
+  readonly position: Point;
   readonly dimensions: Dimensions;
 }
 

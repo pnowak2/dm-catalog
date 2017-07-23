@@ -1,4 +1,4 @@
-import { Rectangle, Position, Dimensions } from './../interfaces/interfaces';
+import { Rectangle, Point, Dimensions } from './../interfaces/interfaces';
 
 export class WindowBox implements Rectangle {
   public static create(): Rectangle {
@@ -14,7 +14,7 @@ export class WindowBox implements Rectangle {
     };
   }
 
-  get position(): Position {
+  get position(): Point {
     return {
       top: this.window.pageYOffset,
       left: this.window.pageXOffset
