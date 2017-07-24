@@ -16,4 +16,4 @@ const inputRect: Rectangle = {
 
 const coords = new CoordsPositioner('top left, bottom right');
 const flip = new FlipDecorator(coords);
-export const inside = new InsideParentDecorator(flip, 'tl');
+export const inside = new InsideParentDecorator(flip, inputRect);

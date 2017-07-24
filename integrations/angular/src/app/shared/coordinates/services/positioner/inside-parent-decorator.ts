@@ -3,11 +3,11 @@ import { DecoratorBase } from './decorator-base';
 import { BasePositioner } from './base-positioner';
 
 export class InsideParentDecorator extends DecoratorBase {
-    constructor(private basePositioner: BasePositioner, private placement: string) { super(basePositioner) }
+    constructor(private basePositioner: BasePositioner, private parent: Rectangle) { super(basePositioner) }
 
     calculate(ref: Rectangle, element: Rectangle): Rectangle {
         const r = this.basePositioner.calculate(ref, element);
-        console.log('insiding in parent', r, this.placement);
+        console.log('insiding in parent', r, 'parent', this.parent);
 
         return {...r, position: {
             x: r.position.x - 11,
