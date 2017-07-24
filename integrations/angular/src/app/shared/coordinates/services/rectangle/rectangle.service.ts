@@ -35,32 +35,38 @@ export class RectangleServiceImpl implements RectangleService {
   }
 
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle {
-    const offset = element.position.top - ref.position.top;
+    const flipAxisY = ref.position.top + (ref.dimensions.height / 2);
+    const elemAxisY = element.position.top + (element.dimensions.height / 2);
+
+    const offset = elemAxisY - flipAxisY;
 
     if (offset > 0) {
       return {
-        position: { ...element.position, top: element.position.top - offset - element.dimensions.height },
+        position: { ...element.position, top: element.position.top - (2 * offset)},
         dimensions: element.dimensions
       };
     } else {
       return {
-        position: { ...element.position, top: element.position.top + offset + element.dimensions.height },
+        position: { ...element.position, top: element.position.top + (2 * offset) },
         dimensions: element.dimensions
       };
     }
   }
 
   flipVertically(ref: Rectangle, element: Rectangle): Rectangle {
-    const offset = element.position.left - ref.position.left;
+    const flipAxisX = ref.position.left + (ref.dimensions.width / 2);
+    const elemAxisX = element.position.left + (element.dimensions.width / 2);
+
+    const offset = elemAxisX - flipAxisX;
 
     if (offset > 0) {
       return {
-        position: { ...element.position, left: element.position.left - offset - element.dimensions.width },
+        position: { ...element.position, left: element.position.left - (2 * offset) },
         dimensions: element.dimensions
       };
     } else {
       return {
-        position: { ...element.position, left: element.position.left + offset + element.dimensions.width },
+        position: { ...element.position, left: element.position.left + (2 * offset) },
         dimensions: element.dimensions
       };
     }
