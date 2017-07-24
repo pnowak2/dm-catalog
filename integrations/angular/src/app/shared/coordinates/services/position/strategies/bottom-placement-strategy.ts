@@ -18,8 +18,8 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   calculate(ref: Rectangle, element: Rectangle): Rectangle {
     const positionedRect: Rectangle = this.rectangleService.calculatePosition(ref, element, {
       refAnchor: 'bottom center',
-      elementAnchor: 'top right',
-      offsetX: 20,
+      elementAnchor: 'top center',
+      offsetX: 0,
       offsetY: 15
     }
     );
@@ -29,6 +29,6 @@ export class BottomPlacementStrategy implements PlacementStrategy {
       positionedRect
     );
 
-    return flippedRect;
+    return positionedRect;
   }
 }

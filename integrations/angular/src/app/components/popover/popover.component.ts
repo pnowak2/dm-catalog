@@ -23,12 +23,12 @@ export class PopoverComponent {
 
   show(event) {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
-    const triggerBox: Rectangle = RectangleFactory.fromHtmlElement(event.target);
-    const popoverBox: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
+    const triggerRectangle: Rectangle = RectangleFactory.fromHtmlElement(event.target);
+    const popoverRectangle: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
 
     const placementRectangle: Rectangle = this.positionService.position(
-      triggerBox,
-      popoverBox,
+      triggerRectangle,
+      popoverRectangle,
       this.placement
     );
 

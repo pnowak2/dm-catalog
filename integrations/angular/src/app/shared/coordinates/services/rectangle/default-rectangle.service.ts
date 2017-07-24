@@ -182,12 +182,12 @@ export class DefaultRectangleService implements RectangleService {
     };
   }
 
-  toLocalCoords(ref: Rectangle, localParent: Rectangle): Rectangle {
+  toLocalCoords(ref: Rectangle, parent: Rectangle): Rectangle {
     return {
       position: {
         ...ref.position,
-        y: ref.position.y - localParent.position.y,
-        x: ref.position.x - localParent.position.x
+        x: ref.position.x - parent.position.x,
+        y: ref.position.y - parent.position.y
       },
       dimensions: { ...ref.dimensions }
     };
