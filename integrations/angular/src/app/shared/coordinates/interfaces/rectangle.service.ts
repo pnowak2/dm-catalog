@@ -1,29 +1,5 @@
-export interface Point {
-  readonly top: number;
-  readonly left: number;
-}
-
-export interface Dimensions {
-  readonly width: number;
-  readonly height: number;
-}
-
-export interface Rectangle {
-  readonly position: Point;
-  readonly dimensions: Dimensions;
-}
-
-export interface Intersection {
-  readonly top: number;
-  readonly left: number;
-  readonly right: number;
-  readonly bottom: number;
-}
-
-export interface PlacementStrategy {
-  getId(): string;
-  calculate(ref: Rectangle, element: Rectangle): Rectangle;
-}
+import { Rectangle } from './rectangle';
+import { Intersection } from './intersection';
 
 export interface RectangleService {
   calculateBottomCenterPosition(ref: Rectangle, element: Rectangle): Rectangle;

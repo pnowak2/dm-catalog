@@ -1,4 +1,6 @@
-import { Rectangle, Point, Dimensions } from './../interfaces/interfaces';
+import { Point } from './../interfaces/point';
+import { Dimensions } from './../interfaces/dimensions';
+import { Rectangle } from './../interfaces/rectangle';
 
 export class HtmlElementBox implements Rectangle {
   public static create(el: HTMLElement): Rectangle {

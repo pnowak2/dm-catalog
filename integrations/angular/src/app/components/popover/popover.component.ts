@@ -1,7 +1,7 @@
+import { HtmlElementBox } from './../../shared/coordinates/models/html-element-box';
+import { Rectangle } from './../../shared/coordinates/interfaces/rectangle';
+import { PlacementStrategy } from './../../shared/coordinates/interfaces/placement.strategy';
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
-
-import { PlacementStrategy, Rectangle } from './interfaces/interfaces';
-import { HtmlElementBox } from './models/html-element-box';
 
 @Component({
   selector: 'dm-popover',

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Rectangle, Intersection, Point, RectangleService } from '../interfaces/interfaces';
+import { Point } from './../../interfaces/point';
+import { Rectangle } from './../../interfaces/rectangle';
+import { Intersection } from './../../interfaces/intersection';
+import { RectangleService } from './../../interfaces/rectangle.service';
 
 @Injectable()
 export class RectangleServiceImpl implements RectangleService {

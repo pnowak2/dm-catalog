@@ -1,11 +1,9 @@
-import { RectangleServiceImpl } from './services/rectangle.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RectangleServiceImpl } from './../../shared/coordinates/services/rectangle/rectangle.service';
+import { RightPlacementStrategy } from './../../shared/coordinates/services/rectangle/strategies/right-placement-strategy';
+import { BottomPlacementStrategy } from './../../shared/coordinates/services/rectangle/strategies/bottom-placement-strategy';
 import { PopoverComponent } from './popover.component';
-
-import { BottomPlacementStrategy } from './strategies/bottom-placement-strategy';
-import { RightPlacementStrategy } from './strategies/right-placement-strategy';
 
 @NgModule({
   imports: [CommonModule],

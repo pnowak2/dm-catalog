@@ -1,6 +1,8 @@
 import { Injectable, Inject } from '@angular/core';
-import { Point, Rectangle, PlacementStrategy, RectangleService } from '../interfaces/interfaces';
-import { WindowBox } from './../models/window-box';
+import { Rectangle } from './../../../interfaces/rectangle';
+import { WindowBox } from './../../../models/window-box';
+import { RectangleService } from './../../../interfaces/rectangle.service';
+import { PlacementStrategy } from './../../../interfaces/placement.strategy';
 
 @Injectable()
 export class RightPlacementStrategy implements PlacementStrategy {
