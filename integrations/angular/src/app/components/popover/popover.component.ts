@@ -1,7 +1,7 @@
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
+import { RectangleFactory } from './../../shared/coordinates/factory/rectangle-factory';
 import { POSITION_SERVICE } from './../../shared/coordinates/coordinates.config';
 import { PositionService } from './../../shared/coordinates/interfaces/position.service';
-import { HtmlElementRectangle } from './../../shared/coordinates/models/html-element-box';
 import { Rectangle } from './../../shared/coordinates/interfaces/rectangle';
 
 @Component({
@@ -23,10 +23,10 @@ export class PopoverComponent {
 
   show(event) {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
-    const triggerBox: Rectangle = HtmlElementRectangle.create(event.target);
-    const popoverBox: Rectangle = HtmlElementRectangle.create(popoverContainer);
+    const triggerBox: Rectangle = RectangleFactory.fromHtmlElement(event.target);
+    const popoverBox: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
 
-    const placement: Rectangle = this.positionService.position(
+    const placementRectangle: Rectangle = this.positionService.position(
       triggerBox,
       popoverBox,
       this.placement
@@ -34,7 +34,7 @@ export class PopoverComponent {
 
     this.updatePlacement(
       popoverContainer,
-      placement
+      placementRectangle
     );
   }
 

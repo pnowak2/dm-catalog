@@ -1,7 +1,7 @@
+import { RectangleFactory } from './../../../factory/rectangle-factory';
 import { Injectable, Inject } from '@angular/core';
 import { RECTANGLE_SERVICE } from './../../../coordinates.config';
 import { Rectangle } from './../../../interfaces/rectangle';
-import { WindowRectangle } from './../../../models/window-box';
 import { RectangleService } from './../../../interfaces/rectangle.service';
 import { PlacementStrategy } from './../../../interfaces/placement.strategy';
 
@@ -28,7 +28,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
 
     const insideParentRect: Rectangle = this.rectangleService.calculatePlacementInsideParent(
       flippedRect,
-      WindowRectangle.create()
+      RectangleFactory.fromWindow()
     );
 
     return insideParentRect;
