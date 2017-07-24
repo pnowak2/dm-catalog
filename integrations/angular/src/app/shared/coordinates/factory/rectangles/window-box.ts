@@ -18,8 +18,8 @@ export class WindowRectangle implements Rectangle {
 
   get position(): Point {
     return {
-      top: this.window.pageYOffset,
-      left: this.window.pageXOffset
+      y: this.window.pageYOffset,
+      x: this.window.pageXOffset
     };
   }
 

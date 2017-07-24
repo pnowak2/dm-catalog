@@ -39,8 +39,8 @@ export class PopoverComponent {
   }
 
   updatePlacement(popover: HTMLElement, rect: Rectangle) {
-    popover.style.left = rect.position.left + 'px';
-    popover.style.top = rect.position.top + 'px';
+    popover.style.left = rect.position.x + 'px';
+    popover.style.top = rect.position.y + 'px';
     popover.style.height = rect.dimensions.height + 'px';
     popover.style.width = rect.dimensions.width + 'px';
   }

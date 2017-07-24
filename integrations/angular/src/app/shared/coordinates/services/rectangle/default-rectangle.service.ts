@@ -1,67 +1,129 @@
-import { RECTANGLE_STRATEGY } from './../../coordinates.config';
-import { Injectable, Inject } from '@angular/core';
-import { element } from 'protractor';
+import { Injectable } from '@angular/core';
 import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
 import { Intersection } from './../../interfaces/intersection';
-import { RectangleStrategy } from './strategies/rectangle.strategy';
 import { RectangleService, PlacementOptions } from './rectangle.service';
 
 @Injectable()
 export class DefaultRectangleService implements RectangleService {
-  constructor(
-    @Inject(RECTANGLE_STRATEGY)
-    private rectangleStrategies: [RectangleStrategy]) { }
+  calculatePosition(ref: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
+    let refPoint: Point = this.getAnchorPoint(ref, options.refAnchor);
+    let elementPoint: Point = this.getAnchorPoint(element, options.elementAnchor);
 
-  calculatePosition(ref: Rectangle, element: Rectangle, options: PlacementOptions = {
-    refAnchor: 'top left',
-    elementAnchor: 'bottom right',
-    offset: 0
-  }): Rectangle {
-    const placement = `${options.refAnchor}-${options.elementAnchor}`;
+    let correctionX = elementPoint.x - refPoint.x;
+    let correctionY = elementPoint.y - refPoint.y;
 
-    const strategy: RectangleStrategy = this.rectangleStrategies.find(
-      strategy => strategy.getId() === placement
-    );
+    return {
+      position: {
+        x: element.position.x - correctionX + options.offsetX,
+        y: element.position.y - correctionY + options.offsetY
+      },
+      dimensions: { ...element.dimensions }
+    }
+  }
 
-    const resultRectangle = strategy.calculate(ref, element, options);
+  getAnchorPoint(rect: Rectangle, placement: string): Point {
+    let refPoint: Point;
 
-    return resultRectangle;
+    if (placement === 'top left') {
+      refPoint = {
+        x: rect.position.x,
+        y: rect.position.y
+      }
+    }
+
+    if (placement === 'top center') {
+      refPoint = {
+        x: rect.position.x + (rect.dimensions.width / 2),
+        y: rect.position.y
+      }
+    }
+
+    if (placement === 'top right') {
+      refPoint = {
+        x: rect.position.x + rect.dimensions.width,
+        y: rect.position.y
+      }
+    }
+
+    if (placement === 'center left') {
+      refPoint = {
+        x: rect.position.x,
+        y: rect.position.y + (rect.dimensions.height / 2)
+      }
+    }
+
+    if (placement === 'center center') {
+      refPoint = {
+        x: rect.position.x + (rect.dimensions.width / 2),
+        y: rect.position.y + (rect.dimensions.height / 2)
+      }
+    }
+
+    if (placement === 'center right') {
+      refPoint = {
+        x: rect.position.x + rect.dimensions.width,
+        y: rect.position.y + (rect.dimensions.height / 2)
+      }
+    }
+
+    if (placement === 'bottom left') {
+      refPoint = {
+        x: rect.position.x,
+        y: rect.position.y + rect.dimensions.height
+      }
+    }
+
+    if (placement === 'bottom center') {
+      refPoint = {
+        x: rect.position.x + (rect.dimensions.width / 2),
+        y: rect.position.y + rect.dimensions.height
+      }
+    }
+
+    if (placement === 'bottom right') {
+      refPoint = {
+        x: rect.position.x + rect.dimensions.width,
+        y: rect.position.y + rect.dimensions.height
+      }
+    }
+
+    return refPoint;
   }
 
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle {
-    const flipAxisY = ref.position.top + (ref.dimensions.height / 2);
-    const elemAxisY = element.position.top + (element.dimensions.height / 2);
+    const flipAxisY = ref.position.y + (ref.dimensions.height / 2);
+    const elemAxisY = element.position.y + (element.dimensions.height / 2);
 
     const offset = elemAxisY - flipAxisY;
 
     if (offset > 0) {
       return {
-        position: { ...element.position, top: element.position.top - (2 * offset) },
+        position: { ...element.position, y: element.position.y - (2 * offset) },
         dimensions: element.dimensions
       };
     } else {
       return {
-        position: { ...element.position, top: element.position.top + (2 * offset) },
+        position: { ...element.position, y: element.position.y + (2 * offset) },
         dimensions: element.dimensions
       };
     }
   }
 
   flipVertically(ref: Rectangle, element: Rectangle): Rectangle {
-    const flipAxisX = ref.position.left + (ref.dimensions.width / 2);
-    const elemAxisX = element.position.left + (element.dimensions.width / 2);
+    const flipAxisX = ref.position.x + (ref.dimensions.width / 2);
+    const elemAxisX = element.position.x + (element.dimensions.width / 2);
 
     const offset = elemAxisX - flipAxisX;
 
     if (offset > 0) {
       return {
-        position: { ...element.position, left: element.position.left - (2 * offset) },
+        position: { ...element.position, x: element.position.x - (2 * offset) },
         dimensions: element.dimensions
       };
     } else {
       return {
-        position: { ...element.position, left: element.position.left + (2 * offset) },
+        position: { ...element.position, x: element.position.x + (2 * offset) },
         dimensions: element.dimensions
       };
     }
@@ -69,10 +131,10 @@ export class DefaultRectangleService implements RectangleService {
 
   calculateIntersection(element: Rectangle, parent: Rectangle): Intersection {
     let intersection: Intersection = {
-      top: element.position.top - parent.position.top,
-      left: element.position.left - parent.position.left,
-      right: (parent.position.left + parent.dimensions.width) - (element.position.left + element.dimensions.width),
-      bottom: (parent.position.top + parent.dimensions.height) - (element.position.top + element.dimensions.height)
+      top: element.position.y - parent.position.y,
+      left: element.position.x - parent.position.x,
+      right: (parent.position.x + parent.dimensions.width) - (element.position.x + element.dimensions.width),
+      bottom: (parent.position.y + parent.dimensions.height) - (element.position.y + element.dimensions.height)
     };
 
     return intersection;
@@ -89,28 +151,28 @@ export class DefaultRectangleService implements RectangleService {
     if (intersection.right < 0) {
       position = {
         ...position,
-        left: position.left + intersection.right
+        x: position.x + intersection.right
       };
     }
 
     if (intersection.left < 0) {
       position = {
         ...position,
-        left: position.left - intersection.left
+        x: position.x - intersection.left
       };
     }
 
     if (intersection.top < 0) {
       position = {
         ...position,
-        top: position.top - intersection.top,
+        y: position.y - intersection.top,
       };
     }
 
     if (intersection.bottom < 0) {
       position = {
         ...position,
-        top: position.top + intersection.bottom,
+        y: position.y + intersection.bottom,
       };
     }
 
@@ -124,8 +186,8 @@ export class DefaultRectangleService implements RectangleService {
     return {
       position: {
         ...ref.position,
-        top: ref.position.top - localParent.position.top,
-        left: ref.position.left - localParent.position.left
+        y: ref.position.y - localParent.position.y,
+        x: ref.position.x - localParent.position.x
       },
       dimensions: { ...ref.dimensions }
     };

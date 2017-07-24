@@ -5,7 +5,6 @@ import { Rectangle } from './../../../interfaces/rectangle';
 import { PlacementStrategy } from './placement.strategy';
 import { RectangleService } from './../../../services/rectangle/rectangle.service';
 
-
 @Injectable()
 export class RightPlacementStrategy implements PlacementStrategy {
   constructor(

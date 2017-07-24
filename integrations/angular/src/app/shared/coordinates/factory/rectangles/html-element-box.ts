@@ -18,8 +18,8 @@ export class HtmlElementRectangle implements Rectangle {
 
   get position(): Point {
     return {
-      top: this.el.getBoundingClientRect().top + window.pageYOffset,
-      left: this.el.getBoundingClientRect().left + window.pageXOffset
+      y: this.el.getBoundingClientRect().top + window.pageYOffset,
+      x: this.el.getBoundingClientRect().left + window.pageXOffset
     };
   }
 }

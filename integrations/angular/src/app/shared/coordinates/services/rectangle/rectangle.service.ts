@@ -4,7 +4,8 @@ import { Rectangle } from './../../interfaces/rectangle';
 export interface PlacementOptions {
   refAnchor: string;
   elementAnchor: string,
-  offset?: number
+  offsetX?: number,
+  offsetY?: number
 }
 
 export interface RectangleService {

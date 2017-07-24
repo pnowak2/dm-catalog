@@ -1,4 +1,4 @@
 export interface Point {
-  readonly top: number;
-  readonly left: number;
+  readonly x: number;
+  readonly y: number;
 }
