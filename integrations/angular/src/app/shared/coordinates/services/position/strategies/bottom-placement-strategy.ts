@@ -2,8 +2,9 @@ import { RectangleFactory } from './../../../factory/rectangle-factory';
 import { Injectable, Inject } from '@angular/core';
 import { RECTANGLE_SERVICE } from './../../../coordinates.config';
 import { Rectangle } from './../../../interfaces/rectangle';
+import { PlacementStrategy } from './placement.strategy';
 import { RectangleService } from './../../../services/rectangle/rectangle.service';
-import { PlacementStrategy } from './../../../interfaces/placement.strategy';
+
 
 @Injectable()
 export class BottomPlacementStrategy implements PlacementStrategy {

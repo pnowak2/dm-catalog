@@ -1,4 +1,4 @@
-import { Rectangle } from './rectangle';
+import { Rectangle } from './../../../interfaces/rectangle';
 
 export interface PlacementStrategy {
   getId(): string;
