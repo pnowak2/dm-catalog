@@ -1,8 +1,8 @@
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
+import { Rectangle } from './../../shared/coordinates/interfaces/rectangle';
 import { RectangleFactory } from './../../shared/coordinates/factory/rectangle-factory';
 import { POSITION_SERVICE } from './../../shared/coordinates/coordinates.config';
-import { PositionService } from './../../shared/coordinates/interfaces/position.service';
-import { Rectangle } from './../../shared/coordinates/interfaces/rectangle';
+import { PositionService } from './../../shared/coordinates/services/position/position.service';
 
 @Component({
   selector: 'dm-popover',
