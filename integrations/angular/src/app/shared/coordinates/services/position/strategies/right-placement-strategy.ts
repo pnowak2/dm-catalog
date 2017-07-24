@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { RectangleFactory } from './../../../factory/rectangle-factory';
 import { RECTANGLE_SERVICE } from './../../../coordinates.config';
 import { Rectangle } from './../../../interfaces/rectangle';
-import { RectangleService } from './../../../interfaces/rectangle.service';
+import { RectangleService } from './../../../services/rectangle/rectangle.service';
 import { PlacementStrategy } from './../../../interfaces/placement.strategy';
 
 @Injectable()
