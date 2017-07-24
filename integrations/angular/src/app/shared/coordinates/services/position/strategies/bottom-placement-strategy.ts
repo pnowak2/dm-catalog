@@ -5,7 +5,6 @@ import { Rectangle } from './../../../interfaces/rectangle';
 import { PlacementStrategy } from './placement.strategy';
 import { RectangleService } from './../../../services/rectangle/rectangle.service';
 
-
 @Injectable()
 export class BottomPlacementStrategy implements PlacementStrategy {
   constructor(
@@ -17,9 +16,14 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(ref: Rectangle, element: Rectangle): Rectangle {
-    const bottomCenterRect: Rectangle = this.rectangleService.calculateBottomCenterPosition(
+    const bottomCenterRect: Rectangle = this.rectangleService.calculatePosition(
       ref,
-      element
+      element,
+      {
+        refAnchor: 'bottom center',
+        elementAnchor: 'top center',
+        offset: 15
+      }
     );
 
     const flippedRect: Rectangle = this.rectangleService.flipHorizontally(

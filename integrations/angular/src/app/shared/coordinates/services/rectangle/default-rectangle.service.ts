@@ -1,37 +1,32 @@
-import { Injectable } from '@angular/core';
+import { RECTANGLE_STRATEGY } from './../../coordinates.config';
+import { Injectable, Inject } from '@angular/core';
+import { element } from 'protractor';
 import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
 import { Intersection } from './../../interfaces/intersection';
-import { RectangleService } from './rectangle.service';
+import { RectangleStrategy } from './strategies/rectangle.strategy';
+import { RectangleService, PlacementOptions } from './rectangle.service';
 
 @Injectable()
 export class DefaultRectangleService implements RectangleService {
-  calculateBottomCenterPosition(ref: Rectangle, element: Rectangle): Rectangle {
-    const top = ref.position.top + ref.dimensions.height;
-    const left = ref.position.left - element.dimensions.width / 2 + ref.dimensions.width / 2;
+  constructor(
+    @Inject(RECTANGLE_STRATEGY)
+    private rectangleStrategies: [RectangleStrategy]) { }
 
-    const rectangle: Rectangle = {
-      position: {
-        top, left
-      },
-      dimensions: { ...element.dimensions }
-    };
+  calculatePosition(ref: Rectangle, element: Rectangle, options: PlacementOptions = {
+    refAnchor: 'top left',
+    elementAnchor: 'bottom right',
+    offset: 0
+  }): Rectangle {
+    const placement = `${options.refAnchor}-${options.elementAnchor}`;
 
-    return rectangle;
-  }
+    const strategy: RectangleStrategy = this.rectangleStrategies.find(
+      strategy => strategy.getId() === placement
+    );
 
-  calculateRightPosition(ref: Rectangle, element: Rectangle): Rectangle {
-    const top = ref.position.top - element.dimensions.height / 2 + ref.dimensions.height / 2;
-    const left = ref.position.left + ref.dimensions.width;
+    const resultRectangle = strategy.calculate(ref, element, options);
 
-    const rectangle: Rectangle = {
-      position: {
-        top, left
-      },
-      dimensions: { ...element.dimensions }
-    };
-
-    return rectangle;
+    return resultRectangle;
   }
 
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle {
@@ -42,7 +37,7 @@ export class DefaultRectangleService implements RectangleService {
 
     if (offset > 0) {
       return {
-        position: { ...element.position, top: element.position.top - (2 * offset)},
+        position: { ...element.position, top: element.position.top - (2 * offset) },
         dimensions: element.dimensions
       };
     } else {

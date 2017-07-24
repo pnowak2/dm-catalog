@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { POSITION_SERVICE, RECTANGLE_SERVICE, PLACEMENT_STRATEGY } from './coordinates.config';
+import { POSITION_SERVICE, RECTANGLE_SERVICE, PLACEMENT_STRATEGY, RECTANGLE_STRATEGY } from './coordinates.config';
 import { BottomPlacementStrategy } from './services/position/strategies/bottom-placement-strategy';
 import { RightPlacementStrategy } from './services/position/strategies/right-placement-strategy';
+import { BottomCenterTopCenterStrategy } from './services/rectangle/strategies/bottom-center-top-center-strategy';
+import { TopLeftBottomRightStrategy } from './services/rectangle/strategies/top-left-bottom-right-strategy';
 import { DefaultRectangleService } from './services/rectangle/default-rectangle.service';
 import { DefaultPositionService } from './services/position/default-position.service';
-
 
 @NgModule({
   imports: [CommonModule],
@@ -14,6 +15,8 @@ import { DefaultPositionService } from './services/position/default-position.ser
   providers: [
     { provide: POSITION_SERVICE, useClass: DefaultPositionService },
     { provide: RECTANGLE_SERVICE, useClass: DefaultRectangleService },
+    { provide: RECTANGLE_STRATEGY, useClass: BottomCenterTopCenterStrategy, multi: true },
+    { provide: RECTANGLE_STRATEGY, useClass: TopLeftBottomRightStrategy, multi: true },
     { provide: PLACEMENT_STRATEGY, useClass: BottomPlacementStrategy, multi: true },
     { provide: PLACEMENT_STRATEGY, useClass: RightPlacementStrategy, multi: true },
   ]

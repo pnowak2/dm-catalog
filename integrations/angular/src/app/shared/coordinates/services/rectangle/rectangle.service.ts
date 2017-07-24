@@ -1,10 +1,14 @@
 import { Intersection } from './../../interfaces/intersection';
 import { Rectangle } from './../../interfaces/rectangle';
 
-export interface RectangleService {
-  calculateBottomCenterPosition(ref: Rectangle, element: Rectangle): Rectangle;
+export interface PlacementOptions {
+  refAnchor: string;
+  elementAnchor: string,
+  offset?: number
+}
 
-  calculateRightPosition(ref: Rectangle, element: Rectangle): Rectangle;
+export interface RectangleService {
+  calculatePosition(ref: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle;
 
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle;
 
