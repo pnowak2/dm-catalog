@@ -18,12 +18,12 @@ export class PositionServiceImpl implements PositionService {
       placement
     );
 
-    const position: Rectangle = placementStrategy.calculate(
+    const placedRectangle: Rectangle = placementStrategy.calculate(
       ref,
       element
     );
 
-    return position;
+    return placedRectangle;
   }
 
   pickPlacementStrategy(

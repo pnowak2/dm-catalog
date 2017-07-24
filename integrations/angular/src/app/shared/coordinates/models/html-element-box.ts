@@ -2,9 +2,9 @@ import { Point } from './../interfaces/point';
 import { Dimensions } from './../interfaces/dimensions';
 import { Rectangle } from './../interfaces/rectangle';
 
-export class HtmlElementBox implements Rectangle {
+export class HtmlElementRectangle implements Rectangle {
   public static create(el: HTMLElement): Rectangle {
-    return new HtmlElementBox(el);
+    return new HtmlElementRectangle(el);
   }
 
   private constructor(private el: HTMLElement) { }

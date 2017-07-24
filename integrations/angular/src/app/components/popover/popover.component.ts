@@ -1,9 +1,8 @@
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
 import { POSITION_SERVICE } from './../../shared/coordinates/coordinates.config';
 import { PositionService } from './../../shared/coordinates/interfaces/position.service';
-import { HtmlElementBox } from './../../shared/coordinates/models/html-element-box';
+import { HtmlElementRectangle } from './../../shared/coordinates/models/html-element-box';
 import { Rectangle } from './../../shared/coordinates/interfaces/rectangle';
-import { PlacementStrategy } from './../../shared/coordinates/interfaces/placement.strategy';
 
 @Component({
   selector: 'dm-popover',
@@ -23,8 +22,9 @@ export class PopoverComponent {
     private positionService: PositionService) { }
 
   show(event) {
-    const triggerBox: Rectangle = HtmlElementBox.create(event.target);
-    const popoverBox: Rectangle = HtmlElementBox.create(this.popoverContainer.nativeElement);
+    const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
+    const triggerBox: Rectangle = HtmlElementRectangle.create(event.target);
+    const popoverBox: Rectangle = HtmlElementRectangle.create(popoverContainer);
 
     const placement: Rectangle = this.positionService.position(
       triggerBox,
@@ -33,17 +33,8 @@ export class PopoverComponent {
     );
 
     this.updatePlacement(
-      this.popoverContainer.nativeElement,
+      popoverContainer,
       placement
-    );
-  }
-
-  pickPlacementStrategy(
-    placementStrategies: [PlacementStrategy],
-    placement: string): PlacementStrategy {
-
-    return placementStrategies.find(
-      strategy => strategy.getId() === placement
     );
   }
 

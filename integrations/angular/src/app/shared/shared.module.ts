@@ -5,8 +5,7 @@ import { CoordinatesModule } from './coordinates/coordinates.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    CoordinatesModule
+    CommonModule
   ],
   declarations: [
   ],

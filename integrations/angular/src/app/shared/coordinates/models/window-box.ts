@@ -2,9 +2,9 @@ import { Point } from './../interfaces/point';
 import { Dimensions } from './../interfaces/dimensions';
 import { Rectangle } from './../interfaces/rectangle';
 
-export class WindowBox implements Rectangle {
+export class WindowRectangle implements Rectangle {
   public static create(): Rectangle {
-    return new WindowBox(WindowBox.getWindow());
+    return new WindowRectangle(WindowRectangle.getWindow());
   }
 
   private constructor(private window: Window) { }
