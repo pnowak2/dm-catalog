@@ -1,6 +1,6 @@
-import { Point } from './../interfaces/point';
-import { Dimensions } from './../interfaces/dimensions';
-import { Rectangle } from './../interfaces/rectangle';
+import { Point } from './../../interfaces/point';
+import { Dimensions } from './../../interfaces/dimensions';
+import { Rectangle } from './../../interfaces/rectangle';
 
 export class WindowRectangle implements Rectangle {
   public static create(): Rectangle {

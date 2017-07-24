@@ -1,5 +1,5 @@
-import { WindowRectangle } from './window-box';
-import { HtmlElementRectangle } from './html-element-box';
+import { WindowRectangle } from './rectangles/window-box';
+import { HtmlElementRectangle } from './rectangles/html-element-box';
 import { Rectangle } from './../interfaces/rectangle';
 
 export class RectangleFactory {
