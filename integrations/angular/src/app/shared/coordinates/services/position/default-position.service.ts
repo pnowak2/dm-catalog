@@ -2,9 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { PLACEMENT_STRATEGY } from './../../coordinates.config';
 import { PlacementStrategy } from './strategies/placement.strategy';
 import { PositionService } from './position.service';
-import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
-import { Intersection } from './../../interfaces/intersection';
 
 @Injectable()
 export class DefaultPositionService implements PositionService {
