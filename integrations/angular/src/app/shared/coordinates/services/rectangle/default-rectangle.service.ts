@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
 import { Intersection } from './../../interfaces/intersection';
-import { RectangleService, PlacementOptions } from './rectangle.service';
+import { RectangleService, PlacementOptions, AnchorName } from './rectangle.service';
 
 @Injectable()
 export class DefaultRectangleService implements RectangleService {
   calculatePosition(ref: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
-    let refPoint: Point = this.getAnchorPoint(ref, options.refAnchor);
-    let elementPoint: Point = this.getAnchorPoint(element, options.elementAnchor);
+    let refPoint: Point = this.getPositionByAnchorName(ref, options.refAnchor);
+    let elementPoint: Point = this.getPositionByAnchorName(element, options.elementAnchor);
 
     let correctionX = elementPoint.x - refPoint.x;
     let correctionY = elementPoint.y - refPoint.y;
@@ -22,66 +22,66 @@ export class DefaultRectangleService implements RectangleService {
     }
   }
 
-  getAnchorPoint(rect: Rectangle, placement: string): Point {
+  getPositionByAnchorName(rect: Rectangle, position: AnchorName): Point {
     let refPoint: Point;
 
-    if (placement === 'top left') {
+    if (position === AnchorName.TopLeft) {
       refPoint = {
         x: rect.position.x,
         y: rect.position.y
       }
     }
 
-    if (placement === 'top center') {
+    if (position === AnchorName.TopCenter) {
       refPoint = {
         x: rect.position.x + (rect.dimensions.width / 2),
         y: rect.position.y
       }
     }
 
-    if (placement === 'top right') {
+    if (position === AnchorName.TopRight) {
       refPoint = {
         x: rect.position.x + rect.dimensions.width,
         y: rect.position.y
       }
     }
 
-    if (placement === 'center left') {
+    if (position === AnchorName.CenterLeft) {
       refPoint = {
         x: rect.position.x,
         y: rect.position.y + (rect.dimensions.height / 2)
       }
     }
 
-    if (placement === 'center center') {
+    if (position === AnchorName.CenterCenter) {
       refPoint = {
         x: rect.position.x + (rect.dimensions.width / 2),
         y: rect.position.y + (rect.dimensions.height / 2)
       }
     }
 
-    if (placement === 'center right') {
+    if (position === AnchorName.CenterRight) {
       refPoint = {
         x: rect.position.x + rect.dimensions.width,
         y: rect.position.y + (rect.dimensions.height / 2)
       }
     }
 
-    if (placement === 'bottom left') {
+    if (position === AnchorName.BottomLeft) {
       refPoint = {
         x: rect.position.x,
         y: rect.position.y + rect.dimensions.height
       }
     }
 
-    if (placement === 'bottom center') {
+    if (position === AnchorName.BottomCenter) {
       refPoint = {
         x: rect.position.x + (rect.dimensions.width / 2),
         y: rect.position.y + rect.dimensions.height
       }
     }
 
-    if (placement === 'bottom right') {
+    if (position === AnchorName.BottomRight) {
       refPoint = {
         x: rect.position.x + rect.dimensions.width,
         y: rect.position.y + rect.dimensions.height

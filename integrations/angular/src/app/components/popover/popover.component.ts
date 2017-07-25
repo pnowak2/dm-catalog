@@ -3,7 +3,6 @@ import { Rectangle } from './../../shared/coordinates/interfaces/rectangle';
 import { RectangleFactory } from './../../shared/coordinates/factory/rectangle-factory';
 import { POSITION_SERVICE } from './../../shared/coordinates/coordinates.config';
 import { PositionService } from './../../shared/coordinates/services/position/position.service';
-import { inside } from '../../shared/coordinates/services/positioner/test';
 
 @Component({
   selector: 'dm-popover',
@@ -20,23 +19,7 @@ export class PopoverComponent {
 
   constructor(
     @Inject(POSITION_SERVICE)
-    private positionService: PositionService) {
-    const inputRect: Rectangle = {
-      position: {
-        x: 0,
-        y: 0
-      },
-      dimensions: {
-        width: 0,
-        height: 0
-      }
-    }
-
-    const r = inside.calculate(inputRect, inputRect)
-
-    console.log('result', r);
-
-  }
+    private positionService: PositionService) { }
 
   show(event) {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;

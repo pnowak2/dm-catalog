@@ -1,15 +1,24 @@
 import { Intersection } from './../../interfaces/intersection';
+import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
 
 export interface PlacementOptions {
-  refAnchor: string;
-  elementAnchor: string,
+  refAnchor: AnchorName;
+  elementAnchor: AnchorName,
   offsetX?: number,
   offsetY?: number
 }
 
+export enum AnchorName {
+  TopLeft, TopCenter, TopRight,
+  CenterLeft, CenterCenter, CenterRight,
+  BottomLeft, BottomCenter, BottomRight
+}
+
 export interface RectangleService {
   calculatePosition(ref: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle;
+
+  getPositionByAnchorName(rect: Rectangle, name: AnchorName): Point;
 
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle;
 

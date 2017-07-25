@@ -3,7 +3,7 @@ import { Injectable, Inject } from '@angular/core';
 import { RECTANGLE_SERVICE } from './../../../coordinates.config';
 import { Rectangle } from './../../../interfaces/rectangle';
 import { PlacementStrategy } from './placement.strategy';
-import { RectangleService } from './../../../services/rectangle/rectangle.service';
+import { RectangleService, AnchorName } from './../../../services/rectangle/rectangle.service';
 
 @Injectable()
 export class BottomPlacementStrategy implements PlacementStrategy {
@@ -17,9 +17,9 @@ export class BottomPlacementStrategy implements PlacementStrategy {
 
   calculate(ref: Rectangle, element: Rectangle): Rectangle {
     const positionedRect: Rectangle = this.rectangleService.calculatePosition(ref, element, {
-      refAnchor: 'bottom center',
-      elementAnchor: 'top center',
-      offsetX: 0,
+      refAnchor: AnchorName.BottomCenter,
+      elementAnchor: AnchorName.TopRight,
+      offsetX: 30,
       offsetY: 15
     }
     );
