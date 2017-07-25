@@ -18,17 +18,32 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   calculate(ref: Rectangle, element: Rectangle): Rectangle {
     const positionedRect: Rectangle = this.rectangleService.calculatePosition(ref, element, {
       refAnchor: AnchorName.BottomCenter,
-      elementAnchor: AnchorName.TopRight,
-      offsetX: 30,
+      elementAnchor: AnchorName.TopCenter,
+      offsetX: 0,
       offsetY: 15
     }
     );
 
-    const flippedRect: Rectangle = this.rectangleService.flipHorizontally(
-      ref,
-      positionedRect
+    const intersection = this.rectangleService.calculateIntersection(
+      positionedRect,
+      RectangleFactory.fromWindow()
     );
 
-    return positionedRect;
+    let flippedRect: Rectangle;
+    if (intersection.bottom < 0) {
+      flippedRect = this.rectangleService.flipHorizontally(
+        ref,
+        positionedRect
+      );
+    } else {
+      flippedRect = positionedRect;
+    }
+
+    const windowConstrainedRect = this.rectangleService.calculatePlacementInsideParent(
+      flippedRect,
+      RectangleFactory.fromWindow()
+    );
+
+    return windowConstrainedRect;
   }
 }
