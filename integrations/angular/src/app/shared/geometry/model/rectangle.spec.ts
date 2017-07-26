@@ -157,6 +157,28 @@ fdescribe('Rectangle', () => {
       });
     });
 
+    describe('.moveTo()', () => {
+      let r: Rectangle;
+      let rMvd: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.create(1, 2, 3, 4);
+        rMvd = r.moveTo(12, 7);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.prototype.moveTo).toEqual(jasmine.any(Function));
+      });
+
+      it('should translate coordinates', () => {
+        expect(rMvd).toEqual(Rectangle.create(12, 7, 3, 4));
+      });
+
+      it('should return clone, new reference has to be made', () => {
+        expect(rMvd).not.toBe(r);
+      });
+    });
+
     describe('.translate()', () => {
       let r: Rectangle;
       let rTrl: Rectangle;

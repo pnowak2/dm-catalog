@@ -36,6 +36,15 @@ export class Rectangle {
     return Rectangle.create(this.x, this.y, this.width, this.height);
   }
 
+  moveTo(x: number, y: number): Rectangle {
+    return Rectangle.create(
+      x,
+      y,
+      this.width,
+      this.height
+    )
+  }
+
   translate(offsetX: number, offsetY: number): Rectangle {
     return Rectangle.create(
       this.x + offsetX,
