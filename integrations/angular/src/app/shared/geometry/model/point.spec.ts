@@ -13,15 +13,21 @@ fdescribe('Point', () => {
         expect(Point.create).toEqual(jasmine.any(Function));
       });
 
-      it('should return Point instance', () => {
+      it('should return proper instance', () => {
         expect(p).toEqual(jasmine.any(Point));
       });
+    });
 
-      it('should initialize x coordinate', () => {
+    describe('.x', () => {
+       it('should initialize x coordinate', () => {
+        const p = Point.create(1, 2)
         expect(p.x).toEqual(1);
       });
+    });
 
+    describe('.y', () => {
       it('should initialize y coordinate', () => {
+        const p = Point.create(1, 2)        
         expect(p.y).toEqual(2);
       });
     });
@@ -61,7 +67,7 @@ fdescribe('Point', () => {
         expect(Point.prototype.translate).toEqual(jasmine.any(Function));
       });
 
-      it('should add coordinates to point', () => {
+      it('should translate coordinates', () => {
         expect(pTrl).toEqual(Point.create(3, 6));
       });
 
@@ -83,7 +89,7 @@ fdescribe('Point', () => {
         expect(Point.prototype.scale).toEqual(jasmine.any(Function));
       });
 
-      it('should scale coordinates to point', () => {
+      it('should scale coordinates', () => {
         expect(pScl).toEqual(Point.create(6, 12));
       });
 
@@ -109,28 +115,28 @@ fdescribe('Point', () => {
         expect(pZero.isZero()).toBe(true);
       });
 
-      it('should return true for coordinates of (0, 0)', () => {
+      it('should return false for coordinates other than (0, 0)', () => {
         expect(p.isZero()).toBe(false);
       });
     });
 
     describe('.equals()', () => {
-      let p: Point;
-
-      beforeEach(() => {
-        p = Point.create(1, 2);
-      });
-
       it('should be defined', () => {
         expect(Point.prototype.equals).toEqual(jasmine.any(Function));
       });
 
       it('should return true for equal objects', () => {
-        expect(p.equals(1, 2)).toBe(true);
+        const p1 = Point.create(1, 2);
+        const p2 = Point.create(1, 2);
+
+        expect(p1.equals(p2)).toBe(true);
       });
 
       it('should return false for not equal objects', () => {
-        expect(p.equals(2, 2)).toBe(false);
+        const p1 = Point.create(1, 2);
+        const p2 = Point.create(2, 3);
+
+        expect(p1.equals(p2)).toBe(false);
       });
     });
 

@@ -9,9 +9,9 @@ export class Point {
     return Point.create(this.x, this.y);
   }
 
-  translate(x: number, y: number): Point {
-    const newX = this.x + x;
-    const newY = this.y + y;
+  translate(offsetX: number, offsetY: number): Point {
+    const newX = this.x + offsetX;
+    const newY = this.y + offsetY;
 
     return Point.create(newX, newY);
   }
@@ -24,11 +24,11 @@ export class Point {
   }
 
   isZero(): boolean {
-    return this.equals(0, 0);
+    return this.equals(Point.create(0, 0));
   }
 
-  equals(x: number, y: number): boolean {
-    return this.x === x && this.y === y;
+  equals(other: Point): boolean {
+    return this.x === other.x && this.y === other.y;
   }
 
   toString() {
