@@ -1,4 +1,4 @@
-import { Overflow } from './../../interfaces/intersection';
+import { Bounds } from './../../interfaces/bounds';
 import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
 
@@ -20,11 +20,19 @@ export interface RectangleService {
 
   moveBy(element: Rectangle, offsetX, offsetY): Rectangle;
 
+  bounds(element: Rectangle): Bounds;
+
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle;
 
   flipVertically(ref: Rectangle, element: Rectangle): Rectangle;
 
-  overflow(element: Rectangle, parent: Rectangle): Overflow;
+  containsPoint(ref: Rectangle, point: Point): boolean;
+
+  doRectsIntersect(r1: Rectangle, r2: Rectangle): boolean;
+
+  overflow(element: Rectangle, parent: Rectangle): Bounds;
+
+  intersect(r1: Rectangle, r2: Rectangle): Rectangle;
 
   pointByAnchorName(rect: Rectangle, name: AnchorName): Point;
 

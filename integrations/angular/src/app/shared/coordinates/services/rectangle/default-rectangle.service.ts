@@ -1,7 +1,8 @@
+import { RectangleFactory } from './../../factory/rectangle-factory';
 import { Injectable } from '@angular/core';
 import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
-import { Overflow } from './../../interfaces/intersection';
+import { Bounds } from './../../interfaces/bounds';
 import { RectangleService, PlacementOptions, AnchorName } from './rectangle.service';
 
 @Injectable()
@@ -150,8 +151,8 @@ export class DefaultRectangleService implements RectangleService {
     }
   }
 
-  overflow(element: Rectangle, parent: Rectangle): Overflow {
-    let intersection: Overflow = {
+  overflow(element: Rectangle, parent: Rectangle): Bounds {
+    let intersection: Bounds = {
       top: element.position.y - parent.position.y,
       left: element.position.x - parent.position.x,
       right: (parent.position.x + parent.dimensions.width) - (element.position.x + element.dimensions.width),
@@ -161,10 +162,38 @@ export class DefaultRectangleService implements RectangleService {
     return intersection;
   }
 
+  doRectsIntersect(r1: Rectangle, r2: Rectangle): boolean {
+    const b1 = this.bounds(r1);
+    const b2 = this.bounds(r2);
+
+    return b1.left < b2.right &&
+      b1.right > b2.left &&
+      b1.top < b2.bottom &&
+      b1.bottom > b2.top
+  }
+
+  intersect(r1: Rectangle, r2: Rectangle): Rectangle {
+    const isIntersect = this.doRectsIntersect(r1, r2);
+    const b1 = this.bounds(r1);
+    const b2 = this.bounds(r2);
+    let intersection: Rectangle = null;
+
+    if (isIntersect) {
+      intersection = RectangleFactory.fromBounds({
+        top: Math.max(b1.top, b2.top),
+        left: Math.max(b1.left, b2.left),
+        right: Math.min(b1.right, b2.right),
+        bottom: Math.min(b1.bottom, b2.bottom)
+      });
+    }
+
+    return intersection;
+  }
+
   positionInsideParent(element: Rectangle, parent: Rectangle): Rectangle {
     let position: Point = { ...element.position };
 
-    const intersection: Overflow = this.overflow(
+    const intersection: Bounds = this.overflow(
       element,
       parent
     );
@@ -201,6 +230,37 @@ export class DefaultRectangleService implements RectangleService {
       position: position,
       dimensions: element.dimensions
     };
+  }
+
+  bounds(element: Rectangle): Bounds {
+    return {
+      top: element.position.y,
+      left: element.position.x,
+      right: element.position.x + element.dimensions.width,
+      bottom: element.position.y + element.dimensions.height
+    }
+  }
+
+  rectangleFromBounds(bounds: Bounds): Rectangle {
+    return {
+      position: {
+        x: bounds.left,
+        y: bounds.top
+      },
+      dimensions: {
+        width: bounds.right - bounds.left,
+        height: bounds.bottom - bounds.top
+      }
+    }
+  }
+
+  containsPoint(ref: Rectangle, point: Point): boolean {
+    const refBounds = this.bounds(ref);
+
+    const containsX = point.x >= refBounds.left && point.x <= refBounds.right
+    const containsY = point.y >= refBounds.top && point.y <= refBounds.bottom
+
+    return containsX && containsY;
   }
 
   toLocalCoords(ref: Point, parent: Point): Point {

@@ -24,13 +24,13 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     }
     );
 
-    const intersection = this.rectangleService.overflow(
+    const overflow = this.rectangleService.overflow(
       positionedRect,
       RectangleFactory.fromWindow()
     );
 
     let flippedRect: Rectangle;
-    if (intersection.bottom < 0) {
+    if (overflow.bottom < 0) {
       flippedRect = this.rectangleService.flipHorizontally(
         ref,
         positionedRect
