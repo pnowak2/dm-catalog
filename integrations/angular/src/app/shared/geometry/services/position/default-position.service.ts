@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { PLACEMENT_STRATEGY } from './../../coordinates.config';
+import { PLACEMENT_STRATEGY } from './../../geometry.config';
 import { PlacementStrategy } from './strategies/placement.strategy';
 import { PositionService } from './position.service';
 import { Rectangle } from './../../interfaces/rectangle';

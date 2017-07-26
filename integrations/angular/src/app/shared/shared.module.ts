@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CoordinatesModule } from './coordinates/coordinates.module';
+import { GeometryModule } from './geometry/geometry.module';
 
 @NgModule({
   imports: [
@@ -12,7 +12,7 @@ import { CoordinatesModule } from './coordinates/coordinates.module';
   exports: [
     CommonModule,
     FormsModule,
-    CoordinatesModule
+    GeometryModule
   ]
 })
 export class SharedModule { }

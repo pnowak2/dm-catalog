@@ -1,6 +1,6 @@
 import { RectangleFactory } from './../../../factory/rectangle-factory';
 import { Injectable, Inject } from '@angular/core';
-import { RECTANGLE_SERVICE } from './../../../coordinates.config';
+import { RECTANGLE_SERVICE } from './../../../geometry.config';
 import { Rectangle } from './../../../interfaces/rectangle';
 import { PlacementStrategy } from './placement.strategy';
 import { RectangleService, AnchorName } from './../../../services/rectangle/rectangle.service';
