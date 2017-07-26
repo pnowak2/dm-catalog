@@ -1,3 +1,4 @@
+import { Point } from './point';
 import { Rectangle } from './rectangle';
 
 fdescribe('Rectangle', () => {
@@ -15,6 +16,26 @@ fdescribe('Rectangle', () => {
 
       it('should return proper instance', () => {
         expect(r).toEqual(jasmine.any(Rectangle));
+      });
+    });
+
+    describe('Rectangle.createFromBounds', () => {
+      let r: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.createFromBounds(1, 2, 3, 4);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.createFromBounds).toEqual(jasmine.any(Function));
+      });
+
+      it('should return proper instance', () => {
+        expect(r).toEqual(jasmine.any(Rectangle));
+      });
+
+      it('should have properly set properties', () => {
+        expect(Rectangle.create(1, 2, 2, 2).equals(r)).toBe(true);
       });
     });
 
@@ -180,6 +201,18 @@ fdescribe('Rectangle', () => {
       });
     });
 
+    describe('.center()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.center).toEqual(jasmine.any(Function));
+      });
+
+      it('should return center point of rectangle', () => {
+        const r = Rectangle.create(1, 1, 4, 6);
+
+        expect(r.center()).toEqual(Point.create(3, 4));
+      });
+    });
+
     describe('.isEmpty()', () => {
       it('should be defined', () => {
         expect(Rectangle.prototype.isEmpty).toEqual(jasmine.any(Function));
@@ -218,6 +251,13 @@ fdescribe('Rectangle', () => {
         const r2 = Rectangle.create(2, 3, 4, 5);
 
         expect(r1.equals(r2)).toBe(false);
+      });
+
+      it('should return true for empty objects', () => {
+        const r1 = Rectangle.create(1, 2, 0, 4);
+        const r2 = Rectangle.create(5, 3, 5, 0);
+
+        expect(r1.equals(r2)).toBe(true);
       });
     });
 

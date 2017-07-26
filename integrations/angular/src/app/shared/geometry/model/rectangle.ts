@@ -12,6 +12,10 @@ export class Rectangle {
     return new Rectangle(x, y, x + width, y + height);
   }
 
+  public static createFromBounds(left: number, top: number, right: number, bottom: number): Rectangle {
+    return Rectangle.create(left, top, right - left, bottom - top);
+  }
+
   get x(): number {
     return this.left;
   }
@@ -48,6 +52,13 @@ export class Rectangle {
       this.width * factor,
       this.height * factor
     )
+  }
+
+  center(): Point {
+    const x = this.x + (this.width / 2);
+    const y = this.y + (this.height / 2);
+
+    return Point.create(x, y);
   }
 
   isEmpty(): boolean {
