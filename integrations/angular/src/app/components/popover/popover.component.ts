@@ -1,5 +1,5 @@
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
-import { Rectangle } from './../../shared/geometry/interfaces/rectangle';
+import { Rectangle } from './../../shared/geometry/model/rectangle';
 import { RectangleFactory } from './../../shared/geometry/factory/rectangle-factory';
 import { POSITION_SERVICE } from './../../shared/geometry/geometry.config';
 import { PositionService } from './../../shared/geometry/services/position/position.service';

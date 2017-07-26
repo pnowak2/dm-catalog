@@ -1,6 +1,6 @@
-import { Point } from './../../interfaces/point';
-import { Dimensions } from './../../interfaces/dimensions';
-import { Rectangle } from './../../interfaces/rectangle';
+import { Point } from './../../model/point';
+import { Dimensions } from './../../model/dimensions';
+import { Rectangle } from './../../model/rectangle';
 
 export class HtmlElementRectangle implements Rectangle {
   public static create(el: HTMLElement): Rectangle {

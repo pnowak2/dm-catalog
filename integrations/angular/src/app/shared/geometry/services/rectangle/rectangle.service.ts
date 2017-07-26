@@ -1,6 +1,6 @@
-import { Bounds } from './../../interfaces/bounds';
-import { Point } from './../../interfaces/point';
-import { Rectangle } from './../../interfaces/rectangle';
+import { Bounds } from './../../model/bounds';
+import { Point } from './../../model/point';
+import { Rectangle } from './../../model/rectangle';
 
 export interface PlacementOptions {
   refAnchor: AnchorName;

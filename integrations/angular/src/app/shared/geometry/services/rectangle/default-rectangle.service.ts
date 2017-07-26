@@ -1,8 +1,8 @@
 import { RectangleFactory } from './../../factory/rectangle-factory';
 import { Injectable } from '@angular/core';
-import { Point } from './../../interfaces/point';
-import { Rectangle } from './../../interfaces/rectangle';
-import { Bounds } from './../../interfaces/bounds';
+import { Point } from './../../model/point';
+import { Rectangle } from './../../model/rectangle';
+import { Bounds } from './../../model/bounds';
 import { RectangleService, PlacementOptions, AnchorName } from './rectangle.service';
 
 @Injectable()

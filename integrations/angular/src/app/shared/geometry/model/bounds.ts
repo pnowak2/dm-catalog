@@ -1,4 +1,4 @@
-export interface Bounds {
+export class Bounds {
   readonly top: number;
   readonly left: number;
   readonly right: number;
