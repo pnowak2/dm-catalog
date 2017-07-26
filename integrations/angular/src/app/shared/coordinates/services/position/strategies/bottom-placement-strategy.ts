@@ -16,7 +16,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(ref: Rectangle, element: Rectangle): Rectangle {
-    const positionedRect: Rectangle = this.rectangleService.calculatePosition(ref, element, {
+    const positionedRect: Rectangle = this.rectangleService.moveRelativeTo(ref, element, {
       refAnchor: AnchorName.BottomCenter,
       elementAnchor: AnchorName.TopCenter,
       offsetX: 0,
@@ -24,7 +24,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     }
     );
 
-    const intersection = this.rectangleService.calculateIntersection(
+    const intersection = this.rectangleService.overflow(
       positionedRect,
       RectangleFactory.fromWindow()
     );
@@ -39,7 +39,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
       flippedRect = positionedRect;
     }
 
-    const windowConstrainedRect = this.rectangleService.calculatePlacementInsideParent(
+    const windowConstrainedRect = this.rectangleService.positionInsideParent(
       flippedRect,
       RectangleFactory.fromWindow()
     );

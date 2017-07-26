@@ -1,28 +1,49 @@
 import { Injectable } from '@angular/core';
 import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
-import { Intersection } from './../../interfaces/intersection';
+import { Overflow } from './../../interfaces/intersection';
 import { RectangleService, PlacementOptions, AnchorName } from './rectangle.service';
 
 @Injectable()
 export class DefaultRectangleService implements RectangleService {
-  calculatePosition(ref: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
-    let refPoint: Point = this.getPositionByAnchorName(ref, options.refAnchor);
-    let elementPoint: Point = this.getPositionByAnchorName(element, options.elementAnchor);
+  moveRelativeTo(ref: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
+    let {
+      offsetX = 0,
+      offsetY = 0,
+      refAnchor = AnchorName.BottomCenter,
+      elementAnchor = AnchorName.TopCenter
+    } = options;
+
+    let refPoint: Point = this.pointByAnchorName(ref, refAnchor);
+    let elementPoint: Point = this.pointByAnchorName(element, elementAnchor);
 
     let correctionX = elementPoint.x - refPoint.x;
     let correctionY = elementPoint.y - refPoint.y;
 
+    return this.moveToPoint(element, {
+      x: element.position.x - correctionX + offsetX,
+      y: element.position.y - correctionY + offsetY
+    });
+  }
+
+  moveToPoint(element: Rectangle, point: Point): Rectangle {
     return {
       position: {
-        x: element.position.x - correctionX + options.offsetX,
-        y: element.position.y - correctionY + options.offsetY
+        x: point.x,
+        y: point.y
       },
       dimensions: { ...element.dimensions }
     }
   }
 
-  getPositionByAnchorName(rect: Rectangle, position: AnchorName): Point {
+  moveBy(element: Rectangle, offsetX, offsetY): Rectangle {
+    return this.moveToPoint(element, {
+      x: element.position.x + offsetX,
+      y: element.position.y + offsetY
+    });
+  }
+
+  pointByAnchorName(rect: Rectangle, position: AnchorName): Point {
     let refPoint: Point;
 
     if (position === AnchorName.TopLeft) {
@@ -129,8 +150,8 @@ export class DefaultRectangleService implements RectangleService {
     }
   }
 
-  calculateIntersection(element: Rectangle, parent: Rectangle): Intersection {
-    let intersection: Intersection = {
+  overflow(element: Rectangle, parent: Rectangle): Overflow {
+    let intersection: Overflow = {
       top: element.position.y - parent.position.y,
       left: element.position.x - parent.position.x,
       right: (parent.position.x + parent.dimensions.width) - (element.position.x + element.dimensions.width),
@@ -140,10 +161,10 @@ export class DefaultRectangleService implements RectangleService {
     return intersection;
   }
 
-  calculatePlacementInsideParent(element: Rectangle, parent: Rectangle): Rectangle {
+  positionInsideParent(element: Rectangle, parent: Rectangle): Rectangle {
     let position: Point = { ...element.position };
 
-    const intersection: Intersection = this.calculateIntersection(
+    const intersection: Overflow = this.overflow(
       element,
       parent
     );
@@ -182,14 +203,10 @@ export class DefaultRectangleService implements RectangleService {
     };
   }
 
-  toLocalCoords(ref: Rectangle, parent: Rectangle): Rectangle {
+  toLocalCoords(ref: Point, parent: Point): Point {
     return {
-      position: {
-        ...ref.position,
-        x: ref.position.x - parent.position.x,
-        y: ref.position.y - parent.position.y
-      },
-      dimensions: { ...ref.dimensions }
+      x: ref.x - parent.x,
+      y: ref.y - parent.y
     };
   }
 }

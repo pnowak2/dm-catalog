@@ -16,7 +16,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(ref: Rectangle, element: Rectangle): Rectangle {
-    const bottomCenterRect: Rectangle = this.rectangleService.calculatePosition(
+    const bottomCenterRect: Rectangle = this.rectangleService.moveRelativeTo(
       ref,
       element
     );
@@ -26,7 +26,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
       bottomCenterRect
     );
 
-    const insideParentRect: Rectangle = this.rectangleService.calculatePlacementInsideParent(
+    const insideParentRect: Rectangle = this.rectangleService.positionInsideParent(
       flippedRect,
       RectangleFactory.fromWindow()
     );

@@ -1,4 +1,4 @@
-import { Intersection } from './../../interfaces/intersection';
+import { Overflow } from './../../interfaces/intersection';
 import { Point } from './../../interfaces/point';
 import { Rectangle } from './../../interfaces/rectangle';
 
@@ -16,17 +16,21 @@ export enum AnchorName {
 }
 
 export interface RectangleService {
-  calculatePosition(ref: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle;
+  moveToPoint(element: Rectangle, point: Point): Rectangle;
 
-  getPositionByAnchorName(rect: Rectangle, name: AnchorName): Point;
+  moveBy(element: Rectangle, offsetX, offsetY): Rectangle;
 
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle;
 
   flipVertically(ref: Rectangle, element: Rectangle): Rectangle;
 
-  calculateIntersection(element: Rectangle, parent: Rectangle): Intersection;
+  overflow(element: Rectangle, parent: Rectangle): Overflow;
 
-  calculatePlacementInsideParent(element: Rectangle, parent: Rectangle): Rectangle;
+  pointByAnchorName(rect: Rectangle, name: AnchorName): Point;
 
-  toLocalCoords(ref: Rectangle, localParent: Rectangle): Rectangle;
+  positionInsideParent(element: Rectangle, parent: Rectangle): Rectangle;
+
+  moveRelativeTo(ref: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle;
+
+  toLocalCoords(ref: Point, localParent: Point): Point;
 }
