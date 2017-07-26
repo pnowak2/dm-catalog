@@ -26,7 +26,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
       bottomCenterRect
     );
 
-    const insideParentRect: Rectangle = this.rectangleService.positionInsideParent(
+    const insideParentRect: Rectangle = this.rectangleService.constrainToRect(
       flippedRect,
       RectangleFactory.fromWindow()
     );

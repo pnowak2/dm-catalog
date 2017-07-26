@@ -36,7 +36,7 @@ export interface RectangleService {
 
   pointByAnchorName(rect: Rectangle, name: AnchorName): Point;
 
-  positionInsideParent(element: Rectangle, parent: Rectangle): Rectangle;
+  constrainToRect(element: Rectangle, parent: Rectangle): Rectangle;
 
   moveRelativeTo(ref: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle;
 

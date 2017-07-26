@@ -2,7 +2,7 @@ import { RectangleFactory } from './../../factory/rectangle-factory';
 import { RectangleService } from './rectangle.service';
 import { DefaultRectangleService } from './default-rectangle.service';
 
-fdescribe('Default Rectangle Service', () => {
+describe('Default Rectangle Service', () => {
   let service: RectangleService;
 
   beforeEach(() => {

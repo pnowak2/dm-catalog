@@ -39,7 +39,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
       flippedRect = positionedRect;
     }
 
-    const windowConstrainedRect = this.rectangleService.positionInsideParent(
+    const windowConstrainedRect = this.rectangleService.constrainToRect(
       flippedRect,
       RectangleFactory.fromWindow()
     );

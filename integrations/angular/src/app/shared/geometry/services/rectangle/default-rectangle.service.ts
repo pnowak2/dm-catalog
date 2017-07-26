@@ -190,7 +190,7 @@ export class DefaultRectangleService implements RectangleService {
     return intersection;
   }
 
-  positionInsideParent(element: Rectangle, parent: Rectangle): Rectangle {
+  constrainToRect(element: Rectangle, parent: Rectangle): Rectangle {
     let position: Point = { ...element.position };
 
     const intersection: Bounds = this.overflow(

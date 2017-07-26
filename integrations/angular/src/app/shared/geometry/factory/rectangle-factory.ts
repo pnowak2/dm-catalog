@@ -1,7 +1,7 @@
-import { Bounds } from './../interfaces/bounds';
+import { Bounds } from './../model/bounds';
 import { WindowRectangle } from './rectangles/window-box';
 import { HtmlElementRectangle } from './rectangles/html-element-box';
-import { Rectangle } from './../interfaces/rectangle';
+import { Rectangle } from './../model/rectangle';
 
 export class RectangleFactory {
   public static fromHtmlElement(el: HTMLElement): Rectangle {
