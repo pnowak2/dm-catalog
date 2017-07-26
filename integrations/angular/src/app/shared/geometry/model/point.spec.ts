@@ -19,7 +19,7 @@ fdescribe('Point', () => {
     });
 
     describe('.x', () => {
-       it('should initialize x coordinate', () => {
+      it('should initialize x coordinate', () => {
         const p = Point.create(1, 2)
         expect(p.x).toEqual(1);
       });
@@ -27,7 +27,7 @@ fdescribe('Point', () => {
 
     describe('.y', () => {
       it('should initialize y coordinate', () => {
-        const p = Point.create(1, 2)        
+        const p = Point.create(1, 2)
         expect(p.y).toEqual(2);
       });
     });
@@ -54,6 +54,28 @@ fdescribe('Point', () => {
       });
     });
 
+    describe('.set()', () => {
+      let p: Point;
+      let pSet: Point;
+
+      beforeEach(() => {
+        p = Point.create(1, 2);
+        pSet = p.set(2, 4);
+      });
+
+      it('should be defined', () => {
+        expect(Point.prototype.set).toEqual(jasmine.any(Function));
+      });
+
+      it('should translate coordinates', () => {
+        expect(pSet).toEqual(Point.create(2, 4));
+      });
+
+      it('should return this', () => {
+        expect(pSet).toBe(p);
+      });
+    });
+
     describe('.translate()', () => {
       let p: Point;
       let pTrl: Point;
@@ -71,8 +93,8 @@ fdescribe('Point', () => {
         expect(pTrl).toEqual(Point.create(3, 6));
       });
 
-      it('should return clone, new reference has to be made', () => {
-        expect(pTrl).not.toBe(p);
+      it('should return this', () => {
+        expect(pTrl).toBe(p);
       });
     });
 
@@ -93,8 +115,8 @@ fdescribe('Point', () => {
         expect(pScl).toEqual(Point.create(6, 12));
       });
 
-      it('should return clone, new reference has to be made', () => {
-        expect(pScl).not.toBe(p);
+      it('should return this', () => {
+        expect(pScl).toBe(p);
       });
     });
 

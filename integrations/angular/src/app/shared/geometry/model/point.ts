@@ -1,5 +1,5 @@
 export class Point {
-  private constructor(readonly x: number, readonly y: number) { }
+  private constructor(public x: number, public y: number) { }
 
   public static create(x: number, y: number): Point {
     return new Point(x, y);
@@ -9,18 +9,25 @@ export class Point {
     return Point.create(this.x, this.y);
   }
 
-  translate(offsetX: number, offsetY: number): Point {
-    const newX = this.x + offsetX;
-    const newY = this.y + offsetY;
+  set(x, y): Point {
+    this.x = x;
+    this.y = y;
 
-    return Point.create(newX, newY);
+    return this;
+  }
+
+  translate(offsetX: number, offsetY: number): Point {
+    this.x += offsetX;
+    this.y += offsetY;
+
+    return this;
   }
 
   scale(factor: number): Point {
-    const newX = this.x * factor;
-    const newY = this.y * factor;
+    this.x *= factor;
+    this.y *= factor;
 
-    return Point.create(newX, newY);
+    return this;
   }
 
   isZero(): boolean {

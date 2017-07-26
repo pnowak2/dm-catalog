@@ -40,98 +40,103 @@ fdescribe('Rectangle', () => {
     });
 
     describe('.left', () => {
-      let r: Rectangle;
-
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
-      });
-
-      it('should be initialized properly', () => {
+      it('should return proper value', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
         expect(r.left).toEqual(1);
       });
     });
 
     describe('.right', () => {
-      let r: Rectangle;
-
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
-      });
-
-      it('should be initialized properly', () => {
+      it('should return proper value', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
         expect(r.right).toEqual(4);
       });
     });
 
     describe('.top', () => {
-      let r: Rectangle;
-
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
-      });
-
-      it('should be initialized properly', () => {
+      it('should breturn proper value', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
         expect(r.top).toEqual(2);
       });
     });
 
     describe('.bottom', () => {
-      let r: Rectangle;
-
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
-      });
-
-      it('should be initialized properly', () => {
+      it('should return proper value', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
         expect(r.bottom).toEqual(6);
       });
     });
 
     describe('.x', () => {
-      let r: Rectangle;
+      describe('get()', () => {
+        it('should return proper value', () => {
+          const r = Rectangle.create(1, 2, 3, 4);
 
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
+          expect(r.x).toEqual(1);
+        });
       });
 
-      it('should be initialized properly', () => {
-        expect(r.x).toEqual(1);
+      describe('set()', () => {
+        it('should update proper values', () => {
+          const r = Rectangle.create(1, 2, 3, 4);
+          r.x = 5;
+
+          expect(r).toEqual(Rectangle.create(5, 2, 3, 4));
+        });
       });
     });
 
     describe('.y', () => {
-      let r: Rectangle;
-
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
+      describe('get()', () => {
+        it('should return proper value', () => {
+          const r = Rectangle.create(1, 2, 3, 4);
+          expect(r.y).toEqual(2);
+        });
       });
 
-      it('should be initialized properly', () => {
-        expect(r.y).toEqual(2);
+      describe('set()', () => {
+        it('should update proper values', () => {
+          const r = Rectangle.create(1, 2, 3, 4);
+          r.y = 4;
+
+          expect(r).toEqual(Rectangle.create(1, 4, 3, 4));
+        });
       });
     });
 
     describe('.width', () => {
-      let r: Rectangle;
-
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
+      describe('get()', () => {
+        it('should return proper value', () => {
+          const r = Rectangle.create(1, 2, 3, 4);
+          expect(r.width).toEqual(3);
+        });
       });
 
-      it('should be initialized properly', () => {
-        expect(r.width).toEqual(3);
+      describe('set()', () => {
+        it('should update proper values', () => {
+          const r = Rectangle.create(1, 2, 3, 4);
+          r.width = 8;
+
+          expect(r).toEqual(Rectangle.create(1, 2, 8, 4));
+        });
       });
     });
 
     describe('.height', () => {
-      let r: Rectangle;
-
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
+      describe('get()', () => {
+        it('should return proper value', () => {
+          const r = Rectangle.create(1, 2, 3, 4);
+          expect(r.height).toEqual(4);
+        });
       });
 
-      it('should be initialized properly', () => {
-        expect(r.height).toEqual(4);
+      describe('set()', () => {
+        it('should update proper values', () => {
+          const r = Rectangle.create(1, 2, 3, 4);
+          r.height = 7;
+
+          expect(r).toEqual(Rectangle.create(1, 2, 3, 7));
+        });
       });
     });
 
@@ -157,6 +162,74 @@ fdescribe('Rectangle', () => {
       });
     });
 
+    describe('.setRectangle()', () => {
+      let r: Rectangle;
+      let rRct: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.create(1, 2, 3, 4);
+        rRct = r.setRectangle(2, 3, 4, 5);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.prototype.setRectangle).toEqual(jasmine.any(Function));
+      });
+
+      it('should set proper rectangle', () => {
+        expect(rRct).toEqual(Rectangle.create(2, 3, 4, 5));
+      });
+
+      it('should return this', () => {
+        expect(rRct).toBe(r);
+      });
+    });
+
+    describe('.setBounds()', () => {
+      let r: Rectangle;
+      let rBds: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.create(1, 2, 3, 4);
+        rBds = r.setBounds(2, 3, 4, 5);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.prototype.setBounds).toEqual(jasmine.any(Function));
+      });
+
+      it('should set proper bounds', () => {
+        expect(rBds).toEqual(Rectangle.create(2, 3, 2, 2));
+      });
+
+      it('should return this', () => {
+        expect(rBds).toBe(r);
+      });
+    });
+
+    describe('.copyFrom()', () => {
+      let r1: Rectangle;
+      let r2: Rectangle;
+      let rCpy: Rectangle;
+
+      beforeEach(() => {
+        r1 = Rectangle.create(1, 2, 3, 4);
+        r2 = Rectangle.create(2, 3, 4, 5);
+        rCpy = r2.copyFrom(r1);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.prototype.copyFrom).toEqual(jasmine.any(Function));
+      });
+
+      it('should copy from rectangle', () => {
+        expect(rCpy).toEqual(Rectangle.create(1, 2, 3, 4));
+      });
+
+      it('should return this', () => {
+        expect(rCpy).toBe(r2);
+      });
+    });
+
     describe('.moveTo()', () => {
       let r: Rectangle;
       let rMvd: Rectangle;
@@ -174,8 +247,8 @@ fdescribe('Rectangle', () => {
         expect(rMvd).toEqual(Rectangle.create(12, 7, 3, 4));
       });
 
-      it('should return clone, new reference has to be made', () => {
-        expect(rMvd).not.toBe(r);
+      it('should return this', () => {
+        expect(rMvd).toBe(r);
       });
     });
 
@@ -196,8 +269,8 @@ fdescribe('Rectangle', () => {
         expect(rTrl).toEqual(Rectangle.create(3, 6, 3, 4));
       });
 
-      it('should return clone, new reference has to be made', () => {
-        expect(rTrl).not.toBe(r);
+      it('should return this', () => {
+        expect(rTrl).toBe(r);
       });
     });
 
@@ -218,8 +291,8 @@ fdescribe('Rectangle', () => {
         expect(rScl).toEqual(Rectangle.create(6, 9, 12, 15));
       });
 
-      it('should return clone, new reference has to be made', () => {
-        expect(rScl).not.toBe(r);
+      it('should return this', () => {
+        expect(rScl).toBe(r);
       });
     });
 
@@ -253,6 +326,37 @@ fdescribe('Rectangle', () => {
       it('should return true for zero width and height', () => {
         const r = Rectangle.create(1, 2, 4, 0);
         expect(r.isEmpty()).toBe(true);
+      });
+    });
+
+    describe('.contains()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.contains).toEqual(jasmine.any(Function));
+      });
+
+      it('should return false if this is empty', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const empty = Rectangle.create(0, 0, 0, 0);
+
+        expect(empty.contains(r)).toBe(false);
+      });
+
+      it('should return true if other is empty', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const empty = Rectangle.create(0, 0, 0, 0);
+
+        expect(r.contains(empty)).toBe(true);
+      });
+
+      it('return true if contains other rect', () => {
+        const r1 = Rectangle.create(1, 1, 3, 3);
+        const r2 = Rectangle.create(2, 2, 1, 1);
+        
+        expect(r1.contains(r2)).toBe(true);
+      });
+
+      it('should behave...', () => {
+        pending();
       });
     });
 
