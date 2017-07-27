@@ -2,20 +2,11 @@ import { Dimensions } from './dimensions';
 import { Point } from './point';
 
 export class Rectangle {
-  left: number;
-  top: number;
-  right: number;
-  bottom: number;
-
   private constructor(
-    left: number,
-    top: number,
-    right: number,
-    bottom: number) {
-    this.left = left;
-    this.top = top;
-    this.right = right;
-    this.bottom = bottom;
+    public left: number,
+    public top: number,
+    public right: number,
+    public bottom: number) {
   }
 
   public static create(x: number, y: number, width: number, height: number): Rectangle {
