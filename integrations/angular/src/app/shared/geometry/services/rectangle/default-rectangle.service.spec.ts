@@ -524,5 +524,4 @@ describe('Default Rectangle Service', () => {
       });
     });
   });
-
 });
