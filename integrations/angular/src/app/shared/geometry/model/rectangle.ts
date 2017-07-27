@@ -26,6 +26,10 @@ export class Rectangle {
     return Rectangle.create(left, top, right - left, bottom - top);
   }
 
+  public static createEmpty(): Rectangle {
+    return Rectangle.create(0, 0, 0, 0);
+  }
+
   get x(): number {
     return this.left;
   }

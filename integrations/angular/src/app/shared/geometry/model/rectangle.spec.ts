@@ -1,6 +1,24 @@
 import { Point } from './point';
 import { Rectangle } from './rectangle';
 
+class RectsGenerator {
+  public static containingRects() {
+    return [{
+      relationName: 'left',
+      r1: Rectangle.create(1, 1, 3, 3),
+      r2: Rectangle.create(1, 2, 1, 1),
+      isIntersect: true,
+      intersectRect: Rectangle.create(2, 2, 1, 1)
+    }, {
+      relationName: 'center',
+      r1: Rectangle.create(1, 1, 3, 3),
+      r2: Rectangle.create(2, 2, 1, 1),
+      isIntersect: true,
+      intersectRect: Rectangle.create(2, 2, 1, 1)
+    }]
+  }
+}
+
 fdescribe('Rectangle', () => {
   describe('Api', () => {
     describe('Rectangle.create', () => {
@@ -36,6 +54,26 @@ fdescribe('Rectangle', () => {
 
       it('should have properly set properties', () => {
         expect(Rectangle.create(1, 2, 2, 2).equals(r)).toBe(true);
+      });
+    });
+
+    describe('Rectangle.createEmpty', () => {
+      let r: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.createEmpty();
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.createEmpty).toEqual(jasmine.any(Function));
+      });
+
+      it('should return proper instance', () => {
+        expect(r).toEqual(jasmine.any(Rectangle));
+      });
+
+      it('should be empty rectangle', () => {
+        expect(r.isEmpty()).toBe(true);
       });
     });
 
@@ -324,7 +362,7 @@ fdescribe('Rectangle', () => {
       });
 
       it('should return true for zero width and height', () => {
-        const r = Rectangle.create(1, 2, 4, 0);
+        const r = Rectangle.create(1, 2, 0, 0);
         expect(r.isEmpty()).toBe(true);
       });
     });
@@ -336,23 +374,24 @@ fdescribe('Rectangle', () => {
 
       it('should return false if this is empty', () => {
         const r = Rectangle.create(1, 2, 3, 4);
-        const empty = Rectangle.create(0, 0, 0, 0);
+        const empty = Rectangle.createEmpty();
 
         expect(empty.contains(r)).toBe(false);
       });
 
       it('should return true if other is empty', () => {
         const r = Rectangle.create(1, 2, 3, 4);
-        const empty = Rectangle.create(0, 0, 0, 0);
+        const empty = Rectangle.createEmpty();
 
         expect(r.contains(empty)).toBe(true);
       });
 
       it('return true if contains other rect', () => {
-        const r1 = Rectangle.create(1, 1, 3, 3);
-        const r2 = Rectangle.create(2, 2, 1, 1);
-        
-        expect(r1.contains(r2)).toBe(true);
+        const rects = RectsGenerator.containingRects();
+
+        rects.forEach((entry) => {
+          expect(entry.r1.contains(entry.r2)).toBe(true, entry.relationName);
+        });
       });
 
       it('should behave...', () => {
