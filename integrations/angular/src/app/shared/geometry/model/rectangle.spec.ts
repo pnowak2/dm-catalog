@@ -18,8 +18,8 @@ class RectsGenerator {
   public static testRects(): [RectsEntry] {
     return [
       // intersecting, containing
-      this.makeEntry('intersect, contains, including top left', Rectangle.create(2, 1, 1, 1), true, true, Rectangle.create(2, 1, 1, 1)),
-      this.makeEntry('intersect, contains, including top center', Rectangle.create(2, 1, 1, 1), true, true, Rectangle.create(1, 1, 1, 1)),
+      this.makeEntry('intersect, contains, including top left', Rectangle.create(1, 1, 1, 1), true, true, Rectangle.create(1, 1, 1, 1)),
+      this.makeEntry('intersect, contains, including top center', Rectangle.create(2, 1, 1, 1), true, true, Rectangle.create(2, 1, 1, 1)),
       this.makeEntry('intersect, contains, including top right', Rectangle.create(3, 1, 1, 1), true, true, Rectangle.create(3, 1, 1, 1)),
       this.makeEntry('intersect, contains, including center left', Rectangle.create(1, 2, 1, 1), true, true, Rectangle.create(1, 2, 1, 1)),
       this.makeEntry('intersect, contains, including center center', Rectangle.create(2, 2, 1, 1), true, true, Rectangle.create(2, 2, 1, 1)),
@@ -462,32 +462,111 @@ fdescribe('Rectangle', () => {
 
       it('return true if fully contains other rect', () => {
         RectsGenerator.testRects()
-        .filter(entry => entry.isIntersect)
-        .filter(entry => entry.isContain)
-        .forEach((entry) => {
-          expect(entry.r1.contains(entry.r2)).toBe(true, entry.relationName);
-        });
+          .filter(entry => entry.isIntersect)
+          .filter(entry => entry.isContain)
+          .forEach((entry) => {
+            expect(entry.r1.contains(entry.r2)).toBe(true, entry.relationName);
+          });
       });
 
       it('return false if intersects other rect but does not fully contain', () => {
         RectsGenerator.testRects()
-        .filter(entry => entry.isIntersect)
-        .filter(entry => !entry.isContain)
-        .forEach((entry) => {
-          expect(entry.r1.contains(entry.r2)).toBe(false, entry.relationName);
-        });
+          .filter(entry => entry.isIntersect)
+          .filter(entry => !entry.isContain)
+          .forEach((entry) => {
+            expect(entry.r1.contains(entry.r2)).toBe(false, entry.relationName);
+          });
       });
 
       it('return false if does not contain other rect', () => {
         RectsGenerator.testRects()
-        .filter(entry => !entry.isIntersect)
-        .forEach((entry) => {
-          expect(entry.r1.contains(entry.r2)).toBe(false, entry.relationName);
-        });
+          .filter(entry => !entry.isIntersect)
+          .forEach((entry) => {
+            expect(entry.r1.contains(entry.r2)).toBe(false, entry.relationName);
+          });
+      });
+    });
+
+    describe('.intersects()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.intersects).toEqual(jasmine.any(Function));
       });
 
-      it('should behave...', () => {
-        pending();
+      it('should return false if this is empty', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const empty = Rectangle.empty();
+
+        expect(empty.intersects(r)).toBe(false);
+      });
+
+      it('should return false if other is empty', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const empty = Rectangle.empty();
+
+        expect(r.intersects(empty)).toBe(false);
+      });
+
+      it('return true if intersects other rect', () => {
+        RectsGenerator.testRects()
+          .filter(entry => entry.isIntersect)
+          .forEach((entry) => {
+            expect(entry.r1.intersects(entry.r2)).toBe(true, entry.relationName);
+          });
+      });
+
+      it('return false if does not intersect other rect', () => {
+        RectsGenerator.testRects()
+          .filter(entry => !entry.isIntersect)
+          .forEach((entry) => {
+            expect(entry.r1.intersects(entry.r2)).toBe(false, entry.relationName);
+          });
+      });
+    });
+
+    describe('.restrictTo()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.restrictTo).toEqual(jasmine.any(Function));
+      });
+
+      it('should return empty rectangle if this is empty', () => {
+        const empty = Rectangle.empty();
+        const r = Rectangle.create(1, 2, 3, 4);
+        const restricted = empty.restrictTo(r);
+
+        expect(restricted.isEmpty()).toBe(true);
+      });
+
+      it('should return empty rectangle if other is empty', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const empty = Rectangle.empty();
+        const restricted = r.restrictTo(empty);
+
+        expect(restricted.isEmpty()).toBe(true);
+      });
+
+      it('return intersection rectangle if intersects other rect', () => {
+        RectsGenerator.testRects()
+          .filter(entry => entry.isIntersect)
+          .forEach((entry) => {
+            expect(entry.r1.restrictTo(entry.r2)).toEqual(entry.intersectRect, entry.relationName);
+            console.log(entry);
+          });
+      });
+
+      it('should return empty rectangle if does not intersect other rect', () => {
+        RectsGenerator.testRects()
+          .filter(entry => !entry.isIntersect)
+          .forEach((entry) => {
+            const restricted = entry.r1.restrictTo(entry.r2);
+            expect(restricted.isEmpty()).toBe(true);
+          });
+      });
+
+      it('should return this', () => {
+        RectsGenerator.testRects()
+          .forEach((entry) => {
+            expect(entry.r1.restrictTo(entry.r2)).toBe(entry.r1);
+          });
       });
     });
 

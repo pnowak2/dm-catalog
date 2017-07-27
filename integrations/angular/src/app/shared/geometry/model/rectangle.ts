@@ -149,6 +149,28 @@ export class Rectangle {
       other.bottom <= this.bottom;
   }
 
+  intersects(other: Rectangle): boolean {
+    if (this.isEmpty() || other.isEmpty())
+      return false;
+
+    return this.left < other.right &&
+      this.right > other.left &&
+      this.top < other.bottom &&
+      this.bottom > other.top
+  }
+
+  restrictTo(other: Rectangle): Rectangle {
+    if (this.isEmpty() || other.isEmpty())
+      return this.setRectangle(0, 0, 0, 0);
+
+    const left = Math.max(this.left, other.left);
+    const top = Math.max(this.top, other.top); // 1
+    const right = Math.min(this.right, other.right);
+    const bottom = Math.min(this.bottom, other.bottom);
+
+    return this.setRectangle(left, top, Math.max(0, right - left), Math.max(0, bottom - top));
+  }
+
   equals(other: Rectangle): boolean {
     return (this.isEmpty() && other.isEmpty() ||
       this.top == other.top &&
