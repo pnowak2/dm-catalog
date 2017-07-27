@@ -59,15 +59,15 @@ class RectsGenerator {
       this.makeEntry('intersect, not contains, including left top right bottom', Rectangle.create(0, 0, 5, 5), true, false, Rectangle.create(1, 1, 3, 3)),
 
       // not intersecting at all
-      this.makeEntry('not intersect, placed on the left', Rectangle.create(0, 2, 1, 1), false, false, Rectangle.createEmpty()),
-      this.makeEntry('not intersect, placed on the top', Rectangle.create(2, 0, 1, 1), false, false, Rectangle.createEmpty()),
-      this.makeEntry('not intersect, placed on the right', Rectangle.create(4, 2, 1, 1), false, false, Rectangle.createEmpty()),
-      this.makeEntry('not intersect, placed on the bottom', Rectangle.create(2, 4, 1, 1), false, false, Rectangle.createEmpty()),
+      this.makeEntry('not intersect, placed on the left', Rectangle.create(0, 2, 1, 1), false, false, Rectangle.empty()),
+      this.makeEntry('not intersect, placed on the top', Rectangle.create(2, 0, 1, 1), false, false, Rectangle.empty()),
+      this.makeEntry('not intersect, placed on the right', Rectangle.create(4, 2, 1, 1), false, false, Rectangle.empty()),
+      this.makeEntry('not intersect, placed on the bottom', Rectangle.create(2, 4, 1, 1), false, false, Rectangle.empty()),
 
-      this.makeEntry('not intersect, placed on the top left', Rectangle.create(0, 0, 1, 1), false, false, Rectangle.createEmpty()),
-      this.makeEntry('not intersect, placed on the top right', Rectangle.create(4, 0, 1, 1), false, false, Rectangle.createEmpty()),
-      this.makeEntry('not intersect, placed on the bottom left', Rectangle.create(0, 4, 1, 1), false, false, Rectangle.createEmpty()),
-      this.makeEntry('not intersect, placed on the bottom right', Rectangle.create(4, 4, 1, 1), false, false, Rectangle.createEmpty()),
+      this.makeEntry('not intersect, placed on the top left', Rectangle.create(0, 0, 1, 1), false, false, Rectangle.empty()),
+      this.makeEntry('not intersect, placed on the top right', Rectangle.create(4, 0, 1, 1), false, false, Rectangle.empty()),
+      this.makeEntry('not intersect, placed on the bottom left', Rectangle.create(0, 4, 1, 1), false, false, Rectangle.empty()),
+      this.makeEntry('not intersect, placed on the bottom right', Rectangle.create(4, 4, 1, 1), false, false, Rectangle.empty()),
     ]
   }
 }
@@ -90,15 +90,15 @@ fdescribe('Rectangle', () => {
       });
     });
 
-    describe('Rectangle.createFromBounds', () => {
+    describe('Rectangle.fromBounds', () => {
       let r: Rectangle;
 
       beforeEach(() => {
-        r = Rectangle.createFromBounds(1, 2, 3, 4);
+        r = Rectangle.fromBounds(1, 2, 3, 4);
       });
 
       it('should be defined', () => {
-        expect(Rectangle.createFromBounds).toEqual(jasmine.any(Function));
+        expect(Rectangle.fromBounds).toEqual(jasmine.any(Function));
       });
 
       it('should return proper instance', () => {
@@ -110,15 +110,36 @@ fdescribe('Rectangle', () => {
       });
     });
 
-    describe('Rectangle.createEmpty', () => {
+    describe('Rectangle.fromRect', () => {
+      let src = Rectangle.create(1, 2, 3, 5);
       let r: Rectangle;
 
       beforeEach(() => {
-        r = Rectangle.createEmpty();
+        r = Rectangle.fromRect(src);
       });
 
       it('should be defined', () => {
-        expect(Rectangle.createEmpty).toEqual(jasmine.any(Function));
+        expect(Rectangle.fromRect).toEqual(jasmine.any(Function));
+      });
+
+      it('should return proper instance', () => {
+        expect(r).toEqual(jasmine.any(Rectangle));
+      });
+
+      it('should have properly set properties', () => {
+        expect(r.equals(src)).toBe(true);
+      });
+    });
+
+    describe('Rectangle.empty()', () => {
+      let r: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.empty();
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.empty).toEqual(jasmine.any(Function));
       });
 
       it('should return proper instance', () => {
@@ -427,14 +448,14 @@ fdescribe('Rectangle', () => {
 
       it('should return false if this is empty', () => {
         const r = Rectangle.create(1, 2, 3, 4);
-        const empty = Rectangle.createEmpty();
+        const empty = Rectangle.empty();
 
         expect(empty.contains(r)).toBe(false);
       });
 
       it('should return true if other is empty', () => {
         const r = Rectangle.create(1, 2, 3, 4);
-        const empty = Rectangle.createEmpty();
+        const empty = Rectangle.empty();
 
         expect(r.contains(empty)).toBe(true);
       });

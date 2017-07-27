@@ -22,11 +22,15 @@ export class Rectangle {
     return new Rectangle(x, y, x + width, y + height);
   }
 
-  public static createFromBounds(left: number, top: number, right: number, bottom: number): Rectangle {
+  public static fromBounds(left: number, top: number, right: number, bottom: number): Rectangle {
     return Rectangle.create(left, top, right - left, bottom - top);
   }
 
-  public static createEmpty(): Rectangle {
+  public static fromRect(rect: Rectangle): Rectangle {
+    return Rectangle.create(rect.x, rect.y, rect.width, rect.height);
+  }
+
+  public static empty(): Rectangle {
     return Rectangle.create(0, 0, 0, 0);
   }
 
@@ -100,13 +104,8 @@ export class Rectangle {
   }
 
   moveTo(x: number, y: number): Rectangle {
-    const offsetX = x - this.left;
-    const offsetY = y - this.top;
-
-    this.left = x;
-    this.top = y;
-    this.right += offsetX;
-    this.bottom += offsetY;
+    this.x = x;
+    this.y = y;
 
     return this;
   }
