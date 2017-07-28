@@ -30,6 +30,7 @@ export class PopoverComponent {
       {
         placement: this.placement,
         parent: windowRect,
+        offset: 15,
         constrainToParent: true,
         flip: true
       }

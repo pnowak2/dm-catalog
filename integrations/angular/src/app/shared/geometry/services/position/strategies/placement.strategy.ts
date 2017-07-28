@@ -3,6 +3,7 @@ import { Rectangle } from './../../../model/rectangle';
 export interface PlacementOptions {
   placement: string,
   parent: Rectangle,
+  offset: number,
   constrainToParent: boolean,
   flip: boolean
 }
