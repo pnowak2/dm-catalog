@@ -20,18 +20,18 @@ export class PopoverComponent {
 
   show(event) {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
-    const triggerRectangle: Rectangle = RectangleFactory.fromHtmlElement(event.target);
-    const popoverRectangle: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
+    const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
+    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
 
-    const placementRectangle: Rectangle = this.positionService.position(
-      triggerRectangle,
-      popoverRectangle,
+    const popoverRect: Rectangle = this.positionService.position(
+      anchorRect,
+      elementRect,
       this.placement
     );
 
     this.updatePlacement(
       popoverContainer,
-      placementRectangle
+      popoverRect
     );
   }
 
