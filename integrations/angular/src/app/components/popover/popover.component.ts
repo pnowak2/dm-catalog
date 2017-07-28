@@ -43,6 +43,7 @@ export class PopoverComponent {
   }
 
   updatePlacement(popover: HTMLElement, rect: Rectangle) {
+    // document.body.appendChild(popover);
     popover.style.left = rect.x + 'px';
     popover.style.top = rect.y + 'px';
     popover.style.height = rect.height + 'px';
