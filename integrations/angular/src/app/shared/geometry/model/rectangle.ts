@@ -119,6 +119,24 @@ export class Rectangle {
     return this;
   }
 
+  flipX(yAxis: number): Rectangle {
+    const offsetY = 2 * (this.top - yAxis) + this.height;
+
+    return this.translate(0, -offsetY);
+  }
+
+  flipY(xAxis: number): Rectangle {
+    const offsetX = 2 * (this.left - xAxis) + this.width;
+
+    return this.translate(-offsetX, 0);
+  }
+
+  flip(point: Point): Rectangle {
+    return this
+      .flipX(point.y)
+      .flipY(point.x);
+  }
+
   map(fn: (number) => number) {
     this.left = fn.call(this, this.left);
     this.top = fn.call(this, this.top);

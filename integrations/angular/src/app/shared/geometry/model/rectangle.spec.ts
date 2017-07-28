@@ -346,6 +346,88 @@ fdescribe('Rectangle', () => {
       });
     });
 
+    describe('.flipX()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.flipX).toEqual(jasmine.any(Function));
+      });
+
+      it('should flip horizontally if point is above rectangle', () => {
+        const r = Rectangle.create(3, 5, 2, 3);
+        const rFlp = r.flipX(4);
+
+        expect(rFlp).toEqual(Rectangle.create(3, 0, 2, 3));
+      });
+
+      it('should flip horizontally if point is below rectangle', () => {
+        const r = Rectangle.create(3, 0, 2, 3);
+        const rFlp = r.flipX(4);
+
+        expect(rFlp).toEqual(Rectangle.create(3, 5, 2, 3));
+      });
+
+      it('should flip horizontally if point is inside rectangle', () => {
+        const r = Rectangle.create(3, 0, 2, 3);
+        const rFlp = r.flipX(2);
+
+        expect(rFlp).toEqual(Rectangle.create(3, 1, 2, 3));
+      });
+
+      it('should return this', () => {
+        let r = Rectangle.create(3, 5, 2, 3);
+        expect(r.flipX(4)).toBe(r);
+      });
+    });
+
+    describe('.flipY()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.flipY).toEqual(jasmine.any(Function));
+      });
+
+      it('should flip vertically if point is on the left of rectangle', () => {
+        const r = Rectangle.create(4, 2, 2, 3);
+        const rFlp = r.flipY(3);
+
+        expect(rFlp).toEqual(Rectangle.create(0, 2, 2, 3));
+      });
+
+      it('should flip vertically if point is on the right of rectangle', () => {
+        const r = Rectangle.create(0, 2, 2, 3);
+        const rFlp = r.flipY(3);
+
+        expect(rFlp).toEqual(Rectangle.create(4, 2, 2, 3));
+      });
+
+      it('should flip vertically if point is inside rectangle', () => {
+        const r = Rectangle.create(4, 2, 2, 3);
+        const rFlp = r.flipY(4.5);
+
+        expect(rFlp).toEqual(Rectangle.create(3, 2, 2, 3));
+      });
+
+      it('should return this', () => {
+        let r = Rectangle.create(3, 5, 2, 3);
+        expect(r.flipY(4)).toBe(r);
+      });
+    });
+
+    describe('.flip()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.flip).toEqual(jasmine.any(Function));
+      });
+
+      it('should flip against point', () => {
+        const r = Rectangle.create(4, 2, 2, 3);
+        const flp = r.flip(Point.create(3, 6));
+
+        expect(flp).toEqual(Rectangle.create(0, 7, 2, 3));
+      });
+
+      it('should return this', () => {
+        let r = Rectangle.create(3, 5, 2, 3);
+        expect(r.flip(Point.create(1, 1))).toBe(r);
+      });
+    });
+
     describe('.map()', () => {
       it('should be defined', () => {
         expect(Rectangle.prototype.map).toEqual(jasmine.any(Function));
@@ -537,7 +619,7 @@ fdescribe('Rectangle', () => {
       });
     });
 
-    describe('.restrictTo()', () => {
+    describe('.restrictTo() - Restrict area of this rectangle to the intersection of both rectangles', () => {
       it('should be defined', () => {
         expect(Rectangle.prototype.restrictTo).toEqual(jasmine.any(Function));
       });
@@ -638,7 +720,7 @@ fdescribe('Rectangle', () => {
 
     });
 
-    describe('.translateInside()', () => {
+    describe('.translateInside() - Ensure this rectangle is inside the other, if possible. Preserves w, h', () => {
       it('should be defined', () => {
         expect(Rectangle.prototype.translateInside).toEqual(jasmine.any(Function));
       });
