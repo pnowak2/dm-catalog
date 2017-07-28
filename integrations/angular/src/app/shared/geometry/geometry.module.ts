@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PLACEMENT_STRATEGY } from './geometry.config';
 import { BottomPlacementStrategy } from './services/position/strategies/bottom-placement-strategy';
 import { RightPlacementStrategy } from './services/position/strategies/right-placement-strategy';
+import { BottomRightPlacementStrategy } from './services/position/strategies/bottom-right-placement-strategy';
 import { PositionService } from './services/position/position.service';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { PositionService } from './services/position/position.service';
     { provide: PositionService, useClass: PositionService },
     { provide: PLACEMENT_STRATEGY, useClass: BottomPlacementStrategy, multi: true },
     { provide: PLACEMENT_STRATEGY, useClass: RightPlacementStrategy, multi: true },
+    { provide: PLACEMENT_STRATEGY, useClass: BottomRightPlacementStrategy, multi: true },
   ]
 })
 export class GeometryModule { }
