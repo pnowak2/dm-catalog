@@ -1,4 +1,3 @@
-import { Dimensions } from './dimensions';
 import { Point } from './point';
 import { Overflow } from './overflow';
 
@@ -95,9 +94,9 @@ export class Rectangle {
     return this;
   }
 
-  moveTo(x: number, y: number): Rectangle {
-    this.x = x;
-    this.y = y;
+  moveTo(p: Point): Rectangle {
+    this.x = p.x;
+    this.y = p.y;
 
     return this;
   }
@@ -145,6 +144,18 @@ export class Rectangle {
     this.bottom = fn.call(this, this.bottom);
 
     return this;
+  }
+
+  leftTop(): Point {
+    return Point.create(this.left, this.top);
+  }
+
+  centerTop(): Point {
+    return Point.create(this.left + (this.width / 2), this.top);
+  }
+
+  rightTop(): Point {
+    return Point.create(this.right, this.top);
   }
 
   center(): Point {

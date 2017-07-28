@@ -1,7 +1,6 @@
 import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
 import { Rectangle } from './../../shared/geometry/model/rectangle';
 import { RectangleFactory } from './../../shared/geometry/factory/rectangle-factory';
-import { POSITION_SERVICE } from './../../shared/geometry/geometry.config';
 import { PositionService } from './../../shared/geometry/services/position/position.service';
 
 @Component({
@@ -15,11 +14,9 @@ export class PopoverComponent {
 
   @Input() title = 'Test title';
 
-  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
+  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'right';
 
-  constructor(
-    @Inject(POSITION_SERVICE)
-    private positionService: PositionService) { }
+  constructor(private positionService: PositionService) { }
 
   show(event) {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
@@ -39,9 +36,9 @@ export class PopoverComponent {
   }
 
   updatePlacement(popover: HTMLElement, rect: Rectangle) {
-    popover.style.left = rect.position.x + 'px';
-    popover.style.top = rect.position.y + 'px';
-    popover.style.height = rect.dimensions.height + 'px';
-    popover.style.width = rect.dimensions.width + 'px';
+    popover.style.left = rect.x + 'px';
+    popover.style.top = rect.y + 'px';
+    popover.style.height = rect.height + 'px';
+    popover.style.width = rect.width + 'px';
   }
 }

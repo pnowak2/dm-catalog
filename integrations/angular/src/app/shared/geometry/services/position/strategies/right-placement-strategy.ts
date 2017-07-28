@@ -12,12 +12,11 @@ export class RightPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(ref: Rectangle, element: Rectangle): Rectangle {
-    const positioned = element
-      .moveTo(ref.x, ref.y)
-      .flipX(ref.top)
-      .translateInside(RectangleFactory.htmlWindow())
-      .clone();
-
-    return positioned;
+    return element
+      .moveTo(ref.centerTop())
+      .translate(-element.width / 2, 15)
+      // .flip(ref.center())
+      .translateInside(RectangleFactory.fromWindow())
+      .clone();;
   }
 }

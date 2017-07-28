@@ -287,7 +287,7 @@ fdescribe('Rectangle', () => {
 
       beforeEach(() => {
         r = Rectangle.create(1, 2, 3, 4);
-        rMvd = r.moveTo(12, 7);
+        rMvd = r.moveTo(Point.create(12, 7));
       });
 
       it('should be defined', () => {
@@ -445,6 +445,42 @@ fdescribe('Rectangle', () => {
         const r = Rectangle.fromBounds(1, 1, 4, 4);
 
         expect(r.map((n) => n)).toBe(r);
+      });
+    });
+
+    describe('.leftTop()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.leftTop).toEqual(jasmine.any(Function));
+      });
+
+      it('should return left top point of rectangle', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.leftTop()).toEqual(Point.create(1, 2));
+      });
+    });
+
+    describe('.centerTop()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.centerTop).toEqual(jasmine.any(Function));
+      });
+
+      it('should return center top point of rectangle', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.centerTop()).toEqual(Point.create(2.5, 2));
+      });
+    });
+
+    describe('.rightTop()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.rightTop).toEqual(jasmine.any(Function));
+      });
+
+      it('should return right top point of rectangle', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.rightTop()).toEqual(Point.create(4, 2));
       });
     });
 
