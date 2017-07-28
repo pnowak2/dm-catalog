@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Rectangle } from './../../../model/rectangle';
-import { PlacementStrategy } from './placement.strategy';
+import { PlacementStrategy, PlacementOptions } from './placement.strategy';
 
 @Injectable()
 export class RightPlacementStrategy implements PlacementStrategy {
@@ -9,13 +9,13 @@ export class RightPlacementStrategy implements PlacementStrategy {
     return 'right';
   }
 
-  calculate(anchor: Rectangle, element: Rectangle, parent: Rectangle): Rectangle {
+  calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
     return element
       .clone()
       .moveTo(anchor.rightCenter())
       .translateY(-element.height / 2)
       .translateX(15)
       .flip(anchor.center())
-      .translateInside(parent);
+      .translateInside(options.parent);
   }
 }

@@ -27,8 +27,12 @@ export class PopoverComponent {
     const popoverRect: Rectangle = this.positionService.position(
       anchorRect,
       elementRect,
-      windowRect,
-      this.placement
+      {
+        placement: this.placement,
+        parent: windowRect,
+        constrainToParent: true,
+        flip: true
+      }
     );
 
     this.updatePlacement(
