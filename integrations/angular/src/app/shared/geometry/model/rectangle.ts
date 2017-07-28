@@ -218,6 +218,15 @@ export class Rectangle {
     return this.translate(offsetX, offsetY);
   }
 
+  blend(rect: Rectangle, scalar: number): Rectangle {
+    return Rectangle.fromBounds(
+      this.left + (rect.left - this.left) * scalar,
+      this.top + (rect.top - this.top) * scalar,
+      this.right + (rect.right - this.right) * scalar,
+      this.bottom + (rect.bottom - this.bottom) * scalar
+    );
+  }
+
   expandToIntegers(): Rectangle {
     this.left = Math.floor(this.left);
     this.top = Math.floor(this.top);

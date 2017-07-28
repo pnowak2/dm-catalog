@@ -408,7 +408,7 @@ fdescribe('Rectangle', () => {
         const r2 = Rectangle.create(5, 2, 1, 1);
         const fakeRect = Rectangle.create(1, 1, 1, 1);
         spyOn(Rectangle.prototype, 'expandToContain').and.callFake((r) => {
-          if(r === r2) {
+          if (r === r2) {
             return fakeRect;
           }
         });
@@ -519,7 +519,7 @@ fdescribe('Rectangle', () => {
         const r2 = Rectangle.create(5, 2, 1, 1);
         const fakeRect = Rectangle.create(1, 1, 1, 1);
         spyOn(Rectangle.prototype, 'restrictTo').and.callFake((r) => {
-          if(r === r2) {
+          if (r === r2) {
             return fakeRect;
           }
         });
@@ -719,6 +719,39 @@ fdescribe('Rectangle', () => {
         expect(r1.translateInside(r2)).toBe(r1);
       });
 
+    });
+
+    describe('.blend()', () => {
+      let r1: Rectangle;
+      let r2: Rectangle;
+
+      beforeEach(() => {
+        r1 = Rectangle.create(1, 1, 2, 4);
+        r2 = Rectangle.create(5, 4, 3, 2);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.prototype.blend).toEqual(jasmine.any(Function));
+      });
+
+      it('should return this rect for scalar equal to 0', () => {
+        expect(r1.blend(r2, 0)).toEqual(Rectangle.create(1, 1, 2, 4));
+      });
+
+      it('should return other rect for scalar equal to 1', () => {
+        expect(r1.blend(r2, 1)).toEqual(Rectangle.create(5, 4, 3, 2));
+      });
+
+      it('should return intermediary rect for scalar between 0 and 1', () => {
+        expect(r1.blend(r2, 0.5)).toEqual(Rectangle.create(3, 2.5, 2.5, 3));
+      });
+
+      it('should return new instance', () => {
+        const r1 = Rectangle.create(1, 1, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.blend(r2, 0.5)).not.toBe(r1);
+      });
     });
 
     describe('.expandToIntegers()', () => {
