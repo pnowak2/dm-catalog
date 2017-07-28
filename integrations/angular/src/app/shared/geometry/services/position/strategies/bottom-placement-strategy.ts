@@ -16,7 +16,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
       .translateX(-element.width / 2)
       .translateY(options.offset);
 
-    if (options.flip && placedRect.overflow(options.parent).bottom) {
+    if (options.flip && placedRect.overflowsBottom(options.parent)) {
       placedRect.flip(anchor.center());
     }
 

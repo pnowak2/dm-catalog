@@ -15,7 +15,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
       .translateY(-element.height / 2)
       .translateX(options.offset);
 
-    if (options.flip && placedRect.overflow(options.parent).right) {
+    if (options.flip && placedRect.overflowsRight(options.parent)) {
       placedRect.flip(anchor.center());
     }
 

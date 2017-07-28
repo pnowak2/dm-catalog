@@ -223,12 +223,26 @@ export class Rectangle {
   }
 
   overflows(other: Rectangle): boolean {
-    const overflowLeft = this.left < other.left;
-    const overflowTop = this.top < other.top;
-    const overflowRight = this.right > other.right;
-    const overflowBottom = this.bottom > other.bottom;
+    return this.overflowsLeft(other) ||
+      this.overflowsTop(other) ||
+      this.overflowsRight(other) ||
+      this.overflowsBottom(other);
+  }
 
-    return overflowLeft || overflowTop || overflowRight || overflowBottom;
+  overflowsLeft(other: Rectangle): boolean {
+    return this.overflow(other).left > 0;
+  }
+
+  overflowsTop(other: Rectangle): boolean {
+    return this.overflow(other).top > 0;
+  }
+
+  overflowsRight(other: Rectangle): boolean {
+    return this.overflow(other).right > 0;
+  }
+
+  overflowsBottom(other: Rectangle): boolean {
+    return this.overflow(other).bottom > 0;
   }
 
   overflow(other: Rectangle): Overflow {
