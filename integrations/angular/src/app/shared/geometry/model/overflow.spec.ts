@@ -1,8 +1,8 @@
 import { Overflow } from './overflow';
 
-fdescribe('Bounds', () => {
+fdescribe('Overflow', () => {
   describe('Api', () => {
-    describe('Bounds.create', () => {
+    describe('Overflow.create()', () => {
       let p: Overflow;
 
       beforeEach(() => {

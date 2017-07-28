@@ -13,7 +13,7 @@ type RectsEntry = {
 
 fdescribe('Rectangle', () => {
   describe('Api', () => {
-    describe('Rectangle.create', () => {
+    describe('Rectangle.create()', () => {
       let r: Rectangle;
 
       beforeEach(() => {
@@ -533,7 +533,7 @@ fdescribe('Rectangle', () => {
         expect(Rectangle.prototype.leftCenter).toEqual(jasmine.any(Function));
       });
 
-      it('should return center point of rectangle', () => {
+      it('should return left center point of rectangle', () => {
         const r = Rectangle.create(1, 2, 3, 3);
 
         expect(r.leftCenter()).toEqual(Point.create(1, 3.5));
@@ -557,7 +557,7 @@ fdescribe('Rectangle', () => {
         expect(Rectangle.prototype.rightCenter).toEqual(jasmine.any(Function));
       });
 
-      it('should return center point of rectangle', () => {
+      it('should return right center point of rectangle', () => {
         const r = Rectangle.create(1, 2, 3, 3);
 
         expect(r.rightCenter()).toEqual(Point.create(4, 3.5));
@@ -593,7 +593,7 @@ fdescribe('Rectangle', () => {
         expect(Rectangle.prototype.rightBottom).toEqual(jasmine.any(Function));
       });
 
-      it('should return right right point of rectangle', () => {
+      it('should return right bottom point of rectangle', () => {
         const r = Rectangle.create(1, 2, 3, 3);
 
         expect(r.rightBottom()).toEqual(Point.create(4, 5));

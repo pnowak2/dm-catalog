@@ -2,7 +2,7 @@ import { Point } from './point';
 
 fdescribe('Point', () => {
   describe('Api', () => {
-    describe('Point.create', () => {
+    describe('Point.create()', () => {
       let p: Point;
 
       beforeEach(() => {
