@@ -1,5 +1,6 @@
 import { Dimensions } from './dimensions';
 import { Point } from './point';
+import { Bounds } from './bounds';
 
 export class Rectangle {
   private constructor(
@@ -165,6 +166,24 @@ export class Rectangle {
       other.top >= this.top &&
       other.right <= this.right &&
       other.bottom <= this.bottom;
+  }
+
+  overflows(other: Rectangle): boolean {
+    const overflowLeft = this.left < other.left;
+    const overflowTop = this.top < other.top;
+    const overflowRight = this.right > other.right;
+    const overflowBottom = this.bottom > other.bottom;
+
+    return overflowLeft || overflowTop || overflowRight || overflowBottom;
+  }
+
+  overflow(other: Rectangle): Bounds {
+    return Bounds.create(
+      Math.max(0, other.left - this.left),
+      Math.max(0, other.top - this.top),
+      Math.max(0, this.right - other.right),
+      Math.max(0, this.bottom - other.bottom)
+    )
   }
 
   intersects(other: Rectangle): boolean {

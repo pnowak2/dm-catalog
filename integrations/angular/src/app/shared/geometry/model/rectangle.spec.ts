@@ -1,3 +1,4 @@
+import { Bounds } from './bounds';
 import { Point } from './point';
 import { Rectangle } from './rectangle';
 
@@ -506,6 +507,88 @@ fdescribe('Rectangle', () => {
         const result = r1.union(r2);
 
         expect(result).not.toBe(r1);
+      });
+    });
+
+    describe('.overflows()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.overflows).toEqual(jasmine.any(Function));
+      });
+
+      it('should return true if this overflows other on left side', () => {
+        const r1 = Rectangle.create(0, 2, 2, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflows(r2)).toBe(true);
+      });
+
+      it('should return true if this overflows other on top side', () => {
+        const r1 = Rectangle.create(2, 0, 1, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflows(r2)).toBe(true);
+      });
+
+      it('should return true if this overflows other on right side', () => {
+        const r1 = Rectangle.create(3, 2, 2, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflows(r2)).toBe(true);
+      });
+
+      it('should return true if this overflows other on bottom side', () => {
+        const r1 = Rectangle.create(2, 3, 1, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflows(r2)).toBe(true);
+      });
+    });
+
+    describe('.overflow()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.overflow).toEqual(jasmine.any(Function));
+      });
+
+      it('should return proper overflow if this overflows other on left side', () => {
+        const r1 = Rectangle.create(0, 2, 2, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflow(r2)).toEqual(Bounds.create(1, 0, 0, 0));
+      });
+
+      it('should return proper overflow if this overflows other on top side', () => {
+        const r1 = Rectangle.create(2, 0, 1, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflow(r2)).toEqual(Bounds.create(0, 1, 0, 0));
+      });
+
+      it('should return proper overflow if this overflows other on right side', () => {
+        const r1 = Rectangle.create(3, 2, 2, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflow(r2)).toEqual(Bounds.create(0, 0, 1, 0));
+      });
+
+      it('should return proper overflow if this overflows other on bottom side', () => {
+        const r1 = Rectangle.create(2, 3, 1, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflow(r2)).toEqual(Bounds.create(0, 0, 0, 1));
+      });
+
+      it('should return zero overflow if this is inside other rect', () => {
+        const r1 = Rectangle.create(1, 1, 2, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflow(r2)).toEqual(Bounds.create(0, 0, 0, 0));
+      });
+
+      it('should return zero overflow if this has same size and position as other rect', () => {
+        const r1 = Rectangle.create(1, 1, 3, 3);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflow(r2)).toEqual(Bounds.create(0, 0, 0, 0));
       });
     });
 

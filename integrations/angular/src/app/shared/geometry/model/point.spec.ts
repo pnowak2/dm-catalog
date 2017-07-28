@@ -19,14 +19,14 @@ fdescribe('Point', () => {
     });
 
     describe('.x', () => {
-      it('should initialize x coordinate', () => {
+      it('should return proper value', () => {
         const p = Point.create(1, 2)
         expect(p.x).toEqual(1);
       });
     });
 
     describe('.y', () => {
-      it('should initialize y coordinate', () => {
+      it('should return proper value', () => {
         const p = Point.create(1, 2)
         expect(p.y).toEqual(2);
       });
