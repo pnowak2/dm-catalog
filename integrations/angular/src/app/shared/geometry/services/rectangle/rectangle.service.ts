@@ -1,4 +1,4 @@
-import { Bounds } from './../../model/bounds';
+import { Overflow } from './../../model/bounds';
 import { Point } from './../../model/point';
 import { Rectangle } from './../../model/rectangle';
 
@@ -20,7 +20,7 @@ export interface RectangleService {
 
   moveBy(element: Rectangle, offsetX, offsetY): Rectangle;
 
-  bounds(element: Rectangle): Bounds;
+  bounds(element: Rectangle): Overflow;
 
   flipHorizontally(ref: Rectangle, element: Rectangle): Rectangle;
 
@@ -30,7 +30,7 @@ export interface RectangleService {
 
   doRectsIntersect(r1: Rectangle, r2: Rectangle): boolean;
 
-  overflow(element: Rectangle, parent: Rectangle): Bounds;
+  overflow(element: Rectangle, parent: Rectangle): Overflow;
 
   intersect(r1: Rectangle, r2: Rectangle): Rectangle;
 

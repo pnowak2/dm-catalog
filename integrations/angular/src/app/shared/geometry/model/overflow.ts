@@ -1,4 +1,4 @@
-export class Bounds {
+export class Overflow {
   private constructor(
     public left: number,
     public top: number,
@@ -11,11 +11,11 @@ export class Bounds {
     top: number,
     right: number,
     bottom: number
-  ): Bounds {
-    return new Bounds(left, top, right, bottom);
+  ): Overflow {
+    return new Overflow(left, top, right, bottom);
   }
 
-  equals(other: Bounds): boolean {
+  equals(other: Overflow): boolean {
     return this.left == other.left &&
       this.top == other.top &&
       this.bottom == other.bottom &&

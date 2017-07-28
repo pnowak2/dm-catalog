@@ -1,6 +1,6 @@
 import { Dimensions } from './dimensions';
 import { Point } from './point';
-import { Bounds } from './bounds';
+import { Overflow } from './overflow';
 
 export class Rectangle {
   private constructor(
@@ -177,8 +177,8 @@ export class Rectangle {
     return overflowLeft || overflowTop || overflowRight || overflowBottom;
   }
 
-  overflow(other: Rectangle): Bounds {
-    return Bounds.create(
+  overflow(other: Rectangle): Overflow {
+    return Overflow.create(
       Math.max(0, other.left - this.left),
       Math.max(0, other.top - this.top),
       Math.max(0, this.right - other.right),
