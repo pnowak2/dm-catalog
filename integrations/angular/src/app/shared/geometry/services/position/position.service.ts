@@ -15,6 +15,10 @@ export class PositionService {
       placement
     );
 
+    if(!placementStrategy) {
+      throw new Error('Placement not supported: ' + placement);
+    }
+
     const placedRectangle: Rectangle = placementStrategy.calculate(
       anchor,
       element

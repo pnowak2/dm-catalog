@@ -1,5 +1,12 @@
 <h2>Popover</h2>
 
+Placement
+<select #plc (change)="pop1.placement = $event.target.value" name="" id="">
+  <option value="bottom">bottom</option>
+  <option value="right">right</option>
+</select>
+
+<br>
 
     <div class="dm-u-d-flex dm-u-flex-column dm-u-justify-content-between dm-u-p-xl" style="height: 100vh">
       <div class="dm-u-d-flex dm-u-flex-row dm-u-justify-content-between">
@@ -84,6 +91,8 @@
     </div>-->
 <dm-popover
   #pop1
-  [title]="title">
+  [title]="title"
+  placement="bottom">
   {{ content }}
 </dm-popover>
+
