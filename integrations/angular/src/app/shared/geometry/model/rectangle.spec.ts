@@ -325,6 +325,50 @@ fdescribe('Rectangle', () => {
       });
     });
 
+    describe('.translateX()', () => {
+      let r: Rectangle;
+      let rTrl: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.create(1, 2, 3, 4);
+        rTrl = r.translateX(3);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.prototype.translateX).toEqual(jasmine.any(Function));
+      });
+
+      it('should translate x coordinate', () => {
+        expect(r).toEqual(Rectangle.create(4, 2, 3, 4));
+      });
+
+      it('should return this', () => {
+        expect(rTrl).toBe(r);
+      });
+    });
+
+    describe('.translateY()', () => {
+      let r: Rectangle;
+      let rTrl: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.create(1, 2, 3, 4);
+        rTrl = r.translateY(3);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.prototype.translateY).toEqual(jasmine.any(Function));
+      });
+
+      it('should translate y coordinate', () => {
+        expect(r).toEqual(Rectangle.create(1, 5, 3, 4));
+      });
+
+      it('should return this', () => {
+        expect(rTrl).toBe(r);
+      });
+    });
+
     describe('.scale()', () => {
       let r: Rectangle;
       let rScl: Rectangle;
@@ -493,6 +537,42 @@ fdescribe('Rectangle', () => {
         const r = Rectangle.create(1, 1, 4, 6);
 
         expect(r.center()).toEqual(Point.create(3, 4));
+      });
+    });
+
+    describe('.leftBottom()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.leftBottom).toEqual(jasmine.any(Function));
+      });
+
+      it('should return left bottom point of rectangle', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.leftBottom()).toEqual(Point.create(1, 5));
+      });
+    });
+
+    describe('.centerBottom()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.centerBottom).toEqual(jasmine.any(Function));
+      });
+
+      it('should return center bottom point of rectangle', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.centerBottom()).toEqual(Point.create(2.5, 5));
+      });
+    });
+
+    describe('.rightBottom()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.rightBottom).toEqual(jasmine.any(Function));
+      });
+
+      it('should return right right point of rectangle', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.rightBottom()).toEqual(Point.create(4, 5));
       });
     });
 

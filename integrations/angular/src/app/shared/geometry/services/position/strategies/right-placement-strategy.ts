@@ -13,10 +13,11 @@ export class RightPlacementStrategy implements PlacementStrategy {
 
   calculate(ref: Rectangle, element: Rectangle): Rectangle {
     return element
-      .moveTo(ref.centerTop())
-      .translate(-element.width / 2, 15)
-      // .flip(ref.center())
-      .translateInside(RectangleFactory.fromWindow())
-      .clone();;
+      .clone()
+      .moveTo(ref.centerBottom())
+      .translateX(-element.width / 2)
+      .translateY(15)
+      .flip(ref.center())
+      .translateInside(RectangleFactory.fromWindow());
   }
 }

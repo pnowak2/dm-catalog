@@ -110,6 +110,14 @@ export class Rectangle {
     return this;
   }
 
+  translateX(offsetX: number): Rectangle {
+    return this.translate(offsetX, 0);
+  }
+
+  translateY(offsetY: number): Rectangle {
+    return this.translate(0, offsetY);
+  }
+
   scale(factor: number): Rectangle {
     this.left *= factor;
     this.top *= factor;
@@ -163,6 +171,18 @@ export class Rectangle {
     const y = this.y + (this.height / 2);
 
     return Point.create(x, y);
+  }
+
+  leftBottom(): Point {
+    return Point.create(this.left, this.bottom);
+  }
+
+  centerBottom(): Point {
+    return Point.create(this.left + (this.width / 2), this.bottom);
+  }
+
+  rightBottom(): Point {
+    return Point.create(this.right, this.bottom);
   }
 
   isEmpty(): boolean {
