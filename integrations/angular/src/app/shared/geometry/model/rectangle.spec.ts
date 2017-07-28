@@ -528,6 +528,18 @@ fdescribe('Rectangle', () => {
       });
     });
 
+    describe('.leftCenter()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.leftCenter).toEqual(jasmine.any(Function));
+      });
+
+      it('should return center point of rectangle', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.leftCenter()).toEqual(Point.create(1, 3.5));
+      });
+    });
+
     describe('.center()', () => {
       it('should be defined', () => {
         expect(Rectangle.prototype.center).toEqual(jasmine.any(Function));
@@ -537,6 +549,18 @@ fdescribe('Rectangle', () => {
         const r = Rectangle.create(1, 1, 4, 6);
 
         expect(r.center()).toEqual(Point.create(3, 4));
+      });
+    });
+
+    describe('.rightCenter()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.rightCenter).toEqual(jasmine.any(Function));
+      });
+
+      it('should return center point of rectangle', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.rightCenter()).toEqual(Point.create(4, 3.5));
       });
     });
 

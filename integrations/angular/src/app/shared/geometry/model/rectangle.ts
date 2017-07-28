@@ -166,8 +166,22 @@ export class Rectangle {
     return Point.create(this.right, this.top);
   }
 
+  leftCenter(): Point {
+    const x = this.x;
+    const y = this.y + (this.height / 2);
+
+    return Point.create(x, y);
+  }
+
   center(): Point {
     const x = this.x + (this.width / 2);
+    const y = this.y + (this.height / 2);
+
+    return Point.create(x, y);
+  }
+
+  rightCenter(): Point {
+    const x = this.x + this.width;
     const y = this.y + (this.height / 2);
 
     return Point.create(x, y);
