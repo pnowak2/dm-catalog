@@ -119,6 +119,15 @@ export class Rectangle {
     return this;
   }
 
+  map(fn: (number) => number) {
+    this.left = fn.call(this, this.left);
+    this.top = fn.call(this, this.top);
+    this.right = fn.call(this, this.right);
+    this.bottom = fn.call(this, this.bottom);
+
+    return this;
+  }
+
   center(): Point {
     const x = this.x + (this.width / 2);
     const y = this.y + (this.height / 2);
@@ -156,6 +165,12 @@ export class Rectangle {
       .restrictTo(other);
   }
 
+  union(other: Rectangle): Rectangle {
+    return this
+      .clone()
+      .expandToContain(other);
+  }
+
   restrictTo(other: Rectangle): Rectangle {
     if (this.isEmpty() || other.isEmpty())
       return this.setRectangle(0, 0, 0, 0);
@@ -169,8 +184,8 @@ export class Rectangle {
   }
 
   expandToContain(other: Rectangle): Rectangle {
-    if(this.isEmpty()) return this.copyFrom(other);
-    if(other.isEmpty()) return this;
+    if (this.isEmpty()) return this.copyFrom(other);
+    if (other.isEmpty()) return this;
 
     const left = Math.min(this.left, other.left);
     const top = Math.min(this.top, other.top);
@@ -178,6 +193,38 @@ export class Rectangle {
     const bottom = Math.max(this.bottom, other.bottom);
 
     return this.setRectangle(left, top, right - left, bottom - top);
+  }
+
+  translateInside(other: Rectangle): Rectangle {
+    let offsetX = 0;
+    let offsetY = 0;
+
+    if (this.left <= other.left) {
+      offsetX = other.left - this.left;
+    }
+
+    if (this.right >= other.right) {
+      offsetX = other.right - this.right;
+    }
+
+    if (this.top <= other.top) {
+      offsetY = other.top - this.top;
+    }
+
+    if (this.bottom >= other.bottom) {
+      offsetY = other.bottom - this.bottom;
+    }
+
+    return this.translate(offsetX, offsetY);
+  }
+
+  expandToIntegers(): Rectangle {
+    this.left = Math.floor(this.left);
+    this.top = Math.floor(this.top);
+    this.right = Math.ceil(this.right);
+    this.bottom = Math.ceil(this.bottom);
+
+    return this;
   }
 
   equals(other: Rectangle): boolean {

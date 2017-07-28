@@ -27,23 +27,6 @@ export class DefaultRectangleService implements RectangleService {
     });
   }
 
-  moveToPoint(element: Rectangle, point: Point): Rectangle {
-    return {
-      position: {
-        x: point.x,
-        y: point.y
-      },
-      dimensions: { ...element.dimensions }
-    }
-  }
-
-  moveBy(element: Rectangle, offsetX, offsetY): Rectangle {
-    return this.moveToPoint(element, {
-      x: element.position.x + offsetX,
-      y: element.position.y + offsetY
-    });
-  }
-
   pointByAnchorName(rect: Rectangle, position: AnchorName): Point {
     let refPoint: Point;
 
@@ -162,34 +145,6 @@ export class DefaultRectangleService implements RectangleService {
     return intersection;
   }
 
-  doRectsIntersect(r1: Rectangle, r2: Rectangle): boolean {
-    const b1 = this.bounds(r1);
-    const b2 = this.bounds(r2);
-
-    return b1.left < b2.right &&
-      b1.right > b2.left &&
-      b1.top < b2.bottom &&
-      b1.bottom > b2.top
-  }
-
-  intersect(r1: Rectangle, r2: Rectangle): Rectangle {
-    const isIntersect = this.doRectsIntersect(r1, r2);
-    const b1 = this.bounds(r1);
-    const b2 = this.bounds(r2);
-    let intersection: Rectangle = null;
-
-    if (isIntersect) {
-      intersection = RectangleFactory.fromBounds({
-        top: Math.max(b1.top, b2.top),
-        left: Math.max(b1.left, b2.left),
-        right: Math.min(b1.right, b2.right),
-        bottom: Math.min(b1.bottom, b2.bottom)
-      });
-    }
-
-    return intersection;
-  }
-
   constrainToRect(element: Rectangle, parent: Rectangle): Rectangle {
     let position: Point = { ...element.position };
 
@@ -230,28 +185,6 @@ export class DefaultRectangleService implements RectangleService {
       position: position,
       dimensions: element.dimensions
     };
-  }
-
-  bounds(element: Rectangle): Bounds {
-    return {
-      top: element.position.y,
-      left: element.position.x,
-      right: element.position.x + element.dimensions.width,
-      bottom: element.position.y + element.dimensions.height
-    }
-  }
-
-  rectangleFromBounds(bounds: Bounds): Rectangle {
-    return {
-      position: {
-        x: bounds.left,
-        y: bounds.top
-      },
-      dimensions: {
-        width: bounds.right - bounds.left,
-        height: bounds.bottom - bounds.top
-      }
-    }
   }
 
   containsPoint(ref: Rectangle, point: Point): boolean {

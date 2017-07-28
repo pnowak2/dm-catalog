@@ -30,6 +30,13 @@ export class Point {
     return this;
   }
 
+  map(fn: (number) => number) {
+    this.x = fn.call(this, this.x);
+    this.y = fn.call(this, this.y);
+
+    return this;
+  }
+
   isZero(): boolean {
     return this.equals(Point.create(0, 0));
   }

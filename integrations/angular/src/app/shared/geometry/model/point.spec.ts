@@ -120,6 +120,25 @@ fdescribe('Point', () => {
       });
     });
 
+    describe('.map()', () => {
+      it('should be defined', () => {
+        expect(Point.prototype.map).toEqual(jasmine.any(Function));
+      });
+
+      it('should map bounds according to function provided', () => {
+        const p = Point.create(2, 3);
+        p.map(n => n * 2);
+
+        expect(p).toEqual(Point.create(4, 6));
+      });
+
+      it('should return this', () => {
+        const p = Point.create(2, 3);
+
+        expect(p.map((n) => n)).toBe(p);
+      });
+    });
+
     describe('.isZero()', () => {
       let pZero: Point;
       let p: Point;
