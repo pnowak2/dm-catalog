@@ -8,7 +8,7 @@ export class RectangleFactory {
     return HtmlElementRectangle.create(el);
   };
 
-  public static fromWindow(): Rectangle {
+  public static htmlWindow(): Rectangle {
     return WindowRectangle.create();
   };
 

@@ -287,7 +287,7 @@ fdescribe('Rectangle', () => {
 
       beforeEach(() => {
         r = Rectangle.create(1, 2, 3, 4);
-        rMvd = r.moveTo(Point.create(12, 7));
+        rMvd = r.moveTo(12, 7);
       });
 
       it('should be defined', () => {

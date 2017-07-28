@@ -95,13 +95,4 @@
 
 //     return refPoint;
 //   }
-
-//   containsPoint(ref: Rectangle, point: Point): boolean {
-//     const refBounds = this.bounds(ref);
-
-//     const containsX = point.x >= refBounds.left && point.x <= refBounds.right
-//     const containsY = point.y >= refBounds.top && point.y <= refBounds.bottom
-
-//     return containsX && containsY;
-//   }
 // }

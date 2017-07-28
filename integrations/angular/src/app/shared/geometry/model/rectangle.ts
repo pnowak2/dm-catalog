@@ -95,9 +95,9 @@ export class Rectangle {
     return this;
   }
 
-  moveTo(point: Point): Rectangle {
-    this.x = point.x;
-    this.y = point.y;
+  moveTo(x: number, y: number): Rectangle {
+    this.x = x;
+    this.y = y;
 
     return this;
   }
