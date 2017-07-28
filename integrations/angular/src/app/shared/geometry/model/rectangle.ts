@@ -227,6 +227,18 @@ export class Rectangle {
     );
   }
 
+  inflate(xScale: number, yScale: number = xScale): Rectangle {
+    const xAdjust = (this.width * xScale - this.width) / 2
+    const yAdjust = (this.height * yScale - this.height) / 2
+
+    this.left -= xAdjust;
+    this.right += xAdjust;
+    this.top -= yAdjust;
+    this.bottom += yAdjust;
+
+    return this;
+  }
+
   expandToIntegers(): Rectangle {
     this.left = Math.floor(this.left);
     this.top = Math.floor(this.top);

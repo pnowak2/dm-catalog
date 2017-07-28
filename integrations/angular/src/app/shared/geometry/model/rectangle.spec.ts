@@ -754,6 +754,38 @@ fdescribe('Rectangle', () => {
       });
     });
 
+    describe('.inflate()', () => {
+      let r: Rectangle;
+
+      beforeEach(() => {
+        r = Rectangle.create(3, 4, 3, 2);
+      });
+
+      it('should be defined', () => {
+        expect(Rectangle.prototype.inflate).toEqual(jasmine.any(Function));
+      });
+
+      it('should grow in X keeping center point', () => {
+        expect(r.inflate(2, 1)).toEqual(Rectangle.create(1.5, 4, 6, 2));
+      });
+
+      it('should grow in Y keeping center point', () => {
+        expect(r.inflate(1, 2)).toEqual(Rectangle.create(3, 3, 3, 4));
+      });
+
+      it('should grow in X & Y keeping center point by providing x and y scale', () => {
+        expect(r.inflate(2, 2)).toEqual(Rectangle.create(1.5, 3, 6, 4));
+      });
+
+      it('should grow in X & Y keeping center point by providing just x scale', () => {
+        expect(r.inflate(2)).toEqual(Rectangle.create(1.5, 3, 6, 4));
+      });
+
+      it('should return this', () => {
+        expect(r.inflate(2)).toBe(r);
+      });
+    });
+
     describe('.expandToIntegers()', () => {
       let r: Rectangle;
 
