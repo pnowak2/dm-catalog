@@ -266,6 +266,13 @@ export class Rectangle {
     return this;
   }
 
+  relativePositionTo(parent: Rectangle): Point {
+    return Point.create(
+      this.left - parent.left,
+      this.top - parent.top
+    );
+  }
+
   equals(other: Rectangle): boolean {
     return (this.isEmpty() && other.isEmpty() ||
       this.top == other.top &&

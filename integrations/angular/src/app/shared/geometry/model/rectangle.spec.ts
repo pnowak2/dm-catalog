@@ -888,6 +888,20 @@ fdescribe('Rectangle', () => {
       });
     });
 
+    describe('.relativePositionTo()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.relativePositionTo).toEqual(jasmine.any(Function));
+      });
+
+      it('should return position in relation to parent rect', () => {
+        const parent = Rectangle.create(2, 3, 5, 6);
+        const r = Rectangle.create(4, 4, 3, 2);
+
+        expect(r.relativePositionTo(parent)).toEqual(Point.create(2, 1));
+      });
+
+    });
+
     describe('.equals()', () => {
       it('should be defined', () => {
         expect(Rectangle.prototype.equals).toEqual(jasmine.any(Function));
