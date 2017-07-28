@@ -287,7 +287,7 @@ fdescribe('Rectangle', () => {
 
       beforeEach(() => {
         r = Rectangle.create(1, 2, 3, 4);
-        rMvd = r.moveTo(12, 7);
+        rMvd = r.moveTo(Point.create(12, 7));
       });
 
       it('should be defined', () => {
@@ -352,21 +352,21 @@ fdescribe('Rectangle', () => {
         expect(Rectangle.prototype.flipX).toEqual(jasmine.any(Function));
       });
 
-      it('should flip horizontally if point is above rectangle', () => {
+      it('should flip horizontally if axis is above rectangle', () => {
         const r = Rectangle.create(3, 5, 2, 3);
         const rFlp = r.flipX(4);
 
         expect(rFlp).toEqual(Rectangle.create(3, 0, 2, 3));
       });
 
-      it('should flip horizontally if point is below rectangle', () => {
+      it('should flip horizontally if axis is below rectangle', () => {
         const r = Rectangle.create(3, 0, 2, 3);
         const rFlp = r.flipX(4);
 
         expect(rFlp).toEqual(Rectangle.create(3, 5, 2, 3));
       });
 
-      it('should flip horizontally if point is inside rectangle', () => {
+      it('should flip horizontally if axis is inside rectangle', () => {
         const r = Rectangle.create(3, 0, 2, 3);
         const rFlp = r.flipX(2);
 
@@ -384,21 +384,21 @@ fdescribe('Rectangle', () => {
         expect(Rectangle.prototype.flipY).toEqual(jasmine.any(Function));
       });
 
-      it('should flip vertically if point is on the left of rectangle', () => {
+      it('should flip vertically if axis is on the left of rectangle', () => {
         const r = Rectangle.create(4, 2, 2, 3);
         const rFlp = r.flipY(3);
 
         expect(rFlp).toEqual(Rectangle.create(0, 2, 2, 3));
       });
 
-      it('should flip vertically if point is on the right of rectangle', () => {
+      it('should flip vertically if axis is on the right of rectangle', () => {
         const r = Rectangle.create(0, 2, 2, 3);
         const rFlp = r.flipY(3);
 
         expect(rFlp).toEqual(Rectangle.create(4, 2, 2, 3));
       });
 
-      it('should flip vertically if point is inside rectangle', () => {
+      it('should flip vertically if axis is inside rectangle', () => {
         const r = Rectangle.create(4, 2, 2, 3);
         const rFlp = r.flipY(4.5);
 
@@ -541,6 +541,20 @@ fdescribe('Rectangle', () => {
         const r2 = Rectangle.create(1, 1, 3, 3);
 
         expect(r1.overflows(r2)).toBe(true);
+      });
+
+      it('should return false if this is inside other rect', () => {
+        const r1 = Rectangle.create(1, 1, 2, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflows(r2)).toBe(false);
+      });
+
+      it('should return false if this has same size and position as other rect', () => {
+        const r1 = Rectangle.create(1, 1, 3, 3);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.overflows(r2)).toBe(false);
       });
     });
 
