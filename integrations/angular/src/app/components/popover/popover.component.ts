@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, ViewChild, Inject } from '@angular/core';
+import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 import { Rectangle } from './../../shared/geometry/model/rectangle';
 import { RectangleFactory } from './../../shared/geometry/factory/rectangle-factory';
 import { PositionService } from './../../shared/geometry/services/position/position.service';
@@ -22,10 +22,12 @@ export class PopoverComponent {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
     const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
     const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
+    const windowRect: Rectangle = RectangleFactory.fromWindow();
 
     const popoverRect: Rectangle = this.positionService.position(
       anchorRect,
       elementRect,
+      windowRect,
       this.placement
     );
 

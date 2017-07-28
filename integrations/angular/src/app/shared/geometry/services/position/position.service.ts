@@ -9,7 +9,7 @@ export class PositionService {
     @Inject(PLACEMENT_STRATEGY)
     private placementStrategies: [PlacementStrategy]) { }
 
-  position(anchor: Rectangle, element: Rectangle, placement: string): Rectangle {
+  position(anchor: Rectangle, element: Rectangle, parent: Rectangle, placement: string): Rectangle {
     const placementStrategy: PlacementStrategy = this.pickPlacementStrategy(
       this.placementStrategies,
       placement
@@ -21,7 +21,8 @@ export class PositionService {
 
     const placedRectangle: Rectangle = placementStrategy.calculate(
       anchor,
-      element
+      element,
+      parent
     );
 
     return placedRectangle;
