@@ -96,17 +96,6 @@
 //     return refPoint;
 //   }
 
-//   overflow(element: Rectangle, parent: Rectangle): Bounds {
-//     let intersection: Bounds = {
-//       top: element.position.y - parent.position.y,
-//       left: element.position.x - parent.position.x,
-//       right: (parent.position.x + parent.dimensions.width) - (element.position.x + element.dimensions.width),
-//       bottom: (parent.position.y + parent.dimensions.height) - (element.position.y + element.dimensions.height)
-//     };
-
-//     return intersection;
-//   }
-
 //   containsPoint(ref: Rectangle, point: Point): boolean {
 //     const refBounds = this.bounds(ref);
 

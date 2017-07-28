@@ -158,7 +158,7 @@ export class Rectangle {
     return this.width <= 0 || this.height <= 0;
   }
 
-  contains(other: Rectangle): boolean {
+  containsRect(other: Rectangle): boolean {
     if (other.isEmpty()) return true;
     if (this.isEmpty()) return false;
 
@@ -166,6 +166,15 @@ export class Rectangle {
       other.top >= this.top &&
       other.right <= this.right &&
       other.bottom <= this.bottom;
+  }
+
+  containsPoint(point: Point): boolean {
+    if (this.isEmpty()) return false;
+
+    return point.x >= this.left &&
+      point.x <= this.right &&
+      point.y >= this.top &&
+      point.y <= this.bottom;
   }
 
   overflows(other: Rectangle): boolean {

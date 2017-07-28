@@ -592,23 +592,23 @@ fdescribe('Rectangle', () => {
       });
     });
 
-    describe('.contains()', () => {
+    describe('.containsRect()', () => {
       it('should be defined', () => {
-        expect(Rectangle.prototype.contains).toEqual(jasmine.any(Function));
+        expect(Rectangle.prototype.containsRect).toEqual(jasmine.any(Function));
       });
 
       it('should return false if this is empty', () => {
         const r = Rectangle.create(1, 2, 3, 4);
         const empty = Rectangle.empty();
 
-        expect(empty.contains(r)).toBe(false);
+        expect(empty.containsRect(r)).toBe(false);
       });
 
       it('should return true if other is empty', () => {
         const r = Rectangle.create(1, 2, 3, 4);
         const empty = Rectangle.empty();
 
-        expect(r.contains(empty)).toBe(true);
+        expect(r.containsRect(empty)).toBe(true);
       });
 
       it('return true if fully contains other rect', () => {
@@ -616,7 +616,7 @@ fdescribe('Rectangle', () => {
           .filter(entry => entry.isIntersect)
           .filter(entry => entry.isContain)
           .forEach((entry) => {
-            expect(entry.r1.contains(entry.r2)).toBe(true, entry.relationName);
+            expect(entry.r1.containsRect(entry.r2)).toBe(true, entry.relationName);
           });
       });
 
@@ -625,7 +625,7 @@ fdescribe('Rectangle', () => {
           .filter(entry => entry.isIntersect)
           .filter(entry => !entry.isContain)
           .forEach((entry) => {
-            expect(entry.r1.contains(entry.r2)).toBe(false, entry.relationName);
+            expect(entry.r1.containsRect(entry.r2)).toBe(false, entry.relationName);
           });
       });
 
@@ -633,8 +633,56 @@ fdescribe('Rectangle', () => {
         RectsGenerator.testRects()
           .filter(entry => !entry.isIntersect)
           .forEach((entry) => {
-            expect(entry.r1.contains(entry.r2)).toBe(false, entry.relationName);
+            expect(entry.r1.containsRect(entry.r2)).toBe(false, entry.relationName);
           });
+      });
+    });
+
+    describe('.containsPoint()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.containsPoint).toEqual(jasmine.any(Function));
+      });
+
+      it('should return false if this is empty', () => {
+        const empty = Rectangle.empty();
+        const p = Point.create(1, 2);
+
+        expect(empty.containsPoint(p)).toBe(false);
+      });
+
+      it('should return true if point is inside rect', () => {
+        const r = Rectangle.create(1, 1, 3, 3);
+        const p = Point.create(2, 2);
+
+        expect(r.containsPoint(p)).toBe(true);
+      });
+
+      it('should return true if point is on left edge of the rect', () => {
+        const r = Rectangle.create(1, 1, 3, 3);
+        const p = Point.create(1, 2);
+
+        expect(r.containsPoint(p)).toBe(true);
+      });
+
+      it('should return true if point is on top edge of the rect', () => {
+        const r = Rectangle.create(1, 1, 3, 3);
+        const p = Point.create(2, 1);
+
+        expect(r.containsPoint(p)).toBe(true);
+      });
+
+      it('should return true if point is on left edge of the rect', () => {
+        const r = Rectangle.create(1, 1, 3, 3);
+        const p = Point.create(4, 2);
+
+        expect(r.containsPoint(p)).toBe(true);
+      });
+
+      it('should return true if point is on left edge of the rect', () => {
+        const r = Rectangle.create(1, 1, 3, 3);
+        const p = Point.create(2, 4);
+
+        expect(r.containsPoint(p)).toBe(true);
       });
     });
 
