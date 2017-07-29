@@ -11,9 +11,9 @@ export class BottomRightPlacementStrategy implements PlacementStrategy {
   calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
     const placedRect = element
       .clone()
-      .moveTo(anchor.rightBottom())
-      .translateY(options.offset)
-      .translateX(-options.offset - anchor.width);
+      .moveTo(anchor.leftBottom(), element.leftTop())
+      .translateX(-options.offset)
+      .translateY(options.offset);
 
     if (options.flip && placedRect.overflowsRight(options.parent)) {
       placedRect.flipY(anchor.center().x);

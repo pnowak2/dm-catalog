@@ -11,8 +11,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
   calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
     const placedRect = element
       .clone()
-      .moveTo(anchor.rightCenter())
-      .translateY(-element.height / 2)
+      .moveTo(anchor.rightCenter(), element.leftCenter())
       .translateX(options.offset);
 
     if (options.flip && placedRect.overflowsRight(options.parent)) {

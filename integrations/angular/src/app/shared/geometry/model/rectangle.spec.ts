@@ -282,23 +282,30 @@ fdescribe('Rectangle', () => {
     });
 
     describe('.moveTo()', () => {
-      let r: Rectangle;
-      let rMvd: Rectangle;
-
-      beforeEach(() => {
-        r = Rectangle.create(1, 2, 3, 4);
-        rMvd = r.moveTo(Point.create(12, 7));
-      });
-
       it('should be defined', () => {
         expect(Rectangle.prototype.moveTo).toEqual(jasmine.any(Function));
       });
 
-      it('should translate coordinates', () => {
+      it('should translate to coordinates', () => {
+        let r = Rectangle.create(1, 2, 3, 4);
+        let rMvd = r.moveTo(Point.create(12, 7));
+
         expect(rMvd).toEqual(Rectangle.create(12, 7, 3, 4));
       });
 
+      it('should translate to coordinates by anchor point', () => {
+        let ref = Rectangle.create(2, 2, 2, 1);
+        let element = Rectangle.create(0, 0, 4, 3);
+
+        let rMvd = element.moveTo(ref.centerBottom(), element.centerTop());
+
+        expect(rMvd).toEqual(Rectangle.create(1, 3, 4, 3));
+      });
+
       it('should return this', () => {
+        let r = Rectangle.create(1, 2, 3, 4);
+        let rMvd = r.moveTo(Point.create(12, 7));
+
         expect(rMvd).toBe(r);
       });
     });
