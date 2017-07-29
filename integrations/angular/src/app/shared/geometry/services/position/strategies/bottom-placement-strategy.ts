@@ -1,8 +1,6 @@
-import { Injectable } from '@angular/core';
 import { Rectangle } from './../../../model/rectangle';
 import { PlacementStrategy, PlacementOptions } from './placement.strategy';
 
-@Injectable()
 export class BottomPlacementStrategy implements PlacementStrategy {
 
   getId() {
