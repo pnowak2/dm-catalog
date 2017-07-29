@@ -13,7 +13,6 @@ export class PopoverComponent {
   @ViewChild('popoverArrow') popoverArrow: ElementRef;
 
   @Input() title = 'Test title';
-  @Input() showCloseIcon = false;
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
 
@@ -52,12 +51,8 @@ export class PopoverComponent {
     // popoverArrow.style.top = arp.y + 'px';
   }
 
-  onCloseClick(evt) {
-    this.showCloseIcon = false;
-  }
-
   updatePlacement(popover: HTMLElement, rect: Rectangle) {
-    // document.body.appendChild(popover);
+    document.body.appendChild(popover);
     popover.style.left = rect.x + 'px';
     popover.style.top = rect.y + 'px';
     popover.style.height = rect.height + 'px';
