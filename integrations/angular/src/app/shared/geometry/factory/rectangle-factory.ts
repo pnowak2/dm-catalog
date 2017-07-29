@@ -10,6 +10,15 @@ export class RectangleFactory {
     )
   };
 
+  public static fromSvgElement(el: SVGElement): Rectangle {
+    return Rectangle.create(
+      el.getBoundingClientRect().left + window.pageXOffset,
+      el.getBoundingClientRect().top + window.pageYOffset,
+      el.clientWidth,
+      el.clientHeight
+    )
+  };
+
   public static fromWindow(): Rectangle {
     const w = window;
     return Rectangle.create(
