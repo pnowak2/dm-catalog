@@ -1,11 +1,11 @@
 import { Rectangle } from './../../../model/rectangle';
 
 export interface PlacementOptions {
-  placement: string,
-  parent: Rectangle,
-  offset: number,
-  constrainToParent: boolean,
-  flip: boolean
+  placementId?: string,
+  parent?: Rectangle,
+  offset?: number,
+  constrainToParent?: boolean,
+  flip?: boolean
 }
 
 export interface PlacementStrategy {

@@ -59,14 +59,14 @@ fdescribe('PositionService', () => {
       it('should behave...', () => {
         const anchor = Rectangle.create(1, 2, 3, 4);
         const element = Rectangle.create(2, 3, 4, 5);
-        const placement = "fakeId1";
+        const placementId = "fakeId1";
         const parent = Rectangle.create(0, 0, 10, 10);
         const offset = 5;
         const constrainToParent = true;
         const flip = true;
 
         service.position(anchor, element, {
-          placement, parent, offset, constrainToParent, flip
+          placementId, parent, offset, constrainToParent, flip
         })
       });
     });

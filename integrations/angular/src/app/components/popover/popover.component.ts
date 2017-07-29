@@ -28,13 +28,9 @@ export class PopoverComponent {
 
     const popoverRect: Rectangle = this.positionService.position(
       anchorRect,
-      elementRect,
-      {
-        placement: this.placement,
-        parent: windowRect,
-        offset: 15,
-        constrainToParent: true,
-        flip: true
+      elementRect, {
+        placementId: this.placement,
+        offset: 15
       }
     );
 
@@ -44,7 +40,7 @@ export class PopoverComponent {
     );
 
     const arp = anchorRect
-    .relativePositionTo(popoverRect);
+      .relativePositionTo(popoverRect);
 
     popoverArrow.style.left = arp.x + arrowRect.width / 2 + 'px';
     // popoverArrow.style.top = arp.y + 'px';
