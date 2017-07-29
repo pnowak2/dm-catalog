@@ -13,6 +13,7 @@ export class PopoverComponent {
   @ViewChild('popoverArrow') popoverArrow: ElementRef;
 
   @Input() title = 'Test title';
+  @Input() showCloseIcon = false;
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
 
@@ -20,9 +21,12 @@ export class PopoverComponent {
 
   show(event) {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
+    const popoverArrow: HTMLElement = this.popoverArrow.nativeElement;
     const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
     const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
+    const arrowRect: Rectangle = RectangleFactory.fromHtmlElement(popoverArrow);
     const windowRect: Rectangle = RectangleFactory.fromWindow();
+
 
     const popoverRect: Rectangle = this.positionService.position(
       anchorRect,
@@ -40,6 +44,16 @@ export class PopoverComponent {
       popoverContainer,
       popoverRect
     );
+
+    const arp = anchorRect
+    .relativePositionTo(popoverRect);
+
+    popoverArrow.style.left = arp.x + arrowRect.width / 2 + 'px';
+    // popoverArrow.style.top = arp.y + 'px';
+  }
+
+  onCloseClick(evt) {
+    this.showCloseIcon = false;
   }
 
   updatePlacement(popover: HTMLElement, rect: Rectangle) {

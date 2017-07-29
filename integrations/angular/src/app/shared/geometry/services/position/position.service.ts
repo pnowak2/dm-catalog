@@ -1,13 +1,8 @@
-import { Injectable, Inject } from '@angular/core';
-import { PLACEMENT_STRATEGY } from './../../geometry.config';
-import { PlacementStrategy, PlacementOptions } from './strategies/placement.strategy';
 import { Rectangle } from './../../model/rectangle';
+import { PlacementStrategy, PlacementOptions } from './strategies/placement.strategy';
 
-@Injectable()
 export class PositionService {
-  constructor(
-    @Inject(PLACEMENT_STRATEGY)
-    private placementStrategies: [PlacementStrategy]) { }
+  constructor(private placementStrategies: [PlacementStrategy]) { }
 
   position(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
     const placementStrategy: PlacementStrategy = this.pickPlacementStrategy(
