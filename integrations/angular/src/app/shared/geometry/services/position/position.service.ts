@@ -2,7 +2,7 @@ import { Rectangle } from './../../model/rectangle';
 import { PlacementStrategy, PlacementOptions } from './strategies/placement.strategy';
 
 export class PositionService {
-  constructor(private placementStrategies: [PlacementStrategy]) { }
+  constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
 
   position(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
     const placementStrategy: PlacementStrategy = this.pickPlacementStrategy(
@@ -24,7 +24,7 @@ export class PositionService {
   }
 
   pickPlacementStrategy(
-    placementStrategies: [PlacementStrategy],
+    placementStrategies: Array<PlacementStrategy>,
     placement: string): PlacementStrategy {
 
     return placementStrategies.find(

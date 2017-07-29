@@ -26,7 +26,6 @@ export class PopoverComponent {
     const arrowRect: Rectangle = RectangleFactory.fromHtmlElement(popoverArrow);
     const windowRect: Rectangle = RectangleFactory.fromWindow();
 
-
     const popoverRect: Rectangle = this.positionService.position(
       anchorRect,
       elementRect,
