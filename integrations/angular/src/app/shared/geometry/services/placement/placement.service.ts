@@ -7,14 +7,7 @@ export class PlacementService {
   constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
 
   position(anchor: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle {
-    const effectiveOptions: PlacementOptions = {
-      placementId: 'bottom',
-      parent: RectangleFactory.fromWindow(),
-      offset: 0,
-      constrainToParent: true,
-      flip: true,
-      ...options
-    }
+    const effectiveOptions = this.getEffectiveOptions(options);
 
     const placementStrategy: PlacementStrategy = this.pickPlacementStrategy(
       this.placementStrategies,
@@ -32,6 +25,17 @@ export class PlacementService {
     );
 
     return placedRectangle;
+  }
+
+  getEffectiveOptions(options: PlacementOptions): PlacementOptions {
+    return {
+      placementId: 'bottom',
+      parent: RectangleFactory.fromWindow(),
+      offset: 0,
+      constrainToParent: true,
+      flip: true,
+      ...options
+    }
   }
 
   pickPlacementStrategy(

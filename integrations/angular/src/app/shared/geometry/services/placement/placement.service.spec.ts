@@ -38,7 +38,7 @@ fdescribe('PositionService', () => {
       }).not.toThrow();
     });
 
-    it('should create an instance with array of ', () => {
+    it('should create an instance with array of strategies', () => {
       expect(() => {
         new PlacementService([fakeStrategy]);
       }).not.toThrow();
@@ -70,6 +70,17 @@ fdescribe('PositionService', () => {
           placementId, parent, offset, constrainToParent, flip
         })
       });
+    });
+
+    describe('getEffectiveOptions', () => {
+      it('should be defined', () => {
+        expect(PlacementService.prototype.getEffectiveOptions).toEqual(jasmine.any(Function));
+      });
+
+      it('should return default options if no argument provided', () => {
+        // expect()
+      });
+
     });
 
     describe('pickPlacementStrategy())', () => {

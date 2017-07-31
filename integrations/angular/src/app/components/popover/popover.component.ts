@@ -16,7 +16,7 @@ export class PopoverComponent {
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
 
-  constructor(private positionService: PlacementService) { }
+  constructor(private placementService: PlacementService) { }
 
   show(event) {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
@@ -25,7 +25,7 @@ export class PopoverComponent {
     const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
     const arrowRect: Rectangle = RectangleFactory.fromHtmlElement(popoverArrow);
 
-    const popoverRect: Rectangle = this.positionService.position(
+    const popoverRect: Rectangle = this.placementService.position(
       anchorRect,
       elementRect, {
         placementId: this.placement,
