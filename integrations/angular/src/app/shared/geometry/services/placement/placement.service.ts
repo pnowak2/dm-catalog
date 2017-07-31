@@ -9,7 +9,7 @@ export class PlacementService {
   position(anchor: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle {
     const effectiveOptions = this.getEffectiveOptions(options);
 
-    const placementStrategy: PlacementStrategy = this.pickPlacementStrategy(
+    const placementStrategy = this.pickPlacementStrategy(
       this.placementStrategies,
       effectiveOptions.placementId
     );
@@ -18,13 +18,11 @@ export class PlacementService {
       throw new Error('Placement not supported: ' + effectiveOptions.placementId);
     }
 
-    const placedRectangle: Rectangle = placementStrategy.calculate(
+    return placementStrategy.calculate(
       anchor,
       element,
       effectiveOptions
-    );
-
-    return placedRectangle;
+    );;
   }
 
   getEffectiveOptions(options: PlacementOptions): PlacementOptions {
