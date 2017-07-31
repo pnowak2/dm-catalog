@@ -1,6 +1,7 @@
 import { Rectangle } from './../../model/rectangle';
 import { PositionService } from './position.service';
-import { PlacementStrategy, PlacementOptions } from './strategies/placement.strategy';
+import { PlacementOptions } from './interface/placement-options';
+import { PlacementStrategy } from './interface/placement-strategy';
 
 class FakePlacementStrategy implements PlacementStrategy {
   getId(): string {

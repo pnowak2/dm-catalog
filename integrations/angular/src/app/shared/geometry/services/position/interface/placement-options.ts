@@ -7,8 +7,3 @@ export interface PlacementOptions {
   constrainToParent?: boolean,
   flip?: boolean
 }
-
-export interface PlacementStrategy {
-  getId(): string;
-  calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle;
-}

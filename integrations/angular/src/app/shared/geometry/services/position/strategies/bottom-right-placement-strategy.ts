@@ -1,5 +1,6 @@
 import { Rectangle } from './../../../model/rectangle';
-import { PlacementStrategy, PlacementOptions } from './placement.strategy';
+import { PlacementOptions } from './../interface/placement-options';
+import { PlacementStrategy } from '../interface/placement-strategy';
 
 export class BottomRightPlacementStrategy implements PlacementStrategy {
   getId() {
