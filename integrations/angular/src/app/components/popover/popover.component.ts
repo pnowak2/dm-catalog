@@ -1,7 +1,7 @@
 import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 import { Rectangle } from './../../shared/geometry/model/rectangle';
 import { RectangleFactory } from './../../shared/geometry/factory/rectangle-factory';
-import { PositionService } from './../../shared/geometry/services/position/position.service';
+import { PlacementService } from './../../shared/geometry/services/placement/placement.service';
 
 @Component({
   selector: 'dm-popover',
@@ -16,7 +16,7 @@ export class PopoverComponent {
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
 
-  constructor(private positionService: PositionService) { }
+  constructor(private positionService: PlacementService) { }
 
   show(event) {
     const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;

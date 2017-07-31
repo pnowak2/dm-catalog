@@ -3,7 +3,7 @@ import { RectangleFactory } from './../../factory/rectangle-factory';
 import { PlacementOptions } from '../../interface/placement-options';
 import { PlacementStrategy } from '../../interface/placement-strategy';
 
-export class PositionService {
+export class PlacementService {
   constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
 
   position(anchor: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle {

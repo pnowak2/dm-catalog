@@ -1,5 +1,5 @@
 import { Rectangle } from './../../model/rectangle';
-import { PositionService } from './position.service';
+import { PlacementService } from './placement.service';
 import { PlacementOptions } from '../../interface/placement-options';
 import { PlacementStrategy } from '../../interface/placement-strategy';
 
@@ -22,25 +22,25 @@ fdescribe('PositionService', () => {
   describe('Creation', () => {
     it('should create an instance without args', () => {
       expect(() => {
-        new PositionService();
+        new PlacementService();
       }).not.toThrow();
     });
 
     it('should create an instance with null arg', () => {
       expect(() => {
-        new PositionService(null);
+        new PlacementService(null);
       }).not.toThrow();
     });
 
     it('should create an instance with empty array', () => {
       expect(() => {
-        new PositionService([]);
+        new PlacementService([]);
       }).not.toThrow();
     });
 
     it('should create an instance with array of ', () => {
       expect(() => {
-        new PositionService([fakeStrategy]);
+        new PlacementService([fakeStrategy]);
       }).not.toThrow();
     });
   });
@@ -48,11 +48,11 @@ fdescribe('PositionService', () => {
   describe('Api', () => {
     describe('position())', () => {
       let fakeStrategy: PlacementStrategy;
-      let service: PositionService;
+      let service: PlacementService;
 
       beforeEach(() => {
         fakeStrategy = new FakePlacementStrategy();
-        service = new PositionService([fakeStrategy]);
+        service = new PlacementService([fakeStrategy]);
 
         spyOn(fakeStrategy, 'getId').and.returnValue('fakeId1');
       });
