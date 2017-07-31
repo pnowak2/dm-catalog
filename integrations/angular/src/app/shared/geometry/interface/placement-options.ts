@@ -1,4 +1,4 @@
-import { Rectangle } from './../../../model/rectangle';
+import { Rectangle } from '../model/rectangle';
 
 export interface PlacementOptions {
   placementId?: string,

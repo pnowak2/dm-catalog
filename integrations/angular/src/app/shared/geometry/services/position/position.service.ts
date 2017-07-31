@@ -1,7 +1,7 @@
 import { Rectangle } from './../../model/rectangle';
 import { RectangleFactory } from './../../factory/rectangle-factory';
-import { PlacementOptions } from './interface/placement-options';
-import { PlacementStrategy } from './interface/placement-strategy';
+import { PlacementOptions } from '../../interface/placement-options';
+import { PlacementStrategy } from '../../interface/placement-strategy';
 
 export class PositionService {
   constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
