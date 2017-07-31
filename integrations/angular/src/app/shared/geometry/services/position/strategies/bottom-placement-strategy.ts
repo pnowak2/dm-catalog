@@ -2,7 +2,6 @@ import { Rectangle } from './../../../model/rectangle';
 import { PlacementStrategy, PlacementOptions } from './placement.strategy';
 
 export class BottomPlacementStrategy implements PlacementStrategy {
-
   getId() {
     return 'bottom';
   }

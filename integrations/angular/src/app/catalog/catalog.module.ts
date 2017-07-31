@@ -7,7 +7,6 @@ import { CatalogRoutingModule } from './catalog-routing.module';
 import { ComponentsModule } from '../components/components.module';
 import { DirectivesModule } from './../directives/directives.module';
 
-import { FamilyBarDemoComponent } from './family-bar-demo/family-bar-demo.component';
 import { NavstackDemoComponent } from './navstack-demo/navstack-demo.component';
 import { SidebarDemoComponent } from './sidebar-demo/sidebar-demo.component';
 import { TypographyDemoComponent } from './typography-demo/typography-demo.component';
@@ -28,7 +27,6 @@ import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
   declarations: [
     CatalogComponent,
     TypographyDemoComponent,
-    FamilyBarDemoComponent,
     NavstackDemoComponent,
     SidebarDemoComponent,
     SwitchDemoComponent,

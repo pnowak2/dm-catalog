@@ -6,7 +6,6 @@ import { HtmlDefaultsDemoComponent } from './html-defaults-demo/html-defaults-de
 import { ColorSystemDemoComponent } from './color-system-demo/color-system-demo.component';
 import { TypographyDemoComponent } from './typography-demo/typography-demo.component';
 import { MediaDemoComponent } from './media-demo/media-demo.component';
-import { FamilyBarDemoComponent } from './family-bar-demo/family-bar-demo.component';
 import { NavstackDemoComponent } from './navstack-demo/navstack-demo.component';
 import { SidebarDemoComponent } from './sidebar-demo/sidebar-demo.component';
 import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
@@ -23,7 +22,6 @@ export const routes: Routes = [
       { path: 'typography', component: TypographyDemoComponent },
       { path: 'media', component: MediaDemoComponent },
       { path: 'switch', component: SwitchDemoComponent },
-      { path: 'family-bar', component: FamilyBarDemoComponent },
       { path: 'navstack', component: NavstackDemoComponent },
       { path: 'sidebar', component: SidebarDemoComponent },
       { path: 'popover', component: PopoverDemoComponent },
