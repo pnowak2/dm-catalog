@@ -1,95 +1,55 @@
-import { Component, Input, Output, EventEmitter, ElementRef, ViewChild, HostListener, OnDestroy } from '@angular/core';
-import { PopoverService } from './popover.service';
+import { Component, Input, ElementRef, ViewChild } from '@angular/core';
+import { Rectangle } from './../../shared/geometry/model/rectangle';
+import { RectangleFactory } from './../../shared/geometry/factory/rectangle-factory';
+import { PositionService } from './../../shared/geometry/services/position/position.service';
 
 @Component({
   selector: 'dm-popover',
-  templateUrl: './popover.component.html',
-  providers: [PopoverService]
+  templateUrl: './popover.component.html'
 })
-export class PopoverComponent implements OnDestroy {
+export class PopoverComponent {
   @ViewChild('popoverContainer') popoverContainer: ElementRef;
 
   @ViewChild('popoverArrow') popoverArrow: ElementRef;
 
-  @Input() title;
+  @Input() title = 'Test title';
 
-  @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
+  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
 
-  @Input() showCloseIcon = false;
-
-  @Output() onBeforeShow: EventEmitter<any> = new EventEmitter();
-
-  @Output() onAfterShow: EventEmitter<any> = new EventEmitter();
-
-  @Output() onBeforeHide: EventEmitter<any> = new EventEmitter();
-
-  @Output() onAfterHide: EventEmitter<any> = new EventEmitter();
-
-  isVisible = false;
-
-  lastTriggerElement: HTMLElement;
-
-  constructor(private el: ElementRef, private popoverService: PopoverService) { }
-
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event) {
-    if (!this.el.nativeElement.contains(event.target)) {
-      this.hide(event);
-    }
-  }
-
-  onCloseClick(event) {
-    this.hide(event);
-  }
-
-  toggle(event) {
-    let triggerElement: HTMLElement = event.target;
-
-    if (this.lastTriggerElement === triggerElement) {
-      this.isVisible ? this.hide(event) : this.show(event);
-    } else {
-      this.show(event);
-    }
-
-    this.lastTriggerElement = triggerElement;
-  }
+  constructor(private positionService: PositionService) { }
 
   show(event) {
-    let triggerElement: HTMLElement = event.target;
-    let popoverContainerElement: HTMLElement = this.popoverContainer.nativeElement;
-    let popoverArrow: HTMLElement = this.popoverArrow.nativeElement;
-    let desiredPlacement = this.placement;
+    const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
+    const popoverArrow: HTMLElement = this.popoverArrow.nativeElement;
+    const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
+    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
+    const arrowRect: Rectangle = RectangleFactory.fromHtmlElement(popoverArrow);
 
-    this.onBeforeShow.emit(null);
+    const popoverRect: Rectangle = this.positionService.position(
+      anchorRect,
+      elementRect, {
+        placementId: this.placement,
+        offset: 15
+      }
+    );
 
-    // Make the code evaluate in next event loop to settle events
-    // Issue, does not show when in p-panel with nested component containing popover.
-    // When removed setTimeout its fine, but lost dynamic content calculation feature..
+    this.updatePlacement(
+      popoverContainer,
+      popoverRect
+    );
 
-    // consider showing / hiding popover fully using dom, outside angular lifecycle
-    // to avoid problems with settimeout..
-    setTimeout(() => {
-      this.popoverService.position(
-        desiredPlacement,
-        popoverContainerElement,
-        triggerElement,
-        popoverArrow
-      );
-    }, 0);
+    const arp = anchorRect
+      .relativePositionTo(popoverRect);
 
-    this.isVisible = true;
-    this.onAfterShow.emit(null);
-
-    event.stopPropagation();
+    popoverArrow.style.left = arp.x + arrowRect.width / 2 + 'px';
+    // popoverArrow.style.top = arp.y + 'px';
   }
 
-  hide(event) {
-    this.onBeforeHide.emit(null);
-    this.isVisible = false;
-    this.onAfterHide.emit(null);
-  }
-
-  ngOnDestroy() {
-    this.lastTriggerElement = null;
+  updatePlacement(popover: HTMLElement, rect: Rectangle) {
+    document.body.appendChild(popover);
+    popover.style.left = rect.x + 'px';
+    popover.style.top = rect.y + 'px';
+    popover.style.height = rect.height + 'px';
+    popover.style.width = rect.width + 'px';
   }
 }

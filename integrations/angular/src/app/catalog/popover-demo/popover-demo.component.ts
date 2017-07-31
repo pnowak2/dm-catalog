@@ -16,25 +16,17 @@ export class PopoverDemoComponent implements OnInit {
 
   ngOnInit() { }
 
-  buttonClicked(evt) {
-    this.popover.toggle(evt);
-  }
-
   buttonMouseOver(evt) {
     this.popover.show(evt);
   }
 
-  buttonMouseOut(evt) {
-    this.popover.hide(evt);
-  }
-
   beforeShow() {
-    let n = Math.random() * 100;
-    let content = '';
-    for(let i = 0; i < n; i++) {
-      content += 'hello ';
-    }
-    this.content = content;
+    // let n = Math.random() * 100;
+    // let content = '';
+    // for(let i = 0; i < n; i++) {
+    //   content += 'hello ';
+    // }
+    // this.content = content;
   }
 
   afterShow() {
