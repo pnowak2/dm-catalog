@@ -6,7 +6,7 @@ import { PlacementStrategy } from '../../interface/placement-strategy';
 export class PlacementService {
   constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
 
-  position(anchor: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle {
+  place(anchor: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle {
     const effectiveOptions = getEffectiveOptions(options);
 
     const placementStrategy = pickPlacementStrategy(
@@ -26,7 +26,7 @@ export class PlacementService {
   }
 }
 
-function getEffectiveOptions(options: PlacementOptions): PlacementOptions {
+export function getEffectiveOptions(options: PlacementOptions = {}): PlacementOptions {
   return {
     placementId: 'bottom',
     parent: RectangleFactory.fromWindow(),
@@ -37,11 +37,11 @@ function getEffectiveOptions(options: PlacementOptions): PlacementOptions {
   }
 }
 
-function pickPlacementStrategy(
+export function pickPlacementStrategy(
   placementStrategies: Array<PlacementStrategy>,
   placementId: string): PlacementStrategy {
 
-  return placementStrategies.find(
+  return (placementStrategies || []).find(
     strategy => strategy.getId() === placementId
   );
 }
