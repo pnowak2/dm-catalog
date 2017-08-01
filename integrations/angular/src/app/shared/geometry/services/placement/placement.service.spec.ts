@@ -64,28 +64,11 @@ describe('PlacementService', () => {
         const parent = Rectangle.create(0, 0, 10, 10);
         const offset = 5;
         const constrainToParent = true;
-        const flip = true;
+        const flip = false;
 
         service.position(anchor, element, {
           placementId, parent, offset, constrainToParent, flip
         })
-      });
-    });
-
-    describe('getEffectiveOptions', () => {
-      it('should be defined', () => {
-        expect(PlacementService.prototype.getEffectiveOptions).toEqual(jasmine.any(Function));
-      });
-
-      it('should return default options if no argument provided', () => {
-        // expect()
-      });
-
-    });
-
-    describe('pickPlacementStrategy())', () => {
-      it('should behave...', () => {
-
       });
     });
   });
