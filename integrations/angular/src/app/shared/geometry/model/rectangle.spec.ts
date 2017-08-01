@@ -11,7 +11,7 @@ type RectsEntry = {
   intersectRect: Rectangle
 };
 
-fdescribe('Rectangle', () => {
+describe('Rectangle', () => {
   describe('Api', () => {
     describe('Rectangle.create()', () => {
       let r: Rectangle;

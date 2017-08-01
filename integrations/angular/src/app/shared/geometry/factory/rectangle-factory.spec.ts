@@ -1,7 +1,7 @@
 import { Rectangle } from './../model/rectangle';
 import { RectangleFactory } from './rectangle-factory';
 
-fdescribe('RectangleFactory', () => {
+describe('RectangleFactory', () => {
   describe('Api', () => {
     describe('RectangleFactory.fromHtmlElement()', () => {
       it('should be defined', () => {

@@ -1,6 +1,6 @@
 import { Point } from './point';
 
-fdescribe('Point', () => {
+describe('Point', () => {
   describe('Api', () => {
     describe('Point.create()', () => {
       let p: Point;

@@ -1,6 +1,6 @@
 import { Overflow } from './overflow';
 
-fdescribe('Overflow', () => {
+describe('Overflow', () => {
   describe('Api', () => {
     describe('Overflow.create()', () => {
       let p: Overflow;

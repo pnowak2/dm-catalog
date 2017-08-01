@@ -12,7 +12,7 @@ class FakePlacementStrategy implements PlacementStrategy {
   }
 }
 
-fdescribe('PositionService', () => {
+describe('PlacementService', () => {
   let fakeStrategy: PlacementStrategy;
 
   beforeEach(() => {
