@@ -2,24 +2,19 @@ import { Rectangle } from '../../../model/rectangle';
 import { PlacementOptions } from './../../../interface/placement-options';
 import { PlacementStrategy } from '../../../interface/placement-strategy';
 
-export class BottomRightPlacementStrategy implements PlacementStrategy {
+export class LeftPlacementStrategy implements PlacementStrategy {
   getId() {
-    return 'bottom-right';
+    return 'left';
   }
 
   calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
     const placedRect = element
       .clone()
-      .moveTo(anchor.rightBottom(), element.leftTop())
-      .translateX(- 2 * options.offset)
-      .translateY(options.offset);
+      .moveTo(anchor.leftCenter(), element.rightCenter())
+      .translateX(-options.offset);
 
-    if (options.flip && placedRect.overflowsRight(options.parent)) {
-      placedRect.flipY(anchor.center().x);
-    }
-
-    if (options.flip && placedRect.overflowsBottom(options.parent)) {
-      placedRect.flipX(anchor.center().y);
+    if (options.flip && placedRect.overflowsLeft(options.parent)) {
+      placedRect.flip(anchor.center());
     }
 
     if (options.constrainToParent) {

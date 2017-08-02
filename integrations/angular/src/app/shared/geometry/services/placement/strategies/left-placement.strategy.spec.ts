@@ -1,18 +1,18 @@
 import { PlacementOptions } from './../../../interface/placement-options';
 import { Rectangle } from './../../../model/rectangle';
 import { PlacementStrategy } from './../../../interface/placement-strategy';
-import { BottomRightPlacementStrategy } from './bottom-right-placement.strategy';
+import { LeftPlacementStrategy } from './left-placement.strategy';
 
-describe('BottomRightPlacementStrategy', () => {
+describe('LeftPlacementStrategy', () => {
   describe('Api', () => {
     describe('.getId()', () => {
       it('should be defined', () => {
-        expect(BottomRightPlacementStrategy.prototype.getId).toEqual(jasmine.any(Function));
+        expect(LeftPlacementStrategy.prototype.getId).toEqual(jasmine.any(Function));
       });
 
       it('should return proper id', () => {
-        const str = new BottomRightPlacementStrategy();
-        expect(str.getId()).toEqual('bottom-right');
+        const str = new LeftPlacementStrategy();
+        expect(str.getId()).toEqual('left');
       });
     });
 
@@ -20,11 +20,11 @@ describe('BottomRightPlacementStrategy', () => {
       let str: PlacementStrategy;
 
       beforeEach(() => {
-        str = new BottomRightPlacementStrategy();
+        str = new LeftPlacementStrategy();
       });
 
       it('should be defined', () => {
-        expect(BottomRightPlacementStrategy.prototype.calculate).toEqual(jasmine.any(Function));
+        expect(LeftPlacementStrategy.prototype.calculate).toEqual(jasmine.any(Function));
       });
 
       it('should clone element', () => {
@@ -37,7 +37,7 @@ describe('BottomRightPlacementStrategy', () => {
         expect(calculatedRect).not.toBe(element);
       });
 
-      it('should move element to right bottom with offset', () => {
+      it('should move element to left center with offset', () => {
         const anchor = Rectangle.create(5, 4, 3, 2);
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
@@ -51,10 +51,10 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(4, 8, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(-1, 3.5, 4, 3));
       });
 
-      it('should move element to right bottom with offset & flip', () => {
+      it('should move element to left center with offset & flip', () => {
         const anchor = Rectangle.create(5, 4, 3, 2);
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
@@ -68,10 +68,10 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(4, -1, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(10, 3.5, 4, 3));
       });
 
-      it('should move element to right bottom with offset & flip & constrain', () => {
+      it('should move element to left center with offset & flip & constrain', () => {
         const anchor = Rectangle.create(5, 4, 3, 2);
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
@@ -85,7 +85,7 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(4, 0, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(8, 3.5, 4, 3));
       });
     });
   });
