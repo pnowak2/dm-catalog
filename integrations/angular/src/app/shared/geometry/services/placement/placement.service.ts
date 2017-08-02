@@ -7,9 +7,8 @@ export class PlacementService {
   constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
 
   place(anchor: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle {
-    const effectiveOptions = getEffectiveOptions(options);
-
-    const placementStrategy = pickPlacementStrategy(
+    const effectiveOptions = PlacementService.getEffectiveOptions(options);
+    const placementStrategy = PlacementService.pickPlacementStrategy(
       this.placementStrategies,
       effectiveOptions.placementId
     );
@@ -24,24 +23,24 @@ export class PlacementService {
       effectiveOptions
     );
   }
-}
 
-export function getEffectiveOptions(options: PlacementOptions = {}): PlacementOptions {
-  return {
-    placementId: 'bottom',
-    parent: RectangleFactory.fromWindow(),
-    offset: 0,
-    constrainToParent: true,
-    flip: true,
-    ...options
+  static getEffectiveOptions(options: PlacementOptions = {}): PlacementOptions {
+    return {
+      placementId: 'bottom',
+      parent: RectangleFactory.fromWindow(),
+      offset: 0,
+      constrainToParent: true,
+      flip: true,
+      ...options
+    }
   }
-}
 
-export function pickPlacementStrategy(
-  placementStrategies: Array<PlacementStrategy>,
-  placementId: string): PlacementStrategy {
+  static pickPlacementStrategy(
+    placementStrategies: Array<PlacementStrategy>,
+    placementId: string): PlacementStrategy {
 
-  return (placementStrategies || []).find(
-    strategy => strategy.getId() === placementId
-  );
+    return (placementStrategies || []).find(
+      strategy => strategy.getId() === placementId
+    );
+  }
 }
