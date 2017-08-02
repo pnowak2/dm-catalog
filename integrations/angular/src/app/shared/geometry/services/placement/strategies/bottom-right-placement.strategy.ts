@@ -10,7 +10,7 @@ export class BottomRightPlacementStrategy implements PlacementStrategy {
   calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
     const placedRect = element
       .clone()
-      .moveTo(anchor.leftBottom(), element.leftTop())
+      .moveTo(anchor.rightBottom(), element.leftTop())
       .translateX(-options.offset)
       .translateY(options.offset);
 

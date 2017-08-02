@@ -37,7 +37,7 @@ describe('BottomRightPlacementStrategy', () => {
         expect(calculatedRect).not.toBe(element);
       });
 
-      it('should move element to right center with offset', () => {
+      it('should move element to right bottom with offset', () => {
         const anchor = Rectangle.create(5, 4, 3, 2);
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
@@ -51,10 +51,10 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(10, 3.5, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(6, 8, 4, 3));
       });
 
-      it('should move element to right center with offset & flip', () => {
+      it('should move element to right bottom with offset & flip', () => {
         const anchor = Rectangle.create(5, 4, 3, 2);
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
@@ -68,10 +68,10 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(-1, 3.5, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(6, -1, 4, 3));
       });
 
-      it('should move element to right center with offset & flip & constrain', () => {
+      it('should move element to right bottom with offset & flip & constrain', () => {
         const anchor = Rectangle.create(5, 4, 3, 2);
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
@@ -85,7 +85,7 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(0, 3.5, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(6, 0, 4, 3));
       });
     });
   });
