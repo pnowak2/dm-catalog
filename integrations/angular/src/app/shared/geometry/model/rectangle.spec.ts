@@ -985,7 +985,7 @@ describe('Rectangle', () => {
         expect(r.intersects(empty)).toBe(false);
       });
 
-      it('return true if intersects other rect', () => {
+      it('should return true if intersects other rect', () => {
         RectsGenerator.testRects()
           .filter(entry => entry.isIntersect)
           .forEach((entry) => {
@@ -993,7 +993,7 @@ describe('Rectangle', () => {
           });
       });
 
-      it('return false if does not intersect other rect', () => {
+      it('should return false if does not intersect other rect', () => {
         RectsGenerator.testRects()
           .filter(entry => !entry.isIntersect)
           .forEach((entry) => {
