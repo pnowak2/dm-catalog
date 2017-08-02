@@ -51,7 +51,7 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(6, 8, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(4, 8, 4, 3));
       });
 
       it('should move element to right bottom with offset & flip', () => {
@@ -68,7 +68,7 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(6, -1, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(4, -1, 4, 3));
       });
 
       it('should move element to right bottom with offset & flip & constrain', () => {
@@ -85,7 +85,7 @@ describe('BottomRightPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(6, 0, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(4, 0, 4, 3));
       });
     });
   });
