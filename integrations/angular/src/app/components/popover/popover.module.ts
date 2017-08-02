@@ -1,3 +1,4 @@
+import { PopoverService } from './services/popover.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,6 +8,6 @@ import { PopoverComponent } from './popover.component';
   imports: [CommonModule],
   exports: [PopoverComponent],
   declarations: [PopoverComponent],
-  providers: []
+  providers: [PopoverService]
 })
 export class PopoverModule { }

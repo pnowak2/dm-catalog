@@ -1,11 +1,13 @@
-import { Component, Input, ElementRef, ViewChild } from '@angular/core';
+import { PopoverService } from './services/popover.service';
+import { Popover } from './model/popover.model';
+import { Component, Input, ElementRef, ViewChild, ChangeDetectorRef} from '@angular/core';
 import { Rectangle } from './../../shared/geometry/model/rectangle';
 import { RectangleFactory } from './../../shared/geometry/factory/rectangle-factory';
 import { PlacementService } from './../../shared/geometry/services/placement/placement.service';
 
 @Component({
   selector: 'dm-popover',
-  templateUrl: './popover.component.html'
+  templateUrl: './popover.component.html',
 })
 export class PopoverComponent {
   @ViewChild('popoverContainer') popoverContainer: ElementRef;
@@ -14,42 +16,28 @@ export class PopoverComponent {
 
   @Input() title = 'Test title';
 
-  @Input() placement: 'top' | 'left' | 'right' | 'bottom' | 'top-left' = 'bottom';
+  @Input() placement: 'top' | 'left' | 'right' | 'bottom' = 'bottom';
 
-  constructor(private placementService: PlacementService) { }
+  public popoverModel: Popover = {
+    effectivePosition: 'top',
+    arrow: {
+      top: '0px',
+      left: '0px'
+    },
+    container: {
+      top: '0px',
+      left: '0px'
+    }
+  };
+
+  constructor(private popoverService: PopoverService, private cd: ChangeDetectorRef) { }
 
   show(event) {
-    const popoverContainer: HTMLElement = this.popoverContainer.nativeElement;
-    const popoverArrow: HTMLElement = this.popoverArrow.nativeElement;
+    const popoverEl: HTMLElement = this.popoverContainer.nativeElement;
+    const arrowEl: HTMLElement = this.popoverArrow.nativeElement;
     const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
-    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverContainer);
-    const arrowRect: Rectangle = RectangleFactory.fromHtmlElement(popoverArrow);
+    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverEl);
 
-    const popoverRect: Rectangle = this.placementService.place(
-      anchorRect,
-      elementRect, {
-        placementId: this.placement,
-        offset: 15
-      }
-    );
-
-    this.updatePlacement(
-      popoverContainer,
-      popoverRect
-    );
-
-    const arp = anchorRect
-      .relativePositionTo(popoverRect);
-
-    popoverArrow.style.left = arp.x + arrowRect.width / 2 + 'px';
-    // popoverArrow.style.top = arp.y + 'px';
-  }
-
-  updatePlacement(popover: HTMLElement, rect: Rectangle) {
-    document.body.appendChild(popover);
-    popover.style.left = rect.x + 'px';
-    popover.style.top = rect.y + 'px';
-    popover.style.height = rect.height + 'px';
-    popover.style.width = rect.width + 'px';
+    this.popoverModel = this.popoverService.calculate(anchorRect, elementRect, this.placement);
   }
 }
