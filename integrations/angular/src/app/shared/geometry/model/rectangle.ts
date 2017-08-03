@@ -154,6 +154,22 @@ export class Rectangle {
     return this;
   }
 
+  isBelow(p: Point): boolean {
+    return this.top >= p.y;
+  }
+
+  isAbove(p: Point): boolean {
+    return this.bottom <= p.y;
+  }
+
+  isOnTheLeft(p: Point): boolean {
+    return this.right <= p.x;
+  }
+
+  isOnTheRight(p: Point): boolean {
+    return this.left >= p.x;
+  }
+
   leftTop(): Point {
     return Point.create(this.left, this.top);
   }

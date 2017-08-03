@@ -499,6 +499,114 @@ describe('Rectangle', () => {
       });
     });
 
+    describe('.isBelow()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.isBelow).toEqual(jasmine.any(Function));
+      });
+
+      it('should return true if top edge is below point', () => {
+        const r = Rectangle.create(4, 7, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isBelow(p)).toEqual(true);
+      });
+
+      it('should return true if top edge touches point', () => {
+        const r = Rectangle.create(4, 6, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isBelow(p)).toEqual(true);
+      });
+
+      it('should return false if top edge is above point', () => {
+        const r = Rectangle.create(4, 5, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isBelow(p)).toEqual(false);
+      });
+    });
+
+    describe('.isAbove()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.isAbove).toEqual(jasmine.any(Function));
+      });
+
+      it('should return true if bottom edge is above point', () => {
+        const r = Rectangle.create(4, 2, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isAbove(p)).toEqual(true);
+      });
+
+      it('should return true if bottom edge touches point', () => {
+        const r = Rectangle.create(4, 3, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isAbove(p)).toEqual(true);
+      });
+
+      it('should return false if bottom edge is below point', () => {
+        const r = Rectangle.create(4, 4, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isAbove(p)).toEqual(false);
+      });
+    });
+
+    describe('.isOnTheLeft()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.isOnTheLeft).toEqual(jasmine.any(Function));
+      });
+
+      it('should return true if right edge is on the left of point', () => {
+        const r = Rectangle.create(1, 4, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isOnTheLeft(p)).toEqual(true);
+      });
+
+      it('should return true if right edge touches point', () => {
+        const r = Rectangle.create(2, 4, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isOnTheLeft(p)).toEqual(true);
+      });
+
+      it('should return false if right edge is on the right of point', () => {
+        const r = Rectangle.create(3, 4, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isOnTheLeft(p)).toEqual(false);
+      });
+    });
+
+    describe('.isOnTheRight()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.isOnTheRight).toEqual(jasmine.any(Function));
+      });
+
+      it('should return true if left edge is on the right of point', () => {
+        const r = Rectangle.create(7, 4, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isOnTheRight(p)).toEqual(true);
+      });
+
+      it('should return true if left edge touches point', () => {
+        const r = Rectangle.create(6, 4, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isOnTheRight(p)).toEqual(true);
+      });
+
+      it('should return false if left edge is on the left of point', () => {
+        const r = Rectangle.create(5, 4, 4, 3);
+        const p = Point.create(6, 6);
+
+        expect(r.isOnTheRight(p)).toEqual(false);
+      });
+    });
+
     describe('.leftTop()', () => {
       it('should be defined', () => {
         expect(Rectangle.prototype.leftTop).toEqual(jasmine.any(Function));
