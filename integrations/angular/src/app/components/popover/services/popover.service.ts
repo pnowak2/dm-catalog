@@ -43,7 +43,7 @@ export class PopoverService {
       effectivePlacement = 'left';
       arrowPoint = Point.create(
         calculatedRect.width,
-        calculatedRect.height / 2
+        anchorRelativePosition.y + anchorRect.height / 2
       );
     }
 
@@ -51,7 +51,7 @@ export class PopoverService {
       effectivePlacement = 'right';
       arrowPoint = Point.create(
         -arrowRect.width,
-        calculatedRect.height / 2
+        anchorRelativePosition.y + anchorRect.height / 2
       );
     }
 
