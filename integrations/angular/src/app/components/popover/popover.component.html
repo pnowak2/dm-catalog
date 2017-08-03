@@ -2,7 +2,7 @@
      class="dm-c-popover dm-c-popover--{{ model.effectivePlacement }} dm-c-popover--colored-header"
      [style.left]="model.containerPosition.x + 'px'"
      [style.top]="model.containerPosition.y + 'px'">
-  <div class="dm-c-popover__arrow"
+  <div #arrow class="dm-c-popover__arrow"
        [style.left]="model.arrowPosition.x + 'px'"
        [style.top]="model.arrowPosition.y + 'px'">
     <div class="dm-c-popover__arrow-inner"></div>

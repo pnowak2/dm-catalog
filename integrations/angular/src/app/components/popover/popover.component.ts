@@ -10,7 +10,8 @@ import { PlacementService } from './../../shared/geometry/services/placement/pla
   templateUrl: './popover.component.html',
 })
 export class PopoverComponent {
-  @ViewChild('popoverContainer') popoverContainer: ElementRef;
+  @ViewChild('popoverContainer') popoverEl: ElementRef;
+  @ViewChild('arrow') arrowEl: ElementRef;
 
   @Input() title = 'Test title';
 
@@ -24,12 +25,14 @@ export class PopoverComponent {
 
   show(event) {
     const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
-    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(this.popoverContainer.nativeElement);
+    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(this.popoverEl.nativeElement);
+    const arrowRect: Rectangle = RectangleFactory.fromHtmlElement(this.arrowEl.nativeElement);
 
     this.model = this.popoverService.calculate(
       this.placement,
       anchorRect,
-      elementRect
+      elementRect,
+      arrowRect
     );
   }
 }
