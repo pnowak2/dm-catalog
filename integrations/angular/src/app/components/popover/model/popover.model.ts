@@ -1,18 +1,23 @@
-export class Position {
-  top: number;
-  left: number;
-}
+import { Point } from './../../../shared/geometry/model/point';
 
 export class Popover {
-  effectivePlacement: string;
 
-  arrowPosition: Position = {
-    top: 0,
-    left: 0
-  }
+  private constructor(
+    private effectivePlacement: string,
+    private containerPosition: Point,
+    private arrowPosition: Point) { }
 
-  containerPosition: Position = {
-    top: 0,
-    left: 0
+  public static create(
+    placement: string = 'bottom',
+    containerLeft: number = 0,
+    containerTop: number = 0,
+    arrowLeft: number = 0,
+    arrowTop: number = 0
+  ): Popover {
+    return new Popover(
+      placement,
+      Point.create(containerLeft, containerTop),
+      Point.create(arrowLeft, arrowTop)
+    )
   }
 }

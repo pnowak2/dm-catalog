@@ -16,16 +16,18 @@ export class PopoverComponent {
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' = 'bottom';
 
-  public popoverModel: Popover = new Popover();
+  public model: Popover;
 
-  constructor(private popoverService: PopoverService) { }
+  constructor(private popoverService: PopoverService) {
+    this.model = Popover.create();
+  }
 
   show(event) {
     const popoverEl: HTMLElement = this.popoverContainer.nativeElement;
     const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
     const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverEl);
 
-    this.popoverModel = this.popoverService.calculate(
+    this.model = this.popoverService.calculate(
       anchorRect,
       elementRect,
       this.placement

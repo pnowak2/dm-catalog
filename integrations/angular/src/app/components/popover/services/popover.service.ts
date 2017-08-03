@@ -19,16 +19,12 @@ export class PopoverService {
 
     const p = anchorRect.relativePositionTo(calculatedRect);
 
-    return {
-      effectivePlacement: 'left',
-      arrowPosition: {
-        top: p.y + anchorRect.height / 2,
-        left: calculatedRect.width
-      },
-      containerPosition: {
-        top: calculatedRect.top,
-        left: calculatedRect.left
-      }
-    };
+    return Popover.create(
+      'left',
+      calculatedRect.left,
+      calculatedRect.top,
+      calculatedRect.width,
+      p.y + anchorRect.height / 2
+    );
   }
 }
