@@ -21,13 +21,13 @@ export class PopoverService {
 
     return {
       effectivePlacement: 'left',
-      arrow: {
-        top: p.y + anchorRect.height / 2 + 'px',
-        left: calculatedRect.width + 'px'
+      arrowPosition: {
+        top: p.y + anchorRect.height / 2,
+        left: calculatedRect.width
       },
-      container: {
-        top: calculatedRect.top + 'px',
-        left: calculatedRect.left + 'px'
+      containerPosition: {
+        top: calculatedRect.top,
+        left: calculatedRect.left
       }
     };
   }

@@ -1,13 +1,18 @@
-export interface Popover {
-  effectivePlacement: string,
+export class Position {
+  top: number;
+  left: number;
+}
 
-  arrow: {
-    top: string,
-    left: string
+export class Popover {
+  effectivePlacement: string;
+
+  arrowPosition: Position = {
+    top: 0,
+    left: 0
   }
 
-  container: {
-    top: string,
-    left: string
+  containerPosition: Position = {
+    top: 0,
+    left: 0
   }
 }

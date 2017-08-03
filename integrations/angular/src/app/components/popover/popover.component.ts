@@ -16,17 +16,7 @@ export class PopoverComponent {
 
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' = 'bottom';
 
-  public popoverModel: Popover = {
-    effectivePlacement: 'top',
-    arrow: {
-      top: '0px',
-      left: '0px'
-    },
-    container: {
-      top: '0px',
-      left: '0px'
-    }
-  };
+  public popoverModel: Popover = new Popover();
 
   constructor(private popoverService: PopoverService) { }
 
