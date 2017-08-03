@@ -1,5 +1,5 @@
 export interface Popover {
-  effectivePosition: string,
+  effectivePlacement: string,
 
   arrow: {
     top: string,

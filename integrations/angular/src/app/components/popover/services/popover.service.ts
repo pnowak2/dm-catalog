@@ -17,11 +17,13 @@ export class PopoverService {
       }
     );
 
+    const p = anchorRect.relativePositionTo(calculatedRect);
+
     return {
-      effectivePosition: 'top',
+      effectivePlacement: 'left',
       arrow: {
-        top: '-10px',
-        left: '10px'
+        top: p.y + anchorRect.height / 2 + 'px',
+        left: calculatedRect.width + 'px'
       },
       container: {
         top: calculatedRect.top + 'px',
