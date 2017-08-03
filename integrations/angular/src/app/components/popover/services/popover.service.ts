@@ -1,3 +1,4 @@
+import { Point } from './../../../shared/geometry/model/point';
 import { Injectable } from '@angular/core';
 
 import { PlacementService } from './../../../shared/geometry/services/placement/placement.service';
@@ -17,14 +18,49 @@ export class PopoverService {
       }
     );
 
-    const p = anchorRect.relativePositionTo(calculatedRect);
+    const anchorRelativePosition = anchorRect.relativePositionTo(calculatedRect);
+
+    let effectivePlacement: string;
+    let arrowPoint: Point;
+
+    if (calculatedRect.isAbove(anchorRect.leftTop())) {
+      effectivePlacement = 'top';
+      arrowPoint = Point.create(
+        anchorRelativePosition.x + anchorRect.width / 2,
+        calculatedRect.height
+      );
+    }
+
+    if (calculatedRect.isBelow(anchorRect.leftBottom())) {
+      effectivePlacement = 'bottom';
+      arrowPoint = Point.create(
+        anchorRelativePosition.x + anchorRect.width / 2,
+        -arrowRect.height
+      );
+    }
+
+    if (calculatedRect.isOnTheLeft(anchorRect.leftTop())) {
+      effectivePlacement = 'left';
+      arrowPoint = Point.create(
+        calculatedRect.width,
+        calculatedRect.height / 2
+      );
+    }
+
+    if (calculatedRect.isOnTheRight(anchorRect.rightTop())) {
+      effectivePlacement = 'right';
+      arrowPoint = Point.create(
+        -arrowRect.width,
+        calculatedRect.height / 2
+      );
+    }
 
     return Popover.create(
-      calculatedRect.isAbove(anchorRect.leftTop()) ? "top" : "bottom",
+      effectivePlacement,
       calculatedRect.left,
       calculatedRect.top,
-      p.x + anchorRect.width / 2,
-      calculatedRect.isAbove(anchorRect.leftTop()) ? calculatedRect.height : -arrowRect.height
+      arrowPoint.x,
+      arrowPoint.y
     );
   }
 }
