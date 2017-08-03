@@ -8,7 +8,7 @@ import { Rectangle } from './../../../shared/geometry/model/rectangle';
 export class PopoverService {
   constructor(private placementService: PlacementService) { }
 
-  calculate(anchorRect: Rectangle, containerRect: Rectangle, placement: string): Popover {
+  calculate(placement: string, anchorRect: Rectangle, containerRect: Rectangle): Popover {
     const calculatedRect: Rectangle = this.placementService.place(
       anchorRect,
       containerRect, {

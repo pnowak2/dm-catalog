@@ -23,14 +23,13 @@ export class PopoverComponent {
   }
 
   show(event) {
-    const popoverEl: HTMLElement = this.popoverContainer.nativeElement;
     const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
-    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(popoverEl);
+    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(this.popoverContainer.nativeElement);
 
     this.model = this.popoverService.calculate(
+      this.placement,
       anchorRect,
-      elementRect,
-      this.placement
+      elementRect
     );
   }
 }
