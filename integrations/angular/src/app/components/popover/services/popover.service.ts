@@ -20,7 +20,7 @@ export class PopoverService {
     const p = anchorRect.relativePositionTo(calculatedRect);
 
     return Popover.create(
-      'left',
+      placement,
       calculatedRect.left,
       calculatedRect.top,
       calculatedRect.width,
