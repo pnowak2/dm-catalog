@@ -1,6 +1,77 @@
 <h2>Popover</h2>
 
-Placement
+<h3>Flavours</h3>
+<div class="dm-u-d-flex dm-u-justify-content-around dm-u-flex-wrap">
+  <div>
+    <div class="dm-c-popover dm-c-popover--top dm-u-relative">
+      <div  class="dm-c-popover__arrow">
+        <div class="dm-c-popover__arrow-inner"></div>
+      </div>
+      <div class="dm-c-popover__header">
+        <div class="dm-c-popover__title">Default</div>
+        <div class="dm-c-popover__close">
+          <i class="fa fa-close"></i>
+        </div>
+      </div>
+      <div class="dm-c-popover__content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis neque quam rerum! Qui hic, doloribus, autem placeat blanditiis distinctio eius eaque. Ducimus quis mollitia aliquid in ut, iusto doloribus voluptatem!
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="dm-c-popover dm-c-popover--top dm-c-popover--flat dm-u-relative">
+      <div  class="dm-c-popover__arrow">
+        <div class="dm-c-popover__arrow-inner"></div>
+      </div>
+      <div class="dm-c-popover__header">
+        <div class="dm-c-popover__title">Flat</div>
+        <div class="dm-c-popover__close">
+          <i class="fa fa-close"></i>
+        </div>
+      </div>
+      <div class="dm-c-popover__content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis neque quam rerum! Qui hic, doloribus, autem placeat blanditiis distinctio eius eaque. Ducimus quis mollitia aliquid in ut, iusto doloribus voluptatem!
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="dm-c-popover dm-c-popover--top dm-c-popover--colored-solid dm-u-relative">
+      <div  class="dm-c-popover__arrow">
+        <div class="dm-c-popover__arrow-inner"></div>
+      </div>
+      <div class="dm-c-popover__header">
+        <div class="dm-c-popover__title">Colored Solid</div>
+        <div class="dm-c-popover__close">
+          <i class="fa fa-close"></i>
+        </div>
+      </div>
+      <div class="dm-c-popover__content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis neque quam rerum! Qui hic, doloribus, autem placeat blanditiis distinctio eius eaque. Ducimus quis mollitia aliquid in ut, iusto doloribus voluptatem!
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="dm-c-popover dm-c-popover--top dm-c-popover--colored-header dm-u-relative">
+      <div  class="dm-c-popover__arrow">
+        <div class="dm-c-popover__arrow-inner"></div>
+      </div>
+      <div class="dm-c-popover__header">
+        <div class="dm-c-popover__title">Colored Header</div>
+        <div class="dm-c-popover__close">
+          <i class="fa fa-close"></i>
+        </div>
+      </div>
+      <div class="dm-c-popover__content">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis neque quam rerum! Qui hic, doloribus, autem placeat blanditiis distinctio eius eaque. Ducimus quis mollitia aliquid in ut, iusto doloribus voluptatem!
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Placement</h3>
 <select #plc (change)="pop1.placement = $event.target.value" name="" id="">
   <option value="bottom">bottom</option>
   <option value="top">top</option>
