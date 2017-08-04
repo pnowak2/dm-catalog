@@ -11,5 +11,4 @@ export class HtmlDefaultsDemoComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
