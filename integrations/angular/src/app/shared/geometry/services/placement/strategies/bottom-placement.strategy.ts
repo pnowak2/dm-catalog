@@ -11,10 +11,11 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     const placedRect = element
       .clone()
       .moveTo(anchor.centerBottom(), element.centerTop())
-      .translateY(options.offset);
+      .translateY(options.offsetAlong)
+      .translateX(options.offsetAcross);
 
     if (options.flip && placedRect.overflowsBottom(options.parent)) {
-      placedRect.flip(anchor.center());
+      placedRect.flipX(anchor.center().y);
     }
 
     if (options.constrainToParent) {

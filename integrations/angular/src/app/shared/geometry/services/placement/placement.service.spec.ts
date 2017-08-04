@@ -110,7 +110,8 @@ describe('PlacementService', () => {
         expect(PlacementService.getEffectiveOptions()).toEqual({
           placementId: 'bottom',
           parent: RectangleFactory.fromWindow(),
-          offset: 0,
+          offsetAlong: 0,
+          offsetAcross: 0,
           constrainToParent: true,
           flip: true,
         });
@@ -120,13 +121,15 @@ describe('PlacementService', () => {
         expect(PlacementService.getEffectiveOptions({
           placementId: 'fakeId',
           parent: Rectangle.create(1, 2, 3, 4),
-          offset: 7,
+          offsetAlong: 7,
+          offsetAcross: 3,
           constrainToParent: false,
           flip: false
         })).toEqual({
           placementId: 'fakeId',
           parent: Rectangle.create(1, 2, 3, 4),
-          offset: 7,
+          offsetAlong: 7,
+          offsetAcross: 3,
           constrainToParent: false,
           flip: false
         });

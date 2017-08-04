@@ -28,7 +28,8 @@ export class PlacementService {
     return {
       placementId: 'bottom',
       parent: RectangleFactory.fromWindow(),
-      offset: 0,
+      offsetAlong: 0,
+      offsetAcross: 0,
       constrainToParent: true,
       flip: true,
       ...options

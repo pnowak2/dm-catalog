@@ -11,10 +11,11 @@ export class LeftPlacementStrategy implements PlacementStrategy {
     const placedRect = element
       .clone()
       .moveTo(anchor.leftCenter(), element.rightCenter())
-      .translateX(-options.offset);
+      .translateX(-options.offsetAlong)
+      .translateY(options.offsetAcross);
 
     if (options.flip && placedRect.overflowsLeft(options.parent)) {
-      placedRect.flip(anchor.center());
+      placedRect.flipY(anchor.center().x);
     }
 
     if (options.constrainToParent) {

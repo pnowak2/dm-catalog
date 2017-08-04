@@ -14,7 +14,7 @@ export class PopoverService {
       anchorRect,
       containerRect, {
         placementId: placement,
-        offset: 15
+        offsetAlong: 15
       }
     );
 
