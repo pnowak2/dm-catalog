@@ -31,7 +31,7 @@ describe('TopPlacementStrategy', () => {
         const anchor = Rectangle.create(1, 1, 4, 3);
         const element = Rectangle.create(0, 0, 6, 2);
 
-        const options = {};
+        const options: PlacementOptions = {};
         const calculatedRect = str.calculate(anchor, element, options);
 
         expect(calculatedRect).not.toBe(element);
@@ -42,8 +42,9 @@ describe('TopPlacementStrategy', () => {
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
 
-        const options = {
-          offset: 2,
+        const options: PlacementOptions = {
+          offsetAlong: 2,
+          offsetAcross: 1,
           flip: false,
           constrainToParent: false,
           parent: parent
@@ -51,7 +52,7 @@ describe('TopPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(4.5, -1, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(5.5, -1, 4, 3));
       });
 
       it('should move element to center top with offset & flip', () => {
@@ -59,8 +60,9 @@ describe('TopPlacementStrategy', () => {
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
 
-        const options = {
-          offset: 2,
+        const options: PlacementOptions = {
+          offsetAlong: 2,
+          offsetAcross: 1,
           flip: true,
           constrainToParent: false,
           parent: parent
@@ -68,7 +70,7 @@ describe('TopPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(4.5, 8, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(5.5, 8, 4, 3));
       });
 
       it('should move element to center top with offset & flip & constrain', () => {
@@ -76,8 +78,9 @@ describe('TopPlacementStrategy', () => {
         const element = Rectangle.create(0, 0, 4, 3);
         const parent = Rectangle.create(0, 0, 12, 10);
 
-        const options = {
-          offset: 2,
+        const options: PlacementOptions = {
+          offsetAlong: 2,
+          offsetAcross: 1,
           flip: true,
           constrainToParent: true,
           parent: parent
@@ -85,7 +88,7 @@ describe('TopPlacementStrategy', () => {
 
         const calculatedRect = str.calculate(anchor, element, options);
 
-        expect(calculatedRect).toEqual(Rectangle.create(4.5, 7, 4, 3));
+        expect(calculatedRect).toEqual(Rectangle.create(5.5, 7, 4, 3));
       });
     });
   });

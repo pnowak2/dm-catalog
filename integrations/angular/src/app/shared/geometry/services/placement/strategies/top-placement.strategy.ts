@@ -11,10 +11,11 @@ export class TopPlacementStrategy implements PlacementStrategy {
     const placedRect = element
       .clone()
       .moveTo(anchor.centerTop(), element.centerBottom())
-      .translateY(-options.offset);
+      .translateY(-options.offsetAlong)
+      .translateX(options.offsetAcross);
 
     if (options.flip && placedRect.overflowsTop(options.parent)) {
-      placedRect.flip(anchor.center());
+      placedRect.flipX(anchor.center().y);
     }
 
     if (options.constrainToParent) {

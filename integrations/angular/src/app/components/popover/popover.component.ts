@@ -14,7 +14,6 @@ export class PopoverComponent {
   @ViewChild('arrow') arrowEl: ElementRef;
 
   @Input() title = 'Test title';
-
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' = 'bottom';
 
   public model: Popover;

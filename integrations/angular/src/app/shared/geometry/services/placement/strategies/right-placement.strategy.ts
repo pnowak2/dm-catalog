@@ -11,10 +11,11 @@ export class RightPlacementStrategy implements PlacementStrategy {
     const placedRect = element
       .clone()
       .moveTo(anchor.rightCenter(), element.leftCenter())
-      .translateX(options.offset);
+      .translateX(options.offsetAlong)
+      .translateY(options.offsetAcross);
 
     if (options.flip && placedRect.overflowsRight(options.parent)) {
-      placedRect.flip(anchor.center());
+      placedRect.flipY(anchor.center().x);
     }
 
     if (options.constrainToParent) {
