@@ -93,10 +93,3 @@ describe('TopPlacementStrategy', () => {
     });
   });
 });
-
-function makePlacementStrategy(id: string, placedRect: Rectangle): PlacementStrategy {
-  return {
-    getId: jasmine.createSpy('id spy').and.returnValue(id),
-    calculate: jasmine.createSpy('calculate spy').and.returnValue(placedRect)
-  }
-}
