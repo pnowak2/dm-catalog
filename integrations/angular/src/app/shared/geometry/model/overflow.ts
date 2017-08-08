@@ -16,10 +16,10 @@ export class Overflow {
   }
 
   equals(other: Overflow): boolean {
-    return this.left == other.left &&
-      this.top == other.top &&
-      this.bottom == other.bottom &&
-      this.right == other.right;
+    return this.left === other.left &&
+      this.top === other.top &&
+      this.bottom === other.bottom &&
+      this.right === other.right;
   }
 
   toString() {

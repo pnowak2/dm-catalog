@@ -21,7 +21,7 @@ describe('RectangleFactory', () => {
             return {
               left: 2,
               top: 1
-            }
+            };
           }
         } as HTMLElement;
 
@@ -49,7 +49,7 @@ describe('RectangleFactory', () => {
             return {
               left: 2,
               top: 1
-            }
+            };
           }
         } as SVGElement;
 

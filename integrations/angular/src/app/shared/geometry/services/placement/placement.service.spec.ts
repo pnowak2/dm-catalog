@@ -8,26 +8,26 @@ describe('PlacementService', () => {
   describe('Creation', () => {
     it('should create an instance without args', () => {
       expect(() => {
-        new PlacementService();
+        const p = new PlacementService();
       }).not.toThrow();
     });
 
     it('should create an instance with null arg', () => {
       expect(() => {
-        new PlacementService(null);
+        const p = new PlacementService(null);
       }).not.toThrow();
     });
 
     it('should create an instance with empty array', () => {
       expect(() => {
-        new PlacementService([]);
+        const p = new PlacementService([]);
       }).not.toThrow();
     });
 
     it('should create an instance with array of strategies', () => {
       expect(() => {
 
-        new PlacementService([makePlacementStrategy('fakeid', Rectangle.empty())]);
+        const p = new PlacementService([makePlacementStrategy('fakeid', Rectangle.empty())]);
       }).not.toThrow();
     });
   });
@@ -81,8 +81,6 @@ describe('PlacementService', () => {
         let anchor: Rectangle;
         let element: Rectangle;
         let fakeRect: Rectangle;
-        let fakeStrategy: PlacementStrategy;
-        let fakeOptions: PlacementOptions;
 
         beforeEach(() => {
           service = new PlacementService();
@@ -183,5 +181,5 @@ function makePlacementStrategy(id: string, placedRect: Rectangle): PlacementStra
   return {
     getId: jasmine.createSpy('id spy').and.returnValue(id),
     calculate: jasmine.createSpy('calculate spy').and.returnValue(placedRect)
-  }
+  };
 }

@@ -6,6 +6,27 @@ import { PlacementStrategy } from '../../interface/placement-strategy';
 export class PlacementService {
   constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
 
+  static getEffectiveOptions(options: PlacementOptions = {}): PlacementOptions {
+    return {
+      placementId: 'bottom',
+      parent: RectangleFactory.fromWindow(),
+      offsetAlong: 0,
+      offsetAcross: 0,
+      constrainToParent: true,
+      flip: true,
+      ...options
+    };
+  }
+
+  static pickPlacementStrategy(
+    placementStrategies: Array<PlacementStrategy>,
+    placementId: string): PlacementStrategy {
+
+    return (placementStrategies || []).find(
+      strategy => strategy.getId() === placementId
+    );
+  }
+
   place(anchor: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle {
     const effectiveOptions = PlacementService.getEffectiveOptions(options);
     const placementStrategy = PlacementService.pickPlacementStrategy(
@@ -21,27 +42,6 @@ export class PlacementService {
       anchor,
       element,
       effectiveOptions
-    );
-  }
-
-  static getEffectiveOptions(options: PlacementOptions = {}): PlacementOptions {
-    return {
-      placementId: 'bottom',
-      parent: RectangleFactory.fromWindow(),
-      offsetAlong: 0,
-      offsetAcross: 0,
-      constrainToParent: true,
-      flip: true,
-      ...options
-    }
-  }
-
-  static pickPlacementStrategy(
-    placementStrategies: Array<PlacementStrategy>,
-    placementId: string): PlacementStrategy {
-
-    return (placementStrategies || []).find(
-      strategy => strategy.getId() === placementId
     );
   }
 }

@@ -2,14 +2,14 @@ import { Point } from './point';
 import { Rectangle } from './rectangle';
 import { Overflow } from './overflow';
 
-type RectsEntry = {
-  relationName: string,
-  r1: Rectangle,
-  r2: Rectangle,
-  isIntersect: boolean,
-  isContain: boolean,
-  intersectRect: Rectangle
-};
+interface RectsEntry {
+  relationName: string;
+  r1: Rectangle;
+  r2: Rectangle;
+  isIntersect: boolean;
+  isContain: boolean;
+  intersectRect: Rectangle;
+}
 
 describe('Rectangle', () => {
   describe('Api', () => {
@@ -50,7 +50,7 @@ describe('Rectangle', () => {
     });
 
     describe('Rectangle.fromRect', () => {
-      let src = Rectangle.create(1, 2, 3, 5);
+      const src = Rectangle.create(1, 2, 3, 5);
       let r: Rectangle;
 
       beforeEach(() => {
@@ -287,24 +287,24 @@ describe('Rectangle', () => {
       });
 
       it('should translate to coordinates', () => {
-        let r = Rectangle.create(1, 2, 3, 4);
-        let rMvd = r.moveTo(Point.create(12, 7));
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveTo(Point.create(12, 7));
 
         expect(rMvd).toEqual(Rectangle.create(12, 7, 3, 4));
       });
 
       it('should translate to coordinates by anchor point', () => {
-        let ref = Rectangle.create(2, 2, 2, 1);
-        let element = Rectangle.create(0, 0, 4, 3);
+        const ref = Rectangle.create(2, 2, 2, 1);
+        const element = Rectangle.create(0, 0, 4, 3);
 
-        let rMvd = element.moveTo(ref.centerBottom(), element.centerTop());
+        const rMvd = element.moveTo(ref.centerBottom(), element.centerTop());
 
         expect(rMvd).toEqual(Rectangle.create(1, 3, 4, 3));
       });
 
       it('should return this', () => {
-        let r = Rectangle.create(1, 2, 3, 4);
-        let rMvd = r.moveTo(Point.create(12, 7));
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveTo(Point.create(12, 7));
 
         expect(rMvd).toBe(r);
       });
@@ -425,7 +425,7 @@ describe('Rectangle', () => {
       });
 
       it('should return this', () => {
-        let r = Rectangle.create(3, 5, 2, 3);
+        const r = Rectangle.create(3, 5, 2, 3);
         expect(r.flipX(4)).toBe(r);
       });
     });
@@ -457,7 +457,7 @@ describe('Rectangle', () => {
       });
 
       it('should return this', () => {
-        let r = Rectangle.create(3, 5, 2, 3);
+        const r = Rectangle.create(3, 5, 2, 3);
         expect(r.flipY(4)).toBe(r);
       });
     });
@@ -475,7 +475,7 @@ describe('Rectangle', () => {
       });
 
       it('should return this', () => {
-        let r = Rectangle.create(3, 5, 2, 3);
+        const r = Rectangle.create(3, 5, 2, 3);
         expect(r.flip(Point.create(1, 1))).toBe(r);
       });
     });
@@ -1194,7 +1194,7 @@ describe('Rectangle', () => {
         const other = Rectangle.create(1, 2, 3, 4);
         const result = empty.expandToContain(other);
 
-        expect(result).toEqual(other)
+        expect(result).toEqual(other);
       });
 
       it('should return this if other is empty', () => {
@@ -1202,7 +1202,7 @@ describe('Rectangle', () => {
         const other = Rectangle.create(1, 2, 3, 4);
         const result = other.expandToContain(empty);
 
-        expect(result).toEqual(other)
+        expect(result).toEqual(other);
       });
 
       it('should return bounding rectangle for intersecting rects', () => {
@@ -1234,7 +1234,7 @@ describe('Rectangle', () => {
         const r2 = Rectangle.create(5, 2, 1, 1);
         const result = r1.expandToContain(r2);
 
-        expect(result).toBe(r1)
+        expect(result).toBe(r1);
       });
 
     });
@@ -1348,10 +1348,10 @@ describe('Rectangle', () => {
       });
 
       it('should return new instance', () => {
-        const r1 = Rectangle.create(1, 1, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
+        const rt1 = Rectangle.create(1, 1, 1, 1);
+        const rt2 = Rectangle.create(1, 1, 3, 3);
 
-        expect(r1.blend(r2, 0.5)).not.toBe(r1);
+        expect(rt1.blend(rt2, 0.5)).not.toBe(rt1);
       });
     });
 
@@ -1468,63 +1468,151 @@ describe('Rectangle', () => {
 });
 
 class RectsGenerator {
-  public static makeEntry(relationName: string, r2: Rectangle, isIntersect: boolean, isContain: boolean, intersectRect: Rectangle): RectsEntry {
-    return { relationName, r1: Rectangle.create(1, 1, 3, 3), r2, isIntersect, isContain, intersectRect }
+  public static makeEntry(
+    relationName: string,
+    r2: Rectangle,
+    isIntersect: boolean,
+    isContain: boolean,
+    intersectRect: Rectangle): RectsEntry {
+    return {
+      relationName,
+      r1: Rectangle.create(1, 1, 3, 3),
+      r2, isIntersect,
+      isContain,
+      intersectRect
+    };
   }
 
   public static testRects(): [RectsEntry] {
     return [
       // intersecting, containing
-      this.makeEntry('intersect, contains, including top left', Rectangle.create(1, 1, 1, 1), true, true, Rectangle.create(1, 1, 1, 1)),
-      this.makeEntry('intersect, contains, including top center', Rectangle.create(2, 1, 1, 1), true, true, Rectangle.create(2, 1, 1, 1)),
-      this.makeEntry('intersect, contains, including top right', Rectangle.create(3, 1, 1, 1), true, true, Rectangle.create(3, 1, 1, 1)),
-      this.makeEntry('intersect, contains, including center left', Rectangle.create(1, 2, 1, 1), true, true, Rectangle.create(1, 2, 1, 1)),
-      this.makeEntry('intersect, contains, including center center', Rectangle.create(2, 2, 1, 1), true, true, Rectangle.create(2, 2, 1, 1)),
-      this.makeEntry('intersect, contains, including center right', Rectangle.create(3, 2, 1, 1), true, true, Rectangle.create(3, 2, 1, 1)),
-      this.makeEntry('intersect, contains, including bottom left', Rectangle.create(1, 3, 1, 1), true, true, Rectangle.create(1, 3, 1, 1)),
-      this.makeEntry('intersect, contains, including bottom center', Rectangle.create(2, 3, 1, 1), true, true, Rectangle.create(2, 3, 1, 1)),
-      this.makeEntry('intersect, contains, including bottom right', Rectangle.create(3, 3, 1, 1), true, true, Rectangle.create(3, 3, 1, 1)),
+      this.makeEntry(
+        'intersect, contains, including top left', Rectangle.create(1, 1, 1, 1), true, true, Rectangle.create(1, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including top center', Rectangle.create(2, 1, 1, 1), true, true, Rectangle.create(2, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including top right', Rectangle.create(3, 1, 1, 1), true, true, Rectangle.create(3, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including center left', Rectangle.create(1, 2, 1, 1), true, true, Rectangle.create(1, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including center center', Rectangle.create(2, 2, 1, 1), true, true, Rectangle.create(2, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including center right', Rectangle.create(3, 2, 1, 1), true, true, Rectangle.create(3, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including bottom left', Rectangle.create(1, 3, 1, 1), true, true, Rectangle.create(1, 3, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including bottom center', Rectangle.create(2, 3, 1, 1), true, true, Rectangle.create(2, 3, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including bottom right', Rectangle.create(3, 3, 1, 1), true, true, Rectangle.create(3, 3, 1, 1)
+      ),
 
-      this.makeEntry('intersect, contains, including top bottom', Rectangle.create(2, 1, 1, 3), true, true, Rectangle.create(2, 1, 1, 3)),
-      this.makeEntry('intersect, contains, including left right', Rectangle.create(1, 2, 3, 1), true, true, Rectangle.create(1, 2, 3, 1)),
+      this.makeEntry(
+        'intersect, contains, including top bottom', Rectangle.create(2, 1, 1, 3), true, true, Rectangle.create(2, 1, 1, 3)
+      ),
+      this.makeEntry('intersect, contains, including left right', Rectangle.create(1, 2, 3, 1), true, true, Rectangle.create(1, 2, 3, 1)
+    ),
 
-      this.makeEntry('intersect, contains, including left top right', Rectangle.create(1, 1, 3, 2), true, true, Rectangle.create(1, 1, 3, 2)),
-      this.makeEntry('intersect, contains, including top right bottom', Rectangle.create(2, 1, 2, 3), true, true, Rectangle.create(2, 1, 2, 3)),
-      this.makeEntry('intersect, contains, including right bottom left', Rectangle.create(1, 2, 3, 2), true, true, Rectangle.create(1, 2, 3, 2)),
-      this.makeEntry('intersect, contains, including bottom left top', Rectangle.create(1, 1, 2, 3), true, true, Rectangle.create(1, 1, 2, 3)),
+      this.makeEntry(
+        'intersect, contains, including left top right', Rectangle.create(1, 1, 3, 2), true, true, Rectangle.create(1, 1, 3, 2)
+      ),
+      this.makeEntry(
+        'intersect, contains, including top right bottom', Rectangle.create(2, 1, 2, 3), true, true, Rectangle.create(2, 1, 2, 3)
+      ),
+      this.makeEntry(
+        'intersect, contains, including right bottom left', Rectangle.create(1, 2, 3, 2), true, true, Rectangle.create(1, 2, 3, 2)
+      ),
+      this.makeEntry(
+        'intersect, contains, including bottom left top', Rectangle.create(1, 1, 2, 3), true, true, Rectangle.create(1, 1, 2, 3)
+      ),
 
-      this.makeEntry('intersect, contains, including left top right bottom', Rectangle.create(1, 1, 3, 3), true, true, Rectangle.create(1, 1, 3, 3)),
+      this.makeEntry(
+        'intersect, contains, including left top right bottom', Rectangle.create(1, 1, 3, 3), true, true, Rectangle.create(1, 1, 3, 3)
+      ),
 
       // intersecting, not containing
-      this.makeEntry('intersect, not contains, including top', Rectangle.create(2, 0, 1, 2), true, false, Rectangle.create(2, 1, 1, 1)),
-      this.makeEntry('intersect, not contains, including right', Rectangle.create(3, 2, 2, 1), true, false, Rectangle.create(3, 2, 1, 1)),
-      this.makeEntry('intersect, not contains, including left', Rectangle.create(0, 2, 2, 1), true, false, Rectangle.create(1, 2, 1, 1)),
-      this.makeEntry('intersect, not contains, including bottom', Rectangle.create(2, 3, 1, 2), true, false, Rectangle.create(2, 3, 1, 1)),
+      this.makeEntry(
+        'intersect, not contains, including top', Rectangle.create(2, 0, 1, 2), true, false, Rectangle.create(2, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including right', Rectangle.create(3, 2, 2, 1), true, false, Rectangle.create(3, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including left', Rectangle.create(0, 2, 2, 1), true, false, Rectangle.create(1, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including bottom', Rectangle.create(2, 3, 1, 2), true, false, Rectangle.create(2, 3, 1, 1)
+      ),
 
-      this.makeEntry('intersect, not contains, including top left', Rectangle.create(0, 0, 2, 2), true, false, Rectangle.create(1, 1, 1, 1)),
-      this.makeEntry('intersect, not contains, including top right', Rectangle.create(3, 0, 2, 2), true, false, Rectangle.create(3, 1, 1, 1)),
-      this.makeEntry('intersect, not contains, including bottom left', Rectangle.create(0, 3, 2, 2), true, false, Rectangle.create(1, 3, 1, 1)),
-      this.makeEntry('intersect, not contains, including bottom right', Rectangle.create(3, 3, 2, 2), true, false, Rectangle.create(3, 3, 1, 1)),
-      this.makeEntry('intersect, not contains, including top bottom', Rectangle.create(2, 0, 1, 5), true, false, Rectangle.create(2, 1, 1, 3)),
-      this.makeEntry('intersect, not contains, including left right', Rectangle.create(0, 2, 5, 1), true, false, Rectangle.create(1, 2, 3, 1)),
+      this.makeEntry(
+        'intersect, not contains, including top left', Rectangle.create(0, 0, 2, 2), true, false, Rectangle.create(1, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including top right', Rectangle.create(3, 0, 2, 2), true, false, Rectangle.create(3, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including bottom left', Rectangle.create(0, 3, 2, 2), true, false, Rectangle.create(1, 3, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including bottom right', Rectangle.create(3, 3, 2, 2), true, false, Rectangle.create(3, 3, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including top bottom', Rectangle.create(2, 0, 1, 5), true, false, Rectangle.create(2, 1, 1, 3)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including left right', Rectangle.create(0, 2, 5, 1), true, false, Rectangle.create(1, 2, 3, 1)
+      ),
 
-      this.makeEntry('intersect, not contains, including left top right', Rectangle.create(0, 0, 5, 3), true, false, Rectangle.create(1, 1, 3, 2)),
-      this.makeEntry('intersect, not contains, including top right bottom', Rectangle.create(2, 0, 3, 5), true, false, Rectangle.create(2, 1, 2, 3)),
-      this.makeEntry('intersect, not contains, including right bottom left', Rectangle.create(0, 2, 5, 3), true, false, Rectangle.create(1, 2, 3, 2)),
-      this.makeEntry('intersect, not contains, including bottom left top', Rectangle.create(0, 0, 3, 5), true, false, Rectangle.create(1, 1, 2, 3)),
+      this.makeEntry(
+        'intersect, not contains, including left top right', Rectangle.create(0, 0, 5, 3), true, false, Rectangle.create(1, 1, 3, 2)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including top right bottom', Rectangle.create(2, 0, 3, 5), true, false, Rectangle.create(2, 1, 2, 3)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including right bottom left', Rectangle.create(0, 2, 5, 3), true, false, Rectangle.create(1, 2, 3, 2)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including bottom left top', Rectangle.create(0, 0, 3, 5), true, false, Rectangle.create(1, 1, 2, 3)
+      ),
 
-      this.makeEntry('intersect, not contains, including left top right bottom', Rectangle.create(0, 0, 5, 5), true, false, Rectangle.create(1, 1, 3, 3)),
+      this.makeEntry(
+        'intersect, not contains, including left top right bottom', Rectangle.create(0, 0, 5, 5), true, false, Rectangle.create(1, 1, 3, 3)
+      ),
 
       // not intersecting at all
-      this.makeEntry('not intersect, placed on the left', Rectangle.create(0, 2, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the top', Rectangle.create(2, 0, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the right', Rectangle.create(4, 2, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the bottom', Rectangle.create(2, 4, 1, 1), false, false, Rectangle.empty()),
+      this.makeEntry(
+        'not intersect, placed on the left', Rectangle.create(0, 2, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the top', Rectangle.create(2, 0, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the right', Rectangle.create(4, 2, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the bottom', Rectangle.create(2, 4, 1, 1), false, false, Rectangle.empty()
+      ),
 
-      this.makeEntry('not intersect, placed on the top left', Rectangle.create(0, 0, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the top right', Rectangle.create(4, 0, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the bottom left', Rectangle.create(0, 4, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the bottom right', Rectangle.create(4, 4, 1, 1), false, false, Rectangle.empty()),
-    ]
+      this.makeEntry(
+        'not intersect, placed on the top left', Rectangle.create(0, 0, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the top right', Rectangle.create(4, 0, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the bottom left', Rectangle.create(0, 4, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the bottom right', Rectangle.create(4, 4, 1, 1), false, false, Rectangle.empty()
+      ),
+    ];
   }
 }

@@ -20,14 +20,14 @@ describe('Point', () => {
 
     describe('.x', () => {
       it('should return proper value', () => {
-        const p = Point.create(1, 2)
+        const p = Point.create(1, 2);
         expect(p.x).toEqual(1);
       });
     });
 
     describe('.y', () => {
       it('should return proper value', () => {
-        const p = Point.create(1, 2)
+        const p = Point.create(1, 2);
         expect(p.y).toEqual(2);
       });
     });

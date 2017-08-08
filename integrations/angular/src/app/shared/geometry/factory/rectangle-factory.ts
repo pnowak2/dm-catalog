@@ -9,8 +9,8 @@ export class RectangleFactory {
       el.getBoundingClientRect().top + w.pageYOffset,
       el.offsetWidth,
       el.offsetHeight
-    )
-  };
+    );
+  }
 
   public static fromSvgElement(el: SVGElement): Rectangle {
     const w = this.getWindow();
@@ -20,8 +20,8 @@ export class RectangleFactory {
       el.getBoundingClientRect().top + w.pageYOffset,
       el.clientWidth,
       el.clientHeight
-    )
-  };
+    );
+  }
 
   public static fromWindow(): Rectangle {
     const w = this.getWindow();
@@ -31,8 +31,8 @@ export class RectangleFactory {
       w.pageYOffset,
       w.document.documentElement.clientWidth,
       w.document.documentElement.clientHeight
-    )
-  };
+    );
+  }
 
   public static getWindow(): Window {
     return window;
