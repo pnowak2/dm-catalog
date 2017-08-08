@@ -21,7 +21,7 @@ import { RightPlacementStrategy } from './services/placement/strategies/right-pl
             new BottomPlacementStrategy(),
             new RightPlacementStrategy(),
           ]
-        )
+        );
       }
     },
   ]

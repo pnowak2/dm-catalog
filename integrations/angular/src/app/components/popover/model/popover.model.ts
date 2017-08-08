@@ -18,6 +18,6 @@ export class Popover {
       placement,
       Point.create(containerLeft, containerTop),
       Point.create(arrowLeft, arrowTop)
-    )
+    );
   }
 }
