@@ -1,8 +1,9 @@
-import { Popover } from './../../model/popover.model';
 import { Point } from './../../../../shared/geometry/model/point';
-import { Rectangle } from './../../../../shared/geometry/model/rectangle';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
+
 import { PlacementStrategy } from '../../interface/placement-strategy';
+import { Popover } from './../../model/popover.model';
+import { Rectangle } from './../../../../shared/geometry/model/rectangle';
 
 export class RightPlacementStrategy implements PlacementStrategy {
   constructor(private placementService: PlacementService) { }
