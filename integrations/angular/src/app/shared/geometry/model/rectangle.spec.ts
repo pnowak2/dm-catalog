@@ -286,14 +286,14 @@ describe('Rectangle', () => {
         expect(Rectangle.prototype.moveTo).toEqual(jasmine.any(Function));
       });
 
-      it('should translate to coordinates', () => {
+      it('should move to coordinates', () => {
         const r = Rectangle.create(1, 2, 3, 4);
         const rMvd = r.moveTo(Point.create(12, 7));
 
         expect(rMvd).toEqual(Rectangle.create(12, 7, 3, 4));
       });
 
-      it('should translate to coordinates by anchor point', () => {
+      it('should move to coordinates by anchor point', () => {
         const ref = Rectangle.create(2, 2, 2, 1);
         const element = Rectangle.create(0, 0, 4, 3);
 
@@ -305,6 +305,60 @@ describe('Rectangle', () => {
       it('should return this', () => {
         const r = Rectangle.create(1, 2, 3, 4);
         const rMvd = r.moveTo(Point.create(12, 7));
+
+        expect(rMvd).toBe(r);
+      });
+    });
+
+    describe('.moveXTo()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.moveXTo).toEqual(jasmine.any(Function));
+      });
+
+      it('should move x to coordinate', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveXTo(5);
+
+        expect(rMvd).toEqual(Rectangle.create(5, 2, 3, 4));
+      });
+
+      it('should move to coordinates by anchor point', () => {
+        const ref = Rectangle.create(1, 2, 3, 4);
+        const rMvd = ref.moveXTo(5, ref.rightBottom());
+
+        expect(rMvd).toEqual(Rectangle.create(2, 2, 3, 4));
+      });
+
+      it('should return this', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveXTo(5);
+
+        expect(rMvd).toBe(r);
+      });
+    });
+
+    describe('.moveYTo()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.moveYTo).toEqual(jasmine.any(Function));
+      });
+
+      it('should move x to coordinate', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveYTo(5);
+
+        expect(rMvd).toEqual(Rectangle.create(1, 5, 3, 4));
+      });
+
+      it('should move to coordinates by anchor point', () => {
+        const ref = Rectangle.create(1, 2, 3, 4);
+        const rMvd = ref.moveYTo(5, ref.centerTop());
+
+        expect(rMvd).toEqual(Rectangle.create(1, 5, 3, 4));
+      });
+
+      it('should return this', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveYTo(5);
 
         expect(rMvd).toBe(r);
       });

@@ -101,6 +101,18 @@ export class Rectangle {
     return this;
   }
 
+  moveXTo(x: number, anchor: Point = this.leftTop()): Rectangle {
+    this.x = x + (this.x - anchor.x);
+
+    return this;
+  }
+
+  moveYTo(y: number, anchor: Point = this.leftTop()): Rectangle {
+    this.y = y + (this.y - anchor.y);
+
+    return this;
+  }
+
   translate(offsetX: number, offsetY: number): Rectangle {
     this.left += offsetX;
     this.top += offsetY;
