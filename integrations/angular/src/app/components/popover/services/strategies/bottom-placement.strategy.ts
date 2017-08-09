@@ -12,7 +12,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): Popover {
-    const calculatedRect: Rectangle = this.placementService.place(
+    const positionedElementRect: Rectangle = this.placementService.place(
       anchorRect,
       elementRect, {
         placementId: this.getId(),
@@ -20,31 +20,35 @@ export class BottomPlacementStrategy implements PlacementStrategy {
       }
     );
 
-    const anchorRelativePosition = anchorRect.relativePositionTo(calculatedRect);
+    const effectivePlacement = this.getEffectivePlacement(anchorRect, positionedElementRect);
+    const relativeAnchorPosition = anchorRect.relativePositionTo(positionedElementRect);
 
-    let effectivePlacement: string;
-    let arrowPoint: Point;
+    const positionedArrowRect = arrowRect
+      .moveTo(Point.create(0, 0))
+      .translateX(relativeAnchorPosition.x)
+      .translateX((anchorRect.width / 2))
+      .translateY(-arrowRect.height);
 
-    if (calculatedRect.isAbove(anchorRect.leftTop())) {
-      effectivePlacement = 'top';
-      arrowPoint = Point.create(
-        anchorRelativePosition.x + anchorRect.width / 2,
-        calculatedRect.height
-      );
-    } else {
-      effectivePlacement = 'bottom';
-      arrowPoint = Point.create(
-        anchorRelativePosition.x + anchorRect.width / 2,
-        -anchorRect.height / 2
-      );
+    if (positionedElementRect.isAbove(anchorRect.leftTop())) {
+      positionedArrowRect
+        .moveYTo(0)
+        .translateY(positionedElementRect.height);
     }
 
     return Popover.create(
       effectivePlacement,
-      calculatedRect.left,
-      calculatedRect.top,
-      arrowPoint.x,
-      arrowPoint.y
+      positionedElementRect.left,
+      positionedElementRect.top,
+      positionedArrowRect.left,
+      positionedArrowRect.top
     );
+  }
+
+  getEffectivePlacement(anchorRect: Rectangle, positionedElementRect: Rectangle): string {
+    if (positionedElementRect.isAbove(anchorRect.leftTop())) {
+      return 'top';
+    }
+
+    return this.getId();
   }
 }
