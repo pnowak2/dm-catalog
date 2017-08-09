@@ -1,4 +1,6 @@
-export class Point {
+import { Position } from './../interface/position';
+
+export class Point implements Position {
   private constructor(public x: number, public y: number) { }
 
   public static create(x: number, y: number): Point {

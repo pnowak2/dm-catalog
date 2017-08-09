@@ -1,4 +1,6 @@
-export class Overflow {
+import { Bounds } from './../interface/bounds';
+
+export class Overflow implements Bounds {
   private constructor(
     public left: number,
     public top: number,

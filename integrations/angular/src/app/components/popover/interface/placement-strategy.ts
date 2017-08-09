@@ -1,4 +1,4 @@
-import { PopoverVM } from './../model/popover.model';
+import { PopoverVM } from './../viewmodel/popover.viewmodel';
 import { Rectangle } from './../../../shared/geometry/model/rectangle';
 
 export interface PlacementStrategy {
