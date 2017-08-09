@@ -3,5 +3,5 @@ import { Rectangle } from './../../../shared/geometry/model/rectangle';
 
 export interface PlacementStrategy {
   getId(): string;
-  calculate(anchorRect: Rectangle, containerRect: Rectangle, arrowRect: Rectangle): Popover;
+  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): Popover;
 }

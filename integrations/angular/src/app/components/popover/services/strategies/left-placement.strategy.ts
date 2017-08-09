@@ -11,11 +11,11 @@ export class LeftPlacementStrategy implements PlacementStrategy {
     return 'left';
   }
 
-  calculate(anchorRect: Rectangle, containerRect: Rectangle, arrowRect: Rectangle): Popover {
+  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): Popover {
     const calculatedRect: Rectangle = this.placementService.place(
       anchorRect,
-      containerRect, {
-        placementId: 'left',
+      elementRect, {
+        placementId: this.getId(),
         offsetAlong: 15
       }
     );

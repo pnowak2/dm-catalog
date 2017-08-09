@@ -11,11 +11,11 @@ export class TopPlacementStrategy implements PlacementStrategy {
     return 'top';
   }
 
-  calculate(anchorRect: Rectangle, containerRect: Rectangle, arrowRect: Rectangle): Popover {
+  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): Popover {
     const calculatedRect: Rectangle = this.placementService.place(
       anchorRect,
-      containerRect, {
-        placementId: 'top',
+      elementRect, {
+        placementId: this.getId(),
         offsetAlong: 15
       }
     );
