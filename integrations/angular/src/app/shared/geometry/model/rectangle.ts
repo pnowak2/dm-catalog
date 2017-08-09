@@ -1,8 +1,9 @@
+import { Position } from './../interface/position';
 import { Bounds } from './../interface/bounds';
 import { Point } from './point';
 import { Overflow } from './overflow';
 
-export class Rectangle implements Bounds {
+export class Rectangle implements Position, Bounds {
   private constructor(
     public left: number,
     public top: number,
