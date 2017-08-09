@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { PlacementStrategy } from '../interface/placement-strategy';
-import { PopoverVM } from './../model/popover.model';
+import { PopoverVM } from './../viewmodel/popover.viewmodel';
 import { Rectangle } from './../../../shared/geometry/model/rectangle';
 
 @Injectable()

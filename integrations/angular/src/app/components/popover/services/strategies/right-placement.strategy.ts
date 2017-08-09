@@ -2,7 +2,7 @@ import { Point } from './../../../../shared/geometry/model/point';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
 
 import { PlacementStrategy } from '../../interface/placement-strategy';
-import { PopoverVM } from './../../model/popover.model';
+import { PopoverVM } from './../../viewmodel/popover.viewmodel';
 import { Rectangle } from './../../../../shared/geometry/model/rectangle';
 
 export class RightPlacementStrategy implements PlacementStrategy {

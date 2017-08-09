@@ -1,5 +1,5 @@
 import { PopoverService } from './services/popover.service';
-import { PopoverVM } from './model/popover.model';
+import { PopoverVM } from './viewmodel/popover.viewmodel';
 import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 import { Rectangle } from './../../shared/geometry/model/rectangle';
 import { RectangleFactory } from './../../shared/geometry/factory/rectangle-factory';
