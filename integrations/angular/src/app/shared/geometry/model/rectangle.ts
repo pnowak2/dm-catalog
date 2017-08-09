@@ -333,8 +333,13 @@ export class Rectangle implements Position, Bounds {
   }
 
   translateInside(other: Rectangle): Rectangle {
+    return this
+      .translateXInside(other)
+      .translateYInside(other);
+  }
+
+  translateXInside(other: Rectangle): Rectangle {
     let offsetX = 0;
-    let offsetY = 0;
 
     if (this.left <= other.left) {
       offsetX = other.left - this.left;
@@ -344,6 +349,12 @@ export class Rectangle implements Position, Bounds {
       offsetX = other.right - this.right;
     }
 
+    return this.translate(offsetX, 0);
+  }
+
+  translateYInside(other: Rectangle): Rectangle {
+    let offsetY = 0;
+
     if (this.top <= other.top) {
       offsetY = other.top - this.top;
     }
@@ -352,7 +363,7 @@ export class Rectangle implements Position, Bounds {
       offsetY = other.bottom - this.bottom;
     }
 
-    return this.translate(offsetX, offsetY);
+    return this.translate(0, offsetY);
   }
 
   blend(rect: Rectangle, scalar: number): Rectangle {

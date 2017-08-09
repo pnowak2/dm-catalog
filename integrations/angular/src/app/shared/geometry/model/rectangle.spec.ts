@@ -1373,7 +1373,170 @@ describe('Rectangle', () => {
         const r2 = Rectangle.create(1, 1, 3, 3);
         expect(r1.translateInside(r2)).toBe(r1);
       });
+    });
 
+    describe('.translateXInside()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.translateXInside).toEqual(jasmine.any(Function));
+      });
+
+      it('should move in X axis to other rect if this is outside to the left', () => {
+        const r1 = Rectangle.create(0, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(1, 2, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the right', () => {
+        const r1 = Rectangle.create(4, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(3, 2, 1, 1));
+      });
+
+      it('should not move in X axis to other rect if this is outside on top', () => {
+        const r1 = Rectangle.create(2, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(2, 0, 1, 1));
+      });
+
+      it('should not move in X axis to other rect if this is outside on bottom', () => {
+        const r1 = Rectangle.create(2, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(2, 4, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the top left', () => {
+        const r1 = Rectangle.create(0, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(1, 0, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the top right', () => {
+        const r1 = Rectangle.create(4, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(3, 0, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the bottom left', () => {
+        const r1 = Rectangle.create(0, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(1, 4, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the bottom right', () => {
+        const r1 = Rectangle.create(4, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(3, 4, 1, 1));
+      });
+
+      it('should not move to other rect if this is inside other rect not touching its edges', () => {
+        const r1 = Rectangle.create(2, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(2, 2, 1, 1));
+      });
+
+      it('should not move to other rect if this is inside other rect touching its edges', () => {
+        const r1 = Rectangle.create(1, 1, 2, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(1, 1, 2, 2));
+      });
+
+      it('should return this', () => {
+        const r1 = Rectangle.create(1, 1, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+        expect(r1.translateXInside(r2)).toBe(r1);
+      });
+    });
+
+    describe('.translateYInside()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.translateYInside).toEqual(jasmine.any(Function));
+      });
+
+      it('should not move in Y axis to other rect if this is outside to the left', () => {
+        const r1 = Rectangle.create(0, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(0, 2, 1, 1));
+      });
+
+      it('should not move in Y axis to other rect if this is outside to the right', () => {
+        const r1 = Rectangle.create(4, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(4, 2, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside on top', () => {
+        const r1 = Rectangle.create(2, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(2, 1, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside on bottom', () => {
+        const r1 = Rectangle.create(2, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(2, 3, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside to the top left', () => {
+        const r1 = Rectangle.create(0, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(0, 1, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside to the top right', () => {
+        const r1 = Rectangle.create(4, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(4, 1, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside to the bottom left', () => {
+        const r1 = Rectangle.create(0, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(0, 3, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside to the bottom right', () => {
+        const r1 = Rectangle.create(4, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(4, 3, 1, 1));
+      });
+
+      it('should not move to other rect if this is inside other rect not touching its edges', () => {
+        const r1 = Rectangle.create(2, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(2, 2, 1, 1));
+      });
+
+      it('should not move to other rect if this is inside other rect touching its edges', () => {
+        const r1 = Rectangle.create(1, 1, 2, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(1, 1, 2, 2));
+      });
+
+      it('should return this', () => {
+        const r1 = Rectangle.create(1, 1, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+        expect(r1.translateYInside(r2)).toBe(r1);
+      });
     });
 
     describe('.blend()', () => {
@@ -1572,7 +1735,7 @@ class RectsGenerator {
         'intersect, contains, including top bottom', Rectangle.create(2, 1, 1, 3), true, true, Rectangle.create(2, 1, 1, 3)
       ),
       this.makeEntry('intersect, contains, including left right', Rectangle.create(1, 2, 3, 1), true, true, Rectangle.create(1, 2, 3, 1)
-    ),
+      ),
 
       this.makeEntry(
         'intersect, contains, including left top right', Rectangle.create(1, 1, 3, 2), true, true, Rectangle.create(1, 1, 3, 2)
