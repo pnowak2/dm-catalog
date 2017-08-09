@@ -23,7 +23,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     const isFlipped = this.isFlipped(anchorRect, positionedElementRect);
     const anchorPosition = anchorRect.relativePositionTo(positionedElementRect);
     const positionedArrowRect = arrowRect
-      .moveXTo(Math.min(anchorPosition.x))
+      .moveXTo(anchorPosition.x)
       .moveYTo(-arrowRect.height)
       .translateX((anchorRect.width / 2));
 
