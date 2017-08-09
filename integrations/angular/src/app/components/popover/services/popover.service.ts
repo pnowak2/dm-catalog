@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { PlacementStrategy } from '../interface/placement-strategy';
-import { Popover } from './../model/popover.model';
+import { PopoverVM } from './../model/popover.model';
 import { Rectangle } from './../../../shared/geometry/model/rectangle';
 
 @Injectable()
@@ -17,7 +17,7 @@ export class PopoverService {
     );
   }
 
-  calculate(placement: string, anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): Popover {
+  calculate(placement: string, anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
     const placementStrategy = PopoverService.pickPlacementStrategy(
       this.placementStrategies,
       placement

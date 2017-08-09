@@ -1,6 +1,6 @@
 import { Point } from './../../../shared/geometry/model/point';
 
-export class Popover {
+export class PopoverVM {
 
   private constructor(
     private effectivePlacement: string,
@@ -13,8 +13,8 @@ export class Popover {
     containerTop: number = 0,
     arrowLeft: number = 0,
     arrowTop: number = 0
-  ): Popover {
-    return new Popover(
+  ): PopoverVM {
+    return new PopoverVM(
       placement,
       Point.create(containerLeft, containerTop),
       Point.create(arrowLeft, arrowTop)

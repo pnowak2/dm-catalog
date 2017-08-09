@@ -1,4 +1,4 @@
-import { Popover } from './../../model/popover.model';
+import { PopoverVM } from './../../model/popover.model';
 import { Point } from './../../../../shared/geometry/model/point';
 import { Rectangle } from './../../../../shared/geometry/model/rectangle';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
@@ -11,7 +11,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     return 'bottom';
   }
 
-  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): Popover {
+  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
     const positionedElementRect: Rectangle = this.placementService.place(
       anchorRect,
       elementRect, {
@@ -20,23 +20,19 @@ export class BottomPlacementStrategy implements PlacementStrategy {
       }
     );
 
-    const effectivePlacement = this.getEffectivePlacement(anchorRect, positionedElementRect);
-    const relativeAnchorPosition = anchorRect.relativePositionTo(positionedElementRect);
-
+    const isFlipped = this.isFlipped(anchorRect, positionedElementRect);
+    const anchorPosition = anchorRect.relativePositionTo(positionedElementRect);
     const positionedArrowRect = arrowRect
-      .moveTo(Point.create(0, 0))
-      .translateX(relativeAnchorPosition.x)
-      .translateX((anchorRect.width / 2))
-      .translateY(-arrowRect.height);
+      .moveXTo(Math.min(anchorPosition.x))
+      .moveYTo(-arrowRect.height)
+      .translateX((anchorRect.width / 2));
 
-    if (positionedElementRect.isAbove(anchorRect.leftTop())) {
-      positionedArrowRect
-        .moveYTo(0)
-        .translateY(positionedElementRect.height);
+    if (isFlipped) {
+      positionedArrowRect.moveYTo(positionedElementRect.height);
     }
 
-    return Popover.create(
-      effectivePlacement,
+    return PopoverVM.create(
+      isFlipped ? 'top' : 'bottom',
       positionedElementRect.left,
       positionedElementRect.top,
       positionedArrowRect.left,
@@ -44,11 +40,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     );
   }
 
-  getEffectivePlacement(anchorRect: Rectangle, positionedElementRect: Rectangle): string {
-    if (positionedElementRect.isAbove(anchorRect.leftTop())) {
-      return 'top';
-    }
-
-    return this.getId();
+  isFlipped(anchorRect: Rectangle, positionedElementRect: Rectangle): boolean {
+    return positionedElementRect.isAbove(anchorRect.leftTop());
   }
 }

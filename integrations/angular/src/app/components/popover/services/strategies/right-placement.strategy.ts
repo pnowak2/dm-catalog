@@ -2,7 +2,7 @@ import { Point } from './../../../../shared/geometry/model/point';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
 
 import { PlacementStrategy } from '../../interface/placement-strategy';
-import { Popover } from './../../model/popover.model';
+import { PopoverVM } from './../../model/popover.model';
 import { Rectangle } from './../../../../shared/geometry/model/rectangle';
 
 export class RightPlacementStrategy implements PlacementStrategy {
@@ -12,7 +12,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
     return 'right';
   }
 
-  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): Popover {
+  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
     const calculatedRect: Rectangle = this.placementService.place(
       anchorRect,
       elementRect, {
@@ -40,7 +40,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
       );
     }
 
-    return Popover.create(
+    return PopoverVM.create(
       effectivePlacement,
       calculatedRect.left,
       calculatedRect.top,

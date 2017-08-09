@@ -1,10 +1,10 @@
 <div #popoverContainer
-     class="dm-c-popover dm-c-popover--{{ model.effectivePlacement }} dm-c-popover--colored-header"
-     [style.left]="model.containerPosition.x + 'px'"
-     [style.top]="model.containerPosition.y + 'px'">
+     class="dm-c-popover dm-c-popover--{{ vm.effectivePlacement }} dm-c-popover--colored-header"
+     [style.left]="vm.containerPosition.x + 'px'"
+     [style.top]="vm.containerPosition.y + 'px'">
   <div #arrow class="dm-c-popover__arrow"
-       [style.left]="model.arrowPosition.x + 'px'"
-       [style.top]="model.arrowPosition.y + 'px'">
+       [style.left]="vm.arrowPosition.x + 'px'"
+       [style.top]="vm.arrowPosition.y + 'px'">
     <div class="dm-c-popover__arrow-inner"></div>
   </div>
   <div *ngIf="title" class="dm-c-popover__header">
