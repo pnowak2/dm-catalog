@@ -1,7 +1,8 @@
+import { Bounds } from './../interface/bounds';
 import { Point } from './point';
 import { Overflow } from './overflow';
 
-export class Rectangle {
+export class Rectangle implements Bounds {
   private constructor(
     public left: number,
     public top: number,
