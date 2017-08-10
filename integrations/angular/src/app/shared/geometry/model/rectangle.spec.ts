@@ -1298,74 +1298,24 @@ describe('Rectangle', () => {
         expect(Rectangle.prototype.translateInside).toEqual(jasmine.any(Function));
       });
 
-      it('should move to other rect if this is outside to the left', () => {
+      it('should delegate to .translateXInside()', () => {
         const r1 = Rectangle.create(0, 2, 1, 1);
         const r2 = Rectangle.create(1, 1, 3, 3);
+        spyOn(Rectangle.prototype, 'translateXInside').and.returnValue(r1);
 
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(1, 2, 1, 1));
+        const result = r1.translateInside(r2);
+
+        expect(r1.translateXInside).toHaveBeenCalledWith(r2);
       });
 
-      it('should move to other rect if this is outside to the right', () => {
-        const r1 = Rectangle.create(4, 2, 1, 1);
+      it('should delegate to .translateYInside()', () => {
+        const r1 = Rectangle.create(0, 2, 1, 1);
         const r2 = Rectangle.create(1, 1, 3, 3);
+        spyOn(Rectangle.prototype, 'translateYInside').and.returnValue(r1);
 
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(3, 2, 1, 1));
-      });
+        const result = r1.translateInside(r2);
 
-      it('should move to other rect if this is outside on top', () => {
-        const r1 = Rectangle.create(2, 0, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(2, 1, 1, 1));
-      });
-
-      it('should move to other rect if this is outside on bottom', () => {
-        const r1 = Rectangle.create(2, 4, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(2, 3, 1, 1));
-      });
-
-      it('should move to other rect if this is outside to the top left', () => {
-        const r1 = Rectangle.create(0, 0, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(1, 1, 1, 1));
-      });
-
-      it('should move to other rect if this is outside to the top right', () => {
-        const r1 = Rectangle.create(4, 0, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(3, 1, 1, 1));
-      });
-
-      it('should move to other rect if this is outside to the bottom left', () => {
-        const r1 = Rectangle.create(0, 4, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(1, 3, 1, 1));
-      });
-
-      it('should move to other rect if this is outside to the bottom right', () => {
-        const r1 = Rectangle.create(4, 4, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(3, 3, 1, 1));
-      });
-
-      it('should not move to other rect if this is inside other rect not touching its edges', () => {
-        const r1 = Rectangle.create(2, 2, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(2, 2, 1, 1));
-      });
-
-      it('should not move to other rect if this is inside other rect touching its edges', () => {
-        const r1 = Rectangle.create(1, 1, 2, 2);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(1, 1, 2, 2));
+        expect(r1.translateYInside).toHaveBeenCalledWith(r2);
       });
 
       it('should return this', () => {
