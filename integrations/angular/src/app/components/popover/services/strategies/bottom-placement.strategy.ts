@@ -1,8 +1,10 @@
-import { PopoverVM } from './../../viewmodel/popover.viewmodel';
+import { PlacementStrategy } from './../../interface/placement-strategy';
+
 import { Point } from './../../../../shared/geometry/model/point';
 import { Rectangle } from './../../../../shared/geometry/model/rectangle';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
-import { PlacementStrategy } from '../../interface/placement-strategy';
+
+import { PopoverVM } from './../../viewmodel/popover.viewmodel';
 
 export class BottomPlacementStrategy implements PlacementStrategy {
   constructor(private placementService: PlacementService) { }
