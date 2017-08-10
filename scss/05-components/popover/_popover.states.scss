@@ -43,6 +43,7 @@
     .dm-c-popover__arrow {
       border-bottom-width: 0;
       bottom: -$dm-c-popover__arrow-width;
+      margin-top: -2 * $dm-c-popover__border-width;
 
       &-inner {
         bottom: $dm-c-popover__arrow-border-width;
@@ -142,6 +143,10 @@
     }
 
     &.dm-c-popover--top {
+      .dm-c-popover__arrow {
+        margin-top: 0;
+      }
+
       .dm-c-popover__arrow-inner {
         bottom: $dm-c-popover--colored-header__border-width + 1px;
       }
@@ -167,6 +172,12 @@
     .dm-c-popover__close,
     .dm-c-popover__content {
       color: $dm-c-popover--colored-solid__text-color;
+    }
+
+    &.dm-c-popover--top {
+      .dm-c-popover__arrow {
+        margin-top: 0;
+      }
     }
 
     .dm-c-popover__arrow-inner {
