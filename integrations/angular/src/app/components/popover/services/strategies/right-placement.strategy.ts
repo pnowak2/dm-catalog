@@ -13,7 +13,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
-    const calculatedRect: Rectangle = this.placementService.place(
+    const positionedElementRect: Rectangle = this.placementService.place(
       anchorRect,
       elementRect, {
         placementId: this.getId(),
@@ -21,31 +21,26 @@ export class RightPlacementStrategy implements PlacementStrategy {
       }
     );
 
-    const anchorRelativePosition = anchorRect.relativePositionTo(calculatedRect);
+    const isFlipped = this.isFlipped(anchorRect, positionedElementRect);
+    const anchorPosition = anchorRect.relativePositionTo(positionedElementRect);
+    const positionedArrowRect = arrowRect
+      .moveXTo(-arrowRect.width)
+      .moveYTo(anchorPosition.y + anchorRect.height / 2);
 
-    let effectivePlacement: string;
-    let arrowPoint: Point;
-
-    if (calculatedRect.isOnTheRight(anchorRect.leftTop())) {
-      effectivePlacement = 'right';
-      arrowPoint = Point.create(
-        -anchorRect.width / 2,
-        anchorRelativePosition.y + anchorRect.height / 2
-      );
-    } else {
-      effectivePlacement = 'left';
-      arrowPoint = Point.create(
-        calculatedRect.width,
-        anchorRelativePosition.y + anchorRect.height / 2
-      );
+    if (isFlipped) {
+      positionedArrowRect.moveXTo(positionedElementRect.width);
     }
 
     return PopoverVM.create(
-      effectivePlacement,
-      calculatedRect.left,
-      calculatedRect.top,
-      arrowPoint.x,
-      arrowPoint.y
+      isFlipped ? 'left' : 'right',
+      positionedElementRect.left,
+      positionedElementRect.top,
+      positionedArrowRect.left,
+      positionedArrowRect.top
     );
+  }
+
+  isFlipped(anchorRect: Rectangle, positionedElementRect: Rectangle): boolean {
+    return positionedElementRect.isOnTheLeft(anchorRect.center());
   }
 }
