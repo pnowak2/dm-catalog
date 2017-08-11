@@ -1,3 +1,4 @@
+import { Border } from './border';
 import { Position } from './../interface/position';
 import { Bounds } from './../interface/bounds';
 import { Point } from './point';
@@ -8,19 +9,20 @@ export class Rectangle implements Position, Bounds {
     public left: number,
     public top: number,
     public right: number,
-    public bottom: number) {
+    public bottom: number,
+    public border: Border) {
   }
 
-  public static create(x: number, y: number, width: number, height: number): Rectangle {
-    return new Rectangle(x, y, x + width, y + height);
+  public static create(x: number, y: number, width: number, height: number, border: Border = Border.empty()): Rectangle {
+    return new Rectangle(x, y, x + width, y + height, border);
   }
 
-  public static fromBounds(left: number, top: number, right: number, bottom: number): Rectangle {
+  public static fromBounds(left: number, top: number, right: number, bottom: number, border: Border = Border.empty()): Rectangle {
     return Rectangle.create(left, top, right - left, bottom - top);
   }
 
   public static fromRect(rect: Rectangle): Rectangle {
-    return Rectangle.create(rect.x, rect.y, rect.width, rect.height);
+    return Rectangle.create(rect.x, rect.y, rect.width, rect.height, rect.border);
   }
 
   public static empty(): Rectangle {
@@ -66,23 +68,25 @@ export class Rectangle implements Position, Bounds {
   }
 
   clone(): Rectangle {
-    return Rectangle.create(this.x, this.y, this.width, this.height);
+    return Rectangle.create(this.x, this.y, this.width, this.height, this.border);
   }
 
-  setRectangle(x: number, y: number, width: number, height: number): Rectangle {
+  setRectangle(x: number, y: number, width: number, height: number, border: Border = Border.empty()): Rectangle {
     this.left = x;
     this.top = y;
     this.right = x + width;
     this.bottom = y + height;
+    this.border = border.clone();
 
     return this;
   }
 
-  setBounds(left: number, top: number, right: number, bottom: number): Rectangle {
+  setBounds(left: number, top: number, right: number, bottom: number, border: Border = Border.empty()): Rectangle {
     this.left = left;
     this.top = top;
     this.right = right;
     this.bottom = bottom;
+    this.border = border.clone();
 
     return this;
   }
@@ -92,6 +96,7 @@ export class Rectangle implements Position, Bounds {
     this.top = other.top;
     this.right = other.right;
     this.bottom = other.bottom;
+    this.border = other.border.clone();
 
     return this;
   }
@@ -137,6 +142,7 @@ export class Rectangle implements Position, Bounds {
     this.top *= factor;
     this.right *= factor;
     this.bottom *= factor;
+    this.border = this.border.scale(factor);
 
     return this;
   }
@@ -317,7 +323,7 @@ export class Rectangle implements Position, Bounds {
     const right = Math.min(this.right, other.right);
     const bottom = Math.min(this.bottom, other.bottom);
 
-    return this.setRectangle(left, top, Math.max(0, right - left), Math.max(0, bottom - top));
+    return this.setRectangle(left, top, Math.max(0, right - left), Math.max(0, bottom - top), this.border);
   }
 
   expandToContain(other: Rectangle): Rectangle {
@@ -329,7 +335,7 @@ export class Rectangle implements Position, Bounds {
     const right = Math.max(this.right, other.right);
     const bottom = Math.max(this.bottom, other.bottom);
 
-    return this.setRectangle(left, top, right - left, bottom - top);
+    return this.setRectangle(left, top, right - left, bottom - top, this.border);
   }
 
   translateInside(other: Rectangle): Rectangle {
@@ -371,7 +377,7 @@ export class Rectangle implements Position, Bounds {
       this.left + (rect.left - this.left) * scalar,
       this.top + (rect.top - this.top) * scalar,
       this.right + (rect.right - this.right) * scalar,
-      this.bottom + (rect.bottom - this.bottom) * scalar
+      this.bottom + (rect.bottom - this.bottom) * scalar,
     );
   }
 
