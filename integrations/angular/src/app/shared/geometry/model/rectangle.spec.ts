@@ -661,6 +661,18 @@ describe('Rectangle', () => {
       });
     });
 
+    describe('.position()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.position).toEqual(jasmine.any(Function));
+      });
+
+      it('should return top left position', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.position()).toEqual(Point.create(1, 2));
+      });
+    });
+
     describe('.leftTop()', () => {
       it('should be defined', () => {
         expect(Rectangle.prototype.leftTop).toEqual(jasmine.any(Function));

@@ -184,6 +184,10 @@ export class Rectangle implements Position, Bounds {
     return this.left >= p.x;
   }
 
+  position(): Point {
+    return this.leftTop();
+  }
+
   leftTop(): Point {
     return Point.create(this.left, this.top);
   }
