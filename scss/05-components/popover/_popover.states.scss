@@ -27,7 +27,7 @@
   &--bottom {
     .dm-c-popover__arrow {
       left: 50%;
-      margin-left: -$dm-c-popover__arrow-width;
+      margin-left: -$dm-c-popover__arrow-width - $dm-c-popover__border-width;   
       border-left-color: transparent;
       border-right-color: transparent;
 
@@ -43,6 +43,7 @@
     .dm-c-popover__arrow {
       border-bottom-width: 0;
       bottom: -$dm-c-popover__arrow-width;
+      margin-top: -$dm-c-popover__border-width - 1; 
 
       &-inner {
         bottom: $dm-c-popover__arrow-border-width;
@@ -55,7 +56,8 @@
     .dm-c-popover__arrow {
       border-top-width: 0;
       top: -$dm-c-popover__arrow-width;
-
+      margin-top: -$dm-c-popover__border-width + 1; 
+      
       &-inner {
         top: $dm-c-popover__arrow-border-width;
         border-top-width: 0;
