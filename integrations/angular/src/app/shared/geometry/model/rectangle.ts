@@ -396,10 +396,12 @@ export class Rectangle implements Position, Bounds {
     return this;
   }
 
-  relativePositionTo(parent: Rectangle): Point {
-    return Point.create(
+  relativeTo(parent: Rectangle): Rectangle {
+    return Rectangle.create(
       this.left - parent.left,
-      this.top - parent.top
+      this.top - parent.top,
+      this.width,
+      this.height
     );
   }
 

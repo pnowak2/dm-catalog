@@ -20,7 +20,7 @@ export class LeftPlacementStrategy implements PlacementStrategy {
       }
     );
 
-    const anchorRelativePosition = anchorRect.relativePositionTo(calculatedRect);
+    const anchorRelativePosition = anchorRect.relativeTo(calculatedRect);
 
     let effectivePlacement: string;
     let arrowPoint: Point;

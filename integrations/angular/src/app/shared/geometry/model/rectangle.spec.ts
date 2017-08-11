@@ -1574,18 +1574,24 @@ describe('Rectangle', () => {
       });
     });
 
-    describe('.relativePositionTo()', () => {
+    describe('.relativeTo()', () => {
       it('should be defined', () => {
-        expect(Rectangle.prototype.relativePositionTo).toEqual(jasmine.any(Function));
+        expect(Rectangle.prototype.relativeTo).toEqual(jasmine.any(Function));
       });
 
-      it('should return position in relation to parent rect', () => {
+      it('should return rectangle with relative position to parent rect', () => {
         const parent = Rectangle.create(2, 3, 5, 6);
         const r = Rectangle.create(4, 4, 3, 2);
 
-        expect(r.relativePositionTo(parent)).toEqual(Point.create(2, 1));
+        expect(r.relativeTo(parent)).toEqual(Rectangle.create(2, 1, 3, 2));
       });
 
+      it('should return new instance', () => {
+        const parent = Rectangle.create(2, 3, 5, 6);
+        const r = Rectangle.create(4, 4, 3, 2);
+
+        expect(r.relativeTo(parent)).not.toBe(r);
+      });
     });
 
     describe('.equals()', () => {

@@ -22,7 +22,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
     );
 
     const isFlipped = this.isFlipped(anchorRect, positionedElementRect);
-    const anchorPosition = anchorRect.relativePositionTo(positionedElementRect);
+    const anchorPosition = anchorRect.relativeTo(positionedElementRect);
     const positionedArrowRect = arrowRect
       .moveXTo(-arrowRect.width)
       .moveYTo(anchorPosition.y + anchorRect.height / 2);
