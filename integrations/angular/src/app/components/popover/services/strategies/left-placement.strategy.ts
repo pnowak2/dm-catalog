@@ -41,10 +41,8 @@ export class LeftPlacementStrategy implements PlacementStrategy {
 
     return PopoverVM.create(
       effectivePlacement,
-      calculatedRect.left,
-      calculatedRect.top,
-      arrowPoint.x,
-      arrowPoint.y
+      calculatedRect.leftTop(),
+      arrowPoint
     );
   }
 }

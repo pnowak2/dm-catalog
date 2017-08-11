@@ -36,10 +36,8 @@ export class BottomPlacementStrategy implements PlacementStrategy {
 
     return PopoverVM.create(
       isFlipped ? 'top' : 'bottom',
-      positionedElementRect.left,
-      positionedElementRect.top,
-      positionedArrowRect.left,
-      positionedArrowRect.top
+      positionedElementRect.leftTop(),
+      positionedArrowRect.leftTop()
     );
   }
 

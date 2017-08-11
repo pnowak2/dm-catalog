@@ -9,15 +9,13 @@ export class PopoverVM {
 
   public static create(
     placement: string = 'bottom',
-    containerLeft: number = 0,
-    containerTop: number = 0,
-    arrowLeft: number = 0,
-    arrowTop: number = 0
+    containerPosition: Point = Point.create(0, 0),
+    arrowPosition: Point = Point.create(0, 0)
   ): PopoverVM {
     return new PopoverVM(
       placement,
-      Point.create(containerLeft, containerTop),
-      Point.create(arrowLeft, arrowTop)
+      containerPosition,
+      arrowPosition
     );
   }
 }
