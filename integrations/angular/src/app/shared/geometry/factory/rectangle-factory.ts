@@ -1,3 +1,4 @@
+import { BorderFactory } from './border-factory';
 import { Border } from './../model/border';
 import { Rectangle } from './../model/rectangle';
 
@@ -10,7 +11,7 @@ export class RectangleFactory {
       el.getBoundingClientRect().top + w.pageYOffset,
       el.offsetWidth,
       el.offsetHeight,
-      Border.create(el.clientLeft, el.clientTop, el.clientTop, el.clientTop)
+      BorderFactory.fromHtmlElement(el)
     );
   }
 
