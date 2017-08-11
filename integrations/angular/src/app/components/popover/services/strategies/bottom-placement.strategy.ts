@@ -26,12 +26,12 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     const anchorLocalRect = anchorRect.relativeTo(positionedElementRect);
 
     const positionedArrowRect = arrowRect
-      .moveXTo(anchorLocalRect.x)
-      .moveYTo(-arrowRect.height)
-      .translateX((anchorRect.width / 2));
+      .moveXTo(anchorLocalRect.centerBottom().x, arrowRect.leftTop())
+      .moveYTo(0, arrowRect.centerBottom());
 
     if (isFlipped) {
-      positionedArrowRect.moveYTo(positionedElementRect.height);
+      positionedArrowRect
+        .moveYTo(positionedElementRect.height, positionedArrowRect.centerTop());
     }
 
     return PopoverVM.create(
