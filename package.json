@@ -1,6 +1,6 @@
 {
   "name": "dm-catalog",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "description": "Modular CSS widgets library",
   "main": "index.js",
   "scripts": {
