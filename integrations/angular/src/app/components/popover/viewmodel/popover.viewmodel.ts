@@ -1,22 +1,28 @@
-import { Offset } from './../../../shared/geometry/model/offset';
 import { Point } from './../../../shared/geometry/model/point';
+import { Position } from './../../../shared/geometry/interface/position';
+import { Offset } from './../../../shared/geometry/model/offset';
 
-export class PopoverVM {
+interface PopoverDetails {
+  placementClassModifier: string;
+  containerPosition: Position;
+  arrowOffset: Offset;
+}
 
+export class PopoverVM implements PopoverDetails {
   private constructor(
-    public effectivePlacement: string,
-    public containerPosition: Point,
-    public arrowOffset: Offset) { }
+    public placementClassModifier: string = 'no-direction',
+    public containerPosition: Position = Point.create(0, 0),
+    public arrowOffset: Offset = Offset.create(0, 0)) { }
 
-  public static create(
-    placement: string = 'bottom',
-    containerPosition: Point = Point.create(0, 0),
-    arrowOffset: Offset = Offset.create(0, 0)
-  ): PopoverVM {
+  public static create(popoverDetails?: PopoverDetails): PopoverVM {
+    if (!popoverDetails) {
+      return new PopoverVM();
+    }
+
     return new PopoverVM(
-      placement,
-      containerPosition,
-      arrowOffset
+      popoverDetails.placementClassModifier,
+      popoverDetails.containerPosition,
+      popoverDetails.arrowOffset
     );
   }
 }

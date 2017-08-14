@@ -38,11 +38,11 @@ export class LeftPlacementStrategy implements PlacementStrategy {
         anchorRelativePosition.y + anchorRect.height / 2
       );
     }
-
-    return PopoverVM.create(
-      effectivePlacement,
-      calculatedRect.leftTop(),
-      arrowPoint
-    );
+    return null;
+    // return PopoverVM.create(
+    //   effectivePlacement,
+    //   calculatedRect.leftTop(),
+    //   arrowPoint
+    // );
   }
 }

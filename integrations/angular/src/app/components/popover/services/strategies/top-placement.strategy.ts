@@ -38,11 +38,11 @@ export class TopPlacementStrategy implements PlacementStrategy {
         calculatedRect.height
       );
     }
-
-    return PopoverVM.create(
-      effectivePlacement,
-      calculatedRect.leftTop(),
-      arrowPoint
-    );
+    return null;
+    // return PopoverVM.create(
+    //   effectivePlacement,
+    //   calculatedRect.leftTop(),
+    //   arrowPoint
+    // );
   }
 }

@@ -24,11 +24,11 @@ export class RightPlacementStrategy implements PlacementStrategy {
     const isFlipped = this.isFlipped(anchorRect, positionedElementRect);
     const anchorPosition = anchorRect.relativeTo(positionedElementRect);
 
-    return PopoverVM.create(
-      isFlipped ? 'left' : 'right',
-      positionedElementRect.leftTop(),
-      Offset.create(0, anchorRect.position().y - positionedElementRect.center().y)
-    );
+    return PopoverVM.create({
+      placementClassModifier: isFlipped ? 'left' : 'right',
+      containerPosition: positionedElementRect.leftTop(),
+      arrowOffset: Offset.create(0, anchorRect.position().y - positionedElementRect.center().y)
+    });
   }
 
   isFlipped(anchorRect: Rectangle, positionedElementRect: Rectangle): boolean {

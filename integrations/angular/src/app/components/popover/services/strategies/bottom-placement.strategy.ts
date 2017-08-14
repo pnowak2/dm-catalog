@@ -23,11 +23,12 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     );
 
     const isFlipped = this.isFlipped(anchorRect, positionedElementRect);
-    return PopoverVM.create(
-      isFlipped ? 'top' : 'bottom',
-      positionedElementRect.position(),
-      Offset.create(anchorRect.position().x - positionedElementRect.center().x, 0)
-    );
+
+    return PopoverVM.create({
+      placementClassModifier: isFlipped ? 'top' : this.getId(),
+      containerPosition: positionedElementRect.position(),
+      arrowOffset: Offset.create(anchorRect.position().x - positionedElementRect.center().x, 0)
+    });
   }
 
   isFlipped(anchorRect: Rectangle, positionedElementRect: Rectangle): boolean {
