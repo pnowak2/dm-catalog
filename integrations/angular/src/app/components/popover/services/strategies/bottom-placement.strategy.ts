@@ -1,3 +1,4 @@
+import { constants } from './../../constants/constants';
 import { Point } from './../../../../shared/geometry/model/point';
 import { Position } from './../../../../shared/geometry/interface/position';
 import { Offset } from './../../../../shared/geometry/model/offset';
@@ -32,7 +33,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
       anchorRect,
       popoverRect, {
         placementId: this.getId(),
-        offsetAlong: 15
+        offsetAlong: constants.offset
       }
     );
 
