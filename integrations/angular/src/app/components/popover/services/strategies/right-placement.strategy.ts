@@ -1,3 +1,4 @@
+import { PlacementOptions } from './../popover.service';
 import { Offset } from './../../../../shared/geometry/model/offset';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
 
@@ -12,22 +13,22 @@ export class RightPlacementStrategy implements PlacementStrategy {
     return 'right';
   }
 
-  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
+  calculate(placementOptions: PlacementOptions): PopoverVM {
     const positionedElementRect: Rectangle = this.placementService.place(
-      anchorRect,
-      elementRect, {
+      placementOptions.anchorRect,
+      placementOptions.popoverRect, {
         placementId: this.getId(),
         offsetAlong: 15
       }
     );
 
-    const isFlipped = this.isFlipped(anchorRect, positionedElementRect);
-    const anchorPosition = anchorRect.relativeTo(positionedElementRect);
+    const isFlipped = this.isFlipped(placementOptions.anchorRect, positionedElementRect);
+    const anchorPosition = placementOptions.anchorRect.relativeTo(positionedElementRect);
 
     return PopoverVM.create({
       placementClassModifier: isFlipped ? 'left' : 'right',
       popoverPosition: positionedElementRect.leftTop(),
-      arrowOffset: Offset.create(0, anchorRect.position().y - positionedElementRect.center().y)
+      arrowOffset: Offset.create(0, placementOptions.anchorRect.position().y - positionedElementRect.center().y)
     });
   }
 

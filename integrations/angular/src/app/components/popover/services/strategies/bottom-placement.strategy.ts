@@ -1,3 +1,4 @@
+import { PlacementOptions } from './../popover.service';
 import { constants } from './../../constants/constants';
 import { Point } from './../../../../shared/geometry/model/point';
 import { Position } from './../../../../shared/geometry/interface/position';
@@ -16,12 +17,12 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     return 'bottom';
   }
 
-  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
-    const positionedPopoverRect = this.getPositionedPopoverRect(anchorRect, elementRect);
+  calculate(placementOptions: PlacementOptions): PopoverVM {
+    const positionedPopoverRect = this.getPositionedPopoverRect(placementOptions.anchorRect, placementOptions.popoverRect);
 
     const popoverPosition = positionedPopoverRect.position();
-    const arrowOffset = this.getArrowOffset(anchorRect, positionedPopoverRect);
-    const placementClassModifier = this.getPlacementClassModifier(anchorRect, positionedPopoverRect);
+    const arrowOffset = this.getArrowOffset(placementOptions.anchorRect, positionedPopoverRect);
+    const placementClassModifier = this.getPlacementClassModifier(placementOptions.anchorRect, positionedPopoverRect);
 
     return PopoverVM.create({
       popoverPosition, arrowOffset, placementClassModifier

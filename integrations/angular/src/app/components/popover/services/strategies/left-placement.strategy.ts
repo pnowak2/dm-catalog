@@ -1,3 +1,4 @@
+import { PlacementOptions } from './../popover.service';
 import { PopoverVM } from './../../viewmodel/popover.viewmodel';
 import { Point } from './../../../../shared/geometry/model/point';
 import { Rectangle } from './../../../../shared/geometry/model/rectangle';
@@ -11,31 +12,31 @@ export class LeftPlacementStrategy implements PlacementStrategy {
     return 'left';
   }
 
-  calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
+  calculate(placementOptions: PlacementOptions): PopoverVM {
     const calculatedRect: Rectangle = this.placementService.place(
-      anchorRect,
-      elementRect, {
+      placementOptions.anchorRect,
+      placementOptions.popoverRect, {
         placementId: this.getId(),
         offsetAlong: 15
       }
     );
 
-    const anchorRelativePosition = anchorRect.relativeTo(calculatedRect);
+    const anchorRelativePosition = placementOptions.anchorRect.relativeTo(calculatedRect);
 
     let effectivePlacement: string;
     let arrowPoint: Point;
 
-    if (calculatedRect.isOnTheLeft(anchorRect.leftTop())) {
+    if (calculatedRect.isOnTheLeft(placementOptions.anchorRect.leftTop())) {
       effectivePlacement = 'left';
       arrowPoint = Point.create(
         calculatedRect.width,
-        anchorRelativePosition.y + anchorRect.height / 2
+        anchorRelativePosition.y + placementOptions.anchorRect.height / 2
       );
     } else {
       effectivePlacement = 'right';
       arrowPoint = Point.create(
-        -anchorRect.width / 2,
-        anchorRelativePosition.y + anchorRect.height / 2
+        -placementOptions.anchorRect.width / 2,
+        anchorRelativePosition.y + placementOptions.anchorRect.height / 2
       );
     }
     return null;
