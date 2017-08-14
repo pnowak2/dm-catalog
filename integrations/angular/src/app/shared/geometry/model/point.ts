@@ -25,6 +25,14 @@ export class Point implements Position {
     return this;
   }
 
+  translateX(offsetX: number): Point {
+    return this.translate(offsetX, 0);
+  }
+
+  translateY(offsetY: number): Point {
+    return this.translate(0, offsetY);
+  }
+
   scale(factor: number): Point {
     this.x *= factor;
     this.y *= factor;

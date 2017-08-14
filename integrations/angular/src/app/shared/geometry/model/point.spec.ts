@@ -98,6 +98,50 @@ describe('Point', () => {
       });
     });
 
+    describe('.translateX()', () => {
+      let p: Point;
+      let pTrl: Point;
+
+      beforeEach(() => {
+        p = Point.create(1, 2);
+        pTrl = p.translateX(5);
+      });
+
+      it('should be defined', () => {
+        expect(Point.prototype.translateX).toEqual(jasmine.any(Function));
+      });
+
+      it('should translate X coordinate', () => {
+        expect(pTrl).toEqual(Point.create(6, 2));
+      });
+
+      it('should return this', () => {
+        expect(pTrl).toBe(p);
+      });
+    });
+
+    describe('.translateY()', () => {
+      let p: Point;
+      let pTrl: Point;
+
+      beforeEach(() => {
+        p = Point.create(1, 2);
+        pTrl = p.translateY(5);
+      });
+
+      it('should be defined', () => {
+        expect(Point.prototype.translateY).toEqual(jasmine.any(Function));
+      });
+
+      it('should translate X coordinate', () => {
+        expect(pTrl).toEqual(Point.create(1, 7));
+      });
+
+      it('should return this', () => {
+        expect(pTrl).toBe(p);
+      });
+    });
+
     describe('.scale()', () => {
       let p: Point;
       let pScl: Point;
