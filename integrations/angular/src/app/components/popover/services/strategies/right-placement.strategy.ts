@@ -36,14 +36,12 @@ export class RightPlacementStrategy implements PlacementStrategy {
   }
 
   getPositionedPopoverRect(anchorRect: Rectangle, popoverRect: Rectangle): Rectangle {
-    const positionedRect: Rectangle = this.placementService.place({
+    return this.placementService.place({
       anchor: anchorRect,
       element: popoverRect,
       placementId: this.getId(),
       offsetAlong: constants.offset
     });
-
-    return positionedRect;
   }
 
   getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
@@ -64,10 +62,10 @@ export class RightPlacementStrategy implements PlacementStrategy {
     const isArrowTooFar = Math.abs(arrowOffset.y) >= maxOffset;
 
     if (isArrowTooFar) {
-      return 'no-direction';
+      return constants.directionClass.none;
     }
 
-    return isFlipped ? 'left' : 'right';
+    return isFlipped ? constants.directionClass.left : constants.directionClass.right;
   }
 
   isFlipped(anchorRect: Rectangle, popoverRect: Rectangle): boolean {

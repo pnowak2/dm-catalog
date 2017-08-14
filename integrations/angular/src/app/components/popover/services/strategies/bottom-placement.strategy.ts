@@ -37,14 +37,12 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   getPositionedPopoverRect(anchorRect: Rectangle, popoverRect: Rectangle): Rectangle {
-    const positionedRect: Rectangle = this.placementService.place({
+    return this.placementService.place({
       anchor: anchorRect,
       element: popoverRect,
       placementId: this.getId(),
       offsetAlong: constants.offset
     });
-
-    return positionedRect;
   }
 
   getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
@@ -65,10 +63,10 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     const isArrowTooFar = Math.abs(arrowOffset.x) >= maxOffset;
 
     if (isArrowTooFar) {
-      return 'no-direction';
+      return constants.directionClass.none;
     }
 
-    return isFlipped ? 'top' : 'bottom';
+    return isFlipped ? constants.directionClass.top : constants.directionClass.bottom;
   }
 
   isFlipped(anchorRect: Rectangle, popoverRect: Rectangle): boolean {
