@@ -6,7 +6,7 @@ $dm-c-popover__max-width: 375px !default;
 $dm-c-popover__max-width-big: 550px !default;
 $dm-c-popover__bg-color: dm-get-color(white) !default;
 $dm-c-popover__border-color: dm-get-color(grey-lightest) !default;
-$dm-c-popover__shadow-color: transparentize(dm-get-color(black),.9) !default;
+$dm-c-popover__shadow-color: transparentize(dm-get-color(black), 0.9) !default;
 
 $dm-c-popover__header-border-color: dm-get-color(grey-lightester-2) !default;
 
