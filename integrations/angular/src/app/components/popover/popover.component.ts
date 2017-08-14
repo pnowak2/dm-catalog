@@ -14,6 +14,7 @@ export class PopoverComponent {
   @ViewChild('arrow') arrowEl: ElementRef;
 
   @Input() title = 'Test title';
+  @Input() styleClass = '';
   @Input() flavour = 'dm-c-popover--default';
   @Input() placement: 'top' | 'left' | 'right' | 'bottom' = 'bottom';
 
