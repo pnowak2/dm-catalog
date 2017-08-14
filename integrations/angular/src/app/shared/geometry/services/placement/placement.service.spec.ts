@@ -8,26 +8,26 @@ describe('PlacementService', () => {
   describe('Creation', () => {
     it('should create an instance without args', () => {
       expect(() => {
-        new PlacementService();
+        const p = new PlacementService();
       }).not.toThrow();
     });
 
     it('should create an instance with null arg', () => {
       expect(() => {
-        new PlacementService(null);
+        const p = new PlacementService(null);
       }).not.toThrow();
     });
 
     it('should create an instance with empty array', () => {
       expect(() => {
-        new PlacementService([]);
+        const p = new PlacementService([]);
       }).not.toThrow();
     });
 
     it('should create an instance with array of strategies', () => {
       expect(() => {
 
-        new PlacementService([makePlacementStrategy('fakeid', Rectangle.empty())]);
+        const p = new PlacementService([makePlacementStrategy('fakeid', Rectangle.empty())]);
       }).not.toThrow();
     });
   });
@@ -42,6 +42,7 @@ describe('PlacementService', () => {
         let service: PlacementService;
         let anchor: Rectangle;
         let element: Rectangle;
+        let options: PlacementOptions;
         let fakeRect: Rectangle;
         let fakeStrategy: PlacementStrategy;
         let fakeOptions: PlacementOptions;
@@ -50,29 +51,28 @@ describe('PlacementService', () => {
           service = new PlacementService();
           anchor = Rectangle.create(1, 2, 3, 4);
           element = Rectangle.create(4, 3, 2, 1);
+          options = { anchor, element };
           fakeRect = Rectangle.empty();
 
           fakeStrategy = makePlacementStrategy('fakeid', fakeRect);
           fakeOptions = {
+            anchor: Rectangle.empty(),
+            element: Rectangle.empty(),
             placementId: 'fakeid'
           };
 
           spyOn(PlacementService, 'pickPlacementStrategy').and.returnValue(fakeStrategy);
-          spyOn(PlacementService, 'getEffectiveOptions').and.returnValue(fakeOptions);
+          spyOn(PlacementService, 'getEffectiveOptions').and.callFake((opts) => {
+            if (opts === options) {
+              return fakeOptions;
+            }
+          });
 
-          service.place(anchor, element);
-        });
-
-        it('should call strategy with proper anchor rect', () => {
-          expect(fakeStrategy.calculate).toHaveBeenCalledWith(anchor, jasmine.any(Object), jasmine.any(Object));
-        });
-
-        it('should call strategy with proper element rect', () => {
-          expect(fakeStrategy.calculate).toHaveBeenCalledWith(jasmine.any(Object), element, jasmine.any(Object));
+          service.place(options);
         });
 
         it('should call strategy with proper options', () => {
-          expect(fakeStrategy.calculate).toHaveBeenCalledWith(jasmine.any(Object), jasmine.any(Object), fakeOptions);
+          expect(fakeStrategy.calculate).toHaveBeenCalledWith(fakeOptions);
         });
       });
 
@@ -81,8 +81,6 @@ describe('PlacementService', () => {
         let anchor: Rectangle;
         let element: Rectangle;
         let fakeRect: Rectangle;
-        let fakeStrategy: PlacementStrategy;
-        let fakeOptions: PlacementOptions;
 
         beforeEach(() => {
           service = new PlacementService();
@@ -95,7 +93,7 @@ describe('PlacementService', () => {
 
         it('should throw if placement id is not known', () => {
           expect(function () {
-            service.place(anchor, element);
+            service.place({ anchor, element });
           }).toThrowError('Placement not supported: bottom');
         });
       });
@@ -108,6 +106,8 @@ describe('PlacementService', () => {
 
       it('should return proper default options', () => {
         expect(PlacementService.getEffectiveOptions()).toEqual({
+          anchor: Rectangle.empty(),
+          element: Rectangle.empty(),
           placementId: 'bottom',
           parent: RectangleFactory.fromWindow(),
           offsetAlong: 0,
@@ -119,6 +119,8 @@ describe('PlacementService', () => {
 
       it('should return proper overriden options', () => {
         expect(PlacementService.getEffectiveOptions({
+          anchor: Rectangle.create(1, 2, 3, 4),
+          element: Rectangle.create(5, 6, 7, 8),
           placementId: 'fakeId',
           parent: Rectangle.create(1, 2, 3, 4),
           offsetAlong: 7,
@@ -126,6 +128,8 @@ describe('PlacementService', () => {
           constrainToParent: false,
           flip: false
         })).toEqual({
+          anchor: Rectangle.create(1, 2, 3, 4),
+          element: Rectangle.create(5, 6, 7, 8),
           placementId: 'fakeId',
           parent: Rectangle.create(1, 2, 3, 4),
           offsetAlong: 7,
@@ -183,5 +187,5 @@ function makePlacementStrategy(id: string, placedRect: Rectangle): PlacementStra
   return {
     getId: jasmine.createSpy('id spy').and.returnValue(id),
     calculate: jasmine.createSpy('calculate spy').and.returnValue(placedRect)
-  }
+  };
 }

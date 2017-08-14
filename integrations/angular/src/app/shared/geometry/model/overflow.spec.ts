@@ -20,28 +20,28 @@ describe('Overflow', () => {
 
     describe('.left', () => {
       it('should return proper value', () => {
-        const p = Overflow.create(1, 2, 3, 4)
+        const p = Overflow.create(1, 2, 3, 4);
         expect(p.left).toEqual(1);
       });
     });
 
     describe('.top', () => {
       it('should return proper value', () => {
-        const p = Overflow.create(1, 2, 3, 4)
+        const p = Overflow.create(1, 2, 3, 4);
         expect(p.top).toEqual(2);
       });
     });
 
     describe('.right', () => {
       it('should return proper value', () => {
-        const p = Overflow.create(1, 2, 3, 4)
+        const p = Overflow.create(1, 2, 3, 4);
         expect(p.right).toEqual(3);
       });
     });
 
     describe('.bottom', () => {
       it('should return proper value', () => {
-        const p = Overflow.create(1, 2, 3, 4)
+        const p = Overflow.create(1, 2, 3, 4);
         expect(p.bottom).toEqual(4);
       });
     });

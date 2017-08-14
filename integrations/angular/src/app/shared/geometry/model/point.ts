@@ -1,4 +1,6 @@
-export class Point {
+import { Position } from './../interface/position';
+
+export class Point implements Position {
   private constructor(public x: number, public y: number) { }
 
   public static create(x: number, y: number): Point {
@@ -21,6 +23,14 @@ export class Point {
     this.y += offsetY;
 
     return this;
+  }
+
+  translateX(offsetX: number): Point {
+    return this.translate(offsetX, 0);
+  }
+
+  translateY(offsetY: number): Point {
+    return this.translate(0, offsetY);
   }
 
   scale(factor: number): Point {

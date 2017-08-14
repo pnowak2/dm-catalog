@@ -7,15 +7,15 @@ export class TopPlacementStrategy implements PlacementStrategy {
     return 'top';
   }
 
-  calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
-    const placedRect = element
+  calculate(options: PlacementOptions): Rectangle {
+    const placedRect = options.element
       .clone()
-      .moveTo(anchor.centerTop(), element.centerBottom())
+      .moveTo(options.anchor.centerTop(), options.element.centerBottom())
       .translateY(-options.offsetAlong)
       .translateX(options.offsetAcross);
 
     if (options.flip && placedRect.overflowsTop(options.parent)) {
-      placedRect.flipX(anchor.center().y);
+      placedRect.flipX(options.anchor.center().y);
     }
 
     if (options.constrainToParent) {

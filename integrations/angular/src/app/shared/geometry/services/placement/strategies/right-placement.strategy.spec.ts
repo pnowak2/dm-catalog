@@ -31,8 +31,8 @@ describe('RightPlacementStrategy', () => {
         const anchor = Rectangle.create(1, 1, 4, 3);
         const element = Rectangle.create(0, 0, 6, 2);
 
-        const options: PlacementOptions = {};
-        const calculatedRect = str.calculate(anchor, element, options);
+        const options: PlacementOptions = { anchor, element };
+        const calculatedRect = str.calculate(options);
 
         expect(calculatedRect).not.toBe(element);
       });
@@ -43,6 +43,8 @@ describe('RightPlacementStrategy', () => {
         const parent = Rectangle.create(0, 0, 12, 10);
 
         const options: PlacementOptions = {
+          anchor,
+          element,
           offsetAlong: 2,
           offsetAcross: 1,
           flip: false,
@@ -50,7 +52,7 @@ describe('RightPlacementStrategy', () => {
           parent: parent
         };
 
-        const calculatedRect = str.calculate(anchor, element, options);
+        const calculatedRect = str.calculate(options);
 
         expect(calculatedRect).toEqual(Rectangle.create(10, 4.5, 4, 3));
       });
@@ -61,6 +63,8 @@ describe('RightPlacementStrategy', () => {
         const parent = Rectangle.create(0, 0, 12, 10);
 
         const options: PlacementOptions = {
+          anchor,
+          element,
           offsetAlong: 2,
           offsetAcross: 1,
           flip: true,
@@ -68,7 +72,7 @@ describe('RightPlacementStrategy', () => {
           parent: parent
         };
 
-        const calculatedRect = str.calculate(anchor, element, options);
+        const calculatedRect = str.calculate(options);
 
         expect(calculatedRect).toEqual(Rectangle.create(-1, 4.5, 4, 3));
       });
@@ -79,6 +83,8 @@ describe('RightPlacementStrategy', () => {
         const parent = Rectangle.create(0, 0, 12, 10);
 
         const options: PlacementOptions = {
+          anchor,
+          element,
           offsetAlong: 2,
           offsetAcross: 1,
           flip: true,
@@ -86,7 +92,7 @@ describe('RightPlacementStrategy', () => {
           parent: parent
         };
 
-        const calculatedRect = str.calculate(anchor, element, options);
+        const calculatedRect = str.calculate(options);
 
         expect(calculatedRect).toEqual(Rectangle.create(0, 4.5, 4, 3));
       });
@@ -94,9 +100,3 @@ describe('RightPlacementStrategy', () => {
   });
 });
 
-function makePlacementStrategy(id: string, placedRect: Rectangle): PlacementStrategy {
-  return {
-    getId: jasmine.createSpy('id spy').and.returnValue(id),
-    calculate: jasmine.createSpy('calculate spy').and.returnValue(placedRect)
-  }
-}

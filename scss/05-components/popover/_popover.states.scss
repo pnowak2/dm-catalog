@@ -13,7 +13,13 @@
       padding-bottom: 0;
     }
   }
-  
+
+  &--no-direction {
+    .dm-c-popover__arrow {
+      display: none;
+    }
+  }
+
   &--top,
   &--bottom,
   &--left,
@@ -55,7 +61,7 @@
     .dm-c-popover__arrow {
       border-top-width: 0;
       top: -$dm-c-popover__arrow-width;
-
+      
       &-inner {
         top: $dm-c-popover__arrow-border-width;
         border-top-width: 0;

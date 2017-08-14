@@ -1,4 +1,6 @@
-export class Overflow {
+import { Bounds } from './../interface/bounds';
+
+export class Overflow implements Bounds {
   private constructor(
     public left: number,
     public top: number,
@@ -16,10 +18,10 @@ export class Overflow {
   }
 
   equals(other: Overflow): boolean {
-    return this.left == other.left &&
-      this.top == other.top &&
-      this.bottom == other.bottom &&
-      this.right == other.right;
+    return this.left === other.left &&
+      this.top === other.top &&
+      this.bottom === other.bottom &&
+      this.right === other.right;
   }
 
   toString() {

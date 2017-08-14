@@ -1,7 +1,9 @@
+import { Position } from './../interface/position';
+import { Bounds } from './../interface/bounds';
 import { Point } from './point';
 import { Overflow } from './overflow';
 
-export class Rectangle {
+export class Rectangle implements Position, Bounds {
   private constructor(
     public left: number,
     public top: number,
@@ -101,6 +103,18 @@ export class Rectangle {
     return this;
   }
 
+  moveXTo(x: number, anchor: Point = this.leftTop()): Rectangle {
+    this.x = x + (this.x - anchor.x);
+
+    return this;
+  }
+
+  moveYTo(y: number, anchor: Point = this.leftTop()): Rectangle {
+    this.y = y + (this.y - anchor.y);
+
+    return this;
+  }
+
   translate(offsetX: number, offsetY: number): Rectangle {
     this.left += offsetX;
     this.top += offsetY;
@@ -170,6 +184,10 @@ export class Rectangle {
     return this.left >= p.x;
   }
 
+  position(): Point {
+    return this.leftTop();
+  }
+
   leftTop(): Point {
     return Point.create(this.left, this.top);
   }
@@ -220,8 +238,8 @@ export class Rectangle {
   }
 
   containsRect(other: Rectangle): boolean {
-    if (other.isEmpty()) return true;
-    if (this.isEmpty()) return false;
+    if (other.isEmpty()) { return true; }
+    if (this.isEmpty()) { return false; }
 
     return other.left >= this.left &&
       other.top >= this.top &&
@@ -230,7 +248,7 @@ export class Rectangle {
   }
 
   containsPoint(point: Point): boolean {
-    if (this.isEmpty()) return false;
+    if (this.isEmpty()) { return false; }
 
     return point.x >= this.left &&
       point.x <= this.right &&
@@ -267,17 +285,18 @@ export class Rectangle {
       Math.max(0, other.top - this.top),
       Math.max(0, this.right - other.right),
       Math.max(0, this.bottom - other.bottom)
-    )
+    );
   }
 
   intersects(other: Rectangle): boolean {
-    if (this.isEmpty() || other.isEmpty())
+    if (this.isEmpty() || other.isEmpty()) {
       return false;
+    }
 
     return this.left < other.right &&
       this.right > other.left &&
       this.top < other.bottom &&
-      this.bottom > other.top
+      this.bottom > other.top;
   }
 
   intersect(other: Rectangle): Rectangle {
@@ -293,8 +312,9 @@ export class Rectangle {
   }
 
   restrictTo(other: Rectangle): Rectangle {
-    if (this.isEmpty() || other.isEmpty())
+    if (this.isEmpty() || other.isEmpty()) {
       return this.setRectangle(0, 0, 0, 0);
+    }
 
     const left = Math.max(this.left, other.left);
     const top = Math.max(this.top, other.top);
@@ -305,8 +325,8 @@ export class Rectangle {
   }
 
   expandToContain(other: Rectangle): Rectangle {
-    if (this.isEmpty()) return this.copyFrom(other);
-    if (other.isEmpty()) return this;
+    if (this.isEmpty()) { return this.copyFrom(other); }
+    if (other.isEmpty()) { return this; }
 
     const left = Math.min(this.left, other.left);
     const top = Math.min(this.top, other.top);
@@ -317,8 +337,13 @@ export class Rectangle {
   }
 
   translateInside(other: Rectangle): Rectangle {
+    return this
+      .translateXInside(other)
+      .translateYInside(other);
+  }
+
+  translateXInside(other: Rectangle): Rectangle {
     let offsetX = 0;
-    let offsetY = 0;
 
     if (this.left <= other.left) {
       offsetX = other.left - this.left;
@@ -328,6 +353,12 @@ export class Rectangle {
       offsetX = other.right - this.right;
     }
 
+    return this.translate(offsetX, 0);
+  }
+
+  translateYInside(other: Rectangle): Rectangle {
+    let offsetY = 0;
+
     if (this.top <= other.top) {
       offsetY = other.top - this.top;
     }
@@ -336,7 +367,7 @@ export class Rectangle {
       offsetY = other.bottom - this.bottom;
     }
 
-    return this.translate(offsetX, offsetY);
+    return this.translate(0, offsetY);
   }
 
   blend(rect: Rectangle, scalar: number): Rectangle {
@@ -349,8 +380,8 @@ export class Rectangle {
   }
 
   inflate(xScale: number, yScale: number = xScale): Rectangle {
-    const xAdjust = (this.width * xScale - this.width) / 2
-    const yAdjust = (this.height * yScale - this.height) / 2
+    const xAdjust = (this.width * xScale - this.width) / 2;
+    const yAdjust = (this.height * yScale - this.height) / 2;
 
     this.left -= xAdjust;
     this.right += xAdjust;
@@ -369,19 +400,21 @@ export class Rectangle {
     return this;
   }
 
-  relativePositionTo(parent: Rectangle): Point {
-    return Point.create(
+  relativeTo(parent: Rectangle): Rectangle {
+    return Rectangle.create(
       this.left - parent.left,
-      this.top - parent.top
+      this.top - parent.top,
+      this.width,
+      this.height
     );
   }
 
   equals(other: Rectangle): boolean {
     return (this.isEmpty() && other.isEmpty() ||
-      this.top == other.top &&
-      this.left == other.left &&
-      this.bottom == other.bottom &&
-      this.right == other.right);
+      this.top === other.top &&
+      this.left === other.left &&
+      this.bottom === other.bottom &&
+      this.right === other.right);
   }
 
   toString() {

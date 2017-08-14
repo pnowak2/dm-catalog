@@ -313,11 +313,18 @@
 </div>
 
 <h3>Placement</h3>
-<select #plc (change)="pop1.placement = $event.target.value" id="">
+<select (change)="pop1.placement = $event.target.value" id="">
   <option value="bottom">bottom</option>
   <option value="top">top</option>
   <option value="right">right</option>
   <option value="left">left</option>
+</select>
+
+<select (change)="pop1.flavour = $event.target.value" id="">
+  <option value="dm-c-popover--default">dm-c-popover--default</option>
+  <option value="dm-c-popover--flat">dm-c-popover--flat</option>
+  <option value="dm-c-popover--colored-header">dm-c-popover--colored-header</option>
+  <option value="dm-c-popover--colored-solid">dm-c-popover--colored-solid</option>
 </select>
 
 <br>

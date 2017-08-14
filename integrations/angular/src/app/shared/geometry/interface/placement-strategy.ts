@@ -3,5 +3,5 @@ import { PlacementOptions } from '../interface/placement-options';
 
 export interface PlacementStrategy {
   getId(): string;
-  calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle;
+  calculate(options: PlacementOptions): Rectangle;
 }

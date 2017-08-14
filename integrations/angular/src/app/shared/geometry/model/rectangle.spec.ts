@@ -2,14 +2,14 @@ import { Point } from './point';
 import { Rectangle } from './rectangle';
 import { Overflow } from './overflow';
 
-type RectsEntry = {
-  relationName: string,
-  r1: Rectangle,
-  r2: Rectangle,
-  isIntersect: boolean,
-  isContain: boolean,
-  intersectRect: Rectangle
-};
+interface RectsEntry {
+  relationName: string;
+  r1: Rectangle;
+  r2: Rectangle;
+  isIntersect: boolean;
+  isContain: boolean;
+  intersectRect: Rectangle;
+}
 
 describe('Rectangle', () => {
   describe('Api', () => {
@@ -50,7 +50,7 @@ describe('Rectangle', () => {
     });
 
     describe('Rectangle.fromRect', () => {
-      let src = Rectangle.create(1, 2, 3, 5);
+      const src = Rectangle.create(1, 2, 3, 5);
       let r: Rectangle;
 
       beforeEach(() => {
@@ -286,25 +286,79 @@ describe('Rectangle', () => {
         expect(Rectangle.prototype.moveTo).toEqual(jasmine.any(Function));
       });
 
-      it('should translate to coordinates', () => {
-        let r = Rectangle.create(1, 2, 3, 4);
-        let rMvd = r.moveTo(Point.create(12, 7));
+      it('should move to coordinates', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveTo(Point.create(12, 7));
 
         expect(rMvd).toEqual(Rectangle.create(12, 7, 3, 4));
       });
 
-      it('should translate to coordinates by anchor point', () => {
-        let ref = Rectangle.create(2, 2, 2, 1);
-        let element = Rectangle.create(0, 0, 4, 3);
+      it('should move to coordinates by anchor point', () => {
+        const ref = Rectangle.create(2, 2, 2, 1);
+        const element = Rectangle.create(0, 0, 4, 3);
 
-        let rMvd = element.moveTo(ref.centerBottom(), element.centerTop());
+        const rMvd = element.moveTo(ref.centerBottom(), element.centerTop());
 
         expect(rMvd).toEqual(Rectangle.create(1, 3, 4, 3));
       });
 
       it('should return this', () => {
-        let r = Rectangle.create(1, 2, 3, 4);
-        let rMvd = r.moveTo(Point.create(12, 7));
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveTo(Point.create(12, 7));
+
+        expect(rMvd).toBe(r);
+      });
+    });
+
+    describe('.moveXTo()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.moveXTo).toEqual(jasmine.any(Function));
+      });
+
+      it('should move x to coordinate', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveXTo(5);
+
+        expect(rMvd).toEqual(Rectangle.create(5, 2, 3, 4));
+      });
+
+      it('should move to coordinates by anchor point', () => {
+        const ref = Rectangle.create(1, 2, 3, 4);
+        const rMvd = ref.moveXTo(5, ref.rightBottom());
+
+        expect(rMvd).toEqual(Rectangle.create(2, 2, 3, 4));
+      });
+
+      it('should return this', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveXTo(5);
+
+        expect(rMvd).toBe(r);
+      });
+    });
+
+    describe('.moveYTo()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.moveYTo).toEqual(jasmine.any(Function));
+      });
+
+      it('should move x to coordinate', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveYTo(5);
+
+        expect(rMvd).toEqual(Rectangle.create(1, 5, 3, 4));
+      });
+
+      it('should move to coordinates by anchor point', () => {
+        const ref = Rectangle.create(1, 2, 3, 4);
+        const rMvd = ref.moveYTo(5, ref.centerTop());
+
+        expect(rMvd).toEqual(Rectangle.create(1, 5, 3, 4));
+      });
+
+      it('should return this', () => {
+        const r = Rectangle.create(1, 2, 3, 4);
+        const rMvd = r.moveYTo(5);
 
         expect(rMvd).toBe(r);
       });
@@ -425,7 +479,7 @@ describe('Rectangle', () => {
       });
 
       it('should return this', () => {
-        let r = Rectangle.create(3, 5, 2, 3);
+        const r = Rectangle.create(3, 5, 2, 3);
         expect(r.flipX(4)).toBe(r);
       });
     });
@@ -457,7 +511,7 @@ describe('Rectangle', () => {
       });
 
       it('should return this', () => {
-        let r = Rectangle.create(3, 5, 2, 3);
+        const r = Rectangle.create(3, 5, 2, 3);
         expect(r.flipY(4)).toBe(r);
       });
     });
@@ -475,7 +529,7 @@ describe('Rectangle', () => {
       });
 
       it('should return this', () => {
-        let r = Rectangle.create(3, 5, 2, 3);
+        const r = Rectangle.create(3, 5, 2, 3);
         expect(r.flip(Point.create(1, 1))).toBe(r);
       });
     });
@@ -604,6 +658,18 @@ describe('Rectangle', () => {
         const p = Point.create(6, 6);
 
         expect(r.isOnTheRight(p)).toEqual(false);
+      });
+    });
+
+    describe('.position()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.position).toEqual(jasmine.any(Function));
+      });
+
+      it('should return top left position', () => {
+        const r = Rectangle.create(1, 2, 3, 3);
+
+        expect(r.position()).toEqual(Point.create(1, 2));
       });
     });
 
@@ -1194,7 +1260,7 @@ describe('Rectangle', () => {
         const other = Rectangle.create(1, 2, 3, 4);
         const result = empty.expandToContain(other);
 
-        expect(result).toEqual(other)
+        expect(result).toEqual(other);
       });
 
       it('should return this if other is empty', () => {
@@ -1202,7 +1268,7 @@ describe('Rectangle', () => {
         const other = Rectangle.create(1, 2, 3, 4);
         const result = other.expandToContain(empty);
 
-        expect(result).toEqual(other)
+        expect(result).toEqual(other);
       });
 
       it('should return bounding rectangle for intersecting rects', () => {
@@ -1234,7 +1300,7 @@ describe('Rectangle', () => {
         const r2 = Rectangle.create(5, 2, 1, 1);
         const result = r1.expandToContain(r2);
 
-        expect(result).toBe(r1)
+        expect(result).toBe(r1);
       });
 
     });
@@ -1244,74 +1310,24 @@ describe('Rectangle', () => {
         expect(Rectangle.prototype.translateInside).toEqual(jasmine.any(Function));
       });
 
-      it('should move to other rect if this is outside to the left', () => {
+      it('should delegate to .translateXInside()', () => {
         const r1 = Rectangle.create(0, 2, 1, 1);
         const r2 = Rectangle.create(1, 1, 3, 3);
+        spyOn(Rectangle.prototype, 'translateXInside').and.returnValue(r1);
 
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(1, 2, 1, 1));
+        const result = r1.translateInside(r2);
+
+        expect(r1.translateXInside).toHaveBeenCalledWith(r2);
       });
 
-      it('should move to other rect if this is outside to the right', () => {
-        const r1 = Rectangle.create(4, 2, 1, 1);
+      it('should delegate to .translateYInside()', () => {
+        const r1 = Rectangle.create(0, 2, 1, 1);
         const r2 = Rectangle.create(1, 1, 3, 3);
+        spyOn(Rectangle.prototype, 'translateYInside').and.returnValue(r1);
 
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(3, 2, 1, 1));
-      });
+        const result = r1.translateInside(r2);
 
-      it('should move to other rect if this is outside on top', () => {
-        const r1 = Rectangle.create(2, 0, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(2, 1, 1, 1));
-      });
-
-      it('should move to other rect if this is outside on bottom', () => {
-        const r1 = Rectangle.create(2, 4, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(2, 3, 1, 1));
-      });
-
-      it('should move to other rect if this is outside to the top left', () => {
-        const r1 = Rectangle.create(0, 0, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(1, 1, 1, 1));
-      });
-
-      it('should move to other rect if this is outside to the top right', () => {
-        const r1 = Rectangle.create(4, 0, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(3, 1, 1, 1));
-      });
-
-      it('should move to other rect if this is outside to the bottom left', () => {
-        const r1 = Rectangle.create(0, 4, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(1, 3, 1, 1));
-      });
-
-      it('should move to other rect if this is outside to the bottom right', () => {
-        const r1 = Rectangle.create(4, 4, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(3, 3, 1, 1));
-      });
-
-      it('should not move to other rect if this is inside other rect not touching its edges', () => {
-        const r1 = Rectangle.create(2, 2, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(2, 2, 1, 1));
-      });
-
-      it('should not move to other rect if this is inside other rect touching its edges', () => {
-        const r1 = Rectangle.create(1, 1, 2, 2);
-        const r2 = Rectangle.create(1, 1, 3, 3);
-
-        expect(r1.translateInside(r2)).toEqual(Rectangle.create(1, 1, 2, 2));
+        expect(r1.translateYInside).toHaveBeenCalledWith(r2);
       });
 
       it('should return this', () => {
@@ -1319,7 +1335,170 @@ describe('Rectangle', () => {
         const r2 = Rectangle.create(1, 1, 3, 3);
         expect(r1.translateInside(r2)).toBe(r1);
       });
+    });
 
+    describe('.translateXInside()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.translateXInside).toEqual(jasmine.any(Function));
+      });
+
+      it('should move in X axis to other rect if this is outside to the left', () => {
+        const r1 = Rectangle.create(0, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(1, 2, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the right', () => {
+        const r1 = Rectangle.create(4, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(3, 2, 1, 1));
+      });
+
+      it('should not move in X axis to other rect if this is outside on top', () => {
+        const r1 = Rectangle.create(2, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(2, 0, 1, 1));
+      });
+
+      it('should not move in X axis to other rect if this is outside on bottom', () => {
+        const r1 = Rectangle.create(2, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(2, 4, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the top left', () => {
+        const r1 = Rectangle.create(0, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(1, 0, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the top right', () => {
+        const r1 = Rectangle.create(4, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(3, 0, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the bottom left', () => {
+        const r1 = Rectangle.create(0, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(1, 4, 1, 1));
+      });
+
+      it('should move in X axis to other rect if this is outside to the bottom right', () => {
+        const r1 = Rectangle.create(4, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(3, 4, 1, 1));
+      });
+
+      it('should not move to other rect if this is inside other rect not touching its edges', () => {
+        const r1 = Rectangle.create(2, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(2, 2, 1, 1));
+      });
+
+      it('should not move to other rect if this is inside other rect touching its edges', () => {
+        const r1 = Rectangle.create(1, 1, 2, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateXInside(r2)).toEqual(Rectangle.create(1, 1, 2, 2));
+      });
+
+      it('should return this', () => {
+        const r1 = Rectangle.create(1, 1, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+        expect(r1.translateXInside(r2)).toBe(r1);
+      });
+    });
+
+    describe('.translateYInside()', () => {
+      it('should be defined', () => {
+        expect(Rectangle.prototype.translateYInside).toEqual(jasmine.any(Function));
+      });
+
+      it('should not move in Y axis to other rect if this is outside to the left', () => {
+        const r1 = Rectangle.create(0, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(0, 2, 1, 1));
+      });
+
+      it('should not move in Y axis to other rect if this is outside to the right', () => {
+        const r1 = Rectangle.create(4, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(4, 2, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside on top', () => {
+        const r1 = Rectangle.create(2, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(2, 1, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside on bottom', () => {
+        const r1 = Rectangle.create(2, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(2, 3, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside to the top left', () => {
+        const r1 = Rectangle.create(0, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(0, 1, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside to the top right', () => {
+        const r1 = Rectangle.create(4, 0, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(4, 1, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside to the bottom left', () => {
+        const r1 = Rectangle.create(0, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(0, 3, 1, 1));
+      });
+
+      it('should move in Y axis to other rect if this is outside to the bottom right', () => {
+        const r1 = Rectangle.create(4, 4, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(4, 3, 1, 1));
+      });
+
+      it('should not move to other rect if this is inside other rect not touching its edges', () => {
+        const r1 = Rectangle.create(2, 2, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(2, 2, 1, 1));
+      });
+
+      it('should not move to other rect if this is inside other rect touching its edges', () => {
+        const r1 = Rectangle.create(1, 1, 2, 2);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+
+        expect(r1.translateYInside(r2)).toEqual(Rectangle.create(1, 1, 2, 2));
+      });
+
+      it('should return this', () => {
+        const r1 = Rectangle.create(1, 1, 1, 1);
+        const r2 = Rectangle.create(1, 1, 3, 3);
+        expect(r1.translateYInside(r2)).toBe(r1);
+      });
     });
 
     describe('.blend()', () => {
@@ -1348,10 +1527,10 @@ describe('Rectangle', () => {
       });
 
       it('should return new instance', () => {
-        const r1 = Rectangle.create(1, 1, 1, 1);
-        const r2 = Rectangle.create(1, 1, 3, 3);
+        const rt1 = Rectangle.create(1, 1, 1, 1);
+        const rt2 = Rectangle.create(1, 1, 3, 3);
 
-        expect(r1.blend(r2, 0.5)).not.toBe(r1);
+        expect(rt1.blend(rt2, 0.5)).not.toBe(rt1);
       });
     });
 
@@ -1407,18 +1586,24 @@ describe('Rectangle', () => {
       });
     });
 
-    describe('.relativePositionTo()', () => {
+    describe('.relativeTo()', () => {
       it('should be defined', () => {
-        expect(Rectangle.prototype.relativePositionTo).toEqual(jasmine.any(Function));
+        expect(Rectangle.prototype.relativeTo).toEqual(jasmine.any(Function));
       });
 
-      it('should return position in relation to parent rect', () => {
+      it('should return rectangle with relative position to parent rect', () => {
         const parent = Rectangle.create(2, 3, 5, 6);
         const r = Rectangle.create(4, 4, 3, 2);
 
-        expect(r.relativePositionTo(parent)).toEqual(Point.create(2, 1));
+        expect(r.relativeTo(parent)).toEqual(Rectangle.create(2, 1, 3, 2));
       });
 
+      it('should return new instance', () => {
+        const parent = Rectangle.create(2, 3, 5, 6);
+        const r = Rectangle.create(4, 4, 3, 2);
+
+        expect(r.relativeTo(parent)).not.toBe(r);
+      });
     });
 
     describe('.equals()', () => {
@@ -1468,63 +1653,151 @@ describe('Rectangle', () => {
 });
 
 class RectsGenerator {
-  public static makeEntry(relationName: string, r2: Rectangle, isIntersect: boolean, isContain: boolean, intersectRect: Rectangle): RectsEntry {
-    return { relationName, r1: Rectangle.create(1, 1, 3, 3), r2, isIntersect, isContain, intersectRect }
+  public static makeEntry(
+    relationName: string,
+    r2: Rectangle,
+    isIntersect: boolean,
+    isContain: boolean,
+    intersectRect: Rectangle): RectsEntry {
+    return {
+      relationName,
+      r1: Rectangle.create(1, 1, 3, 3),
+      r2, isIntersect,
+      isContain,
+      intersectRect
+    };
   }
 
   public static testRects(): [RectsEntry] {
     return [
       // intersecting, containing
-      this.makeEntry('intersect, contains, including top left', Rectangle.create(1, 1, 1, 1), true, true, Rectangle.create(1, 1, 1, 1)),
-      this.makeEntry('intersect, contains, including top center', Rectangle.create(2, 1, 1, 1), true, true, Rectangle.create(2, 1, 1, 1)),
-      this.makeEntry('intersect, contains, including top right', Rectangle.create(3, 1, 1, 1), true, true, Rectangle.create(3, 1, 1, 1)),
-      this.makeEntry('intersect, contains, including center left', Rectangle.create(1, 2, 1, 1), true, true, Rectangle.create(1, 2, 1, 1)),
-      this.makeEntry('intersect, contains, including center center', Rectangle.create(2, 2, 1, 1), true, true, Rectangle.create(2, 2, 1, 1)),
-      this.makeEntry('intersect, contains, including center right', Rectangle.create(3, 2, 1, 1), true, true, Rectangle.create(3, 2, 1, 1)),
-      this.makeEntry('intersect, contains, including bottom left', Rectangle.create(1, 3, 1, 1), true, true, Rectangle.create(1, 3, 1, 1)),
-      this.makeEntry('intersect, contains, including bottom center', Rectangle.create(2, 3, 1, 1), true, true, Rectangle.create(2, 3, 1, 1)),
-      this.makeEntry('intersect, contains, including bottom right', Rectangle.create(3, 3, 1, 1), true, true, Rectangle.create(3, 3, 1, 1)),
+      this.makeEntry(
+        'intersect, contains, including top left', Rectangle.create(1, 1, 1, 1), true, true, Rectangle.create(1, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including top center', Rectangle.create(2, 1, 1, 1), true, true, Rectangle.create(2, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including top right', Rectangle.create(3, 1, 1, 1), true, true, Rectangle.create(3, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including center left', Rectangle.create(1, 2, 1, 1), true, true, Rectangle.create(1, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including center center', Rectangle.create(2, 2, 1, 1), true, true, Rectangle.create(2, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including center right', Rectangle.create(3, 2, 1, 1), true, true, Rectangle.create(3, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including bottom left', Rectangle.create(1, 3, 1, 1), true, true, Rectangle.create(1, 3, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including bottom center', Rectangle.create(2, 3, 1, 1), true, true, Rectangle.create(2, 3, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, contains, including bottom right', Rectangle.create(3, 3, 1, 1), true, true, Rectangle.create(3, 3, 1, 1)
+      ),
 
-      this.makeEntry('intersect, contains, including top bottom', Rectangle.create(2, 1, 1, 3), true, true, Rectangle.create(2, 1, 1, 3)),
-      this.makeEntry('intersect, contains, including left right', Rectangle.create(1, 2, 3, 1), true, true, Rectangle.create(1, 2, 3, 1)),
+      this.makeEntry(
+        'intersect, contains, including top bottom', Rectangle.create(2, 1, 1, 3), true, true, Rectangle.create(2, 1, 1, 3)
+      ),
+      this.makeEntry('intersect, contains, including left right', Rectangle.create(1, 2, 3, 1), true, true, Rectangle.create(1, 2, 3, 1)
+      ),
 
-      this.makeEntry('intersect, contains, including left top right', Rectangle.create(1, 1, 3, 2), true, true, Rectangle.create(1, 1, 3, 2)),
-      this.makeEntry('intersect, contains, including top right bottom', Rectangle.create(2, 1, 2, 3), true, true, Rectangle.create(2, 1, 2, 3)),
-      this.makeEntry('intersect, contains, including right bottom left', Rectangle.create(1, 2, 3, 2), true, true, Rectangle.create(1, 2, 3, 2)),
-      this.makeEntry('intersect, contains, including bottom left top', Rectangle.create(1, 1, 2, 3), true, true, Rectangle.create(1, 1, 2, 3)),
+      this.makeEntry(
+        'intersect, contains, including left top right', Rectangle.create(1, 1, 3, 2), true, true, Rectangle.create(1, 1, 3, 2)
+      ),
+      this.makeEntry(
+        'intersect, contains, including top right bottom', Rectangle.create(2, 1, 2, 3), true, true, Rectangle.create(2, 1, 2, 3)
+      ),
+      this.makeEntry(
+        'intersect, contains, including right bottom left', Rectangle.create(1, 2, 3, 2), true, true, Rectangle.create(1, 2, 3, 2)
+      ),
+      this.makeEntry(
+        'intersect, contains, including bottom left top', Rectangle.create(1, 1, 2, 3), true, true, Rectangle.create(1, 1, 2, 3)
+      ),
 
-      this.makeEntry('intersect, contains, including left top right bottom', Rectangle.create(1, 1, 3, 3), true, true, Rectangle.create(1, 1, 3, 3)),
+      this.makeEntry(
+        'intersect, contains, including left top right bottom', Rectangle.create(1, 1, 3, 3), true, true, Rectangle.create(1, 1, 3, 3)
+      ),
 
       // intersecting, not containing
-      this.makeEntry('intersect, not contains, including top', Rectangle.create(2, 0, 1, 2), true, false, Rectangle.create(2, 1, 1, 1)),
-      this.makeEntry('intersect, not contains, including right', Rectangle.create(3, 2, 2, 1), true, false, Rectangle.create(3, 2, 1, 1)),
-      this.makeEntry('intersect, not contains, including left', Rectangle.create(0, 2, 2, 1), true, false, Rectangle.create(1, 2, 1, 1)),
-      this.makeEntry('intersect, not contains, including bottom', Rectangle.create(2, 3, 1, 2), true, false, Rectangle.create(2, 3, 1, 1)),
+      this.makeEntry(
+        'intersect, not contains, including top', Rectangle.create(2, 0, 1, 2), true, false, Rectangle.create(2, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including right', Rectangle.create(3, 2, 2, 1), true, false, Rectangle.create(3, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including left', Rectangle.create(0, 2, 2, 1), true, false, Rectangle.create(1, 2, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including bottom', Rectangle.create(2, 3, 1, 2), true, false, Rectangle.create(2, 3, 1, 1)
+      ),
 
-      this.makeEntry('intersect, not contains, including top left', Rectangle.create(0, 0, 2, 2), true, false, Rectangle.create(1, 1, 1, 1)),
-      this.makeEntry('intersect, not contains, including top right', Rectangle.create(3, 0, 2, 2), true, false, Rectangle.create(3, 1, 1, 1)),
-      this.makeEntry('intersect, not contains, including bottom left', Rectangle.create(0, 3, 2, 2), true, false, Rectangle.create(1, 3, 1, 1)),
-      this.makeEntry('intersect, not contains, including bottom right', Rectangle.create(3, 3, 2, 2), true, false, Rectangle.create(3, 3, 1, 1)),
-      this.makeEntry('intersect, not contains, including top bottom', Rectangle.create(2, 0, 1, 5), true, false, Rectangle.create(2, 1, 1, 3)),
-      this.makeEntry('intersect, not contains, including left right', Rectangle.create(0, 2, 5, 1), true, false, Rectangle.create(1, 2, 3, 1)),
+      this.makeEntry(
+        'intersect, not contains, including top left', Rectangle.create(0, 0, 2, 2), true, false, Rectangle.create(1, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including top right', Rectangle.create(3, 0, 2, 2), true, false, Rectangle.create(3, 1, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including bottom left', Rectangle.create(0, 3, 2, 2), true, false, Rectangle.create(1, 3, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including bottom right', Rectangle.create(3, 3, 2, 2), true, false, Rectangle.create(3, 3, 1, 1)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including top bottom', Rectangle.create(2, 0, 1, 5), true, false, Rectangle.create(2, 1, 1, 3)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including left right', Rectangle.create(0, 2, 5, 1), true, false, Rectangle.create(1, 2, 3, 1)
+      ),
 
-      this.makeEntry('intersect, not contains, including left top right', Rectangle.create(0, 0, 5, 3), true, false, Rectangle.create(1, 1, 3, 2)),
-      this.makeEntry('intersect, not contains, including top right bottom', Rectangle.create(2, 0, 3, 5), true, false, Rectangle.create(2, 1, 2, 3)),
-      this.makeEntry('intersect, not contains, including right bottom left', Rectangle.create(0, 2, 5, 3), true, false, Rectangle.create(1, 2, 3, 2)),
-      this.makeEntry('intersect, not contains, including bottom left top', Rectangle.create(0, 0, 3, 5), true, false, Rectangle.create(1, 1, 2, 3)),
+      this.makeEntry(
+        'intersect, not contains, including left top right', Rectangle.create(0, 0, 5, 3), true, false, Rectangle.create(1, 1, 3, 2)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including top right bottom', Rectangle.create(2, 0, 3, 5), true, false, Rectangle.create(2, 1, 2, 3)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including right bottom left', Rectangle.create(0, 2, 5, 3), true, false, Rectangle.create(1, 2, 3, 2)
+      ),
+      this.makeEntry(
+        'intersect, not contains, including bottom left top', Rectangle.create(0, 0, 3, 5), true, false, Rectangle.create(1, 1, 2, 3)
+      ),
 
-      this.makeEntry('intersect, not contains, including left top right bottom', Rectangle.create(0, 0, 5, 5), true, false, Rectangle.create(1, 1, 3, 3)),
+      this.makeEntry(
+        'intersect, not contains, including left top right bottom', Rectangle.create(0, 0, 5, 5), true, false, Rectangle.create(1, 1, 3, 3)
+      ),
 
       // not intersecting at all
-      this.makeEntry('not intersect, placed on the left', Rectangle.create(0, 2, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the top', Rectangle.create(2, 0, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the right', Rectangle.create(4, 2, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the bottom', Rectangle.create(2, 4, 1, 1), false, false, Rectangle.empty()),
+      this.makeEntry(
+        'not intersect, placed on the left', Rectangle.create(0, 2, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the top', Rectangle.create(2, 0, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the right', Rectangle.create(4, 2, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the bottom', Rectangle.create(2, 4, 1, 1), false, false, Rectangle.empty()
+      ),
 
-      this.makeEntry('not intersect, placed on the top left', Rectangle.create(0, 0, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the top right', Rectangle.create(4, 0, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the bottom left', Rectangle.create(0, 4, 1, 1), false, false, Rectangle.empty()),
-      this.makeEntry('not intersect, placed on the bottom right', Rectangle.create(4, 4, 1, 1), false, false, Rectangle.empty()),
-    ]
+      this.makeEntry(
+        'not intersect, placed on the top left', Rectangle.create(0, 0, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the top right', Rectangle.create(4, 0, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the bottom left', Rectangle.create(0, 4, 1, 1), false, false, Rectangle.empty()
+      ),
+      this.makeEntry(
+        'not intersect, placed on the bottom right', Rectangle.create(4, 4, 1, 1), false, false, Rectangle.empty()
+      ),
+    ];
   }
 }

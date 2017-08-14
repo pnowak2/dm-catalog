@@ -20,14 +20,14 @@ describe('Point', () => {
 
     describe('.x', () => {
       it('should return proper value', () => {
-        const p = Point.create(1, 2)
+        const p = Point.create(1, 2);
         expect(p.x).toEqual(1);
       });
     });
 
     describe('.y', () => {
       it('should return proper value', () => {
-        const p = Point.create(1, 2)
+        const p = Point.create(1, 2);
         expect(p.y).toEqual(2);
       });
     });
@@ -91,6 +91,50 @@ describe('Point', () => {
 
       it('should translate coordinates', () => {
         expect(pTrl).toEqual(Point.create(3, 6));
+      });
+
+      it('should return this', () => {
+        expect(pTrl).toBe(p);
+      });
+    });
+
+    describe('.translateX()', () => {
+      let p: Point;
+      let pTrl: Point;
+
+      beforeEach(() => {
+        p = Point.create(1, 2);
+        pTrl = p.translateX(5);
+      });
+
+      it('should be defined', () => {
+        expect(Point.prototype.translateX).toEqual(jasmine.any(Function));
+      });
+
+      it('should translate X coordinate', () => {
+        expect(pTrl).toEqual(Point.create(6, 2));
+      });
+
+      it('should return this', () => {
+        expect(pTrl).toBe(p);
+      });
+    });
+
+    describe('.translateY()', () => {
+      let p: Point;
+      let pTrl: Point;
+
+      beforeEach(() => {
+        p = Point.create(1, 2);
+        pTrl = p.translateY(5);
+      });
+
+      it('should be defined', () => {
+        expect(Point.prototype.translateY).toEqual(jasmine.any(Function));
+      });
+
+      it('should translate X coordinate', () => {
+        expect(pTrl).toEqual(Point.create(1, 7));
       });
 
       it('should return this', () => {
