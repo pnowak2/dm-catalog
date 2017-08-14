@@ -15,24 +15,62 @@ export class RightPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(placementOptions: PlacementOptions): PopoverVM {
-    const positionedElementRect: Rectangle = this.placementService.place({
-      anchor: placementOptions.anchorRect,
-      element: placementOptions.popoverRect,
+    const positionedPopoverRect = this.getPositionedPopoverRect(
+      placementOptions.anchorRect,
+      placementOptions.popoverRect
+    );
+    const arrowOffset = this.getArrowOffset(
+      placementOptions.anchorRect,
+      positionedPopoverRect
+    );
+    const placementClassModifier = this.getPlacementClassModifier(
+      placementOptions.anchorRect,
+      positionedPopoverRect,
+      placementOptions.arrowRect
+    );
+    const popoverPosition = positionedPopoverRect.position();
+
+    return PopoverVM.create({
+      popoverPosition, arrowOffset, placementClassModifier
+    });
+  }
+
+  getPositionedPopoverRect(anchorRect: Rectangle, popoverRect: Rectangle): Rectangle {
+    const positionedRect: Rectangle = this.placementService.place({
+      anchor: anchorRect,
+      element: popoverRect,
       placementId: this.getId(),
       offsetAlong: constants.offset
     });
 
-    const isFlipped = this.isFlipped(placementOptions.anchorRect, positionedElementRect);
-    const anchorPosition = placementOptions.anchorRect.relativeTo(positionedElementRect);
-
-    return PopoverVM.create({
-      placementClassModifier: isFlipped ? 'left' : 'right',
-      popoverPosition: positionedElementRect.leftTop(),
-      arrowOffset: Offset.create(0, placementOptions.anchorRect.center().y - positionedElementRect.center().y)
-    });
+    return positionedRect;
   }
 
-  isFlipped(anchorRect: Rectangle, positionedElementRect: Rectangle): boolean {
-    return positionedElementRect.isOnTheLeft(anchorRect.center());
+  getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
+    const offsetX = 0;
+    const offsetY = anchorRect.center().y - popoverRect.center().y;
+
+    return Offset.create(offsetX, offsetY);
+  }
+
+  getMaxArrowOffset(popoverRect: Rectangle, arrowRect: Rectangle): number {
+    return (popoverRect.height - arrowRect.height) / 2;
+  }
+
+  getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
+    const isFlipped = this.isFlipped(anchorRect, popoverRect);
+    const arrowOffset = this.getArrowOffset(anchorRect, popoverRect);
+    const maxOffset = this.getMaxArrowOffset(popoverRect, arrowRect);
+    const isArrowTooFar = Math.abs(arrowOffset.y) >= maxOffset;
+
+    if (isArrowTooFar) {
+      return 'no-direction';
+    }
+
+    return isFlipped ? 'left' : 'right';
+  }
+
+  isFlipped(anchorRect: Rectangle, popoverRect: Rectangle): boolean {
+    return popoverRect.isOnTheLeft(anchorRect.center());
   }
 }
