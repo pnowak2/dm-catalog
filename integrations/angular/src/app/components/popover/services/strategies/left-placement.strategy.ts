@@ -1,4 +1,4 @@
-import { PlacementOptions } from './../popover.service';
+import { PlacementOptions } from './../../interface/placement-options';
 import { PopoverVM } from './../../viewmodel/popover.viewmodel';
 import { Point } from './../../../../shared/geometry/model/point';
 import { Rectangle } from './../../../../shared/geometry/model/rectangle';

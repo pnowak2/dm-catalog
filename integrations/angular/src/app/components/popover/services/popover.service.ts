@@ -1,15 +1,9 @@
+import { PlacementOptions } from './../interface/placement-options';
 import { Injectable } from '@angular/core';
 
 import { PlacementStrategy } from '../interface/placement-strategy';
 import { PopoverVM } from './../viewmodel/popover.viewmodel';
 import { Rectangle } from './../../../shared/geometry/model/rectangle';
-
-export interface PlacementOptions {
-  placement: string;
-  anchorRect: Rectangle;
-  popoverRect: Rectangle;
-  arrowRect: Rectangle;
-}
 
 @Injectable()
 export class PopoverService {

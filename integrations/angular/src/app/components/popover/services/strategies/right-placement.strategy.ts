@@ -1,4 +1,4 @@
-import { PlacementOptions } from './../popover.service';
+import { PlacementOptions } from './../../interface/placement-options';
 import { Offset } from './../../../../shared/geometry/model/offset';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
 

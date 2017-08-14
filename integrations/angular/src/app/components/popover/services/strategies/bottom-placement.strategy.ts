@@ -1,4 +1,4 @@
-import { PlacementOptions } from './../popover.service';
+import { PlacementOptions } from './../../interface/placement-options';
 import { constants } from './../../constants/constants';
 import { Point } from './../../../../shared/geometry/model/point';
 import { Position } from './../../../../shared/geometry/interface/position';
