@@ -16,7 +16,8 @@
 
   &--no-direction {
     .dm-c-popover__arrow {
-      display: none;
+      display: block;
+      visibility: hidden;
     }
   }
 

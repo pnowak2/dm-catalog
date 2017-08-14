@@ -60,7 +60,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
     const isFlipped = popoverRect.isAbove(anchorRect.center());
     const arrowOffset = this.getArrowOffset(anchorRect, popoverRect);
-    const maxOffset = (popoverRect.width / 2) - (arrowRect.width);
+    const maxOffset = (popoverRect.width - arrowRect.width) / 2;
     const isArrowTooFar = Math.abs(arrowOffset.x) >= maxOffset;
 
     if (isArrowTooFar) {
