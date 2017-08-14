@@ -18,11 +18,20 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(placementOptions: PlacementOptions): PopoverVM {
-    const positionedPopoverRect = this.getPositionedPopoverRect(placementOptions.anchorRect, placementOptions.popoverRect);
+    const positionedPopoverRect = this.getPositionedPopoverRect(
+      placementOptions.anchorRect,
+      placementOptions.popoverRect
+    );
 
+    const arrowOffset = this.getArrowOffset(
+      placementOptions.anchorRect,
+      positionedPopoverRect
+    );
+    const placementClassModifier = this.getPlacementClassModifier(
+      placementOptions.anchorRect,
+      positionedPopoverRect
+    );
     const popoverPosition = positionedPopoverRect.position();
-    const arrowOffset = this.getArrowOffset(placementOptions.anchorRect, positionedPopoverRect);
-    const placementClassModifier = this.getPlacementClassModifier(placementOptions.anchorRect, positionedPopoverRect);
 
     return PopoverVM.create({
       popoverPosition, arrowOffset, placementClassModifier
