@@ -1,4 +1,4 @@
-import { Point } from './../../../../shared/geometry/model/point';
+import { Offset } from './../../../../shared/geometry/model/offset';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
 
 import { PlacementStrategy } from '../../interface/placement-strategy';
@@ -27,7 +27,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
     return PopoverVM.create(
       isFlipped ? 'left' : 'right',
       positionedElementRect.leftTop(),
-      Point.create(0, anchorRect.position().y - positionedElementRect.center().y)
+      Offset.create(0, anchorRect.position().y - positionedElementRect.center().y)
     );
   }
 

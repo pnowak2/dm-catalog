@@ -2,9 +2,9 @@
      class="dm-c-popover dm-c-popover--{{ vm.effectivePlacement }} {{ flavour }}"
      [style.left]="vm.containerPosition.x + 'px'"
      [style.top]="vm.containerPosition.y + 'px'">
-  <div #arrow class="dm-c-popover__arrow" 
-      [style.marginLeft]="vm.arrowPosition.x + 'px'"
-      [style.marginTop]="vm.arrowPosition.y + 'px'"
+  <div #arrow class="dm-c-popover__arrow"
+      [style.marginLeft]="vm.arrowOffset.x + 'px'"
+      [style.marginTop]="vm.arrowOffset.y + 'px'"
       >
     <div class="dm-c-popover__arrow-inner"></div>
   </div>
