@@ -1,8 +1,5 @@
-import { element } from 'protractor';
 import { PlacementOptions } from './../../interface/placement-options';
 import { constants } from './../../constants/constants';
-import { Point } from './../../../../shared/geometry/model/point';
-import { Position } from './../../../../shared/geometry/interface/position';
 import { Offset } from './../../../../shared/geometry/model/offset';
 import { PlacementStrategy } from './../../interface/placement-strategy';
 
@@ -57,6 +54,10 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     return Offset.create(offsetX, offsetY);
   }
 
+  getMaxArrowOffset(popoverRect: Rectangle, arrowRect: Rectangle): number {
+    return (popoverRect.width - arrowRect.width) / 2;
+  }
+
   getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
     const isFlipped = this.isFlipped(anchorRect, popoverRect);
     const arrowOffset = this.getArrowOffset(anchorRect, popoverRect);
@@ -68,10 +69,6 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     }
 
     return isFlipped ? 'top' : 'bottom';
-  }
-
-  getMaxArrowOffset(popoverRect: Rectangle, arrowRect: Rectangle): number {
-    return (popoverRect.width - arrowRect.width) / 2;
   }
 
   isFlipped(anchorRect: Rectangle, popoverRect: Rectangle): boolean {
