@@ -8,7 +8,7 @@
  */
 
 @function dm-get-spacers(){
-  @return $dm-settings__spacers; /* [1] */
+  @return $dm-settings_spacers; /* [1] */
 }
 
 @function dm-get-spacer-names(){

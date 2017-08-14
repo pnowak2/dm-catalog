@@ -1,12 +1,12 @@
 .dm-c-nav-link {
   @include dm-hover-focus-active {
-    color: $dm-c-nav-link__text-color;
+    color: $dm-c-nav-link_text-color;
     text-decoration: none;
   }
 
   @include dm-hover {
-    background-color: $dm-c-nav-link__active-bg-hover;
-    color: $dm-c-nav-link__text-color;
+    background-color: $dm-c-nav-link_active-bg-hover;
+    color: $dm-c-nav-link_text-color;
   }
   
   &--has-subitems {
@@ -28,7 +28,7 @@
   }
 
   &.dm-is-active {
-    background-color: $dm-c-nav-link__active-bg;
+    background-color: $dm-c-nav-link_active-bg;
 
     &.dm-c-nav-link--has-subitems:after {
       transform: rotate(90deg);

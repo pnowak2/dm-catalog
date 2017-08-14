@@ -1,5 +1,5 @@
 @mixin dm-box-shadow($shadow...) {
-  @if $dm-settings__enable-shadows {
+  @if $dm-settings_enable-shadows {
     box-shadow: $shadow;
   }
 }

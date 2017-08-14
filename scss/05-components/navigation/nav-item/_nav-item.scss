@@ -4,10 +4,10 @@
   &__subitems {
     margin: 0;
     padding: 0;
-    background-color: darken($dm-c-nav-item__subitems-bg, 2%);
+    background-color: darken($dm-c-nav-item_subitems-bg, 2%);
     max-height: 0;
     overflow: hidden;
-    @include dm-box-shadow(0 $dm-c-nav-item__subitems-border-size 0 $dm-c-nav-item__subitems-border-bg);
+    @include dm-box-shadow(0 $dm-c-nav-item_subitems-border-size 0 $dm-c-nav-item_subitems-border-bg);
     @include dm-transition();
   }
 

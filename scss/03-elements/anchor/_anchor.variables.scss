@@ -1,5 +1,5 @@
-$dm-elements-anchor__color: dm-get-color(primary) !default;
-$dm-elements-anchor__decoration: none !default;
+$dm-elements-anchor_color: dm-get-color(primary) !default;
+$dm-elements-anchor_decoration: none !default;
 
-$dm-elements-anchor__hover-color: darken($dm-elements-anchor__color, 10%) !default;
-$dm-elements-anchor__hover-decoration: underline !default;
+$dm-elements-anchor_hover-color: darken($dm-elements-anchor_color, 10%) !default;
+$dm-elements-anchor_hover-decoration: underline !default;

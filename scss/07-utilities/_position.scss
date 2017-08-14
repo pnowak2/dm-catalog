@@ -1,5 +1,5 @@
-$dm-settings__zindex-fixed: 1030 !default;
-$dm-settings__zindex-sticky: 1030 !default;
+$dm-settings_zindex-fixed: 1030 !default;
+$dm-settings_zindex-sticky: 1030 !default;
 
 .dm-u-relative {
   position: relative !important;
@@ -18,7 +18,7 @@ $dm-settings__zindex-sticky: 1030 !default;
   top: 0;
   right: 0;
   left: 0;
-  z-index: $dm-settings__zindex-fixed;
+  z-index: $dm-settings_zindex-fixed;
 }
 
 .dm-u-fixed-bottom {
@@ -26,11 +26,11 @@ $dm-settings__zindex-sticky: 1030 !default;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: $dm-settings__zindex-fixed;
+  z-index: $dm-settings_zindex-fixed;
 }
 
 .dm-u-sticky-top {
   position: sticky;
   top: 0;
-  z-index: $dm-settings__zindex-sticky;
+  z-index: $dm-settings_zindex-sticky;
 }

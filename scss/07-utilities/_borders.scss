@@ -19,23 +19,23 @@
 }
 
 .dm-u-rounded {
-  @include dm-border-radius($dm-settings__border-radius);
+  @include dm-border-radius($dm-settings_border-radius);
 }
 
 .dm-u-rounded-top {
-  @include dm-border-top-radius($dm-settings__border-radius);
+  @include dm-border-top-radius($dm-settings_border-radius);
 }
 
 .dm-u-rounded-right {
-  @include dm-border-right-radius($dm-settings__border-radius);
+  @include dm-border-right-radius($dm-settings_border-radius);
 }
 
 .dm-u-rounded-bottom {
-  @include dm-border-bottom-radius($dm-settings__border-radius);
+  @include dm-border-bottom-radius($dm-settings_border-radius);
 }
 
 .dm-u-rounded-left {
-  @include dm-border-left-radius($dm-settings__border-radius);
+  @include dm-border-left-radius($dm-settings_border-radius);
 }
 
 .dm-u-rounded-circle {

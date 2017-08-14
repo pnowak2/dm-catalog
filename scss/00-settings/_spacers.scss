@@ -1,10 +1,10 @@
-$dm-settings__spacer: 1rem !default;
+$dm-settings_spacer: 1rem !default;
 
-$dm-settings__spacers: (
+$dm-settings_spacers: (
   0: 0,
-  xs: $dm-settings__spacer * .25,
-  sm: $dm-settings__spacer * .5,
-  md: $dm-settings__spacer,
-  lg: $dm-settings__spacer * 1.5,
-  xl: $dm-settings__spacer * 3
+  xs: $dm-settings_spacer * .25,
+  sm: $dm-settings_spacer * .5,
+  md: $dm-settings_spacer,
+  lg: $dm-settings_spacer * 1.5,
+  xl: $dm-settings_spacer * 3
 ) !default;

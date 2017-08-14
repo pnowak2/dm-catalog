@@ -1,10 +1,10 @@
 body {
-  font-family: $dm-settings__font-family-base;
-  font-size: $dm-settings__font-size-base;
-  font-weight: $dm-settings__font-weight-base;
+  font-family: $dm-settings_font-family-base;
+  font-size: $dm-settings_font-size-base;
+  font-weight: $dm-settings_font-weight-base;
   
-  line-height: $dm-settings__line-height-base;
+  line-height: $dm-settings_line-height-base;
 
-  color: $dm-settings__color-text;
-  background-color: $dm-settings__color-body-bg;
+  color: $dm-settings_color-text;
+  background-color: $dm-settings_color-body-bg;
 }

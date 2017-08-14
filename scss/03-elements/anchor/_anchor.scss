@@ -3,12 +3,12 @@
  */
 
 a {
-  color: $dm-elements-anchor__color;
-  text-decoration: $dm-elements-anchor__decoration;
+  color: $dm-elements-anchor_color;
+  text-decoration: $dm-elements-anchor_decoration;
 
   @include dm-hover-focus {
-    color: $dm-elements-anchor__hover-color;
-    text-decoration: $dm-elements-anchor__hover-decoration;
+    color: $dm-elements-anchor_hover-color;
+    text-decoration: $dm-elements-anchor_hover-decoration;
   }
 }
 

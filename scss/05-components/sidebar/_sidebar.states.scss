@@ -1,6 +1,6 @@
 .dm-c-sidebar {
   .dm-is-closed & {
-    width: $dm-c-sidebar__closed-width;
+    width: $dm-c-sidebar_closed-width;
 
     &__category-header {
       display: none;

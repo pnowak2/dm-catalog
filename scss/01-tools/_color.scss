@@ -8,7 +8,7 @@
  */
 
 @function dm-get-colors(){
-  @return $dm-settings__colors; /* [1] */
+  @return $dm-settings_colors; /* [1] */
 }
 
 @function dm-get-color-names(){

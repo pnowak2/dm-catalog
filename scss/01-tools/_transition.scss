@@ -1,7 +1,7 @@
 @mixin dm-transition($transition...) {
-  @if $dm-settings__enable-transitions {
+  @if $dm-settings_enable-transitions {
     @if length($transition) == 0 {
-      transition: $dm-settings__transition-base;
+      transition: $dm-settings_transition-base;
     } @else {
       transition: $transition;
     }

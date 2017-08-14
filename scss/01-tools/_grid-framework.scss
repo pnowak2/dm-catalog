@@ -1,4 +1,4 @@
-@mixin dm-make-container($gutters: $dm-settings__grid-gutter-widths) {
+@mixin dm-make-container($gutters: $dm-settings_grid-gutter-widths) {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -12,7 +12,7 @@
   }
 }
 
-@mixin dm-make-container-max-widths($max-widths: $dm-settings__grid-container-max-widths, $breakpoints: $dm-settings__grid-breakpoints) {
+@mixin dm-make-container-max-widths($max-widths: $dm-settings_grid-container-max-widths, $breakpoints: $dm-settings_grid-breakpoints) {
   @each $breakpoint, $container-max-width in $max-widths {
     @include dm-media-breakpoint-up($breakpoint, $breakpoints) {
       width: $container-max-width;
@@ -21,7 +21,7 @@
   }
 }
 
-@mixin dm-make-gutters($gutters: $dm-settings__grid-gutter-widths) {
+@mixin dm-make-gutters($gutters: $dm-settings_grid-gutter-widths) {
   @each $breakpoint in map-keys($gutters) {
     @include dm-media-breakpoint-up($breakpoint) {
       $gutter: map-get($gutters, $breakpoint);
@@ -31,7 +31,7 @@
   }
 }
 
-@mixin dm-make-row($gutters: $dm-settings__grid-gutter-widths) {
+@mixin dm-make-row($gutters: $dm-settings_grid-gutter-widths) {
   display: flex;
   flex-wrap: wrap;
 
@@ -44,7 +44,7 @@
   }
 }
 
-@mixin dm-make-col-ready($gutters: $dm-settings__grid-gutter-widths) {
+@mixin dm-make-col-ready($gutters: $dm-settings_grid-gutter-widths) {
   position: relative;
   width: 100%;
   min-height: 1px; // Prevent collapsing
@@ -85,7 +85,7 @@
   }
 }
 
-@mixin dm-make-grid-columns($columns: $dm-settings__grid-columns, $gutters: $dm-settings__grid-gutter-widths, $breakpoints: $dm-settings__grid-breakpoints) {
+@mixin dm-make-grid-columns($columns: $dm-settings_grid-columns, $gutters: $dm-settings_grid-gutter-widths, $breakpoints: $dm-settings_grid-breakpoints) {
   // Common properties for all breakpoints
   %grid-column {
     position: relative;
