@@ -1,5 +1,5 @@
-import { PlacementOptions } from './../../interface/placement-options';
 import { constants } from './../../constants/constants';
+import { PlacementOptions } from './../../interface/placement-options';
 import { Offset } from './../../../../shared/geometry/model/offset';
 import { PlacementStrategy } from './../../interface/placement-strategy';
 
