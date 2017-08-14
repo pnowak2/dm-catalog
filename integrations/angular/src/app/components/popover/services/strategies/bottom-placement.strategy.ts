@@ -51,7 +51,7 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
-    const offsetX = anchorRect.x - popoverRect.center().x;
+    const offsetX = anchorRect.center().x - popoverRect.center().x;
     const offsetY = 0;
 
     return Offset.create(offsetX, offsetY);

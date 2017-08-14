@@ -33,7 +33,7 @@
   &--bottom {
     .dm-c-popover__arrow {
       left: 50%;
-      margin-left: -$dm-c-popover__arrow-width;
+      transform: translateX(-$dm-c-popover__arrow-width);
       border-left-color: transparent;
       border-right-color: transparent;
 
@@ -73,7 +73,7 @@
   &--right {
     .dm-c-popover__arrow {
       top: 50%;
-      margin-top: -$dm-c-popover__arrow-width;
+      transform: translateY(-$dm-c-popover__arrow-width);
       border-top-color: transparent;
       border-bottom-color: transparent;
 
