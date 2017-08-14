@@ -23,14 +23,14 @@ export class BottomPlacementStrategy implements PlacementStrategy {
       placementOptions.anchorRect,
       placementOptions.popoverRect
     );
-
     const arrowOffset = this.getArrowOffset(
       placementOptions.anchorRect,
       positionedPopoverRect
     );
     const placementClassModifier = this.getPlacementClassModifier(
       placementOptions.anchorRect,
-      positionedPopoverRect
+      positionedPopoverRect,
+      placementOptions.arrowRect
     );
     const popoverPosition = positionedPopoverRect.position();
 
@@ -51,14 +51,21 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
-    const offsetX = anchorRect.position().x - popoverRect.center().x;
+    const offsetX = anchorRect.x - popoverRect.center().x;
     const offsetY = 0;
 
     return Offset.create(offsetX, offsetY);
   }
 
-  getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle): string {
-    const isFlipped = popoverRect.isAbove(anchorRect.leftTop());
+  getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
+    const isFlipped = popoverRect.isAbove(anchorRect.center());
+    const arrowOffset = this.getArrowOffset(anchorRect, popoverRect);
+    const maxOffset = (popoverRect.width / 2) - (arrowRect.width);
+    const isArrowTooFar = Math.abs(arrowOffset.x) >= maxOffset;
+
+    if (isArrowTooFar) {
+      return 'no-direction';
+    }
 
     return isFlipped ? 'top' : 'bottom';
   }
