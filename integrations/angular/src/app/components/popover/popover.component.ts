@@ -25,13 +25,13 @@ export class PopoverComponent {
 
   show(event) {
     const anchorRect: Rectangle = RectangleFactory.fromHtmlElement(event.target);
-    const elementRect: Rectangle = RectangleFactory.fromHtmlElement(this.popoverEl.nativeElement);
+    const popoverRect: Rectangle = RectangleFactory.fromHtmlElement(this.popoverEl.nativeElement);
     const arrowRect: Rectangle = RectangleFactory.fromHtmlElement(this.arrowEl.nativeElement);
 
     this.vm = this.popoverService.calculate(
       this.placement,
       anchorRect,
-      elementRect,
+      popoverRect,
       arrowRect
     );
   }

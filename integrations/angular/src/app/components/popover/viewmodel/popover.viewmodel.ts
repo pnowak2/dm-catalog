@@ -4,14 +4,14 @@ import { Offset } from './../../../shared/geometry/model/offset';
 
 interface PopoverDetails {
   placementClassModifier: string;
-  containerPosition: Position;
+  popoverPosition: Position;
   arrowOffset: Offset;
 }
 
 export class PopoverVM implements PopoverDetails {
   private constructor(
     public placementClassModifier: string = 'no-direction',
-    public containerPosition: Position = Point.create(0, 0),
+    public popoverPosition: Position = Point.create(0, 0),
     public arrowOffset: Offset = Offset.create(0, 0)) { }
 
   public static create(popoverDetails?: PopoverDetails): PopoverVM {
@@ -21,7 +21,7 @@ export class PopoverVM implements PopoverDetails {
 
     return new PopoverVM(
       popoverDetails.placementClassModifier,
-      popoverDetails.containerPosition,
+      popoverDetails.popoverPosition,
       popoverDetails.arrowOffset
     );
   }

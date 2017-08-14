@@ -26,7 +26,7 @@ export class RightPlacementStrategy implements PlacementStrategy {
 
     return PopoverVM.create({
       placementClassModifier: isFlipped ? 'left' : 'right',
-      containerPosition: positionedElementRect.leftTop(),
+      popoverPosition: positionedElementRect.leftTop(),
       arrowOffset: Offset.create(0, anchorRect.position().y - positionedElementRect.center().y)
     });
   }

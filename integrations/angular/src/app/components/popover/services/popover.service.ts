@@ -17,7 +17,7 @@ export class PopoverService {
     );
   }
 
-  calculate(placement: string, anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
+  calculate(placement: string, anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): PopoverVM {
     const placementStrategy = PopoverService.pickPlacementStrategy(
       this.placementStrategies,
       placement
@@ -27,6 +27,6 @@ export class PopoverService {
       throw new Error('Placement not supported: ' + placement);
     }
 
-    return placementStrategy.calculate(anchorRect, elementRect, arrowRect);
+    return placementStrategy.calculate(anchorRect, popoverRect, arrowRect);
   }
 }

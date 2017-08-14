@@ -1,3 +1,4 @@
+import { Point } from './../../../../shared/geometry/model/point';
 import { Position } from './../../../../shared/geometry/interface/position';
 import { Offset } from './../../../../shared/geometry/model/offset';
 import { PlacementStrategy } from './../../interface/placement-strategy';
@@ -15,39 +16,39 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(anchorRect: Rectangle, elementRect: Rectangle, arrowRect: Rectangle): PopoverVM {
-    const positionedPopover = this.getPositionedPopover(anchorRect, elementRect);
-    const placementClassModifier = this.getPlacementClassModifier(anchorRect, positionedPopover);
-    const arrowOffset = this.getArrowOffset(anchorRect, positionedPopover);
+    const positionedPopoverRect = this.getPositionedPopoverRect(anchorRect, elementRect);
+
+    const popoverPosition = positionedPopoverRect.position();
+    const arrowOffset = this.getArrowOffset(anchorRect, positionedPopoverRect);
+    const placementClassModifier = this.getPlacementClassModifier(anchorRect, positionedPopoverRect);
 
     return PopoverVM.create({
-      placementClassModifier: placementClassModifier,
-      containerPosition: positionedPopover.position(),
-      arrowOffset: arrowOffset
+      popoverPosition, arrowOffset, placementClassModifier
     });
   }
 
-  getPositionedPopover(anchorRect: Rectangle, elementRect: Rectangle): Rectangle {
-    const positionedElementRect: Rectangle = this.placementService.place(
+  getPositionedPopoverRect(anchorRect: Rectangle, popoverRect: Rectangle): Rectangle {
+    const positionedRect: Rectangle = this.placementService.place(
       anchorRect,
-      elementRect, {
+      popoverRect, {
         placementId: this.getId(),
         offsetAlong: 15
       }
     );
 
-    return positionedElementRect;
+    return positionedRect;
   }
 
-  getArrowOffset(anchorRect: Rectangle, positionedElementRect: Rectangle): Offset {
-    return Offset.create(anchorRect.position().x - positionedElementRect.center().x, 0);
+  getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
+    const offsetX = anchorRect.position().x - popoverRect.center().x;
+    const offsetY = 0;
+
+    return Offset.create(offsetX, offsetY);
   }
 
-  getPlacementClassModifier(anchorRect: Rectangle, positionedElementRect: Rectangle): string {
-    const isFlipped = this.isFlipped(anchorRect, positionedElementRect);
+  getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle): string {
+    const isFlipped = popoverRect.isAbove(anchorRect.leftTop());
+
     return isFlipped ? 'top' : 'bottom';
-  }
-
-  isFlipped(anchorRect: Rectangle, positionedElementRect: Rectangle): boolean {
-    return positionedElementRect.isAbove(anchorRect.leftTop());
   }
 }
