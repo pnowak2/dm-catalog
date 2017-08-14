@@ -6,7 +6,7 @@ import { PlacementStrategy } from '../../interface/placement-strategy';
 export class PlacementService {
   constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
 
-  static getEffectiveOptions(options: PlacementOptions = {}): PlacementOptions {
+  static getEffectiveOptions(options?: PlacementOptions): PlacementOptions {
     return {
       anchor: Rectangle.empty(),
       element: Rectangle.empty(),

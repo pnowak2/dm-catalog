@@ -56,6 +56,8 @@ describe('PlacementService', () => {
 
           fakeStrategy = makePlacementStrategy('fakeid', fakeRect);
           fakeOptions = {
+            anchor: Rectangle.empty(),
+            element: Rectangle.empty(),
             placementId: 'fakeid'
           };
 
