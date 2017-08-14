@@ -8,6 +8,8 @@ export class PlacementService {
 
   static getEffectiveOptions(options: PlacementOptions = {}): PlacementOptions {
     return {
+      anchor: Rectangle.empty(),
+      element: Rectangle.empty(),
       placementId: 'bottom',
       parent: RectangleFactory.fromWindow(),
       offsetAlong: 0,
@@ -27,7 +29,7 @@ export class PlacementService {
     );
   }
 
-  place(anchor: Rectangle, element: Rectangle, options?: PlacementOptions): Rectangle {
+  place(options?: PlacementOptions): Rectangle {
     const effectiveOptions = PlacementService.getEffectiveOptions(options);
     const placementStrategy = PlacementService.pickPlacementStrategy(
       this.placementStrategies,
@@ -38,10 +40,6 @@ export class PlacementService {
       throw new Error('Placement not supported: ' + effectiveOptions.placementId);
     }
 
-    return placementStrategy.calculate(
-      anchor,
-      element,
-      effectiveOptions
-    );
+    return placementStrategy.calculate(effectiveOptions);
   }
 }

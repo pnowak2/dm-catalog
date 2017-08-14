@@ -7,15 +7,15 @@ export class LeftPlacementStrategy implements PlacementStrategy {
     return 'left';
   }
 
-  calculate(anchor: Rectangle, element: Rectangle, options: PlacementOptions): Rectangle {
-    const placedRect = element
+  calculate(options: PlacementOptions): Rectangle {
+    const placedRect = options.element
       .clone()
-      .moveTo(anchor.leftCenter(), element.rightCenter())
+      .moveTo(options.anchor.leftCenter(), options.element.rightCenter())
       .translateX(-options.offsetAlong)
       .translateY(options.offsetAcross);
 
     if (options.flip && placedRect.overflowsLeft(options.parent)) {
-      placedRect.flipY(anchor.center().x);
+      placedRect.flipY(options.anchor.center().x);
     }
 
     if (options.constrainToParent) {

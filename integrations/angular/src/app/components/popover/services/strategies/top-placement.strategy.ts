@@ -1,3 +1,4 @@
+import { constants } from './../../constants/constants';
 import { PlacementOptions } from './../../interface/placement-options';
 import { PopoverVM } from './../../viewmodel/popover.viewmodel';
 import { Point } from './../../../../shared/geometry/model/point';
@@ -13,13 +14,12 @@ export class TopPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(placementOptions: PlacementOptions): PopoverVM {
-    const calculatedRect: Rectangle = this.placementService.place(
-      placementOptions.anchorRect,
-      placementOptions.popoverRect, {
-        placementId: this.getId(),
-        offsetAlong: 15
-      }
-    );
+    const calculatedRect: Rectangle = this.placementService.place({
+      anchor: placementOptions.anchorRect,
+      element: placementOptions.popoverRect,
+      placementId: this.getId(),
+      offsetAlong: constants.offset
+    });
 
     const anchorRelativePosition = placementOptions.anchorRect.relativeTo(calculatedRect);
 

@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { PlacementOptions } from './../../interface/placement-options';
 import { constants } from './../../constants/constants';
 import { Point } from './../../../../shared/geometry/model/point';
@@ -39,13 +40,12 @@ export class BottomPlacementStrategy implements PlacementStrategy {
   }
 
   getPositionedPopoverRect(anchorRect: Rectangle, popoverRect: Rectangle): Rectangle {
-    const positionedRect: Rectangle = this.placementService.place(
-      anchorRect,
-      popoverRect, {
-        placementId: this.getId(),
-        offsetAlong: constants.offset
-      }
-    );
+    const positionedRect: Rectangle = this.placementService.place({
+      anchor: anchorRect,
+      element: popoverRect,
+      placementId: this.getId(),
+      offsetAlong: constants.offset
+    });
 
     return positionedRect;
   }

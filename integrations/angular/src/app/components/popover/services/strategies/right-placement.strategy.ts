@@ -1,3 +1,4 @@
+import { constants } from './../../constants/constants';
 import { PlacementOptions } from './../../interface/placement-options';
 import { Offset } from './../../../../shared/geometry/model/offset';
 import { PlacementService } from './../../../../shared/geometry/services/placement/placement.service';
@@ -14,13 +15,12 @@ export class RightPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(placementOptions: PlacementOptions): PopoverVM {
-    const positionedElementRect: Rectangle = this.placementService.place(
-      placementOptions.anchorRect,
-      placementOptions.popoverRect, {
-        placementId: this.getId(),
-        offsetAlong: 15
-      }
-    );
+    const positionedElementRect: Rectangle = this.placementService.place({
+      anchor: placementOptions.anchorRect,
+      element: placementOptions.popoverRect,
+      placementId: this.getId(),
+      offsetAlong: constants.offset
+    });
 
     const isFlipped = this.isFlipped(placementOptions.anchorRect, positionedElementRect);
     const anchorPosition = placementOptions.anchorRect.relativeTo(positionedElementRect);
