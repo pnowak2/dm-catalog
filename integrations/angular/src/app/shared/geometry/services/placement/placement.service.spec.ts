@@ -46,6 +46,7 @@ describe('PlacementService', () => {
         let fakeRect: Rectangle;
         let fakeStrategy: PlacementStrategy;
         let fakeOptions: PlacementOptions;
+        let result: Rectangle;
 
         beforeEach(() => {
           service = new PlacementService();
@@ -68,11 +69,15 @@ describe('PlacementService', () => {
             }
           });
 
-          service.place(options);
+          result = service.place(options);
         });
 
         it('should call strategy with proper options', () => {
           expect(fakeStrategy.calculate).toHaveBeenCalledWith(fakeOptions);
+        });
+
+        it('should return strategy output', () => {
+          expect(result).toEqual(fakeRect);
         });
       });
 

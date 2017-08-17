@@ -55,11 +55,17 @@ export class RightPlacementStrategy implements PlacementStrategy {
     return (popoverRect.height - arrowRect.height) / 2;
   }
 
-  getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
-    const isFlipped = this.isFlipped(anchorRect, popoverRect);
+  isArrowTooFar(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): boolean {
     const arrowOffset = this.getArrowOffset(anchorRect, popoverRect);
     const maxOffset = this.getMaxArrowOffset(popoverRect, arrowRect);
     const isArrowTooFar = Math.abs(arrowOffset.y) >= maxOffset;
+
+    return isArrowTooFar;
+  }
+
+  getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
+    const isFlipped = this.isFlipped(anchorRect, popoverRect);
+    const isArrowTooFar = this.isArrowTooFar(anchorRect, popoverRect, arrowRect);
 
     if (isArrowTooFar) {
       return constants.directionClass.none;

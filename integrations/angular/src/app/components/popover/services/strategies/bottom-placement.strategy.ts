@@ -45,6 +45,10 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     });
   }
 
+  getMaxArrowOffset(popoverRect: Rectangle, arrowRect: Rectangle): number {
+    return (popoverRect.width - arrowRect.width) / 2;
+  }
+
   getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
     const offsetX = anchorRect.center().x - popoverRect.center().x;
     const offsetY = 0;
@@ -52,24 +56,26 @@ export class BottomPlacementStrategy implements PlacementStrategy {
     return Offset.create(offsetX, offsetY);
   }
 
-  getMaxArrowOffset(popoverRect: Rectangle, arrowRect: Rectangle): number {
-    return (popoverRect.width - arrowRect.width) / 2;
+  isArrowTooFar(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): boolean {
+    const arrowOffset = this.getArrowOffset(anchorRect, popoverRect);
+    const maxOffset = this.getMaxArrowOffset(popoverRect, arrowRect);
+    const isArrowTooFar = Math.abs(arrowOffset.x) >= maxOffset;
+
+    return isArrowTooFar;
+  }
+
+  isFlipped(anchorRect: Rectangle, popoverRect: Rectangle): boolean {
+    return popoverRect.isAbove(anchorRect.center());
   }
 
   getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
     const isFlipped = this.isFlipped(anchorRect, popoverRect);
-    const arrowOffset = this.getArrowOffset(anchorRect, popoverRect);
-    const maxOffset = this.getMaxArrowOffset(popoverRect, arrowRect);
-    const isArrowTooFar = Math.abs(arrowOffset.x) >= maxOffset;
+    const isArrowTooFar = this.isArrowTooFar(anchorRect, popoverRect, arrowRect);
 
     if (isArrowTooFar) {
       return constants.directionClass.none;
     }
 
     return isFlipped ? constants.directionClass.top : constants.directionClass.bottom;
-  }
-
-  isFlipped(anchorRect: Rectangle, popoverRect: Rectangle): boolean {
-    return popoverRect.isAbove(anchorRect.center());
   }
 }

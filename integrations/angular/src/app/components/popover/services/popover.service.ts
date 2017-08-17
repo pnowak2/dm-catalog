@@ -7,7 +7,7 @@ import { Rectangle } from './../../../shared/geometry/model/rectangle';
 
 @Injectable()
 export class PopoverService {
-  constructor(private placementStrategies: Array<PlacementStrategy>) { }
+  constructor(private placementStrategies: Array<PlacementStrategy> = []) { }
 
   static pickPlacementStrategy(
     placementStrategies: Array<PlacementStrategy>,
