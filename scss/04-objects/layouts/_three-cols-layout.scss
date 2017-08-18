@@ -5,14 +5,12 @@
   &__page-container {
     display: flex;
     flex-direction: row;
-    flex: 1;
   }
 
   &__navbar {
   }
 
   &__sidebar {
-    flex-basis: content;
   }
 
   &__actionbar {
@@ -20,6 +18,5 @@
 
   &__content {
     flex: 1;
-    padding: 1rem;
   }
 }
