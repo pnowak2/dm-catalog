@@ -40,15 +40,25 @@
 }
 
 @mixin dm-media-breakpoint-between($lower, $upper, $breakpoints: $dm-settings_grid-breakpoints) {
-  @include dm-media-breakpoint-up($lower, $breakpoints) {
-    @include dm-media-breakpoint-down($upper, $breakpoints) {
-      @content;
-    }
+  $min: dm-media-breakpoint-min($lower, $breakpoints);
+  $max: dm-media-breakpoint-max($upper, $breakpoints);
+
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
   }
 }
 
 @mixin dm-media-breakpoint-only($name, $breakpoints: $dm-settings_grid-breakpoints) {
-  @include dm-media-breakpoint-between($name, $name, $breakpoints) {
-    @content;
+  $min: dm-media-breakpoint-min($name, $breakpoints);
+  $max: dm-media-breakpoint-max($name, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include dm-media-media-breakpoint-up($name)
+  } @else if $min == null {
+    @include dm-media-media-breakpoint-down($name)
   }
 }
