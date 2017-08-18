@@ -15,15 +15,17 @@ export class RightPlacementStrategy implements PlacementStrategy {
   }
 
   calculate(placementOptions: PlacementOptions): PopoverVM {
-    const positionedPopoverRect = this.getPositionedPopoverRect(
-      placementOptions.anchorRect,
-      placementOptions.popoverRect
-    );
-    const arrowOffset = this.getArrowOffset(
+    const positionedPopoverRect = this.placementService.place({
+      anchor: placementOptions.anchorRect,
+      element: placementOptions.popoverRect,
+      placementId: this.getId(),
+      offsetAlong: constants.offset
+    });
+    const arrowOffset = getArrowOffset(
       placementOptions.anchorRect,
       positionedPopoverRect
     );
-    const placementClassModifier = this.getPlacementClassModifier(
+    const placementClassModifier = getPlacementClassModifier(
       placementOptions.anchorRect,
       positionedPopoverRect,
       placementOptions.arrowRect
@@ -34,47 +36,38 @@ export class RightPlacementStrategy implements PlacementStrategy {
       popoverPosition, arrowOffset, placementClassModifier
     });
   }
+}
 
-  getPositionedPopoverRect(anchorRect: Rectangle, popoverRect: Rectangle): Rectangle {
-    return this.placementService.place({
-      anchor: anchorRect,
-      element: popoverRect,
-      placementId: this.getId(),
-      offsetAlong: constants.offset
-    });
+function getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
+  const offsetX = 0;
+  const offsetY = anchorRect.center().y - popoverRect.center().y;
+
+  return Offset.create(offsetX, offsetY);
+}
+
+function getMaxArrowOffset(popoverRect: Rectangle, arrowRect: Rectangle): number {
+  return (popoverRect.height - arrowRect.height) / 2;
+}
+
+function isArrowTooFar(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): boolean {
+  const arrowOffset = getArrowOffset(anchorRect, popoverRect);
+  const maxOffset = getMaxArrowOffset(popoverRect, arrowRect);
+  const isTooFar = Math.abs(arrowOffset.y) >= maxOffset;
+
+  return isTooFar;
+}
+
+function getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
+  const isFlip = isFlipped(anchorRect, popoverRect);
+  const isTooFar = isArrowTooFar(anchorRect, popoverRect, arrowRect);
+
+  if (isTooFar) {
+    return constants.directionClass.none;
   }
 
-  getArrowOffset(anchorRect: Rectangle, popoverRect: Rectangle): Offset {
-    const offsetX = 0;
-    const offsetY = anchorRect.center().y - popoverRect.center().y;
+  return isFlip ? constants.directionClass.left : constants.directionClass.right;
+}
 
-    return Offset.create(offsetX, offsetY);
-  }
-
-  getMaxArrowOffset(popoverRect: Rectangle, arrowRect: Rectangle): number {
-    return (popoverRect.height - arrowRect.height) / 2;
-  }
-
-  isArrowTooFar(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): boolean {
-    const arrowOffset = this.getArrowOffset(anchorRect, popoverRect);
-    const maxOffset = this.getMaxArrowOffset(popoverRect, arrowRect);
-    const isArrowTooFar = Math.abs(arrowOffset.y) >= maxOffset;
-
-    return isArrowTooFar;
-  }
-
-  getPlacementClassModifier(anchorRect: Rectangle, popoverRect: Rectangle, arrowRect: Rectangle): string {
-    const isFlipped = this.isFlipped(anchorRect, popoverRect);
-    const isArrowTooFar = this.isArrowTooFar(anchorRect, popoverRect, arrowRect);
-
-    if (isArrowTooFar) {
-      return constants.directionClass.none;
-    }
-
-    return isFlipped ? constants.directionClass.left : constants.directionClass.right;
-  }
-
-  isFlipped(anchorRect: Rectangle, popoverRect: Rectangle): boolean {
-    return popoverRect.isOnTheLeft(anchorRect.center());
-  }
+function isFlipped(anchorRect: Rectangle, popoverRect: Rectangle): boolean {
+  return popoverRect.isOnTheLeft(anchorRect.center());
 }
