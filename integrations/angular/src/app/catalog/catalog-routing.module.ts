@@ -12,6 +12,7 @@ import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
 import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
 import { MainLayoutDemoComponent } from './layouts/main/main-layout-demo.component';
 import { UtilitiesDemoComponent } from './utilities-demo/utilities-demo.component';
+import { BordersDemoComponent } from './utilities-demo/borders-demo/borders-demo.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'catalog/typography', pathMatch: 'full' },
@@ -26,7 +27,12 @@ export const routes: Routes = [
       { path: 'sidebar', component: SidebarDemoComponent },
       { path: 'popover', component: PopoverDemoComponent },
       { path: 'layout', component: MainLayoutDemoComponent },
-      { path: 'utilities', component: UtilitiesDemoComponent },
+      {
+        path: 'utilities', component: UtilitiesDemoComponent, children: [
+          { path: 'borders', component: BordersDemoComponent },
+
+        ]
+      },
     ]
   }
 ];

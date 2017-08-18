@@ -17,6 +17,7 @@ import { ColorSystemDemoComponent } from './color-system-demo/color-system-demo.
 import { HtmlDefaultsDemoComponent } from './html-defaults-demo/html-defaults-demo.component';
 import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
 import { UtilitiesDemoComponent } from './utilities-demo/utilities-demo.component';
+import { BordersDemoComponent } from './utilities-demo/borders-demo/borders-demo.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { UtilitiesDemoComponent } from './utilities-demo/utilities-demo.componen
     ColorSystemDemoComponent,
     HtmlDefaultsDemoComponent,
     PopoverDemoComponent,
-    UtilitiesDemoComponent
+    UtilitiesDemoComponent,
+    BordersDemoComponent
   ],
   providers: [],
   exports: []
