@@ -251,4 +251,4 @@ $dm-settings_colors: (
 
 $dm-settings_color-text: map-get($dm-settings_colors, grey-darkester) !default;
 $dm-settings_color-text-muted: map-get($dm-settings_colors, grey-light) !default;
-$dm-settings_color-body-bg: map-get($dm-settings_colors, grey-lightester-2) !default;
+$dm-settings_color-body-bg: map-get($dm-settings_colors, white) !default;
