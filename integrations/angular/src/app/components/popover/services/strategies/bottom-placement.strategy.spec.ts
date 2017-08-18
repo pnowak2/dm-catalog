@@ -18,31 +18,213 @@ describe('BottomPlacementStrategy Placement Strategy', () => {
     });
 
     describe('.calculate()', () => {
-      let placementService: PlacementService;
-      let strategy: BottomPlacementStrategy;
-      let fakeRectangle: Rectangle;
-      let result: PopoverVM;
-
-      beforeEach(() => {
-        fakeRectangle = Rectangle.empty();
-        placementService = new PlacementService([]);
-        strategy = new BottomPlacementStrategy(placementService);
-
-        spyOn(PlacementService.prototype, 'place').and.returnValue(Rectangle.empty());
-        result = strategy.calculate({
-          placement: 'bottom',
-          anchorRect: Rectangle.empty(),
-          popoverRect: Rectangle.empty(),
-          arrowRect: Rectangle.empty()
-        });
-      });
-
       it('should be defined', () => {
         expect(BottomPlacementStrategy.prototype.calculate).toEqual(jasmine.any(Function));
       });
 
-      it('should behave...', () => {
-        expect(result.placementClassModifier).toEqual(constants.directionClass.none);
+      describe('Not flipped, arrow visible, zero arrow offset', () => {
+        let placementService: PlacementService;
+        let strategy: BottomPlacementStrategy;
+        let placedRect: Rectangle;
+        let result: PopoverVM;
+        let anchorRect;
+        let popoverRect;
+        let arrowRect;
+
+        beforeEach(() => {
+          anchorRect = Rectangle.create(5, 0, 1, 1);
+          popoverRect = Rectangle.create(0, 0, 5, 5);
+          arrowRect = Rectangle.create(0, 0, 1, 1);
+
+          placementService = new PlacementService([]);
+          strategy = new BottomPlacementStrategy(placementService);
+
+          placedRect = Rectangle.create(3, 3, 5, 5);
+          spyOn(PlacementService.prototype, 'place').and.returnValue(placedRect);
+
+          result = strategy.calculate({
+            placement: constants.directionClass.bottom,
+            anchorRect,
+            popoverRect,
+            arrowRect
+          });
+        });
+
+        it('should return proper popover position', () => {
+          expect(result.popoverPosition).toEqual(placedRect.position());
+        });
+
+        it('should return proper class modifier', () => {
+          expect(result.placementClassModifier).toEqual(constants.directionClass.bottom);
+        });
+
+        it('should return proper arrow offset', () => {
+          expect(result.arrowOffset).toEqual(Offset.create(0, 0));
+        });
+      });
+
+      describe('Not flipped, arrow visible, non zero arrow offset', () => {
+        let placementService: PlacementService;
+        let strategy: BottomPlacementStrategy;
+        let placedRect: Rectangle;
+        let result: PopoverVM;
+        let anchorRect;
+        let popoverRect;
+        let arrowRect;
+
+        beforeEach(() => {
+          anchorRect = Rectangle.create(6, 0, 1, 1);
+          popoverRect = Rectangle.create(0, 0, 5, 5);
+          arrowRect = Rectangle.create(0, 0, 1, 1);
+
+          placementService = new PlacementService([]);
+          strategy = new BottomPlacementStrategy(placementService);
+
+          placedRect = Rectangle.create(3, 3, 5, 5);
+          spyOn(PlacementService.prototype, 'place').and.returnValue(placedRect);
+
+          result = strategy.calculate({
+            placement: constants.directionClass.bottom,
+            anchorRect,
+            popoverRect,
+            arrowRect
+          });
+        });
+
+        it('should return proper popover position', () => {
+          expect(result.popoverPosition).toEqual(placedRect.position());
+        });
+
+        it('should return proper class modifier', () => {
+          expect(result.placementClassModifier).toEqual(constants.directionClass.bottom);
+        });
+
+        it('should return proper arrow offset', () => {
+          expect(result.arrowOffset).toEqual(Offset.create(1, 0));
+        });
+      });
+
+      describe('Not flipped, arrow invisible, non zero arrow offset', () => {
+        let placementService: PlacementService;
+        let strategy: BottomPlacementStrategy;
+        let placedRect: Rectangle;
+        let result: PopoverVM;
+        let anchorRect;
+        let popoverRect;
+        let arrowRect;
+
+        beforeEach(() => {
+          anchorRect = Rectangle.create(8, 0, 1, 1);
+          popoverRect = Rectangle.create(0, 0, 5, 5);
+          arrowRect = Rectangle.create(0, 0, 1, 1);
+
+          placementService = new PlacementService([]);
+          strategy = new BottomPlacementStrategy(placementService);
+
+          placedRect = Rectangle.create(3, 3, 5, 5);
+          spyOn(PlacementService.prototype, 'place').and.returnValue(placedRect);
+
+          result = strategy.calculate({
+            placement: constants.directionClass.bottom,
+            anchorRect,
+            popoverRect,
+            arrowRect
+          });
+        });
+
+        it('should return proper popover position', () => {
+          expect(result.popoverPosition).toEqual(placedRect.position());
+        });
+
+        it('should return proper class modifier', () => {
+          expect(result.placementClassModifier).toEqual(constants.directionClass.none);
+        });
+
+        it('should return proper arrow offset', () => {
+          expect(result.arrowOffset).toEqual(Offset.create(3, 0));
+        });
+      });
+
+      describe('Flipped, arrow visible, zero arrow offset', () => {
+        let placementService: PlacementService;
+        let strategy: BottomPlacementStrategy;
+        let placedRect: Rectangle;
+        let result: PopoverVM;
+        let anchorRect;
+        let popoverRect;
+        let arrowRect;
+
+        beforeEach(() => {
+          anchorRect = Rectangle.create(5, 0, 1, 1);
+          popoverRect = Rectangle.create(0, 0, 5, 5);
+          arrowRect = Rectangle.create(0, 0, 1, 1);
+
+          placementService = new PlacementService([]);
+          strategy = new BottomPlacementStrategy(placementService);
+
+          placedRect = Rectangle.create(3, -8, 5, 5);
+          spyOn(PlacementService.prototype, 'place').and.returnValue(placedRect);
+
+          result = strategy.calculate({
+            placement: constants.directionClass.bottom,
+            anchorRect,
+            popoverRect,
+            arrowRect
+          });
+        });
+
+        it('should return proper popover position', () => {
+          expect(result.popoverPosition).toEqual(placedRect.position());
+        });
+
+        it('should return proper class modifier', () => {
+          expect(result.placementClassModifier).toEqual(constants.directionClass.top);
+        });
+
+        it('should return proper arrow offset', () => {
+          expect(result.arrowOffset).toEqual(Offset.create(0, 0));
+        });
+      });
+
+      describe('Flipped, arrow visible, non zero arrow offset', () => {
+        let placementService: PlacementService;
+        let strategy: BottomPlacementStrategy;
+        let placedRect: Rectangle;
+        let result: PopoverVM;
+        let anchorRect;
+        let popoverRect;
+        let arrowRect;
+
+        beforeEach(() => {
+          anchorRect = Rectangle.create(6, 0, 1, 1);
+          popoverRect = Rectangle.create(0, 0, 5, 5);
+          arrowRect = Rectangle.create(0, 0, 1, 1);
+
+          placementService = new PlacementService([]);
+          strategy = new BottomPlacementStrategy(placementService);
+
+          placedRect = Rectangle.create(3, -8, 5, 5);
+          spyOn(PlacementService.prototype, 'place').and.returnValue(placedRect);
+
+          result = strategy.calculate({
+            placement: constants.directionClass.bottom,
+            anchorRect,
+            popoverRect,
+            arrowRect
+          });
+        });
+
+        it('should return proper popover position', () => {
+          expect(result.popoverPosition).toEqual(placedRect.position());
+        });
+
+        it('should return proper class modifier', () => {
+          expect(result.placementClassModifier).toEqual(constants.directionClass.top);
+        });
+
+        it('should return proper arrow offset', () => {
+          expect(result.arrowOffset).toEqual(Offset.create(1, 0));
+        });
       });
     });
   });
