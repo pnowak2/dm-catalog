@@ -1,16 +1,5 @@
-$dm-settings_zindex-fixed: 1030 !default;
-$dm-settings_zindex-sticky: 1030 !default;
-
-.dm-u-relative {
-  position: relative !important;
-}
-
-.dm-u-absolute {
-  position: absolute !important;
-}
-
-.dm-u-static {
-  position: static !important;
+@each $position in $dm-utilities-position_positions {
+  .dm-u-position-#{$position} { position: $position !important; }
 }
 
 .dm-u-fixed-top {
