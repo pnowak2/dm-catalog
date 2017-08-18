@@ -1,34 +1,42 @@
-<ul>
-  <li>
-    <a [routerLink]="['html-defaults']">Html Defaults</a>
-  </li>
-  <li>
-    <a [routerLink]="['color-system']">Color System</a>
-  </li>
-  <li>
-    <a [routerLink]="['typography']">Typography</a>
-  </li>
-  <li>
-    <a [routerLink]="['media']">Media</a>
-  </li>
-  <li>
-    <a [routerLink]="['switch']">Switch</a>
-  </li>
-  <li>
-    <a [routerLink]="['navstack']">Navstack</a>
-  </li>
-  <li>
-    <a [routerLink]="['sidebar']">Sidebar</a>
-  </li>
-  <li>
-    <a [routerLink]="['popover']">Popover</a>
-  </li>
-  <li>
-    <a [routerLink]="['layout']">Layout</a>
-  </li>
-  <li>
-    <a [routerLink]="['utilities']">Utilities</a>
-  </li>
-</ul>
+<div class="dm-o-main-layout">
+  <div class="dm-o-main-layout__page-container">
+    <div class="dm-o-main-layout__sidebar">
+      <ul>
+        <li>
+          <a [routerLink]="['html-defaults']">Html Defaults</a>
+        </li>
+        <li>
+          <a [routerLink]="['color-system']">Color System</a>
+        </li>
+        <li>
+          <a [routerLink]="['typography']">Typography</a>
+        </li>
+        <li>
+          <a [routerLink]="['media']">Media</a>
+        </li>
+        <li>
+          <a [routerLink]="['switch']">Switch</a>
+        </li>
+        <li>
+          <a [routerLink]="['navstack']">Navstack</a>
+        </li>
+        <li>
+          <a [routerLink]="['sidebar']">Sidebar</a>
+        </li>
+        <li>
+          <a [routerLink]="['popover']">Popover</a>
+        </li>
+        <li>
+          <a [routerLink]="['layout']">Layout</a>
+        </li>
+        <li>
+          <a [routerLink]="['utilities']">Utilities</a>
+        </li>
+      </ul>
+    </div>
+    <div class="dm-o-main-layout__content">
+      <router-outlet></router-outlet>
+    </div>
 
-<router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,7 +1,6 @@
 .dm-o-main-layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
 
   &__page-container {
     display: flex;
@@ -10,20 +9,17 @@
   }
 
   &__navbar {
-    background: dm-get-color(white);
   }
 
   &__sidebar {
-    background: dm-get-color(blue);
     flex-basis: content;
   }
 
   &__actionbar {
-    background: dm-get-color(green);
   }
 
   &__content {
-    background: dm-get-color(grey-lightester);
     flex: 1;
+    padding: 1rem;
   }
 }
