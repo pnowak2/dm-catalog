@@ -2,10 +2,6 @@
   @include dm-media-breakpoint-up($breakpoint) {
     $infix: dm-breakpoint-infix($breakpoint, $dm-settings_grid-breakpoints);
 
-    .dm-u-flex-first#{$infix}     { order: -1; }
-    .dm-u-flex-last#{$infix}      { order: 1; }
-    .dm-u-flex-unordered#{$infix} { order: 0; }
-
     .dm-u-flex-row#{$infix}            { flex-direction: row !important; }
     .dm-u-flex-column#{$infix}         { flex-direction: column !important; }
     .dm-u-flex-row-reverse#{$infix}    { flex-direction: row-reverse !important; }
