@@ -16,6 +16,7 @@ import { MediaDemoComponent } from './media-demo/media-demo.component';
 import { ColorSystemDemoComponent } from './color-system-demo/color-system-demo.component';
 import { HtmlDefaultsDemoComponent } from './html-defaults-demo/html-defaults-demo.component';
 import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
+import { UtilitiesDemoComponent } from './utilities-demo/utilities-demo.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
     MediaDemoComponent,
     ColorSystemDemoComponent,
     HtmlDefaultsDemoComponent,
-    PopoverDemoComponent
+    PopoverDemoComponent,
+    UtilitiesDemoComponent
   ],
   providers: [],
   exports: []
