@@ -22,7 +22,7 @@ describe('RightPlacementStrategy Placement Strategy', () => {
         expect(RightPlacementStrategy.prototype.calculate).toEqual(jasmine.any(Function));
       });
 
-      describe('Not flipped, arrow visible, zero arrow offset', () => {
+      describe('Calling depending service', () => {
         let placementService: PlacementService;
         let strategy: RightPlacementStrategy;
         let placedRect: Rectangle;
@@ -56,6 +56,35 @@ describe('RightPlacementStrategy Placement Strategy', () => {
             element: popoverRect,
             placementId: constants.directionClass.right,
             offsetAlong: constants.offset
+          });
+        });
+      });
+
+      describe('Not flipped, arrow visible, zero arrow offset', () => {
+        let placementService: PlacementService;
+        let strategy: RightPlacementStrategy;
+        let placedRect: Rectangle;
+        let result: PopoverVM;
+        let anchorRect;
+        let popoverRect;
+        let arrowRect;
+
+        beforeEach(() => {
+          anchorRect = Rectangle.create(0, 5, 1, 1);
+          popoverRect = Rectangle.create(0, 0, 5, 5);
+          arrowRect = Rectangle.create(0, 0, 1, 1);
+
+          placementService = new PlacementService([]);
+          strategy = new RightPlacementStrategy(placementService);
+
+          placedRect = Rectangle.create(3, 3, 5, 5);
+          spyOn(PlacementService.prototype, 'place').and.returnValue(placedRect);
+
+          result = strategy.calculate({
+            placement: constants.directionClass.right,
+            anchorRect,
+            popoverRect,
+            arrowRect
           });
         });
 
@@ -100,15 +129,6 @@ describe('RightPlacementStrategy Placement Strategy', () => {
           });
         });
 
-        it('should call placement service with appropariate arguments', () => {
-          expect(placementService.place).toHaveBeenCalledWith({
-            anchor: anchorRect,
-            element: popoverRect,
-            placementId: constants.directionClass.right,
-            offsetAlong: constants.offset
-          });
-        });
-
         it('should return proper popover position', () => {
           expect(result.popoverPosition).toEqual(placedRect.position());
         });
@@ -147,15 +167,6 @@ describe('RightPlacementStrategy Placement Strategy', () => {
             anchorRect,
             popoverRect,
             arrowRect
-          });
-        });
-
-        it('should call placement service with appropariate arguments', () => {
-          expect(placementService.place).toHaveBeenCalledWith({
-            anchor: anchorRect,
-            element: popoverRect,
-            placementId: constants.directionClass.right,
-            offsetAlong: constants.offset
           });
         });
 
@@ -200,15 +211,6 @@ describe('RightPlacementStrategy Placement Strategy', () => {
           });
         });
 
-        it('should call placement service with appropariate arguments', () => {
-          expect(placementService.place).toHaveBeenCalledWith({
-            anchor: anchorRect,
-            element: popoverRect,
-            placementId: constants.directionClass.right,
-            offsetAlong: constants.offset
-          });
-        });
-
         it('should return proper popover position', () => {
           expect(result.popoverPosition).toEqual(placedRect.position());
         });
@@ -247,15 +249,6 @@ describe('RightPlacementStrategy Placement Strategy', () => {
             anchorRect,
             popoverRect,
             arrowRect
-          });
-        });
-
-        it('should call placement service with appropariate arguments', () => {
-          expect(placementService.place).toHaveBeenCalledWith({
-            anchor: anchorRect,
-            element: popoverRect,
-            placementId: constants.directionClass.right,
-            offsetAlong: constants.offset
           });
         });
 
