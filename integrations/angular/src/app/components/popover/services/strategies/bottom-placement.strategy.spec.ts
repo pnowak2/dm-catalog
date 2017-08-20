@@ -50,6 +50,15 @@ describe('BottomPlacementStrategy Placement Strategy', () => {
           });
         });
 
+        it('should call placement service with appropariate arguments', () => {
+          expect(placementService.place).toHaveBeenCalledWith({
+            anchor: anchorRect,
+            element: popoverRect,
+            placementId: constants.directionClass.bottom,
+            offsetAlong: constants.offset
+          });
+        });
+
         it('should return proper popover position', () => {
           expect(result.popoverPosition).toEqual(placedRect.position());
         });
@@ -88,6 +97,15 @@ describe('BottomPlacementStrategy Placement Strategy', () => {
             anchorRect,
             popoverRect,
             arrowRect
+          });
+        });
+
+        it('should call placement service with appropariate arguments', () => {
+          expect(placementService.place).toHaveBeenCalledWith({
+            anchor: anchorRect,
+            element: popoverRect,
+            placementId: constants.directionClass.bottom,
+            offsetAlong: constants.offset
           });
         });
 
@@ -132,6 +150,15 @@ describe('BottomPlacementStrategy Placement Strategy', () => {
           });
         });
 
+        it('should call placement service with appropariate arguments', () => {
+          expect(placementService.place).toHaveBeenCalledWith({
+            anchor: anchorRect,
+            element: popoverRect,
+            placementId: constants.directionClass.bottom,
+            offsetAlong: constants.offset
+          });
+        });
+
         it('should return proper popover position', () => {
           expect(result.popoverPosition).toEqual(placedRect.position());
         });
@@ -173,6 +200,15 @@ describe('BottomPlacementStrategy Placement Strategy', () => {
           });
         });
 
+        it('should call placement service with appropariate arguments', () => {
+          expect(placementService.place).toHaveBeenCalledWith({
+            anchor: anchorRect,
+            element: popoverRect,
+            placementId: constants.directionClass.bottom,
+            offsetAlong: constants.offset
+          });
+        });
+
         it('should return proper popover position', () => {
           expect(result.popoverPosition).toEqual(placedRect.position());
         });
@@ -211,6 +247,15 @@ describe('BottomPlacementStrategy Placement Strategy', () => {
             anchorRect,
             popoverRect,
             arrowRect
+          });
+        });
+
+        it('should call placement service with appropariate arguments', () => {
+          expect(placementService.place).toHaveBeenCalledWith({
+            anchor: anchorRect,
+            element: popoverRect,
+            placementId: constants.directionClass.bottom,
+            offsetAlong: constants.offset
           });
         });
 
