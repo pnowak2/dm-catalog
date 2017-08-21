@@ -9,6 +9,7 @@ import { MediaDemoComponent } from './media-demo/media-demo.component';
 import { NavstackDemoComponent } from './navstack-demo/navstack-demo.component';
 import { SidebarDemoComponent } from './sidebar-demo/sidebar-demo.component';
 import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
+import { TabsDemoComponent } from './tabs-demo/tabs-demo.component';
 import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
 import { MainLayoutDemoComponent } from './layouts/main/main-layout-demo.component';
 import { UtilitiesDemoComponent } from './utilities-demo/utilities-demo.component';
@@ -23,6 +24,7 @@ export const routes: Routes = [
       { path: 'typography', component: TypographyDemoComponent },
       { path: 'media', component: MediaDemoComponent },
       { path: 'switch', component: SwitchDemoComponent },
+      { path: 'tabs', component: TabsDemoComponent },
       { path: 'navstack', component: NavstackDemoComponent },
       { path: 'sidebar', component: SidebarDemoComponent },
       { path: 'popover', component: PopoverDemoComponent },

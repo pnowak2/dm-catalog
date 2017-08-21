@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NavigationModule } from './navigation/navigation.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { SwitchModule } from './switch/switch.module';
+import { TabsModule } from './tabs/tabs.module';
 import { PopoverModule } from './popover/popover.module';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PopoverModule } from './popover/popover.module';
     NavigationModule,
     SidebarModule,
     SwitchModule,
-    PopoverModule
+    PopoverModule,
+    TabsModule
   ]
 })
 export class ComponentsModule { }
