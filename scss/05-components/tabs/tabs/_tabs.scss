@@ -1,0 +1,10 @@
+.dm-c-tabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  
+  &__overflow {
+    display: flex;
+    align-items: center;
+  }
+}
