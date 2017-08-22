@@ -4,6 +4,7 @@ export class TabModel implements Tab {
   constructor(
     public label: string,
     public selected: boolean,
-    public disabled: boolean) {
+    public disabled: boolean,
+    public closed: boolean) {
   }
 }

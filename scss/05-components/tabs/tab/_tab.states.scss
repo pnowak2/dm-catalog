@@ -6,4 +6,8 @@
   &--disabled {
       background-color: #aaa;
   }
+
+  &--closed {
+      display: none;
+  }
 }

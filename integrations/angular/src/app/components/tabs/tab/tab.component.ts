@@ -9,6 +9,7 @@ export class TabComponent implements OnInit, Tab {
   @Input() label: string;
   @Input() selected: boolean;
   @Input() disabled: boolean;
+  @Input() closed: boolean;
 
   constructor() { }
 
