@@ -1,10 +1,12 @@
 .dm-c-tabs {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid grey;
-  
-  &__overflow {
+  &__header {
+    border-bottom: 1px solid grey;
     display: flex;
+    justify-content: space-between;
+  }
+
+  &__overflow {
     align-items: center;
+    display: flex;
   }
 }

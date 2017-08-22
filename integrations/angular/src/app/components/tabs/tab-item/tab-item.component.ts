@@ -1,11 +1,11 @@
-import { Tab } from './../interface/tab';
 import { Component, OnInit, Input } from '@angular/core';
+import { Tab } from './../interface/tab';
 
 @Component({
-  selector: 'dm-tab',
-  templateUrl: './tab.component.html'
+  selector: 'dm-tab-item',
+  templateUrl: './tab-item.component.html'
 })
-export class TabComponent implements OnInit, Tab {
+export class TabItemComponent implements OnInit, Tab {
   @Input() active: boolean;
   @Input() label: string;
 
@@ -13,5 +13,4 @@ export class TabComponent implements OnInit, Tab {
 
   ngOnInit() {
   }
-
 }

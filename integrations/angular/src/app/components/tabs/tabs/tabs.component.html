@@ -1,9 +1,16 @@
 <div class="dm-c-tabs">
-  <div class="dm-c-tabs__items">
-    <dm-tab *ngFor="let t of tbs" [title]="t.title" [active]="t.active">
-    </dm-tab>
+  <div class="dm-c-tabs__header">
+    <div class="dm-c-tabs__items">
+      <dm-tab *ngFor="let ti of tabItems"
+              [label]="ti.label"
+              [active]="ti.active">
+      </dm-tab>
+    </div>
+    <div class="dm-c-tabs__overflow">
+      <input value="test">
+    </div>
   </div>
-  <div class="dm-c-tabs__overflow">
-    <input value="test">
+  <div class="dm-c-tabs__content">
+    <ng-content></ng-content>
   </div>
 </div>
