@@ -8,14 +8,14 @@ import { TabItemComponent } from './../tab-item/tab-item.component';
 })
 export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabItemComponent)
-  private tabItems: Array<Tab>;
+  private tabs: Array<Tab>;
 
   ngAfterContentInit() {
 
   }
 
   tabClicked(tab: Tab) {
-    this.tabItems.forEach((ti) => {
+    this.tabs.forEach((ti) => {
       ti.active = false;
     });
 

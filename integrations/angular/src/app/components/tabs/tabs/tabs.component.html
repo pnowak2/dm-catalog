@@ -1,10 +1,10 @@
 <div class="dm-c-tabs">
   <div class="dm-c-tabs__header">
     <div class="dm-c-tabs__items">
-      <dm-tab *ngFor="let ti of tabItems"
-              [label]="ti.label"
-              [active]="ti.active"
-              (click)="tabClicked(ti)">
+      <dm-tab *ngFor="let tab of tabs"
+              [label]="tab.label"
+              [active]="tab.active"
+              (click)="tabClicked(tab)">
       </dm-tab>
     </div>
     <div class="dm-c-tabs__overflow">
