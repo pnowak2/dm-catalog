@@ -21,4 +21,12 @@ export class TabsModel {
     this.deselectAllTabs();
     tab.selected = true;
   }
+
+  closeTab(tab: Tab): void {
+    if (tab.disabled) {
+      return;
+    }
+
+    tab.closed = true;
+  }
 }

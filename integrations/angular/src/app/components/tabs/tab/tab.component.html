@@ -4,5 +4,6 @@
      [class.dm-c-tab--closed]="closed">
   <div class="dm-c-tab__title">
     {{ label }}
+    <div class="dm-c-tab__close" (click)="didClickCloseTab($event)">X</div>
   </div>
 </div>

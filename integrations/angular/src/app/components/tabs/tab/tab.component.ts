@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Tab } from './../interface/tab';
 
 @Component({
@@ -10,10 +10,15 @@ export class TabComponent implements OnInit, Tab {
   @Input() selected: boolean;
   @Input() disabled: boolean;
   @Input() closed: boolean;
+  @Output() close = new EventEmitter<Tab>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  didClickCloseTab() {
+    this.close.next(this);
+  }
 }

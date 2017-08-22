@@ -19,4 +19,8 @@ export class TabsComponent implements AfterContentInit {
   tabClicked(tab: Tab) {
     this.tabsModel.selectTab(tab);
   }
+
+  tabClosed(tab: Tab) {
+    this.tabsModel.closeTab(tab);
+  }
 }

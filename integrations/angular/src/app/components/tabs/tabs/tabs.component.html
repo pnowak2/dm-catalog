@@ -6,7 +6,8 @@
               [selected]="tab.selected"
               [disabled]="tab.disabled"
               [closed]="tab.closed"
-              (click)="tabClicked(tab)">
+              (click)="tabClicked(tab)"
+              (close)="tabClosed(tab)">
       </dm-tab>
     </div>
     <div class="dm-c-tabs__overflow">

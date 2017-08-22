@@ -1,7 +1,7 @@
 <h3>Tabs</h3>
 
 <dm-tabs>
-  <dm-tab-item label="Tab 1" [disabled]="true">
+  <dm-tab-item #tab1 label="Tab 1" [disabled]="true">
     content 1
   </dm-tab-item>
   <dm-tab-item label="Tab 2">
@@ -11,3 +11,5 @@
     content 3
   </dm-tab-item>
 </dm-tabs>
+
+<button (click)="tab1.label='changed'">Change name</button>
