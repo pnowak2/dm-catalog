@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tab } from '../../components/tabs/interface/tab';
 
 @Component({
   selector: 'dm-tabs-demo',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabs-demo.component.scss']
 })
 export class TabsDemoComponent implements OnInit {
-
-  constructor() { }
+  tab: Tab;
+  constructor() { 
+    this.tab = {
+      label: 'My tab',
+      selected: true,
+      disabled: false,
+      closed: false
+    }
+  }
 
   ngOnInit() {
   }

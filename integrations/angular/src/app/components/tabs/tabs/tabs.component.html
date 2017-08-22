@@ -3,7 +3,8 @@
     <div class="dm-c-tabs__items">
       <dm-tab *ngFor="let tab of tabsModel.tabs"
               [tab]="tab"
-              (click)="tabClicked(tab)"></dm-tab>
+              (click)="tabClicked(tab)"
+              (close)="tabClosed(tab)"></dm-tab>
     </div>
     <div class="dm-c-tabs__overflow">
       <input value="test">
