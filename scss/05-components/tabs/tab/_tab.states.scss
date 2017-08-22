@@ -1,5 +1,9 @@
 .dm-c-tab {
-  &--active {
+  &--selected {
       border-top: 1px solid red;
+  }
+
+  &--disabled {
+      background-color: #aaa;
   }
 }

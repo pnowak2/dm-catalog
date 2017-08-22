@@ -1,3 +1,4 @@
+import { TabsModel } from './../model/tabs.model';
 import { Tab } from './../interface/tab';
 import { Component, AfterContentInit, ContentChildren } from '@angular/core';
 import { TabItemComponent } from './../tab-item/tab-item.component';
@@ -8,17 +9,14 @@ import { TabItemComponent } from './../tab-item/tab-item.component';
 })
 export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabItemComponent)
-  private tabs: Array<Tab>;
+  private tabComponents: Array<Tab>;
+  private tabsModel: TabsModel;
 
   ngAfterContentInit() {
-
+    this.tabsModel = new TabsModel(this.tabComponents);
   }
 
   tabClicked(tab: Tab) {
-    this.tabs.forEach((ti) => {
-      ti.active = false;
-    });
-
-    tab.active = true;
+    this.tabsModel.selectTab(tab);
   }
 }

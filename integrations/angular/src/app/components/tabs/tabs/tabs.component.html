@@ -1,9 +1,10 @@
 <div class="dm-c-tabs">
   <div class="dm-c-tabs__header">
     <div class="dm-c-tabs__items">
-      <dm-tab *ngFor="let tab of tabs"
+      <dm-tab *ngFor="let tab of tabsModel.tabs"
               [label]="tab.label"
-              [active]="tab.active"
+              [selected]="tab.selected"
+              [disabled]="tab.disabled"
               (click)="tabClicked(tab)">
       </dm-tab>
     </div>

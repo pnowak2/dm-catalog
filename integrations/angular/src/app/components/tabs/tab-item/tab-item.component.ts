@@ -6,8 +6,9 @@ import { Tab } from './../interface/tab';
   templateUrl: './tab-item.component.html'
 })
 export class TabItemComponent implements OnInit, Tab {
-  @Input() active: boolean;
   @Input() label: string;
+  @Input() selected: boolean;
+  @Input() disabled: boolean;
 
   constructor() { }
 

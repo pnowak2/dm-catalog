@@ -1,4 +1,5 @@
 export interface Tab {
-  active: boolean;
   label: string;
+  selected: boolean;
+  disabled: boolean;
 }
