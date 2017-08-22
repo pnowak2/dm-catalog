@@ -1,6 +1,7 @@
 <div class="dm-c-tabs">
   <div class="dm-c-tabs__items">
-    <ng-content></ng-content>
+    <dm-tab *ngFor="let t of tbs" [title]="t.title" [active]="t.active">
+    </dm-tab>
   </div>
   <div class="dm-c-tabs__overflow">
     <input value="test">

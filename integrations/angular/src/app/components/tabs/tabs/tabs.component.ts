@@ -7,10 +7,12 @@ import { TabComponent } from '../tab/tab.component';
 })
 export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabComponent) 
-  private tabs:QueryList<TabComponent>;
+  private tabs: QueryList<TabComponent>;
+  private tbs: Array<TabComponent>;
 
   ngAfterContentInit() {
     const tabs = this.tabs.toArray();
+    this.tbs = this.tabs.toArray();
 
     this.tabs.forEach((tab) => {
       tab.active = false;
