@@ -1,7 +1,20 @@
 import { Tab } from './../interface/tab';
 
+export interface TabsIn {
+  selectedTabIndex: number;
+  tabs: Array<Tab>;
+}
+
 export class TabsModel {
-  constructor(public tabs: Array<Tab>) {
+  get tabs(): Array<Tab> {
+    return this.params.tabs;
+  }
+
+  constructor(private params: TabsIn) {
+    if (this.params.selectedTabIndex) {
+      this.selectTab(this.tabs[this.params.selectedTabIndex]);
+    }
+
     if (!this.isAnyTabSelected()) {
       this.selectDefaultTab();
     }
