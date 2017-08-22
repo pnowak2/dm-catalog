@@ -1,9 +1,9 @@
 <div class="dm-c-tab"
-     [class.dm-c-tab--selected]="selected"
-     [class.dm-c-tab--disabled]="disabled"
-     [class.dm-c-tab--closed]="closed">
+     [class.dm-c-tab--selected]="tab.selected"
+     [class.dm-c-tab--disabled]="tab.disabled"
+     [class.dm-c-tab--closed]="tab.closed">
   <div class="dm-c-tab__title">
-    {{ label }}
+    {{ tab.label }}
     <div class="dm-c-tab__close" (click)="didClickCloseTab($event)">X</div>
   </div>
 </div>

@@ -2,13 +2,8 @@
   <div class="dm-c-tabs__header">
     <div class="dm-c-tabs__items">
       <dm-tab *ngFor="let tab of tabsModel.tabs"
-              [label]="tab.label"
-              [selected]="tab.selected"
-              [disabled]="tab.disabled"
-              [closed]="tab.closed"
-              (click)="tabClicked(tab)"
-              (close)="tabClosed(tab)">
-      </dm-tab>
+              [tab]="tab"
+              (click)="tabClicked(tab)"></dm-tab>
     </div>
     <div class="dm-c-tabs__overflow">
       <input value="test">
