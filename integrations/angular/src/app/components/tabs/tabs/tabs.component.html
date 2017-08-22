@@ -3,7 +3,8 @@
     <div class="dm-c-tabs__items">
       <dm-tab *ngFor="let ti of tabItems"
               [label]="ti.label"
-              [active]="ti.active">
+              [active]="ti.active"
+              (click)="tabClicked(ti)">
       </dm-tab>
     </div>
     <div class="dm-c-tabs__overflow">

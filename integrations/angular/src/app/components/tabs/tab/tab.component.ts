@@ -1,5 +1,5 @@
-import { Tab } from './../interface/tab';
 import { Component, OnInit, Input } from '@angular/core';
+import { Tab } from './../interface/tab';
 
 @Component({
   selector: 'dm-tab',

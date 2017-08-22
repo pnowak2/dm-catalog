@@ -1,6 +1,7 @@
 .dm-c-tab {
-  display: inline-block;
   background-color: #ddd;
+  cursor: pointer;
+  display: inline-block;
 
   &__title {
     margin: 15px;

@@ -13,4 +13,12 @@ export class TabsComponent implements AfterContentInit {
   ngAfterContentInit() {
 
   }
+
+  tabClicked(tab: Tab) {
+    this.tabItems.forEach((ti) => {
+      ti.active = false;
+    });
+
+    tab.active = true;
+  }
 }
