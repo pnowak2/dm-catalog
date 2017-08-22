@@ -14,14 +14,13 @@ export class TabsModel {
 
   selectDefaultTab(): void {
     const activeTabs = this.activeTabs();
-
     if (activeTabs.length > 0) {
       activeTabs[0].selected = true;
     }
   }
 
   activeTabs(): Array<Tab> {
-    return this.tabs.filter(t => !t.disabled);
+    return this.tabs.filter(t => !t.disabled && !t.closed);
   }
 
   deselectAllTabs(): void {
@@ -45,5 +44,7 @@ export class TabsModel {
     }
 
     tab.closed = true;
+
+    this.selectDefaultTab();
   }
 }

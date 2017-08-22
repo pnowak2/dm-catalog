@@ -10,7 +10,8 @@ export class TabComponent {
   @Input() tab: Tab;
   @Output() close = new EventEmitter<Tab>();
 
-  didClickCloseTab() {
+  didClickCloseTab(e) {
+    e.stopPropagation();
     this.close.next(this.tab);
   }
 }
