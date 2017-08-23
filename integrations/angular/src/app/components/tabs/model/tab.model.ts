@@ -4,7 +4,6 @@ export class TabModel implements Tab {
   label: string;
   selected: boolean;
   disabled: boolean;
-  closed: boolean;
 
   private constructor(tab: Tab) {
     this.label = tab.label;

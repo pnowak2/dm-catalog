@@ -12,8 +12,7 @@ export class TabsDemoComponent implements OnInit {
     this.tab = {
       label: 'My tab',
       selected: true,
-      disabled: false,
-      closed: false
+      disabled: false
     };
   }
 

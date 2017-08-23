@@ -38,7 +38,7 @@ export class TabsModel {
   }
 
   activeTabs(): Array<Tab> {
-    return this.tabs.filter(t => !t.disabled && !t.closed);
+    return this.tabs.filter(t => !t.disabled /*&& !t.closed*/);
   }
 
   deselectAllTabs(): void {
