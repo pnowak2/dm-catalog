@@ -1,3 +1,4 @@
+import { TabsModel } from './../model/tabs.model';
 import { Component, Input, AfterContentInit, ContentChildren, QueryList } from '@angular/core';
 import { Tab } from './../interface/tab';
 import { TabItemComponent } from './../tab-item/tab-item.component';
@@ -10,25 +11,20 @@ import { TabsService } from './../services/tabs.service';
 export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabItemComponent)
   private tabComponents: QueryList<TabItemComponent>;
-  private tabs: Array<Tab>;
+  private vm: TabsModel;
 
   constructor(private tabsService: TabsService) { }
 
   ngAfterContentInit() {
-    this.tabs = this.tabComponents.toArray();
+    const tabs = this.tabComponents.toArray();
+    this.vm = TabsModel.create({ tabs });
   }
 
   tabSelectClicked(tab: Tab) {
-    this.tabs = this.tabsService.selectTab(
-      this.tabs,
-      tab
-    );
+    this.vm.selectTab(tab);
   }
 
   tabCloseClicked(tab: Tab) {
-    this.tabs = this.tabsService.closeTab(
-      this.tabs,
-      tab
-    );
+    this.vm.closeTab(tab);
   }
 }
