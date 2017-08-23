@@ -3,7 +3,7 @@
     <div class="dm-c-tabs__items">
       <dm-tab *ngFor="let tab of tabs"
               [tab]="tab"
-              (click)="tabClicked(tab)"
+              (select)="tabSelectClicked(tab)"
               (close)="tabCloseClicked(tab)">
       </dm-tab>
     </div>

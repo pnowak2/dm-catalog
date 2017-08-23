@@ -9,6 +9,12 @@ import { Tab } from './../interface/tab';
 export class TabComponent {
   @Input() tab: Tab;
   @Output() close = new EventEmitter<Tab>();
+  @Output() select = new EventEmitter<Tab>();
+
+  didClickTab(e) {
+    e.stopPropagation();
+    this.select.next(this.tab);
+  }
 
   didClickCloseTab(e) {
     e.stopPropagation();

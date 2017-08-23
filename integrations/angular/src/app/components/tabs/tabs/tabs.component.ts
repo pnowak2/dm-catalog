@@ -18,7 +18,7 @@ export class TabsComponent implements AfterContentInit {
     this.tabs = this.tabComponents.toArray();
   }
 
-  tabClicked(tab: Tab) {
+  tabSelectClicked(tab: Tab) {
     this.tabs = this.tabsService.selectTab(
       this.tabs,
       tab
