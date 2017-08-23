@@ -1,0 +1,2 @@
+* Better linting
+  https://medium.com/@okonetchnikov/make-linting-great-again-f3890e1ad6b8
