@@ -1,3 +1,4 @@
-<div [hidden]="!selected || closed">
+<div [hidden]="!selected">
   <ng-content></ng-content>
 </div>
+selected: {{ !!selected }}

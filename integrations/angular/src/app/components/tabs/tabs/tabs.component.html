@@ -1,10 +1,10 @@
 <div class="dm-c-tabs">
   <div class="dm-c-tabs__header">
     <div class="dm-c-tabs__items">
-      <dm-tab *ngFor="let tab of tabsModel.tabs"
+      <dm-tab *ngFor="let tab of tabs"
               [tab]="tab"
               (click)="tabClicked(tab)"
-              (close)="tabClosed(tab)"></dm-tab>
+              (close)="tabCloseClicked(tab)"></dm-tab>
     </div>
     <div class="dm-c-tabs__overflow">
       tabs dropdown here

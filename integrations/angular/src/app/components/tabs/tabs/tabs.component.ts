@@ -1,34 +1,34 @@
-import { TabsModel } from './../model/tabs.model';
-import { Tab } from './../interface/tab';
 import { Component, Input, AfterContentInit, ContentChildren, QueryList } from '@angular/core';
+import { Tab } from './../interface/tab';
 import { TabItemComponent } from './../tab-item/tab-item.component';
+import { TabsService } from './../services/tabs.service';
 
 @Component({
   selector: 'dm-tabs',
   templateUrl: './tabs.component.html'
 })
 export class TabsComponent implements AfterContentInit {
-  @Input() selectedTabIndex: number;
-
   @ContentChildren(TabItemComponent)
   private tabComponents: QueryList<Tab>;
-  private tabsModel: TabsModel;
+  private tabs: Array<Tab>;
+
+  constructor(private tabsService: TabsService) { }
 
   ngAfterContentInit() {
-    const selectedTabIndex = this.selectedTabIndex;
-    const tabs = this.tabComponents.toArray();
-
-    this.tabsModel = TabsModel.create({
-      selectedTabIndex,
-      tabs
-    });
+    this.tabs = this.tabComponents.toArray();
   }
 
   tabClicked(tab: Tab) {
-    this.tabsModel.selectTab(tab);
+    this.tabs = this.tabsService.selectTab(
+      this.tabs,
+      tab
+    );
   }
 
-  tabClosed(tab: Tab) {
-    this.tabsModel.closeTab(tab);
+  tabCloseClicked(tab: Tab) {
+    this.tabs = this.tabsService.closeTab(
+      this.tabs,
+      tab
+    );
   }
 }

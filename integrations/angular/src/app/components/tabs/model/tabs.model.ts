@@ -61,7 +61,6 @@ export class TabsModel {
       return;
     }
 
-    tab.closed = true;
     this.deselectAllTabs();
     this.selectDefaultTab();
   }
