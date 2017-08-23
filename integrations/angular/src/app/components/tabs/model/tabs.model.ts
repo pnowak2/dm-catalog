@@ -57,7 +57,6 @@ export class TabsModel {
     }
 
     tab.closed = true;
-
     this.selectDefaultTab();
   }
 }
