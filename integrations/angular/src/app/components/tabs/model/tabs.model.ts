@@ -1,23 +1,27 @@
 import { Tab } from './../interface/tab';
 
-export interface TabsIn {
+export interface TabConfig {
   selectedTabIndex: number;
   tabs: Array<Tab>;
 }
 
 export class TabsModel {
-  get tabs(): Array<Tab> {
-    return this.params.tabs;
+  public static create(config: TabConfig): TabsModel {
+    return new TabsModel(config);
   }
 
-  constructor(private params: TabsIn) {
-    if (this.params.selectedTabIndex) {
-      this.selectTab(this.tabs[this.params.selectedTabIndex]);
+  private constructor(private config: TabConfig) {
+    if (this.config.selectedTabIndex) {
+      this.selectTab(this.tabs[this.config.selectedTabIndex]);
     }
 
     if (!this.isAnyTabSelected()) {
       this.selectDefaultTab();
     }
+  }
+
+  get tabs(): Array<Tab> {
+    return this.config.tabs;
   }
 
   isAnyTabSelected(): boolean {
@@ -27,8 +31,9 @@ export class TabsModel {
 
   selectDefaultTab(): void {
     const activeTabs = this.activeTabs();
+
     if (activeTabs.length > 0) {
-      activeTabs[0].selected = true;
+      activeTabs[activeTabs.length - 1].selected = true;
     }
   }
 
@@ -57,6 +62,7 @@ export class TabsModel {
     }
 
     tab.closed = true;
+    this.deselectAllTabs();
     this.selectDefaultTab();
   }
 }

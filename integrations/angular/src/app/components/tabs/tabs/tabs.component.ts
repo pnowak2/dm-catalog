@@ -15,9 +15,12 @@ export class TabsComponent implements AfterContentInit {
   private tabsModel: TabsModel;
 
   ngAfterContentInit() {
-    this.tabsModel = new TabsModel({
-      selectedTabIndex: this.selectedTabIndex,
-      tabs: this.tabComponents.map(tab => tab)
+    const selectedTabIndex = this.selectedTabIndex;
+    const tabs = this.tabComponents.toArray();
+
+    this.tabsModel = TabsModel.create({
+      selectedTabIndex,
+      tabs
     });
   }
 
