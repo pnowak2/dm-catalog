@@ -4,7 +4,8 @@
       <dm-tab *ngFor="let tab of tabs"
               [tab]="tab"
               (click)="tabClicked(tab)"
-              (close)="tabCloseClicked(tab)"></dm-tab>
+              (close)="tabCloseClicked(tab)">
+      </dm-tab>
     </div>
     <div class="dm-c-tabs__overflow">
       tabs dropdown here

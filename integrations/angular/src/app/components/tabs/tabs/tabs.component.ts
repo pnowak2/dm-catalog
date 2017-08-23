@@ -9,7 +9,7 @@ import { TabsService } from './../services/tabs.service';
 })
 export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabItemComponent)
-  private tabComponents: QueryList<Tab>;
+  private tabComponents: QueryList<TabItemComponent>;
   private tabs: Array<Tab>;
 
   constructor(private tabsService: TabsService) { }
