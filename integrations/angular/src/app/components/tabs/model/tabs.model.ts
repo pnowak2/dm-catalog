@@ -1,7 +1,6 @@
 import { Tab } from './../interface/tab';
 
 export interface TabConfig {
-  selectedTabIndex: number;
   tabs: Array<Tab>;
 }
 
@@ -11,10 +10,6 @@ export class TabsModel {
   }
 
   private constructor(private config: TabConfig) {
-    if (this.config.selectedTabIndex) {
-      this.selectTab(this.tabs[this.config.selectedTabIndex]);
-    }
-
     if (!this.isAnyTabSelected()) {
       this.selectDefaultTab();
     }
@@ -22,6 +17,14 @@ export class TabsModel {
 
   get tabs(): Array<Tab> {
     return this.config.tabs;
+  }
+
+  canSelectTab(tab: Tab): boolean {
+    return !tab.disabled;
+  }
+
+  canCloseTab(tab: Tab): boolean {
+    return !tab.disabled;
   }
 
   isAnyTabSelected(): boolean {
@@ -48,20 +51,19 @@ export class TabsModel {
   }
 
   selectTab(tab: Tab): void {
-    if (tab.disabled) {
-      return;
+    if (this.canSelectTab(tab)) {
+      this.deselectAllTabs();
+      tab.selected = true;
     }
-
-    this.deselectAllTabs();
-    tab.selected = true;
   }
 
   closeTab(tab: Tab): void {
-    if (tab.disabled) {
-      return;
-    }
+    if (this.canCloseTab(tab)) {
+      const idx = this.tabs.indexOf(tab);
+      tab.selected = false;
+      this.tabs.splice(idx, 1);
 
-    this.deselectAllTabs();
-    this.selectDefaultTab();
+      this.selectDefaultTab();
+    }
   }
 }
