@@ -8,13 +8,13 @@ import { Tab } from '../../components/tabs/interface/tab';
 })
 export class TabsDemoComponent implements OnInit {
   tab: Tab;
-  constructor() { 
+  constructor() {
     this.tab = {
       label: 'My tab',
       selected: true,
       disabled: false,
       closed: false
-    }
+    };
   }
 
   ngOnInit() {
