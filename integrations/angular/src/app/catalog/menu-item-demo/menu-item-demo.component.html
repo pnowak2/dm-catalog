@@ -12,7 +12,11 @@
               label="Hello World"
               iconClass="icon-coin-euro"
               (select)="didMenuSelect($event)">
-  <ng-template let-mi="menuItem3">
-    custom template id: {{ mi.id }}, label: {{ mi.label }}, icon: {{  mi.iconClass }}
+  <ng-template let-data>
+    <ul>
+      <li>{{ data.id }}</li>
+      <li>{{ data.label }}</li>
+      <li>{{ data.iconClass }}</li>
+    </ul>
   </ng-template>
 </dm-menu-item>
