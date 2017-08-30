@@ -9,6 +9,7 @@ import { MenuItem } from './../menu-item/model/menu-item';
 export class MenuComponent implements AfterContentInit {
   @Input() menuItems: Array<MenuItem>;
   @Input() customTpl: TemplateRef<any>;
+  @ContentChildren(MenuItemComponent) contentItemComponents = new QueryList<MenuItemComponent>();
   @Output() select = new EventEmitter<MenuItem>();
 
   didMenuItemSelect(menuItem: MenuItem) {
@@ -16,6 +17,8 @@ export class MenuComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-
+    this.contentItemComponents.forEach(menuItem => {
+      menuItem.select.subscribe(this.didMenuItemSelect.bind(this));
+    });
   }
 }
