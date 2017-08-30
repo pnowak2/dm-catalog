@@ -18,6 +18,8 @@ import { HtmlDefaultsDemoComponent } from './html-defaults-demo/html-defaults-de
 import { PopoverDemoComponent } from './popover-demo/popover-demo.component';
 import { UtilitiesDemoComponent } from './utilities-demo/utilities-demo.component';
 import { BordersDemoComponent } from './utilities-demo/borders-demo/borders-demo.component';
+import { MenuItemDemoComponent } from './menu-item-demo/menu-item-demo.component';
+import { MenuDemoComponent } from './menu-demo/menu-demo.component';
 
 @NgModule({
   imports: [
@@ -38,7 +40,9 @@ import { BordersDemoComponent } from './utilities-demo/borders-demo/borders-demo
     HtmlDefaultsDemoComponent,
     PopoverDemoComponent,
     UtilitiesDemoComponent,
-    BordersDemoComponent
+    BordersDemoComponent,
+    MenuItemDemoComponent,
+    MenuDemoComponent
   ],
   providers: [],
   exports: []
