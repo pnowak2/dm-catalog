@@ -6,5 +6,7 @@
     <i *ngIf="iconClass" [class]="iconClass"></i> {{ label }}
   </ng-container>
 
-  <ng-container *ngTemplateOutlet="customContentTpl; context: {$implicit: this}"></ng-container >
+  <ng-template *ngIf="hasCustomTemplate" [ngTemplateOutlet]="customContentTpl"
+               [ngOutletContext]="{$implicit: this}">
+  </ng-template>
 </div>
