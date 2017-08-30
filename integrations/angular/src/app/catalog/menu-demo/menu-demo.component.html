@@ -3,12 +3,13 @@
 <h3>Menu Items provided in markup</h3>
 <dm-menu (select)="didSelectItem($event)">
   <dm-menu-item id="1" label="item 1" ></dm-menu-item>
+  <dm-menu-separator></dm-menu-separator>
   <dm-menu-item id="2" label="item 2" iconClass="icon-coin-euro">
     <ng-template let-data>
       custom template id: {{ data.id }}, label: {{ data.label }}, icon: {{  data.iconClass }}
     </ng-template>
   </dm-menu-item>
-  <dm-menu-item id="3" label="item 3" iconClass="icon-home"></dm-menu-item>
+  <dm-menu-item id="3" label="item 3" [disabled]="true" iconClass="icon-home"></dm-menu-item>
   
 </dm-menu>
 

@@ -1,5 +1,6 @@
 <div class="dm-c-menu-item"
      [class.dm-c-menu-item--selected]="selected"
+     [class.dm-c-menu-item--disabled]="disabled"
      (click)="didMenuItemClick($event)">
 
   <ng-container *ngIf="!hasCustomTemplate">

@@ -6,6 +6,7 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { SwitchModule } from './switch/switch.module';
 import { PopoverModule } from './popover/popover.module';
 import { MenuItemModule } from './menu/menu-item/menu-item.module';
+import { MenuSeparatorModule } from './menu/menu-separator/menu-separator.module';
 import { MenuModule } from './menu/menu/menu.module';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MenuModule } from './menu/menu/menu.module';
     SwitchModule,
     PopoverModule,
     MenuItemModule,
+    MenuSeparatorModule,
     MenuModule
   ]
 })

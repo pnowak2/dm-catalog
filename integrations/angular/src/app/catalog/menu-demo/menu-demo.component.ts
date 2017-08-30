@@ -18,11 +18,13 @@ export class MenuDemoComponent implements OnInit {
       }),
       MenuItem.create({
         id: '2',
-        label: 'dynamic item 2'
+        label: 'dynamic item 2',
+        selected: true
       }),
       MenuItem.create({
         id: '3',
-        label: 'dynamic item 3'
+        label: 'dynamic item 3',
+        disabled: true
       })
     ];
   }

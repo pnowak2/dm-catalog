@@ -1,4 +1,10 @@
 .dm-c-menu-item {
+  &--disabled {
+    color: $dm-c-menu-item_disabled-color;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
   &--selected {
     background-color: $dm-c-menu-item_selected-bg;
   }

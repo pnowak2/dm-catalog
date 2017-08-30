@@ -3,6 +3,7 @@ export interface MenuItemProps {
   label: string;
   iconClass?: string;
   selected?: boolean;
+  disabled?: boolean;
 }
 
 export class MenuItem {
@@ -10,6 +11,7 @@ export class MenuItem {
     public id: string,
     public label: string,
     public iconClass: string,
+    public disabled: boolean,
     public selected: boolean
   ) { }
 
@@ -18,6 +20,7 @@ export class MenuItem {
       props.id,
       props.label,
       props.iconClass,
+      props.disabled,
       props.selected,
     );
   }

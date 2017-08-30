@@ -9,6 +9,7 @@ export class MenuItemComponent implements OnInit, AfterContentInit {
   @Input() id: string;
   @Input() label: string;
   @Input() iconClass: string;
+  @Input() disabled: boolean;
   @Input() selected: boolean;
   @Input() customTpl: TemplateRef<any>;
   @Output() select = new EventEmitter<MenuItem>();
