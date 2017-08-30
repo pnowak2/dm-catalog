@@ -2,14 +2,26 @@
 
 <h3>Menu Items provided in markup</h3>
 <dm-menu (select)="didSelectItem($event)">
+  <dm-menu-header title="My Section"></dm-menu-header>
   <dm-menu-item id="1" label="item 1" ></dm-menu-item>
+
   <dm-menu-separator></dm-menu-separator>
   <dm-menu-item id="2" label="item 2" iconClass="icon-coin-euro">
     <ng-template let-data>
       custom template id: {{ data.id }}, label: {{ data.label }}, icon: {{  data.iconClass }}
     </ng-template>
   </dm-menu-item>
+
+  <dm-menu-header title="My Tools"></dm-menu-header>
   <dm-menu-item id="3" label="item 3" [disabled]="true" iconClass="icon-home"></dm-menu-item>
+  <dm-menu-item id="4" label="item 4" iconClass="icon-trash" [disabled]="true">
+    <ng-template let-m>
+      <select name="" id="" [disabled]="m.disabled">
+        <option [value]="m.id">{{ m.label }}</option>
+      </select>
+    </ng-template>
+  </dm-menu-item>
+  <dm-menu-item id="5" label="item 5"iconClass="icon-home2"></dm-menu-item>
   
 </dm-menu>
 
