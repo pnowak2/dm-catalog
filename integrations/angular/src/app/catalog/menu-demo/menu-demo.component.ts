@@ -31,7 +31,7 @@ export class MenuDemoComponent implements OnInit {
     console.log(menuItem);
   }
 
-  didClickReloadMenuitems(evt) {
+  didClickReloadMenuitems(evt: MouseEvent) {
     this.menuItems = [
       MenuItem.create({
         id: 'g',
