@@ -16,10 +16,10 @@ export class MenuItemComponent implements OnInit {
   }
 
   didMenuItemClick(evt) {
-    const menuItem = MenuItem.create(
-      this.id,
-      this.label
-    );
+    const menuItem = MenuItem.create({
+      id: this.id,
+      label: this.label
+    });
     this.select.next(menuItem);
   }
 }

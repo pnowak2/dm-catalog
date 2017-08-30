@@ -11,9 +11,18 @@ export class MenuDemoComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = [
-      MenuItem.create('1', 'dynamic item 1'),
-      MenuItem.create('2', 'dynamic item 2'),
-      MenuItem.create('3', 'dynamic item 3')
+      MenuItem.create({
+        id: '1',
+        label: 'dynamic item 1'
+      }),
+      MenuItem.create({
+        id: '2',
+        label: 'dynamic item 2'
+      }),
+      MenuItem.create({
+        id: '3',
+        label: 'dynamic item 3'
+      })
     ];
   }
 
@@ -23,11 +32,10 @@ export class MenuDemoComponent implements OnInit {
 
   didClickReloadMenuitems(evt) {
     this.menuItems = [
-      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random()),
-      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random()),
-      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random()),
-      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random()),
-      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random())
+      MenuItem.create({
+        id: 'g',
+        label: 'generated item'
+      }),
     ];
   }
 
