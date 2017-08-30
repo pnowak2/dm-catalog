@@ -1,4 +1,4 @@
-import { Component, AfterContentInit, ContentChildren, ViewChildren, QueryList, EventEmitter, Output, Input } from '@angular/core';
+import { Component, AfterContentInit, ContentChildren, ViewChildren, TemplateRef, QueryList, EventEmitter, Output, Input } from '@angular/core';
 import { MenuItemComponent } from './../menu-item/menu-item.component';
 import { MenuItem } from './../menu-item/model/menu-item';
 
@@ -8,7 +8,7 @@ import { MenuItem } from './../menu-item/model/menu-item';
 })
 export class MenuComponent implements AfterContentInit {
   @Input() menuItems: Array<MenuItem>;
-  @ContentChildren(MenuItemComponent) contentItemComponents = new QueryList<MenuItemComponent>();
+  @Input() customTpl: TemplateRef<any>;
   @Output() select = new EventEmitter<MenuItem>();
 
   didMenuItemSelect(menuItem: MenuItem) {
@@ -16,8 +16,6 @@ export class MenuComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.contentItemComponents.forEach(menuItem => {
-      menuItem.select.subscribe(this.didMenuItemSelect.bind(this));
-    });
+
   }
 }

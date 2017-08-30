@@ -13,7 +13,15 @@
 
 <h3>Menu Items provided with model</h3>
 <dm-menu (select)="didSelectItem($event)"
-         [menuItems]="menuItems">
+         [menuItems]="menuItems"
+         [customTpl]="tpl">
 </dm-menu>
+
+<ng-template #tpl let-m>
+  <div class="dm-o-row">
+    <div class="dm-o-col">{{m.id}}</div>
+    <div class="dm-o-col">{{m.label}}</div>
+  </div>
+</ng-template>
 
 <button (click)="didClickReloadMenuitems($event)">Reload Menu Items</button>

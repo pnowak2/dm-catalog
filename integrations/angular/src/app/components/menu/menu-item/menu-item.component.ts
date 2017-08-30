@@ -10,6 +10,7 @@ export class MenuItemComponent implements OnInit, AfterContentInit {
   @Input() label: string;
   @Input() iconClass: string;
   @Input() selected: boolean;
+  @Input() customTpl: TemplateRef<any>;
   @Output() select = new EventEmitter<MenuItem>();
 
   @ContentChild(TemplateRef)
@@ -24,12 +25,15 @@ export class MenuItemComponent implements OnInit, AfterContentInit {
 
   }
 
+  get tpl() : TemplateRef<any> {
+    return this.customContentTpl || this.customTpl;
+  }
+
   get hasCustomTemplate(): boolean {
-    return this.customContentTpl !== undefined;
+    return this.tpl !== undefined;
   }
 
   didMenuItemClick(evt) {
-    console.log(this.customContentTpl);
     const menuItem = MenuItem.create({
       id: this.id,
       label: this.label
