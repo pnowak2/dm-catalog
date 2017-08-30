@@ -1,3 +1,8 @@
 <h2>Menu</h2>
 
-<dm-menu></dm-menu>
+<h3>Menu Items provided in markup</h3>
+<dm-menu (select)="didSelectItem($event)">
+  <dm-menu-item id="1" label="item 1"></dm-menu-item>
+  <dm-menu-item id="2" label="item 2"></dm-menu-item>
+  <dm-menu-item id="3" label="item 3"></dm-menu-item>
+</dm-menu>

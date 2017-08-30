@@ -1,3 +1,4 @@
+import { MenuItem } from './../../components/menu/menu-item/model/menu-item';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,10 @@ export class MenuItemDemoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  didMenuSelect(menuItem: MenuItem) {
+    console.log(menuItem);
   }
 
 }

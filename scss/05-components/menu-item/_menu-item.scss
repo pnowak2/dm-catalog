@@ -2,6 +2,7 @@
   background-color: $dm-c-menu-item_bg;
   cursor: pointer;
   padding: 0.3rem;
+  user-select: none;
 
   &:hover {
     background-color: $dm-c-menu-item_hover-bg;
