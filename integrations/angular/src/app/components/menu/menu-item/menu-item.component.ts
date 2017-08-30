@@ -12,20 +12,25 @@ export class MenuItemComponent implements OnInit, AfterContentInit {
   @Input() selected: boolean;
   @Output() select = new EventEmitter<MenuItem>();
 
+  @ViewChild('vc', { read: ViewContainerRef }) vc: ViewContainerRef;
+
   @ContentChild(TemplateRef)
   private customContentTpl: TemplateRef<any>;
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
   ngAfterContentInit() {
-
+    if (this.hasCustomTemplate) {
+      this.vc.createEmbeddedView(this.customContentTpl, { $implicit: this });
+    }
   }
 
   get hasCustomTemplate(): boolean {
-    return this.customContentTpl !== undefined;
+    return this.vc && this.customContentTpl !== undefined;
   }
 
   didMenuItemClick(evt) {
