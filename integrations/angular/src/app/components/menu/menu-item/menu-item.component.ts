@@ -8,6 +8,8 @@ import { MenuItem } from './model/menu-item';
 export class MenuItemComponent implements OnInit {
   @Input() id: string;
   @Input() label: string;
+  @Input() iconClass: string;
+  @Input() selected: boolean;
   @Output() select = new EventEmitter<MenuItem>();
 
   constructor() { }
@@ -20,6 +22,7 @@ export class MenuItemComponent implements OnInit {
       id: this.id,
       label: this.label
     });
+
     this.select.next(menuItem);
   }
 }

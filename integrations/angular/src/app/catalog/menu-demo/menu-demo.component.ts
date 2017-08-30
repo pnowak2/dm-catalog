@@ -13,7 +13,8 @@ export class MenuDemoComponent implements OnInit {
     this.menuItems = [
       MenuItem.create({
         id: '1',
-        label: 'dynamic item 1'
+        label: 'dynamic item 1',
+        iconClass: 'icon-home'
       }),
       MenuItem.create({
         id: '2',

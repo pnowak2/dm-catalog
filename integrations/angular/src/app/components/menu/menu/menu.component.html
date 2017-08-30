@@ -2,6 +2,7 @@
   <dm-menu-item *ngFor="let m of menuItems"
                 [id]="m.id"
                 [label]="m.label"
+                [iconClass]="m.iconClass"
                 (select)="didMenuItemSelect($event)">
   </dm-menu-item>
 

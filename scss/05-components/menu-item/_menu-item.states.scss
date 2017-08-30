@@ -1,3 +1,5 @@
 .dm-c-menu-item {
-  
+  &--selected {
+    background-color: $dm-c-menu-item_selected-bg;
+  }
 }

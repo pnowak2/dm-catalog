@@ -1,4 +1,5 @@
 <div class="dm-c-menu-item"
+     [class.dm-c-menu-item--selected]="selected"
      (click)="didMenuItemClick($event)">
-  {{ label }}
+  <i *ngIf="iconClass" [class]="iconClass"></i> {{ label }}
 </div>
