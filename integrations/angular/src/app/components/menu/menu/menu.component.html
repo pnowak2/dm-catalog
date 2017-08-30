@@ -1,3 +1,11 @@
 <div class="dm-c-menu">
-  <ng-content></ng-content>
+  <dm-menu-item *ngFor="let m of menuItems"
+                [id]="m.id"
+                [label]="m.label"
+                (select)="didMenuItemSelect($event)">
+  </dm-menu-item>
+
+  <div *ngIf="!menuItems">
+    <ng-content></ng-content>
+  </div>
 </div>

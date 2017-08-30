@@ -6,3 +6,10 @@
   <dm-menu-item id="2" label="item 2"></dm-menu-item>
   <dm-menu-item id="3" label="item 3"></dm-menu-item>
 </dm-menu>
+
+<h3>Menu Items provided with model</h3>
+<dm-menu (select)="didSelectItem($event)"
+         [menuItems]="menuItems">
+</dm-menu>
+
+<button (click)="didClickReloadMenuitems($event)">Reload Menu Items</button>

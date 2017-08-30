@@ -7,14 +7,28 @@ import { MenuItem } from './../../components/menu/menu-item/model/menu-item';
   styleUrls: ['./menu-demo.component.scss']
 })
 export class MenuDemoComponent implements OnInit {
-
-  constructor() { }
+  menuItems: Array<MenuItem>;
 
   ngOnInit() {
+    this.menuItems = [
+      MenuItem.create('1', 'dynamic item 1'),
+      MenuItem.create('2', 'dynamic item 2'),
+      MenuItem.create('3', 'dynamic item 3')
+    ];
   }
 
   didSelectItem(menuItem: MenuItem) {
     console.log(menuItem);
+  }
+
+  didClickReloadMenuitems(evt) {
+    this.menuItems = [
+      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random()),
+      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random()),
+      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random()),
+      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random()),
+      MenuItem.create(Math.random() + '', 'dynamic item' + Math.random())
+    ];
   }
 
 }
