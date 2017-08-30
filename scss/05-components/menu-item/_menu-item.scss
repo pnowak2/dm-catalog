@@ -3,8 +3,14 @@
   cursor: pointer;
   padding: 0.3rem;
   user-select: none;
+  display: flex;
+  align-items: center;  
 
   &:hover {
     background-color: $dm-c-menu-item_hover-bg;
+  }
+
+  &__icon {
+    margin-right: 0.2rem;
   }
 }

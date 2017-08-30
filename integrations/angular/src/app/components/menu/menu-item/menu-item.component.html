@@ -3,10 +3,11 @@
      (click)="didMenuItemClick($event)">
 
   <ng-container *ngIf="!hasCustomTemplate">
-    <i *ngIf="iconClass" [class]="iconClass"></i> {{ label }}
+    <i *ngIf="iconClass" class="dm-c-menu-item__icon {{ iconClass}} "></i> 
+    <div class="dm-c-menu-item__label">{{ label }}</div>
   </ng-container>
 
-  <ng-template *ngIf="hasCustomTemplate" [ngTemplateOutlet]="tpl"
-               [ngOutletContext]="{$implicit: this}">
+  <ng-template [ngTemplateOutlet]="tpl"
+               [ngOutletContext]="{ $implicit: this }">
   </ng-template>
 </div>
