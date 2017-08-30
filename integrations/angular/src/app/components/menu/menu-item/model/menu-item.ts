@@ -9,8 +9,8 @@ export class MenuItem {
   private constructor(
     public id: string,
     public label: string,
-    iconClass: string,
-    selected: boolean
+    public iconClass: string,
+    public selected: boolean
   ) { }
 
   public static create(props: MenuItemProps): MenuItem {

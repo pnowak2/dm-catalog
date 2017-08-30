@@ -35,7 +35,8 @@ export class MenuDemoComponent implements OnInit {
     this.menuItems = [
       MenuItem.create({
         id: 'g',
-        label: 'generated item'
+        label: 'generated item',
+        iconClass: 'icon-home'
       }),
     ];
   }
