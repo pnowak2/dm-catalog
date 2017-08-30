@@ -1,5 +1,12 @@
 <div class="dm-c-menu-item"
      [class.dm-c-menu-item--selected]="selected"
      (click)="didMenuItemClick($event)">
-  <i *ngIf="iconClass" [class]="iconClass"></i> {{ label }}
+
+  <ng-container *ngIf="!hasCustomTemplate">
+    <i *ngIf="iconClass" [class]="iconClass"></i> {{ label }}
+  </ng-container>
+
+  <ng-template *ngIf="customContentTpl" [ngTemplateOutlet]="customContentTpl"
+               [ngOutletContext]="{menuItem3: this}">
+  </ng-template>
 </div>

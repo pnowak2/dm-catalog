@@ -1,7 +1,18 @@
 <h2>Menu Item</h2>
 
+<h3>Default template</h3>
 <dm-menu-item id="hello"
               label="Hello World"
               iconClass="icon-coin-euro"
               (select)="didMenuSelect($event)">
+</dm-menu-item>
+
+<h3>Custom template</h3>
+<dm-menu-item id="hello"
+              label="Hello World"
+              iconClass="icon-coin-euro"
+              (select)="didMenuSelect($event)">
+  <ng-template let-mi="menuItem3">
+    custom template id: {{ mi.id }}, label: {{ mi.label }}, icon: {{  mi.iconClass }}
+  </ng-template>
 </dm-menu-item>
