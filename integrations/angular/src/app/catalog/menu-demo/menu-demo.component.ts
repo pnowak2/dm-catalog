@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from './../../components/menu/menu-item/model/menu-item';
+import { MenuItem } from './../../components/menu/menu-item/interface/menu-item';
 
 @Component({
   selector: 'dm-menu-demo',
@@ -11,21 +11,21 @@ export class MenuDemoComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = [
-      MenuItem.create({
+      {
         id: '1',
         label: 'dynamic item 1',
         iconClass: 'icon-home'
-      }),
-      MenuItem.create({
+      },
+      {
         id: '2',
         label: 'dynamic item 2',
         selected: true
-      }),
-      MenuItem.create({
+      },
+      {
         id: '3',
         label: 'dynamic item 3',
         disabled: true
-      })
+      }
     ];
   }
 
@@ -35,11 +35,11 @@ export class MenuDemoComponent implements OnInit {
 
   didClickReloadMenuitems(evt: MouseEvent) {
     this.menuItems = [
-      MenuItem.create({
+      {
         id: 'g',
         label: 'generated item',
         iconClass: 'icon-home2'
-      }),
+      },
     ];
   }
 

@@ -1,6 +1,6 @@
 import { Component, AfterContentInit, ContentChildren, ViewChildren, TemplateRef, QueryList, EventEmitter, Output, Input } from '@angular/core';
 import { MenuItemComponent } from './../menu-item/menu-item.component';
-import { MenuItem } from './../menu-item/model/menu-item';
+import { MenuItem } from './../menu-item/interface/menu-item';
 
 @Component({
   selector: 'dm-menu',

@@ -1,4 +1,4 @@
-import { MenuItem } from './../../components/menu/menu-item/model/menu-item';
+import { MenuItem } from './../../components/menu/menu-item/interface/menu-item';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,11 +1,11 @@
-import { Component, OnInit, AfterContentInit, ViewChild, Input, EventEmitter, Output, ContentChild, TemplateRef, ViewContainerRef } from '@angular/core';
-import { MenuItem } from './model/menu-item';
+import { Component, ViewChild, Input, EventEmitter, Output, ContentChild, TemplateRef } from '@angular/core';
+import { MenuItem } from './interface/menu-item';
 
 @Component({
   selector: 'dm-menu-item',
   templateUrl: './menu-item.component.html'
 })
-export class MenuItemComponent implements OnInit, AfterContentInit {
+export class MenuItemComponent implements MenuItem {
   @Input() id: string;
   @Input() label: string;
   @Input() iconClass: string;
@@ -17,15 +17,6 @@ export class MenuItemComponent implements OnInit, AfterContentInit {
   @ContentChild(TemplateRef)
   private customContentTpl: TemplateRef<any>;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  ngAfterContentInit() {
-
-  }
-
   get tpl() : TemplateRef<any> {
     return this.customContentTpl || this.customTpl;
   }
@@ -35,10 +26,10 @@ export class MenuItemComponent implements OnInit, AfterContentInit {
   }
 
   didMenuItemClick(evt) {
-    const menuItem = MenuItem.create({
+    const menuItem = {
       id: this.id,
       label: this.label
-    });
+    };
 
     this.select.next(menuItem);
   }

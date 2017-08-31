@@ -1,12 +1,6 @@
-export interface MenuItemProps {
-  id: string;
-  label: string;
-  iconClass?: string;
-  selected?: boolean;
-  disabled?: boolean;
-}
+import { MenuItem } from '../interface/menu-item';
 
-export class MenuItem {
+export class MenuItemModel implements MenuItem {
   private constructor(
     public id: string,
     public label: string,
@@ -15,8 +9,8 @@ export class MenuItem {
     public selected: boolean
   ) { }
 
-  public static create(props: MenuItemProps): MenuItem {
-    return new MenuItem(
+  public static create(props: MenuItem): MenuItemModel {
+    return new MenuItemModel(
       props.id,
       props.label,
       props.iconClass,
