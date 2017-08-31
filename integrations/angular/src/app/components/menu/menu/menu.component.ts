@@ -1,6 +1,7 @@
 import { Component, AfterContentInit, ContentChildren, ViewChildren, TemplateRef, QueryList, EventEmitter, Output, Input } from '@angular/core';
 import { MenuItemComponent } from './../menu-item/menu-item.component';
 import { MenuItem } from './../menu-item/interface/menu-item';
+import { MenuModel } from './model/menu.model';
 
 @Component({
   selector: 'dm-menu',
@@ -14,6 +15,15 @@ export class MenuComponent implements AfterContentInit {
 
   didMenuItemSelect(menuItem: MenuItem) {
     this.select.next(menuItem);
+    this.vm.selectNext();
+  }
+
+  get vm(): MenuModel {
+    if(this.menuItems) {
+      return MenuModel.create(this.menuItems);
+    } else {
+      return MenuModel.create(this.contentItemComponents.toArray());
+    }
   }
 
   ngAfterContentInit() {
