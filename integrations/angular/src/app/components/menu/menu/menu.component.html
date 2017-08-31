@@ -1,11 +1,7 @@
 <div class="dm-c-menu">
   <dm-menu-item *ngFor="let m of menuItems"
-                [id]="m.id"
-                [label]="m.label"
-                [iconClass]="m.iconClass"
+                [menuItem] = "m"
                 [customTpl]="itemTemplate"
-                [selected]="m.selected"
-                [disabled]="m.disabled"
                 (select)="didMenuItemSelect($event)">
   </dm-menu-item>
 

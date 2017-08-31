@@ -13,11 +13,18 @@ export class MenuItemComponent implements MenuItem {
   @Input() selected: boolean;
   @Input() customTpl: TemplateRef<any>;
   @Output() select = new EventEmitter<MenuItem>();
+  @Input('menuItem') set menuItem(menuItem: MenuItem) {
+    this.id = menuItem.id;
+    this.label = menuItem.label;
+    this.iconClass = menuItem.iconClass;
+    this.disabled = menuItem.disabled;
+    this.selected = menuItem.selected;
+  }
 
   @ContentChild(TemplateRef)
   private customContentTpl: TemplateRef<any>;
 
-  get tpl() : TemplateRef<any> {
+  get tpl(): TemplateRef<any> {
     return this.customContentTpl || this.customTpl;
   }
 

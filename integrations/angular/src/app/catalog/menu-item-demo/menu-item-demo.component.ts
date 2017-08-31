@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-item-demo.component.scss']
 })
 export class MenuItemDemoComponent implements OnInit {
-
+  mi: MenuItem = {
+    id: 'id',
+    label: 'sie ma'
+  }
+  
   constructor() { }
 
   ngOnInit() {

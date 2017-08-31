@@ -16,6 +16,7 @@ export class MenuComponent implements AfterContentInit, OnDestroy {
   constructor(private resolver: ComponentFactoryResolver) {  }
 
   didMenuItemSelect(menuItem: MenuItem) {
+    this.dynamicContainer.clear();
     const factory = this.resolver.resolveComponentFactory(MenuItemComponent);
     const compRef = this.dynamicContainer.createComponent(factory);
     compRef.instance.label = 'boo';
