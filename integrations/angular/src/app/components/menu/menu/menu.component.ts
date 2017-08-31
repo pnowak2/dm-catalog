@@ -19,11 +19,9 @@ export class MenuComponent implements AfterContentInit {
   }
 
   get vm(): MenuModel {
-    if(this.menuItems) {
-      return MenuModel.create(this.menuItems);
-    } else {
-      return MenuModel.create(this.contentItemComponents.toArray());
-    }
+    const menuItems = this.menuItems || this.contentItemComponents.toArray();
+    
+    return MenuModel.create(menuItems);
   }
 
   ngAfterContentInit() {
