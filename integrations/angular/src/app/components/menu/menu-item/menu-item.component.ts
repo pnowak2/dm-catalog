@@ -13,7 +13,7 @@ export class MenuItemComponent implements MenuItem {
   @Input() selected: boolean;
   @Input() customTpl: TemplateRef<any>;
   @Output() select = new EventEmitter<MenuItem>();
-  @Input('menuItem') set menuItem(menuItem: MenuItem) {
+  @Input() set menuItem(menuItem: MenuItem) {
     this.id = menuItem.id;
     this.label = menuItem.label;
     this.iconClass = menuItem.iconClass;
