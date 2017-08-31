@@ -9,7 +9,9 @@
                 (select)="didMenuItemSelect($event)">
   </dm-menu-item>
 
-  <div *ngIf="!menuItems">
+  <ng-template></ng-template>
+
+  <ng-container *ngIf="!menuItems">
     <ng-content></ng-content>
-  </div>
+  </ng-container>
 </div>
