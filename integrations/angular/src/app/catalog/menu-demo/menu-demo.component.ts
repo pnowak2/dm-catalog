@@ -41,5 +41,4 @@ export class MenuDemoComponent implements OnInit {
       iconClass: 'icon-home2'
     });
   }
-
 }

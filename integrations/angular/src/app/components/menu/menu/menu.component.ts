@@ -1,4 +1,4 @@
-import { Component, AfterContentInit, ContentChildren, QueryList, EventEmitter, Output, Input } from '@angular/core';
+import { Component, AfterContentInit, ContentChildren, IterableDiffers, QueryList, EventEmitter, Output, Input } from '@angular/core';
 import { MenuItemComponent } from './../menu-item/menu-item.component';
 import { MenuItem } from './../menu-item/interface/menu-item';
 import { MenuModel } from './model/menu.model';
@@ -10,6 +10,11 @@ import { MenuModel } from './model/menu.model';
 export class MenuComponent implements AfterContentInit {
   @ContentChildren(MenuItemComponent) contentItemComponents = new QueryList<MenuItemComponent>();
   @Output() select = new EventEmitter<MenuItem>();
+  differ: any;
+
+  constructor(differs: IterableDiffers) {
+    this.differ = differs.find([]).create(null);
+  }
 
   didMenuItemSelect(menuItem: MenuItem) {
     this.select.next(menuItem);
@@ -24,15 +29,17 @@ export class MenuComponent implements AfterContentInit {
 
   ngAfterContentInit() {
     this.contentItemComponents.changes.subscribe((c: QueryList<MenuItemComponent>) => {
-      c.forEach((menuItem: MenuItemComponent) => {
-        if (menuItem.select.observers.length === 0) {
-          menuItem.select.subscribe(this.didMenuItemSelect.bind(this));
-        }
-      });
+      const changes = this.differ.diff(this.contentItemComponents);
+      if (changes) {
+        changes.forEachAddedItem(r => {
+          r.item.select.subscribe(this.didMenuItemSelect.bind(this));
+        });
+      }
     })
 
     this.contentItemComponents.forEach(menuItem => {
       menuItem.select.subscribe(this.didMenuItemSelect.bind(this));
     });
+    this.differ.diff(this.contentItemComponents);
   }
 }
