@@ -1,0 +1,7 @@
+<div class="dm-c-autocomplete">
+  <input type="text" (click)="didClickInput($event)">
+  <div class="dm-c-autocomplete__menu"
+       [class.dm-u-d-none]="!visible">
+    <ng-content></ng-content>
+  </div>
+</div>

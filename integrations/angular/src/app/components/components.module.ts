@@ -9,6 +9,7 @@ import { MenuItemModule } from './menu/menu-item/menu-item.module';
 import { MenuSeparatorModule } from './menu/menu-separator/menu-separator.module';
 import { MenuHeaderModule } from './menu/menu-header/menu-header.module';
 import { MenuModule } from './menu/menu/menu.module';
+import { AutoCompleteModule } from './autocomplete/autocomplete.module';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { MenuModule } from './menu/menu/menu.module';
     MenuItemModule,
     MenuSeparatorModule,
     MenuHeaderModule,
-    MenuModule
+    MenuModule,
+    AutoCompleteModule
   ]
 })
 export class ComponentsModule { }

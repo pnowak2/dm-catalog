@@ -1,5 +1,16 @@
 <h2>Menu</h2>
 
+<dm-autocomplete>
+    <dm-menu>
+      <dm-menu-header title="My Section"></dm-menu-header>
+      <dm-menu-item id="1" label="auto item 1">
+        <ng-template>
+          custom 1, auto item 1
+        </ng-template>
+      </dm-menu-item>
+    </dm-menu>
+</dm-autocomplete>
+
 <h3>Menu Items provided in markup</h3>
 <dm-menu (select)="didSelectItem($event)">
   <dm-menu-header title="My Section"></dm-menu-header>
