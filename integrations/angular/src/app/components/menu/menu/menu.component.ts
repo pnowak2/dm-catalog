@@ -15,10 +15,11 @@ export class MenuComponent implements AfterContentInit {
     this.select.next(menuItem);
     this.vm.selectNext();
   }
-  get vm(): MenuModel {
-    const menuItems = this.contentItemComponents.toArray();
 
-    return MenuModel.create(menuItems);
+  get vm(): MenuModel {
+    return MenuModel.create(
+      this.contentItemComponents.toArray()
+    );
   }
 
   ngAfterContentInit() {

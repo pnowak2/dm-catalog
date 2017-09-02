@@ -40,7 +40,6 @@ export class MenuDemoComponent implements OnInit {
       label: 'generated item',
       iconClass: 'icon-home2'
     });
-
   }
 
 }
