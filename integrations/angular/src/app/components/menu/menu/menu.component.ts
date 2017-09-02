@@ -1,4 +1,4 @@
-import { Component, AfterContentInit, ContentChildren, ContentChild, TemplateRef, QueryList, EventEmitter, Output, Input } from '@angular/core';
+import { Component, AfterContentInit, OnChanges, ContentChildren, KeyValueDiffers, ContentChild, TemplateRef, QueryList, EventEmitter, Output, Input } from '@angular/core';
 import { MenuItemComponent } from './../menu-item/menu-item.component';
 import { MenuItem } from './../menu-item/interface/menu-item';
 import { MenuModel } from './model/menu.model';
@@ -8,8 +8,7 @@ import { MenuModel } from './model/menu.model';
   templateUrl: './menu.component.html'
 })
 export class MenuComponent implements AfterContentInit {
-  @Input() menuItems: Array<MenuItem>;
-  @ContentChild(TemplateRef, { read: TemplateRef }) itemTemplate; 
+  @ContentChild(TemplateRef, { read: TemplateRef }) itemTemplate;
   @ContentChildren(MenuItemComponent) contentItemComponents = new QueryList<MenuItemComponent>();
   @Output() select = new EventEmitter<MenuItem>();
 
@@ -19,12 +18,20 @@ export class MenuComponent implements AfterContentInit {
   }
 
   get vm(): MenuModel {
-    const menuItems = this.menuItems || this.contentItemComponents.toArray();
+    const menuItems = this.contentItemComponents.toArray();
 
     return MenuModel.create(menuItems);
   }
 
   ngAfterContentInit() {
+    this.contentItemComponents.changes.subscribe((c: QueryList<MenuItemComponent>) => {
+      c.forEach((menuItem: MenuItemComponent) => {
+        if(menuItem.select.observers.length === 0) {
+          menuItem.select.subscribe(this.didMenuItemSelect.bind(this));
+        }
+      });
+    })
+    
     this.contentItemComponents.forEach(menuItem => {
       menuItem.select.subscribe(this.didMenuItemSelect.bind(this));
     });

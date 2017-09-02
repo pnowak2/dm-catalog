@@ -26,19 +26,3 @@
     </ul>
   </ng-template>
 </dm-menu-item>
-
-<h3>Custom template through named template</h3>
-<dm-menu-item id="hello"
-              label="Hello World"
-              iconClass="icon-coin-euro"
-              [customTpl]="tpl"
-              (select)="didMenuSelect($event)">
-</dm-menu-item>
-
-<ng-template #tpl let-data>
-    <ul>
-      <li>{{ data.id }}</li>
-      <li>{{ data.label }}</li>
-      <li>{{ data.iconClass }}</li>
-    </ul>
-  </ng-template>

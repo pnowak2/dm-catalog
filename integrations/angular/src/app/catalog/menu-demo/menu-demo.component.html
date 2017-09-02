@@ -26,17 +26,21 @@
 </dm-menu>
 
 <h3>Menu Items provided with model</h3>
-<dm-menu (select)="didSelectItem($event)"
-         [menuItems]="menuItems">
-  <ng-template let-m>
-    <div class="dm-o-row">
-        <div class="dm-o-col-4">{{m.id}}</div>
-        <div class="dm-o-col-4">{{m.label}}</div>
-        <div class="dm-o-col-4">
-          <i [class]="m.iconClass"></i>
-        </div>
-      </div>
-  </ng-template>
+<dm-menu (select)="didSelectItem($event)">
+    <dm-menu-header title="My Tools"></dm-menu-header>
+    <dm-menu-item id="1" label="Close All" ></dm-menu-item>
+    <dm-menu-separator></dm-menu-separator>
+    
+    <dm-menu-item *ngFor="let m of menuItems" [id]="m.id" [label]="m.label" [disabled]="m.disabled" iconClass="m.iconClass"></dm-menu-item>
+    <dm-menu-header title="Templated"></dm-menu-header>
+    <dm-menu-item *ngFor="let m of menuItems" [id]="m.id" [label]="m.label" [disabled]="m.disabled" [iconClass]="m.iconClass">
+        <ng-template let-m>
+          <i [class]="m.iconClass">{{m.iconClass}}</i>
+            <select  [disabled]="m.disabled">
+              <option [value]="m.id"> {{ m.label }}</option>
+            </select>
+          </ng-template>
+    </dm-menu-item>
 </dm-menu>
 
 <button (click)="didClickReloadMenuitems($event)">Reload Menu Items</button>

@@ -1,16 +1,4 @@
 <div class="dm-c-menu">
-  <dm-menu-item *ngFor="let m of menuItems"
-                [id]="m.id"
-                [label]="m.label"
-                [iconClass]="m.iconClass"
-                [customTpl]="itemTemplate"
-                [selected]="m.selected"
-                [disabled]="m.disabled"
-                (select)="didMenuItemSelect($event)">
-  </dm-menu-item>
-
-  <ng-template></ng-template>
-
   <ng-container *ngIf="!menuItems">
     <ng-content></ng-content>
   </ng-container>

@@ -11,14 +11,13 @@ export class MenuItemComponent implements MenuItem {
   @Input() iconClass: string;
   @Input() disabled: boolean;
   @Input() selected: boolean;
-  @Input() customTpl: TemplateRef<any>;
   @Output() select = new EventEmitter<MenuItem>();
 
   @ContentChild(TemplateRef)
   private customContentTpl: TemplateRef<any>;
 
   get tpl() : TemplateRef<any> {
-    return this.customContentTpl || this.customTpl;
+    return this.customContentTpl;
   }
 
   get hasCustomTemplate(): boolean {

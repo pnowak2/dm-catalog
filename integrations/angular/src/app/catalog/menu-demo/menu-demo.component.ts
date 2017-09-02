@@ -34,13 +34,13 @@ export class MenuDemoComponent implements OnInit {
   }
 
   didClickReloadMenuitems(evt: MouseEvent) {
-    this.menuItems = [
-      {
-        id: 'g',
-        label: 'generated item',
-        iconClass: 'icon-home2'
-      },
-    ];
+    this.menuItems[0].disabled = true;
+    this.menuItems.push({
+      id: 'g',
+      label: 'generated item',
+      iconClass: 'icon-home2'
+    });
+
   }
 
 }
