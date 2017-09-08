@@ -95,5 +95,38 @@ describe('MenuModel', () => {
         expect(instance.selectedItem).toBe(undefined);
       });
     });
+
+    describe('.selectableItems', () => {
+      it('should return array of items which are selectable', () => {
+        const item1 = MenuItemModel.create({ id: '1', selected: false });
+        const item2 = MenuItemModel.create({ id: '2', selected: true });
+        const item3 = MenuItemModel.create({ id: '3', selected: true });
+
+        const instance = MenuModel.create({
+          menuItems: [item1, item2, item3]
+        });
+
+        expect(instance.selectableItems).toEqual([item2, item3]);
+      });
+    });
+
+    describe('.selectNextItem()', () => {
+      it('should select first item if nothing is selected', () => {
+        const item1 = MenuItemModel.create({ id: '1', selected: false });
+        const item2 = MenuItemModel.create({ id: '2', selected: false });
+        const item3 = MenuItemModel.create({ id: '3', selected: false });
+
+        const instance = MenuModel.create({
+          menuItems: [item1, item2, item3]
+        });
+
+        instance.selectNextItem();
+
+        expect(instance.menuItems[0].selected).toBe(true);
+      });
+
+      it('should select (combinations here)  ', () => {
+      });
+    });
   });
 });

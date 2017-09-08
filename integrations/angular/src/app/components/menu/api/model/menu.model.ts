@@ -19,4 +19,12 @@ export class MenuModel implements Menu {
   get selectedItem(): MenuItem {
     return this.menuItems.find(m => m.selected);
   }
+
+  get selectableItems(): Array<MenuItem> {
+    return this.menuItems.filter(m => true);
+  }
+
+  selectNextItem(): void {
+    // this.selectableItems.fi
+  }
 }
