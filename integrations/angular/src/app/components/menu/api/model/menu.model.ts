@@ -12,15 +12,15 @@ export class MenuModel implements Menu {
     return new MenuModel(menu);
   }
 
-  get hasSelection(): boolean {
+  hasSelection(): boolean {
     return this.menuItems.some(m => m.selected);
   }
 
-  get selectedItem(): MenuItem {
+  selectedItem(): MenuItem {
     return this.menuItems.find(m => m.selected);
   }
 
-  get selectableItems(): Array<MenuItem> {
+  selectableItems(): Array<MenuItem> {
     return this.menuItems.filter(m => true);
   }
 

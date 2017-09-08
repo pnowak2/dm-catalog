@@ -21,7 +21,7 @@ export class MenuItemModel implements MenuItem {
     return new MenuItemModel(menuItem);
   }
 
-  get isSelectable(): boolean {
+  isSelectable(): boolean {
     return !this.disabled;
   }
 }

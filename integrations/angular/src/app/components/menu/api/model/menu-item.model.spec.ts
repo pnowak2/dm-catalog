@@ -71,10 +71,15 @@ describe('MenuItemModel', () => {
       });
     });
 
-    describe('.isSelectable', () => {
-      it('should return true if item is not disabled', () => {
+    describe('.isSelectable()', () => {
+      it('should return true if item may be selected', () => {
         const instance: MenuItemModel = MenuItemModel.create();
-        expect(instance.isSelectable).toBe(true);
+        expect(instance.isSelectable()).toBe(true);
+      });
+
+      it('should return false if item may not be selected', () => {
+        const instance: MenuItemModel = MenuItemModel.create({ id: '1', disabled: true });
+        expect(instance.isSelectable()).toBe(false);
       });
     });
   });
