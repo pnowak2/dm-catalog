@@ -1,6 +1,6 @@
 import { Component, AfterContentInit, ContentChildren, IterableDiffers, IterableDiffer, QueryList, EventEmitter, Output, Input } from '@angular/core';
 import { MenuItemComponent } from './../menu-item/menu-item.component';
-import { MenuItem } from './../menu-item/interface/menu-item';
+import { MenuItem } from './../api/interface/menu-item';
 import { MenuModel } from './model/menu.model';
 
 @Component({

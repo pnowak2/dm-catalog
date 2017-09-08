@@ -1,4 +1,4 @@
-import { MenuItem } from '../../menu-item/interface/menu-item';
+import { MenuItem } from '../../api/interface/menu-item';
 
 export class MenuModel {
   private constructor(public items: Array<MenuItem>) { }

@@ -1,5 +1,5 @@
 import { Component, ViewChild, Input, EventEmitter, Output, ContentChild, TemplateRef } from '@angular/core';
-import { MenuItem } from './interface/menu-item';
+import { MenuItem } from '../api/interface/menu-item';
 
 @Component({
   selector: 'dm-menu-item',
