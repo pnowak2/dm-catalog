@@ -5,12 +5,18 @@ export class MenuModel implements Menu {
   menuItems: Array<MenuItem>;
 
   private constructor(menu: Menu) {
-    if(menu) {
-      this.menuItems = menu.menuItems;
-    }
+    this.menuItems = menu ? menu.menuItems : [];
   }
 
-  public static create(menu?: Menu): Menu {
+  public static create(menu?: Menu): MenuModel {
     return new MenuModel(menu);
+  }
+
+  get hasSelection(): boolean {
+    return this.menuItems.some(m => m.selected);
+  }
+
+  get selectedItem(): MenuItem {
+    return this.menuItems.find(m => m.selected);
   }
 }

@@ -17,7 +17,11 @@ export class MenuItemModel implements MenuItem {
     }
   }
 
-  public static create(menuItem?: MenuItem): MenuItem {
+  public static create(menuItem?: MenuItem): MenuItemModel {
     return new MenuItemModel(menuItem);
+  }
+
+  get isSelectable(): boolean {
+    return !this.disabled;
   }
 }
