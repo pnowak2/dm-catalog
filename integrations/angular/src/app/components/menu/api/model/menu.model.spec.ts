@@ -33,8 +33,6 @@ describe('MenuModel', () => {
         });
       });
 
-
-
       it('should create new instance with proper menu items count', () => {
         expect(instance.menuItems.length).toEqual(3);
       });
