@@ -45,6 +45,10 @@ describe('MenuModel', () => {
     });
 
     describe('.hasSelection()', () => {
+      it('should be defined', () => {
+        expect(MenuModel.prototype.hasSelection).toEqual(jasmine.any(Function));
+      });
+
       it('should true if selected item exists', () => {
         const item1 = MenuItemModel.create({ id: '1', selected: false });
         const item2 = MenuItemModel.create({ id: '2', selected: true });
@@ -67,6 +71,10 @@ describe('MenuModel', () => {
     });
 
     describe('.selectedItem()', () => {
+      it('should be defined', () => {
+        expect(MenuModel.prototype.selectedItem).toEqual(jasmine.any(Function));
+      });
+
       it('should return selected item if exists', () => {
         const item1 = MenuItemModel.create({ id: '1', selected: false });
         const item2 = MenuItemModel.create({ id: '2', selected: true });
@@ -89,6 +97,10 @@ describe('MenuModel', () => {
     });
 
     describe('.selectableItems()', () => {
+      it('should be defined', () => {
+        expect(MenuModel.prototype.selectableItems).toEqual(jasmine.any(Function));
+      });
+
       it('should return empty array if nothing is selectable', () => {
         const item1 = MenuItemModel.create({ id: '1', disabled: true });
         const item2 = MenuItemModel.create({ id: '2', disabled: true });

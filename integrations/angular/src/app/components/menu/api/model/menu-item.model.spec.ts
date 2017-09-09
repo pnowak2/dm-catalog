@@ -72,6 +72,10 @@ describe('MenuItemModel', () => {
     });
 
     describe('.isSelectable()', () => {
+      it('should be defined', () => {
+        expect(MenuItemModel.prototype.isSelectable).toEqual(jasmine.any(Function));
+      });
+
       it('should return true if item may be selected', () => {
         const instance: MenuItemModel = MenuItemModel.create();
         expect(instance.isSelectable()).toBe(true);
