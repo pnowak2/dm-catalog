@@ -1,3 +1,4 @@
+import { MenuItemModel } from './../api/model/menu-item.model';
 import { Component, ViewChild, Input, EventEmitter, Output, ContentChild, TemplateRef } from '@angular/core';
 import { MenuItem } from '../api/interface/menu-item';
 
@@ -16,6 +17,10 @@ export class MenuItemComponent implements MenuItem {
   @ContentChild(TemplateRef)
   private customContentTpl: TemplateRef<any>;
 
+  constructor() {
+    const model = MenuItemModel.create(this);
+  }
+
   get tpl() : TemplateRef<any> {
     return this.customContentTpl;
   }
@@ -25,11 +30,6 @@ export class MenuItemComponent implements MenuItem {
   }
 
   didMenuItemClick(evt) {
-    const menuItem = {
-      id: this.id,
-      label: this.label
-    };
-
-    this.select.next(menuItem);
+   this.select.next(this);
   }
 }

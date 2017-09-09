@@ -1,15 +1,16 @@
+import { MenuItemModel } from './menu-item.model';
 import { MenuItem } from './../interface/menu-item';
 import { Menu } from './../interface/menu';
 
 export class MenuModel implements Menu {
-  menuItems: Array<MenuItem>;
+  menuItems: Array<MenuItemModel>;
 
-  private constructor(menu: Menu) {
-    this.menuItems = menu ? menu.menuItems : [];
+  private constructor(menuItems: MenuItemModel[]) {
+    this.menuItems = menuItems;
   }
 
-  public static create(menu?: Menu): MenuModel {
-    return new MenuModel(menu);
+  public static create(menuItems: MenuItemModel[] = []): MenuModel {
+    return new MenuModel(menuItems);
   }
 
   hasSelection(): boolean {
@@ -21,10 +22,6 @@ export class MenuModel implements Menu {
   }
 
   selectableItems(): Array<MenuItem> {
-    return this.menuItems.filter(m => true);
-  }
-
-  selectNextItem(): void {
-    // this.selectableItems.fi
+    return this.menuItems.filter(m => m.isSelectable());
   }
 }
