@@ -13,6 +13,18 @@ export class MenuModel implements Menu {
     return new MenuModel(menuItems);
   }
 
+  addItem(item: MenuItemModel): void {
+    this.menuItems.push(item);
+  }
+
+  removeItem(item: MenuItemModel): void {
+    const foundIndex = this.menuItems.indexOf(item);
+
+    if (foundIndex !== -1) {
+      this.menuItems.splice(foundIndex, 1);
+    }
+  }
+
   hasSelection(): boolean {
     return this.menuItems.some(m => m.selected);
   }

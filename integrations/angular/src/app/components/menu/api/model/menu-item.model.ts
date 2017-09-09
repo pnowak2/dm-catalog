@@ -24,4 +24,8 @@ export class MenuItemModel implements MenuItem {
   isSelectable(): boolean {
     return !this.disabled;
   }
+
+  toString(): string {
+    return `MenuItem (${this.id})`;
+  }
 }

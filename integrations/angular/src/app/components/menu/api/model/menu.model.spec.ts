@@ -44,6 +44,49 @@ describe('MenuModel', () => {
       });
     });
 
+    describe('.addItem()', () => {
+      it('should be defined', () => {
+        expect(MenuModel.prototype.addItem).toEqual(jasmine.any(Function));
+      });
+
+      it('should add item to menu', () => {
+        const instance = MenuModel.create();
+        const item1 = MenuItemModel.create({ id: '1', selected: false });
+
+        instance.addItem(item1);
+
+        expect(instance.menuItems[0]).toEqual(item1);
+      });
+    });
+
+    describe('.removeItem()', () => {
+      it('should be defined', () => {
+        expect(MenuModel.prototype.removeItem).toEqual(jasmine.any(Function));
+      });
+
+      it('should remove item from menu if exists in menu', () => {
+        const item1 = MenuItemModel.create({ id: '1', selected: false });
+        const item2 = MenuItemModel.create({ id: '2', selected: true });
+        const item3 = MenuItemModel.create({ id: '3', selected: false });
+
+        const instance = MenuModel.create([item1, item2, item3]);
+        instance.removeItem(item2);
+
+        expect(instance.menuItems).toEqual([item1, item3]);
+      });
+
+      it('should do nothing if item does not exist in menu', () => {
+        const item1 = MenuItemModel.create({ id: '1', selected: false });
+        const item2 = MenuItemModel.create({ id: '2', selected: true });
+        const item3 = MenuItemModel.create({ id: '3', selected: false });
+
+        const instance = MenuModel.create([item1, item2]);
+        instance.removeItem(item3);
+
+        expect(instance.menuItems).toEqual([item1, item2]);
+      });
+    });
+
     describe('.hasSelection()', () => {
       it('should be defined', () => {
         expect(MenuModel.prototype.hasSelection).toEqual(jasmine.any(Function));
@@ -82,7 +125,7 @@ describe('MenuModel', () => {
 
         const instance = MenuModel.create([item1, item2, item3]);
 
-        expect(instance.selectedItem()).toEqual(item2);
+        expect(instance.selectedItem()).toBe(item2);
       });
 
       it('should return undefined item if does not exist', () => {

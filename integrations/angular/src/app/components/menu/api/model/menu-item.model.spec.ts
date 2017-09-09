@@ -86,5 +86,20 @@ describe('MenuItemModel', () => {
         expect(instance.isSelectable()).toBe(false);
       });
     });
+
+    describe('.toString()', () => {
+      it('should be defined', () => {
+        expect(MenuItemModel.prototype.toString).toEqual(jasmine.any(Function));
+      });
+
+      it('should return string representation', () => {
+        const instance: MenuItemModel = MenuItemModel.create({
+          id: '1',
+          label: 'my item'
+        });
+
+        expect(instance.toString()).toEqual('MenuItem (1)');
+      });
+    });
   });
 });
