@@ -15,9 +15,8 @@
   }
   
   @function dm-get-color($name){
-    $dm-colors: dm-get-colors();
     @if dm-has-color($name){
-      @return map-get($dm-colors, $name); 
+      @return map-get(dm-get-colors(), $name); 
     }
   }
   

@@ -7,6 +7,5 @@
 }
 
 @function dm-get-spacer($name){
-    $dm-spacers: dm-get-spacers();
-    @return map-get($dm-spacers, $name); 
+    @return map-get(dm-get-spacers(), $name); 
 }
