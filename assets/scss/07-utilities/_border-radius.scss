@@ -1,0 +1,27 @@
+.dm-u-rounded {
+    @include dm-border-radius();
+  }
+  
+  .dm-u-rounded-top {
+    @include dm-border-top-radius();
+  }
+  
+  .dm-u-rounded-right {
+    @include dm-border-right-radius();
+  }
+  
+  .dm-u-rounded-bottom {
+    @include dm-border-bottom-radius();
+  }
+  
+  .dm-u-rounded-left {
+    @include dm-border-left-radius();
+  }
+  
+  .dm-u-rounded-circle {
+    border-radius: 50%;
+  }
+  
+  .dm-u-rounded-0 {
+    border-radius: 0;
+  }
