@@ -1,3 +1,5 @@
-html {
-    background-image: url(../images/grid.png);
+@if dm-get-config(healthcheck) {
+    html {
+        background-image: url(../images/grid.png);
+    }
 }
