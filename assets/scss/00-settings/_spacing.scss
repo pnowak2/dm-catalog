@@ -1,0 +1,13 @@
+$dm-settings_spacer-base: $dm-settings_font-line-height * 1rem !default;
+
+$dm-settings_spacers: (
+  0: 0,
+  xs: $dm-settings_spacer-base * .25,
+  sm: $dm-settings_spacer-base * .5,
+  base: $dm-settings_spacer-base,
+  md: $dm-settings_spacer-base * 1.25,
+  lg: $dm-settings_spacer-base * 1.5,
+  xl: $dm-settings_spacer-base * 2,
+  xxl: $dm-settings_spacer-base * 2.5,
+  xxxl: $dm-settings_spacer-base * 3,
+) !default;

@@ -1,0 +1,33 @@
+@each $prop-name, $prop-abbrev in (margin: m, padding: p) {
+    @each $spacer-name, $spacer-size in dm-get-spacers() {
+        .dm-u-#{$prop-abbrev}t-#{$spacer-name} { #{$prop-name}-top: $spacer-size !important; }
+        .dm-u-#{$prop-abbrev}b-#{$spacer-name} { #{$prop-name}-bottom: $spacer-size !important; }
+        .dm-u-#{$prop-abbrev}l-#{$spacer-name} { #{$prop-name}-left: $spacer-size !important; }
+        .dm-u-#{$prop-abbrev}r-#{$spacer-name} { #{$prop-name}-right: $spacer-size !important; }
+        .dm-u-#{$prop-abbrev}x-#{$spacer-name} { 
+            #{$prop-name}-left: $spacer-size !important; 
+            #{$prop-name}-right: $spacer-size !important; 
+        }
+        .dm-u-#{$prop-abbrev}y-#{$spacer-name} { 
+            #{$prop-name}-top: $spacer-size !important; 
+            #{$prop-name}-bottom: $spacer-size !important; 
+        }
+        .dm-u-#{$prop-abbrev}-#{$spacer-name} {
+            #{$prop-name}: $spacer-size;
+        }
+    }
+}
+
+.dm-u-m-auto  { margin:        auto !important; }
+.dm-u-mt-auto { margin-top:    auto !important; }
+.dm-u-mr-auto { margin-right:  auto !important; }
+.dm-u-mb-auto { margin-bottom: auto !important; }
+.dm-u-ml-auto { margin-left:   auto !important; }
+.dm-u-mx-auto {
+  margin-right: auto !important;
+  margin-left:  auto !important;
+}
+.dm-u-my-auto {
+  margin-top:    auto !important;
+  margin-bottom: auto !important;
+}

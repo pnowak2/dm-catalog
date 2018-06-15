@@ -1,0 +1,12 @@
+@function dm-get-spacers(){
+    @return $dm-settings_spacers;
+}
+
+@function dm-get-spacer-names(){
+    @return map-keys(dm-get-spacers());
+}
+
+@function dm-get-spacer($name){
+    $dm-spacers: dm-get-spacers();
+    @return map-get($dm-spacers, $name); 
+}

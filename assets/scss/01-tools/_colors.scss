@@ -1,0 +1,23 @@
+ @function dm-get-colors(){
+    @return $dm-settings_colors;
+  }
+  
+  @function dm-get-color-names(){
+    @return map-keys(dm-get-colors());
+  }
+  
+  @function dm-has-color($name){
+    @if map-has-key(dm-get-colors(), $name){
+      @return true;
+    } @else {
+      @return false;
+    }
+  }
+  
+  @function dm-get-color($name){
+    $dm-colors: dm-get-colors();
+    @if dm-has-color($name){
+      @return map-get($dm-colors, $name); 
+    }
+  }
+  
