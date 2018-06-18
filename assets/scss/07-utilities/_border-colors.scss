@@ -2,19 +2,15 @@
   .dm-u-border-#{$color-name} {
     border-color: dm-get-color($color-name) !important;
   }
-
   .dm-u-border-top-#{$color-name} {
     border-top-color: dm-get-color($color-name) !important;
   }
-
   .dm-u-border-bottom-#{$color-name} {
     border-bottom-color: dm-get-color($color-name) !important;
   }
-
   .dm-u-border-left-#{$color-name} {
     border-left-color: dm-get-color($color-name) !important;
   }
-
   .dm-u-border-right-#{$color-name} {
     border-right-color: dm-get-color($color-name) !important;
   }

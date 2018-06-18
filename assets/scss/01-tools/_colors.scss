@@ -1,22 +1,22 @@
- @function dm-get-colors(){
-    @return $dm-colors;
-  }
-  
-  @function dm-get-color-names(){
-    @return map-keys(dm-get-colors());
-  }
-  
-  @function dm-has-color($name){
-    @if map-has-key(dm-get-colors(), $name){
-      @return true;
-    } @else {
-      @return false;
-    }
-  }
-  
-  @function dm-get-color($name){
-    @if dm-has-color($name){
-      @return map-get(dm-get-colors(), $name); 
-    }
-  }
-  
+ @function dm-get-colors() {
+   @return $dm-colors;
+ }
+
+ @function dm-get-color-names() {
+   @return map-keys(dm-get-colors());
+ }
+
+ @function dm-has-color($name) {
+   @if map-has-key(dm-get-colors(), $name) {
+     @return true;
+   }
+   @else {
+     @return false;
+   }
+ }
+
+ @function dm-get-color($name) {
+   @if dm-has-color($name) {
+     @return map-get(dm-get-colors(), $name);
+   }
+ }

@@ -1,11 +1,11 @@
-@function dm-get-spacers(){
-    @return $dm-spacers;
+@function dm-get-spacers() {
+  @return $dm-spacers;
 }
 
-@function dm-get-spacer-names(){
-    @return map-keys(dm-get-spacers());
+@function dm-get-spacer-names() {
+  @return map-keys(dm-get-spacers());
 }
 
-@function dm-get-spacer($name){
-    @return map-get(dm-get-spacers(), $name); 
+@function dm-get-spacer($name) {
+  @return map-get(dm-get-spacers(), $name);
 }

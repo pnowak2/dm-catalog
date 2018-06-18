@@ -1,3 +1,3 @@
-@function dm-get-config($name){
-    @return map-get($dm-config, $name); 
+@function dm-get-config($name) {
+  @return map-get($dm-config, $name);
 }

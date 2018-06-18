@@ -1,23 +1,23 @@
-@function dm-get-font-sizes(){
-    @return $dm-font-sizes;
+@function dm-get-font-sizes() {
+  @return $dm-font-sizes;
 }
 
-@function dm-get-font-size-names(){
-    @return map-keys(dm-get-font-sizes());
+@function dm-get-font-size-names() {
+  @return map-keys(dm-get-font-sizes());
 }
 
-@function dm-get-font-size($name){
-    @return map-get(dm-get-font-sizes(), $name); 
+@function dm-get-font-size($name) {
+  @return map-get(dm-get-font-sizes(), $name);
 }
 
-@function dm-get-font-line-heights(){
-    @return $dm-font-line-heights;
+@function dm-get-font-line-heights() {
+  @return $dm-font-line-heights;
 }
 
-@function dm-get-font-line-heights-names(){
-    @return map-keys(dm-get-font-line-heights());
+@function dm-get-font-line-heights-names() {
+  @return map-keys(dm-get-font-line-heights());
 }
 
-@function dm-get-font-line-height($name){
-    @return map-get(dm-get-font-line-heights(), $name); 
+@function dm-get-font-line-height($name) {
+  @return map-get(dm-get-font-line-heights(), $name);
 }
