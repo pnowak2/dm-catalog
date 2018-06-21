@@ -12,40 +12,45 @@ $dm-font-type-scale: 1.250 !default;
 /* [1] */
 $dm-font-size-sm: $dm-font-size-base / $dm-font-type-scale !default;
 $dm-font-size-xs: $dm-font-size-sm / $dm-font-type-scale !default;
-$dm-font-size-md: $dm-font-type-scale * $dm-font-size-base !default;
+$dm-font-size-2xs: $dm-font-size-xs / $dm-font-type-scale !default;
+$dm-font-size-md: $dm-font-size-base !default;
 $dm-font-size-lg: $dm-font-type-scale * $dm-font-size-md !default;
 $dm-font-size-xl: $dm-font-type-scale * $dm-font-size-lg !default;
-$dm-font-size-xxl: $dm-font-type-scale * $dm-font-size-xl !default;
-$dm-font-size-xxxl: $dm-font-type-scale * $dm-font-size-xxl !default;
+$dm-font-size-2xl: $dm-font-type-scale * $dm-font-size-xl !default;
+$dm-font-size-3xl: $dm-font-type-scale * $dm-font-size-2xl !default;
+$dm-font-size-4xl: $dm-font-type-scale * $dm-font-size-3xl !default;
 
 $dm-font-sizes: (
+    2xs: $dm-font-size-2xs,
     xs: $dm-font-size-xs,
     sm: $dm-font-size-sm,
-    base: $dm-font-size-base,
-    md: $dm-font-size-md,
+    md: $dm-font-size-base,
     lg: $dm-font-size-lg,
     xl: $dm-font-size-xl,
-    xxl: $dm-font-size-xxl,
-    xxxl: $dm-font-size-xxxl
+    2xl: $dm-font-size-2xl,
+    3xl: $dm-font-size-3xl,
+    4xl: $dm-font-size-4xl
 ) !default;
 
 /* [2] */
+$dm-font-size-2xs-line-height: ceil($dm-font-size-2xs / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-2xs) !default;
 $dm-font-size-xs-line-height: ceil($dm-font-size-xs / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-xs) !default;
 $dm-font-size-sm-line-height: ceil($dm-font-size-sm / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-sm) !default;
-$dm-font-size-base-line-height: ceil($dm-font-size-base / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-base) !default;
 $dm-font-size-md-line-height: ceil($dm-font-size-md / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-md) !default;
 $dm-font-size-lg-line-height: ceil($dm-font-size-lg / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-lg) !default;
 $dm-font-size-xl-line-height: ceil($dm-font-size-xl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-xl) !default;
-$dm-font-size-xxl-line-height: ceil($dm-font-size-xxl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-xxl) !default;
-$dm-font-size-xxxl-line-height: ceil($dm-font-size-xxxl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-xxxl) !default;
+$dm-font-size-2xl-line-height: ceil($dm-font-size-2xl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-2xl) !default;
+$dm-font-size-3xl-line-height: ceil($dm-font-size-3xl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-3xl) !default;
+$dm-font-size-4xl-line-height: ceil($dm-font-size-4xl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-4xl) !default;
 
 $dm-font-line-heights: (
+    2xs: $dm-font-size-2xs-line-height,
     xs: $dm-font-size-xs-line-height,
     sm: $dm-font-size-sm-line-height,
-    base: $dm-font-size-base-line-height,
     md: $dm-font-size-md-line-height,
     lg: $dm-font-size-lg-line-height,
     xl: $dm-font-size-xl-line-height,
-    xxl: $dm-font-size-xxl-line-height,
-    xxxl: $dm-font-size-xxxl-line-height
+    2xl: $dm-font-size-2xl-line-height,
+    3xl: $dm-font-size-3xl-line-height,
+    4xl: $dm-font-size-4xl-line-height
 ) !default;

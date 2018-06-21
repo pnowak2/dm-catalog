@@ -1,13 +1,25 @@
-$dm-spacer-base: $dm-font-line-height * 1rem !default;
+$dm-spacer-base: $dm-font-size-base !default;
 
 $dm-spacers: (
   0: 0,
-  xs: $dm-spacer-base * .25,
-  sm: $dm-spacer-base * .5,
-  base: $dm-spacer-base,
-  md: $dm-spacer-base * 1.25,
+  3xs: $dm-spacer-base * .125,
+  2xs: $dm-spacer-base * .25,
+  xs: $dm-spacer-base * .5,
+  sm: $dm-spacer-base * 0.75,
+  md: $dm-spacer-base * 1,
   lg: $dm-spacer-base * 1.5,
   xl: $dm-spacer-base * 2,
-  xxl: $dm-spacer-base * 2.5,
-  xxxl: $dm-spacer-base * 3,
+  2xl: $dm-spacer-base * 2.5,
+  3xl: $dm-spacer-base * 3,
+) !default;
+
+$dm-spacers-layout: (
+  0: 0,
+  2xs: $dm-spacer-base,
+  xs: $dm-spacer-base * 1.5,
+  sm: $dm-spacer-base * 2,
+  md: $dm-spacer-base * 3,
+  lg: $dm-spacer-base * 4,
+  xl: $dm-spacer-base * 6,
+  2xl: $dm-spacer-base * 10
 ) !default;
