@@ -19,6 +19,7 @@ $dm-font-size-xl: $dm-font-type-scale * $dm-font-size-lg !default;
 $dm-font-size-2xl: $dm-font-type-scale * $dm-font-size-xl !default;
 $dm-font-size-3xl: $dm-font-type-scale * $dm-font-size-2xl !default;
 $dm-font-size-4xl: $dm-font-type-scale * $dm-font-size-3xl !default;
+$dm-font-size-5xl: $dm-font-type-scale * $dm-font-size-4xl !default;
 
 $dm-font-sizes: (
     2xs: $dm-font-size-2xs,
@@ -29,7 +30,8 @@ $dm-font-sizes: (
     xl: $dm-font-size-xl,
     2xl: $dm-font-size-2xl,
     3xl: $dm-font-size-3xl,
-    4xl: $dm-font-size-4xl
+    4xl: $dm-font-size-4xl,
+    5xl: $dm-font-size-5xl
 ) !default;
 
 /* [2] */
@@ -42,6 +44,7 @@ $dm-font-size-xl-line-height: ceil($dm-font-size-xl / $dm-font-line-height) * ($
 $dm-font-size-2xl-line-height: ceil($dm-font-size-2xl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-2xl) !default;
 $dm-font-size-3xl-line-height: ceil($dm-font-size-3xl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-3xl) !default;
 $dm-font-size-4xl-line-height: ceil($dm-font-size-4xl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-4xl) !default;
+$dm-font-size-5xl-line-height: ceil($dm-font-size-5xl / $dm-font-line-height) * ($dm-font-line-height / $dm-font-size-5xl) !default;
 
 $dm-font-line-heights: (
     2xs: $dm-font-size-2xs-line-height,
@@ -52,5 +55,6 @@ $dm-font-line-heights: (
     xl: $dm-font-size-xl-line-height,
     2xl: $dm-font-size-2xl-line-height,
     3xl: $dm-font-size-3xl-line-height,
-    4xl: $dm-font-size-4xl-line-height
+    4xl: $dm-font-size-4xl-line-height,
+    5xl: $dm-font-size-5xl-line-height
 ) !default;
