@@ -1,5 +1,5 @@
 html {
-  font: normal 100%/#{$dm-font-line-height} Georgia,
+  font: normal 100%/#{dm-get-font-line-height(md)} Georgia,
   serif;
 }
 
