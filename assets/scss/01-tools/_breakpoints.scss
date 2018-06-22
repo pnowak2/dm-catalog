@@ -1,9 +1,9 @@
 @function dm-get-breakpoints() {
-  @return $dm-grid-breakpoints;
+  @return $dm-breakpoints;
 }
 
 @function dm-get-breakpoint-names() {
-  @return map-keys($dm-grid-breakpoints);
+  @return map-keys(dm-get-breakpoints());
 }
 
 @function dm-breakpoint-next(
@@ -43,7 +43,7 @@
   @return if(
     dm-breakpoint-min($name, $breakpoints) == null, 
     "", 
-    "@#{$name}"
+    "\\@#{$name}"
   );
 }
 
