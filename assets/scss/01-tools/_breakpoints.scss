@@ -1,3 +1,117 @@
-@function dm-breakpoint-next($name, $grid-breakpoints: dm-grid-breakpoints, $breakpoint-names: map-keys($grid-breakpoints)) {
+@function dm-get-breakpoints() {
+  @return $dm-grid-breakpoints;
+}
 
+@function dm-get-breakpoint-names() {
+  @return map-keys($dm-grid-breakpoints);
+}
+
+@function dm-breakpoint-next(
+  $name, 
+  $breakpoints: dm-get-breakpoints(), 
+  $breakpoint-names: dm-get-breakpoint-names()) {
+  $name-index: index($breakpoint-names, $name);
+  @return if(
+    $name-index < length($breakpoints), 
+    nth($breakpoint-names, $name-index + 1), 
+    null
+  );
+}
+
+@function dm-breakpoint-min(
+  $name, 
+  $breakpoints: dm-get-breakpoints()) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function dm-breakpoint-max(
+  $name, 
+  $breakpoints: dm-get-breakpoints()) {
+  $next: dm-breakpoint-next($name);
+
+  @return if(
+    $next,
+    dm-breakpoint-min($next, $breakpoints) - 0.02px,
+    null
+  );
+}
+
+@function dm-breakpoint-infix(
+  $name, 
+  $breakpoints: dm-get-breakpoints()) {
+  @return if(
+    dm-breakpoint-min($name, $breakpoints) == null, 
+    "", 
+    "@#{$name}"
+  );
+}
+
+@mixin dm-media-breakpoint-up(
+  $name, 
+  $breakpoints: dm-get-breakpoints()) {
+  $min: dm-breakpoint-min($name);
+  @if($min) {
+    @media(min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin dm-media-breakpoint-down(
+  $name, 
+  $breakpoints: dm-get-breakpoints()) {
+  $max: dm-breakpoint-max($name);
+  @if($max) {
+    @media(max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin dm-media-breakpoint-between(
+  $lower, 
+  $upper,
+  $breakpoints: dm-get-breakpoints()) {
+  $min: dm-breakpoint-min($lower, $breakpoints);
+  $max: dm-breakpoint-max($upper, $breakpoints);
+
+  @if($min != null && $max != null) {
+    @media(min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if($max == null) {
+      @include dm-media-breakpoint-up($lower, $breakpoints) {
+        @content;
+      }
+  } @else if($min == null) {
+    @include dm-media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+  
+@mixin dm-media-breakpoint-only(
+  $name, 
+  $breakpoints: dm-get-breakpoints()) {
+  $min: dm-breakpoint-min($name, $breakpoints);
+  $max: dm-breakpoint-max($name, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include dm-media-breakpoint-up($name, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include dm-media-breakpoint-down($name, $breakpoints) {
+      @content;
+    }
+  }
 }
