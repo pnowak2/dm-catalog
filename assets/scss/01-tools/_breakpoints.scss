@@ -80,7 +80,7 @@
   $min: dm-breakpoint-min($lower, $breakpoints);
   $max: dm-breakpoint-max($upper, $breakpoints);
 
-  @if($min != null && $max != null) {
+  @if($min != null and $max != null) {
     @media(min-width: $min) and (max-width: $max) {
       @content;
     }

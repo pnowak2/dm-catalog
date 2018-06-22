@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font: normal 100%/#{dm-get-font-line-height(md)} Georgia,
   serif;

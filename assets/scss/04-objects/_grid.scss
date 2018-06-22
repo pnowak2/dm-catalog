@@ -1,0 +1,10 @@
+@if dm-get-config(enable-grid-classes) {
+  .dm-o-container {
+    @include dm-make-container();
+    @include dm-make-container-max-widths();
+  }
+
+  .dm-o-row {
+    @include dm-make-row();
+  }
+}

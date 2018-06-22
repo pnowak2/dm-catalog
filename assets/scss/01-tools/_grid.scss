@@ -1,0 +1,24 @@
+@mixin dm-make-container() {
+  width: 100%;
+  padding-left: $dm-grid-gutter-width / 2;
+  padding-right: $dm-grid-gutter-width / 2;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin dm-make-container-max-widths(
+  $max-widths: $dm-grid-container-max-widths, 
+  $breakpoints: dm-get-breakpoints()) {
+  @each $breakpoint-name, $breakpoint-max-width in $max-widths {
+    @include dm-media-breakpoint-up($breakpoint-name, $breakpoints) {
+      max-width: $breakpoint-max-width;
+    }
+  }
+}
+
+@mixin dm-make-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -($dm-grid-gutter-width / 2);
+  margin-right: -($dm-grid-gutter-width / 2);
+}

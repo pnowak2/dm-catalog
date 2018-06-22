@@ -1,10 +1,12 @@
-@each $color-name in dm-get-color-names() {
-  .dm-u-bg-color-#{$color-name} {
-    background-color: dm-get-color($color-name) !important;
-  }
-  .dm-u-bg-#{$color-name} {
-    background-color: dm-get-color($color-name) !important;
-    border-color: dm-get-color($color-name) !important;
-    color: dm-get-color(white) !important;
+@if(dm-get-config(enable-color-classes)) {
+  @each $color-name in dm-get-color-names() {
+    .dm-u-bg-color-#{$color-name} {
+      background-color: dm-get-color($color-name) !important;
+    }
+    .dm-u-bg-#{$color-name} {
+      background-color: dm-get-color($color-name) !important;
+      border-color: dm-get-color($color-name) !important;
+      color: dm-get-color(white) !important;
+    }
   }
 }

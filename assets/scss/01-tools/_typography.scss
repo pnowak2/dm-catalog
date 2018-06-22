@@ -1,9 +1,9 @@
 /*
- * 1. Font sizes
- * 2. Line heights
+ * 1. Functions
+ * 2. Mixins
  */
 
-/* [2] */
+/* [1] */
 @function dm-get-font-sizes() {
   @return $dm-font-sizes;
 }
@@ -16,7 +16,6 @@
   @return map-get(dm-get-font-sizes(), $name);
 }
 
-/* [2] */
 @function dm-get-font-line-heights() {
   @return $dm-font-line-heights;
 }
@@ -27,4 +26,10 @@
 
 @function dm-get-font-line-height($name) {
   @return map-get(dm-get-font-line-heights(), $name);
+}
+
+/* [2] */
+
+@mixin dm-font-size($name) {
+  font-size: dm-get-font-size($name);
 }

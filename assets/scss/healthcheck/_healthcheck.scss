@@ -2,10 +2,6 @@
   html {
     background-image: url(../images/grid.png);
   }
-
-  body::before {
-    content: '#{dm-breakpoint-infix(sm)}';
-  }
 }
 
 @include dm-media-breakpoint-only(xl) {
@@ -14,7 +10,7 @@
   }
 }
 
-@include dm-media-breakpoint-only(md) {
+@include dm-media-breakpoint-only(xs) {
   body {
     color: dm-get-color(red);
   }
