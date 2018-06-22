@@ -1,6 +1,18 @@
-@each $name, $size in dm-get-font-sizes() {
-  .dm-u-font-size-#{$name} {
-    font-size: dm-get-font-size($name) !important;
-    line-height: dm-get-font-line-height($name) !important;
+@each $breakpoint-name in dm-get-breakpoint-names() {
+  @include dm-media-breakpoint-up($breakpoint-name) {
+    $infix: dm-breakpoint-infix($breakpoint-name);
+
+    @each $name, $size in dm-get-font-sizes() {
+      .dm-u-font-size-#{$name}#{$infix} {
+        font-size: dm-get-font-size($name) !important;
+      }
+      
+      .dm-u-font-#{$name}#{$infix} {
+        font-size: dm-get-font-size($name) !important;
+        line-height: dm-get-font-line-height($name) !important;
+      }
+    }
   }
 }
+
+

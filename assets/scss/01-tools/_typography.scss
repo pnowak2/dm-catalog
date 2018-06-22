@@ -1,3 +1,9 @@
+/*
+ * 1. Font sizes
+ * 2. Line heights
+ */
+
+/* [2] */
 @function dm-get-font-sizes() {
   @return $dm-font-sizes;
 }
@@ -10,6 +16,7 @@
   @return map-get(dm-get-font-sizes(), $name);
 }
 
+/* [2] */
 @function dm-get-font-line-heights() {
   @return $dm-font-line-heights;
 }
