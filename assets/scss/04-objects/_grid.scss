@@ -4,6 +4,10 @@
     @include dm-make-container-max-widths();
   }
 
+  .dm-o-container-fluid {
+    @include dm-make-container();
+  }
+
   .dm-o-row {
     @include dm-make-row();
   }
