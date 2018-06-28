@@ -23,5 +23,73 @@
   margin-right: -($dm-grid-gutter-width / 2);
 }
 
-@mixin dm-make-grid-columns {
+@mixin dm-make-col(
+  $size,
+  $grid-columns: $dm-grid-columns-number
+) {
+  flex: 0 0 percentage($size / $grid-columns);
+  max-width: percentage($size / $grid-columns);
+}
+
+@mixin dm-make-grid-columns (
+  $columns-number: $dm-grid-columns-number,
+  $gutter-width: $dm-grid-gutter-width,
+  $breakpoints: dm-get-breakpoints()
+  ) {
+  %grid-column {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: $gutter-width / 2;
+    padding-right: $gutter-width / 2;
+  }
+
+  @each $breakpoint-name in dm-get-breakpoint-names() {
+    $infix: dm-breakpoint-infix($breakpoint-name);
+
+    .dm-o-col#{$infix},
+    .dm-o-col-auto#{$infix} {
+      @extend %grid-column;
+    }
+
+    @for $i from 1 through $columns-number {
+      .dm-o-col-#{$i}#{$infix} {
+        @extend %grid-column;
+      }
+    }
+
+    @include dm-media-breakpoint-up($breakpoint-name, $breakpoints) {
+      .dm-o-col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .dm-o-col-auto#{$infix} {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+      }
+
+      @for $i from 1 through $columns-number {
+        .dm-o-col-#{$i}#{$infix} {
+          @include dm-make-col($i, $columns-number);
+        }
+      }
+
+      .dm-o-order-first#{$infix} {
+        order: -1;
+      }
+
+      .dm-o-order-last#{$infix} {
+        order: $columns-number + 1;
+      }
+
+      @for $i from 1 through $columns-number {
+        .dm-o-order-#{$i}#{$infix} {
+          order: $i;
+        }
+      }
+    }
+  }
 }
