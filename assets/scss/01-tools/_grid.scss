@@ -31,6 +31,22 @@
   max-width: percentage($size / $grid-columns);
 }
 
+@mixin dm-make-col-offset(
+  $size,
+  $grid-columns: $dm-grid-columns-number
+) {
+  $num: $size / $grid-columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin dm-make-col-ready() {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-left: $gutter-width / 2;
+  padding-right: $gutter-width / 2;
+}
+
 @mixin dm-make-grid-columns (
   $columns-number: $dm-grid-columns-number,
   $gutter-width: $dm-grid-gutter-width,
@@ -88,6 +104,12 @@
       @for $i from 1 through $columns-number {
         .dm-o-order-#{$i}#{$infix} {
           order: $i;
+        }
+      }
+
+      @for $i from 0 through ($columns-number - 1) {
+        .dm-o-offset-#{$i}#{$infix} {
+          @include dm-make-col-offset($i, $columns-number);
         }
       }
     }
